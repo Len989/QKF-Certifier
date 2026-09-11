@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qkf-certifier"
+version = "0.1.0a1"
+description = "Checkable width-independent certificates for a KnownBits transfer-function fragment"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE", "third_party/xdsl-smt-LICENSE"]
+authors = [{name = "Leonid Shcherbakov"}]
+keywords = ["abstract-interpretation", "knownbits", "certificates", "bitvectors", "qkf"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering :: Mathematics",
+  "Topic :: Software Development :: Compilers",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "hypothesis>=6,<7", "jsonschema>=4,<5", "ruff>=0.11,<1", "build>=1,<2"]
+
+[project.scripts]
+qkf = "qkf_certifier.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
