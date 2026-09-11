@@ -1,0 +1,26 @@
+{
+  "version": "0.1.0a1",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+  "scope": "31 repetitions; warm caches; parsing included; verify includes generation and replay; check replays a ready certificate; not an end-to-end synthesis benchmark",
+  "results": [
+    {
+      "target": "and",
+      "steps": 3,
+      "verify_median_ms": 3.185211000527488,
+      "check_median_ms": 0.8226549998653354
+    },
+    {
+      "target": "or",
+      "steps": 8,
+      "verify_median_ms": 3.4476890014047967,
+      "check_median_ms": 1.4642860005551483
+    },
+    {
+      "target": "xor",
+      "steps": 7,
+      "verify_median_ms": 5.17076699907193,
+      "check_median_ms": 2.2315480000543175
+    }
+  ]
+}
