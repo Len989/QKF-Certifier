@@ -1,0 +1,27 @@
+[
+  {
+    "file": "and.mlir",
+    "sha256": "515485ef73decd20c038316b871bab3d3603f384821f71e0e2f2ac176abe43d1",
+    "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+  },
+  {
+    "file": "meet.mlir",
+    "sha256": "4db24093258277f76ad11d33826a0e480e945cc1c19ece661fc17655ad7f65f4",
+    "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+  },
+  {
+    "file": "or.mlir",
+    "sha256": "e86a52bce55ce669c9adfb450ebd482faeb2fadc8b8814921ec8af2c4519661f",
+    "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+  },
+  {
+    "file": "top.mlir",
+    "sha256": "04d59189c9c93e6291791891ababb40fbc1431fcffb547014ee2f1c0e260614f",
+    "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+  },
+  {
+    "file": "xor.mlir",
+    "sha256": "451d446fcdd05c14c98e83f04a2df52cd2b31c36260a843feb257ceaa0b54547",
+    "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+  }
+]
