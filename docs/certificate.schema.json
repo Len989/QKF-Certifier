@@ -1,0 +1,358 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QKF rewrite certificate v3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "sources",
+    "entry",
+    "semantics",
+    "initial_hash",
+    "steps",
+    "normal_form",
+    "target"
+  ],
+  "properties": {
+    "schema": {
+      "const": "qkf-rewrite-v3"
+    },
+    "sources": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 32,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "entry": {
+      "type": "string",
+      "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+    },
+    "semantics": {
+      "type": "string"
+    },
+    "initial_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "steps": {
+      "type": "array",
+      "maxItems": 10000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "rule"
+        ],
+        "properties": {
+          "path": {
+            "type": "array",
+            "maxItems": 100,
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 3
+            }
+          },
+          "rule": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "normal_form": {
+      "$ref": "#/$defs/expression"
+    },
+    "target": {
+      "enum": [
+        null,
+        "and",
+        "or",
+        "xor"
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "a",
+          "b",
+          "out",
+          "exact",
+          "sound",
+          "optimal"
+        ],
+        "properties": {
+          "a": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "b": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "out": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "exact": {
+            "enum": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          "sound": {
+            "type": "boolean"
+          },
+          "optimal": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "expression": {
+      "oneOf": [
+        {
+          "type": "array",
+          "prefixItems": [
+            {
+              "enum": [
+                "zero",
+                "ones",
+                "width",
+                "true",
+                "false"
+              ]
+            }
+          ],
+          "items": false,
+          "minItems": 1,
+          "maxItems": 1
+        },
+        {
+          "type": "array",
+          "prefixItems": [
+            {
+              "const": "var"
+            },
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "prefixItems": [
+            {
+              "const": "const"
+            },
+            {
+              "type": "integer",
+              "minimum": -115792089237316195423570985008687907853269984665640564039457584007913129639935,
+              "maximum": 115792089237316195423570985008687907853269984665640564039457584007913129639935
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "prefixItems": [
+            {
+              "enum": [
+                "not",
+                "countl_one",
+                "countl_zero",
+                "countr_one",
+                "countr_zero",
+                "clear_sign_bit",
+                "set_sign_bit"
+              ]
+            },
+            {
+              "$ref": "#/$defs/expression"
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "prefixItems": [
+            {
+              "enum": [
+                "pair",
+                "and",
+                "or",
+                "xor",
+                "add",
+                "sub",
+                "mul",
+                "smax",
+                "smin",
+                "umax",
+                "umin",
+                "set_high_bits",
+                "set_low_bits",
+                "clear_high_bits",
+                "clear_low_bits",
+                "shl",
+                "lshr",
+                "ashr",
+                "urem",
+                "srem",
+                "udiv",
+                "sdiv",
+                "booland",
+                "boolor",
+                "boolxor",
+                "cmp0",
+                "cmp1",
+                "cmp2",
+                "cmp3",
+                "cmp4",
+                "cmp5",
+                "cmp6",
+                "cmp7",
+                "cmp8",
+                "cmp9"
+              ]
+            },
+            {
+              "$ref": "#/$defs/expression"
+            },
+            {
+              "$ref": "#/$defs/expression"
+            }
+          ],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "prefixItems": [
+            {
+              "enum": [
+                "select"
+              ]
+            },
+            {
+              "$ref": "#/$defs/expression"
+            },
+            {
+              "$ref": "#/$defs/expression"
+            },
+            {
+              "$ref": "#/$defs/expression"
+            }
+          ],
+          "items": false,
+          "minItems": 4,
+          "maxItems": 4
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "target": {
+            "type": "null"
+          }
+        }
+      },
+      "then": {
+        "not": {
+          "required": [
+            "rows"
+          ]
+        }
+      },
+      "else": {
+        "required": [
+          "rows"
+        ]
+      }
+    }
+  ]
+}
