@@ -1,0 +1,23 @@
+{
+  "schema": "qkf-batch-v1",
+  "items": [
+    {
+      "id": "and",
+      "source": "ntmy/and.mlir",
+      "target": "and"
+    },
+    {
+      "id": "or",
+      "source": "ntmy/or.mlir",
+      "target": "or"
+    },
+    {
+      "id": "xor",
+      "source": "ntmy/xor.mlir",
+      "target": "xor",
+      "helpers": {
+        "meet": "ntmy/meet.mlir"
+      }
+    }
+  ]
+}
