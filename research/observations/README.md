@@ -85,8 +85,60 @@ operational context depth, not Paper II's term-depth proof horizon.
 Limits: at most 64 native states, 32 symbols, 16 output labels and 8 quotient
 classes. Complete row tables are exponential in the number of quotient classes.
 Producer budgets are explicit and exhaustion yields no certificate. Automatic
-source vocabulary construction, shared-context discovery, incomplete native
-tables and width-parametric symbolic closure remain open.
+source vocabulary construction, discovery of source variable identity, incomplete
+native tables and width-parametric symbolic closure remain open.
+
+## Derived shared-context observations
+
+The [descending experiment](CONTEXT_REPORT_RU.md) now takes local partial
+context transitions and constructs the reachable residual observation, without
+using the old handwritten P update or sweep state table. Native singleton
+preimages supply 72 cells; union/intersection proofs force 120 further cells.
+The resulting 24 rows generate 15 reachable states and 120 transitions.
+
+An automatic product search tests a specific weakening: replace every nonempty
+residual by the full context carrier before the next local step. It finds a
+two-bit trace accepted by the weakened interface and rejected by the exact one.
+The checker validates the conflicting cut membership. This demonstrates that
+this erasure is unsound; it does not prove that all 15 states are necessary.
+
+```sh
+python -m research.observations.context_cli descending reproduction/context_one
+python -O -m research.observations.context_cli check-descending reproduction/context_one/certificate.json
+python -m research.observations.run_context_experiment reproduction/context_experiment
+```
+
+Generic mode accepts an independently supplied finite local-constraint model:
+
+```sh
+python -m research.observations.context_cli derive context_model.json context_certificate.json
+python -m research.observations.context_cli check context_model.json context_certificate.json
+```
+
+The generic model declares a finite context carrier, forward control, partial
+functions from an upper cut to the adjacent lower cut, a bottom set and a top
+boundary. The producer derives reachable pairs of control and residual set.
+The checker establishes exact acceptance for every finite word of these supplied
+constraints. Nonfunctional relations are rejected: unrestricted existential
+preimages would not preserve the intersections used by these row proofs.
+
+The descending adapter supplies the three comparison values, suffix comparison
+control, column encoding and shared-cut wiring. It extracts only
+`require/compare/prefix/select` from pinned `graal/previous/row_kernel.py`.
+Neither `atom`, the old P observer, the sweep producer nor saved certificates
+are executed. It still does **not** infer this vocabulary or wiring from Java.
+
+`evidence/context/` contains the original and strict-guard variant, both compared
+against a direct unsigned integer loop on all 37,448 legal column words of
+widths 1–5. This finite comparison does not establish an all-width Java theorem.
+The shared-cut checker runs without producer/SMT imports, including under `-O`.
+Its tests also enumerate whole cut assignments for 100 random models, perform
+40 context/control/symbol renamings and reject 18 certificate mutations.
+
+Limits: 8 native contexts, 16 controls, 32 symbols, 4,096 residual states and
+65,536 product-search states. Complete rows are exponential in the context
+carrier. Exhaustion of either search budget returns no certificate. A missing
+counterexample is not independently certified as an equivalence result.
 
 ## Evidence
 

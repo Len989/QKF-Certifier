@@ -1,0 +1,32 @@
+{
+  "test_methods": 26,
+  "random_context_models": 100,
+  "whole_assignment_comparisons": 3100,
+  "context_control_symbol_renamings": 40,
+  "certificate_mutations": 18,
+  "commands": {
+    "tests": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/observations/tests",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    "source_replay": {
+      "command": [
+        "python",
+        "-O",
+        "-m",
+        "research.observations.context_cli",
+        "check-descending",
+        "research/observations/evidence/context/descending.certificate.json"
+      ],
+      "exit_code": 0
+    }
+  }
+}

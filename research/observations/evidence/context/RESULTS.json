@@ -1,0 +1,168 @@
+{
+  "descending": {
+    "status": "certified",
+    "native_contexts": 3,
+    "forward_controls": 3,
+    "residual_states": 15,
+    "row_templates": 24,
+    "supplied_cells": 72,
+    "forced_cells": 120,
+    "transitions": 120,
+    "context_loss_witness_length": 2,
+    "scope": "all finite words of supplied local constraints with the declared shared cuts and boundaries",
+    "minimality": "not claimed",
+    "absence_of_gap_certified": false,
+    "integer_validation": {
+      "cases": 37448,
+      "mismatches": 0,
+      "by_width": [
+        {
+          "width": 1,
+          "cases": 8,
+          "exact_accepts": 6,
+          "erasure_false_accepts": 0,
+          "mismatches": 0
+        },
+        {
+          "width": 2,
+          "cases": 64,
+          "exact_accepts": 36,
+          "erasure_false_accepts": 12,
+          "mismatches": 0
+        },
+        {
+          "width": 3,
+          "cases": 512,
+          "exact_accepts": 216,
+          "erasure_false_accepts": 168,
+          "mismatches": 0
+        },
+        {
+          "width": 4,
+          "cases": 4096,
+          "exact_accepts": 1296,
+          "erasure_false_accepts": 1776,
+          "mismatches": 0
+        },
+        {
+          "width": 5,
+          "cases": 32768,
+          "exact_accepts": 7776,
+          "erasure_false_accepts": 16800,
+          "mismatches": 0
+        }
+      ],
+      "scope": "exhaustive legal unsigned columns, widths 1..5; not an all-width source proof"
+    },
+    "product_states_visited": 29,
+    "counterexample": {
+      "width": 2,
+      "base": 0,
+      "optional": 1,
+      "upper": 2,
+      "proposed": 0,
+      "word_low_to_high": [
+        "0100",
+        "0010"
+      ],
+      "actual": 1,
+      "conflict": {
+        "position": 1,
+        "above": "equal",
+        "below": "less",
+        "required_below": [
+          "equal",
+          "greater"
+        ]
+      }
+    }
+  },
+  "strict_guard": {
+    "status": "certified",
+    "native_contexts": 3,
+    "forward_controls": 3,
+    "residual_states": 15,
+    "row_templates": 24,
+    "supplied_cells": 72,
+    "forced_cells": 120,
+    "transitions": 120,
+    "context_loss_witness_length": 2,
+    "scope": "all finite words of supplied local constraints with the declared shared cuts and boundaries",
+    "minimality": "not claimed",
+    "absence_of_gap_certified": false,
+    "integer_validation": {
+      "cases": 37448,
+      "mismatches": 0,
+      "by_width": [
+        {
+          "width": 1,
+          "cases": 8,
+          "exact_accepts": 6,
+          "erasure_false_accepts": 0,
+          "mismatches": 0
+        },
+        {
+          "width": 2,
+          "cases": 64,
+          "exact_accepts": 36,
+          "erasure_false_accepts": 12,
+          "mismatches": 0
+        },
+        {
+          "width": 3,
+          "cases": 512,
+          "exact_accepts": 216,
+          "erasure_false_accepts": 168,
+          "mismatches": 0
+        },
+        {
+          "width": 4,
+          "cases": 4096,
+          "exact_accepts": 1296,
+          "erasure_false_accepts": 1776,
+          "mismatches": 0
+        },
+        {
+          "width": 5,
+          "cases": 32768,
+          "exact_accepts": 7776,
+          "erasure_false_accepts": 16800,
+          "mismatches": 0
+        }
+      ],
+      "scope": "exhaustive legal unsigned columns, widths 1..5; not an all-width source proof"
+    },
+    "product_states_visited": 29,
+    "counterexample": {
+      "width": 2,
+      "base": 0,
+      "optional": 1,
+      "upper": 2,
+      "proposed": 0,
+      "word_low_to_high": [
+        "0100",
+        "0010"
+      ],
+      "actual": 1,
+      "conflict": {
+        "position": 1,
+        "above": "equal",
+        "below": "less",
+        "required_below": [
+          "equal",
+          "greater"
+        ]
+      }
+    }
+  },
+  "insufficient_state_budget": {
+    "status": "budget_exhausted",
+    "reason": "residual state budget",
+    "certificate": null
+  },
+  "insufficient_search_budget": {
+    "status": "budget_exhausted",
+    "reason": "context erasure search budget",
+    "certificate": null
+  }
+}

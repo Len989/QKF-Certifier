@@ -1,0 +1,31 @@
+{
+  "schema": "qkf-context-experiment-manifest-v1",
+  "parent_commit": "1be7ff3b3159df4650f92af6e08da85e2c6829e9",
+  "source_commit": "d7e631155b9382c787baf72a28b1e335a7074d7e",
+  "files": {
+    ".github/workflows/research.yml": "76fa8ac952c1ed7fb4fedba15f3be2874c8cff71b7a6947dd1ce72b9c5d2d4a4",
+    "research/README.md": "c12792b9eaa551232e6218ac7bfbdc6353012d1e7138506c54bdabfbee25b67f",
+    "research/observations/README.md": "19849a25f62b04d1d1b9b7d653acda42891fa331386f085eedfcb4a29b7ee925",
+    "research/observations/CONTEXT_REPORT_RU.md": "3d35f32af3579c1be649ec3c63a14c0e03ae2f2292ea692afed0fefc5fcfa3d2",
+    "research/observations/context_model.py": "87c057540f16628285a1b860128aa9f705f188bc1627031b19a7594f935e8077",
+    "research/observations/context_producer.py": "72a68f3c0f14d7a31e4fb933aaa988786aa5bea68d04889367480f0f5d759a61",
+    "research/observations/context_checker.py": "90b57e6b6a10df40111b85c4b08e5cf3a2256b6e8a152f3a7bfdf7f551b68023",
+    "research/observations/context_cli.py": "945432e9cd70c3d5beeb913572d92cd8eb6431b28e0e17f6430af4ec560d40a6",
+    "research/observations/descending_adapter.py": "c662b9b2a63f51b6e0d74ebc98488e6cc1082598d1c1e44e27fb0a7c2a34525d",
+    "research/observations/run_context_experiment.py": "45790183814faeb40126d0320039ca71311a47208b8993ed1db8010ef7147372",
+    "research/observations/tests/test_context.py": "e02fabd6f2f21974bdb537e4987cfc376f0bd29c3a0b7fc746aba2462e248bed",
+    "research/observations/evidence/context/RESULTS.json": "b2df2aa8013e19c8e4f5a0a9d2b39589849526a19b73e184d25ffa355dc88f12",
+    "research/observations/evidence/context/VALIDATION.json": "76072370211725ebb603a93c156f5f53953929e6da258282e1808a0e8b8d0498",
+    "research/observations/evidence/context/descending.certificate.json": "8a2372474683e043d844c2dabaaa38baa7035197621e5d2bce67b766d25fc12b",
+    "research/observations/evidence/context/descending.model.json": "265a1984e57665960ed5072ce469b89335164b3e0fb54f789fd5172fb26eb355",
+    "research/observations/evidence/context/source_replay.log": "a470b076be8988ac9508085a4f130dd53ea07598e46f2add2c611581b3d9ffdf",
+    "research/observations/evidence/context/strict_guard.certificate.json": "7e2d3c18d0a6d8a98e4bc243d53a2ffe6c9606a0b0b6f8a058e30ac6afaaba41",
+    "research/observations/evidence/context/strict_guard.model.json": "eb875af1d219766014231fb4187363f76186de9dbc8d7ce3f6aa80a88d05a939",
+    "research/observations/evidence/context/tests.log": "9f86ab05e5ca022267e49b3bf0cf02a811ca56ded257cadf583e872176e98d93"
+  },
+  "shared_dependencies": {
+    "research/observations/model.py": "2cb6b1dc4e23f052df46bf4e75d4022d2561bb7d028bd118e67a0e1a92c10e6f",
+    "research/observations/producer.py": "7ac0ebdb570a355d052f33e217f25f3810f70850cef4c77952250c0df7a85f0b",
+    "research/graal/previous/row_kernel.py": "11a4c2f4ced09fbeadf698e79d4347989f258bbf5f54a2cfb13a6f3906eb5460"
+  }
+}

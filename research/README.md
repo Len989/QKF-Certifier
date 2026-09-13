@@ -46,6 +46,10 @@ hand-written phase quotient. It emits replayable observation and forced-row
 certificates, including separating contexts. This is new research after 0.2.0a1;
 it does not extend the installed CLI scope or the signed-word theorem.
 
+The same profile now also derives the residual shared-context observation for
+the descending comparison model and finds a two-bit counterexample to forgetting
+its cut constraints. See the [shared-context report](observations/CONTEXT_REPORT_RU.md).
+
 ```sh
 python -m research.observations carry reproduction/observations_carry
 python -m research.observations check-carry reproduction/observations_carry/certificate.json
