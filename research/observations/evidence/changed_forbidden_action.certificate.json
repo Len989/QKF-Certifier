@@ -1,0 +1,783 @@
+{
+  "schema": "qkf-derived-observation-v1",
+  "model_sha256": "675d26c0c27f7d8d89af1601731d3f5fe86d6b06ebac00f3739327a66620ee14",
+  "predicates": [
+    {
+      "kind": "output",
+      "symbol": "010",
+      "label": "0",
+      "mask": 2
+    },
+    {
+      "kind": "pullback",
+      "symbol": "000",
+      "parent": 0,
+      "mask": 6
+    }
+  ],
+  "blocks": [
+    [
+      "incremented=0,carry=0"
+    ],
+    [
+      "incremented=1,carry=0"
+    ],
+    [
+      "incremented=1,carry=1"
+    ]
+  ],
+  "initial": 0,
+  "rows": [
+    {
+      "symbol": "000",
+      "output": "0",
+      "supplied": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "steps": [
+        {
+          "op": "intersection",
+          "left": 1,
+          "right": 2,
+          "input": 0,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 2,
+          "input": 3,
+          "image": 7
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 4,
+          "input": 5,
+          "image": 1
+        },
+        {
+          "op": "union",
+          "left": 2,
+          "right": 4,
+          "input": 6,
+          "image": 6
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 6,
+          "input": 7,
+          "image": 7
+        }
+      ],
+      "table": [
+        0,
+        1,
+        6,
+        7,
+        0,
+        1,
+        6,
+        7
+      ],
+      "kernel": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ]
+      ]
+    },
+    {
+      "symbol": "000",
+      "output": "1",
+      "supplied": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "steps": [
+        {
+          "op": "intersection",
+          "left": 1,
+          "right": 2,
+          "input": 0,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 2,
+          "input": 3,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 4,
+          "input": 5,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 2,
+          "right": 4,
+          "input": 6,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 6,
+          "input": 7,
+          "image": 0
+        }
+      ],
+      "table": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "kernel": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      ]
+    },
+    {
+      "symbol": "010",
+      "output": "0",
+      "supplied": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "steps": [
+        {
+          "op": "intersection",
+          "left": 1,
+          "right": 2,
+          "input": 0,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 2,
+          "input": 3,
+          "image": 2
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 4,
+          "input": 5,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 2,
+          "right": 4,
+          "input": 6,
+          "image": 2
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 6,
+          "input": 7,
+          "image": 2
+        }
+      ],
+      "table": [
+        0,
+        0,
+        2,
+        2,
+        0,
+        0,
+        2,
+        2
+      ],
+      "kernel": [
+        [
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          6,
+          7
+        ]
+      ]
+    },
+    {
+      "symbol": "010",
+      "output": "1",
+      "supplied": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "steps": [
+        {
+          "op": "intersection",
+          "left": 1,
+          "right": 2,
+          "input": 0,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 2,
+          "input": 3,
+          "image": 5
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 4,
+          "input": 5,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 2,
+          "right": 4,
+          "input": 6,
+          "image": 5
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 6,
+          "input": 7,
+          "image": 5
+        }
+      ],
+      "table": [
+        0,
+        0,
+        5,
+        5,
+        0,
+        0,
+        5,
+        5
+      ],
+      "kernel": [
+        [
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          6,
+          7
+        ]
+      ]
+    },
+    {
+      "symbol": "011",
+      "output": "0",
+      "supplied": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "steps": [
+        {
+          "op": "intersection",
+          "left": 1,
+          "right": 2,
+          "input": 0,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 2,
+          "input": 3,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 4,
+          "input": 5,
+          "image": 5
+        },
+        {
+          "op": "union",
+          "left": 2,
+          "right": 4,
+          "input": 6,
+          "image": 5
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 6,
+          "input": 7,
+          "image": 5
+        }
+      ],
+      "table": [
+        0,
+        0,
+        0,
+        0,
+        5,
+        5,
+        5,
+        5
+      ],
+      "kernel": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ]
+    },
+    {
+      "symbol": "011",
+      "output": "1",
+      "supplied": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "steps": [
+        {
+          "op": "intersection",
+          "left": 1,
+          "right": 2,
+          "input": 0,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 2,
+          "input": 3,
+          "image": 2
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 4,
+          "input": 5,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 2,
+          "right": 4,
+          "input": 6,
+          "image": 2
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 6,
+          "input": 7,
+          "image": 2
+        }
+      ],
+      "table": [
+        0,
+        0,
+        2,
+        2,
+        0,
+        0,
+        2,
+        2
+      ],
+      "kernel": [
+        [
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          6,
+          7
+        ]
+      ]
+    },
+    {
+      "symbol": "111",
+      "output": "0",
+      "supplied": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "steps": [
+        {
+          "op": "intersection",
+          "left": 1,
+          "right": 2,
+          "input": 0,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 2,
+          "input": 3,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 4,
+          "input": 5,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 2,
+          "right": 4,
+          "input": 6,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 6,
+          "input": 7,
+          "image": 0
+        }
+      ],
+      "table": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "kernel": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      ]
+    },
+    {
+      "symbol": "111",
+      "output": "1",
+      "supplied": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "steps": [
+        {
+          "op": "intersection",
+          "left": 1,
+          "right": 2,
+          "input": 0,
+          "image": 0
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 2,
+          "input": 3,
+          "image": 3
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 4,
+          "input": 5,
+          "image": 5
+        },
+        {
+          "op": "union",
+          "left": 2,
+          "right": 4,
+          "input": 6,
+          "image": 6
+        },
+        {
+          "op": "union",
+          "left": 1,
+          "right": 6,
+          "input": 7,
+          "image": 7
+        }
+      ],
+      "table": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "kernel": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ]
+    }
+  ],
+  "cells": [
+    {
+      "symbol": "000",
+      "state": 0,
+      "output": "0",
+      "next": 0
+    },
+    {
+      "symbol": "000",
+      "state": 1,
+      "output": "0",
+      "next": 1
+    },
+    {
+      "symbol": "000",
+      "state": 2,
+      "output": "0",
+      "next": 1
+    },
+    {
+      "symbol": "010",
+      "state": 0,
+      "output": "1",
+      "next": 1
+    },
+    {
+      "symbol": "010",
+      "state": 1,
+      "output": "0",
+      "next": 1
+    },
+    {
+      "symbol": "010",
+      "state": 2,
+      "output": "1",
+      "next": 1
+    },
+    {
+      "symbol": "011",
+      "state": 0,
+      "output": "0",
+      "next": 2
+    },
+    {
+      "symbol": "011",
+      "state": 1,
+      "output": "1",
+      "next": 1
+    },
+    {
+      "symbol": "011",
+      "state": 2,
+      "output": "0",
+      "next": 2
+    },
+    {
+      "symbol": "111",
+      "state": 0,
+      "output": "1",
+      "next": 0
+    },
+    {
+      "symbol": "111",
+      "state": 1,
+      "output": "1",
+      "next": 1
+    },
+    {
+      "symbol": "111",
+      "state": 2,
+      "output": "1",
+      "next": 2
+    }
+  ],
+  "separators": [
+    {
+      "left": 0,
+      "right": 1,
+      "word": [
+        "010"
+      ],
+      "terminal": false,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 0,
+      "right": 2,
+      "word": [
+        "000",
+        "010"
+      ],
+      "terminal": false,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 1,
+      "right": 2,
+      "word": [
+        "010"
+      ],
+      "terminal": false,
+      "left_value": "0",
+      "right_value": "1"
+    }
+  ]
+}

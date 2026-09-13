@@ -37,3 +37,16 @@ Lean selects version 4.33.0 from lean-toolchain. Python, Mathlib, SMT and Java a
 The Lean proof covers the explicit ascending mathematical model and modeled nonsign source cells. Complete Java helpers, full Graal create and Python certifiers are outside that formalization. The lower source contract requires lower <= 0 or a forbidden negative sign; it preserves the joint carrier and need not return its exact minimum.
 
 CAPSULE_ORIGIN.json records unchanged files in each Python profile. QKF research code is covered by the project MIT code license. Upstream sources and examples retain their own notices and licenses.
+
+## Automatic observation inference (post-release research)
+
+The [observation inference prototype](observations/README.md) derives a finite
+consumer interface directly from the existing native carry cell, without its
+hand-written phase quotient. It emits replayable observation and forced-row
+certificates, including separating contexts. This is new research after 0.2.0a1;
+it does not extend the installed CLI scope or the signed-word theorem.
+
+```sh
+python -m research.observations carry reproduction/observations_carry
+python -m research.observations check-carry reproduction/observations_carry/certificate.json
+```

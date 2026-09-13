@@ -1,0 +1,135 @@
+{
+  "schema": "qkf-derived-observation-v1",
+  "model_sha256": "e3dc3221c9739beffa9c181781b1d80e433c52fd19c8307dd8a8579eca2fe3d7",
+  "predicates": [],
+  "blocks": [
+    [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
+  ],
+  "initial": 0,
+  "rows": [
+    {
+      "symbol": "advance",
+      "output": "0",
+      "supplied": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "steps": [],
+      "table": [
+        0,
+        1
+      ],
+      "kernel": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "symbol": "advance",
+      "output": "1",
+      "supplied": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "steps": [],
+      "table": [
+        0,
+        0
+      ],
+      "kernel": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "symbol": "probe",
+      "output": "0",
+      "supplied": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "steps": [],
+      "table": [
+        0,
+        1
+      ],
+      "kernel": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "symbol": "probe",
+      "output": "1",
+      "supplied": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "steps": [],
+      "table": [
+        0,
+        0
+      ],
+      "kernel": [
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "cells": [
+    {
+      "symbol": "advance",
+      "state": 0,
+      "output": "0",
+      "next": 0
+    },
+    {
+      "symbol": "probe",
+      "state": 0,
+      "output": "0",
+      "next": 0
+    }
+  ],
+  "separators": []
+}

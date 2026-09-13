@@ -6,6 +6,25 @@ on:
 permissions:
   contents: read
 jobs:
+  observation-inference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test automatic observation inference and certificate rejection
+        run: python -m unittest discover -s research/observations/tests -v
+      - name: Derive observation certificates from native cells
+        run: python -m research.observations.run_experiment reproduction/observations
+      - name: Replay source-bound carry certificate under Python -O
+        run: python -O -m research.observations check-carry reproduction/observations/carry.certificate.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: observation-inference
+          path: reproduction/observations/
   research-replay:
     runs-on: ubuntu-latest
     timeout-minutes: 15

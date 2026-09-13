@@ -1,0 +1,12 @@
+{
+  "status": "certified",
+  "native_states": 3,
+  "classes": 2,
+  "derived_observations": 1,
+  "row_templates": 8,
+  "supplied_cells": 16,
+  "forced_cells": 16,
+  "max_witness_length": 1,
+  "minimality": "coarsest output/terminal-preserving stable partition of this finite model",
+  "scope": "all finite symbol traces of the supplied native model; no Java or signed-word theorem"
+}
