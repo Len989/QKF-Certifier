@@ -1,0 +1,51 @@
+{
+  "spec": {
+    "width": 64,
+    "must": 0,
+    "may": 4611686018427387905,
+    "lower": 2,
+    "upper": 9223372036854775807,
+    "can_zero": true
+  },
+  "record": {
+    "status": "proved_lower_refinement",
+    "spec": {
+      "width": 64,
+      "must": 0,
+      "may": 4611686018427387905,
+      "lower": 2,
+      "upper": 9223372036854775807,
+      "can_zero": true
+    },
+    "binding": "a5c918ca3c847f00e43f4c65e087e6fe214c281f6cd76e11b5ff89a995679b6b",
+    "universal_certificate_sha256": "8ac9ed836f1ad357f6653e2570ca22c966ca1e33873e5919b0415e9cc44eefed",
+    "upper_dependency_sha256": "f4c3e7cdbc624f8c5b3a6c3bb340bb945ce9d1f771af05ac61756d2995fe962b",
+    "answer": {
+      "source_long_result": 4611686018427387904,
+      "source_path": [
+        "minimum",
+        "greedy",
+        "successor"
+      ]
+    },
+    "joint_empty": false,
+    "precision": "exact_minimum",
+    "minimum": 4611686018427387904,
+    "refined_spec": {
+      "width": 64,
+      "must": 0,
+      "may": 4611686018427387905,
+      "lower": 4611686018427387904,
+      "upper": 9223372036854775807,
+      "can_zero": true
+    },
+    "guarantee": "same complete joint mask/range/nonzero carrier; emptiness uses the preceding upper theorem, not the numeric MAX sentinel"
+  },
+  "oracle_words": [
+    0,
+    1,
+    4611686018427387904,
+    4611686018427387905
+  ],
+  "native": 4611686018427387904
+}

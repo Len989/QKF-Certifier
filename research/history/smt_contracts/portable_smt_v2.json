@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "changed_queries": 36,
+  "all_queries": 234,
+  "parsed_formula_equality_after_simplification": true,
+  "cross_parser_probes": [
+    {
+      "solver": "z3",
+      "status": "unknown",
+      "version": "5.1.0.0"
+    },
+    {
+      "solver": "bitwuzla",
+      "status": "unknown",
+      "version": "0.9.1"
+    },
+    {
+      "solver": "cvc5",
+      "status": "unknown (timeout)",
+      "version": "1.3.4-modified"
+    }
+  ],
+  "changed_ids": [
+    "KnownBits_Abds__llvm__prefix",
+    "KnownBits_Abds__llvm__balanced",
+    "KnownBits_Abdu__llvm__prefix",
+    "KnownBits_Abdu__llvm__balanced",
+    "KnownBits_Add__llvm__prefix",
+    "KnownBits_Add__llvm__balanced",
+    "KnownBits_And__llvm__prefix",
+    "KnownBits_And__llvm__balanced",
+    "KnownBits_AvgCeilS__llvm__prefix",
+    "KnownBits_AvgCeilS__llvm__balanced",
+    "KnownBits_AvgCeilU__llvm__prefix",
+    "KnownBits_AvgCeilU__llvm__balanced",
+    "KnownBits_AvgFloorS__llvm__prefix",
+    "KnownBits_AvgFloorS__llvm__balanced",
+    "KnownBits_AvgFloorU__llvm__prefix",
+    "KnownBits_AvgFloorU__llvm__balanced",
+    "KnownBits_Mul__llvm__prefix",
+    "KnownBits_Mul__llvm__balanced",
+    "KnownBits_Or__llvm__prefix",
+    "KnownBits_Or__llvm__balanced",
+    "KnownBits_Smax__llvm__prefix",
+    "KnownBits_Smax__llvm__balanced",
+    "KnownBits_Smin__llvm__prefix",
+    "KnownBits_Smin__llvm__balanced",
+    "KnownBits_Sub__llvm__prefix",
+    "KnownBits_Sub__llvm__balanced",
+    "KnownBits_UaddSat__llvm__prefix",
+    "KnownBits_UaddSat__llvm__balanced",
+    "KnownBits_Umax__llvm__prefix",
+    "KnownBits_Umax__llvm__balanced",
+    "KnownBits_Umin__llvm__prefix",
+    "KnownBits_Umin__llvm__balanced",
+    "KnownBits_UsubSat__llvm__prefix",
+    "KnownBits_UsubSat__llvm__balanced",
+    "KnownBits_Xor__llvm__prefix",
+    "KnownBits_Xor__llvm__balanced"
+  ]
+}

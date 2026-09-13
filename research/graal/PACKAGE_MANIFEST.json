@@ -1,0 +1,137 @@
+{
+  "schema": "qkf-universal-lower-complete-package-v1",
+  "files": {
+    "00_START_HERE_RU.md": {
+      "bytes": 3249,
+      "sha256": "e891d8dfe3f19fa8e11a55cb618e28e8c9e4493b25faa397e053b0f4de8bdbd9"
+    },
+    "05_NEXT_STEPS_RU.md": {
+      "bytes": 3983,
+      "sha256": "5656eb166256ae1528228da7411844971fd001751fdfdc66cb90c6ebb4791dc0"
+    },
+    "DATA_MANIFEST.json": {
+      "bytes": 120313,
+      "sha256": "08313d38c0bacc065fe45cb1a9dad2f0fd080fe0efb2d0314886e46c20d76cdc"
+    },
+    "FREEZE.json": {
+      "bytes": 75184,
+      "sha256": "48c5ea89858369d4a3092d13f82069d14024b5b3fded333599a05ba4c33135bb"
+    },
+    "IMPLEMENTATION_LOG_RU.md": {
+      "bytes": 3131,
+      "sha256": "1e8ba998001eb0fc17419720fbc8933abd6ebdf9aad57ddcee2ea14c53c7b75f"
+    },
+    "INHERITED_FILES.json": {
+      "bytes": 112366,
+      "sha256": "702b04b9fbbce9fd3d63da84bfc40f2947d52bb2ea1e3d4b8c1a9794e23a6f0a"
+    },
+    "LOWER_SHAPE.java": {
+      "bytes": 3181,
+      "sha256": "06ee5ad4cc134abea13a43f69c1dbc47f71a23e3ba466a5830c44b6bc7b942a0"
+    },
+    "PAPERS_INHERITANCE.json": {
+      "bytes": 25138,
+      "sha256": "94fcb373329839028bfe27a2001461416ff27519f81a575a56c4d43437a5190e"
+    },
+    "PROJECT_PRINCIPLES_RU.md": {
+      "bytes": 4618,
+      "sha256": "572439cab38a914cb5a271675b7b310361578ba7ecf8380a4230004217a46cc3"
+    },
+    "REPORT_RU.md": {
+      "bytes": 12380,
+      "sha256": "342804e6796489e553a3c947a2410f8226d4409c91215f44dea7865338fcddb7"
+    },
+    "REPRODUCE_RU.md": {
+      "bytes": 3278,
+      "sha256": "4c22bf3914eef6d35f91bb6bd0b71a3d70e81f2fab3944127a9b9fd42390f966"
+    },
+    "RESTORE_CHECK.json": {
+      "bytes": 2679,
+      "sha256": "27db5783c24ac374fb45162d5f3f7ad25a8f47cfd183e1cdae667a8faafc8526"
+    },
+    "THEORY_RU.md": {
+      "bytes": 15016,
+      "sha256": "ab1ab912e69ed70e93f85892db029167c1cc874ad13a1653887f0fedd3d5169c"
+    },
+    "audit_step.py": {
+      "bytes": 3174,
+      "sha256": "f932a1be932200316f35a6dc53357d01a60d45df2da513a19f1d2588be1f2425"
+    },
+    "build_package.py": {
+      "bytes": 4578,
+      "sha256": "6fb497075011840fc6222f4f175856d33c45a3bdab296561a6a21bfbb8df5fec"
+    },
+    "carry_kernel.py": {
+      "bytes": 7811,
+      "sha256": "ff94f5f1c54f7801c6f26ef412611a0c05b00d78ca48086f0f0b6796bd17f2cf"
+    },
+    "carry_producer.py": {
+      "bytes": 1517,
+      "sha256": "1204cd3022a7de1eddeb156998abe85019ef2777b93777e5e6c921dbea02a04a"
+    },
+    "freeze_step.py": {
+      "bytes": 1933,
+      "sha256": "29bc3f5b8605d200cf2eda69a4db77fe47a1ea73517f4192464fc309c7f2d2b8"
+    },
+    "lower_api.py": {
+      "bytes": 4805,
+      "sha256": "0cea58132e4d2a2883b494c5ac40ad70f767418091d8d7cdd5c994d6ee3f45f2"
+    },
+    "lower_kernel.py": {
+      "bytes": 2280,
+      "sha256": "9004648b8ce62d4943c0964d2268796ca445e91bf06bb39471c7880a9c2db2fe"
+    },
+    "lower_order.py": {
+      "bytes": 4590,
+      "sha256": "fc3ff9e74e79a6c62b27e8675898c132a608736bc0ef072e7db49de10b3a3294"
+    },
+    "lower_producer.py": {
+      "bytes": 1040,
+      "sha256": "8a21a25d06e0270170a3f5a8b6cba4266749128c09899c2aa33eae27c0d67d01"
+    },
+    "lower_source.py": {
+      "bytes": 6455,
+      "sha256": "7b7e0edb7456f0fab83cd840a2f0dfe2823059d3bf15eaca7fe6f30905180bb4"
+    },
+    "native_lower.py": {
+      "bytes": 3169,
+      "sha256": "5f77c15ae3190c8fde4212bc3b29e3826c96173645df3e787eb7046eda01a5b1"
+    },
+    "probe_contract.py": {
+      "bytes": 2306,
+      "sha256": "d574d06e609383a342656a4c3b7b188ee7e6ff5cbadaa80b2672f8905f80f596"
+    },
+    "replay_saved.py": {
+      "bytes": 1637,
+      "sha256": "8ce0d1ecb5c19b0891b99af44347a0b5572640bba5783898fbd935375bdcb53d"
+    },
+    "restore_project.py": {
+      "bytes": 4112,
+      "sha256": "26675050c8b38a1821295a20ba86d17e54fa721bb9b14642651ffaeabb5a35ee"
+    },
+    "run_step.py": {
+      "bytes": 1820,
+      "sha256": "ec0f7ad79ee8cafaca51d574ac10eae0594a90cfe42fcfc26d5474b856fee5d3"
+    },
+    "validate_lower.py": {
+      "bytes": 5592,
+      "sha256": "0765928d96f7af39158b9d9fe97e88357f452d279e4b1155cc4fad7ff60a5ee9"
+    },
+    "validate_proofs.py": {
+      "bytes": 9631,
+      "sha256": "04d8a05f9e304c07c0fc153b1669a0f78d40c6bca6e8648343c22279a7e978a5"
+    },
+    "EXPERIMENT_DATA.tar.xz": {
+      "bytes": 507504,
+      "sha256": "cc04192a7d195e5a51e34081546fef2f511df602cbf0147121ed1be9961baf93"
+    },
+    "prior_stage/QKF_UNIVERSAL_UPPER_2026-09-13.zip": {
+      "bytes": 51387615,
+      "sha256": "8dab8d38e8d1fc7a6b7715c258cd45dfbb281331d041afb977195c9c8835c592"
+    }
+  },
+  "packed_files": 701,
+  "inherited_paper_files": 93,
+  "history": "Exact complete previous archive plus its complete earlier archives; papers recovered through the fully verified nested archive chain",
+  "optional_dependencies": "Pinned JVM/ECJ metadata retained; installed binaries and a new solver are not required for proof replay"
+}

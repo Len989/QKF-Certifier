@@ -1,0 +1,129 @@
+\section{Signed words and joint mask--interval carriers}\label{sec:wordbounds}
+
+\subsection{The carrier that must be preserved}
+For width $w\ge1$, let $m$ and $a$ be compatible must/may masks, $m\subseteq a$, and let $\operatorname{sgn}_w$ interpret a raw word as a signed integer. Define
+\[
+ \mathcal M(m,a)=\{\operatorname{sgn}_w(x):x\mathbin{\&}m=m,\ x\mathbin{\&}\neg a=0\}.
+\]
+The joint carrier also has signed bounds and a zero flag:
+\begin{equation}\label{eq:jointcarrier}
+ J(m,a,L,U,Z)=\{x\in\mathcal M(m,a):L\le x\le U,\ Z\lor x\ne0\}.
+\end{equation}
+An interval between mask extrema generally contains words outside the mask. Preserving those extrema alone does not establish preservation of~\eqref{eq:jointcarrier}. The Graal study keeps mask membership and order facts as distinct proof information.
+
+The source is \texttt{IntegerStamp.java}~\cite{GraalIntegerStamp}, revision
+\begin{center}\small\ttfamily
+3f5efeb49d934f8a0bcb3c115a6a28caa5622975.
+\end{center}
+The restricted source bridge checks actual helper bodies, loop directions, branches, guards, and returns. Supporting mask extrema and Java operations have declared native semantics and finite differential checks. This bridge has not been verified as a general Java compiler.
+
+\subsection{Descending repair needs a common higher context}
+Within one permitted sign half, let $b$ be the minimum masked word. The descending pass visits optional nonsign positions from high to low and sets a position precisely when the trial word is at most $U$. At position $i$ that word is
+\[
+ y_{>i}\;1\;b_{<i}.
+\]
+The higher prefix is shared by every decision. Permitting a separate higher-prefix witness at each position admits combinations that no execution can produce.
+
+The observation retains $P\subseteq R$, where $R=\{-1,0,1\}$ describes possible relations of the common higher prefix to the higher prefix of $U$. Write $p\triangleright q=p$ when $p\ne0$, and $q$ otherwise. For a cell, with lower comparison $r=\operatorname{cmp}(b_{<i},U_{<i})$, put
+\[
+ \phi(h)=h\triangleright\operatorname{cmp}(y_i,U_i),\qquad
+ t(h)=h\triangleright\operatorname{cmp}(1,U_i)\triangleright r.
+\]
+The source predicate gives the guard $G$ of higher relations selecting the proposed output bit. Updating $P$ is exactly~\eqref{eq:restrictedpreimage}. The certificate assembles constraints upward while retaining unresolved higher context, describing the decisions of the downward execution.
+
+The carrier $\mathcal P(R)$ has eight elements. Three supplied atoms force the other five cells of each of 24 row templates. The row kernels have two, four, or eight classes. The full observation is
+\[
+ \bigl(P,\operatorname{cmp}(b,U),\operatorname{cmp}(x,U),
+          \operatorname{cmp}(y,U),\operatorname{cmp}(x,y)\bigr),
+\]
+where comparisons refer to processed lower parts. Of at most $8\cdot3^4$ observations, the certificate supplies 49 states, 588 transitions over 12 legal column types, and 196 sign completions.
+
+\begin{proposition}[Descending masked maximum]\label{prop:descending}
+In the selected sign half, if a masked word $x\le U$ exists, the descending pass returns a masked $y$ with $y\le U$ and $x\le y$ for every such $x$.
+\end{proposition}
+\begin{proof}
+The initial word is the minimum of the sign half. Before each choice its unvisited optional bits are zero. Setting the current bit is feasible exactly when the trial word, the minimum completion of that proposed prefix, is at most $U$. If feasible, setting it maximizes the prefix; otherwise no admissible word with that prefix can set it. Induction over descending positions proves the result. The observation certificate records those same decisions through the shared $P$, and its complete transition and signed-end checks lift by Theorem~\ref{thm:gluing}.
+\end{proof}
+
+Forgetting $P$ is insufficient already at width two: the weakened interface permits output $1$ for mask carrier $\{0,1\}$ and $U=0$. This separates that weakened interface from the required one; it does not establish minimality of all 49 states.
+
+\subsection{The complete upper helper}
+Put $C=\{x\in\mathcal M(m,a):x\le U,\ Z\lor x\ne0\}$.
+
+\begin{theorem}[Upper contract, K8]\label{thm:upper}
+Under compatible masks, a typed signed upper bound, and the declared native source bridge, the modeled \texttt{computeUpperBound} returns $\max C$ when $C$ is nonempty. Its empty branch is reached exactly when $C$ is empty. Replacing $U$ by the actual returned upper value preserves~\eqref{eq:jointcarrier} for every additional lower bound $L$.
+\end{theorem}
+\begin{proof}
+Proposition~\ref{prop:descending} handles each invoked pass. The outer control selects sign halves and handles forbidden zero. Its comparisons involve seven named values: zero, relevant mask extrema, $U$, a pass result, and an arbitrary witness $x$. Every execution maps to their full weak order. All 47,293 ordered partitions of seven names are enumerated; the source IR is checked on the 744 cases consistent with necessary mask and pass facts. Membership is tracked by the provenance of returned values, in addition to their order.
+
+In every admitted case a value return belongs to $C$, and any $x\in C$ forces that branch with $x\le\mathrm{result}$. These assertions establish maximality and characterize the empty branch. A nonempty maximum removes no word from an additional lower-bounded intersection. In the empty case the minimum-word return is at most the original typed $U$, so the tightened intersection stays empty.
+\end{proof}
+
+The numerical minimum word can also be a genuine maximum. The extra empty-case observation distinguishes these situations; numerical equality to a sentinel is insufficient.
+
+\subsection{Ascending repair and the carry quotient}
+The lower helper first uses a descending pass. If its result $g$ is below $L$, an ascending repair seeks the next masked word. Before a nonsign cell there are three reachable physical phases:
+\begin{center}\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Phase & Increment started & Physical carry & Observed carry $q$\\
+\midrule
+$A$ & no & 0 & 1\\
+$B$ & yes & 0 & 0\\
+$C$ & yes & 1 & 1\\
+\bottomrule
+\end{tabular}
+\end{center}
+Before incrementing, $q=1$ means a pending successor request; afterwards it means an unconsumed carry. Source-cell evaluation shows that $A$ and $C$ have identical output bits and next observation classes on every legal cell. Phase $B$ is separated by an optional zero input.
+
+A fixed bit remains fixed and passes $q$ through. For an optional bit the source-derived action is
+\[
+ (g_i,q)\longmapsto (g_i\mathbin{\mathrm{XOR}}q,\ g_i\mathbin{\&}q).
+\]
+For each cell label and proposed output $y$, the backward row is
+\[
+ h_y(P)=\{q:\operatorname{out}(q)=y,\ \operatorname{next}(q)\in P\}.
+\]
+Eight such rows act on $\mathcal P(\{0,1\})$. Their two supplied atomic values force the complete four-cell tables, from which the transition reconstructs its output and next carry.
+
+The observation records $q$, comparisons $g/x,t/x,g/t$, two extremal-mask flags, and whether an optional bit occurred. Its closed carrier has eight states, 48 transitions over the six legal columns $(m_i,a_i,g_i,x_i)$, and 32 permitted sign completions.
+
+\begin{samepage}
+\begin{theorem}[Masked successor]\label{thm:successor}
+For any positive width, if an admissible masked word $x>g$ exists, the mathematical successor construction returns a masked word $t$ satisfying
+\[
+ g<t\le x.
+\]
+No positive-to-negative overflow occurs in that situation.
+\end{theorem}
+\end{samepage}
+\begin{proof}
+The source-cell factor supplies the local action, and the forced rows recover it. The certificate contains the empty-suffix observation and is closed under every legal nonsign column. Its sign checks establish the comparison and mask obligations. Comparison of lower parts is updated by letting a newly added higher bit take priority; the final signed bit reverses the order of its two values. These numerical relations and Theorem~\ref{thm:gluing} prove the result for every list length, including an empty nonsign list.
+\end{proof}
+
+Without nonsign optional bits, the virtual successor observation is still defined. The actual helper has a separate branch returning an intermediate zero. Relating the executed ascending loop to the sign carry uses the presence of an optional bit; the virtual convention is not substituted for that outer branch.
+
+\subsection{The lower helper has a conditional preservation contract}
+\begin{theorem}[Lower contract, K9]\label{thm:lower}
+Assume compatible masks and typed signed $L$, and additionally
+\begin{equation}\label{eq:lowercondition}
+ L\le0\quad\text{or}\quad a_{w-1}=0.
+\end{equation}
+Under the declared source bridge, the lower-helper result $R$ satisfies $R\ge L$ and
+\[
+ x\in\mathcal M(m,a),\quad x\ge L,\quad (Z\lor x\ne0)
+ \quad\Longrightarrow\quad R\le x.
+\]
+Thus replacing $L$ by $R$ preserves~\eqref{eq:jointcarrier} for any $U$.
+\end{theorem}
+\begin{proof}
+Fix such a witness $x$. If the minimum masked word already suffices, the corresponding source branch is safe. Otherwise the first pass gives the largest $g\le L$ in its sign half. When $g<L$ and nonsign optional bits exist, Theorem~\ref{thm:successor} gives $g<t\le x$. A successor in the same sign half cannot satisfy $t\le L$, since that contradicts maximality of $g$. A change to the nonnegative half gives $t\ge0\ge L$ by~\eqref{eq:lowercondition}.
+
+Without nonsign optional bits, each permitted sign half is a singleton. A witness larger than the initial negative singleton forces a nonnegative half and makes the intermediate zero safe under~\eqref{eq:lowercondition}. If zero is forbidden, a positive witness permits the source's least-positive masked correction: either the nonzero must mask or the least permitted power of two, no larger than $x$. The final guard ensures $R\ge L$, including cases without a witness.
+
+The checker verifies the complete source control IR over seven named values. Their 47,293 weak orders and two Boolean flags give 189,172 combinations; 25,737 satisfy the necessary facts. Unused intermediate values stay unconstrained. Every real execution with a witness is therefore represented, and all admitted executions satisfy $L\le R\le x$. These inequalities give joint-carrier preservation.
+\end{proof}
+
+The result need not be an exact minimum. At width eight, $m=1$, $a=129$, $L=-1$, and permitted zero, the helper returns $0$, while the least feasible masked word is $1$. Conversely, with $m=0$, $a=192$, and $L=1$, it returns $127$ although $64$ is feasible. This second input violates~\eqref{eq:lowercondition}; it explains why that condition cannot be dropped from the current contract. Neither helper example is a counterexample to the complete Graal constructor.
+
+For an empty carrier, the contract imposes neither mask membership nor $w$-bit representability on the returned lower value. Consumers must process the empty outcome before reusing such a value as a typed bound. Full \texttt{create} also updates temporary masks, passes through potentially incompatible states, and limits stabilization to three iterations. Its complete preservation and termination argument is the next composition task.

@@ -1,0 +1,62 @@
+\section{Evidence, counterexamples, and remaining coverage}\label{sec:experiments}
+
+\subsection{Retained baseline evidence}
+Manuscript v1.0 audited the public \texttt{0.1.0a1} commit on Python 3.12.14 and x86-64 Linux. Its retained evidence includes 67 passing tests, 22,140 concrete comparisons of the original AND/OR/XOR programs at widths one through four, and an independent matrix-versus-ground comparison on 804 instances and 35,856 interface pairs. All 29 rewrite identifiers had witnesses, with 23,751 finite before/after comparisons and checks of the decreasing measure.
+
+The finite classification checked all 512 Boolean row functions and all $3^9$ valid output tables per target, confirming sound-class counts $64,64,16$ and monotone counts $26,26,16$. Of 680 source mutations, 270 were certified, 180 refuted at width one, and 230 required fallback. These remain evidence about the pinned coordinatewise profile. Versioned logs retain the original timings; this revision does not treat them as new performance measurements.
+
+\subsection{Broader research has several denominators}
+\begin{table}[htbp]\small
+\begin{tabularx}{\textwidth}{@{}l l X@{}}
+\toprule
+Dataset or profile & Result & Interpretation\\
+\midrule
+Known LLVM transcriptions & $11/11$ & A development/regression set, distinct from the original 39-program corpus.\\
+GCC 15.2 specializations & $9/9$ & Frozen external transfer study over the selected nine dispatcher specializations.\\
+Original Nice to Meet You solutions & $11/39$ & Complete source-bound proofs in the declared research contract.\\
+Their individual components & $104/411$ & Component proofs; not additional complete programs.\\
+Five Graal procedures, control & $1/5$ & Complete mask result for OR.\\
+Five Graal procedures, joint & $2/5$ & Complete mask results for AND and OR.\\
+\bottomrule
+\end{tabularx}
+\caption{These populations and proof obligations are not interchangeable.}\label{tab:coverage}
+\end{table}
+
+On the original 39 solutions, the result-observation stage increased the preceding control from $9/39$ complete programs and $87/411$ components to $11/39$ and $104/411$. Add reached $13/13$ components and UsubSat $16/16$. All 411 source components were prepared; source-to-expression preparation alone is not target verification. The other 28 programs include 23 targets without the required research target adapter and five flag-related strengthened obligations. Refutations of those unconditional strengthened obligations do not establish errors in the upstream guarded contracts.
+
+The historical GCC study froze its backend and selection before outcomes. It certified nine SSA specializations from GCC 15.2 and replayed them in separate processes. Composition reduced final certificate states from 2344 to 1070 at unchanged coverage. Accounting for all search attempts gives 2344 versus 1474 states; the smaller certificate count is not the full search cost. Z3 also solved all 72 selected finite-width obligations. These are transfer and structural results on that selected corpus.
+
+\subsection{Context and reconstruction evidence}
+The whole-word reconstruction study retained all claims of a normalization query while replacing a 4401-node subproof by 26 recorded steps, including the universal projection lemma, applicability conditions, ground steps, and substitution. The complete proof decreased from 4905 to 530 steps. On its 18 constructed evaluation sources, the new mechanism proved 11 intended positive cases, left two positive cases unsupported, and returned unresolved on five faulty cases for which separate finite counterexamples were retained. It was a constructed evaluation, not a blind external benchmark.
+
+The evidence also preserves cases where observation machinery increased cost without reducing a proof. The three-bit equal-kernel/different-label separator in Section~\ref{sec:observations} and the two-bit shared-prefix separator in Section~\ref{sec:wordbounds} identify concrete information that cannot be discarded. Neither is an upstream program bug.
+
+\subsection{Upper and lower contract checks}
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Check & Recorded result\\
+\midrule
+Upper, all masks/bounds/zero flags at widths 1--6 & 111,972 cases agree with exact masked maximum and emptiness.\\
+Upper, extracted Java helper & 114,040 calls agree with the declared model.\\
+Upper, additional lower bounds at widths 1--4 & 24,174 joint carriers preserved exactly.\\
+Lower, all small typed cases at widths 1--6 & 111,972 cases: 76,104 admitted by the sign contract; 35,868 explicitly unsupported.\\
+Lower, extracted Java helper & 114,044 calls agree with the declared model.\\
+Lean pilot & Clean build, fresh extraction build, axiom audit, three examples, and four rejected isolated corruptions.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The universal upper certificate additionally has wide mathematical specializations, including 128-, 256-, and 4096-bit cases. These are not Java runs at those widths. Upper and lower tables each describe their own experiment; their related input populations are not added together to inflate coverage. Among upper returns numerically equal to the minimum word, the record separates 37,049 empty cases from 963 genuine maxima.
+
+The lower study retains conservative and out-of-contract behavior, including the examples following Theorem~\ref{thm:lower}. A strict-comparison source variant was rejected by the reused floor lemma even though its 2232 checked native cases did not exhibit a bug. Such rejection marks the boundary of a proof interface; it is not by itself an unsoundness verdict.
+
+\subsection{What the SMT comparisons establish}
+One historical comparison used the same stored source-derived formulas for 39 programs at widths 32, 64, and 128, with three solvers and two repeats: 117 obligations and 702 executions. Its unconditional treatment of flag-related programs was later separated from artifact and LLVM-compatible assumptions. A subsequent 32-bit study varied both that contract and the encoding of counts, with a one-second solver budget.
+
+The latter change was substantial. Under the artifact contract, balanced encoding gave 19 UNSAT results for Z3 and 18 for Bitwuzla out of 39, with no SAT results; their prefix encodings gave 13 each. Under the historical contract, balanced encoding gave 16 and 20 SAT results respectively. These runs show why source semantics and encoding must be held explicit before a ranking is meaningful. Their historical versions, budgets, and records remain attached to the reports.
+
+QKF supplies parametric proofs for supported interfaces; these SMT runs ask separate fixed-width questions and did not retain solver proof objects. A useful local result was an all-width QKF proof for Smax when the six recorded 128-bit SMT attempts reached their limits, while at 32 bits conventional solvers could be faster. The evidence supports further controlled comparison and identifies specific successful interfaces. It does not establish a general performance ordering or coverage of arbitrary SMT problems.
+
+\subsection{Release verification}
+The current distribution adds fresh checks of the Python package, restored research replay, Lean build, manuscript references, source identities, and installable distributions. Exact commands, versions, outcomes, and logs are retained in the release validation record. Historical search and native-execution measurements above are not silently rerun or relabeled as this release's measurements.

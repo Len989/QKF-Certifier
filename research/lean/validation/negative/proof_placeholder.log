@@ -1,0 +1,55 @@
+⚠ [2/13] Built QKF.RowRules (479ms)
+warning: QKF/RowRules.lean:29:8: declaration uses `sorry`
+✔ [3/13] Built QKF.Gluing (461ms)
+✔ [4/13] Built QKF.Core (1.1s)
+✔ [5/13] Built QKF.Data (522ms)
+✔ [6/13] Built QKF.Checked (925ms)
+✔ [7/13] Built QKF.WordSemantics (1.0s)
+✔ [8/13] Built QKF.SourceBridge (593ms)
+✔ [9/13] Built QKF.Examples (569ms)
+✔ [10/13] Built QKF (454ms)
+✖ [12/13] Building Audit (651ms)
+trace: .> LEAN_PATH=/workspace/scratch/6c319201c5cc/qkf_negative_cq5sz29o/project/.lake/build/lib/lean /workspace/scratch/6c319201c5cc/qkf_lean_tools/lean-4.33.0-linux/bin/lean /workspace/scratch/6c319201c5cc/qkf_negative_cq5sz29o/project/Audit.lean -o /workspace/scratch/6c319201c5cc/qkf_negative_cq5sz29o/project/.lake/build/lib/lean/Audit.olean -i /workspace/scratch/6c319201c5cc/qkf_negative_cq5sz29o/project/.lake/build/lib/lean/Audit.ilean -c /workspace/scratch/6c319201c5cc/qkf_negative_cq5sz29o/project/.lake/build/ir/Audit.c --setup /workspace/scratch/6c319201c5cc/qkf_negative_cq5sz29o/project/.lake/build/ir/Audit.setup.json --json
+info: Audit.lean:3:0: QKF.forced_sound (supplied : QKF.Carrier → QKF.Carrier → Prop) (h : QKF.Carrier → QKF.Carrier) (hu : QKF.PreservesCup h)
+  (hi : QKF.PreservesCap h) (hs : ∀ (a b : QKF.Carrier), supplied a b → h a = b) {a b : QKF.Carrier}
+  (proof : QKF.Forced supplied a b) : h a = b
+info: Audit.lean:4:0: QKF.forced_no_conflict (supplied : QKF.Carrier → QKF.Carrier → Prop) (h : QKF.Carrier → QKF.Carrier)
+  (hu : QKF.PreservesCup h) (hi : QKF.PreservesCap h) (hs : ∀ (a b : QKF.Carrier), supplied a b → h a = b)
+  {a b c : QKF.Carrier} (p : QKF.Forced supplied a b) (q : QKF.Forced supplied a c) : b = c
+info: Audit.lean:5:0: QKF.atoms_force_row (h k : QKF.Carrier → QKF.Carrier) (hu : QKF.PreservesCup h) (hi : QKF.PreservesCap h)
+  (ku : QKF.PreservesCup k) (ki : QKF.PreservesCap k) (h₀ : h (QKF.atom false) = k (QKF.atom false))
+  (h₁ : h (QKF.atom true) = k (QKF.atom true)) (p : QKF.Carrier) : h p = k p
+info: Audit.lean:6:0: QKF.source_phase_factor (p : QKF.Phase) (c : QKF.Column) :
+  ((QKF.sourceCell p c).fst, QKF.phaseObservation (QKF.sourceCell p c).snd) = QKF.nativeStep c (QKF.phaseObservation p)
+info: Audit.lean:7:0: QKF.forced_rows_correct (r : Fin 8) (p : QKF.Carrier) : QKF.completedRow QKF.Data.rows r p = QKF.nativeRow r p
+info: Audit.lean:8:0: QKF.certificate_accepted : QKF.checkCertificate = true
+info: Audit.lean:9:0: QKF.observation_all_lengths (xs : List QKF.Column) :
+  QKF.boundaryGood (QKF.run (QKF.transition QKF.Data.rows) QKF.start xs)
+info: Audit.lean:10:0: QKF.mask_successor_all_widths (columns : List QKF.Column) (mask : QKF.SignMask) (xs : Bool)
+  (hx : QKF.allowed (QKF.signMust mask) (QKF.signMay mask) xs = true)
+  (hgreater :
+    QKF.signed (QKF.run QKF.wordStep QKF.wordStart columns).g (2 ^ (QKF.run QKF.wordStep QKF.wordStart columns).width)
+        (QKF.signMay mask) <
+      QKF.signed (QKF.run QKF.wordStep QKF.wordStart columns).x (2 ^ (QKF.run QKF.wordStep QKF.wordStart columns).width)
+        xs) :
+  have s := QKF.run QKF.wordStep QKF.wordStart columns;
+  have ts := QKF.bxor (QKF.signMay mask) s.carry;
+  (!decide ((s.carry && !QKF.signMay mask) = true)) = true ∧
+    QKF.allowed (QKF.signMust mask) (QKF.signMay mask) ts = true ∧
+      QKF.TraceAllowed s ∧
+        QKF.signed s.g (2 ^ s.width) (QKF.signMay mask) < QKF.signed s.t (2 ^ s.width) ts ∧
+          QKF.signed s.t (2 ^ s.width) ts ≤ QKF.signed s.x (2 ^ s.width) xs
+info: Audit.lean:11:0: QKF.source_word_factor (columns : List QKF.Column) :
+  QKF.observeSource (QKF.run QKF.sourceWordStep QKF.sourceWordStart columns) =
+    QKF.run QKF.wordStep QKF.wordStart columns
+info: Audit.lean:12:0: QKF.word_width (columns : List QKF.Column) (s : QKF.WordState) :
+  (QKF.run QKF.wordStep s columns).width = s.width + columns.length
+info: Audit.lean:17:0: 'QKF.forced_sound' depends on axioms: [sorryAx]
+error: Audit.lean:16:0: ❌️ Docstring on `#guard_msgs` does not match generated message:
+
+- info: 'QKF.forced_sound' does not depend on any axioms
++ info: 'QKF.forced_sound' depends on axioms: [sorryAx]
+error: Lean exited with code 1
+Some required targets logged failures:
+- Audit
+error: build failed

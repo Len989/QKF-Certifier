@@ -1,0 +1,61 @@
+{
+  "name": "wrong_sign_choice",
+  "universal_attempt": {
+    "status": "order_counterexample",
+    "evidence": {
+      "status": "counterexample",
+      "case": {
+        "order": [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2,
+          0
+        ],
+        "mask_kind": "mixed",
+        "can_zero": false,
+        "initial": 2,
+        "path": [
+          false,
+          false,
+          true
+        ],
+        "result": [
+          "empty",
+          null,
+          false
+        ],
+        "candidate_feasible": true
+      },
+      "order_types_seen": 30202
+    }
+  },
+  "concrete_witness": {
+    "spec": {
+      "width": 2,
+      "must": 1,
+      "may": 3,
+      "lower": -2,
+      "upper": 0,
+      "can_zero": false
+    },
+    "exact_carrier": [
+      -1,
+      1
+    ],
+    "expected_maximum": -1,
+    "mutated_execution": {
+      "upper_query_status": "empty",
+      "source_long_result": -2,
+      "maximum": null,
+      "source_path": [
+        false,
+        false,
+        true
+      ],
+      "initial_value": 1
+    }
+  }
+}

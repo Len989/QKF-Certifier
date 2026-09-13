@@ -1,0 +1,10 @@
+{
+  "origin": "Unchanged Paper II prototype preserved in the previous full project archive",
+  "files": {
+    "engine.py": "ab1b492a6eb1f65d280482b0773e97b24881f5584ceb0d35c1771a7843187f63",
+    "algebras.py": "8194c4f50e01c4b4d3391806d035511d5ade1c9db76de4bec8664066c3c1ac46",
+    "visibility_cc.py": "8916ca9d96a7c99ad4bbfab159668bd944cee5511b4e1b688f4ea3afdfbd0d9e",
+    "certificates.py": "f46a9a235e844f82c7f54f1be7575fcbdc1adc8c94a0081bc358e5ced3029f37",
+    "countermodel.py": "374e8ef2a475cbec726e22c9edf54442ab940618d2ea1af949f481fae97d6a5c"
+  }
+}

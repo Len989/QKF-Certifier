@@ -1,0 +1,4955 @@
+{
+  "schema": "qkf-universal-source-upper-v1",
+  "contract": {
+    "width": "every positive mathematical word width",
+    "native_widths": [
+      1,
+      8,
+      16,
+      32,
+      64
+    ],
+    "masks": "0 <= must,may < 2**width and must & ~may == 0",
+    "bound": "every signed width-bit upper bound",
+    "can_zero": "either Boolean value",
+    "nonempty": "exact greatest represented word <= bound, excluding zero when requested",
+    "empty": "source minimum-value return with proof of the empty branch; value equality alone is not an emptiness test",
+    "caller": "tightening the upper bound preserves intersection with every additional lower bound"
+  },
+  "compiled_source": {
+    "source_sha256": "18302ba7f082fa25c8ff23fc657c0e889ddf15daa5e0db1140b9dc5c66a16428",
+    "native_bindings": {
+      "helpers": {
+        "helper_0": "bd732abcbd8795848e4e0a5454cefa3fb0513f67744a18764c20a6fe2c94c37e",
+        "helper_1": "0ff2224c987788e5c11150c83f4501aa89da78ecc7711091cf1c9a2deb41301b",
+        "helper_2": "f2ab8559dacf02676d69c209d3c4a668387c91336428c25691129e675b36749e",
+        "helper_3": "b5e34e5036672f14abd2aecba89026dc4daf3657f78558c4286ff96ced995489",
+        "helper_4": "4bef8117184eaff5f88d621df7a61c9c56691a4a315ee3fff4dcc5bacd3f9c5b",
+        "helper_5": "5e5db0d9572c3b9d53e9d6ba836c41fe551df101ff296c052a9f6b46b157518c",
+        "helper_6": "8748588e7909fa3c3530086a09ba5c60c3e2731cbdff3cccc03d4bc052848270",
+        "helper_7": "f5744ecf2539d0ed3980b853875bc07347f4f8c93c1b7804e55a79eddbf55270",
+        "helper_8": "d7082fad83c56e7ffad2e3581df8257f42b93d1321b51aa693fdf57daa10d21e",
+        "helper_9": "2fc1d7fc9bfa72d4cfc353766df00572b4b4c6fb187c3a24c7067a74b698b17a",
+        "helper_10": "971796bcc9b33a9b53491ea15f45f628a361d1d2ffb090a7901b12ffae83de2e",
+        "helper_11": "62cd7fbf64fff24f874985e72047d3913979d9903e336fe7ad158a9dd6f9ae47",
+        "helper_12": "b5574abcdb9700a882390058aae60c6aa6b35ea56ae2b7bff106ee2296500c17",
+        "helper_15": "39c20410053d03002e8dab9291d4ce3d922f2845b749d4fdaab2e645452a8182",
+        "helper_16": "a03d37d0d4fd8fcd24241bca0283e54a0c3f94d65022de845c1a961a46b76f40",
+        "helper_17": "24b2063b9ce893c0adae4de6d6052d5bab5e66bc22b6bfe8134f7c733e365ecf",
+        "helper_18": "0575c03da3404cfccf16cc6e004b41712d4c4df9b8353a071b16fc4f00e1d99e",
+        "helper_19": "0558ef01e5ad8022a99755b95496fc70f415c81b0b0acd45c9e914499b634c1d",
+        "helper_20": "acf1d0eaea35dd95e52042037cc578360fa832840dcb07bdc3e487194710e663",
+        "helper_21": "e1d40a9d54787ed9fc65d31ea6574870141dcff4d3d1007d398269d07af5fa69",
+        "helper_22": "f9dce17e9a971fa947c54001ec0300dea561959da019f55582d6bd309275bb08",
+        "helper_23": "0250bd09583fcffb3e7ddfbab9a94f07531d15056af303fea6631e5a017b2681",
+        "helper_24": "8c2325487cc502acbaed141baf7439589a6156541fd7358ba91a43a0cac8d4a6",
+        "helper_25": "5b0488b03293cbb68a06b52d111b493d0a80ce4942a0dab42720dac0d8877639",
+        "helper_26": "e3bb5154695a19dc1a351494ce14b0b66fbb2ab03f79354ff727dc9f768aac45",
+        "helper_27": "d7e5f309b03a63da111317272e70286c832adc63cbbe1118af875efe3a27b018"
+      },
+      "shims": "Exact preceding CodeUtil/base-class native semantics; source bridge is restricted, not a formal Java compiler"
+    },
+    "sweep": {
+      "guard": [
+        "and",
+        [
+          "optional"
+        ],
+        [
+          "comparison",
+          [
+            -1,
+            0
+          ]
+        ]
+      ],
+      "body_sha256": "e294fc15892f0698eca3f1ef1a5a04585da79ce280d6d12d42da56cd1f8a50d4",
+      "parsed_body_sha256": "c6e3729a2fc8b3e0945050a8b30d01b17cac8611415911905e266fd5323ef963",
+      "traversal": "bits-1 down to 0; sign is fixed by optional mask",
+      "initial": "mask minimum within chosen sign"
+    },
+    "upper": {
+      "ir": [
+        "block",
+        [
+          [
+            "assign",
+            "v0",
+            [
+              "rank",
+              "must"
+            ]
+          ],
+          [
+            "if",
+            [
+              "or",
+              [
+                "compare",
+                [
+                  -1
+                ],
+                [
+                  "rank",
+                  "bound"
+                ],
+                [
+                  "rank",
+                  "zero"
+                ]
+              ],
+              [
+                "compare",
+                [
+                  1
+                ],
+                [
+                  "local",
+                  "v0"
+                ],
+                [
+                  "rank",
+                  "bound"
+                ]
+              ]
+            ],
+            [
+              "block",
+              [
+                [
+                  "assign",
+                  "v0",
+                  [
+                    "rank",
+                    "minimum"
+                  ]
+                ]
+              ]
+            ],
+            [
+              "block",
+              []
+            ]
+          ],
+          [
+            "assign",
+            "v0",
+            [
+              "sweep",
+              [
+                "local",
+                "v0"
+              ]
+            ]
+          ],
+          [
+            "if",
+            [
+              "and",
+              [
+                "compare",
+                [
+                  0
+                ],
+                [
+                  "local",
+                  "v0"
+                ],
+                [
+                  "rank",
+                  "zero"
+                ]
+              ],
+              [
+                "not",
+                [
+                  "can_zero"
+                ]
+              ]
+            ],
+            [
+              "block",
+              [
+                [
+                  "if",
+                  [
+                    "not",
+                    [
+                      "may_sign"
+                    ]
+                  ],
+                  [
+                    "block",
+                    [
+                      [
+                        "return",
+                        [
+                          "empty_sentinel"
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "block",
+                    [
+                      [
+                        "assign",
+                        "v0",
+                        [
+                          "rank",
+                          "negative_maximum"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "block",
+              []
+            ]
+          ],
+          [
+            "if",
+            [
+              "compare",
+              [
+                1
+              ],
+              [
+                "local",
+                "v0"
+              ],
+              [
+                "rank",
+                "bound"
+              ]
+            ],
+            [
+              "block",
+              [
+                [
+                  "return",
+                  [
+                    "empty_sentinel"
+                  ]
+                ]
+              ]
+            ],
+            [
+              "block",
+              []
+            ]
+          ],
+          [
+            "return",
+            [
+              "local",
+              "v0"
+            ]
+          ]
+        ]
+      ],
+      "body_sha256": "fc2afd7ad2f7e77003e031a526678925aed91a7d86ffd97eb4596864b862b2c7",
+      "parsed_body_sha256": "10e8485d0cf44f715739261c4eaf002b69226837bc99db075703947fef739b63"
+    }
+  },
+  "sweep_certificate": {
+    "schema": "qkf-universal-upper-sweep-v1",
+    "guard": [
+      "and",
+      [
+        "optional"
+      ],
+      [
+        "comparison",
+        [
+          -1,
+          0
+        ]
+      ]
+    ],
+    "rows": [
+      {
+        "label": [
+          0,
+          0,
+          0,
+          0,
+          -1
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 3
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 5
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 6
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 7
+          }
+        ],
+        "table": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "kernel": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 3
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 5
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 6
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 7
+          }
+        ],
+        "table": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "kernel": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 3
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 5
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 6
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 7
+          }
+        ],
+        "table": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "kernel": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          0,
+          1,
+          0,
+          -1
+        ],
+        "supplied": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 3
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 7
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 4
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 7
+          }
+        ],
+        "table": [
+          0,
+          3,
+          0,
+          3,
+          4,
+          7,
+          4,
+          7
+        ],
+        "kernel": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "supplied": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 3
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 7
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 4
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 7
+          }
+        ],
+        "table": [
+          0,
+          3,
+          0,
+          3,
+          4,
+          7,
+          4,
+          7
+        ],
+        "kernel": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "supplied": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 3
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 7
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 4
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 7
+          }
+        ],
+        "table": [
+          0,
+          3,
+          0,
+          3,
+          4,
+          7,
+          4,
+          7
+        ],
+        "kernel": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          1,
+          0,
+          0,
+          -1
+        ],
+        "supplied": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 2
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 4
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 6
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 6
+          }
+        ],
+        "table": [
+          0,
+          0,
+          2,
+          2,
+          4,
+          4,
+          6,
+          6
+        ],
+        "kernel": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "supplied": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 2
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 4
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 6
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 6
+          }
+        ],
+        "table": [
+          0,
+          0,
+          2,
+          2,
+          4,
+          4,
+          6,
+          6
+        ],
+        "kernel": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "supplied": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 2
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 4
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 6
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 6
+          }
+        ],
+        "table": [
+          0,
+          0,
+          2,
+          2,
+          4,
+          4,
+          6,
+          6
+        ],
+        "kernel": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          1,
+          0,
+          1,
+          -1
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 1
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 1
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 1
+          }
+        ],
+        "table": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "kernel": [
+          [
+            0,
+            2,
+            4,
+            6
+          ],
+          [
+            1,
+            3,
+            5,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 1
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 1
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 1
+          }
+        ],
+        "table": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "kernel": [
+          [
+            0,
+            2,
+            4,
+            6
+          ],
+          [
+            1,
+            3,
+            5,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 1
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 1
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 1
+          }
+        ],
+        "table": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "kernel": [
+          [
+            0,
+            2,
+            4,
+            6
+          ],
+          [
+            1,
+            3,
+            5,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          1,
+          1,
+          0,
+          -1
+        ],
+        "supplied": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 4
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 4
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 4
+          }
+        ],
+        "table": [
+          0,
+          0,
+          0,
+          0,
+          4,
+          4,
+          4,
+          4
+        ],
+        "kernel": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "supplied": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 4
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 4
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 4
+          }
+        ],
+        "table": [
+          0,
+          0,
+          0,
+          0,
+          4,
+          4,
+          4,
+          4
+        ],
+        "kernel": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "supplied": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 2
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 6
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 4
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 6
+          }
+        ],
+        "table": [
+          0,
+          2,
+          0,
+          2,
+          4,
+          6,
+          4,
+          6
+        ],
+        "kernel": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 3
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 1
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 2
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 3
+          }
+        ],
+        "table": [
+          0,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          3
+        ],
+        "kernel": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 3
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 1
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 2
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 3
+          }
+        ],
+        "table": [
+          0,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          3
+        ],
+        "kernel": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 1
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 1
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 1
+          }
+        ],
+        "table": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "kernel": [
+          [
+            0,
+            2,
+            4,
+            6
+          ],
+          [
+            1,
+            3,
+            5,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          1,
+          0,
+          0,
+          1,
+          -1
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 1
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 7
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 6
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 7
+          }
+        ],
+        "table": [
+          0,
+          1,
+          0,
+          1,
+          6,
+          7,
+          6,
+          7
+        ],
+        "kernel": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 1
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 7
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 6
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 7
+          }
+        ],
+        "table": [
+          0,
+          1,
+          0,
+          1,
+          6,
+          7,
+          6,
+          7
+        ],
+        "kernel": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 1
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 7
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 6
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 7
+          }
+        ],
+        "table": [
+          0,
+          1,
+          0,
+          1,
+          6,
+          7,
+          6,
+          7
+        ],
+        "kernel": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          1,
+          0,
+          1,
+          1,
+          -1
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 3
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 5
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 6
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 7
+          }
+        ],
+        "table": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "kernel": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 3
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 5
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 6
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 7
+          }
+        ],
+        "table": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "kernel": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ]
+      },
+      {
+        "label": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "supplied": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "steps": [
+          {
+            "operation": "intersection",
+            "left": 1,
+            "right": 2,
+            "input": 0,
+            "output": 0
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 2,
+            "input": 3,
+            "output": 3
+          },
+          {
+            "operation": "union",
+            "left": 1,
+            "right": 4,
+            "input": 5,
+            "output": 5
+          },
+          {
+            "operation": "union",
+            "left": 2,
+            "right": 4,
+            "input": 6,
+            "output": 6
+          },
+          {
+            "operation": "union",
+            "left": 3,
+            "right": 4,
+            "input": 7,
+            "output": 7
+          }
+        ],
+        "table": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "kernel": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ]
+      }
+    ],
+    "states": [
+      [
+        7,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        -1,
+        -1,
+        -1,
+        0
+      ],
+      [
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        6,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        4,
+        -1,
+        -1,
+        -1,
+        0
+      ],
+      [
+        3,
+        -1,
+        -1,
+        0,
+        -1
+      ],
+      [
+        4,
+        -1,
+        0,
+        -1,
+        1
+      ],
+      [
+        3,
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        6,
+        -1,
+        -1,
+        -1,
+        0
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        6,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        1,
+        1,
+        0
+      ],
+      [
+        3,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        4,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        3,
+        -1,
+        -1,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        -1,
+        -1,
+        0,
+        -1
+      ],
+      [
+        2,
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        0,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        0,
+        1,
+        -1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        -1
+      ],
+      [
+        4,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      [
+        2,
+        -1,
+        1,
+        0,
+        1
+      ],
+      [
+        6,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        -1,
+        -1,
+        -1,
+        0
+      ],
+      [
+        0,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        0,
+        -1,
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        2,
+        -1,
+        -1,
+        -1,
+        0
+      ],
+      [
+        0,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      [
+        2,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1,
+        -1
+      ],
+      [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "initial": 0,
+    "edges": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        0
+      ],
+      [
+        1,
+        1,
+        11,
+        12,
+        13,
+        14,
+        6,
+        15,
+        16,
+        17,
+        10,
+        1
+      ],
+      [
+        2,
+        6,
+        2,
+        18,
+        4,
+        19,
+        6,
+        20,
+        8,
+        21,
+        22,
+        2
+      ],
+      [
+        3,
+        15,
+        18,
+        3,
+        23,
+        24,
+        25,
+        12,
+        26,
+        27,
+        28,
+        3
+      ],
+      [
+        4,
+        16,
+        4,
+        29,
+        4,
+        23,
+        16,
+        20,
+        30,
+        31,
+        32,
+        4
+      ],
+      [
+        5,
+        17,
+        19,
+        24,
+        23,
+        5,
+        33,
+        12,
+        34,
+        14,
+        35,
+        5
+      ],
+      [
+        6,
+        6,
+        6,
+        36,
+        30,
+        37,
+        6,
+        25,
+        16,
+        33,
+        22,
+        6
+      ],
+      [
+        7,
+        15,
+        20,
+        12,
+        31,
+        38,
+        25,
+        7,
+        39,
+        7,
+        28,
+        7
+      ],
+      [
+        8,
+        16,
+        8,
+        40,
+        30,
+        41,
+        16,
+        25,
+        8,
+        26,
+        32,
+        8
+      ],
+      [
+        9,
+        17,
+        21,
+        27,
+        31,
+        14,
+        33,
+        7,
+        26,
+        9,
+        35,
+        9
+      ],
+      [
+        10,
+        1,
+        22,
+        28,
+        32,
+        35,
+        11,
+        12,
+        13,
+        14,
+        10,
+        10
+      ],
+      [
+        11,
+        6,
+        11,
+        36,
+        13,
+        37,
+        6,
+        42,
+        16,
+        43,
+        22,
+        11
+      ],
+      [
+        12,
+        15,
+        36,
+        12,
+        41,
+        38,
+        25,
+        12,
+        39,
+        12,
+        28,
+        12
+      ],
+      [
+        13,
+        16,
+        13,
+        44,
+        13,
+        41,
+        16,
+        42,
+        30,
+        45,
+        32,
+        13
+      ],
+      [
+        14,
+        17,
+        37,
+        38,
+        41,
+        14,
+        33,
+        12,
+        34,
+        14,
+        35,
+        14
+      ],
+      [
+        15,
+        15,
+        42,
+        12,
+        45,
+        38,
+        25,
+        15,
+        39,
+        15,
+        28,
+        15
+      ],
+      [
+        16,
+        16,
+        16,
+        36,
+        30,
+        41,
+        16,
+        25,
+        16,
+        39,
+        32,
+        16
+      ],
+      [
+        17,
+        17,
+        43,
+        12,
+        45,
+        14,
+        33,
+        15,
+        39,
+        17,
+        35,
+        17
+      ],
+      [
+        18,
+        25,
+        18,
+        18,
+        23,
+        29,
+        25,
+        36,
+        26,
+        40,
+        46,
+        18
+      ],
+      [
+        19,
+        33,
+        19,
+        29,
+        23,
+        19,
+        33,
+        36,
+        34,
+        37,
+        47,
+        19
+      ],
+      [
+        20,
+        25,
+        20,
+        36,
+        31,
+        44,
+        25,
+        20,
+        39,
+        20,
+        46,
+        20
+      ],
+      [
+        21,
+        33,
+        21,
+        40,
+        31,
+        37,
+        33,
+        20,
+        26,
+        21,
+        47,
+        21
+      ],
+      [
+        22,
+        6,
+        22,
+        46,
+        32,
+        47,
+        6,
+        36,
+        30,
+        37,
+        22,
+        22
+      ],
+      [
+        23,
+        39,
+        23,
+        29,
+        23,
+        23,
+        39,
+        36,
+        34,
+        41,
+        48,
+        23
+      ],
+      [
+        24,
+        15,
+        29,
+        24,
+        23,
+        24,
+        25,
+        12,
+        34,
+        38,
+        28,
+        24
+      ],
+      [
+        25,
+        25,
+        25,
+        36,
+        34,
+        44,
+        25,
+        25,
+        39,
+        25,
+        46,
+        25
+      ],
+      [
+        26,
+        39,
+        26,
+        40,
+        34,
+        41,
+        39,
+        25,
+        26,
+        26,
+        48,
+        26
+      ],
+      [
+        27,
+        15,
+        40,
+        27,
+        41,
+        38,
+        25,
+        12,
+        26,
+        27,
+        28,
+        27
+      ],
+      [
+        28,
+        15,
+        46,
+        28,
+        48,
+        28,
+        42,
+        12,
+        45,
+        38,
+        28,
+        28
+      ],
+      [
+        29,
+        25,
+        29,
+        29,
+        23,
+        29,
+        25,
+        36,
+        34,
+        44,
+        46,
+        29
+      ],
+      [
+        30,
+        16,
+        30,
+        44,
+        30,
+        41,
+        16,
+        25,
+        30,
+        34,
+        32,
+        30
+      ],
+      [
+        31,
+        39,
+        31,
+        44,
+        31,
+        41,
+        39,
+        20,
+        34,
+        31,
+        48,
+        31
+      ],
+      [
+        32,
+        16,
+        32,
+        46,
+        32,
+        48,
+        16,
+        36,
+        30,
+        41,
+        32,
+        32
+      ],
+      [
+        33,
+        33,
+        33,
+        36,
+        34,
+        37,
+        33,
+        25,
+        39,
+        33,
+        47,
+        33
+      ],
+      [
+        34,
+        39,
+        34,
+        44,
+        34,
+        41,
+        39,
+        25,
+        34,
+        34,
+        48,
+        34
+      ],
+      [
+        35,
+        17,
+        47,
+        28,
+        48,
+        35,
+        43,
+        12,
+        45,
+        14,
+        35,
+        35
+      ],
+      [
+        36,
+        25,
+        36,
+        36,
+        41,
+        44,
+        25,
+        36,
+        39,
+        36,
+        46,
+        36
+      ],
+      [
+        37,
+        33,
+        37,
+        44,
+        41,
+        37,
+        33,
+        36,
+        34,
+        37,
+        47,
+        37
+      ],
+      [
+        38,
+        15,
+        44,
+        38,
+        41,
+        38,
+        25,
+        12,
+        34,
+        38,
+        28,
+        38
+      ],
+      [
+        39,
+        39,
+        39,
+        36,
+        34,
+        41,
+        39,
+        25,
+        39,
+        39,
+        48,
+        39
+      ],
+      [
+        40,
+        25,
+        40,
+        40,
+        41,
+        44,
+        25,
+        36,
+        26,
+        40,
+        46,
+        40
+      ],
+      [
+        41,
+        39,
+        41,
+        44,
+        41,
+        41,
+        39,
+        36,
+        34,
+        41,
+        48,
+        41
+      ],
+      [
+        42,
+        25,
+        42,
+        36,
+        45,
+        44,
+        25,
+        42,
+        39,
+        42,
+        46,
+        42
+      ],
+      [
+        43,
+        33,
+        43,
+        36,
+        45,
+        37,
+        33,
+        42,
+        39,
+        43,
+        47,
+        43
+      ],
+      [
+        44,
+        25,
+        44,
+        44,
+        41,
+        44,
+        25,
+        36,
+        34,
+        44,
+        46,
+        44
+      ],
+      [
+        45,
+        39,
+        45,
+        44,
+        45,
+        41,
+        39,
+        42,
+        34,
+        45,
+        48,
+        45
+      ],
+      [
+        46,
+        25,
+        46,
+        46,
+        48,
+        46,
+        25,
+        36,
+        34,
+        44,
+        46,
+        46
+      ],
+      [
+        47,
+        33,
+        47,
+        46,
+        48,
+        47,
+        33,
+        36,
+        34,
+        37,
+        47,
+        47
+      ],
+      [
+        48,
+        39,
+        48,
+        46,
+        48,
+        48,
+        39,
+        36,
+        34,
+        41,
+        48,
+        48
+      ]
+    ],
+    "boundaries": [
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": true,
+          "candidate_feasible": false,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": true,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": true,
+          "bad": false
+        }
+      ],
+      [
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": true,
+          "output_feasible": true,
+          "candidate_below_output": false,
+          "bad": false
+        },
+        {
+          "source_valid": false,
+          "candidate_feasible": false,
+          "output_feasible": false,
+          "candidate_below_output": false,
+          "bad": false
+        }
+      ]
+    ],
+    "conclusion": {
+      "widths": "all positive",
+      "inputs": "all fixed-sign mask cylinders and all signed bounds",
+      "theorem": "For every x in the cylinder with x <= bound, the source output y is in the cylinder, y <= bound, and x <= y.",
+      "induction": "Empty suffix, every nonsign column, then exactly one sign column"
+    }
+  },
+  "order_certificate": {
+    "status": "proved_all_order_types",
+    "named_values": [
+      "zero",
+      "must",
+      "minimum",
+      "negative_maximum",
+      "bound",
+      "raw",
+      "candidate"
+    ],
+    "total_preorders": 47293,
+    "admitted_cases": 744,
+    "branch_counts": {
+      "positive_only / zero=False / empty": 28,
+      "positive_only / zero=True / value": 24,
+      "positive_only / zero=True / empty": 24,
+      "positive_only / zero=False / value": 20,
+      "mixed / zero=False / value": 224,
+      "mixed / zero=True / value": 224,
+      "mixed / zero=False / empty": 40,
+      "mixed / zero=True / empty": 40,
+      "negative_only / zero=False / value": 48,
+      "negative_only / zero=True / value": 48,
+      "negative_only / zero=False / empty": 12,
+      "negative_only / zero=True / empty": 12
+    },
+    "case_stream_sha256": "56e937ff1f93d727d44fbbd7e2b82aa8880dafa5132d57e1b25e37378d3f4213",
+    "conclusion": "Every value branch returns a feasible word. Every feasible candidate is <= the returned value. Every empty-sentinel branch has no feasible candidate.",
+    "transfer": "Replacing the upper bound by this value, or returning empty on its proved empty branch, preserves intersection with any additional lower bound."
+  }
+}

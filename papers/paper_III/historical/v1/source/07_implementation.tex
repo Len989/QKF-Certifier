@@ -1,0 +1,50 @@
+\section{The public implementation and its scientific interface}\label{sec:implementation}
+
+\subsection{What the released tool computes}
+The pinned release exposes inspection, normalization, target verification, and certificate checking through a Python API and command-line interface. Runtime dependencies are the Python standard library. Verification first constructs the source expression, produces a local rewrite trace, and attempts the coordinatewise target check. Checking reconstructs the source expression and replays the supplied trace without invoking the normalizer. These paths have different responsibilities even though they share the primitive-rule implementation.
+
+The certificate format is \texttt{qkf-rewrite-v3}; API results use \texttt{qkf-result-v1}. The source contract identifier is recorded literally as
+\begin{quote}\small\ttfamily\raggedright
+total-transfer-words-v2; positive-width;\\
+modular-arithmetic; SMT-total-div-shift;\\
+standard-counts; nonbottom-KB
+\end{quote}
+It is a contract identifier, not a claim about all implementations of transfer MLIR. Resource limits bound source size, parsed functions and operations, call expansion, expression size/depth, certificate size, and proof steps. These are operational limits; the all-width theorem does not depend on testing a largest word width.
+
+The source-label map is fingerprinted using SHA-256 over each UTF-8 text. Helper definitions are included, and the actual helper return is expanded. Whitespace edits therefore require regenerating the source-bound certificate even when they preserve program meaning. Fingerprints identify artifacts; they are not digital signatures establishing authorship. The source expression, entry, contract, external target, trace, and recomputed result must all agree.
+
+\subsection{Three concrete programs}
+The release includes examples from the Nice to Meet You artifact, with upstream commit and MIT attribution preserved in \texttt{examples/ntmy/SOURCES.json} and \texttt{NOTICE}. For AND, two guarded leading-bit updates and an idempotent maximum collapse to
+\[
+(z_a\mathbin{|}z_b,\;o_a\mathbin{\&}o_b).
+\]
+For OR, the normalized result is extensionally
+\[
+(z_a\mathbin{\&}z_b,\;o_a\mathbin{|}o_b).
+\]
+The final syntax need not be the shortest spelling of that formula. The XOR program combines two components through the supplied meet helper. One component contributes
+\[
+(o_a\mathbin{\&}o_b,\;(o_b\mathbin{\&}z_a)+(z_b\mathbin{\&}o_a)),
+\]
+and the other contributes $(z_a\mathbin{\&}z_b,0)$ after count and clearing simplifications. The two summands have disjoint support on valid inputs: overlap would require both $z_a$ and $o_a$, and both $z_b$ and $o_b$, at the same position. The guarded addition rule changes their sum to OR. Expanding the actual meet helper then gives the optimal XOR table. Changing that helper changes what is certified; the checker does not recognize a function name and assume its intended semantics.
+
+\subsection{A map from claims to code and evidence}
+Table~\ref{tab:traceability} is the entry point for maintainers. The labels K1--K5 are stable claim identifiers across manuscript revisions; theorem numbers are local to this version. Source links resolve to the exact commit in Section~\ref{sec:intro}.
+
+\begin{table}[htbp]\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.13\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+Claim & Implementation location & Evidence and boundary\\\midrule
+K1, finite core & Supplement's independent ground-closure comparison & Proposition~\ref{prop:core}; inherited locality from II. Not a public API computation.\\
+K2, matrix closure & Supplement: \texttt{relation\_matrix\_exact.py} & Theorem~\ref{thm:matrix}; 804 differential cases and final closure checks. Research reference implementation.\\
+K3, sparse representation & Historical component C++ prototype & Lemma~\ref{lem:coverage} and Theorem~\ref{thm:sparse}; conditional representation contract, not a theorem about every prototype execution.\\
+K4, source/replay & \coderef{src/qkf_certifier/frontend.py}{frontend.py}; \coderef{src/qkf_certifier/certificate.py}{certificate.py}; \coderef{src/qkf_certifier/kernel.py}{kernel.py}, replay/check & Theorem~\ref{thm:replay}; parsing, binding, tampering, mutation, and API tests.\\
+K5, finite semantics & \coderef{src/qkf_certifier/kernel.py}{kernel.py}, coordinate/bit/table & Theorems~\ref{thm:ninerows}--\ref{thm:precision}; exhaustive valid tables and concrete word oracle.\\
+TERM, termination & \coderef{src/qkf_certifier/kernel.py}{apply\_rule}; \coderef{src/qkf_certifier/producer.py}{producer.py} & Proposition~\ref{prop:termination}; all 29 rule witnesses and measured example traces.\\
+MONO, monotone classes & Supplement classification script & Proposition~\ref{prop:monotoneclasses}; exhaustive count. No release monotonicity flag.\\
+\bottomrule
+\end{tabularx}
+\caption{Scientific claims, implemented components, and limits.}\label{tab:traceability}
+\end{table}
+
+The public tests are in \coderef{tests/test_core.py}{test\_core.py}, \coderef{tests/test_properties.py}{test\_properties.py}, \coderef{tests/test_mutations.py}{test\_mutations.py}, \coderef{tests/test_frontend.py}{test\_frontend.py}, and \coderef{tests/test_cli.py}{test\_cli.py}. The supplement supplies a separate release audit, a finite-algebra reference implementation, generated certificates, raw result JSON, and a manifest of source hashes. It retrieves the public code by immutable commit instead of presenting a second evolving copy of the repository.

@@ -1,0 +1,33 @@
+name: Research and Lean
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Replay saved KnownBits and Graal proofs
+        run: python tools/replay_research.py --suite all --output reproduction/ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: research-replay
+          path: reproduction/ci/
+  lean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - name: Build the pinned Lean project and axiom audit
+        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596 # v1
+        with:
+          lake-package-directory: research/lean
+          use-github-cache: false

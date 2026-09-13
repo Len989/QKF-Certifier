@@ -1,0 +1,82 @@
+\section{Exact relation-matrix closure}\label{sec:relations}
+
+\subsection{Ground specification and labelled copies}
+Let $A$ be a nonempty finite algebra, $|A|=n$, whose native operations have positive arity. Add a fresh binary symbol $\tau$ and observations $\Gamma\subseteq A^2\times A$. The ground theory $E_\tau$ contains the complete named native diagram, the observed equations $\tau(a,b)=y$, and separate named-input compatibility. For each native $k$-ary $g$, include
+\begin{align*}
+\tau(g(a_1,\ldots,a_k),b)&=g(\tau(a_1,b),\ldots,\tau(a_k,b)),\\
+\tau(b,g(a_1,\ldots,a_k))&=g(\tau(b,a_1),\ldots,\tau(b,a_k)).
+\end{align*}
+All displayed arguments are carrier names. No universal identity for $g$ on unnamed elements is imposed. The constants naming $A$ are not nullary native operations required to be preserved by every slice.
+
+Use copies $\Lambda=\{*\}\cup\{R_b:b\in A\}\cup\{C_a:a\in A\}$. A label $(i,x)$ denotes
+\[
+\ell_*(x)=x,\qquad\ell_{R_b}(x)=\tau(x,b),\qquad
+\ell_{C_a}(x)=\tau(a,x).
+\]
+Two slice labels can represent one physical cell. Each relation $R_{ij}\subseteq A^2$ records proposed equalities between the labels in copies $i$ and $j$.
+
+\subsection{The closure rules}
+Initialize diagonal reflexivity, physical-cell facts $(a,b)\in R_{R_b,C_a}$, and the facts $(a,y)\in R_{R_b,*}$ and $(b,y)\in R_{C_a,*}$ for every observation. Saturate the following rules:
+\begin{enumerate}[label=(R\arabic*)]
+\item Converse: $(a,b)\in R_{ij}$ implies $(b,a)\in R_{ji}$.
+\item Composition: $(a,b)\in R_{ij}$ and $(b,c)\in R_{jk}$ imply $(a,c)\in R_{ik}$.
+\item Native compatibility: from $(a_l,b_l)\in R_{ij}$ for all $1\le l\le k$, infer
+\[
+(g^A(a_1,\ldots,a_k),g^A(b_1,\ldots,b_k))\in R_{ij}.
+\]
+\item Local feedback: $R_{**}\subseteq R_{ii}$ for every copy $i$.
+\item Context feedback: $b\,R_{**}\,d$ implies $(x,x)\in R_{R_b,R_d}$ and $(x,x)\in R_{C_b,C_d}$ for every $x$.
+\end{enumerate}
+Let $R^*$ be the least closed matrix containing the initial facts.
+
+\begin{theorem}[Exact relation kernel, K2]\label{thm:matrix}
+A fair saturation that returns only at a common fixed point terminates and computes $R^*$. For all interface labels,
+\[
+\boxed{(x,y)\in R^*_{ij}\quad\Longleftrightarrow\quad
+E_\tau\vdash\ell_i(x)=\ell_j(y).}
+\]
+In particular $R^*_{**}=\theta_{E_\tau}^A$. The carrier values forced for $\tau(a,b)$ are exactly $\{y:(a,y)\in R^*_{R_b,*}\}$; a nonempty such set is one central-congruence class.
+\end{theorem}
+\begin{proof}
+There are $m=1+2n$ copies and at most $m^2n^2$ relation facts. Every productive rule application adds a fact. Finite monotone saturation therefore reaches the least fixed point; a worklist or complete-pass implementation must stop when no new fact is available.
+
+For soundness, converse and composition express equality, and physical-cell facts identify the two names of the same term. Each copy preserves every named native operation by the diagram or compatibility equations. Thus native compatibility is sound between any pair of copies. Local and context feedback are congruence of $\tau$ in its varying and fixed arguments. All added facts are consequently ground consequences of $E_\tau$.
+
+For completeness, take any closed matrix $R$. On $V=\Lambda\times A$ put $(i,a)\sim(j,b)$ precisely when $(a,b)\in R_{ij}$. Reflexivity, converse, and composition make this an equivalence. Set $M=V/{\sim}$. On tuples represented in one copy, define
+\[
+g^M([(i,a_1)],\ldots,[(i,a_k)])=[(i,g^A(a_1,\ldots,a_k))].
+\]
+If another representation of the same tuple uses copy $j$, native compatibility identifies the two proposed results. This defines a partial operation on classes; assign a fixed default class to all other tuples. Interpret carrier names by their central classes and put
+\[
+\tau^M([(*,a)],[(*,b)])=[(R_b,a)].
+\]
+Local feedback makes the value independent of the representative of $a$; context feedback does the same for $b$. Physical-cell facts give the equivalent column interpretation. Complete all remaining $\tau$-tuples by a default class.
+
+The named diagram, observations, and both compatibility families now hold by construction. Each interface label evaluates to its own class, so distinct $R$-classes are separated by a total model of $E_\tau$. Applying this construction to $R^*$ proves completeness. The assertion about forced values follows by transitivity with central equality.
+\end{proof}
+
+The bound counts possible facts, not the running time of an inefficient repeated composition scan. For fixed native arities an explicit implementation is finite and polynomial in the explicitly represented carrier and rule-instance space; no polynomial bound in a succinct bit-width parameter follows. A native nullary operation would require additional zero-premise cross-copy facts and is excluded from this specification.
+
+\paragraph{Reference algorithm.}
+Initialize the labelled relations; repeatedly apply feedback, native compatibility, and full relational composition, inserting converse facts with each insertion. Return only when a complete pass makes no change. The supplement implements this deliberately transparent oracle and compares its entire carrier/cell partition with independent ground subterm closure. A finite resource limit must return unresolved, never an unfinished matrix presented as exact.
+
+\subsection{Certificates and two necessary closure mechanisms}
+\begin{corollary}[Checking a proposed exact partition]\label{cor:matrixcertificate}
+A proposed interface partition is exact if (i) generators of each of its blocks have checked derivations from the initial facts and rules, and (ii) the partition contains every initial fact and is closed under every rule.
+\end{corollary}
+\begin{proof}
+The derivations give $R\subseteq R^*$. Closure and the initial facts give $R^*\subseteq R$, by leastness. Equivalently, the first check excludes unjustified equalities and the second supplies the separating model from Theorem~\ref{thm:matrix}.
+\end{proof}
+This algebraic certificate contract is separate from \texttt{qkf-rewrite-v3}, which certifies word-expression rewrites.
+
+\begin{example}[Composing generators is insufficient]\label{ex:generators}
+In the one-bit KnownBits join-semilattice, write $U$ for unknown and $Z$ for known zero, so $U\join Z=U$. Let
+$G=\{(U,U)\}$ and $H=\{(U,Z),(Z,U)\}$.
+The join-closure of $H$ also contains $(U,U)$. Hence the composition of the two closed relations contains both $(U,Z)$ and $(U,U)$. Composing only the displayed generators gives $\{(U,Z)\}$, whose join-closure still omits $(U,U)$. Rule R2 must quantify over the full represented relations, including derived intermediate witnesses.
+\end{example}
+
+\begin{example}[Feedback determines additional cells]\label{ex:feedback}
+Take the two-element join-semilattice and supply both $\tau(0,0)=0$ and $\tau(0,0)=1$. The central carrier collapses. With feedback, all four named input cells become equal to that central class. If feedback is omitted while the other rules are saturated, only the observed cell is connected to the center. This finite example is checked in the supplement.
+\end{example}
+
+The same model proof extends to a fixed $p$-ary $\tau$ using $1+p n^{p-1}$ copies, one for each varying coordinate and fixed context. All views of a physical cell must be identified, and feedback must cover every context coordinate. The implementation and differential results reported here concern the binary case.

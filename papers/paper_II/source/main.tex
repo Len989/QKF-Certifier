@@ -1,0 +1,66 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,longtable,tabularx}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\geometry{a4paper,margin=27mm}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0.12em}
+\setlist{nosep}
+\setlength{\emergencystretch}{2em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\depth}{\operatorname{dep}}
+\newcommand{\Sub}{\operatorname{Sub}}
+\newcommand{\WP}{\operatorname{WP}}
+\newcommand{\spc}{\operatorname{sp}}
+\newcommand{\act}{\operatorname{act}}
+
+\hypersetup{
+  pdftitle={Equality-visibility depth in equational presentations: finite-ground spectra, certificates, and semigroup space},
+  pdfauthor={Leonid Shcherbakov}
+}
+
+\title{Equality-visibility depth in equational presentations:\\
+finite-ground spectra, certificates, and semigroup space}
+\author{Leonid Shcherbakov}
+\date{12 September 2026\\[0.3em]\small Preprint, version 1.0}
+
+
+\newcommand{\Cg}{\operatorname{Cg}}
+\newcommand{\Con}{\operatorname{Con}}
+\newcommand{\lambdarw}{\lambda^{\mathrm{rw}}}
+\newcommand{\deltarw}{\delta^{\mathrm{rw}}}
+\numberwithin{equation}{section}
+
+\begin{document}
+\maketitle
+\input{abstract}
+\input{01_introduction}
+\input{02_filtration}
+\input{03_ground}
+\input{04_certificates}
+\input{05_actionlab}
+\input{06_validation}
+\input{07_universal}
+\input{08_semigroup}
+\input{09_related}
+\input{10_questions}
+\input{11_conclusion}
+\input{references}
+\end{document}

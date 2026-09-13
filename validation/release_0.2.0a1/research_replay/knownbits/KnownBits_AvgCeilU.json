@@ -1,0 +1,16 @@
+{
+  "case": "KnownBits_AvgCeilU",
+  "mode": "observed",
+  "phase": "replay",
+  "status": "all_preparations_and_available_proofs_replayed",
+  "components": 9,
+  "component_target_proofs": 0,
+  "component_width_one": [],
+  "whole_verification": null,
+  "search_modules_loaded": [],
+  "action_rewrites": 2,
+  "observation_rewrites": 6,
+  "native_symbolic_lemmas": 0,
+  "seconds": 0.26199012000870425,
+  "peak_rss_kib": 15072
+}

@@ -1,0 +1,33 @@
+{
+  "manifest_schema": "qkf-paper-code-map-v1",
+  "paper": {
+    "series": "QKF",
+    "number": "III",
+    "title": "QKF-Certifier: finite quotient kernels and width-independent KnownBits proofs",
+    "author": "Leonid Shcherbakov",
+    "version": "1.0",
+    "manuscript_revision": "2026-09-12",
+    "version_doi": null,
+    "concept_doi": null,
+    "publication_status": "prepared_preprint; not deposited by this workflow"
+  },
+  "software": {
+    "repository": "https://github.com/Len989/QKF-Certifier",
+    "tag": "v0.1.0a1",
+    "version": "0.1.0a1",
+    "commit": "f93561682319e8b911ed32c01583f2a496dc59fc",
+    "certificate_schema": "qkf-rewrite-v3",
+    "result_schema": "qkf-result-v1",
+    "semantic_contract": "total-transfer-words-v2; positive-width; modular-arithmetic; SMT-total-div-shift; standard-counts; nonbottom-KB"
+  },
+  "claim_ids": {
+    "K1": "Finite ground partial core, inherited from I/II; research reference",
+    "K2": "Exact relation-matrix closure; research reference",
+    "K3": "Conditional sparse refinement theorem; historical C++ prototype is not covered unconditionally",
+    "K4": "Source-to-replay-to-target composition; public certifier",
+    "K5": "Finite coordinatewise semantics, nine rows, signature and precision lattice; public certifier and supplement",
+    "TERM": "All 29 local rules strictly decrease N + number of add occurrences",
+    "MONO": "Additional monotone sound class counts 26/26/16; supplement only"
+  },
+  "scope_note": "Hashes identify the pinned release. Later commits and historical relation experiments are separately scoped."
+}

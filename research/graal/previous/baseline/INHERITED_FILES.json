@@ -1,0 +1,1011 @@
+{
+  "previous_archive": "QKF_GRAAL_TRANSFER_2026-09-13.zip",
+  "previous_sha256": "61720068a6c58b5e85cd6d7d11b1374ade72a0689de417eb8719863131e65e72",
+  "files": {
+    "core/action_kernel.py": {
+      "previous_path": "frozen_core/action_kernel.py",
+      "sha256": "4b64ec21e4cdb5ad2efb4671f0443d5c4437e82470fe344a586db4fae92b35fa",
+      "bytes": 12047
+    },
+    "core/action_producer.py": {
+      "previous_path": "frozen_core/action_producer.py",
+      "sha256": "178d59d8b490652538e1ab5fea2ba2473f21476a8c3e176fca1a9a6d1e45da19",
+      "bytes": 1705
+    },
+    "core/audit_boundary.py": {
+      "previous_path": "frozen_core/audit_boundary.py",
+      "sha256": "5f315b7210a1c7d4b34edf04ccc5b293ec0169704b2c84de15d1d1092a30bcb7",
+      "bytes": 8595
+    },
+    "core/audit_context.py": {
+      "previous_path": "frozen_core/audit_context.py",
+      "sha256": "8c6b5d20456a011fe6c5f038d632e9c2d5e2123d0be863a6708eee351ebacb5c",
+      "bytes": 8085
+    },
+    "core/audit_result.py": {
+      "previous_path": "frozen_core/audit_result.py",
+      "sha256": "75b76cbd7542b610f5c39a095d4f5e2a3d4548e727d00caf0786eeb569d1f68b",
+      "bytes": 8487
+    },
+    "core/audit_result_v2.py": {
+      "previous_path": "frozen_core/audit_result_v2.py",
+      "sha256": "575ca1548e500e984c8dde2d2645efd4dc2d25e163de3e34aa7f038f7c872a4b",
+      "bytes": 9836
+    },
+    "core/boundary_cases.py": {
+      "previous_path": "frozen_core/boundary_cases.py",
+      "sha256": "22a8ccca91e2351e1cc2957404d9f2137d8ea93b900248ce379b2367c69f4b38",
+      "bytes": 2353
+    },
+    "core/boundary_kernel.py": {
+      "previous_path": "frozen_core/boundary_kernel.py",
+      "sha256": "905b35ec4005e9b3e2b373be8d99987b1e3cbe74306b2dc73eb1bbdbdf9a0685",
+      "bytes": 12505
+    },
+    "core/boundary_producer.py": {
+      "previous_path": "frozen_core/boundary_producer.py",
+      "sha256": "013ee16f2c1b60fb569265ae1f459310232a7d5eab572944eb7c3029a19c401c",
+      "bytes": 3281
+    },
+    "core/boundary_representation_run.py": {
+      "previous_path": "frozen_core/boundary_representation_run.py",
+      "sha256": "3a1c3c987040ba2cc65f5d9402b90bf86cf41523c9903d961f236b91cfede97f",
+      "bytes": 5247
+    },
+    "core/boundary_run.py": {
+      "previous_path": "frozen_core/boundary_run.py",
+      "sha256": "e023af03dcc989a457650618b98d66b4ad0c5eb684d86ecc4f03aad7d5fb490c",
+      "bytes": 8420
+    },
+    "core/boundary_stage_kernel.py": {
+      "previous_path": "frozen_core/boundary_stage_kernel.py",
+      "sha256": "8eaed4e192abb3f943c1a49fee236f510a85933500847035ce6005ba0ea4ff4b",
+      "bytes": 4917
+    },
+    "core/boundary_stage_producer.py": {
+      "previous_path": "frozen_core/boundary_stage_producer.py",
+      "sha256": "86a5a22797daeb8152798e594d8cfe4073ce9d5813792b49bd3f6d5acd06b42a",
+      "bytes": 7898
+    },
+    "core/boundary_v2_kernel.py": {
+      "previous_path": "frozen_core/boundary_v2_kernel.py",
+      "sha256": "f23cbef8c913e992099b923e35e99c1e292163b01e907501134729abe76961d3",
+      "bytes": 3761
+    },
+    "core/boundary_v2_producer.py": {
+      "previous_path": "frozen_core/boundary_v2_producer.py",
+      "sha256": "9bb9160ef6b2011510b06e3f29ed29bb7b83af62d4578cdf790bb9e9857d5fda",
+      "bytes": 3284
+    },
+    "core/boundary_v2_representation_run.py": {
+      "previous_path": "frozen_core/boundary_v2_representation_run.py",
+      "sha256": "e2e992f1e63d7bec30b6283db2af9888a900633de4f84a76f33bd0f08735d490",
+      "bytes": 5277
+    },
+    "core/boundary_v2_run.py": {
+      "previous_path": "frozen_core/boundary_v2_run.py",
+      "sha256": "defd0222f66a644afdf77e7273dc3afbb812a8f510cda1d1c570ad59fd622dca",
+      "bytes": 8484
+    },
+    "core/boundary_v2_stage_kernel.py": {
+      "previous_path": "frozen_core/boundary_v2_stage_kernel.py",
+      "sha256": "7888fdadb513ff05ae4077cdf74e3492da5639c24eff7b7f1319f7942be6349c",
+      "bytes": 4929
+    },
+    "core/boundary_v2_stage_producer.py": {
+      "previous_path": "frozen_core/boundary_v2_stage_producer.py",
+      "sha256": "6be3834c646ed7e034ed9d5721287c9481e903094cbd065a6c0e69043fdf537b",
+      "bytes": 7904
+    },
+    "core/context_kernel.py": {
+      "previous_path": "frozen_core/context_kernel.py",
+      "sha256": "a9319db32794e2b7ceb87e7fc35e047cdf1d703910cb6047cf84c08b7320b04f",
+      "bytes": 16473
+    },
+    "core/context_producer.py": {
+      "previous_path": "frozen_core/context_producer.py",
+      "sha256": "9b0150cb857c8385bd3bd70d3708789a70e8d8fbfe0d47d9f97f9b45a22b75b0",
+      "bytes": 6509
+    },
+    "core/context_run.py": {
+      "previous_path": "frozen_core/context_run.py",
+      "sha256": "c686ed080a17d2f23d6bdf4f6020ca54ed5248bf73898a1c6933e15dca348f08",
+      "bytes": 8508
+    },
+    "core/context_stage_kernel.py": {
+      "previous_path": "frozen_core/context_stage_kernel.py",
+      "sha256": "93b607406df27b8cffa598f1cacbdcff77c64f0bf661b59e9594bc32c6d26af6",
+      "bytes": 5100
+    },
+    "core/context_stage_producer.py": {
+      "previous_path": "frozen_core/context_stage_producer.py",
+      "sha256": "da96d1b381c9b61a30cbf0d7d595ac3030f4b4ef167049af856fdb88b5c66ae6",
+      "bytes": 8013
+    },
+    "core/corpus_branch_producer.py": {
+      "previous_path": "frozen_core/corpus_branch_producer.py",
+      "sha256": "28b715194e3e43ff86f082c24a090a7276e41037cef00dcd8eaafb8221f5bf40",
+      "bytes": 4682
+    },
+    "core/corpus_discovery.py": {
+      "previous_path": "frozen_core/corpus_discovery.py",
+      "sha256": "d97c4a52d6e7e9f7187e93519698e60b8ec2a40652605f9f7d5e87dd02fdf5a0",
+      "bytes": 1100
+    },
+    "core/corpus_io.py": {
+      "previous_path": "frozen_core/corpus_io.py",
+      "sha256": "9653c4da5318acd98cc5eba7dd0560a47ed9d101684869e6b9432787b139c772",
+      "bytes": 601
+    },
+    "core/development/low_boundary_lemma.json": {
+      "previous_path": "frozen_core/development/low_boundary_lemma.json",
+      "sha256": "a0f86341f76eeb3606576e8bb884ad71a0a38d81e0f9b8adb7e22f4bf86bdbad",
+      "bytes": 9185
+    },
+    "core/environment.py": {
+      "previous_path": "frozen_core/environment.py",
+      "sha256": "e53a1871aab58848e2ff1071131bede790937e5f4538fa04e1dd8f8705df60ed",
+      "bytes": 487
+    },
+    "core/fixtures/corpus/KnownBits_Or/solution.mlir": {
+      "previous_path": "frozen_core/fixtures/corpus/KnownBits_Or/solution.mlir",
+      "sha256": "eb9fd39d4643727bfa5a492f55be095ddb39505cd6efced5204a58804ea5274f",
+      "bytes": 3089
+    },
+    "core/freeze_boundary.py": {
+      "previous_path": "frozen_core/freeze_boundary.py",
+      "sha256": "5cfc89ddb39659a0d2997ae1556a58cc45be2600527d3f723ba591eee9304a66",
+      "bytes": 1236
+    },
+    "core/freeze_context.py": {
+      "previous_path": "frozen_core/freeze_context.py",
+      "sha256": "51141daa78d41efb8be837359e517235aa0f9be51a02f72d5b15be4772288b6f",
+      "bytes": 1338
+    },
+    "core/freeze_result.py": {
+      "previous_path": "frozen_core/freeze_result.py",
+      "sha256": "8f87958fe698bbbb8f1c092b625314fd7dcd869bb2bd7f8cad8def4a213310b5",
+      "bytes": 1361
+    },
+    "core/freeze_result_v2.py": {
+      "previous_path": "frozen_core/freeze_result_v2.py",
+      "sha256": "79946a5f4bf19a4f877c9cdb071ce7c47c54113ced4af50bf47677f163e22b9d",
+      "bytes": 1377
+    },
+    "core/inference_producer.py": {
+      "previous_path": "frozen_core/inference_producer.py",
+      "sha256": "4bcfa648e0b6cf08d2d42e2950cbcdd00bb05731c1d6084f7cbd6b55c088b307",
+      "bytes": 7905
+    },
+    "core/inference_run.py": {
+      "previous_path": "frozen_core/inference_run.py",
+      "sha256": "9375c1d900547deede48cf673ee2b73e2945e09673487e1ed64e12e22a06d119",
+      "bytes": 8362
+    },
+    "core/legacy/branch_kernel.py": {
+      "previous_path": "frozen_core/legacy/branch_kernel.py",
+      "sha256": "8f427273a1152e8c7e8884441296b1ffa542a2da0165690739a5c455e4c6da99",
+      "bytes": 9572
+    },
+    "core/legacy/branch_producer.py": {
+      "previous_path": "frozen_core/legacy/branch_producer.py",
+      "sha256": "831957b799cf44cc2883401098b918cdb532848b949d28ab233cd0d253139827",
+      "bytes": 3960
+    },
+    "core/legacy/certificates.py": {
+      "previous_path": "frozen_core/legacy/certificates.py",
+      "sha256": "fbf8f0921459a35ed1b91c8cf02507b049c168ee7c95aa0bff4e0f659de4553b",
+      "bytes": 2007
+    },
+    "core/legacy/check_boundary.py": {
+      "previous_path": "frozen_core/legacy/check_boundary.py",
+      "sha256": "9b9fae2114e2e242980aff84e85c0a086412b40dc368e6b7c7e186e6a962e76d",
+      "bytes": 1381
+    },
+    "core/legacy/check_refinements.py": {
+      "previous_path": "frozen_core/legacy/check_refinements.py",
+      "sha256": "c347d6214fdcd4d2bd30b502b3d38658512a7609c20a75aa5a1c243b8f3c21ae",
+      "bytes": 3230
+    },
+    "core/legacy/check_semantics.py": {
+      "previous_path": "frozen_core/legacy/check_semantics.py",
+      "sha256": "c0931df0ca9e6d148dd3b457c0afac7669796019d232e498732dae397d6ad69f",
+      "bytes": 7892
+    },
+    "core/legacy/common.py": {
+      "previous_path": "frozen_core/legacy/common.py",
+      "sha256": "7888a833614f6ca60a2db7a730a46efad0db3bf1a65c4f0fdb0689dfcd4cdec7",
+      "bytes": 1114
+    },
+    "core/legacy/frozen_qkf/CONTINUE_HERE.md": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/CONTINUE_HERE.md",
+      "sha256": "f29d8b7dd18f9fbb65fc9a9db5905c135a9e4230ad20295c2eb58cd2ee6c8a69",
+      "bytes": 4657
+    },
+    "core/legacy/frozen_qkf/COUNT_MASK_PROOF.md": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/COUNT_MASK_PROOF.md",
+      "sha256": "7b7359158d895a05c96c865bb918685ff2de4cdfe2f353fc124599d459945b52",
+      "bytes": 8388
+    },
+    "core/legacy/frozen_qkf/EXTENSION_CONFIGURATION.json": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/EXTENSION_CONFIGURATION.json",
+      "sha256": "18270981eee4f11036e38a5ee0384088f3954ab97ab1ac9df3642714a1c56aec",
+      "bytes": 1263
+    },
+    "core/legacy/frozen_qkf/FROZEN_CONFIGURATION.json": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/FROZEN_CONFIGURATION.json",
+      "sha256": "525ae97a04245fe195cefedbad76e2eacad6fdd2f7768b3377ed88f1415a5966",
+      "bytes": 587
+    },
+    "core/legacy/frozen_qkf/LICENSE": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/LICENSE",
+      "sha256": "0d759d3fb9a3e0a7c4bab3d659633ca34ad0bb06b1955c560fe9287f2365ad78",
+      "bytes": 1075
+    },
+    "core/legacy/frozen_qkf/OBSERVER_PROOFS.md": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/OBSERVER_PROOFS.md",
+      "sha256": "7f894bbe2c706fc19a9630545de3e6dfac65fdf232fea948b904ceea237b0040",
+      "bytes": 12587
+    },
+    "core/legacy/frozen_qkf/PAPER_III_INSERT.md": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/PAPER_III_INSERT.md",
+      "sha256": "e12adffa485db397d894138052110ec12cceee7d061a2bba57688d87619d9b64",
+      "bytes": 5390
+    },
+    "core/legacy/frozen_qkf/PROVENANCE.json": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/PROVENANCE.json",
+      "sha256": "a7dd2fcf55411cc882f6e4ba8099652d13b626448b7e9b2bf70719bb0722f94e",
+      "bytes": 8208
+    },
+    "core/legacy/frozen_qkf/QKF_UMIN_COMPLETE_RU.md": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/QKF_UMIN_COMPLETE_RU.md",
+      "sha256": "db49e91f914fd4bc6c2339b538641a9c9042b48b782d8bf3c5e8a0b4fd1c52b8",
+      "bytes": 22105
+    },
+    "core/legacy/frozen_qkf/README.md": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/README.md",
+      "sha256": "c880bc97ed16dd26676bd6a57280f13072c787ad4bf977439bfdd34d0b7baa84",
+      "bytes": 5759
+    },
+    "core/legacy/frozen_qkf/RULES_AND_PROOFS.md": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/RULES_AND_PROOFS.md",
+      "sha256": "e1a77246c1b000bf514291a5a2674a986da5167412489cb74ec5195f94495d9a",
+      "bytes": 9300
+    },
+    "core/legacy/frozen_qkf/SHA256SUMS.txt": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/SHA256SUMS.txt",
+      "sha256": "95c8abb15fa8c091bd2a15485d352e3fc001e8f565c955a073bd8d678fa9b87e",
+      "bytes": 18695
+    },
+    "core/legacy/frozen_qkf/analyze_umin.py": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/analyze_umin.py",
+      "sha256": "19c5b4cafbf7a49459b84658c6fd1c54cba3a5596b4844c5293e3ed005dfb88b",
+      "bytes": 5534
+    },
+    "core/legacy/frozen_qkf/audit_fixed.py": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/audit_fixed.py",
+      "sha256": "b40f5aa6fcda9ccc4a8cb90306ed2b5f46ac55a8db5563a604f3d917e7cedd6e",
+      "bytes": 4969
+    },
+    "core/legacy/frozen_qkf/audit_observers.py": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/audit_observers.py",
+      "sha256": "b3c27ca88becce100085ffd29a9864aea8a923b103eb1d2a3d7fcf3bf19aadd1",
+      "bytes": 2769
+    },
+    "core/legacy/frozen_qkf/check_observers.py": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/check_observers.py",
+      "sha256": "22f4332777c39fe524f0d1f48ecfe45ca5ac93eb1659dad72d03e32cc96e382d",
+      "bytes": 8047
+    },
+    "core/legacy/frozen_qkf/check_semantics.py": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/check_semantics.py",
+      "sha256": "31226f27dd0123e360f94a857c9c46b7220268beb66ba0a956a2d71b55c5a134",
+      "bytes": 11097
+    },
+    "core/legacy/frozen_qkf/dependencies/guard_kernel.py": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/dependencies/guard_kernel.py",
+      "sha256": "d8741ad8d03dabd4ead1b2adabdd65bdf7c826d59dceae05d44743d6a7af2da6",
+      "bytes": 7838
+    },
+    "core/legacy/frozen_qkf/dependencies/regular_interfaces.py": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/dependencies/regular_interfaces.py",
+      "sha256": "4eb0b0823af9eb063cf587c6cac71240cacea32cfa1b259703cf833da6d4af05",
+      "bytes": 10605
+    },
+    "core/legacy/frozen_qkf/observer_kernel.py": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/observer_kernel.py",
+      "sha256": "7354cdf7b064d2c2530f45b4e0a4f2491d1860b0d6b36d290f11a8e7a65e43bb",
+      "bytes": 8833
+    },
+    "core/legacy/frozen_qkf/prefix_masks.py": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/prefix_masks.py",
+      "sha256": "3e13468630d46a04e37cecbf7bab47043d84076956e22c54fd870334d8bdbccd",
+      "bytes": 8331
+    },
+    "core/legacy/frozen_qkf/prove_umin.py": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/prove_umin.py",
+      "sha256": "907a5be06fb93471028e371b1f7a0adfbc2899d4d5df325bb6908965c9cd1926",
+      "bytes": 16219
+    },
+    "core/legacy/frozen_qkf/reproduce.py": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/reproduce.py",
+      "sha256": "4ec8e19e0b90d5acb6e0ec73998ddc685b699fab6bc116c8f18ed304cd176481",
+      "bytes": 1179
+    },
+    "core/legacy/frozen_qkf/verify_umin.py": {
+      "previous_path": "frozen_core/legacy/frozen_qkf/verify_umin.py",
+      "sha256": "a5c32a36878193dd2303c2a8f303ec4ae4fc01a442f6c0eacd695b37838f4f82",
+      "bytes": 1853
+    },
+    "core/legacy/mask_observers.py": {
+      "previous_path": "frozen_core/legacy/mask_observers.py",
+      "sha256": "a7d60a7d625996355edac2886b29652c5ef5bdd1166305d401e04d3c84ef5ab5",
+      "bytes": 4232
+    },
+    "core/legacy/reproduce_stage.py": {
+      "previous_path": "frozen_core/legacy/reproduce_stage.py",
+      "sha256": "7edf94939b9bff1a41f0ae7e26659388f7aed62f2109ce4f2865e51ab4bd623f",
+      "bytes": 1476
+    },
+    "core/legacy/run_stage.py": {
+      "previous_path": "frozen_core/legacy/run_stage.py",
+      "sha256": "edb353b215b37fadbd3db37d226aa667d9a411b30d270de04942e845557127d5",
+      "bytes": 4863
+    },
+    "core/legacy/verify_stage.py": {
+      "previous_path": "frozen_core/legacy/verify_stage.py",
+      "sha256": "4223c653eaf59fbcb238ffa5e65b7350224d952c98d624f5531785f53ff0d9ba",
+      "bytes": 5486
+    },
+    "core/native_kernel.py": {
+      "previous_path": "frozen_core/native_kernel.py",
+      "sha256": "438cc24bb32c13b37ef42aef31d833cc6c966a7ba579551d83fd9d1a47e72ccb",
+      "bytes": 3403
+    },
+    "core/native_producer.py": {
+      "previous_path": "frozen_core/native_producer.py",
+      "sha256": "dc152a2fe48e2a2baf8b7e8700a7057771db1eb9bb07e329b0fc9f8c9cffa6f6",
+      "bytes": 6711
+    },
+    "core/observation_kernel.py": {
+      "previous_path": "frozen_core/observation_kernel.py",
+      "sha256": "89e55b605e7af8a50298179dee4fbc79d7ca3da858af567fe36942d9d0676216",
+      "bytes": 11698
+    },
+    "core/observation_producer.py": {
+      "previous_path": "frozen_core/observation_producer.py",
+      "sha256": "d09722140b82e4dc803657878b56968df6c2d3e85ad27a7534ca9c3e574cb2b5",
+      "bytes": 3503
+    },
+    "core/package_boundary.py": {
+      "previous_path": "frozen_core/package_boundary.py",
+      "sha256": "0dcdc9f3048b6cc0ab933bb8b7786a8cdd0730b2da42eb935c30bd29fd7262a6",
+      "bytes": 2180
+    },
+    "core/package_context.py": {
+      "previous_path": "frozen_core/package_context.py",
+      "sha256": "15aa59d4a9488a8af1fd111cb02849494c63cce5f1c13da02acb5dfbaf060113",
+      "bytes": 4367
+    },
+    "core/package_result.py": {
+      "previous_path": "frozen_core/package_result.py",
+      "sha256": "35e5b7d281ddc64c5501bd15f95b58298ed0fa5544b34161dad84524d41804c3",
+      "bytes": 5346
+    },
+    "core/public_runtime/LICENSE": {
+      "previous_path": "frozen_core/public_runtime/LICENSE",
+      "sha256": "0d759d3fb9a3e0a7c4bab3d659633ca34ad0bb06b1955c560fe9287f2365ad78",
+      "bytes": 1075
+    },
+    "core/public_runtime/src/qkf_certifier/__init__.py": {
+      "previous_path": "frozen_core/public_runtime/src/qkf_certifier/__init__.py",
+      "sha256": "02a649ab7acd082e4ffea5e1a8f9d493d88eaae3b4422c63d096a1f8f41bdf89",
+      "bytes": 453
+    },
+    "core/public_runtime/src/qkf_certifier/__main__.py": {
+      "previous_path": "frozen_core/public_runtime/src/qkf_certifier/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "bytes": 48
+    },
+    "core/public_runtime/src/qkf_certifier/api.py": {
+      "previous_path": "frozen_core/public_runtime/src/qkf_certifier/api.py",
+      "sha256": "0fb02b0d6a3a2d44dc36870dd563acf63e33820dbdfd9d4f2582a413b2450c40",
+      "bytes": 5543
+    },
+    "core/public_runtime/src/qkf_certifier/certificate.py": {
+      "previous_path": "frozen_core/public_runtime/src/qkf_certifier/certificate.py",
+      "sha256": "64b0c3bd4b04c1f4dfb7a214a2d1b5181e2307fac429962aa4de4493a2ea247d",
+      "bytes": 5995
+    },
+    "core/public_runtime/src/qkf_certifier/cli.py": {
+      "previous_path": "frozen_core/public_runtime/src/qkf_certifier/cli.py",
+      "sha256": "dcf6dccbb15d6f60999dfa5437a03e7bba2a0beab02cf579002c812f3b2be78c",
+      "bytes": 9133
+    },
+    "core/public_runtime/src/qkf_certifier/errors.py": {
+      "previous_path": "frozen_core/public_runtime/src/qkf_certifier/errors.py",
+      "sha256": "f88f9f4ca60bd532c75bf54bfcb1f21c0cffdd15855b3d121160ee4e61f3e7e1",
+      "bytes": 552
+    },
+    "core/public_runtime/src/qkf_certifier/frontend.py": {
+      "previous_path": "frozen_core/public_runtime/src/qkf_certifier/frontend.py",
+      "sha256": "48c8a8f5459a89bce4a00fa3a70ce06ab30268f32195c15ca5bfc1585a117f09",
+      "bytes": 17089
+    },
+    "core/public_runtime/src/qkf_certifier/kernel.py": {
+      "previous_path": "frozen_core/public_runtime/src/qkf_certifier/kernel.py",
+      "sha256": "024b616f27afd8346de85a7cca3a43279194db7b7c87be05e6095ac0c4805542",
+      "bytes": 10874
+    },
+    "core/public_runtime/src/qkf_certifier/limits.py": {
+      "previous_path": "frozen_core/public_runtime/src/qkf_certifier/limits.py",
+      "sha256": "4a3e7dd552705b15ccdd6c59faa2f7702192224a2772bf91398b11b9fa552c12",
+      "bytes": 316
+    },
+    "core/public_runtime/src/qkf_certifier/producer.py": {
+      "previous_path": "frozen_core/public_runtime/src/qkf_certifier/producer.py",
+      "sha256": "ef5479d6458afb368188bef37b23d4574587ea5c303a4fa1a3a97772187c2f72",
+      "bytes": 1548
+    },
+    "core/public_runtime/tests/word_oracle.py": {
+      "previous_path": "frozen_core/public_runtime/tests/word_oracle.py",
+      "sha256": "be285ebe6e3e908365c33639aa8b31189198d77dbddf1e6bf6b910b083c86893",
+      "bytes": 4451
+    },
+    "core/representation_cases.py": {
+      "previous_path": "frozen_core/representation_cases.py",
+      "sha256": "535015c66d73175ae878f9db3e897130c4a90cd56229e3a13d2ee1cac404d969",
+      "bytes": 3227
+    },
+    "core/representation_run.py": {
+      "previous_path": "frozen_core/representation_run.py",
+      "sha256": "c9452383468c6bde66a29eaed69371d76a003e93b4ef13ee5d634bded03208ec",
+      "bytes": 4863
+    },
+    "core/reproduce_boundary.py": {
+      "previous_path": "frozen_core/reproduce_boundary.py",
+      "sha256": "13d88d15adcfb6d61d3386b27bc0d1ee94072881d2c2a1aaede2553940f6bdfc",
+      "bytes": 1765
+    },
+    "core/reproduce_context.py": {
+      "previous_path": "frozen_core/reproduce_context.py",
+      "sha256": "73f1ce9cfa33b27d9b8b941a45fd1eedfb488f68e4443bd08e127bc64f215332",
+      "bytes": 907
+    },
+    "core/restore_data.py": {
+      "previous_path": "frozen_core/restore_data.py",
+      "sha256": "c3c930416989a177d9206ada5847f1d7fc440664e2aa8951464e3e07662a7586",
+      "bytes": 1881
+    },
+    "core/restore_project.py": {
+      "previous_path": "frozen_core/restore_project.py",
+      "sha256": "23025317c802e00860bb5692211b703ffc257265af3d51baee18804e389565ce",
+      "bytes": 3193
+    },
+    "core/result_kernel.py": {
+      "previous_path": "frozen_core/result_kernel.py",
+      "sha256": "5552eb5ec8a43301fe8278d5a23cc67c2f5dd554ba943a27ccf6e46c6a7167f2",
+      "bytes": 15203
+    },
+    "core/result_producer.py": {
+      "previous_path": "frozen_core/result_producer.py",
+      "sha256": "3744c5408c02bfcbd86caa4ec8b89138ea331104b293b1dc8ad3d8aa6b81f26f",
+      "bytes": 3111
+    },
+    "core/result_run.py": {
+      "previous_path": "frozen_core/result_run.py",
+      "sha256": "f92b6ded645284092cdd56658902f175f1591ddc75d43ef41c4dca24a8aa69ff",
+      "bytes": 8545
+    },
+    "core/result_stage_kernel.py": {
+      "previous_path": "frozen_core/result_stage_kernel.py",
+      "sha256": "4501f4679c60cccb7d0a37e0b412f54693f71b28b79497c211d3262b12e9ebd9",
+      "bytes": 5109
+    },
+    "core/result_stage_producer.py": {
+      "previous_path": "frozen_core/result_stage_producer.py",
+      "sha256": "4dbfeb73accd859610124e765a029fd6146b3aeb13d47c53d480fcf48bf8e13c",
+      "bytes": 8011
+    },
+    "core/result_v2_producer.py": {
+      "previous_path": "frozen_core/result_v2_producer.py",
+      "sha256": "e35bef9b986c478ac02c01f6e0dba55d23d25f3f984ed503e75c794a4972954b",
+      "bytes": 3153
+    },
+    "core/result_v2_run.py": {
+      "previous_path": "frozen_core/result_v2_run.py",
+      "sha256": "925beaad39f23dec01fe2bace353be4311187c4ac84da68753c180cb524bd41a",
+      "bytes": 8599
+    },
+    "core/result_v2_stage_producer.py": {
+      "previous_path": "frozen_core/result_v2_stage_producer.py",
+      "sha256": "f1bac39a3ad6a0f5c02464c95f6bfa60a0adff5d442117ae9c0eb9c0f0b8ec1b",
+      "bytes": 8014
+    },
+    "core/row_observation_kernel.py": {
+      "previous_path": "frozen_core/row_observation_kernel.py",
+      "sha256": "14020c213b8afbb662206ee8797d45514d645f294b622c6429915d1f8c7fdbef",
+      "bytes": 8360
+    },
+    "core/row_observation_producer.py": {
+      "previous_path": "frozen_core/row_observation_producer.py",
+      "sha256": "8c38a3e7f545c291b74f72325d244d7e7e2207756f0dbe46dde2b3448ec18008",
+      "bytes": 5477
+    },
+    "core/run_context_experiment.py": {
+      "previous_path": "frozen_core/run_context_experiment.py",
+      "sha256": "5ab4b6a2263e1705e9a3b83405a456b4e697676d4e23bfe6f14d3fa3ad5bdab4",
+      "bytes": 1066
+    },
+    "core/run_result_experiment.py": {
+      "previous_path": "frozen_core/run_result_experiment.py",
+      "sha256": "347525eda796b73a1ffbfbfa54dc7ec3d310b71ec8c770f2e05a1229de751064",
+      "bytes": 980
+    },
+    "core/run_result_v2_experiment.py": {
+      "previous_path": "frozen_core/run_result_v2_experiment.py",
+      "sha256": "bec8aaedb48e4972fa4708a485b7b209b11e3582cecf54d74c2eaee330ef9fb1",
+      "bytes": 1117
+    },
+    "core/selection_kernel.py": {
+      "previous_path": "frozen_core/selection_kernel.py",
+      "sha256": "32e4d36dacbb14bea1890657b187aadc2549a11530a47e0f15d767384436b916",
+      "bytes": 4886
+    },
+    "core/selection_producer.py": {
+      "previous_path": "frozen_core/selection_producer.py",
+      "sha256": "4b10e7ec35b55e88ebfbd8fa20e95090e985d9d6577aabd77cf0ed476877a46a",
+      "bytes": 7762
+    },
+    "core/selection_run.py": {
+      "previous_path": "frozen_core/selection_run.py",
+      "sha256": "add043d50b5298cf11fcd85d999101e89e344480dd86b2837837c8eea93b969f",
+      "bytes": 8281
+    },
+    "core/semantic_choice_kernel.py": {
+      "previous_path": "frozen_core/semantic_choice_kernel.py",
+      "sha256": "82ff91f72ef5c6a0f77d2ca0ebf50d76b5d7ed66c043444964a354c555bc4b83",
+      "bytes": 4185
+    },
+    "core/semantic_choice_producer.py": {
+      "previous_path": "frozen_core/semantic_choice_producer.py",
+      "sha256": "296dc9cbf9c099675cdfe92d9b5a3ad97cea730c43c2e75a5c3ff71387af82ef",
+      "bytes": 4390
+    },
+    "core/semantic_stage_kernel.py": {
+      "previous_path": "frozen_core/semantic_stage_kernel.py",
+      "sha256": "a7a4c965dc6f4ef06116e712e9994126f9227d9daec7dd3edd62f6e132f831f6",
+      "bytes": 4929
+    },
+    "core/semantic_view.py": {
+      "previous_path": "frozen_core/semantic_view.py",
+      "sha256": "b8690d0c5393650861d99b77ef56c6ca42bf40ca5d573457811eddcdb94c0fd7",
+      "bytes": 5169
+    },
+    "core/stage_kernel.py": {
+      "previous_path": "frozen_core/stage_kernel.py",
+      "sha256": "9f718e5aa6611cc024d7e0710661e6c2ef673738c761d08375f9b45f01595b29",
+      "bytes": 3945
+    },
+    "core/stage_producer.py": {
+      "previous_path": "frozen_core/stage_producer.py",
+      "sha256": "9b2b4256e69f1a850510c8dc60dbacff379426932f339a3fcbe8380c0caf18ea",
+      "bytes": 7072
+    },
+    "core/stage_run.py": {
+      "previous_path": "frozen_core/stage_run.py",
+      "sha256": "049d6d67d84e72ddd23fc46c61cc97127b38e81e7923b45f29cab809224502fc",
+      "bytes": 8065
+    },
+    "core/symbolic/core/bridge.py": {
+      "previous_path": "frozen_core/symbolic/core/bridge.py",
+      "sha256": "b8726eddc56815e9babe4bb2fd272187f4319a268ea2c3546e3cbca7127e2f15",
+      "bytes": 11083
+    },
+    "core/symbolic/core/concrete.py": {
+      "previous_path": "frozen_core/symbolic/core/concrete.py",
+      "sha256": "2ed31f39d2f9d652693139a840f370bbf7bf536fafeaece3a8cd26e57e3c1419",
+      "bytes": 7220
+    },
+    "core/symbolic/core/ground_checker.py": {
+      "previous_path": "frozen_core/symbolic/core/ground_checker.py",
+      "sha256": "9b1771dc0e1f3b4993c1e0739e1e7e53006089fa4a4a399790dceedab3600fae",
+      "bytes": 5327
+    },
+    "core/symbolic/core/interface.py": {
+      "previous_path": "frozen_core/symbolic/core/interface.py",
+      "sha256": "a7b4fd58e615558999fff755bceb58f34f54807e0a62f660da9ca18ff60e324b",
+      "bytes": 1538
+    },
+    "core/symbolic/core/kernel.py": {
+      "previous_path": "frozen_core/symbolic/core/kernel.py",
+      "sha256": "fa825f254d5759374f89e86caaf0384c8286961e9df1b608aaae2a4093dc834f",
+      "bytes": 15973
+    },
+    "core/symbolic/core/linear_search.py": {
+      "previous_path": "frozen_core/symbolic/core/linear_search.py",
+      "sha256": "5854522b80860c2549f00368e5d7a2ffd716966056b99a08879693226d41bda2",
+      "bytes": 5692
+    },
+    "core/symbolic/core/prefix.py": {
+      "previous_path": "frozen_core/symbolic/core/prefix.py",
+      "sha256": "4d80463871b7dfd57fda1ac5940340d6449bcd84e961a75287d6cb53a04e79b5",
+      "bytes": 9371
+    },
+    "core/symbolic/core/producer.py": {
+      "previous_path": "frozen_core/symbolic/core/producer.py",
+      "sha256": "d406cff5466ec0c5deec317bf0219d479de245e7cb5143d00fe5c6edaa0f366a",
+      "bytes": 3271
+    },
+    "core/symbolic/core/reconstruction.py": {
+      "previous_path": "frozen_core/symbolic/core/reconstruction.py",
+      "sha256": "744b090d900173e229aeaa955bfda7290b0996cb371ecccc17601b59c0386566",
+      "bytes": 6208
+    },
+    "core/symbolic/core/row_geometry.py": {
+      "previous_path": "frozen_core/symbolic/core/row_geometry.py",
+      "sha256": "6259f58be06c0e8293576d358dc0f9c507bcf28bc34ce10a57d409f4554ef232",
+      "bytes": 4483
+    },
+    "core/symbolic/core/transport.py": {
+      "previous_path": "frozen_core/symbolic/core/transport.py",
+      "sha256": "d07da8c449b67c8fd19896f91574769a4703f521bed251bbfcfeb443f7465948",
+      "bytes": 5868
+    },
+    "core/symbolic/kernel_saturation.py": {
+      "previous_path": "frozen_core/symbolic/kernel_saturation.py",
+      "sha256": "7e2938f191e0c57ad21453639128c269d3ab3d2f2de7a5b10d632c6f44b585f4",
+      "bytes": 6522
+    },
+    "core/symbolic/nonzero_ground.py": {
+      "previous_path": "frozen_core/symbolic/nonzero_ground.py",
+      "sha256": "8322f42d961ca7596d216c091717ccc5c60fd3752a0f31827b1cd1c345dc8e86",
+      "bytes": 4486
+    },
+    "core/symbolic/producer_v5.py": {
+      "previous_path": "frozen_core/symbolic/producer_v5.py",
+      "sha256": "b40cf7682af52e27bb753769530201f9a0d6de5caf01b2ad1672808e4ab98a8c",
+      "bytes": 6553
+    },
+    "core/symbolic/producer_v6.py": {
+      "previous_path": "frozen_core/symbolic/producer_v6.py",
+      "sha256": "c9322bd3c6119737b501fb6486a8e936cf66ed0a207ff6316bb8d6e349449017",
+      "bytes": 5975
+    },
+    "core/symbolic_bridge.py": {
+      "previous_path": "frozen_core/symbolic_bridge.py",
+      "sha256": "9415708bf4802e9110a32a4f50bb4b8c31d3577cbadfc2a359be5d9e648a476b",
+      "bytes": 6318
+    },
+    "core/symbolic_producer.py": {
+      "previous_path": "frozen_core/symbolic_producer.py",
+      "sha256": "55da7362f07c8038c0bf5323bf106f23d6a54d43b781ae9e736ad3b6f1056892",
+      "bytes": 1796
+    },
+    "core/validate_boundary.py": {
+      "previous_path": "frozen_core/validate_boundary.py",
+      "sha256": "a7b36a717154541be492a228df98e5c7f1f870c95761ee25252455b01089f642",
+      "bytes": 4749
+    },
+    "core/validate_consumers.py": {
+      "previous_path": "frozen_core/validate_consumers.py",
+      "sha256": "dc8d913b44c245456aa5c36b66f2aefcb84bbf72d52bf98b1dc10114dd733a4c",
+      "bytes": 6883
+    },
+    "core/validate_context.py": {
+      "previous_path": "frozen_core/validate_context.py",
+      "sha256": "5a16eb1bf39a15f201b53f4d2f094ed410137ff90fa1df7a2bdf17dcf0cd40af",
+      "bytes": 11275
+    },
+    "core/validate_result.py": {
+      "previous_path": "frozen_core/validate_result.py",
+      "sha256": "12813f0ceaa689746b1990baddeb5112e7819ad32f02842d1b1a15a4999cc33a",
+      "bytes": 10936
+    },
+    "core/validate_result_v2.py": {
+      "previous_path": "frozen_core/validate_result_v2.py",
+      "sha256": "b424d8c6690966dd347b9e4cd5de7af04e670fd64d1836e44f28c8e1d0b00f01",
+      "bytes": 2002
+    },
+    "core/validate_semantics.py": {
+      "previous_path": "frozen_core/validate_semantics.py",
+      "sha256": "b9fa7e8c3b12a4aaaea4976d6a9ea27824225453cb07b653e4f39450d1f752e2",
+      "bytes": 4405
+    },
+    "core/write_boundary_reports.py": {
+      "previous_path": "frozen_core/write_boundary_reports.py",
+      "sha256": "d51a9a2caf7b420edb02476daf6456d6ec529d73a104516070e2005d9588f1b9",
+      "bytes": 29664
+    },
+    "core/write_context_reports.py": {
+      "previous_path": "frozen_core/write_context_reports.py",
+      "sha256": "eb3e9466b2413c05ac2a70c622717a927bcef419636c31068885dcd8cecdb76d",
+      "bytes": 18319
+    },
+    "core/write_result_reports.py": {
+      "previous_path": "frozen_core/write_result_reports.py",
+      "sha256": "fd86fd20ee868132ab4ee7d15e1cbe75cc97f06fc1a109b3c909539fd30a4248",
+      "bytes": 25630
+    },
+    "graal_ir.py": {
+      "previous_path": "graal_ir.py",
+      "sha256": "0c4af62485441f8986c3a8e1453b3affefca6a7053af239336570b465314afab",
+      "bytes": 13966
+    },
+    "native_java.py": {
+      "previous_path": "native_java.py",
+      "sha256": "34d63e52bdbf3b5898258871a837a4e7e259495b2734679e01b96ae9920847b1",
+      "bytes": 10495
+    },
+    "ssa_emit.py": {
+      "previous_path": "ssa_emit.py",
+      "sha256": "d4b2e11b18d4add1d6d987499383f22cfd8d4f33a2119bc3b787690a608d299c",
+      "bytes": 1746
+    },
+    "PROJECT_PRINCIPLES_RU.md": {
+      "previous_path": "PROJECT_PRINCIPLES_RU.md",
+      "sha256": "572439cab38a914cb5a271675b7b310361578ba7ecf8380a4230004217a46cc3",
+      "bytes": 4618
+    },
+    "native/Add.inc": {
+      "previous_path": "native/Add.inc",
+      "sha256": "e1906c51fd9782ca31e05908fdcc955ee3ed767b2a6d15f7ddd982455945882c",
+      "bytes": 3569
+    },
+    "native/And.inc": {
+      "previous_path": "native/And.inc",
+      "sha256": "42c598f6719c87941b059b08808264114859d9b083fbe58885500ae22832e547",
+      "bytes": 2673
+    },
+    "native/IntegerStamp.java": {
+      "previous_path": "native/IntegerStamp.java",
+      "sha256": "8c48a21e2c83a83c7221ea8bfc8578c5ff21ed9caa1382e20485154720db29e2",
+      "bytes": 33860
+    },
+    "native/MANIFEST.json": {
+      "previous_path": "native/MANIFEST.json",
+      "sha256": "0a4e091fcaa2b8998f0c48f104dafb68c77491dc61eec8d1da60da0f1b3aed7f",
+      "bytes": 11935
+    },
+    "native/Neg.inc": {
+      "previous_path": "native/Neg.inc",
+      "sha256": "e95beece2faa9a22493a1ef8b8065b68ed7071e9bd336ae779b84eba0fc068fb",
+      "bytes": 1421
+    },
+    "native/Not.inc": {
+      "previous_path": "native/Not.inc",
+      "sha256": "e1baa0c4bf05da493a7be013a4e7c643d938ed0aac0a0e6c5ffe3a8562d909d7",
+      "bytes": 860
+    },
+    "native/Or.inc": {
+      "previous_path": "native/Or.inc",
+      "sha256": "4093ccd947a2a881157da5089dc6aa102d6c31d48f6972b6ebf6bfd83288f814",
+      "bytes": 736
+    },
+    "native/Sub.inc": {
+      "previous_path": "native/Sub.inc",
+      "sha256": "e473dbaa26e67f5b50238e89a3a28885fced366d1a49bab8fe24f749f3fbc591",
+      "bytes": 165
+    },
+    "native/Xor.inc": {
+      "previous_path": "native/Xor.inc",
+      "sha256": "f4e8199dfe9850346e5485d081bb70f7cfa90b4fd77283d70529887cccfdf2fd",
+      "bytes": 1636
+    },
+    "native/classes/Assertions.class": {
+      "previous_path": "native/classes/Assertions.class",
+      "sha256": "ac54d13362baae6bb15cf1c29df1d5d6f745d44279a43a42e704d7d3a739fa96",
+      "bytes": 346
+    },
+    "native/classes/CodeUtil.class": {
+      "previous_path": "native/classes/CodeUtil.class",
+      "sha256": "47fa5d56ce537ce3f326754d28a032be638feb213fb25ce5271b759ac1159069",
+      "bytes": 783
+    },
+    "native/classes/GraalError.class": {
+      "previous_path": "native/classes/GraalError.class",
+      "sha256": "7580fee9ac31ca6c4a76b67c9a2d099d8e4376b5a66230eeb706e2c7819e392d",
+      "bytes": 624
+    },
+    "native/classes/IntegerStamp$Op.class": {
+      "previous_path": "native/classes/IntegerStamp$Op.class",
+      "sha256": "d2536d3a3c272e8f974986451a48ec3bbe05be1dbf586ff9dc2af9c847ae67b3",
+      "bytes": 686
+    },
+    "native/classes/IntegerStamp$Ops.class": {
+      "previous_path": "native/classes/IntegerStamp$Ops.class",
+      "sha256": "7e244e017044d176a93047b593e935b99893c54782854408adba167ed393fe6e",
+      "bytes": 564
+    },
+    "native/classes/IntegerStamp.class": {
+      "previous_path": "native/classes/IntegerStamp.class",
+      "sha256": "9d2300d8e67d5f271b5b8af7d0d714b02b9c4a44cfe34691b1cf93e170e09e78",
+      "bytes": 13309
+    },
+    "native/classes/PrimitiveStamp.class": {
+      "previous_path": "native/classes/PrimitiveStamp.class",
+      "sha256": "2c5e97ee7d95bb331386cda4d18def7ed25071a95cb089af1e06d8682d8094cc",
+      "bytes": 307
+    },
+    "native/classes/Stamp.class": {
+      "previous_path": "native/classes/Stamp.class",
+      "sha256": "4ef3b9156e1a775ef1a7b7a561b281424f5b3e993c24eca5941de04b72ea3c3e",
+      "bytes": 315
+    },
+    "native/helper_0.inc": {
+      "previous_path": "native/helper_0.inc",
+      "sha256": "92c1ddcb80a6be5818be6168c04e3a7d3c0f0bba91ce90de1065f924738d0c07",
+      "bytes": 581
+    },
+    "native/helper_1.inc": {
+      "previous_path": "native/helper_1.inc",
+      "sha256": "84944ed5cac63843184743bf6006b4e2daec2c512a9ad8a18ea19f6735dfda89",
+      "bytes": 173
+    },
+    "native/helper_10.inc": {
+      "previous_path": "native/helper_10.inc",
+      "sha256": "e59388401b25ff1e47dd14eb13d860e691c9d82a86018b233b1e1a891dcc5e4c",
+      "bytes": 109
+    },
+    "native/helper_11.inc": {
+      "previous_path": "native/helper_11.inc",
+      "sha256": "094e79e4ec40d4bad8abea218a5fa2f4a0b1f3f5352c1f8c67ee02c571b40457",
+      "bytes": 519
+    },
+    "native/helper_12.inc": {
+      "previous_path": "native/helper_12.inc",
+      "sha256": "ef91a6c4069c031861ddeb4e67bfa65a4b9540b964c39fa9324c913a1653ca09",
+      "bytes": 558
+    },
+    "native/helper_13.inc": {
+      "previous_path": "native/helper_13.inc",
+      "sha256": "43d6efad5238802a36de4409fe985bb7dc14bde6e8a22499904e6342f71bc1be",
+      "bytes": 1601
+    },
+    "native/helper_14.inc": {
+      "previous_path": "native/helper_14.inc",
+      "sha256": "15bfd97cfb9f2dd47439dfd63ca0a5015fcf09fa6cf6a55b2e51806588375a44",
+      "bytes": 677
+    },
+    "native/helper_15.inc": {
+      "previous_path": "native/helper_15.inc",
+      "sha256": "06ee5ad4cc134abea13a43f69c1dbc47f71a23e3ba466a5830c44b6bc7b942a0",
+      "bytes": 3181
+    },
+    "native/helper_16.inc": {
+      "previous_path": "native/helper_16.inc",
+      "sha256": "d0e6fdefaecb4e9f5b442094a341601904a55a869261b3a2a8e8794e24688e40",
+      "bytes": 729
+    },
+    "native/helper_17.inc": {
+      "previous_path": "native/helper_17.inc",
+      "sha256": "ff1dd8a80629b6732f2278af81c3b87f6f19b73d236142ccc4dd26923987f3c3",
+      "bytes": 76
+    },
+    "native/helper_18.inc": {
+      "previous_path": "native/helper_18.inc",
+      "sha256": "217aa892db91eed6761b808dad8f084dd8c7825e5ffb4dbc7cd517e441dbfced",
+      "bytes": 60
+    },
+    "native/helper_19.inc": {
+      "previous_path": "native/helper_19.inc",
+      "sha256": "fd267fd54be1ea7dc87da265c0df7b012b64f0e7934007d948a706a8b3f99b55",
+      "bytes": 60
+    },
+    "native/helper_2.inc": {
+      "previous_path": "native/helper_2.inc",
+      "sha256": "c9034562e3965e6e426365013bdaaf5b5374679a839d906e764bd3d2b6e0d475",
+      "bytes": 565
+    },
+    "native/helper_20.inc": {
+      "previous_path": "native/helper_20.inc",
+      "sha256": "67294e5eea5a0f996aa4b4e601b8b0bb9c7c8f92aa07bd778d22eea7bd485079",
+      "bytes": 58
+    },
+    "native/helper_21.inc": {
+      "previous_path": "native/helper_21.inc",
+      "sha256": "06a7dac4155e1a1efd038ffd7c468a531dedcb6a680df4fe5a5280e2f467f4c5",
+      "bytes": 56
+    },
+    "native/helper_22.inc": {
+      "previous_path": "native/helper_22.inc",
+      "sha256": "88a66f4fd349dc8d90f1a13e15e65e5636b0741d2f177881a36974af25a9fc02",
+      "bytes": 216
+    },
+    "native/helper_23.inc": {
+      "previous_path": "native/helper_23.inc",
+      "sha256": "ca9ec1a532aa9ccfef4a8ff11a3ea974545a8f4c4c81c17ff7248fb3213525fb",
+      "bytes": 87
+    },
+    "native/helper_24.inc": {
+      "previous_path": "native/helper_24.inc",
+      "sha256": "8ed1f40e7765f0a97332dcd3b759ca6332b3f335f2e86df868d07996d9085eac",
+      "bytes": 602
+    },
+    "native/helper_25.inc": {
+      "previous_path": "native/helper_25.inc",
+      "sha256": "24947b92f95eb1097acd5945ac3b9eed5d236e824c55f91a36139d195098ebb5",
+      "bytes": 257
+    },
+    "native/helper_26.inc": {
+      "previous_path": "native/helper_26.inc",
+      "sha256": "fc65cbe929c00bd89bde5f4c0c117d65dda9063871d0b50ab170955dd1582b88",
+      "bytes": 256
+    },
+    "native/helper_27.inc": {
+      "previous_path": "native/helper_27.inc",
+      "sha256": "34d05d625bdf6b8234f35ff31582f18953b7796aedb7c73e8a606241489172ba",
+      "bytes": 85
+    },
+    "native/helper_3.inc": {
+      "previous_path": "native/helper_3.inc",
+      "sha256": "dee284199b149831db8b449ba25fda33540cb34b46b2ee61880cf10639a75393",
+      "bytes": 439
+    },
+    "native/helper_4.inc": {
+      "previous_path": "native/helper_4.inc",
+      "sha256": "e0b999ec649f3e48df51b3278c7ea6ac7797a928787cb3ffd7fd3b0f4ee0d00c",
+      "bytes": 1220
+    },
+    "native/helper_5.inc": {
+      "previous_path": "native/helper_5.inc",
+      "sha256": "fadf19107f24a086a9b0325bc7de650076dccf3cbed285be0563f2ed24a735b7",
+      "bytes": 118
+    },
+    "native/helper_6.inc": {
+      "previous_path": "native/helper_6.inc",
+      "sha256": "395831d98e4c2db0cd6ee2dcbad254619c2e82a4931f079c669823bd7f705386",
+      "bytes": 391
+    },
+    "native/helper_7.inc": {
+      "previous_path": "native/helper_7.inc",
+      "sha256": "6a6babc23d60c489a6a5cc76ad622fcf9415dd5888cc54601ceaaa53f478c93a",
+      "bytes": 217
+    },
+    "native/helper_8.inc": {
+      "previous_path": "native/helper_8.inc",
+      "sha256": "f707555553de3429eeda696854e5c81df6aabaa0ceca457bcba3625a97209c28",
+      "bytes": 4878
+    },
+    "native/helper_9.inc": {
+      "previous_path": "native/helper_9.inc",
+      "sha256": "0e1298c3a0080de1cc72ea06eb48b2e4b612e8e9c9d4321a0c5d148fd4a2baae",
+      "bytes": 235
+    },
+    "source/DOWNLOADS.json": {
+      "previous_path": "source/DOWNLOADS.json",
+      "sha256": "a4d24fc61a170cd0d275a7af86d79b5ea9279e88c9a77f9e1093284119a47246",
+      "bytes": 710
+    },
+    "source/IntegerStamp.java": {
+      "previous_path": "source/IntegerStamp.java",
+      "sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+      "bytes": 148266
+    },
+    "source/JDK_INSTALL.json": {
+      "previous_path": "source/JDK_INSTALL.json",
+      "sha256": "ba0f1ec7163da0db56adcdfab88b083717a2859d731aa5b98a9accabff4dfb21",
+      "bytes": 2997
+    },
+    "source/JDK_PACKAGE.json": {
+      "previous_path": "source/JDK_PACKAGE.json",
+      "sha256": "4cea814475345645c51f23a631bbc0e4b2342a13ca4ea049748d5fd0c8d217ec",
+      "bytes": 5288
+    },
+    "source/LICENSE": {
+      "previous_path": "source/LICENSE",
+      "sha256": "38cf84d41117b11c7232e5a8d51bb5a42d2b03e85e51e36a5e1291e46033dc5a",
+      "bytes": 23322
+    },
+    "source/Z3_INSTALL.json": {
+      "previous_path": "source/Z3_INSTALL.json",
+      "sha256": "3593c658bb01168869ee7062f756ba16cd1a77741f5d56268b3db937317b1a51",
+      "bytes": 1977
+    },
+    "source/revision.json": {
+      "previous_path": "source/revision.json",
+      "sha256": "adfd029126c72265309bff2d7c11d70bae2c065eee4291552651809361a333fc",
+      "bytes": 37493
+    }
+  }
+}

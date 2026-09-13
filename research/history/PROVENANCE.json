@@ -1,0 +1,101 @@
+{
+  "status": "historical, not new release runs",
+  "files": {
+    "gcc/FREEZE.json": {
+      "source": "qkf_new_external_2026-09-12/FREEZE.json",
+      "sha256": "ee91f966b71eb16984ec0aea2331249c4a4c0fc12d50d0ece55df9873257fbac"
+    },
+    "gcc/REPORT_RU.md": {
+      "source": "qkf_new_external_2026-09-12/QKF_GCC_EXTERNAL_REPORT_RU.md",
+      "sha256": "b2f7d851890813e5b0ad78379e64ea3f644d68cebd62b5da2d8adaa0cd25f317"
+    },
+    "gcc/FINAL_SUMMARY.json": {
+      "source": "qkf_new_external_2026-09-12/results/FINAL_SUMMARY.json",
+      "sha256": "9cd56a703cfcbafe82d75c0b0fd4f932e5f45344bd156e6da3f29c0bc3bb7f23"
+    },
+    "gcc/PROTOCOL.md": {
+      "source": "qkf_new_external_2026-09-12/PROTOCOL.md",
+      "sha256": "a0edd427686679f3465b33f2e819a2a41b181bcb2d0cb4a96328706d4b4ca03e"
+    },
+    "gcc/EVIDENCE_AUDIT.md": {
+      "source": "qkf_new_external_2026-09-12/EVIDENCE_AUDIT.md",
+      "sha256": "c980306991a5049725b56fd3c0d7ab77445c27c11e30f6c51c975599f3baca30"
+    },
+    "gcc/frozen_core_report.md": {
+      "source": "qkf_new_external_2026-09-12/frozen_core/REPORT_RU.md",
+      "sha256": "ea74e78bbda483fab568a85bcc18dca560409d016ab7bbea562036c23f7dd430"
+    },
+    "word_reconstruction/REPORT_RU.md": {
+      "source": "qkf_word_reconstruction_2026-09-12/QKF_WORD_RECONSTRUCTION_REPORT_RU.md",
+      "sha256": "6e9f3a24c328c731f2b595f24635bff348c14c02bf186a830be7e3ea9ec4bdc2"
+    },
+    "word_reconstruction/FINAL_SUMMARY.json": {
+      "source": "qkf_word_reconstruction_2026-09-12/results/FINAL_SUMMARY.json",
+      "sha256": "91e56e92a04f7d0f1a5b557eb2393c64c61a747432c5df327a614793f9223232"
+    },
+    "word_reconstruction/PROTOCOL.md": {
+      "source": "qkf_word_reconstruction_2026-09-12/PROTOCOL.md",
+      "sha256": "8821af5ec912af90f86c87870bdc386d0ea8cb211b99c08ace8067ffcffc27ac"
+    },
+    "word_reconstruction/EVALUATION_SELECTION.json": {
+      "source": "qkf_word_reconstruction_2026-09-12/EVALUATION_SELECTION.json",
+      "sha256": "151952604b3d1e395a7987cc8c3e0af90d7c23115406d6304eeb8738aab6b98b"
+    },
+    "word_reconstruction/CODE_FREEZE_V6.json": {
+      "source": "qkf_word_reconstruction_2026-09-12/CODE_FREEZE_V6.json",
+      "sha256": "40566ae799bfdda15d46b39de0a9ba5752d206c13db308dffaf0154966806797"
+    },
+    "smt_corpus/PROTOCOL_RU.md": {
+      "source": "qkf_corpus_comparison_2026-09-12/PROTOCOL_RU.md",
+      "sha256": "a3439687989390a14e4fd7fc8fe9fa3520fa9326dea05e2940b79c135c131e19"
+    },
+    "smt_corpus/FREEZE.json": {
+      "source": "qkf_corpus_comparison_2026-09-12/FREEZE.json",
+      "sha256": "7d08516fdaecb5f174100974e59e00d3f760924503c71c02b360f06ea8de6d91"
+    },
+    "smt_corpus/summary.json": {
+      "source": "qkf_corpus_comparison_2026-09-12/results/smt/summary.json",
+      "sha256": "475c25ebff7ad1567ab10b90de75b56cfb109e792ccb91e1bffc5364c063f36a"
+    },
+    "smt_corpus/TARGET_CONTRACT_RU.md": {
+      "source": "qkf_corpus_comparison_2026-09-12/TARGET_CONTRACT_RU.md",
+      "sha256": "c34eafacb725eabbe31398832ca25688cda02ecb50ccc7fa358e84182aedcfaa"
+    },
+    "smt_corpus/REPORT_RU.md": {
+      "source": "qkf_corpus_comparison_2026-09-12/REPORT_RU.md",
+      "sha256": "fd37de9aad0c05a1cce14f6f603e6d99de5c140506854b027fd4265874fb4d5b"
+    },
+    "smt_corpus/TIMINGS_RU.md": {
+      "source": "qkf_corpus_comparison_2026-09-12/TIMINGS_RU.md",
+      "sha256": "5be9a87ef9aa0c696124697693a7739bb313014890a3c4660aba28d14387ef7e"
+    },
+    "smt_corpus/encoding_end_to_end.json": {
+      "source": "qkf_corpus_comparison_2026-09-12/results/encoding_end_to_end.json",
+      "sha256": "067940820a5f66fad720c9b4264941b223ab1755328c7fc600b947703a073528"
+    },
+    "smt_corpus/AUDIT_NOTES_RU.md": {
+      "source": "qkf_corpus_comparison_2026-09-12/AUDIT_NOTES_RU.md",
+      "sha256": "93b8e63a139407cab903ffacd08a7753e7aa2da321bec645d1d072108ac0c568"
+    },
+    "smt_contracts/summary.json": {
+      "source": "qkf_observation_selection_2026-09-13/results/smt_portable_v2/summary.json",
+      "sha256": "61df3b23a6e3a4bf542763f7ac1bfdce31e85c8e2b999c821a5abc2ba5998f44"
+    },
+    "smt_contracts/REPORT_RU.md": {
+      "source": "qkf_observation_selection_2026-09-13/REPORT_RU.md",
+      "sha256": "e4ba5b38c7b56f2ce7258c71d7ea231ad4edfecc9309a49014ed8d2e98f7c634"
+    },
+    "smt_contracts/SMT_COMPARISON_RU.md": {
+      "source": "qkf_observation_selection_2026-09-13/SMT_COMPARISON_RU.md",
+      "sha256": "abf06008ed8b0ae196e9499c9163cd521c110a3b46b764b06a4e5b7e8ea08658"
+    },
+    "smt_contracts/smt_attempts_accounting.json": {
+      "source": "qkf_observation_selection_2026-09-13/results/smt_attempts_accounting.json",
+      "sha256": "811c462c6104b8afb258852e9b103ea2dafc75c5e9571012e6f2cf837c39cba5"
+    },
+    "smt_contracts/portable_smt_v2.json": {
+      "source": "qkf_observation_selection_2026-09-13/validation/portable_smt_v2.json",
+      "sha256": "8eb8f726536601fe470aae2bf1fd20345fb9c07f7ef7f6e9c7d03d530af86a0a"
+    }
+  }
+}

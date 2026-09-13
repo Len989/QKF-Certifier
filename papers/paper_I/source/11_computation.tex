@@ -1,0 +1,57 @@
+\section{Finite computation and reproducibility}\label{sec:computation}
+
+The carrier and named-action diagnostics are finite even when the initial
+algebra is infinite. For a finite set of observed terms $O$, take
+\[
+V=\operatorname{Sub}(E)\cup\operatorname{Sub}(O),
+\]
+where $\operatorname{Sub}(E)$ means the subterms of both sides of every
+axiom. Congruence closure on the represented operation nodes computes
+exactly the equality relation on $O$, by Lemma~\ref{lem:locality}.
+There is no need to enumerate the entire term universe $T^{(2)}$.
+
+The same finite construction can be filtered by depth. At horizon $D$,
+retain nodes of depth at most $D$ and activate only equations whose two
+sides are retained. Comparing the successive restrictions to $\mathcal I$
+gives $\lambda_E$, $\chi_E$, and $\delta_E^{\mathcal I}$ where defined.
+Recording the premises of each merge can produce equality derivations.
+The finite partial quotient in the locality proof also gives a total
+separating model for any unmerged query. These are standard uses of ground
+congruence closure, not a new general equality decision procedure.
+
+The structural feedback operator offers another route to the carrier
+quotient. A raw row pushout can be queried on its finite carrier and row
+tables without constructing its possibly infinite mixed-term part.
+Iterate the resulting carrier kernels as in Proposition~\ref{prop:Phi}.
+After stabilization, generate each $S_b$, compute $h_b$ and
+$\Cg_{Q_E}(\ker h_b)$, and read off the forced domains and interface counts.
+The agreement between this route and direct ground congruence closure is
+an explicit consequence of Theorems~\ref{thm:leaststable}
+and~\ref{thm:globalrows}.
+
+Completion requires a separate finite search. For a candidate quotient
+$Q=A/\theta$, enumerate maps $Q\to Q$, retain native endomorphisms, and
+check the supplied values. Rows can be treated independently in the pure
+fragment. With composition or group laws, impose the corresponding
+constraints jointly on the chosen maps. This elementary search is useful
+for small counterexamples; no polynomial bound for general repair search
+is asserted here.
+
+The supplementary source archive contains a self-contained Python script,
+\path{verification/verify_article.py}, and its JSON results. It checks
+the displayed operation tables, congruences, row kernels, interface
+partitions, repair witnesses, and the sharp feedback family on finite
+instances. It also compares two implementations of the named-interface
+relation on a bounded collection of small presentations: input-subterm
+congruence closure and row-copy propagation with carrier feedback.
+These computations are reproducible evidence for the examples; the
+universal statements rest on the proofs above.
+
+This division of tasks sets the scope of the companion programme.
+Paper~II~\cite{ShcherbakovII} studies presentation-sensitive visibility
+beyond the small filtration used here. The planned Paper~III will relate
+computational representations to their equality semantics and specify
+independently checkable certificates. The associated software project is
+\href{https://github.com/Len989/QKF-Certifier}{QKF-Certifier}.
+The present paper does not identify that implementation with a complete
+solver for every completion and repair problem considered here.

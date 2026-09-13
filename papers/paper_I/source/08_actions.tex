@@ -1,0 +1,180 @@
+\section{From independent rows to action laws}\label{sec:actionlaws}
+
+The pure-row theorem treats each named operator independently except for the shared carrier quotient.  Genuine action laws connect the row copies.  The raw-row formula and its feedback operator do not automatically
+compute the forced quotient of these stronger presentations. In this
+section $\theta_E^A$ always means equality in the full indicated ground
+theory. We prove the structural consequences directly from that theory.
+
+\subsection{Empty data produce a free action forest}
+
+Assume $\Gamma=\varnothing$ and no action law beyond carrier compatibility.  For a word $w=b_1\cdots b_n\in B^*$ define
+\[
+W_w(a)
+=
+\alpha(b_1,\alpha(b_2,\ldots,\alpha(b_n,a)\ldots)),
+\qquad
+W_\varepsilon(a)=a.
+\]
+
+\begin{theorem}[Free action forest]\label{thm:forest}
+In the empty-row typed theory, the map
+\[
+A\times B^*\longrightarrow \mathbb I_E^{\A},
+\qquad
+(a,w)\longmapsto[W_w(a)]
+\]
+is injective.  Consequently the initial carrier sort is infinite, and the number of distinct clean chains of length at most $d$ is at least
+\[
+|A|\sum_{k=0}^d|B|^k.
+\]
+\end{theorem}
+
+\begin{proof}
+Construct a model with operator sort $B$ and carrier sort $A\times B^*$.  Interpret carrier names by $(a,\varepsilon)$.  If a native $k$-ary carrier operation is applied to elements with a common word label $w$, put
+\[
+f((a_1,w),\ldots,(a_k,w))=(f^A(a_1,\ldots,a_k),w),
+\]
+and assign arbitrary values on mixed labels.  Define
+\[
+\alpha(b,(a,w))=(a,bw).
+\]
+The native diagrams hold at the base fiber and carrier compatibility holds because both sides of \eqref{eq:compat} have the same word label $b$.  Evaluation gives
+\[
+W_w(a)\mapsto(a,w),
+\]
+so distinct pairs are separated in a model of $E$ and hence cannot be equal in the initial algebra.
+\end{proof}
+
+The theorem identifies an embedded family of clean action chains.
+It does not assert that these chains exhaust the initial carrier sort:
+native operations applied to different fibers can produce further terms.
+
+\begin{proposition}[Finiteness boundary for independent rows]\label{prop:shallowfinite}
+In the pure typed row fragment, the initial carrier sort is finite if and only if every named ground action term $\alpha(b,a)$ is carrier-valued.
+\end{proposition}
+
+\begin{proof}
+If all named action terms reduce to carrier names, structural induction reduces every closed carrier-sort term to a named carrier constant: native operations use $D_A$, and an action term first reduces its carrier argument to a name and then uses ground-action closure.
+
+Conversely, suppose $x=\alpha(b,a)$ is external. The separation model
+in Theorem~\ref{thm:globalrows} realizes $x$ as an element outside the
+central named carrier. Choose a named $b_0$ and adjoin infinitely many
+fresh elements $x_1,x_2,\ldots$. Preserve all native operations on the old
+carrier and extend them arbitrarily to tuples using new elements.
+Redefine $\alpha(b_0,x)=x_1$ and put
+$\alpha(b_0,x_i)=x_{i+1}$; preserve the action on all central inputs.
+Every pure-row axiom involves the action only on named central inputs
+(possibly a native term equal to such an input), so these changes preserve
+all axioms. The terms $x,\alpha(b_0,x),\alpha(b_0,\alpha(b_0,x)),\ldots$
+have pairwise distinct values in the new model. Hence the initial carrier
+sort is infinite.
+\end{proof}
+
+\subsection{Composition folds the forest}
+
+Suppose now that $B$ is a finite semigroup with its named multiplication table and add the ground composition scheme
+\begin{equation}\label{eq:Comp}
+\mathrm{Comp}:\qquad
+\alpha(gh,a)=\alpha(g,\alpha(h,a))
+\end{equation}
+for named $g,h\in B$ and named $a\in A$.
+
+\begin{proposition}[Cayley folding]\label{prop:cayley}
+In the empty-row theory with ground Comp, every nonempty clean chain satisfies
+\[
+E\vdash W_{b_1\cdots b_n}(a)
+=
+\alpha(\overline{b_1\cdots b_n},a),
+\]
+where the bar denotes the product in $B$.  Moreover, if no other action law is present, then
+\[
+E\vdash W_u(a)=W_v(a')
+\quad\Longleftrightarrow\quad
+\bigl(a=a'\text{ in }A\bigr)
+\ \text{and}\
+\bigl(\overline u=\overline v\text{ in }B\bigr)
+\]
+for nonempty words $u,v$.
+\end{proposition}
+
+\begin{proof}
+Repeated bottom-up use of \eqref{eq:Comp} and the multiplication table reduces every clean chain to a single row term.  For the converse, use the carrier-sort model consisting of a base copy $A_*$ and copies $A_h$ indexed by $h\in B$, with
+\[
+\alpha(g,a_*)=a_g,
+\qquad
+\alpha(g,a_h)=a_{gh},
+\]
+and carrier operations acting copywise, with arbitrary values on mixed-copy tuples. Ground Comp and compatibility hold by construction, and different base elements and different product labels remain distinct.
+\end{proof}
+
+Thus Comp replaces the free word-indexed forest by a finite Cayley-type diagram of carrier copies
+\[
+A_h\xrightarrow{g}A_{gh}.
+\]
+This is the natural bridge from independent incomplete rows to partial-action and globalization theory.
+
+\subsection{Units, inverses, and partial group actions}
+
+When $B$ is a group, add the ground schemes
+\[
+\mathrm{Un}:\quad\alpha(e,a)=a,
+\]
+\[
+\mathrm{Inv}:\quad\alpha(g^{-1},\alpha(g,a))=a,
+\]
+in addition to Comp.
+
+
+For the theory with these additional laws, let $Q=A/\theta_E^A$ and define
+$D_g$ semantically as the set of $[a]\in Q$ for which $\alpha(g,a)$ equals
+a carrier name in the full initial algebra. The resulting forced value
+map is $\tau_g:D_g\to Q$. These definitions are well defined by congruence;
+we do not compute them by the pure-row saturation formula.
+
+\begin{proposition}[Canonical partial group action]\label{prop:partialgroup}
+Under ground Un, Comp, and Inv:
+\begin{enumerate}[label=(\roman*)]
+\item $D_g$ is closed under all positive-arity native operations. If it is
+nonempty, it is a subalgebra, and $\tau_g$ is a homomorphism on its domain.
+\item $D_e=Q$ and $\tau_e=\id_Q$.
+\item $\tau_g:D_g\to D_{g^{-1}}$ is a bijection preserving native
+operations in both directions, with inverse $\tau_{g^{-1}}$.
+\item The exact domain of the composite is
+\[
+\operatorname{dom}(\tau_g\circ\tau_h)=D_h\cap D_{gh},
+\]
+and $\tau_g(\tau_h(x))=\tau_{gh}(x)$ on this domain.
+\end{enumerate}
+Thus the forced maps form a partial group action, allowing empty domains.
+If every $D_g=Q$, they define a homomorphism $B\to\Aut(Q)$.
+\end{proposition}
+
+\begin{proof}
+If each $x_i=[a_i]$ belongs to $D_g$, choose names $c_i$ for their forced
+images. Ground compatibility gives
+$\alpha(g,f(\bar a))=f(\bar c)$, which is a named carrier value by $D_A$.
+This proves domain closure and preservation of operations. Un gives (ii).
+If $\tau_g([a])=[c]$, substitution in ground Inv at $a$ gives
+$\alpha(g^{-1},c)=a$. Applying the same argument with $g^{-1}$ proves both
+inverse identities, establishing (iii).
+
+If $x\in D_h$ and $\tau_h(x)\in D_g$, ground Comp identifies their
+composite carrier value with $\alpha(gh,x)$, so $x\in D_{gh}$.
+Conversely, if $x\in D_h\cap D_{gh}$, choose carrier names for
+$\tau_h(x)$ and $\tau_{gh}(x)$. The same Comp instance states that applying
+$g$ to the former equals the latter. Hence $\tau_h(x)\in D_g$.
+This proves the domain identity and the value identity in (iv).
+Full domains now give automorphisms satisfying the group law.
+\end{proof}
+
+Empty domains really occur: take a one-element carrier, $B=C_2$, and no
+supplied cells. A two-point regular $C_2$-orbit, with the named carrier at
+one point and native operations acting on constant fibers, is a model
+whose nonidentity action value is external. Hence the corresponding
+forced domain is empty. Positive arities make its closure condition
+vacuous; no empty algebra is being required in our category.
+
+This construction connects the forced maps to partial actions and
+premorphisms~\cite{Hollings2007,KhrypchenkoNovikov2018}. Here the partial
+maps are consequences of arbitrary ground prescriptions. Their carrier
+quotient must be taken in the full theory including the group laws.

@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "exhaustive": [
+    {
+      "width": 1,
+      "abstract_inputs": 12,
+      "java_calls": 12
+    },
+    {
+      "width": 2,
+      "abstract_inputs": 72,
+      "java_calls": 72
+    },
+    {
+      "width": 3,
+      "abstract_inputs": 432,
+      "java_calls": 432
+    },
+    {
+      "width": 4,
+      "abstract_inputs": 2592,
+      "java_calls": 2592
+    },
+    {
+      "width": 5,
+      "abstract_inputs": 15552,
+      "java_calls": 15552
+    },
+    {
+      "width": 6,
+      "abstract_inputs": 93312,
+      "java_calls": 93312
+    }
+  ],
+  "exhaustive_upper_inputs": 111972,
+  "wide": [
+    {
+      "width": 8,
+      "abstract_inputs": 516,
+      "java_calls": 516,
+      "oracle": "enumeration of at most 9 optional bits; one native full-mask analytic maximum where applicable"
+    },
+    {
+      "width": 16,
+      "abstract_inputs": 516,
+      "java_calls": 516,
+      "oracle": "enumeration of at most 9 optional bits; one native full-mask analytic maximum where applicable"
+    },
+    {
+      "width": 32,
+      "abstract_inputs": 516,
+      "java_calls": 516,
+      "oracle": "enumeration of at most 9 optional bits; one native full-mask analytic maximum where applicable"
+    },
+    {
+      "width": 64,
+      "abstract_inputs": 516,
+      "java_calls": 516,
+      "oracle": "enumeration of at most 9 optional bits; one native full-mask analytic maximum where applicable"
+    },
+    {
+      "width": 128,
+      "abstract_inputs": 32,
+      "java_calls": 0,
+      "oracle": "enumeration of at most 9 optional bits; one native full-mask analytic maximum where applicable"
+    },
+    {
+      "width": 256,
+      "abstract_inputs": 32,
+      "java_calls": 0,
+      "oracle": "enumeration of at most 9 optional bits; one native full-mask analytic maximum where applicable"
+    },
+    {
+      "width": 4096,
+      "abstract_inputs": 32,
+      "java_calls": 0,
+      "oracle": "enumeration of at most 9 optional bits; one native full-mask analytic maximum where applicable"
+    }
+  ],
+  "wide_upper_inputs": 2160,
+  "java_calls": 114040,
+  "exact_joint_refinements": [
+    {
+      "width": 1,
+      "joint_inputs": 18
+    },
+    {
+      "width": 2,
+      "joint_inputs": 180
+    },
+    {
+      "width": 3,
+      "joint_inputs": 1944
+    },
+    {
+      "width": 4,
+      "joint_inputs": 22032
+    }
+  ],
+  "joint_refinement_inputs": 24174,
+  "sentinel_cases": {
+    "empty": 37049,
+    "actual_minimum": 963
+  },
+  "diagnostic_cases": 4,
+  "failures": [],
+  "seconds": 5.780139376001898,
+  "scope": "Tests and Java execution are finite evidence; the separate source-bound induction/order certificate covers all input parameters and mathematical widths."
+}

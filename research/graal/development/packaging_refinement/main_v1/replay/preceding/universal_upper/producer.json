@@ -1,0 +1,9 @@
+{
+  "phase": "producer",
+  "status": "certificate_produced",
+  "source_sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+  "certificate_sha256": "180d06d1c67c3e5ba13a08ecf0d7b6c8acb2b760fcecb3d5d2b5ab76d3bd290c",
+  "certificate_bytes": 95545,
+  "seconds": 0.2472561989998212,
+  "peak_rss_kib": 16768
+}

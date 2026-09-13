@@ -1,0 +1,48 @@
+TITLE
+Equality-visibility depth in equational presentations: finite-ground spectra, certificates, and semigroup space
+
+RESOURCE TYPE
+Publication / Preprint
+
+CREATOR
+Given names: Leonid
+Family name: Shcherbakov
+Do not invent an ORCID, affiliation, or email address.
+
+VERSION
+1.0
+
+LANGUAGE
+English (eng)
+
+PUBLICATION DATE
+Use the actual date of first public release. The manuscript revision date is 2026-09-12.
+
+DESCRIPTION
+This is Paper II of the QKF research series. It studies the least term-depth horizon at which congruence reasoning recovers full equality on a bounded layer of closed terms. For finite ground presentations, subterm locality gives an exact finite search horizon. The admissible low-depth visibility profiles form a Catalan spectrum, and every such profile is realized by a finite unary construction. A finite extension by derived equations can eliminate congruence-visibility overhead.
+
+An incrementally activated input/query subterm DAG computes first-equality levels. Chronological proof DAGs and finite lower-threshold models provide complementary certificates of exact visibility. The paper connects these results to the named incomplete-action interface of Paper I, using the same four-element example and distinguishing proof depth from quotient-feedback rounds.
+
+Congruence-proof visibility is explicitly separated from sequential rewrite visibility. Two counterexamples show that their exact depths differ. For finite universal presentations, computable bounds for either visibility function are equivalent to decidability of the ground word problem. Sequential action-chain visibility reproduces semigroup derivational space on typed chains; arbitrary one-sorted contexts yield its exact overhead envelope. The semigroup realization results concern the sequential invariant.
+
+The source supplement includes LaTeX, a Python research prototype, deterministic finite checks, proof explanations, and finite model tables. The manuscript is a preprint, not a proof-assistant formalization. This record contains Paper II and its source supplement; Paper III is a planned companion paper.
+
+KEYWORDS (separate entries)
+equational logic
+congruence closure
+equality visibility
+ground presentations
+proof certificates
+term rewriting
+semigroup derivational space
+incomplete actions
+QKF
+
+RELATED WORK
+Leonid Shcherbakov, Initial semantics of incompletely specified actions: forced quotients, kernel saturation, and completion. Paper I, preprint v1.0, manuscript revision 11 September 2026.
+Add its actual DOI/URL as a Cites relation once known. No identifier is supplied here.
+
+LICENSE
+Recommended for manuscript/prose: Creative Commons Attribution 4.0 International (CC BY 4.0), to be selected by the author at publication.
+Included Python code: MIT; see LICENSE_CODE_MIT.txt.
+The metadata template itself does not grant a manuscript license on the author's behalf.

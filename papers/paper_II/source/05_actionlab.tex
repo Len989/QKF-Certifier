@@ -1,0 +1,102 @@
+\section{The action interface of Paper I}\label{sec:actionlab}
+
+\subsection{One example across the series}
+Paper I studies a finite carrier algebra $A$, named operators $B$, a fresh action symbol $\alpha$, and ground compatibility with the native operations of $A$. Supplied observations prescribe only selected action values. The initial algebra forces a carrier congruence $\theta_E^A$, a quotient $Q_E=A/\theta_E^A$, and possibly external row values. We now ask at which proof horizon these consequences become visible.
+
+Use the example of Paper I, Example~6.2 \cite{ShcherbakovI}. The carrier is $A=\{0,1,2,3\}$, with one binary operation given by
+\[
+\begin{array}{c|rrrr}
+f&0&1&2&3\\\hline
+0&0&2&0&0\\
+1&1&2&1&3\\
+2&0&2&2&0\\
+3&3&0&3&0
+\end{array}
+\]
+and one named operator $b$. Write $r_i=\alpha(b,i)$ and prescribe
+\[
+r_0=0,\qquad r_2=2,\qquad r_3=0.
+\]
+The input $E$ consists of the sixteen table equations, these three observations, and sixteen compatibility equations
+\[
+\alpha(b,f(i,j))=f(r_i,r_j)\qquad(i,j\in A).
+\]
+It is a two-sorted presentation, with $f:A^2\to A$, $b$ of operator sort, and $\alpha:B\times A\to A$. Its axiom depth is two. Observe the named interface
+\[
+\mathcal I=\{0,1,2,3,r_0,r_1,r_2,r_3\}.
+\]
+At horizon one, the table and observations give exactly five interface classes:
+\[
+\{0,r_0,r_3\},\quad \{1\},\quad \{2,r_2\},\quad \{3\},\quad \{r_1\}.
+\]
+At horizon two, compatibility gives the proofs
+\begin{align*}
+r_2&=\alpha(b,f(0,1))=f(r_0,r_1)
+=f(r_3,r_1)=\alpha(b,f(3,1))=r_0,\\
+r_1&=\alpha(b,f(1,0))=f(r_1,r_0)
+=f(r_1,r_3)=\alpha(b,f(1,3))=r_3.
+\end{align*}
+Every term displayed has depth at most two. Thus $0=2$ and $r_1=0$ become visible at horizon two. The exact final interface classes are
+\[
+\{0,2,r_0,r_1,r_2,r_3\},\qquad\{1\},\qquad\{3\}.
+\]
+To exclude further identifications, take the three-element quotient with carrier classes $\{0,2\},\{1\},\{3\}$ and the induced native operation. The constant action row with value $[0]$ is an endomorphism because $f([0],[0])=[0]$. It satisfies all observations and compatibility equations and separates the three displayed classes.
+
+A lower-horizon model is equally explicit. Take carrier domain $\{0,1,2,3,e\}$, retain the native table on $A^2$, define every other $f$-tuple to have value $0$, and set
+\[
+\alpha(b,0)=0,\quad \alpha(b,1)=e,\quad
+\alpha(b,2)=2,\quad \alpha(b,3)=0,\quad \alpha(b,e)=0.
+\]
+With singleton operator domain this is a total model of $E_1$. It separates $0$ from $2$ and $r_1$ from $0$, proving that both equalities require horizon two. In the notation of this paper,
+\[
+\boxed{\lambda_E(0,2)=\lambda_E(r_1,0)=\delta_E(\mathcal I)=2.}
+\]
+The source package checks both the symbolic proofs and these finite models.
+
+\subsection{Interface size, horizon, and feedback rounds}
+Let $N_D$ count interface classes at horizon $D$. In the example $N_1=5$ and $N_2=3$. More generally, the named-interface formulas of Paper I, Theorem~6.6, compute the two partitions from carrier quotients and row kernels. Since every interface term has depth at most one and every raw compatibility equation has depth at most two, ground locality implies
+\[
+\delta_E(\mathcal I)=
+\begin{cases}
+1,&N_1=N_2,\\
+2,&N_1>N_2,
+\end{cases}
+\]
+provided the interface contains an action term. Equality of these finite class counts suffices because the partition at horizon two is a coarsening of that at horizon one.
+
+This depth parameter is separate from the number of quotient-feedback rounds used to compute the fixed point $\theta_E^A$. Paper I, Proposition~5.5, gives a sharp $|A|-1$ bound on strict feedback rounds, while the proof horizon of this ground signature remains two. Many successive consequences may be proved using terms of the same depth.
+
+\subsection{The five depth-two profiles}\label{sec:square}
+A second finite example realizes every profile from Theorem~\ref{thm:catalan} at $h=2$. Use a \emph{one-sorted} signature with four distinct constants $c_0,c_1,b_0,b_1$, native symbols $+$, $-$, $\cdot$, and a fresh binary symbol $\alpha$. The native equations are exactly the named tables of addition and negation on $\{c_0,c_1\}\cong\mathbb Z/2\mathbb Z$, and multiplication on $\{b_0,b_1\}\cong\{0,1\}$. There is no equation identifying a $b$-name with a $c$-name.
+
+Include ground compatibility of each named operator with $+$ and $-$ on named carrier inputs. Set
+\begin{align*}
+\mathrm{Ann}:&\quad \alpha(b_0,c_i)=c_0\quad(i=0,1),\\
+R:&\quad \alpha(b_0,c_0)=c_1,\\
+\mathrm{Comp}:&\quad \alpha(b_g\cdot b_h,c_i)
+ =\alpha(b_g,\alpha(b_h,c_i))\quad(g,h,i\in\{0,1\}).
+\end{align*}
+No additional action unit law is imposed.
+
+\begin{proposition}[Visibility square]\label{prop:square}
+For the full one-sorted observed layers, these inputs give
+\begin{center}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Additional equations & $(\delta(0),\delta(1))$ & $|K^{(1,1)}|$ & $|K^{(1,2)}|$\\
+\midrule
+$\mathrm{Ann}$ & $(0,1)$ &44&44\\
+$\mathrm{Ann+Comp}$ & $(0,2)$ &44&43\\
+$\mathrm{Ann+}R$ & $(1,1)$ &26&26\\
+$\mathrm{Ann+}R\mathrm{+Comp}$ & $(1,2)$ &26&25\\
+Complete flip table & $(2,2)$ &42&25\\
+\bottomrule
+\end{tabular}
+\end{center}
+In the last row replace $\mathrm{Ann}$ by $\alpha(b_g,c_i)=c_{1-i}$ for every $g,i$, and include neither $R$ nor $\mathrm{Comp}$.
+\end{proposition}
+\begin{proof}
+The equation $R$ creates a horizon-one collision $c_0=c_1$. Composition adds the delayed equality $\alpha(b_1,c_0)=c_0$ via the instance $(g,h,i)=(1,0,0)$. For the flip table, compatibility with $c_1+c_1=c_0$ forces $c_0=c_1$ at depth two. Exactness and absence of further lower-level changes can be checked on a finite DAG by Theorem~\ref{thm:querysubterm}: there are four depth-zero terms and $4+4+3\cdot4^2=56$ depth-at-most-one terms. Congruence closure on all input/query subterms gives the class counts above and the indicated depth-zero partitions. The accompanying verifier reproduces this finite calculation and independently compares it with closure on the full bounded term universes through depth two. Ground locality makes the final horizon conclusive.
+\end{proof}
+
+The square separates a shallow value conflict from a delayed structural consequence. The shared four-element example, in contrast, connects those proof horizons to the quotient and external-row geometry developed in Paper I.

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "initial_state",
+    "rejected_at_expected_gate": true,
+    "exit_code": 1,
+    "seconds": 2.75,
+    "file": "QKF/Data.lean",
+    "original_sha256": "4f617f6d7685fd966e0de33055bbc213e16f43b783996d225a7de7cba05ed34b",
+    "mutated_sha256": "938df67c54ee0cf735d370d6ca1068f095c7020dc5fce2d1f6e791bb3a21314a"
+  },
+  {
+    "name": "transition_edge",
+    "rejected_at_expected_gate": true,
+    "exit_code": 1,
+    "seconds": 3.056,
+    "file": "QKF/Data.lean",
+    "original_sha256": "4f617f6d7685fd966e0de33055bbc213e16f43b783996d225a7de7cba05ed34b",
+    "mutated_sha256": "0329020a30c45033d3f19f56288590d4092694c81df278e02ad75f456ff35803"
+  },
+  {
+    "name": "row_cell",
+    "rejected_at_expected_gate": true,
+    "exit_code": 1,
+    "seconds": 2.879,
+    "file": "QKF/Data.lean",
+    "original_sha256": "4f617f6d7685fd966e0de33055bbc213e16f43b783996d225a7de7cba05ed34b",
+    "mutated_sha256": "ef229643b2328bf8c7e2ac684f1e09b4e9b030be943bef37600ad3e4f436a36e"
+  },
+  {
+    "name": "proof_placeholder",
+    "rejected_at_expected_gate": true,
+    "exit_code": 1,
+    "seconds": 6.373,
+    "file": "QKF/RowRules.lean",
+    "original_sha256": "4da5b092ad927fc08ab63071b6da208cb04c92cdb50251428ac01ebbf634f409",
+    "mutated_sha256": "9f2c4e5c36f01b6b7d0c812212ca8006154e8929582bd37701fb812f5ed89ca1"
+  }
+]

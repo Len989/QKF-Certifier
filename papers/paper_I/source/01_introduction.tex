@@ -1,0 +1,73 @@
+\section{Introduction}\label{sec:introduction}
+
+Suppose that a finite carrier algebra $A$ and a finite operator algebra $B$
+are known completely, but only some values of an operation
+$\alpha:B\times A\to A$ have been prescribed. Requiring each named operator
+to preserve the native operations of $A$ connects the missing cells to one
+another. It can also force originally distinct carrier elements to become
+equal. A semantics that immediately fills every blank with a carrier element
+can therefore obscure what the original equations actually determine.
+
+This paper separates three questions. Which equalities among the original
+carrier names hold in every model? Which missing action values already equal
+carrier names in every model? On which carrier quotients can all missing
+values be chosen inside the quotient? These are, respectively, questions
+about \emph{protection}, \emph{determinacy}, and \emph{completion}.
+They have different answers, even for a single row on a four-element algebra.
+
+We use initial-algebra semantics for a finite ground presentation. The native
+tables specify named copies of $A$ and $B$; compatibility is required only at
+named inputs. An unspecified cell denotes a total operation value in every
+model, but that value need not belong to the named carrier image. We call
+such an initial value \emph{external}. This use of external values is
+essential to distinguish necessary identifications from choices introduced
+by a completion.
+
+The main results are as follows.
+\begin{enumerate}
+\item \textbf{Exact forced quotient.} Each row is a homomorphic image of the
+carrier, glued to it along the supplied data. A row pushout preserves the
+carrier exactly when the data induce a homomorphism $h:S\to Q$ whose kernel
+extends to $Q$ without acquiring new pairs inside $S$
+(Theorem~\ref{thm:raw}). The least quotient with this property for every row
+is the exact carrier quotient of the initial algebra
+(Theorem~\ref{thm:leaststable}). A monotone feedback operator computes it in
+at most $|A|-1$ strict quotient steps, and this bound is sharp.
+\item \textbf{Exact forced domain.} For a protected row, the ambient
+congruence $\kappa=\Cg_Q(\ker h)$ is exactly the row kernel. A point has a
+forced carrier value precisely when its $\kappa$-class meets $S$
+(Theorem~\ref{thm:kernelsat}). Theorem~\ref{thm:globalrows} transfers this
+description to all rows in the full initial algebra. The resulting
+description also gives exact class counts on the named interface at proof
+horizons one and two (Theorem~\ref{thm:interface}).
+\item \textbf{Completion and repair.} Completing a row on $Q$ is equivalent
+to splitting its carrier embedding into the pushout
+(Theorem~\ref{thm:splitting}). The repair congruences are exactly the carrier
+kernels of models whose named action values stay inside the named carrier
+image (Theorem~\ref{thm:nojunk}). Examples separate this model restriction
+from unrestricted equational consequence.
+\end{enumerate}
+
+The categorical and logical tools are classical: initial algebras,
+amalgamation, congruence generation, and ground congruence closure. The
+contribution is their exact combination for arbitrary incomplete action
+rows, including inconsistent supplied values. In particular, the input is
+not assumed to be a partial action or even a partial function. The
+homomorphic partial maps arise after the required quotient has been found.
+
+This article is the semantic foundation of a three-paper programme. The
+companion manuscript on equality-visibility depth~\cite{ShcherbakovII}
+studies the dependence of finite-ground equality on a chosen presentation.
+The planned third paper concerns the computational core and checkable
+certificates. Here we retain only the finite-ground filtration needed to
+connect the structural results to those later questions. All results used
+in this paper are proved here or attributed to the preceding literature;
+the argument does not depend on either companion being published.
+
+Sections~\ref{sec:setup}--\ref{sec:mainquotient} develop the pure-row theory.
+Section~\ref{sec:examples} gives the examples and named-interface filtration.
+Section~\ref{sec:repair} treats completion and repair.
+Sections~\ref{sec:actionlaws} and~\ref{sec:onesorted} delimit the effect of
+additional action laws and one-sorted coupling.
+Section~\ref{sec:computation} explains finite verification, and
+Section~\ref{sec:related} situates the results in the literature.

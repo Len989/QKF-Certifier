@@ -1,0 +1,74 @@
+\section{From consumer observations to whole-word reconstruction}\label{sec:observations}
+
+\subsection{The observation required by a consumer}
+Let $D$ be the domain satisfying the checked path conditions of a source expression, and let $C:D\to Y$ denote its actual downstream consumer. An observation $\pi:D\to O$ is sufficient when
+\begin{equation}\label{eq:consumerkernel}
+ \ker\pi\subseteq\ker C.
+\end{equation}
+The domain is part of the statement. A condition discovered in a branch cannot be used outside that branch without a new proof.
+
+\begin{proposition}[Consumer factorization, K6.1]\label{prop:consumerfactor}
+Condition~\eqref{eq:consumerkernel} holds if and only if there is a unique map
+$\overline C:\pi(D)\to Y$ such that $C=\overline C\circ\pi$.
+\end{proposition}
+\begin{proof}
+Define $\overline C(\pi(x))=C(x)$. Kernel inclusion is exactly the condition that this definition be independent of the representative. The equation gives existence, and surjectivity onto $\pi(D)$ gives uniqueness. Conversely, equality of observations implies equality after composition with $\overline C$.
+\end{proof}
+
+This factorization criterion makes the implementation obligation explicit. An observation must be tied to the source value, its domain, and its consumer; a small observation type alone proves nothing. Research producers propose queries from actual uses of a result. Checkers reconstruct the source expression and path facts, validate the observation derivation, and replay its substitution at the designated occurrence.
+
+A shift amount represented by modular word arithmetic need not equal the mathematical integer suggested by its syntax. Its action on a particular operand can nevertheless be determined by a small quotient of the amount. A comparison may need only a result sign under a checked no-overflow condition. The implemented families cover particular count, shift, support, sign, and result observations; a complete synthesis procedure for the best observation of an arbitrary program remains open.
+
+\subsection{A kernel does not label its classes}
+Recovering an entire word requires more than proving that an action forgets certain bits. For fixed $0\le s\le w$, put
+\[
+ M_s=2^{w-s}-1,\qquad \pi_s(x)=x\mathbin{\&}M_s.
+\]
+The kernel of left shift by $s$ is the kernel of $\pi_s$. Every class has one representative among the submasks of $M_s$. Identifying a proposed inverse with that representative still requires a native semantic equation.
+
+\begin{proposition}[Labeled shift reconstruction, K6.2]\label{prop:restoreword}
+Under the declared total word semantics, for $0\le s\le w$,
+\[
+ \operatorname{LSHR}_s(\operatorname{SHL}_s(x))=x\mathbin{\&}M_s.
+\]
+Consequently, if $x\mathbin{\&}M_s=x$, this round trip returns $x$. The amount $s$ is fixed in the original environment throughout both actions.
+\end{proposition}
+\begin{proof}
+The left shift discards exactly the $s$ highest bits and moves every remaining bit $s$ positions upward. Logical right shift moves those bits back and fills the highest positions with zero. This is the stated projection; at $s=w$ the retained support is empty. The guarded conclusion follows by substitution.
+\end{proof}
+
+The research artifact also derives the universal equation in its preceding symbolic proof system and records its instantiation, support premise, ground equality steps, and consumer substitution. The native projection law is an explicit proof dependency.
+
+The distinction matters on a three-bit carrier. The maps $x\mapsto x\mathbin{\&}3$ and $x\mapsto\operatorname{swap}_{0,1}(x\mathbin{\&}3)$ have the same kernel and agree at $0,4,3$, but disagree at $1$. Kernel information and those supplied values do not identify the internal labels. This is a countermodel to an insufficient interface, not an execution of the actual shift round trip.
+
+\subsection{Rows forced by atomic observations}
+For a finite observation set $Q$ with at least two elements, use the named carrier
+$A=\mathcal P(Q)$ with union and intersection. A native cell action determines a map $\phi:Q\to Q$ and a guard $G\subseteq Q$. Its backward observation row is
+\begin{equation}\label{eq:restrictedpreimage}
+ h(P)=G\cap\phi^{-1}(P).
+\end{equation}
+
+\begin{lemma}[Atomic completion, K7.1]\label{lem:atomiccompletion}
+The row in~\eqref{eq:restrictedpreimage} preserves union and intersection. Its values on singleton subsets determine its complete table among all maps preserving these operations.
+\end{lemma}
+\begin{proof}
+Membership in either side of each preservation equation is equivalent to membership in $G$ and the corresponding Boolean combination of $\phi(q)\in P$. Singletons generate nonempty subsets by unions; the intersection of two distinct singletons generates the empty set. Induction on these expressions proves uniqueness from the supplied atomic values.
+\end{proof}
+
+This is a finite instance of the forced-row viewpoint of Paper I. In the examples below the supplied atoms generate the whole carrier: $S=D=A$, and the row kernel is $\kappa=K=\ker h$. A total realization on the same named carrier witnesses protection of its distinct central elements. Row kernels can be nontrivial while the central relation remains diagonal. No growth of the forced domain beyond the generated subalgebra is claimed here.
+
+The completed tables are consumed by the transitions of the checker. The ground tables describe the named carrier; they do not assert lattice identities on every unnamed element of an arbitrary total model.
+
+\subsection{Finite gluing and its semantic bridge}
+Let $\delta:S\times B\to S$ act on observations and bit-column types, with initial observation $s_0$ and acceptable final observations $\mathsf{Good}\subseteq S$. A certificate supplies a finite carrier and an edge table over every legal column.
+
+\begin{theorem}[Closed observation carrier, K7.2]\label{thm:gluing}
+If the supplied carrier contains $s_0$, is closed under every $\delta(\cdot,b)$, and every one of its states satisfies $\mathsf{Good}$, then processing any finite list of columns from $s_0$ ends in $\mathsf{Good}$. More generally, a relation between a concrete partial-word state and its observation that holds initially and is preserved by every local step holds after every finite list.
+\end{theorem}
+\begin{proof}
+Induction on the column list preserves membership in the closed carrier; its final-state condition gives the first assertion. The same induction preserves the simulation relation and gives the second.
+\end{proof}
+
+Unreachable certificate states are harmless if they also satisfy the obligations. Minimality of the state count is unnecessary. A word theorem additionally needs completeness of the column alphabet, a bridge from comparisons to numerical word values, and a sign-boundary argument. A graph check without these bridges establishes only a statement about that graph.
+
+The procedure identifies the consumer and domain, derives labeled native observations, completes compatible rows, searches for a closed carrier, checks its local and boundary obligations, and lifts the result through the semantic relation. Source binding and replay remain necessary at each substitution. It does not assume that every optimal abstract transformer preserves KnownBits join.

@@ -1,0 +1,48 @@
+{
+  "spec": {
+    "width": 256,
+    "must": 1,
+    "may": 57896044618658097711785492504343953926634992332820282019728792003956564819969,
+    "lower": 0,
+    "upper": 57896044618658097711785492504343953926634992332820282019728792003956564819967,
+    "can_zero": true
+  },
+  "record": {
+    "status": "proved_lower_refinement",
+    "spec": {
+      "width": 256,
+      "must": 1,
+      "may": 57896044618658097711785492504343953926634992332820282019728792003956564819969,
+      "lower": 0,
+      "upper": 57896044618658097711785492504343953926634992332820282019728792003956564819967,
+      "can_zero": true
+    },
+    "binding": "da600d9a252e92db615417b65f147f267c8d3a9ac1501250135257f40c181a6f",
+    "universal_certificate_sha256": "8ac9ed836f1ad357f6653e2570ca22c966ca1e33873e5919b0415e9cc44eefed",
+    "upper_dependency_sha256": "f4c3e7cdbc624f8c5b3a6c3bb340bb945ce9d1f771af05ac61756d2995fe962b",
+    "answer": {
+      "source_long_result": 0,
+      "source_path": [
+        "minimum",
+        "no_optional_zero"
+      ]
+    },
+    "joint_empty": false,
+    "precision": "conservative_bound",
+    "minimum": null,
+    "refined_spec": {
+      "width": 256,
+      "must": 1,
+      "may": 57896044618658097711785492504343953926634992332820282019728792003956564819969,
+      "lower": 0,
+      "upper": 57896044618658097711785492504343953926634992332820282019728792003956564819967,
+      "can_zero": true
+    },
+    "guarantee": "same complete joint mask/range/nonzero carrier; emptiness uses the preceding upper theorem, not the numeric MAX sentinel"
+  },
+  "oracle_words": [
+    -57896044618658097711785492504343953926634992332820282019728792003956564819967,
+    1
+  ],
+  "native": null
+}

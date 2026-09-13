@@ -1,0 +1,32 @@
+\section{Relation to previous work}\label{sec:related}
+
+\paragraph{Initial algebras and algebraic specification.}
+Initial-algebra semantics is classical \cite{GoguenThatcherWagner1978,Wirsing1990}.  The distinction between new values and new equalities among old values is standard in sufficient completeness, hierarchical consistency, and protecting extensions \cite{KapurNarendranZhang1987,SannellaTarlecki2012,Bernot1989}.  Our ground-action closure is a restricted no-junk question, while $\theta_E^A$ measures exact confusion on the distinguished carrier.  The contribution is the exact interaction between these effects for arbitrary incomplete action rows.
+
+\paragraph{Partial algebras.}
+Encoding finite data by partial algebras, quotienting by generated congruences, and freely completing partial structures are classical constructions \cite{BurmeisterSchmidt1967,Burmeister1970,Burmeister1986}.  They provide natural infrastructure for the finite row-copy picture.  We do not claim a new general completion theory of partial algebras.
+
+\paragraph{Congruence extension and amalgamation.}
+The condition
+\[
+\Cg_Q(K)\cap S^2=K
+\]
+is a particular congruence-extension condition.  Its relation to stability of embeddings under pushout belongs to the classical amalgamation/codescent framework; compare \cite{Zangurashvili2003}.  Minimal congruence extension conditions also occur in double-pushout treatments of partial and total algebras \cite{LlabresRossello2001}.  What is specific here is the identification of $K$ as the kernel created by an incomplete action row and the use of its ambient saturation to compute both forced carrier equality and forced missing action values.
+
+\paragraph{Partial actions and globalization.}
+The closest neighboring work is the globalization theory of already-defined partial actions.  Khrypchenko and Novikov associate generalized amalgams of copies of an algebra to a semantic partial group action and characterize globalizability through embeddability \cite{KhrypchenkoNovikov2018}.  Partial monoid and semigroup actions admit related globalization constructions \cite{Hollings2007,KudryavtsevaLaan2023,KhrypchenkoKlock2024}.  Our input occurs one logical step earlier: arbitrary ground cells need not define a partial map or a partial homomorphism and may themselves force a quotient of the predefined carrier.  For independent rows the quotient is characterized by
+Theorem~\ref{thm:leaststable}. With group laws, the canonical partial action
+of Proposition~\ref{prop:partialgroup} instead uses the carrier quotient
+of the full augmented ground theory. The two settings must not be
+interchanged.
+
+\paragraph{Incompletely specified operations.}
+The distinction between a partial operation and a total operation whose output is merely unspecified has been studied explicitly in finite clone theory \cite{ColicMachidaPantovic2012,ColicMachidaPantovic2014}.  The present paper uses the same semantic distinction but asks a different question: how incomplete ground values interact with native algebraic structure under initial equational semantics.
+
+\paragraph{Ground congruence closure.}
+The bounded proof-horizon discussion and the finite diagnostic algorithm use standard ground congruence closure and subterm locality \cite{NelsonOppen1980,DowneySethiTarjan1980}.  The exact two-stage interface description is specific to the present
+shallow ground signature. The broader presentation-sensitive question is
+treated in the companion manuscript~\cite{ShcherbakovII}. In particular,
+the number of quotient-feedback rounds is not identified with proof depth
+or with implementation running time.
+

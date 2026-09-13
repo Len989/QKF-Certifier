@@ -1,0 +1,193 @@
+{
+  "spec": {
+    "width": 8,
+    "must": 24,
+    "may": 24,
+    "lower": -31,
+    "upper": -9,
+    "can_zero": true
+  },
+  "java_output": "OK 127 -128 ff 0 0",
+  "output_spec": {
+    "width": 8,
+    "lower": 127,
+    "upper": -128,
+    "must": 255,
+    "may": 0,
+    "can_zero": false
+  },
+  "input_certificate": {
+    "schema": "qkf-joint-carrier-certificate-v1",
+    "spec": {
+      "width": 8,
+      "must": 24,
+      "may": 24,
+      "lower": -31,
+      "upper": -9,
+      "can_zero": true
+    },
+    "query": {
+      "kind": "summary"
+    },
+    "binding": "1eafc2839480997e943880b5d515f6890f0cd1a503159a5e5b34d50e736cc224",
+    "cells": [
+      {
+        "start": 97,
+        "free": 0,
+        "must_key": 249,
+        "may_key": 0,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 98,
+        "free": 1,
+        "must_key": 250,
+        "may_key": 0,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 100,
+        "free": 2,
+        "must_key": 252,
+        "may_key": 0,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 104,
+        "free": 3,
+        "must_key": 248,
+        "may_key": 8,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 112,
+        "free": 3,
+        "must_key": 248,
+        "may_key": 16,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      }
+    ],
+    "joins": [
+      {
+        "left": 0,
+        "right": 1,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 2,
+        "right": 3,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 5,
+        "right": 6,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 7,
+        "right": 4,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      }
+    ],
+    "root": 8,
+    "answer": {
+      "count": 0,
+      "lower": null,
+      "upper": null,
+      "must": 0,
+      "may": 0,
+      "zero": false,
+      "word": null
+    }
+  },
+  "output_certificate": {
+    "schema": "qkf-joint-carrier-certificate-v1",
+    "spec": {
+      "width": 8,
+      "lower": 127,
+      "upper": -128,
+      "must": 255,
+      "may": 0,
+      "can_zero": false
+    },
+    "query": {
+      "kind": "summary"
+    },
+    "binding": "f58c1d640b6a644c5f7c9e2153cec323092d0f95a1a3bdb889dcac2e0c60285c",
+    "cells": [],
+    "joins": [],
+    "root": null,
+    "answer": {
+      "count": 0,
+      "lower": null,
+      "upper": null,
+      "must": 0,
+      "may": 0,
+      "zero": false,
+      "word": null
+    }
+  }
+}

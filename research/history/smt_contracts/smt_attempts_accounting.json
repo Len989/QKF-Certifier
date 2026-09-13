@@ -1,0 +1,38 @@
+{
+  "attempts": [
+    {
+      "folder": "smt",
+      "complete_files": 54,
+      "statuses": {
+        "unsat": 10,
+        "unknown": 32,
+        "error": 12
+      },
+      "process_seconds": 48.21982136400038
+    },
+    {
+      "folder": "smt_portable",
+      "complete_files": 15,
+      "statuses": {
+        "unsat": 9,
+        "unknown": 4,
+        "error": 2
+      },
+      "process_seconds": 10.966048584996315
+    },
+    {
+      "folder": "smt_portable_v2",
+      "complete_files": 702,
+      "statuses": {
+        "unsat": 195,
+        "unknown": 435,
+        "sat": 72
+      },
+      "process_seconds": 654.2838729241194
+    }
+  ],
+  "all_complete_solver_calls": 771,
+  "reported_comparable_calls": 702,
+  "external_solver_calls": 27,
+  "note": "The two earlier attempts failed on syntax portability and are preserved; only the fresh final 702 enter the comparison table."
+}

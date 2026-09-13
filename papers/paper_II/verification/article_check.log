@@ -1,0 +1,121 @@
+resource_gaps: PASS
+catalan: PASS
+shared_action_example: PASS
+visibility_square: PASS
+empty_input: PASS
+{
+  "status": "PASS",
+  "python": "3.12.14",
+  "resource_gaps": {
+    "ground": {
+      "congruence_depth": 2,
+      "rewrite_depth": 3
+    },
+    "action_chains": {
+      "congruence_depth": 4,
+      "rewrite_depth": 5
+    }
+  },
+  "catalan": {
+    "profiles_by_axiom_depth": {
+      "1": 2,
+      "2": 5,
+      "3": 14,
+      "4": 42,
+      "5": 132
+    },
+    "profiles_total": 195,
+    "bounded_partition_comparisons": 1077,
+    "flattening_examples": 14
+  },
+  "shared_action_example": {
+    "N1": 5,
+    "N2": 3,
+    "exact_pair_depths": [
+      2,
+      2
+    ],
+    "equations": 35,
+    "dag_nodes": 57
+  },
+  "visibility_square": {
+    "bounded_universe_sizes": {
+      "0": 4,
+      "1": 56,
+      "2": 9468
+    },
+    "cases": [
+      {
+        "name": "Ann",
+        "profile": [
+          0,
+          1
+        ],
+        "classes_D1_D2": [
+          44,
+          44
+        ],
+        "equations": 24,
+        "dag_nodes": 80
+      },
+      {
+        "name": "Ann+Comp",
+        "profile": [
+          0,
+          2
+        ],
+        "classes_D1_D2": [
+          44,
+          43
+        ],
+        "equations": 32,
+        "dag_nodes": 96
+      },
+      {
+        "name": "Ann+R",
+        "profile": [
+          1,
+          1
+        ],
+        "classes_D1_D2": [
+          26,
+          26
+        ],
+        "equations": 25,
+        "dag_nodes": 80
+      },
+      {
+        "name": "Ann+R+Comp",
+        "profile": [
+          1,
+          2
+        ],
+        "classes_D1_D2": [
+          26,
+          25
+        ],
+        "equations": 33,
+        "dag_nodes": 96
+      },
+      {
+        "name": "Flip",
+        "profile": [
+          2,
+          2
+        ],
+        "classes_D1_D2": [
+          42,
+          25
+        ],
+        "equations": 26,
+        "dag_nodes": 80
+      }
+    ],
+    "bounded_partition_comparisons": 15
+  },
+  "empty_input": {
+    "empty_query_depth": 0,
+    "empty_active_model_domain_size": 1
+  },
+  "elapsed_seconds": 0.934
+}

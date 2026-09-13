@@ -1,0 +1,57 @@
+TITLE
+QKF-Certifier: finite quotient kernels and width-independent KnownBits proofs
+
+RESOURCE TYPE
+Publication / Preprint
+
+CREATOR
+Given names: Leonid
+Family name: Shcherbakov
+No ORCID, affiliation, or email is supplied in the available author information.
+
+VERSION
+1.0
+
+LANGUAGE
+English (eng)
+
+PUBLICATION DATE
+Use the actual first public release date. The manuscript revision date is 2026-09-12.
+
+DESCRIPTION
+This is Paper III of the QKF research series and the primary scientific reference for QKF-Certifier. It connects the initial semantics of incomplete actions in Paper I and the finite-ground equality-visibility results of Paper II to explicit algorithmic kernels and a versioned account of the public software.
+
+For a finite ground specification of a separately compatible binary operation, the paper proves exactness and termination of full relation-matrix closure and gives a coverage theorem for sparse semilattice representations. These algebraic kernels are distinguished from the released word-program checker.
+
+The public checker reconstructs expressions from a restricted straight-line transfer language, replays source-bound local rewrite certificates, and checks a coordinatewise KnownBits residual on the nine valid one-bit input rows. A product proof makes this check necessary and sufficient at every positive width. The paper gives the complete 18-bit semantic signature, the 64/64/16 sound precision classes for AND/OR/XOR, the additional monotone counts 26/26/16, all 29 rewrite rules, a decreasing termination measure, and the source-to-verdict composition theorem.
+
+The described executable is QKF-Certifier v0.1.0a1 at commit f93561682319e8b911ed32c01583f2a496dc59fc, using qkf-rewrite-v3 certificates and the declared total-transfer-words-v2 semantic contract. The supplement contains LaTeX, research reference code, source-hash manifests, deterministic checks, generated certificates, and proposed repository citation files. The public repository is retrieved by immutable commit rather than duplicated in the supplement.
+
+Fresh evidence includes 67 passing release tests, 804 relation/ground comparisons, 23,751 concrete rule-witness comparisons, exhaustive finite signature classifications, and 680 source mutations. Historical sparse C++ measurements are identified separately. The public release does not compute equality-visibility minima or implement a general arithmetic certifier. The manuscript is a preprint with mathematical proofs and finite implementation evidence; it is not a proof-assistant verification of the executable.
+
+KEYWORDS (separate entries)
+abstract interpretation
+KnownBits
+proof certificates
+finite quotients
+congruence closure
+term rewriting
+bit-width-independent verification
+MLIR
+QKF
+
+RELATED IDENTIFIERS
+Repository URL: https://github.com/Len989/QKF-Certifier
+Exact software URL: https://github.com/Len989/QKF-Certifier/tree/f93561682319e8b911ed32c01583f2a496dc59fc
+Use an appropriate supplement/software relation available in the deposit form.
+
+Papers cited from the same series:
+I. Initial semantics of incompletely specified actions: forced quotients, kernel saturation, and completion. Leonid Shcherbakov, preprint v1.0, revision 11 September 2026.
+II. Equality-visibility depth in equational presentations: finite-ground spectra, certificates, and semigroup space. Leonid Shcherbakov, preprint v1.0, revision 12 September 2026.
+Add their actual DOI/URL as Cites relations when known. No DOI is invented here.
+
+LICENSE
+Recommended for manuscript/prose: Creative Commons Attribution 4.0 International (CC BY 4.0), selected by the author at publication.
+Included research code: MIT, see LICENSE_CODE_MIT.txt.
+The public repository and upstream examples keep their own recorded licenses.
+This template does not select a manuscript license on the author's behalf.

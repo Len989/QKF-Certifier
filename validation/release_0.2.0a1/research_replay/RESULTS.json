@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "suites": {
+    "knownbits": {
+      "status": "passed",
+      "programs_checked": 39,
+      "complete_programs_proved": 11,
+      "source_components_checked": 411,
+      "component_target_proofs": 104,
+      "search_or_smt_loaded": false
+    },
+    "graal": {
+      "status": "passed",
+      "fresh_proof_processes": 7,
+      "upper": "exact masked maximum and empty-case distinction",
+      "lower": "conditional carrier preservation",
+      "complete_graal_results": "control 1/5; joint 2/5"
+    }
+  }
+}

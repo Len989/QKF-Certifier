@@ -1,0 +1,13 @@
+{
+  "original_paper_I": {
+    "paper": "I",
+    "relative_path": "work/articles/\u0421\u0442\u0430\u0442\u044c\u044f 1/INITIAL_SEMANTICS_INCOMPLETE_ACTIONS_FULL_PACKAGE/main.tex",
+    "sha256": "7d59ed93983b7f192221d297596772dd4fa3ad77ec8681f917684181554b281a"
+  },
+  "revision": "1.0",
+  "revision_date": "2026-09-11",
+  "package_completed": "2026-09-12",
+  "original_unchanged": true,
+  "pdf_pages": 25,
+  "proof_status": "mathematical manuscript; finite examples checked, not proof-assistant formalization"
+}

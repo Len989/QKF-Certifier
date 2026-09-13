@@ -1,0 +1,63 @@
+{
+  "status": "proved_universal_conditional_lower_contract",
+  "certificate_sha256": "8ac9ed836f1ad357f6653e2570ca22c966ca1e33873e5919b0415e9cc44eefed",
+  "sweep": {
+    "status": "proved_all_widths_all_inputs",
+    "states": 49,
+    "columns": 12,
+    "transitions": 588,
+    "sign_boundaries": 196,
+    "native_row_templates": 24,
+    "protected_carrier_size": 8,
+    "forced_row_domain": 8,
+    "central_carrier_quotient": "diagonal",
+    "row_kernel_class_counts": [
+      2,
+      4,
+      8
+    ]
+  },
+  "successor": {
+    "status": "proved_universal_mask_successor",
+    "states": 8,
+    "columns": 6,
+    "transitions": 48,
+    "sign_boundaries": 32,
+    "source_phase_states": 3,
+    "phase_quotient_classes": 2,
+    "native_row_templates": 8,
+    "protected_carrier_size": 4,
+    "forced_row_domain": 4,
+    "row_kernel_classes": [
+      1,
+      2,
+      4
+    ],
+    "central_carrier_quotient": "diagonal"
+  },
+  "outer": {
+    "status": "proved_universal_conditional_lower_preservation",
+    "weak_orders": 47293,
+    "flag_combinations": 189172,
+    "admitted_orders": 25737,
+    "paths": {
+      "minimum": 22768,
+      "minimum/exclude_zero": 472,
+      "minimum/greedy/successor": 312,
+      "minimum/greedy": 665,
+      "minimum/no_optional_zero": 1140,
+      "minimum/no_optional_zero/exclude_zero": 372,
+      "minimum/greedy/successor/exclude_zero": 8
+    },
+    "obligations_sha256": "96116995f399adcd53dd17e25554614eddf823ad56bb125f86bd1f58ce6e3233"
+  },
+  "conclusion": {
+    "precondition": "compatible masks, typed signed bound, and (lowerBound <= 0 or may-sign-bit = 0)",
+    "theorem": "For every feasible mask/nonzero word x >= lowerBound, the source result R satisfies lowerBound <= R <= x. For empty carriers R >= lowerBound still follows from the exact final source guard.",
+    "consequence": "Replacing only the lower bound by R preserves the complete joint word carrier for every additional upper bound.",
+    "precision": "The source helper may return a bound below the exact minimum; no standalone exact-minimum theorem is claimed.",
+    "scope": "All positive mathematical widths for the semantic lift; native Java widths 1..64, with production widths 1,8,16,32,64."
+  },
+  "trust_boundary": "Restricted source bridge, native mask/CodeUtil and least-positive-word lemmas, finite induction kernel, Python runtime. No formally verified Java compiler or proof-assistant claim.",
+  "search_modules_loaded": []
+}

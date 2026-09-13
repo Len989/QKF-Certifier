@@ -1,0 +1,28 @@
+{
+  "case": "Or",
+  "mode": "observed",
+  "phase": "replay",
+  "status": "proved_original_whole_all_positive_widths",
+  "components": 1,
+  "component_target_proofs": 1,
+  "component_width_one": [],
+  "whole_verification": {
+    "status": "proved_original_whole_all_positive_widths",
+    "states": 2,
+    "transitions": 48,
+    "components": 1,
+    "native_lemmas": 0,
+    "native_symbolic_steps": 0,
+    "rewrites": 0,
+    "action_rewrites": 0,
+    "action_tail_steps": 0,
+    "observation_rewrites": 0,
+    "observation_proof_steps": 0
+  },
+  "search_modules_loaded": [],
+  "action_rewrites": 0,
+  "observation_rewrites": 0,
+  "native_symbolic_lemmas": 0,
+  "seconds": 0.016872684995178133,
+  "peak_rss_kib": 13568
+}

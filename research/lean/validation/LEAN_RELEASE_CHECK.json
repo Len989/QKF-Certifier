@@ -1,0 +1,8 @@
+{
+  "version": "4.33.0",
+  "bytes": 574882764,
+  "sha256": "4b3fb03c29a1e0a253fb1d11f9bae3725f19a0dc6fc09b3ea16d2c9df3349e2c",
+  "official_sha256": "4b3fb03c29a1e0a253fb1d11f9bae3725f19a0dc6fc09b3ea16d2c9df3349e2c",
+  "verified": true,
+  "url": "https://github.com/leanprover/lean4/releases/download/v4.33.0/lean-4.33.0-linux.tar.zst"
+}

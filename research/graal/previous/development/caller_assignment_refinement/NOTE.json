@@ -1,0 +1,6 @@
+{
+  "phase": "Before freeze, after successful semantic validation v1",
+  "change": "For the empty upper query, preserve the actual source assignment upper=minimum_sentinel rather than normalize to an explicit bottom range. The separate proved empty tag remains.",
+  "reason": "This makes the concrete refinement match the exact create assignment on every branch, with the original masks, lower bound and zero flag unchanged.",
+  "old_result": "Both representations denote the same empty carrier; this is a refinement of the source correspondence, not a discovered incorrect maximum."
+}

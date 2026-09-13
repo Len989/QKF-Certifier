@@ -1,0 +1,49 @@
+\section{Reproducible evidence and its limits}\label{sec:experiments}
+
+\subsection{Fresh checks for this manuscript}
+All results in this subsection were rerun for this manuscript against the exact commit identified in Section~\ref{sec:intro}. The environment was Python 3.12.14 on x86-64 Linux. The release suite passed all 67 tests. It includes exhaustive evaluation of the three original programs on every valid input pair at widths one through four, totalling 22,140 program/input comparisons, as well as property-based, parser, binding, schema, and CLI tests.
+
+The independent matrix/ground comparison passed 804 finite instances and 35,856 interface-pair comparisons. These comprise 592 cases from every two-element binary table and 37 observation sets, 148 from every two-element unary table and the same observation family, and 64 deterministic random three-element mixed-signature cases. Each final relation matrix was checked for closure. The largest observed iteration count was five. The common example from I--II and the central-feedback counterexample also passed. These finite comparisons exercise the implementation; the general exactness argument is Theorem~\ref{thm:matrix}.
+
+The release audit constructs a witness for each of the 29 rewrite identifiers and compares its before/after values using a concrete word evaluator on all valid input pairs at widths one, two, and three. All 23,751 comparisons passed. Every witness decreases $\mu$, as do all steps in the three source-derived traces. Witness tests do not exhaust every possible instance of a rule; Proposition~\ref{prop:rules} supplies the general argument.
+
+The signature audit constructs all 512 Boolean row functions by disjunctive normal form and evaluates them with the release's bit evaluator. It independently enumerates all $3^9=19,683$ valid output tables per target, confirming the sound-class counts $64,64,16$ and the additional monotone counts $26,26,16$. Every pair of sound tables was checked against the signature-OR meet law: 4,096 AND pairs, 4,096 OR pairs, and 256 XOR pairs. Counterexamples to generator-only relational composition and to separate join preservation of best addition were also checked.
+
+\subsection{Certificates and mutation outcomes}
+Table~\ref{tab:examples} reports actual generated certificates. A node count here counts structurally distinct expression nodes; it differs from the expanded-tree measure in Proposition~\ref{prop:termination}. Certificate sizes use compact UTF-8 JSON serialization.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lrrrrl@{}}
+\toprule
+Target & Nodes before/after & Steps & Bytes & Optimal & Signature\\\midrule
+AND & $10/7$ & 3 & 1,251 & yes & \texttt{01255}\\
+OR  & $21/8$ & 8 & 1,465 & yes & \texttt{08a89}\\
+XOR & $20/11$ & 7 & 1,544 & yes & \texttt{00189}\\
+\bottomrule
+\end{tabular}
+\caption{Source-bound certificates for the three pinned examples.}\label{tab:examples}
+\end{table}
+
+The deterministic mutation family modifies actual source operations, constants, and related constructs. Of 680 distinct mutations, 270 were certified sound, 180 received a width-one refutation, and 230 required fallback. Broken or unsupported residual expressions are not counted as proofs of unsoundness. Table~\ref{tab:mutations} separates the targets.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Target & Mutations & Certified & Unsound & Fallback\\\midrule
+AND & 85 & 13 & 34 & 38\\
+OR & 356 & 167 & 62 & 127\\
+XOR & 239 & 90 & 84 & 65\\\midrule
+Total & 680 & 270 & 180 & 230\\
+\bottomrule
+\end{tabular}
+\caption{Fresh source-mutation classification.}\label{tab:mutations}
+\end{table}
+
+Including the three originals, 453 candidates reach the coordinatewise fragment: 48 AND, 230 OR, and 175 XOR. Within each target, they yield respectively 20, 28, and 50 distinct signatures. Thus target-indexed semantic deduplication reduces these 453 candidates to 98 classes; this sum does not assert that signatures in different target groups are disjoint. The reduction is empirical for this mutation family, not a general bound on search improvement.
+
+For a small reproducibility check, 31 warmed calls per example gave median end-to-end verification times of 3.58, 5.61, and 7.45 ms for AND, OR, and XOR; certificate checking took 1.58, 2.14, and 3.26 ms. Raw minimum, median, maximum, and environment fields are retained in the supplement. These are shared-host observations including parsing and validation, not controlled cross-system benchmarks or evidence of a speedup over Nice to Meet You.
+
+\subsection{Earlier research evidence, kept separate}
+Earlier project records report 3,720 baseline/component comparisons and 3,000 component/fast-local comparisons on small KnownBits carriers. A recorded width-eight run has $|\KB_8|=6,561$, 1,000 observations, 364,572 forced cells, and 831,389 materialized endpoints; its recorded time is 14.20 s with peak resident memory 449,444 KiB. These are historical measurements from the research prototype, not reruns of the public Python release. The supplement preserves the underlying small result records and their provenance. They motivate the sparse representation but do not remove its implementation obligations or its pass-limit issue.
+
+An earlier transformer-corpus pass normalized all 39 inspected solutions but reached the coordinatewise fragment for only three. That historical coverage result is consistent with the present scope: arithmetic, shifts, and counts can disappear under sound local rules, but residual cross-bit dependence is outside the nine-row theorem. In particular, the public release does not supply a certified general addition transformer or a general substitute for the upstream solver pipeline.

@@ -4,3 +4,10 @@ recursive-include examples *.mlir *.json *.md
 recursive-include tests *.py
 recursive-include benchmarks *.py *.json *.md
 recursive-include third_party *
+
+prune research
+prune papers
+prune reproduction
+prune tools
+prune releases
+prune validation

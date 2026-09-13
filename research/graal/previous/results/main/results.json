@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "integrity": {
+    "inherited_files": 343,
+    "frozen_files": 428
+  },
+  "universal_upper": "proved_all_inputs_and_mathematical_widths",
+  "specialized_instances": 18,
+  "graal_regression": {
+    "control": {
+      "selected": 5,
+      "statuses": {
+        "and": "adapter_unsupported",
+        "or": "proved_source_observation_and_whole_word_ssa",
+        "xor": "adapter_unsupported",
+        "add": "adapter_unsupported",
+        "sub": "adapter_unsupported"
+      }
+    },
+    "joint": {
+      "selected": 5,
+      "statuses": {
+        "and": "proved_source_observation_and_whole_word_ssa",
+        "or": "proved_source_observation_and_whole_word_ssa",
+        "xor": "adapter_unsupported",
+        "add": "adapter_unsupported",
+        "sub": "adapter_unsupported"
+      }
+    }
+  },
+  "historical_NiceToMeetYou": {
+    "whole": "11/39",
+    "components": "104/411"
+  },
+  "scope": "One new universal helper contract; whole-program Graal denominator remains five. No new SMT run."
+}

@@ -1,0 +1,61 @@
+\section{Sparse semilattice representations}\label{sec:sparse}
+
+Suppose now $A=(A,\join)$ is a finite join-semilattice and $\tau$ is binary. The relation matrix can be represented by global equality components of labelled endpoints instead of storing every $R_{ij}$ explicitly. A missing physical cell still denotes a two-endpoint component, one in its row and one in its column. It is implicit, not absent.
+
+For the current central quotient $Q=A/\theta$, materialize all central endpoints. Materializing either view of a cell also materializes its other view and identifies them. For each used copy $i$, maintain its exact local congruence $\kappa_i\in\operatorname{Con}(Q)$ and materialize every affected nontrivial local class. This guarantees that an unmaterialized cell has not silently acquired further equalities.
+
+\begin{lemma}[Compatibility coverage]\label{lem:coverage}
+After exact local closure, all binary native-compatibility obligations are covered by:
+\begin{enumerate}[label=(\roman*)]
+\item each pair of distinct explicit global components, compared in every copy in which both occur;
+\item each explicit component and implicit physical cell, compared across that cell's row and column when both occur in the explicit component.
+\end{enumerate}
+Repeated components and pairs of distinct implicit cells create no further cross-copy obligation.
+\end{lemma}
+\begin{proof}
+Representatives of one component inside one copy are interchangeable modulo $\kappa_i$. This reduces two distinct explicit components to one pair of representatives per common copy. Repeating one component gives its own class by idempotence; local closure handles different representatives of that component. Commutativity allows unordered component pairs.
+
+An implicit component occurs in exactly one row and one column. Thus its only possible nontrivial comparison with an explicit component is (ii). Two distinct implicit cells cannot share both their row and column, so they have at most one common copy and create no cross-copy identification. Repeating one implicit cell is again covered by idempotence. Local compatibility in a single copy is already included in exact local congruence closure.
+\end{proof}
+
+\begin{theorem}[Sparse refinement contract, K3]\label{thm:sparse}
+An algorithm that preserves the representation above, fairly saturates the two cases of Lemma~\ref{lem:coverage}, and performs full central quotient feedback computes the same interface partition as Theorem~\ref{thm:matrix}, provided it reports success only after a common fixed point is reached.
+\end{theorem}
+\begin{proof}
+Every materialization, local merge, and component-compatibility merge is justified by a relation-matrix rule. When central conflicts occur, close them as a native congruence in $A$, replace the carrier by the resulting quotient, and restart from the projection of the original observations. These are sound central consequences and implement both local and context feedback.
+
+At a fixed point without central conflicts, expand the implicit cells conceptually. The local congruences, Lemma~\ref{lem:coverage}, and the quotient representation satisfy every rule of Theorem~\ref{thm:matrix}. Soundness and leastness therefore identify the result with $R^*$. At a fixed $Q$, the number of possible labelled endpoints and equality merges is finite. The central congruence can change strictly at most $n-1$ times. An uncapped fair monotone implementation consequently terminates; a prematurely exhausted engineering budget must return unresolved.
+\end{proof}
+
+\paragraph{Algorithmic order.}
+Start with the diagonal central congruence. Build $Q$ and projected observations; close mirrors and local congruences, then both compatibility cases, repeating until stable or a central conflict is found. If a conflict appears, enlarge $\theta$ by its native congruence closure and rebuild over $Q$. Return only after a stable round with no conflict. This specification exposes the conditions an optimized representation must preserve, rather than assuming that a choice of data structure establishes completeness.
+
+\subsection{Principal generators and a width-dependent carrier}
+For $s\le u$ in a join-semilattice, the comparably generated principal congruence satisfies
+\begin{equation}\label{eq:principal}
+\Cg(u,s)=\Delta\cup\{(a,b):s\le a,b,\ u\join a=u\join b\}.
+\end{equation}
+We use this established characterization \cite[Theorem~2.1]{MartinMaroto2026}, together with
+\[
+\Cg(x,y)=\Cg(x\join y,x)\vee\Cg(x\join y,y).
+\]
+Grouping the elements $a\ge s$ by $u\join a$ supplies generators for each class in \eqref{eq:principal}. Inserting these pairs directly into a persistent local disjoint-set structure computes its join with the new principal congruence; rebuilding a separate full-carrier structure for each seed is unnecessary.
+
+On nonempty KnownBits values at width $w$, native join retains the bits known in both arguments:
+\[
+(Z,O)\join(Z',O')=(Z\mathbin{\&}Z',\ O\mathbin{\&}O').
+\]
+There are $3^w$ carrier values. Above a fixed element, the original discrete carrier consists of submasks of its known literals, so at most $2^w$ values need inspection for a comparable principal generator. After a nontrivial quotient, a general quotient-carrier scan remains a valid option. These observations concern representation cost in a width-dependent finite algebra; they do not give a polynomial-time algorithm in $w$.
+
+The historical component-pair C++ backend implements these ideas and has substantial differential evidence. Its source includes a 100-pass loop without a distinct exhaustion result. Therefore Theorem~\ref{thm:sparse} is a proved representation contract, not an unconditional correctness theorem for that exact historical file. The public Python certifier has its own explicit resource-limit outcomes and does not call this backend.
+
+\subsection{Algebraic compatibility does not establish concrete soundness}
+A constant $\tau$ preserves a positive-arity semilattice operation separately in both arguments. Choosing its constant to be a wrong concrete answer gives an algebraically compatible but unsound transformer. Consequently relation closure cannot turn arbitrary sampled examples into a soundness proof for an unrestricted candidate language.
+
+Nor does every optimal transformer preserve this native join. At width two, let $a=00$, $a'=11$, and $b=01$ denote exact words. Then $a\join a'=??$, and the best modular-add transformer satisfies
+\[
+\operatorname{Add}^{\#}(a\join a',b)=??,
+\quad
+\operatorname{Add}^{\#}(a,b)\join\operatorname{Add}^{\#}(a',b)=01\join00=0?.
+\]
+Thus separate join compatibility is not a general axiom of optimal KnownBits addition. The word-certification route below uses the actual expression semantics instead of importing such an axiom.

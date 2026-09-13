@@ -1,0 +1,11 @@
+{
+  "status": "compiled",
+  "returncode": 0,
+  "generated_sha256": "1a827adb88f57b8f612979af5b90016077cbf4dad4c54b34e539fee5fce01c95",
+  "prior_harness_sha256": "f819bf426b907877d8e1a4dcc56f5c5040961af80153e8aea858ab9043f543b6",
+  "compiler_sha256": "29f6d3918ee02db4400c103bc25dd90a22491c3a395867d9393070cb96a7dd29",
+  "runtime": "openjdk version \"25.0.2\" 2026-01-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.2+10 (build 25.0.2+10-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.2+10 (build 25.0.2+10-LTS, mixed mode)\n",
+  "stdout": "",
+  "stderr": "",
+  "difference": "Only one new harness command; all original algorithm bodies remain byte-for-byte intact"
+}

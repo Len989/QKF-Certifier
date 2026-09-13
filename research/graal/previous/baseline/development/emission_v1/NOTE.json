@@ -1,0 +1,5 @@
+{
+  "phase": "development before main freeze",
+  "cause": "JSON lists were passed to a tuple-keyed existing SSA emitter",
+  "correction": "Convert only the serialized expression representation back to immutable tuples; proof rules unchanged."
+}

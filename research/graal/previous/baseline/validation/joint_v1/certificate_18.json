@@ -1,0 +1,42 @@
+{
+  "schema": "qkf-joint-carrier-certificate-v1",
+  "spec": {
+    "width": 64,
+    "must": 0,
+    "may": 18446744073709551615,
+    "lower": -9223372036854775808,
+    "upper": 9223372036854775807,
+    "can_zero": false
+  },
+  "query": {
+    "kind": "summary"
+  },
+  "binding": "7fcfebdccd402fbe005559f3ae342542c46f58592abff68efbaee099098f9665",
+  "cells": [
+    {
+      "start": 0,
+      "free": 64,
+      "must_key": 0,
+      "may_key": 18446744073709551615,
+      "observation": {
+        "count": 18446744073709551615,
+        "lower": -9223372036854775808,
+        "upper": 9223372036854775807,
+        "must": 0,
+        "may": 18446744073709551615,
+        "zero": false
+      }
+    }
+  ],
+  "joins": [],
+  "root": 0,
+  "answer": {
+    "count": 18446744073709551615,
+    "lower": -9223372036854775808,
+    "upper": 9223372036854775807,
+    "must": 0,
+    "may": 18446744073709551615,
+    "zero": false,
+    "word": null
+  }
+}

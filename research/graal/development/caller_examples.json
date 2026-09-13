@@ -1,0 +1,30 @@
+{
+  "status": "completed",
+  "rows": [
+    {
+      "command": "lower 8 1 0 c0 1",
+      "output": "LO 127"
+    },
+    {
+      "command": "create 8 1 127 0 c0 1",
+      "output": "OK 64 64 40 40 0"
+    },
+    {
+      "command": "lower 8 -1 1 81 1",
+      "output": "LO 0"
+    },
+    {
+      "command": "create 8 -1 127 1 81 1",
+      "output": "OK 1 1 1 1 0"
+    },
+    {
+      "command": "lower 1 -1 0 0 0",
+      "output": "LO 1"
+    },
+    {
+      "command": "create 1 -1 0 0 0 0",
+      "output": "OK 0 -1 1 0 0"
+    }
+  ],
+  "scope": "Three production-width helper examples and three matching full-create diagnostics; these do not constitute a full-create proof or add whole-program coverage."
+}

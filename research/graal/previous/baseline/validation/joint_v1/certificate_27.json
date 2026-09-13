@@ -1,0 +1,22 @@
+{
+  "schema": "qkf-joint-carrier-certificate-v1",
+  "spec": {
+    "width": 4,
+    "must": 0,
+    "may": 15,
+    "lower": 7,
+    "upper": -8,
+    "can_zero": true
+  },
+  "query": {
+    "kind": "empty"
+  },
+  "binding": "5c062af462441a1e9226daf1e2802dd76df498018d0a447fd00d0cd1237218a5",
+  "cells": [],
+  "joins": [],
+  "root": null,
+  "answer": {
+    "empty": true,
+    "witness": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "case": "KnownBits_SdivExact",
+  "mode": "observed",
+  "phase": "replay",
+  "status": "all_preparations_and_available_proofs_replayed",
+  "components": 2,
+  "component_target_proofs": 0,
+  "component_width_one": [],
+  "whole_verification": null,
+  "search_modules_loaded": [],
+  "action_rewrites": 2,
+  "observation_rewrites": 0,
+  "native_symbolic_lemmas": 0,
+  "seconds": 0.04128940400551073,
+  "peak_rss_kib": 13696
+}

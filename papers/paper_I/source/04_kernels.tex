@@ -1,0 +1,78 @@
+\section{Kernel saturation and exact determinacy}\label{sec:kernelsat}
+
+Assume now that $Q$ is a carrier quotient for which a row is protected, and suppress the subscript $b$.  Thus $S\le Q$, $h:S\to Q$ is a homomorphism,
+\[
+K=\ker h,
+\qquad
+\kappa=\Cg_Q(K),
+\]
+and $\kappa\cap S^2=K$.  Let
+\[
+\begin{array}{ccc}
+S & \hookrightarrow & Q_r\\
+{\scriptstyle h}\downarrow && \downarrow{\scriptstyle p_r}\\
+Q_* & \xrightarrow{m} & P
+\end{array}
+\]
+be the stabilized row pushout.
+
+\begin{theorem}[Kernel-saturation theorem]\label{thm:kernelsat}
+In the protected row pushout above:
+\begin{enumerate}[label=(\roman*)]
+\item $\ker p_r=\kappa$;
+\item
+\[
+p_r(Q)\cap m(Q)=m(h(S));
+\]
+\item for $x\in Q$,
+\begin{equation}\label{eq:forceddomain}
+p_r(x)\in m(Q)
+\iff
+[x]_{\kappa}\cap S\neq\varnothing;
+\end{equation}
+\item if $x\equiv_{\kappa}s$ with $s\in S$, then
+\[
+p_r(x)=m(h(s)).
+\]
+\end{enumerate}
+Consequently the exact carrier-forced domain of the row is
+\begin{equation}\label{eq:Db}
+D=S^{\kappa}
+:=
+\{x\in Q:[x]_{\kappa}\cap S\neq\varnothing\}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Push out $S\hookrightarrow Q_r$ first along the quotient $S\twoheadrightarrow S/K$.  The result is $Q_r\twoheadrightarrow Q_r/\kappa$, and the induced copy of $S/K$ is embedded because $\kappa\cap S^2=K$.  The second stage is therefore the strong amalgam of the embeddings
+\[
+S/K\hookrightarrow Q_r/\kappa,
+\qquad
+S/K\hookrightarrow Q_*.
+\]
+Strong amalgamation gives both the row kernel and the exact intersection of the two images.  Statement \eqref{eq:forceddomain} is precisely the condition that the $\kappa$-class of $x$ belongs to the embedded copy of $S/K$.
+\end{proof}
+
+\begin{corollary}[No hidden forcing for injective data]\label{cor:injective}
+If $h:S\to Q$ is injective, then $\kappa=\Delta_Q$ and
+\[
+D=S.
+\]
+Thus an injective supplied partial homomorphism forces no additional row values outside its generated input subalgebra.
+\end{corollary}
+
+\begin{corollary}[Exact number of external row classes]\label{cor:count}
+In a finite protected row,
+\[
+|p_r(Q)\setminus m(Q)|
+=
+|Q/\kappa|-|S/K|.
+\]
+For an entirely unspecified row the contribution is $|Q|$.
+\end{corollary}
+
+\begin{proof}
+By Theorem~\ref{thm:kernelsat}, $p_r(Q)\cong Q/\kappa$ and its intersection with $m(Q)$ is isomorphic to $h(S)\cong S/K$.
+\end{proof}
+
+The formula shows that ``missing'' and ``free'' are not synonymous.  Nontrivial kernel propagation can make $D$ strictly larger than $S$, even equal to all of $Q$.

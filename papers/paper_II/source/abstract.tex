@@ -1,0 +1,32 @@
+\begin{abstract}
+A finite equational presentation determines both an equality theory and the
+resources required to recover that equality on a bounded set of terms. We
+study the least horizon $\delta_E(d)$ at which congruence reasoning becomes
+exact on closed terms of depth at most $d$, and the pairwise threshold
+$\lambda_E(s,t)$. For finite ground presentations, subterm locality gives
+$\delta_E(d)\le\max\{d,h(E)\}$, where $h(E)$ is the maximum axiom-side depth.
+The possible low-depth profiles at exact axiom depth $h$ are precisely the
+weakly increasing sequences $a_0\le\cdots\le a_{h-1}$ with $i\le a_i\le h$;
+there are $C_{h+1}$ such profiles. An incrementally activated query-subterm
+DAG computes the complete finite-query filtration. Chronological proof
+DAGs and finite threshold countermodels provide complementary certificates
+of the exact horizon. We apply this construction to the incomplete-action
+interface of Paper I.
+
+We distinguish this congruence-proof resource from the maximum depth in a
+sequential rewrite derivation, denoted by $\lambda_E^{\mathrm{rw}}$ and
+$\delta_E^{\mathrm{rw}}$. Explicit examples separate the two, even for
+finite ground equations. For finite universal presentations, computability
+of either visibility function is equivalent to decidability of the ground
+word problem. Universal action-chain identities reproduce semigroup
+\emph{rewrite} space exactly on typed chains. In the one-sorted language,
+skeleton invariance yields the exact formula
+$\delta_{\mathcal A(P)}^{\mathrm{rw}}(n)
+=\max_{1\le m\le n}(n-m+s_P(m))$.
+This separates the finite-ground certificate theory from the sequential
+space results while retaining their common equational semantics.
+\end{abstract}
+
+\noindent\textbf{Keywords.} Equational logic; congruence closure; equality
+visibility; ground presentations; proof certificates; term rewriting;
+semigroup derivational space.

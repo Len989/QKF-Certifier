@@ -1,0 +1,88 @@
+{
+  "spec": {
+    "width": 4,
+    "must": 0,
+    "may": 0,
+    "lower": -8,
+    "upper": -8,
+    "can_zero": false
+  },
+  "java_output": "OK 7 -8 f 0 0",
+  "output_spec": {
+    "width": 4,
+    "lower": 7,
+    "upper": -8,
+    "must": 15,
+    "may": 0,
+    "can_zero": false
+  },
+  "input_certificate": {
+    "schema": "qkf-joint-carrier-certificate-v1",
+    "spec": {
+      "width": 4,
+      "must": 0,
+      "may": 0,
+      "lower": -8,
+      "upper": -8,
+      "can_zero": false
+    },
+    "query": {
+      "kind": "summary"
+    },
+    "binding": "44ddacf5ec4d5fbbd68fff0a758c7585932367657aed2a112e488640f69f63e0",
+    "cells": [
+      {
+        "start": 0,
+        "free": 0,
+        "must_key": 8,
+        "may_key": 0,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      }
+    ],
+    "joins": [],
+    "root": 0,
+    "answer": {
+      "count": 0,
+      "lower": null,
+      "upper": null,
+      "must": 0,
+      "may": 0,
+      "zero": false,
+      "word": null
+    }
+  },
+  "output_certificate": {
+    "schema": "qkf-joint-carrier-certificate-v1",
+    "spec": {
+      "width": 4,
+      "lower": 7,
+      "upper": -8,
+      "must": 15,
+      "may": 0,
+      "can_zero": false
+    },
+    "query": {
+      "kind": "summary"
+    },
+    "binding": "ea4ca75d48966207366f61dbfe619d09697f5371f54397e398ca68469ff68166",
+    "cells": [],
+    "joins": [],
+    "root": null,
+    "answer": {
+      "count": 0,
+      "lower": null,
+      "upper": null,
+      "must": 0,
+      "may": 0,
+      "zero": false,
+      "word": null
+    }
+  }
+}

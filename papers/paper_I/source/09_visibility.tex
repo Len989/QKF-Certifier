@@ -1,0 +1,180 @@
+\subsection{Depth-bounded equality}\label{sec:visibility}
+
+The preceding results describe full equational consequence. We now resolve
+that consequence by the depth of terms allowed in a derivation. This small
+filtration supplies the common example and notation for the companion
+paper~\cite{ShcherbakovII}; no general depth theory is needed here.
+
+Constants have depth zero and
+$\depth f(t_1,\ldots,t_k)=1+\max_i\depth t_i$.
+Let $T^{(D)}$ be the set of closed well-sorted terms of depth at most $D$.
+On this finite set, $\equiv_D$ is the least equivalence relation containing
+the ground equations whose sides belong to $T^{(D)}$, and closed under
+operation applications whenever both resulting terms are in $T^{(D)}$.
+For the carrier names $C_A$, put
+\[
+R_A^{(D)}=\equiv_D\big|_{C_A}.
+\]
+This is a bound on term depth within a derivation, not on its number of steps.
+
+\begin{lemma}[Ground locality]\label{lem:locality}
+Let $E$ be a finite ground equational presentation and $h(E)$ the maximum
+depth of an axiom side (zero if $E$ is empty). If $s,t$ have depth at most
+$d$ and $E\vdash s=t$, then $s\equiv_H t$ for
+$H=\max\{d,h(E)\}$.
+\end{lemma}
+
+\begin{proof}
+Let $V$ consist of all subterms of axiom sides and of $s,t$. Close the given
+equations under congruence only at operation nodes represented in $V$.
+The quotient of $V$ is a partial algebra: if two represented operation
+nodes have equal argument classes, their result classes agree by closure.
+For each sort, take these classes as a carrier, adjoining a default element
+if no class exists. On a tuple represented by a node of $V$, use its result
+class; on any other tuple, choose an arbitrary default of the result sort.
+Interpret constants not in $V$ arbitrarily.
+Structural induction shows that every term of $V$ evaluates to its class,
+so this total algebra is a model of $E$. If the classes of $s$ and $t$ were
+different, it would separate them, contradicting $E\vdash s=t$.
+Thus their classes merge. All nodes used by this closure have depth at most
+$H$, and each closure step is an allowed bounded-congruence step.
+This proves the assertion and the usual ground subterm property
+\cite{NelsonOppen1980,DowneySethiTarjan1980}.
+\end{proof}
+
+For each $b$, let $P_b=\{(a,c):\alpha(b,a)=c\in\Gamma\}$.
+Define $\theta_{\rm val}$ to be the least native carrier congruence closed
+under the rule
+\begin{equation}\label{eq:valuecoherence}
+a\equiv_\theta a',\quad (a,c),(a',c')\in P_b
+\quad\Longrightarrow\quad c\equiv_\theta c'.
+\end{equation}
+It exists, for example by intersecting all congruences satisfying the rule.
+
+\begin{theorem}[Three structural horizons]\label{thm:horizons}
+In the typed pure-row fragment,
+\[
+R_A^{(0)}=\Delta_A,\qquad
+R_A^{(1)}=\theta_{\rm val},\qquad
+R_A^{(2)}=\theta_E^A.
+\]
+Horizon one imposes value coherence of supplied cells. Horizon two also
+imposes homomorphic coherence and kernel feedback.
+\end{theorem}
+
+\begin{proof}
+There are no equations between depth-zero carrier terms in the presentation,
+so horizon zero preserves all carrier names. At horizon one, native ground
+tables and supplied cells are available, but the compatibility equations
+have sides of depth two. Congruence under native operations imposes native
+carrier congruence. Congruence under $\alpha(b,-)$ imposes exactly
+\eqref{eq:valuecoherence} on prescribed outputs. No further carrier equality
+is necessary: interpret depth-one row nodes as separate copies of the
+quotient by $\theta_{\rm val}$, identifying a row point with a carrier point
+only where a supplied cell requires it. This finite partial algebra realizes
+all horizon-one nodes without further carrier identifications.
+Finally, every axiom side in the pure-row fragment has depth at most two,
+so Lemma~\ref{lem:locality} gives the horizon-two assertion.
+\end{proof}
+
+\subsection{Exact quotients of the named interface}
+
+Let
+\[
+\mathcal I=C_A\cup\{\alpha(b,a):b\in B,\ a\in A\},\qquad
+X_D=\mathcal I/(\equiv_D|_{\mathcal I})\quad(D\ge1).
+\]
+We treat $X_D$ as a quotient of a labelled set. The interface need not be
+closed under arbitrary native operations. Set
+\[
+\theta_1=\theta_{\rm val},\quad Q_1=A/\theta_1,
+\qquad \theta_2=\theta_E^A,\quad Q_2=A/\theta_2.
+\]
+Let $U_b\subseteq Q_1$ consist of the classes containing at least one
+supplied input for row $b$. Rule~\eqref{eq:valuecoherence} makes the supplied
+output a well-defined map $v_b:U_b\to Q_1$; $U_b$ need not be a subalgebra.
+Over $Q_2$, use the stabilized data $S_b,h_b,K_b,\kappa_b$ already defined.
+
+\begin{theorem}[Named-interface structure and counts]\label{thm:interface}
+The following are exact descriptions as labelled quotient sets.
+\begin{enumerate}[label=(\roman*)]
+\item $X_1$ consists of the central $Q_1$ and one copy of $Q_1$ for each
+row, with the point $x\in U_b$ identified with $v_b(x)$ in the centre.
+There are no other identifications. Consequently
+\begin{equation}\label{eq:N1}
+N_1:=|X_1|=|Q_1|+\sum_{b\in B}(|Q_1|-|U_b|).
+\end{equation}
+\item $X_2$ consists of the central $Q_2$ and the row copies
+$Q_2/\kappa_b$, each identified with the centre along
+$S_b/K_b\cong h_b(S_b)$. Distinct external row parts remain disjoint.
+Consequently
+\begin{equation}\label{eq:N2}
+N_2:=|X_2|=|Q_2|+
+\sum_{b\in B}\bigl(|Q_2/\kappa_b|-|S_b/K_b|\bigr).
+\end{equation}
+For an empty row the corresponding contribution is $|Q_2|$.
+\item The relation on $\mathcal I$ is final at horizon two. Its first
+stabilization horizon $\delta_E^{\mathcal I}\ge1$ satisfies
+\[
+\delta_E^{\mathcal I}=
+\begin{cases}
+1,&N_1=N_2,\\
+2,&N_1>N_2.
+\end{cases}
+\]
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The horizon-one construction in Theorem~\ref{thm:horizons} gives (i).
+Although different inputs can share a supplied output, each supplied-input
+class removes precisely one otherwise new row point from the count.
+For (ii), apply Theorem~\ref{thm:globalrows}. Each row has
+$|Q_2/\kappa_b|$ image points, of which exactly $|S_b/K_b|$ are central;
+external points from different rows do not overlap. Ground locality makes
+this full initial equality already visible at horizon two. Finally,
+$\equiv_1|_{\mathcal I}\subseteq\equiv_2|_{\mathcal I}$ on the same finite
+labelled set. These relations are equal if and only if their numbers of
+classes agree, which proves (iii).
+\end{proof}
+
+For a cell, define its first carrier-contact horizon by
+\[
+\chi_E(b,a)=\min\{D\ge1:\exists c\in A,\ 
+\alpha(b,a)\equiv_D c\},
+\]
+with value $\infty$ when the set is empty. The theorem gives the exact rule
+\[
+\chi_E(b,a)=
+\begin{cases}
+1,&[a]_{\theta_1}\in U_b,\\
+2,&[a]_{\theta_1}\notin U_b\text{ and }[a]_{\theta_2}\in S_b^{\kappa_b},\\
+\infty,&\text{otherwise}.
+\end{cases}
+\]
+For an empty row, only the last case applies. Similarly, for observed terms
+$s,t$, their equality-visibility depth is
+$\lambda_E(s,t)=\min\{D:s\equiv_D t\}$, or $\infty$ if they are unequal
+in the initial algebra.
+
+In Example~\ref{ex:cepobstruction}, the exact interface partitions are
+\begin{center}
+\begin{tabular}{@{}clc@{}}
+\toprule
+Horizon & Classes on $\{0,1,2,3,r_0,r_1,r_2,r_3\}$ & Count\\
+\midrule
+$1$ & $\{0,r_0,r_3\}\mid\{1\}\mid\{2,r_2\}\mid\{3\}\mid\{r_1\}$ & $5$\\
+$2$ & $\{0,2,r_0,r_1,r_2,r_3\}\mid\{1\}\mid\{3\}$ & $3$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Thus $\lambda_E(0,2)=2$, $\chi_E(b,1)=2$, and
+$\delta_E^{\mathcal I}=2$. The two short derivations in that example use
+only terms of depth at most two; the horizon-one partition proves that this
+depth is necessary.
+
+The feedback iteration count is a different quantity. The family in
+Proposition~\ref{prop:sharpfeedback} requires $|A|-1$ strict simultaneous
+quotient updates, although all its carrier equalities are visible at depth
+two. A shallow derivation can contain many inference steps, and a structural
+fixed-point computation can revisit the same shallow constraints.

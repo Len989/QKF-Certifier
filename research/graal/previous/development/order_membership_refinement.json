@@ -1,0 +1,7 @@
+{
+  "phase": "before development freeze",
+  "finding": "Order bounds alone are necessary but insufficient for actual mask membership.",
+  "correction": "The control interpreter now preserves native membership provenance for must, mask minimum, negative maximum and the proved sweep output. An arbitrary bound or zero literal is not silently treated as a mask member.",
+  "reason": "The original source returns only proved native members, but the restricted compiler accepts variants and must not confuse an order abstraction with exact bit membership.",
+  "scope": "Review-driven strengthening before the main experiment; not a failed final proof or a claimed Graal defect."
+}

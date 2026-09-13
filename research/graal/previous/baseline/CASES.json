@@ -1,0 +1,123 @@
+{
+  "schema": "qkf-joint-development-selection-v1",
+  "selected": 5,
+  "previous_frozen_coverage": "1/5 unchanged historical control",
+  "cases": [
+    {
+      "operation": "and",
+      "source_sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+      "body_sha256": "e35b60fbdfb383f8e5718c1cb78b16fe8c67c88cc6436d7d18dba32c49570e79",
+      "status": "admitted",
+      "qkf_case": "And",
+      "ssa_path": "core/fixtures/corpus/And/solution.mlir",
+      "ssa_sha256": "5cebee13b7455dea24ecdefd70b50577b8bf2869cda8d61b74e49ca29b7d22f2",
+      "expression": [
+        "pair",
+        [
+          "not",
+          [
+            "and",
+            [
+              "not",
+              [
+                "var",
+                0
+              ]
+            ],
+            [
+              "not",
+              [
+                "var",
+                2
+              ]
+            ]
+          ]
+        ],
+        [
+          "and",
+          [
+            "var",
+            1
+          ],
+          [
+            "var",
+            3
+          ]
+        ]
+      ],
+      "source_leaves": 5,
+      "hull_calls": 4,
+      "development_seconds": 0.09189469399279915
+    },
+    {
+      "operation": "or",
+      "source_sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+      "body_sha256": "ab308f79fffb6f60c2ee92e356ef616eb43487b7eedfb4129d7fe9b9e691de28",
+      "status": "admitted",
+      "qkf_case": "Or",
+      "ssa_path": "core/fixtures/corpus/Or/solution.mlir",
+      "ssa_sha256": "899318278b42cc075ad92ca4e3716a32c130229be18ccb2c32f862c4b965dfe9",
+      "expression": [
+        "pair",
+        [
+          "not",
+          [
+            "or",
+            [
+              "not",
+              [
+                "var",
+                0
+              ]
+            ],
+            [
+              "not",
+              [
+                "var",
+                2
+              ]
+            ]
+          ]
+        ],
+        [
+          "or",
+          [
+            "var",
+            1
+          ],
+          [
+            "var",
+            3
+          ]
+        ]
+      ],
+      "source_leaves": 1,
+      "hull_calls": 0,
+      "development_seconds": 0.016118554995045997
+    },
+    {
+      "operation": "xor",
+      "source_sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+      "body_sha256": "99d40060678a58a4cbbd925628263aba7cb00050be9bd4cae047b3ee77aeea0a",
+      "status": "adapter_unsupported",
+      "reason": "ValueError('unsupported binary source action: &&')",
+      "development_seconds": 0.008155580988386646
+    },
+    {
+      "operation": "add",
+      "source_sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+      "body_sha256": "160026b93e227e48519e2c268d514d589c9930b0e7d2d73c84417da1314e02c5",
+      "status": "adapter_unsupported",
+      "reason": "ValueError('unsupported Java primary')",
+      "development_seconds": 0.008594737999374047
+    },
+    {
+      "operation": "sub",
+      "source_sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+      "body_sha256": "41052f70cb1f21fdeecdef850af591af2a2ec4b1b892c3e3f50c0eba96c264c2",
+      "status": "adapter_unsupported",
+      "reason": "ValueError('unbound Java local: OPS')",
+      "development_seconds": 0.008733504990232177
+    }
+  ]
+}

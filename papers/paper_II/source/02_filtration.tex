@@ -1,0 +1,133 @@
+\section{The congruence visibility filtration}\label{sec:filtration}
+
+Let $\Sigma$ be a finite finitary signature with at least one constant,
+and let $T$ be its closed term algebra. Constants have depth zero and
+\[
+\depth f(t_1,\ldots,t_k)=1+\max_i\depth t_i\qquad(k>0).
+\]
+Write $\equiv_E$ for full provable equality and
+$\mathbb I_E=T/{\equiv_E}$ for the initial algebra.
+Unless stated otherwise the language is one-sorted. The finite-ground
+constructions apply sort by sort to a finite many-sorted signature; the
+action example uses the two sorts of Paper I.
+
+\begin{definition}[Bounded term layers and congruence proofs]
+Put $T^{(D)}=\{t:\depth t\le D\}$. For ground $E$, let $\equiv_D$ be the
+least equivalence relation on $T^{(D)}$ containing every input equation
+whose two sides have depth at most $D$ and satisfying
+\[
+s_i\equiv_D t_i\ (1\le i\le k)
+\quad\Longrightarrow\quad
+f(s_1,\ldots,s_k)\equiv_D f(t_1,\ldots,t_k)
+\]
+whenever both displayed result terms belong to $T^{(D)}$.
+Thus $\equiv_D$ is congruence on the induced partial term algebra.
+\end{definition}
+
+Equivalently, all terms in an equality proof DAG must have depth at most
+$D$, including its premises and conclusions. Congruence can reuse a proved
+argument equality without placing every intermediate term of that proof
+inside the new context. For a finite universal presentation, replace the
+input equations by all their ground instances with sides of depth at most
+$D$. Sequential rewrites receive a separate definition in
+Section~\ref{sec:rewrite}.
+
+\begin{definition}[Observed, internal, and horizon equality]
+For $D\ge d$, define the labelled quotient sets
+\begin{align*}
+I_E^{[d]}&=T^{(d)}/({\equiv_E}|_{T^{(d)}}),\\
+J_E^{(d)}&=T^{(d)}/\equiv_d,\\
+K_E^{(d,D)}&=T^{(d)}/({\equiv_D}|_{T^{(d)}}).
+\end{align*}
+They are not asserted to be total subalgebras. There are canonical
+surjections $J_E^{(d)}\twoheadrightarrow K_E^{(d,D)}
+\twoheadrightarrow I_E^{[d]}$.
+\end{definition}
+
+Whenever we write $K_E^{(d,D)}\cong I_E^{[d]}$, we mean that this canonical
+surjection is bijective, or equivalently that the two equivalence
+relations on the observed terms agree.
+
+\begin{proposition}[Eventual visibility]\label{prop:eventual}
+For every fixed $d$, the canonical map
+$K_E^{(d,D)}\to I_E^{[d]}$ is bijective for all sufficiently large $D$.
+\end{proposition}
+\begin{proof}
+There are finitely many observed pairs. Every full equality among them
+has a finite proof containing finitely many terms. Take the maximum of
+their depths and $d$. All these proofs are available by that horizon.
+\end{proof}
+
+\begin{definition}[Layer and pairwise visibility]
+The exact horizon and its overhead are
+\[
+\delta_E(d)=\min\{D\ge d:{\equiv_D}|_{T^{(d)}}
+ ={\equiv_E}|_{T^{(d)}}\},\qquad
+\omega_E(d)=\delta_E(d)-d.
+\]
+For $d(s,t)=\max\{\depth s,\depth t\}$, put
+\[
+\lambda_E(s,t)=\min\{D\ge d(s,t):s\equiv_D t\},
+\]
+with $\lambda_E(s,t)=\infty$ if $s\not\equiv_E t$.
+In particular $\lambda_E(t,t)=\depth t$.
+\end{definition}
+
+The layer invariant is the finite maximum
+\[
+\delta_E(d)=\max\left(d,
+\max_{\substack{s,t\in T^{(d)}\\s\equiv_E t}}\lambda_E(s,t)\right).
+\]
+These are invariants of a \emph{presentation with a fixed proof convention}.
+Adding a derived shallow equation can change them without changing
+$\mathbb I_E$ or its equality relation on the original terms.
+
+\subsection{Finite observation sets and coalescence levels}
+
+For a finite query set $\mathcal Q$, set
+$d_{\mathcal Q}=\max_{q\in\mathcal Q}\depth q$, taking $d_\varnothing=0$,
+and define
+\[
+\delta_E(\mathcal Q)=\min\{D\ge d_{\mathcal Q}:
+{\equiv_D}|_{\mathcal Q}={\equiv_E}|_{\mathcal Q}\}.
+\]
+Thus $\delta_E(\varnothing)=0$. In general, $\delta_E(d)=\max\{d,\delta_E(T^{(d)})\}$; when
+$T^{(d)}$ contains a term of depth exactly $d$, it is simply the query-set special case.
+
+\begin{proposition}[First-coalescence inequality]\label{prop:ultra}
+If $s,t,u$ belong to one full equality class, then
+\[
+\lambda_E(s,u)\le
+\max\{\lambda_E(s,t),\lambda_E(t,u)\}.
+\]
+\end{proposition}
+\begin{proof}
+Both premise equalities hold at the horizon on the right. Transitivity
+at that horizon gives the conclusion.
+\end{proof}
+
+The nested partitions therefore have a merge-tree description. This
+resembles an ultrametric hierarchy, but $\lambda_E(t,t)=\depth t$ need
+not be zero, so $\lambda_E$ is not an ordinary ultrametric. For a final
+query block $B$ and any $b\in B$, its coalescence level is
+\[
+\max_{q\in B}\lambda_E(b,q)
+=\max_{p,q\in B}\lambda_E(p,q).
+\]
+The equality follows by the proposition, with endpoint activation included.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Notation & Meaning \\
+\midrule
+$d$, $D$, $h(E)$ & Observation depth, proof horizon, maximum input-side depth.\\
+$\lambda_E$, $\delta_E$ & Congruence-proof visibility; the finite-ground algorithm computes these.\\
+$\lambda_E^{\mathrm{rw}}$, $\delta_E^{\mathrm{rw}}$ & Sequential rewrite visibility, defined in Section~\ref{sec:rewrite}.\\
+$\mathcal Q$, $S$, $S_D$ & Query terms, their fixed input/subterm DAG, and its active nodes.\\
+$\approx_D^S$ & Congruence closure on the active partial DAG.\\
+$\mathsf P_D(E,\mathcal Q)$ & The partial quotient $S_D/\approx_D^S$.\\
+$Q_E$, $\mathcal I$ & The carrier quotient and named action interface of Paper I.\\
+\bottomrule
+\end{tabularx}
+\end{center}

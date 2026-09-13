@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "qkf-certifier"
-version = "0.1.0a1"
+version = "0.2.0a1"
 description = "Checkable width-independent certificates for a KnownBits transfer-function fragment"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -42,6 +42,7 @@ addopts = "-ra"
 [tool.ruff]
 target-version = "py310"
 line-length = 100
+extend-exclude = ["research", "papers", "reproduction"]
 
 [tool.ruff.lint]
 select = ["E4", "E7", "E9", "F", "I"]

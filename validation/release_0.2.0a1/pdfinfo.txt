@@ -1,0 +1,22 @@
+Title:           QKF-Certifier: observation kernels and width-independent word proofs
+Subject:         
+Keywords:        
+Author:          Leonid Shcherbakov
+Creator:         LaTeX with hyperref
+Producer:        pdfTeX-1.40.25
+CreationDate:    Sun Sep 13 20:01:27 2026 MSK
+ModDate:         Sun Sep 13 20:01:27 2026 MSK
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           27
+Encrypted:       no
+Page size:       595.276 x 841.89 pts (A4)
+Page rot:        0
+File size:       519878 bytes
+Optimized:       no
+PDF version:     1.4

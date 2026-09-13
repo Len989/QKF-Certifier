@@ -1,0 +1,16 @@
+{
+  "case": "KnownBits_UshlSat",
+  "mode": "observed",
+  "phase": "replay",
+  "status": "all_preparations_and_available_proofs_replayed",
+  "components": 3,
+  "component_target_proofs": 0,
+  "component_width_one": [],
+  "whole_verification": null,
+  "search_modules_loaded": [],
+  "action_rewrites": 0,
+  "observation_rewrites": 1,
+  "native_symbolic_lemmas": 0,
+  "seconds": 0.05800490600813646,
+  "peak_rss_kib": 14080
+}

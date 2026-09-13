@@ -1,0 +1,56 @@
+\section{Sequential rewrites and universal presentations}\label{sec:universal}
+
+\subsection{Two bounded proof resources}\label{sec:rewrite}
+For a finite set $\mathcal E$ of universally quantified identities, an elementary rewrite has the form
+\[
+C[\ell\sigma]\ \longleftrightarrow\ C[r\sigma],
+\qquad (\ell=r)\in\mathcal E,
+\]
+where $\sigma$ is a ground substitution and $C$ a one-hole ground context. Ground equations are the special case without variables. Define
+\[
+\lambdarw_{\mathcal E}(s,t)=
+\min_{s=t_0\leftrightarrow\cdots\leftrightarrow t_k=t}
+\max_{0\le i\le k}\depth t_i,
+\]
+with value $\infty$ for unequal terms and value $\depth s$ for the empty chain from $s$ to itself. Define $\deltarw_{\mathcal E}(d)$ as the least $D\ge d$ at which such chains recover full equality on $T^{(d)}$. This definition bounds every \emph{whole intermediate term}.
+
+Unrestricted equational proofs can be sequentialized into contextual rewrites \cite{BurrisSankappanavar1981}. At a fixed horizon this conversion need not preserve maximum depth. Every bounded rewrite is a bounded congruence inference, hence
+\begin{equation}\label{eq:tworesources}
+\lambda_{\mathcal E}(s,t)\le\lambdarw_{\mathcal E}(s,t),
+\qquad
+\delta_{\mathcal E}(d)\le\deltarw_{\mathcal E}(d).
+\end{equation}
+Both resources converge to the same full equality relation, but the inequalities can be strict.
+
+\begin{example}[A strict finite-ground gap]\label{ex:gap}
+Let $E=\{p=f^2(r),\ q=f^2(r)\}$, with three distinct constants and one unary symbol. Then
+\[
+\lambda_E(f(p),f(q))=2,
+\qquad
+\lambdarw_E(f(p),f(q))=3.
+\]
+At horizon two, derive $p=q$ through $f^2(r)$ and apply congruence to the two depth-one endpoints. No nontrivial input equation is active below two. A sequential rewrite out of $f(p)$, however, must produce $f^3(r)$; the chain $f(p)\leftrightarrow f^3(r)\leftrightarrow f(q)$ attains depth three. Thus even the ground-locality bound of Theorem~\ref{thm:groundlocality} does not transfer to $\deltarw$.
+\end{example}
+
+This distinction also shows how presentation-sensitive the resources are. Adding the derived equation $p=q$ preserves the full theory but lowers its pairwise congruence visibility from two to zero. Proposition~\ref{prop:flattening} gives a general finite-ground version of this effect.
+
+\subsection{Computability and the word problem}
+For congruence visibility of a fixed finite universal presentation $\mathcal E$, use all ground instances whose two sides have depth at most $D$, and close them in the partial algebra $T^{(D)}$. These instances are effectively finite: every variable occurring in an identity must be instantiated by a term of depth at most $D$. Variables not occurring in the identity need not be enumerated. Bounded rewrite equality is likewise computable by reachability in the finite graph of terms of depth at most $D$.
+
+Both visibility functions are finite at every $d$, by taking the maximum over finitely many full-equal pairs in $T^{(d)}$ and choosing a finite proof or rewrite chain for each pair. Write $\WP(\mathcal E)$ for the ground word problem.
+
+\begin{theorem}[Visibility--word-problem equivalence]\label{thm:wp}
+For a fixed finite presentation over a finite signature, the following are equivalent:
+\begin{enumerate}[label=(\arabic*)]
+\item $\WP(\mathcal E)$ is decidable;
+\item $\delta_{\mathcal E}$ is computable;
+\item $\delta_{\mathcal E}$ has a computable majorant;
+\item $\deltarw_{\mathcal E}$ is computable;
+\item $\deltarw_{\mathcal E}$ has a computable majorant.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+For either resource, a computable majorant gives a decision algorithm: on $s,t$, compute the corresponding bounded relation at that majorant of $d(s,t)$. Conversely, a ground word-problem algorithm computes the exact equality partition of the finite layer $T^{(d)}$. Enumerate horizons $D=d,d+1,\ldots$ and compute the bounded partitions until one equals that full partition. Eventual exactness guarantees termination, and the first matching horizon is the relevant visibility value. Computability implies the existence of a computable majorant in each case.
+\end{proof}
+
+Thus either function is a modulus of convergence to the ground word problem. For each fixed finite universal presentation with undecidable ground word problem, neither function has a computable majorant. The finite-ground bound depends essentially on the equations being ground; syntactic depth of universal axioms alone gives no comparable bound.

@@ -1,0 +1,115 @@
+{
+  "manifest_schema": "qkf-paper-code-map-v1",
+  "paper": {
+    "series": "QKF",
+    "number": "III",
+    "title": "QKF-Certifier: finite quotient kernels and width-independent KnownBits proofs",
+    "author": "Leonid Shcherbakov",
+    "version": "1.0",
+    "manuscript_revision": "2026-09-12",
+    "version_doi": null,
+    "concept_doi": null,
+    "publication_status": "prepared_preprint; not deposited by this workflow"
+  },
+  "software": {
+    "repository": "https://github.com/Len989/QKF-Certifier",
+    "tag": "v0.1.0a1",
+    "version": "0.1.0a1",
+    "commit": "f93561682319e8b911ed32c01583f2a496dc59fc",
+    "certificate_schema": "qkf-rewrite-v3",
+    "result_schema": "qkf-result-v1",
+    "semantic_contract": "total-transfer-words-v2; positive-width; modular-arithmetic; SMT-total-div-shift; standard-counts; nonbottom-KB"
+  },
+  "upstream_examples": [
+    {
+      "file": "and.mlir",
+      "sha256": "515485ef73decd20c038316b871bab3d3603f384821f71e0e2f2ac176abe43d1",
+      "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+    },
+    {
+      "file": "meet.mlir",
+      "sha256": "4db24093258277f76ad11d33826a0e480e945cc1c19ece661fc17655ad7f65f4",
+      "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+    },
+    {
+      "file": "or.mlir",
+      "sha256": "e86a52bce55ce669c9adfb450ebd482faeb2fadc8b8814921ec8af2c4519661f",
+      "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+    },
+    {
+      "file": "top.mlir",
+      "sha256": "04d59189c9c93e6291791891ababb40fbc1431fcffb547014ee2f1c0e260614f",
+      "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+    },
+    {
+      "file": "xor.mlir",
+      "sha256": "451d446fcdd05c14c98e83f04a2df52cd2b31c36260a843feb257ceaa0b54547",
+      "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+    }
+  ],
+  "claim_ids": {
+    "K1": "Finite ground partial core, inherited from I/II; research reference",
+    "K2": "Exact relation-matrix closure; research reference",
+    "K3": "Conditional sparse refinement theorem; historical C++ prototype is not covered unconditionally",
+    "K4": "Source-to-replay-to-target composition; public certifier",
+    "K5": "Finite coordinatewise semantics, nine rows, signature and precision lattice; public certifier and supplement",
+    "TERM": "All 29 local rules strictly decrease N + number of add occurrences",
+    "MONO": "Additional monotone sound class counts 26/26/16; supplement only"
+  },
+  "tracked_file_sha256": {
+    ".gitattributes": "fbf39788ad5e1dd59077f286f681fbce95d9e3b60f67ba9023331a53f53b89d1",
+    ".github/ISSUE_TEMPLATE/correctness.md": "997503e556577189f0bfdaf8c11e30cfacaf001db59a7f9fc789175826bf0573",
+    ".github/ISSUE_TEMPLATE/feature.md": "6e891e7ea6dc0b335cbab7d3665c871571da89e825323078556de687431bdfe2",
+    ".github/pull_request_template.md": "cac85ff47ef138160a06e808ae1df9467562e75c421ec910982050757f1c064d",
+    ".github/workflows/ci.yml": "333c9f09bf977035f58a7c3d2a63bc19812084701f0c144b1dbdc614d7b2c4a4",
+    ".gitignore": "c8e50dc36903f4f453c52118c0bf8257fd1007c6abc998ae1ac4f219a32ec680",
+    "CHANGELOG.md": "84e40c98e86df6c7a6134d60c6fc18547738dbe92be08a408d9cba99f3a54011",
+    "CITATION.cff": "e753fe47e1d09feae14839d81bb2d70a56f9b9c4583b703a9c906b8821c024b1",
+    "CONTRIBUTING.md": "1bfee30c0e1a57937ed513a9979ff69635655beaba58ea1e394d54b6e50faa09",
+    "LICENSE": "0d759d3fb9a3e0a7c4bab3d659633ca34ad0bb06b1955c560fe9287f2365ad78",
+    "MANIFEST.in": "8adde7bcd8d11a5de30c8ed5047fde86b13df0a7762d728ffe527dbace729bad",
+    "NOTICE.md": "8dd2a7d2acf7110034de7f9261fc459d55418ec9b9512315240f91db28da839f",
+    "README.md": "bc31b98a35a6a73a34d8a1fd27c4dc0a246156a3072a2a184f71a00b7f6b0cc6",
+    "README_RU.md": "4118195000124cde59aea4bed4cee4560df5f33795beabe6effdf9c09d125023",
+    "benchmarks/README.md": "5a25c746372562261221aec8e86716968616cb6caff23018e77b82776cac9794",
+    "benchmarks/package_timings.json": "a81e480b6b99492e72363a7fa5a564577ea837671f4306a1384eb15251185fa2",
+    "benchmarks/run.py": "7c93a7b531b0eb76f653698a647e0942d87fe4aa8b8167a05e905f45c50b5995",
+    "docs/CERTIFICATES.md": "6588f10374e4bccaae9de18cd0e496af1ea0f7683c52ff25ef2a67f647647d9d",
+    "docs/INTEGRATION.md": "af94784ba9adcafa98e59db0f7b865f9bcbea5e4e3c3f00da3f6dd881e078228",
+    "docs/LOCAL_VALIDATION.md": "3e231f588edba29c0ee1d2a5e86c436610daaee566956773985b44a3d374b9c3",
+    "docs/RELEASING.md": "c35ebbee72a9fbf682087c78d0cc4b130e1279d0902d151fe3bb515b2551b701",
+    "docs/SEMANTICS.md": "f311d91c26c141a70458a5cd07ba799db71e81753bff2547df2582a83d3d08f1",
+    "docs/certificate.schema.json": "94f0e0f13d6e527727b07a6d519bd78e46842c2b813a5f4679b65b3ff88552f1",
+    "examples/README.md": "728b8337c13d2dfa1c47fbe464e8c6a2ec0a98f973e0abd832e33dd80edba8b3",
+    "examples/batch.json": "925a76d10a9992b2552507cff9b154f4bdacf4d6ecf34e07de6e720e0c3e4475",
+    "examples/fallback_add.mlir": "089bdc43dd0db879a17603e80c74e102443334369ba32ae96ed5df1fa2877025",
+    "examples/ntmy/SOURCES.json": "87390d31fd6dfa95515f04230151f57c5769d5277a3f5ec1b16864606828b138",
+    "examples/ntmy/and.mlir": "515485ef73decd20c038316b871bab3d3603f384821f71e0e2f2ac176abe43d1",
+    "examples/ntmy/meet.mlir": "4db24093258277f76ad11d33826a0e480e945cc1c19ece661fc17655ad7f65f4",
+    "examples/ntmy/or.mlir": "e86a52bce55ce669c9adfb450ebd482faeb2fadc8b8814921ec8af2c4519661f",
+    "examples/ntmy/top.mlir": "04d59189c9c93e6291791891ababb40fbc1431fcffb547014ee2f1c0e260614f",
+    "examples/ntmy/xor.mlir": "451d446fcdd05c14c98e83f04a2df52cd2b31c36260a843feb257ceaa0b54547",
+    "pyproject.toml": "d47909549236ff8ded678e35f9caaf486417523320acb67b25df4d1796395c91",
+    "src/qkf_certifier/.gitkeep": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "src/qkf_certifier/__init__.py": "02a649ab7acd082e4ffea5e1a8f9d493d88eaae3b4422c63d096a1f8f41bdf89",
+    "src/qkf_certifier/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/qkf_certifier/api.py": "0fb02b0d6a3a2d44dc36870dd563acf63e33820dbdfd9d4f2582a413b2450c40",
+    "src/qkf_certifier/certificate.py": "64b0c3bd4b04c1f4dfb7a214a2d1b5181e2307fac429962aa4de4493a2ea247d",
+    "src/qkf_certifier/cli.py": "dcf6dccbb15d6f60999dfa5437a03e7bba2a0beab02cf579002c812f3b2be78c",
+    "src/qkf_certifier/errors.py": "f88f9f4ca60bd532c75bf54bfcb1f21c0cffdd15855b3d121160ee4e61f3e7e1",
+    "src/qkf_certifier/frontend.py": "48c8a8f5459a89bce4a00fa3a70ce06ab30268f32195c15ca5bfc1585a117f09",
+    "src/qkf_certifier/kernel.py": "024b616f27afd8346de85a7cca3a43279194db7b7c87be05e6095ac0c4805542",
+    "src/qkf_certifier/limits.py": "4a3e7dd552705b15ccdd6c59faa2f7702192224a2772bf91398b11b9fa552c12",
+    "src/qkf_certifier/producer.py": "ef5479d6458afb368188bef37b23d4574587ea5c303a4fa1a3a97772187c2f72",
+    "tests/conftest.py": "9e47b2cda9196d6ef88f53c49f89916fe4111f24835b420a35c4a21b3986f51c",
+    "tests/mutation_helpers.py": "a269582c8412e900c307cbead7b450ebcecbfe81457f621e2dd976289927325f",
+    "tests/test_cli.py": "3dd777173b832e6c57ebc9c73025299c8c05987e4d79d1e3c214746289c368a9",
+    "tests/test_core.py": "7863db923b260f97f6743bcd58963dcc7ab3fb9ce65b9e1bbb06f10cd78ea195",
+    "tests/test_frontend.py": "8c508205ef7ed13540defc768c0051171098c67bdbfa0ec107233bdb9f09ae69",
+    "tests/test_mutations.py": "59c6e5be03bab1e0ff924c05400098d3ce87581f14be06c543d34b742fb4d8f0",
+    "tests/test_properties.py": "7d6f9131704f23f14993c62beb46805dcb11a53a629776e98ffc57e1750932b1",
+    "tests/word_oracle.py": "be285ebe6e3e908365c33639aa8b31189198d77dbddf1e6bf6b910b083c86893",
+    "third_party/xdsl-smt-LICENSE": "06dcddbb6908a0c6dd4a9e8ec822eea41d5a460a53089fecccc8a68049e99241"
+  },
+  "scope_note": "Hashes identify the pinned release. Later commits and historical relation experiments are separately scoped."
+}

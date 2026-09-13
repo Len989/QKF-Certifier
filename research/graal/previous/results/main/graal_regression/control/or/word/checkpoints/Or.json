@@ -1,0 +1,389 @@
+{
+  "record": {
+    "case": "Or",
+    "mode": "observed",
+    "target": "or",
+    "target_scope": "explicit_total_target",
+    "status": "running",
+    "sources": {
+      "program": "899318278b42cc075ad92ca4e3716a32c130229be18ccb2c32f862c4b965dfe9"
+    },
+    "components": {
+      "solution": {
+        "status": "proved_component",
+        "blockers": {},
+        "native_lemmas": 0,
+        "action_rewrites": 0,
+        "observation_rewrites": 0,
+        "prepare_seconds": 0.010488290005014278,
+        "progress": {
+          "states": 0,
+          "search_states": 2,
+          "transition_attempts": 48,
+          "leaves": 1,
+          "branches": 0,
+          "guard_refinements": 0
+        },
+        "last_leaf": {
+          "leaf": 1,
+          "depth": 0,
+          "path": [],
+          "expression_hash": "36720b62d5efc4b9a2e8ec728c976df5ca9efeff679810a0b16b72514409d20c",
+          "status": "proved_sound",
+          "initial_states": 1,
+          "unrestricted_initial_states": 1,
+          "guard_trials": [
+            {
+              "assumption_indices": [],
+              "status": "proved_sound",
+              "transition_attempts": 48,
+              "states": 2
+            }
+          ],
+          "assumption_indices": [],
+          "transition_attempts": 48,
+          "states": 2
+        },
+        "leaves": [
+          {
+            "leaf": 1,
+            "depth": 0,
+            "path": [],
+            "expression_hash": "36720b62d5efc4b9a2e8ec728c976df5ca9efeff679810a0b16b72514409d20c",
+            "status": "proved_sound",
+            "initial_states": 1,
+            "unrestricted_initial_states": 1,
+            "guard_trials": [
+              {
+                "assumption_indices": [],
+                "status": "proved_sound",
+                "transition_attempts": 48,
+                "states": 2
+              }
+            ],
+            "assumption_indices": [],
+            "transition_attempts": 48,
+            "states": 2
+          }
+        ],
+        "search_seconds": 0.0009680500079412013
+      }
+    },
+    "symbolic_attempts": {
+      "solution": {
+        "attempts": [],
+        "totals": {
+          "search_nodes": 0,
+          "fm_constructed_rows": 0
+        }
+      }
+    },
+    "totals": {
+      "states": 2,
+      "search_states": 2,
+      "transition_attempts": 48
+    },
+    "budgets": {
+      "states_total": 100000,
+      "initial_enumeration_limit": 100000,
+      "transition_attempts_total": 2000000,
+      "max_branch_leaves": 512,
+      "max_branch_depth": 24,
+      "symbolic_search_nodes": 10000,
+      "symbolic_fm_rows": 100000,
+      "producer_seconds": 60,
+      "replay_seconds": 60
+    },
+    "component_count": 1,
+    "symbolic_totals": {
+      "search_nodes": 0,
+      "fm_constructed_rows": 0
+    },
+    "preparation_seconds": 0.012983869994059205
+  },
+  "prepared": {
+    "solution": {
+      "context_authority": {
+        "schema": "qkf-source-mask-authority-v1",
+        "semantics": "total-transfer-words-v2; positive-width; modular-arithmetic; SMT-total-div-shift; standard-counts; nonbottom-KB",
+        "sources": {
+          "program": "899318278b42cc075ad92ca4e3716a32c130229be18ccb2c32f862c4b965dfe9"
+        },
+        "entry": "solution",
+        "initial_hash": "36720b62d5efc4b9a2e8ec728c976df5ca9efeff679810a0b16b72514409d20c",
+        "inputs": [
+          {
+            "argument": "%a",
+            "position": 0,
+            "zero": [
+              "var",
+              0
+            ],
+            "one": [
+              "var",
+              1
+            ]
+          },
+          {
+            "argument": "%b",
+            "position": 1,
+            "zero": [
+              "var",
+              2
+            ],
+            "one": [
+              "var",
+              3
+            ]
+          }
+        ],
+        "premise": "each original nonbottom KnownBits input has disjoint zero and one masks"
+      },
+      "normalization": {
+        "schema": "qkf-rewrite-v3",
+        "sources": {
+          "program": "899318278b42cc075ad92ca4e3716a32c130229be18ccb2c32f862c4b965dfe9"
+        },
+        "entry": "solution",
+        "semantics": "total-transfer-words-v2; positive-width; modular-arithmetic; SMT-total-div-shift; standard-counts; nonbottom-KB",
+        "initial_hash": "36720b62d5efc4b9a2e8ec728c976df5ca9efeff679810a0b16b72514409d20c",
+        "steps": [],
+        "normal_form": [
+          "pair",
+          [
+            "not",
+            [
+              "or",
+              [
+                "not",
+                [
+                  "var",
+                  0
+                ]
+              ],
+              [
+                "not",
+                [
+                  "var",
+                  2
+                ]
+              ]
+            ]
+          ],
+          [
+            "or",
+            [
+              "var",
+              1
+            ],
+            [
+              "var",
+              3
+            ]
+          ]
+        ],
+        "target": null
+      },
+      "guarded": [
+        "pair",
+        [
+          "not",
+          [
+            "or",
+            [
+              "not",
+              [
+                "var",
+                0
+              ]
+            ],
+            [
+              "not",
+              [
+                "var",
+                2
+              ]
+            ]
+          ]
+        ],
+        [
+          "or",
+          [
+            "var",
+            1
+          ],
+          [
+            "var",
+            3
+          ]
+        ]
+      ],
+      "guard_trace": [],
+      "observed": [
+        "pair",
+        [
+          "not",
+          [
+            "or",
+            [
+              "not",
+              [
+                "var",
+                0
+              ]
+            ],
+            [
+              "not",
+              [
+                "var",
+                2
+              ]
+            ]
+          ]
+        ],
+        [
+          "or",
+          [
+            "var",
+            1
+          ],
+          [
+            "var",
+            3
+          ]
+        ]
+      ],
+      "observer_trace": [],
+      "premasked": [
+        "pair",
+        [
+          "not",
+          [
+            "or",
+            [
+              "not",
+              [
+                "var",
+                0
+              ]
+            ],
+            [
+              "not",
+              [
+                "var",
+                2
+              ]
+            ]
+          ]
+        ],
+        [
+          "or",
+          [
+            "var",
+            1
+          ],
+          [
+            "var",
+            3
+          ]
+        ]
+      ],
+      "premask_trace": [],
+      "action_rounds": [],
+      "observation_rounds": [],
+      "observation_attempts": [
+        {
+          "trials": [],
+          "attempts": 20,
+          "accepted": 0,
+          "support_queries": [],
+          "failures": {
+            "no supporting semantic bridge": 20
+          },
+          "selected_proof_steps": 0,
+          "boundary_queries": [],
+          "boundary_choices": [],
+          "boundary_failures": {},
+          "context_requests": [],
+          "context_choices": [],
+          "context_failures": {},
+          "result_requests": [],
+          "result_choices": []
+        }
+      ],
+      "symbolic_trace": [],
+      "postmask_trace": [],
+      "final": [
+        "pair",
+        [
+          "not",
+          [
+            "or",
+            [
+              "not",
+              [
+                "var",
+                0
+              ]
+            ],
+            [
+              "not",
+              [
+                "var",
+                2
+              ]
+            ]
+          ]
+        ],
+        [
+          "or",
+          [
+            "var",
+            1
+          ],
+          [
+            "var",
+            3
+          ]
+        ]
+      ],
+      "final_hash": "36720b62d5efc4b9a2e8ec728c976df5ca9efeff679810a0b16b72514409d20c",
+      "proof": {
+        "backend": "composed",
+        "tree": {
+          "expression_hash": "36720b62d5efc4b9a2e8ec728c976df5ca9efeff679810a0b16b72514409d20c",
+          "guard_hash": "8894cdad26ef749f311249c169d54f2f48118502d7fdacfad532d5d190fb98ff",
+          "kind": "invariant",
+          "invariant": [
+            [
+              0,
+              [],
+              0,
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              0
+            ],
+            [
+              1,
+              [],
+              0,
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              0
+            ]
+          ],
+          "assumption_indices": [],
+          "proof_guard_hash": "8894cdad26ef749f311249c169d54f2f48118502d7fdacfad532d5d190fb98ff"
+        }
+      }
+    }
+  }
+}

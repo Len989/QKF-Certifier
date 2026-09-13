@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "exhaustive": [
+    {
+      "width": 1,
+      "summaries": 18,
+      "bit_queries": 18
+    },
+    {
+      "width": 2,
+      "summaries": 180,
+      "bit_queries": 356
+    },
+    {
+      "width": 3,
+      "summaries": 1944,
+      "bit_queries": 5576
+    },
+    {
+      "width": 4,
+      "summaries": 22032,
+      "bit_queries": 80184
+    }
+  ],
+  "exhaustive_summaries": 24174,
+  "exhaustive_bit_queries": 86134,
+  "wide": [
+    {
+      "width": 8,
+      "summaries": 128,
+      "enumerated_free_bits": 8
+    },
+    {
+      "width": 16,
+      "summaries": 128,
+      "enumerated_free_bits": 8
+    },
+    {
+      "width": 32,
+      "summaries": 128,
+      "enumerated_free_bits": 8
+    },
+    {
+      "width": 64,
+      "summaries": 128,
+      "enumerated_free_bits": 8
+    },
+    {
+      "width": 128,
+      "summaries": 128,
+      "enumerated_free_bits": 8
+    },
+    {
+      "width": 256,
+      "summaries": 128,
+      "enumerated_free_bits": 8
+    }
+  ],
+  "wide_summaries": 768,
+  "large_analytic_cases": 12,
+  "negative_checks": [
+    "invented opposite bit",
+    "word from weak independent interface",
+    "missing interval cell",
+    "shifted cover",
+    "invented cell cardinality",
+    "duplicated union support",
+    "future union premise",
+    "changed source bounds",
+    "changed requested bit",
+    "boolean width masquerading as integer"
+  ],
+  "saved_certificates": 28,
+  "seconds": 10.883759333999478,
+  "scope": "Each certificate covers all words of one concrete abstract input. It is not a universal transformer theorem over all input masks."
+}

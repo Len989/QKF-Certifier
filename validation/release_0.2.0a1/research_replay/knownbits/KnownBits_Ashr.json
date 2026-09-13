@@ -1,0 +1,16 @@
+{
+  "case": "KnownBits_Ashr",
+  "mode": "observed",
+  "phase": "replay",
+  "status": "all_preparations_and_available_proofs_replayed",
+  "components": 7,
+  "component_target_proofs": 0,
+  "component_width_one": [],
+  "whole_verification": null,
+  "search_modules_loaded": [],
+  "action_rewrites": 8,
+  "observation_rewrites": 13,
+  "native_symbolic_lemmas": 0,
+  "seconds": 0.22453035500075202,
+  "peak_rss_kib": 15896
+}

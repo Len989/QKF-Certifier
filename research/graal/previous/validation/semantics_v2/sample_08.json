@@ -1,0 +1,38 @@
+{
+  "instance": {
+    "status": "proved_upper_refinement",
+    "spec": {
+      "width": 128,
+      "must": 108984547967751276663890509967956901971,
+      "may": 119618412498965867829433049121626265683,
+      "lower": 113087522252181882354097180126361360147,
+      "upper": 119618371934107974899864533093533091923,
+      "can_zero": false
+    },
+    "binding": "85ab8eb41f4b3b20baef5d25f25c1bfaef671310a6fd52b64ddd751836ab086a",
+    "universal_certificate_sha256": "f4c3e7cdbc624f8c5b3a6c3bb340bb945ce9d1f771af05ac61756d2995fe962b",
+    "answer": {
+      "upper_query_status": "value",
+      "source_long_result": 119618371934107974899864533093533091923,
+      "maximum": 119618371934107974899864533093533091923,
+      "source_path": [
+        false,
+        false,
+        false
+      ],
+      "initial_value": 108984547967751276663890509967956901971
+    },
+    "joint_empty": false,
+    "refined_spec": {
+      "width": 128,
+      "must": 108984547967751276663890509967956901971,
+      "may": 119618412498965867829433049121626265683,
+      "lower": 113087522252181882354097180126361360147,
+      "upper": 119618371934107974899864533093533091923,
+      "can_zero": false
+    },
+    "guarantee": "same complete joint word carrier; maximum is the exact upper observation when the joint carrier is nonempty"
+  },
+  "oracle_maximum": 119618371934107974899864533093533091923,
+  "java_value": null
+}

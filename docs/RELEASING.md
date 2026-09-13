@@ -1,59 +1,12 @@
-# Releasing QKF Certifier
+# Preparing and publishing QKF Certifier 0.2.0a1
 
-The source repository is [Len989/QKF-Certifier](https://github.com/Len989/QKF-Certifier).
-The initial version is **0.1.0a1 / research alpha**, licensed under MIT.
-Preserve the separate upstream MIT notice in `third_party/xdsl-smt-LICENSE`.
+Repository: [Len989/QKF-Certifier](https://github.com/Len989/QKF-Certifier).
+Candidate: **0.2.0a1**, tag **v0.2.0a1**, manuscript **2.0**. Keep this a pre-release.
+The intended preparation branch is `release/0.2.0a1`.
 
-## Verified first upload
+## Validate the complete candidate
 
-The first complete code upload passed all eight GitHub Actions jobs: tests on
-Linux/Python 3.10–3.14 and Python 3.12 on Windows/macOS, plus distribution build,
-lint/format checks, and an installed-wheel smoke check outside the checkout.
-
-- Reviewed commit: `4beeb5b5399909dc9abb7da25acec2d8704657bf`.
-- [Successful run](https://github.com/Len989/QKF-Certifier/actions/runs/34636148287).
-- [Current runs](https://github.com/Len989/QKF-Certifier/actions/workflows/ci.yml).
-
-The historical local preparation record remains in `LOCAL_VALIDATION.md`.
-A subsequent release must use a successful run of its own final commit.
-
-## Create the first release
-
-1. Finish the intended file and documentation changes on `main`.
-2. Wait for all eight jobs of **Test and build** to pass for that final commit.
-   Check that the run refers to the commit being released.
-3. Open the successful run, download the **distributions** artifact, and extract
-   its wheel and source distribution. Use these files from the final run, since
-   older distributions may contain older metadata or documentation.
-4. Open [Releases](https://github.com/Len989/QKF-Certifier/releases) and draft a
-   new release with tag **v0.1.0a1** at the tested commit. If `main` has moved,
-   select the tested commit rather than an untested branch tip.
-5. Use title **QKF Certifier 0.1.0a1**, add the description below, and attach
-   `qkf_certifier-0.1.0a1-py3-none-any.whl` and
-   `qkf_certifier-0.1.0a1.tar.gz` from the artifact.
-6. Mark **This is a pre-release**, review the files and publish when ready.
-
-PyPI publication is a separate optional step; a GitHub release does not publish
-the package to PyPI. There is no automatic package publishing workflow here.
-
-## Suggested release description
-
-First public alpha of QKF Certifier, a Python CLI and API for source-bound
-KnownBits certificates with no runtime dependencies.
-
-- Complete all-positive-width proofs for a coordinatewise fragment, including
-  real AND, OR and XOR transformer examples from the NiceToMeetYou artifact.
-- Checked normalization, explicit fallback outcomes, and independent proof replay
-  without rerunning the normalization search.
-- Strict certificate validation, mutation tests, concrete-oracle regressions,
-  documented word semantics, and cross-platform CI.
-- MIT license; QKF research line and project attributed to Leonid Shcherbakov.
-
-The guarantees are conditional on the documented semantics and supported input
-fragment. The Python implementation is not formally verified, and this release
-is not a general replacement for an SMT verifier or a full synthesis system.
-
-## Local release checks
+On Linux with Python 3.12, from a full checkout:
 
 ```sh
 python -m pip install -e '.[dev]'
@@ -61,13 +14,49 @@ python -m pytest
 python -m ruff check .
 python -m ruff format --check .
 python -m build
+python tools/replay_research.py --suite all --output reproduction/release_01
+cd research/lean
+lake build
 ```
 
-## Research development
+Also install the wheel in a clean environment outside the checkout and check the
+packaged example. Review the paper PDF and its source/claim mapping. The manuscript
+build instructions are in `papers/paper_III/SOURCE_README.md`.
 
-Future work includes integration into a synthesis loop, wider proof coverage for
-carry-dependent arithmetic, independent audit or formalization of the trusted
-kernel/frontend, and larger real-corpus evaluation. These are research goals
-rather than claims of this alpha release.
+The wheel/sdist contain the coordinatewise CLI. The complete research source asset
+contains research capsules, the papers and Lean sources. Restored KnownBits JSON,
+Lean build caches, local dependency installations and TeX build files are excluded
+from the source asset. The packed research data and all original evidence hashes
+must remain present.
 
-Release UI instructions follow [GitHub's release guide](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
+## Prepare the GitHub draft
+
+1. Start from the recorded baseline or review changes if `main` has moved. Create
+   `release/0.2.0a1`, commit the prepared changes, and push that branch normally.
+2. Open a draft PR against `main`. Use `releases/PR_0.2.0a1.md` as its description.
+3. Check **Test and build** and **Research and Lean** on that exact commit. The
+   earlier 0.1.0a1 successful run is historical evidence, not this release's gate.
+4. Create a **draft**, **pre-release** targeting that commit, titled
+   `QKF Certifier 0.2.0a1 — observations and word proofs`, using
+   `releases/v0.2.0a1.md`. Attach the PDF, LaTeX archive, complete research source
+   archive, wheel, sdist and SHA-256 asset manifest.
+5. Leave the PR and release in draft for review. If code or documentation changes,
+   rebuild assets, refresh hashes, and use checks for the new commit. The release
+   kit includes exact commands for creating this draft through GitHub CLI.
+
+## Publication after review
+
+Merge only the reviewed changes. Identify the exact reviewed commit in the release
+record, confirm its own CI, then publish the draft at that commit. If the merge
+changes the tree, regenerate and revalidate affected assets. Keep the prior release
+and Paper III v1. No workflow here publishes to PyPI or deposits a manuscript.
+The author chooses the manuscript license and DOI deposit separately; the prepared
+citation must not invent either.
+
+## Historical first release
+
+Public v0.1.0a1 points to `f93561682319e8b911ed32c01583f2a496dc59fc`.
+Its first complete upload passed the original eight CI jobs at
+`4beeb5b5399909dc9abb7da25acec2d8704657bf`:
+[recorded run](https://github.com/Len989/QKF-Certifier/actions/runs/34636148287).
+`LOCAL_VALIDATION.md` and the v1 paper supplement retain those earlier records.

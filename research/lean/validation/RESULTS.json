@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "lean_version": "Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "commands": [
+    {
+      "name": "version",
+      "command": [
+        "/workspace/scratch/6c319201c5cc/qkf_lean_tools/lean-4.33.0-linux/bin/lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "seconds": 0.044
+    },
+    {
+      "name": "clean",
+      "command": [
+        "/workspace/scratch/6c319201c5cc/qkf_lean_tools/lean-4.33.0-linux/bin/lake",
+        "clean"
+      ],
+      "exit_code": 0,
+      "seconds": 0.062
+    },
+    {
+      "name": "build",
+      "command": [
+        "bash",
+        "CHECK_MAC_LINUX.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 6.578
+    },
+    {
+      "name": "axioms",
+      "command": [
+        "/workspace/scratch/6c319201c5cc/qkf_lean_tools/lean-4.33.0-linux/bin/lake",
+        "env",
+        "lean",
+        "validation/Axioms.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 0.541
+    },
+    {
+      "name": "export",
+      "command": [
+        "python",
+        "scripts/export_certificate.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.045
+    },
+    {
+      "name": "negative",
+      "command": [
+        "python",
+        "scripts/negative_checks.py",
+        "--lake",
+        "/workspace/scratch/6c319201c5cc/qkf_lean_tools/lean-4.33.0-linux/bin/lake"
+      ],
+      "exit_code": 0,
+      "seconds": 15.148
+    }
+  ],
+  "original_evidence_hashes_match": true,
+  "forbidden_proof_constructs": [],
+  "platform": "Linux x86_64",
+  "environment_note": "Scratch lacks procfs. LD_LIBRARY_PATH locates the unmodified official shared libraries. The included app_path_adapter.c supplies only the current process executable path from AT_EXECFN when readlink(/proc/PID/exe) returns ENOENT. It does not alter proof checking. Normal user installations do not use this adapter."
+}

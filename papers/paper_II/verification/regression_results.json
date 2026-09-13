@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "script": "test_certified_proofs.py",
+      "result": {
+        "certified_random_presentations": 300,
+        "equal_queries_checked": 3418,
+        "status": "PASS"
+      }
+    },
+    {
+      "script": "test_countermodel.py",
+      "result": {
+        "countermodels_random_ground": 200,
+        "status": "PASS"
+      }
+    },
+    {
+      "script": "test_fast_vs_reference.py",
+      "result": {
+        "fast_vs_reference_random": 1000,
+        "status": "PASS"
+      }
+    },
+    {
+      "script": "test_forest_stabilization.py",
+      "result": {
+        "forest_stabilization_random": 500,
+        "status": "PASS"
+      }
+    },
+    {
+      "script": "test_generic_ground.py",
+      "result": {
+        "generic_random_ground_presentations": 500,
+        "status": "PASS"
+      }
+    },
+    {
+      "script": "test_optimality_countermodels.py",
+      "result": {
+        "late_equalities_with_lower_countermodel": 81,
+        "final_nonequalities_separated": 3662,
+        "status": "PASS"
+      }
+    }
+  ]
+}

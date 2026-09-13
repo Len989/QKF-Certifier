@@ -1,0 +1,30 @@
+\section{A reference paper for the implemented certifier}\label{sec:intro}
+
+An abstract transformer describes the possible results of a concrete operation from partial information about its inputs. KnownBits records which bits must be zero and which must be one. A candidate transformer can contain arithmetic, counts, shifts, helper calls, and conditional expressions even when its final behavior is a simple coordinatewise function. The problem addressed here is to recover that behavior by checked transformations and discharge the remaining semantic obligation on a complete finite interface.
+
+The public implementation is \emph{QKF-Certifier} \cite{QKFSoftware}. Its first release certifies the AND, OR, and XOR transformers extracted from the NiceToMeetYou artifact \cite{Peng2026,NTMYArtifact}. NiceToMeetYou synthesizes abstract transformers by combining sound components using meet. QKF-Certifier addresses the certification of a restricted resulting program under an explicit word-semantics contract. For an accepted coordinatewise residual, the final proof covers every positive bit width and requires no separate per-width SMT obligation. Unsupported residual operations return an unresolved result.
+
+This is Paper III of a three-paper series. Paper I \cite{ShcherbakovI} characterizes the quotients, forced values, and completions determined by incomplete action specifications. Paper II \cite{ShcherbakovII} identifies when ground consequences become visible and supplies the query-subterm and threshold-model theorems. Here these results support an exact finite algebraic kernel, while a separate semantic quotient of word expressions supports the implemented certifier. The two constructions are connected by explicit evaluation and kernel arguments, not by assuming that every transformer preserves the algebraic operations of Paper I.
+
+\paragraph{Contributions.}
+First, we specify a relation-matrix algorithm for a finite ground, separately compatible binary operation and prove its soundness, completeness, and termination. A sparse semilattice coverage theorem identifies every compatibility case that an implementation must preserve. Second, we characterize the complete finite semantics of the accepted coordinatewise KnownBits language, including its sound precision classes. Third, we prove the source-to-verdict composition theorem for the implemented normalization and replay architecture, enumerate the trusted rule families, and give a concrete termination measure. Finally, we bind the claims and experiments to a software commit and provide an explicit protocol for subsequent revisions.
+
+\paragraph{Three computational objects.}
+The following distinction governs both the proofs and the implementation claims.
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+Object & Equality or obligation represented & Implementation in this release\\
+\midrule
+Ground partial core & Consequences of a finite ground presentation on represented terms & Research reference in the supplement.\\
+Relation-QKF & Exact equalities between carrier and slice labels, including quotient feedback & Research reference; sparse C++ experiments are separate.\\
+QKF-Certifier & Source-to-expression equality, then soundness of an externally specified word target & Public Python package v0.1.0a1.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+The public package does not run Relation-QKF or compute minimum proof-depth horizons. In particular, the congruence-depth optimum from Paper II is not a property of its normalizer. A checked rewrite sequence establishes equivalence regardless of whether it has minimum length or depth.
+
+\paragraph{Version addressed.}
+The executable claims in this manuscript refer to tag \texttt{v0.1.0a1}, commit
+\begin{center}\small\texttt{f93561682319e8b911ed32c01583f2a496dc59fc}.\end{center}
+The repository is \url{https://github.com/Len989/QKF-Certifier}. Its certificate format is \texttt{qkf-rewrite-v3}; the semantic contract begins \texttt{total-transfer-words-v2}. Section~\ref{sec:evolution} explains how these identifiers evolve independently of the paper version. The full manifest is included in the supplement. A later branch head is not implicitly covered by the measurements or code audit reported here.

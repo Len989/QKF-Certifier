@@ -1,0 +1,249 @@
+{
+  "status": "PASS",
+  "software_commit": "f93561682319e8b911ed32c01583f2a496dc59fc",
+  "software_version": "0.1.0a1",
+  "certificate_schema": "qkf-rewrite-v3",
+  "semantic_contract": "total-transfer-words-v2; positive-width; modular-arithmetic; SMT-total-div-shift; standard-counts; nonbottom-KB",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39"
+  },
+  "examples": {
+    "and": {
+      "status": "certified",
+      "optimal": true,
+      "rewrite_steps": 3,
+      "rules": {
+        "set-leading-included": 2,
+        "idempotent": 1
+      },
+      "semantic_signature": "01255",
+      "original_unique_nodes": 10,
+      "normalized_unique_nodes": 7,
+      "expanded_tree_measure": [
+        17,
+        14,
+        11,
+        7
+      ],
+      "certificate_bytes_compact": 1251,
+      "source_hashes": {
+        "program": "515485ef73decd20c038316b871bab3d3603f384821f71e0e2f2ac176abe43d1"
+      },
+      "timings": {
+        "verify": {
+          "median_ms": 3.5819279999032005,
+          "min_ms": 3.2686389999980747,
+          "max_ms": 4.725828000118781,
+          "repetitions": 31
+        },
+        "check": {
+          "median_ms": 1.5804539998498512,
+          "min_ms": 1.441215000113516,
+          "max_ms": 3.7791899999319867,
+          "repetitions": 31
+        }
+      }
+    },
+    "or": {
+      "status": "certified",
+      "optimal": true,
+      "rewrite_steps": 8,
+      "rules": {
+        "set-low-one": 2,
+        "remainder-zero": 2,
+        "compare-unsigned-bound": 1,
+        "select-constant": 2,
+        "count-bound": 1
+      },
+      "semantic_signature": "08a89",
+      "original_unique_nodes": 21,
+      "normalized_unique_nodes": 8,
+      "expanded_tree_measure": [
+        34,
+        32,
+        30,
+        22,
+        20,
+        18,
+        15,
+        12,
+        9
+      ],
+      "certificate_bytes_compact": 1465,
+      "source_hashes": {
+        "program": "e86a52bce55ce669c9adfb450ebd482faeb2fadc8b8814921ec8af2c4519661f"
+      },
+      "timings": {
+        "verify": {
+          "median_ms": 5.60810499996478,
+          "min_ms": 5.1550849998420745,
+          "max_ms": 11.064856000075451,
+          "repetitions": 31
+        },
+        "check": {
+          "median_ms": 2.138534000096115,
+          "min_ms": 2.1014470000864094,
+          "max_ms": 2.4520649999431043,
+          "repetitions": 31
+        }
+      }
+    },
+    "xor": {
+      "status": "certified",
+      "optimal": true,
+      "rewrite_steps": 7,
+      "rules": {
+        "clear-width": 2,
+        "count-constant": 1,
+        "clear-zero-count": 1,
+        "disjoint-add": 1,
+        "umin-zero": 1,
+        "zero-identity": 1
+      },
+      "semantic_signature": "00189",
+      "original_unique_nodes": 20,
+      "normalized_unique_nodes": 11,
+      "expanded_tree_measure": [
+        30,
+        28,
+        27,
+        25,
+        24,
+        22,
+        17,
+        15
+      ],
+      "certificate_bytes_compact": 1544,
+      "source_hashes": {
+        "meet": "4db24093258277f76ad11d33826a0e480e945cc1c19ece661fc17655ad7f65f4",
+        "program": "451d446fcdd05c14c98e83f04a2df52cd2b31c36260a843feb257ceaa0b54547"
+      },
+      "timings": {
+        "verify": {
+          "median_ms": 7.451930000115681,
+          "min_ms": 7.156675000032919,
+          "max_ms": 13.700200999892331,
+          "repetitions": 31
+        },
+        "check": {
+          "median_ms": 3.2642640001085965,
+          "min_ms": 3.191827999899033,
+          "max_ms": 3.658201000007466,
+          "repetitions": 31
+        }
+      }
+    }
+  },
+  "rule_witnesses": 29,
+  "rule_semantics_comparisons": 23751,
+  "boolean_mask_image_size": 512,
+  "raw_pair_class_count": 262144,
+  "valid_output_class_count": 19683,
+  "precision_classifications": {
+    "and": {
+      "sound_classes": 64,
+      "monotone_sound_classes": 26
+    },
+    "or": {
+      "sound_classes": 64,
+      "monotone_sound_classes": 26
+    },
+    "xor": {
+      "sound_classes": 16,
+      "monotone_sound_classes": 16
+    }
+  },
+  "mutation_statuses": {
+    "certified": 270,
+    "unsound": 180,
+    "fallback_required": 230
+  },
+  "mutation_per_target": {
+    "and": {
+      "total": 85,
+      "statuses": {
+        "certified": 13,
+        "unsound": 34,
+        "fallback_required": 38
+      }
+    },
+    "or": {
+      "total": 356,
+      "statuses": {
+        "unsound": 62,
+        "certified": 167,
+        "fallback_required": 127
+      }
+    },
+    "xor": {
+      "total": 239,
+      "statuses": {
+        "certified": 90,
+        "unsound": 84,
+        "fallback_required": 65
+      }
+    }
+  },
+  "semantic_deduplication": {
+    "and": {
+      "coordinatewise_candidates_including_original": 48,
+      "distinct_signatures": 20
+    },
+    "or": {
+      "coordinatewise_candidates_including_original": 230,
+      "distinct_signatures": 28
+    },
+    "xor": {
+      "coordinatewise_candidates_including_original": 175,
+      "distinct_signatures": 50
+    }
+  },
+  "join_add_counterexample": {
+    "width": 2,
+    "lhs": [
+      0,
+      0
+    ],
+    "rhs": [
+      2,
+      0
+    ]
+  },
+  "generator_composition_counterexample": {
+    "G": [
+      [
+        0,
+        0
+      ]
+    ],
+    "H": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "full": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "naive": [
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "elapsed_seconds": 10.029,
+  "scope": "Fresh finite evidence and implementation regression; general proofs are in the manuscript, not inferred from sampling."
+}

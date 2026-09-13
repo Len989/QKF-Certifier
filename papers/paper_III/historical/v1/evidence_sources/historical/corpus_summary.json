@@ -1,0 +1,29 @@
+{
+  "status": "historical; not rerun for Paper III",
+  "source": "xor_bridge/results/corpus.json",
+  "source_sha256": "4bd7578b454e87c21873627742d11f6eb3735fb7ef85126625e83f95e65c7e82",
+  "summary": {
+    "solution": {
+      "count": 39,
+      "coordinatewise": 3,
+      "changed": 39,
+      "raw_nodes": 5182,
+      "normalized_nodes": 4505
+    },
+    "body": {
+      "count": 411,
+      "coordinatewise": 5,
+      "changed": 221,
+      "raw_nodes": 6096,
+      "normalized_nodes": 5406
+    },
+    "component": {
+      "count": 411,
+      "coordinatewise": 4,
+      "changed": 241,
+      "raw_nodes": 7106,
+      "normalized_nodes": 6401
+    }
+  },
+  "elapsed_s": 19.208798644000126
+}

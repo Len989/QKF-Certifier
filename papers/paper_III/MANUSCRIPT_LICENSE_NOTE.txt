@@ -1,0 +1,8 @@
+The manuscript and prose are prepared for publication by Leonid Shcherbakov.
+CC BY 4.0 is the proposed publication choice, consistent with the companion
+paper packages. The author selects the manuscript license when depositing.
+This preparation step does not publish or license the manuscript externally.
+
+Research source code supplied under evidence_sources/ and verification/ is
+covered by LICENSE_CODE_MIT.txt. Public QKF-Certifier and the upstream example
+artifact retain their own MIT notices in the pinned repositories.

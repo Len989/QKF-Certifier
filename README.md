@@ -9,11 +9,47 @@ then checks the remaining coordinatewise function on all nine one-bit KnownBits
 input pairs. For this fragment, the certificate establishes soundness for **every
 positive bit width**, and reports whether the transformer is optimal.
 
-Version **0.1.0a1** is an alpha research tool with a usable CLI, Python API, tests,
-and independently replayed rewrite certificates. It currently completes proofs for
-real AND, OR, and XOR transformers from the NiceToMeetYou artifact. Other operations
-can be normalized, but may require another verifier. This is not a general MLIR
-verifier or a replacement for an entire synthesis system.
+Version **0.2.0a1** is a prepared research alpha candidate. It brings the later
+observation, whole-word, Graal, and Lean work into one reproducible source release,
+with a substantially revised Paper III. The installable CLI still completes
+coordinatewise AND, OR, and XOR proofs; broader proofs use the separate research
+entry points below. The runtime semantics and certificate format are unchanged.
+
+## Research included in this candidate
+
+| Profile | Current result | How to use it |
+|---|---|---|
+| Installable Python CLI | Complete coordinatewise AND/OR/XOR proofs | `qkf verify` / `qkf check` |
+| KnownBits research | 11/39 whole programs; 104/411 component proofs | Research replay runner |
+| Graal research | Exact upper masked bound; conditional lower preservation | Research replay runner |
+| Lean 4.33.0 pilot | Forced rows, carry factor, arbitrary-length gluing and numerical successor | `lake build` |
+
+From a **full repository checkout or the research source archive**, with Python
+3.12 on Linux/POSIX:
+
+```sh
+python tools/replay_research.py --suite all --output reproduction/run_01
+```
+
+This verifies and restores the packed data, then replays saved proofs without SMT
+or producer search. Restored KnownBits JSON occupies about 488 MB. For Lean:
+
+```sh
+cd research/lean
+lake build
+```
+
+The wheel and PyPI-style source distribution contain the coordinatewise Python
+application. Use the full research archive for `research/`, `papers/`, and the
+repository tools. See [research instructions](research/README.md),
+[Paper III v2](papers/paper_III/QKF_PAPER_III_v2.0_2026-09-13.pdf), and the
+[claim map](docs/CLAIMS.md).
+
+The lower Graal theorem requires `lower <= 0` or a forbidden negative sign. It
+preserves the joint mask/interval carrier and may return a conservative bound.
+The complete Graal `create` procedure and the full Python/Java implementations
+have not been formalized in Lean. These results make no general speed claim over
+SMT solvers. Historical and fresh validation records remain separate.
 
 [Русская версия](README_RU.md) · [Semantics](docs/SEMANTICS.md) ·
 [Certificate format](docs/CERTIFICATES.md) · [Release guide](docs/RELEASING.md)
@@ -117,11 +153,13 @@ counts, and total SMT-style shifts/division. A proof does not certify a separate
 compiler's implementation of those operations. See [the exact semantics and
 limits](docs/SEMANTICS.md) before integrating a new dialect/backend.
 
-## Evidence and development
+## Baseline evidence and development
 
 The precursor study checked three real transformers, 680 program mutations,
 22,140 exhaustive abstract-input pairs, and 3,150 random pairs. A 39-program corpus
-showed complete coordinatewise proofs for 3 programs. These are bounded empirical
+showed complete coordinatewise proofs for 3 programs in that precursor profile.
+The separate current research profile proves 11/39; the denominators describe
+different supported proof interfaces. These are bounded empirical
 results, separate from the mathematical lifting argument. Selected results are
 recorded in [benchmarks](benchmarks/README.md); they are not an end-to-end speed claim.
 
@@ -137,13 +175,16 @@ CI tests Linux/Python 3.10–3.14 and Python 3.12 on Windows/macOS, builds the
 distributions, and checks the installed wheel outside the checkout. All eight
 jobs passed for the first uploaded source snapshot; see the
 [recorded successful run](https://github.com/Len989/QKF-Certifier/actions/runs/34636148287). The badge above links to current CI results.
-The [local validation record](docs/LOCAL_VALIDATION.md) describes the earlier
-local preparation checks.
+The [original validation record](docs/LOCAL_VALIDATION.md) describes the earlier
+preparation checks. [Candidate validation](docs/RELEASE_VALIDATION_0.2.0a1.md)
+records the new local checks. The new candidate must pass its own remote CI before
+publication; the earlier successful run does not establish that status.
 
 ## License and provenance
 
 QKF Certifier code is distributed under MIT. The five small upstream MLIR examples
 retain the MIT license and attribution of the pinned xdsl-smt artifact; see
 [NOTICE.md](NOTICE.md). No affiliation with the NiceToMeetYou authors is implied.
-The package is one concrete application of the QKF research line, not a distribution
-of every algorithm or theorem developed in that research.
+The wheel is the coordinatewise application. The full source release additionally
+contains the selected research capsules and three manuscript packages; manuscript
+licensing is described separately in their author-facing license notes.
