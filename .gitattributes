@@ -4,3 +4,11 @@
 *.json text eol=lf
 *.md text eol=lf
 *.yml text eol=lf
+
+# Preserve frozen research/manuscript/evidence bytes on every platform.
+/research/** -text
+/papers/** -text
+/validation/** -text
+*.pdf binary
+*.zip binary
+*.tar.xz binary

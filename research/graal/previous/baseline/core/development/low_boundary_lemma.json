@@ -1,0 +1,387 @@
+{
+  "source": {
+    "schema": "qkf-symbolic-bit-obligation-v1",
+    "name": "low_boundary_universal",
+    "inputs": [],
+    "parameters": [
+      "n"
+    ],
+    "assume": [
+      "and",
+      [
+        "le",
+        0,
+        "n"
+      ],
+      [
+        "le",
+        "n",
+        "w"
+      ]
+    ],
+    "claims": [
+      [
+        "word_eq",
+        [
+          "shl",
+          [
+            "lowmask",
+            1
+          ],
+          "n"
+        ],
+        [
+          "and",
+          [
+            "not",
+            [
+              "lowmask",
+              "n"
+            ]
+          ],
+          [
+            "or",
+            [
+              "shl",
+              [
+                "lowmask",
+                "n"
+              ],
+              1
+            ],
+            [
+              "lowmask",
+              1
+            ]
+          ]
+        ]
+      ]
+    ]
+  },
+  "certificate": {
+    "schema": "qkf-transported-count-certificate-v3",
+    "semantics": "positive-width;integer-scalars;total-zero-invalid-shifts;transported-count-rows-v3",
+    "source_hash": "31a3fa9794315dc8554314c36163fe773e1a05a25e51141acf9e80000c38df42",
+    "interface_level": 0,
+    "proofs": [
+      {
+        "formula_hash": "5a9650a669d25bdf0c4876cc4a8217a757d3e7fd84c898cd4abae8a06f38eedf",
+        "tree": {
+          "kind": "split",
+          "variable": 20,
+          "true": {
+            "kind": "split",
+            "variable": 15,
+            "true": {
+              "kind": "linear",
+              "weights": [
+                [
+                  7,
+                  1,
+                  1
+                ],
+                [
+                  9,
+                  1,
+                  1
+                ]
+              ]
+            },
+            "false": {
+              "kind": "split",
+              "variable": 17,
+              "true": {
+                "kind": "linear",
+                "weights": [
+                  [
+                    7,
+                    1,
+                    1
+                  ],
+                  [
+                    9,
+                    1,
+                    1
+                  ]
+                ]
+              },
+              "false": {
+                "kind": "split",
+                "variable": 10,
+                "true": {
+                  "kind": "linear",
+                  "weights": [
+                    [
+                      7,
+                      1,
+                      1
+                    ],
+                    [
+                      9,
+                      1,
+                      1
+                    ]
+                  ]
+                },
+                "false": {
+                  "kind": "split",
+                  "variable": 12,
+                  "true": {
+                    "kind": "split",
+                    "variable": 13,
+                    "true": {
+                      "kind": "linear",
+                      "weights": [
+                        [
+                          0,
+                          1,
+                          2
+                        ],
+                        [
+                          12,
+                          1,
+                          2
+                        ]
+                      ]
+                    },
+                    "false": {
+                      "kind": "linear",
+                      "weights": [
+                        [
+                          0,
+                          1,
+                          1
+                        ],
+                        [
+                          10,
+                          1,
+                          1
+                        ],
+                        [
+                          11,
+                          1,
+                          1
+                        ]
+                      ]
+                    }
+                  },
+                  "false": {
+                    "kind": "linear",
+                    "weights": [
+                      [
+                        10,
+                        1,
+                        1
+                      ],
+                      [
+                        11,
+                        1,
+                        1
+                      ]
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "false": {
+            "kind": "split",
+            "variable": 15,
+            "true": {
+              "kind": "split",
+              "variable": 16,
+              "true": {
+                "kind": "linear",
+                "weights": [
+                  [
+                    7,
+                    1,
+                    1
+                  ],
+                  [
+                    10,
+                    1,
+                    1
+                  ]
+                ]
+              },
+              "false": {
+                "kind": "split",
+                "variable": 6,
+                "true": {
+                  "kind": "split",
+                  "variable": 7,
+                  "true": {
+                    "kind": "linear",
+                    "weights": [
+                      [
+                        7,
+                        1,
+                        1
+                      ],
+                      [
+                        9,
+                        1,
+                        1
+                      ]
+                    ]
+                  },
+                  "false": {
+                    "kind": "linear",
+                    "weights": [
+                      [
+                        0,
+                        1,
+                        1
+                      ],
+                      [
+                        6,
+                        1,
+                        1
+                      ],
+                      [
+                        8,
+                        1,
+                        1
+                      ]
+                    ]
+                  }
+                },
+                "false": {
+                  "kind": "linear",
+                  "weights": [
+                    [
+                      5,
+                      1,
+                      2
+                    ],
+                    [
+                      6,
+                      1,
+                      2
+                    ],
+                    [
+                      9,
+                      1,
+                      2
+                    ]
+                  ]
+                }
+              }
+            },
+            "false": {
+              "kind": "split",
+              "variable": 9,
+              "true": {
+                "kind": "split",
+                "variable": 6,
+                "true": {
+                  "kind": "split",
+                  "variable": 7,
+                  "true": {
+                    "kind": "linear",
+                    "weights": [
+                      [
+                        7,
+                        1,
+                        1
+                      ],
+                      [
+                        9,
+                        1,
+                        1
+                      ]
+                    ]
+                  },
+                  "false": {
+                    "kind": "linear",
+                    "weights": [
+                      [
+                        0,
+                        1,
+                        1
+                      ],
+                      [
+                        6,
+                        1,
+                        1
+                      ],
+                      [
+                        8,
+                        1,
+                        1
+                      ]
+                    ]
+                  }
+                },
+                "false": {
+                  "kind": "linear",
+                  "weights": [
+                    [
+                      1,
+                      1,
+                      1
+                    ],
+                    [
+                      5,
+                      1,
+                      1
+                    ],
+                    [
+                      6,
+                      1,
+                      1
+                    ]
+                  ]
+                }
+              },
+              "false": {
+                "kind": "linear",
+                "weights": [
+                  [
+                    3,
+                    1,
+                    1
+                  ],
+                  [
+                    5,
+                    1,
+                    1
+                  ],
+                  [
+                    7,
+                    1,
+                    1
+                  ]
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "record": {
+    "status": "certificate_produced",
+    "stats": {
+      "search_nodes": 27,
+      "fm_calls": 27,
+      "fm_constructed_rows": 353,
+      "splits": 13,
+      "boolean_leaves": 0,
+      "linear_leaves": 14,
+      "max_depth": 6
+    },
+    "features": [
+      {
+        "claim": 0,
+        "cnf_variables": 24,
+        "clauses": 57,
+        "count_parameters": 0,
+        "queried_bits": 0,
+        "added_observations": []
+      }
+    ],
+    "producer_seconds": 0.004584023998177145
+  }
+}

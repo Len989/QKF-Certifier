@@ -1,0 +1,162 @@
+\section{Finite ground presentations}\label{sec:ground}
+
+From now through Section~\ref{sec:algorithm}, let $E$ be a finite set of ground equations.
+
+\subsection{Ground locality}
+
+Define
+\[
+h(E)=\max\{\depth u:u\text{ is a side of an equation in }E\},
+\]
+with $h(\varnothing)=0$.
+
+\begin{theorem}[Ground-locality bound]\label{thm:groundlocality}
+For every $d\ge0$,
+\[
+\boxed{\delta_E(d)\le\max\{d,h(E)\}}.
+\]
+Equivalently, if $H=\max\{d,h(E)\}$, then
+\[
+K_E^{(d,H)}\cong I_E^{[d]}.
+\]
+In particular,
+\[
+d\ge h(E)\quad\Longrightarrow\quad J_E^{(d)}\cong I_E^{[d]}.
+\]
+\end{theorem}
+
+\begin{proof}
+Fix $s,t\in T^{(d)}$ with $E\vdash s=t$.  Let $S$ be the finite term DAG containing all subterms of the equation sides in $E$ and all subterms of $s,t$.  Ground congruence closure on this induced partial term algebra is complete for the query \cite{NelsonOppen1980,DowneySethiTarjan1980,Kapur1997}.  Every node in $S$ has depth at most $H=\max\{d,h(E)\}$.  Therefore the same equality is generated inside $T^{(H)}$, so $s\equiv_H t$.  Soundness gives the converse inclusion.
+\end{proof}
+
+Thus congruence visibility in a finite ground presentation has zero overhead at every depth $d\ge h(E)$. This statement concerns proof DAGs; it does not assert the same bound for sequential rewrites.
+
+\subsection{Monotonicity}
+
+\begin{proposition}[Monotonicity]\label{prop:monotone}
+For every presentation for which the visibility depths are defined,
+\[
+\boxed{\delta_E(d)\le\delta_E(d+1)}.
+\]
+\end{proposition}
+
+\begin{proof}
+Put $D=\delta_E(d+1)$.  Equality on $T^{(d+1)}$ is exact at horizon $D$.  Restricting that exact relation to $T^{(d)}$ shows that the smaller layer is exact by the same horizon.
+\end{proof}
+
+For a finite ground presentation of exact axiom depth $h$, define the low-depth profile
+\[
+\mathbf d(E)=\bigl(\delta_E(0),\ldots,\delta_E(h-1)\bigr)
+\]
+and the overhead fingerprint
+\[
+\Omega(E)=\bigl(\omega_E(0),\ldots,\omega_E(h-1)\bigr).
+\]
+By Theorem~\ref{thm:groundlocality}, $\omega_E(d)=0$ for $d\ge h$.
+
+\subsection{The Catalan visibility spectrum}
+
+\begin{theorem}[Catalan visibility spectrum]\label{thm:catalan}
+Fix $h\ge1$.  The possible low-depth profiles of finite ground equational presentations of exact axiom depth $h$ are exactly the weakly increasing integer sequences
+\[
+a_0\le a_1\le\cdots\le a_{h-1}
+\]
+satisfying
+\[
+i\le a_i\le h
+\qquad(0\le i<h).
+\]
+Consequently there are exactly
+\[
+\boxed{C_{h+1}=\frac1{h+2}\binom{2h+2}{h+1}}
+\]
+such profiles.
+\end{theorem}
+
+\begin{proof}
+Necessity follows from $i\le\delta_E(i)$, Theorem~\ref{thm:groundlocality}, and Proposition~\ref{prop:monotone}.
+
+For realization, use one unary operation $f$ and finitely many constants.  Given an admissible sequence $a=(a_0,\ldots,a_{h-1})$, for every $i$ with $a_i>i$ introduce fresh constants $p_i,q_i,r_i$ and the equations
+\begin{equation}\label{eq:gadget}
+f^i(p_i)=f^{a_i}(r_i),\qquad
+f^i(q_i)=f^{a_i}(r_i).
+\end{equation}
+If none of these equations has depth $h$, add an isolated equation $f^h(u)=f^h(v)$ on fresh constants to make the axiom depth exactly $h$.
+
+Fix $d<h$.  If $a_d>d$, the terms $f^d(p_d)$ and $f^d(q_d)$ are equal in the full theory through the common witness $f^{a_d}(r_d)$.  At any horizon $D<a_d$, neither generating equation of gadget $d$ is admitted, and no other equation mentions its fresh constants.  Thus $\delta(d)\ge a_d$.  If $a_d=d$, the same lower bound is tautological.
+
+For exactness, the nontrivial full classes within gadget $i$ are
+\[
+\{f^{i+k}(p_i),f^{i+k}(q_i),f^{a_i+k}(r_i)\}
+\qquad(k\ge0).
+\]
+All remaining terms on its three unary rays are singletons. Fresh constants
+keep different gadgets disjoint. A gadget with $i>d$ therefore has no
+nontrivial effect on the observed layer. For $i\le d$, first derive
+$f^i(p_i)=f^i(q_i)$ using the witness at depth $a_i\le a_d$.
+Congruence then gives their descendants at depth at most $d\le a_d$,
+without lifting the witness through every context. If an observed pair
+also uses the $r_i$-ray, that witness descendant itself has depth at most
+$d$, and the corresponding contextual input equation stays within $a_d$.
+The optional isolated depth-$h$ equation has no effect below $h$.
+This proves $\delta_E(d)\le a_d$.
+
+Finally, put $\nu_{i+1}=h-a_i$.  The admissibility conditions identify $(\nu_1,\ldots,\nu_h)$ with a partition contained in the staircase $(h,h-1,\ldots,1)$.  Such partitions are in bijection with Dyck paths of semilength $h+1$, and are counted by $C_{h+1}$.
+\end{proof}
+
+For $h=2$ there are exactly five profiles:
+\[
+(\delta(0),\delta(1))
+\in
+\{(0,1),(0,2),(1,1),(1,2),(2,2)\}.
+\]
+Equivalently,
+\[
+\Omega(E)
+\in
+\{(0,0),(0,1),(1,0),(1,1),(2,1)\}.
+\]
+
+
+\subsection{Eliminating finite-ground overhead by derived equations}
+
+\begin{proposition}[Finite visibility flattening]\label{prop:flattening}
+Every finite ground presentation $E$ has a finite ground extension $E^+$
+with the same full equality relation and
+$\delta_{E^+}(d)=d$ for every $d$.
+\end{proposition}
+\begin{proof}
+Let $h=h(E)$ and adjoin every true equality between terms in $T^{(h)}$.
+There are finitely many, and they are effectively obtainable by ground
+congruence closure. Each true pair of depth at most $d\le h$ is now an
+input equation active by $d$. For $d>h$, ground locality already gives
+exactness at $d$. The added equations are consequences of $E$, so the full
+equality relation is unchanged.
+\end{proof}
+
+This existence result does not make the extension small. The relevant
+optimization question concerns how many derived equations suffice, or how
+much represented syntax they require, rather than whether a zero-overhead
+finite ground presentation exists at all.
+
+\subsection{Pairwise bottlenecks}
+
+Give a reflexivity proof of $t=t$ cost $\depth t$. Assign to an input equation $u=v$ the cost
+\[
+\max\{\depth u,\depth v\}.
+\]
+Combine transitive proof steps by maximum, congruence steps by the maximum of the argument costs and endpoint depths, and alternative derivations by minimum.  Let $\mu_E(s,t)$ be the resulting minimum bottleneck cost.
+
+\begin{proposition}[Bottleneck characterization]\label{prop:bottleneck}
+If $E\vdash s=t$, then
+\[
+\boxed{\mu_E(s,t)=\lambda_E(s,t)}.
+\]
+\end{proposition}
+
+\begin{proof}
+For each integer threshold $D$, the proof objects of bottleneck cost at most $D$ generate exactly the congruence closure of the input equations and subterms admitted at horizon $D$.  Therefore $\mu_E(s,t)\le D$ if and only if $s\equiv_D t$.  Taking the least such threshold gives the claim.
+\end{proof}
+
+This does not introduce a new congruence-closure decision procedure.  Its point is that the presentation invariant $\lambda_E$ is exactly a bottleneck optimization problem on standard equality proofs.
+

@@ -1,0 +1,14 @@
+{
+  "mode": "joint",
+  "operation": "or",
+  "phase": "source",
+  "status": "source_observation_produced",
+  "source_certificate_sha256": "09ad1f8ad5074c73363ccf27a4b0c628a50dbd221227900e3089885abc6094d5",
+  "source_certificate_bytes": 4406,
+  "source_sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+  "ssa_sha256": "899318278b42cc075ad92ca4e3716a32c130229be18ccb2c32f862c4b965dfe9",
+  "hull_calls": 0,
+  "source_leaves": 1,
+  "seconds": 0.03190113200980704,
+  "peak_rss_kib": 16252
+}

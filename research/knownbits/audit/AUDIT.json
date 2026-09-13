@@ -1,0 +1,1757 @@
+{
+  "status": "passed",
+  "freeze": {
+    "frozen_files": 829,
+    "baseline_files": 262,
+    "first_frozen_files": 305
+  },
+  "prior_archive_sha256": "4d2d70618c7fc663569b9b44fbfba280e020268119e70e6695c29f796f1622fa",
+  "baseline_identical_final_expressions": 411,
+  "modes": {
+    "baseline": {
+      "whole": [
+        "KnownBits_And",
+        "KnownBits_Or",
+        "KnownBits_Smax",
+        "KnownBits_Smin",
+        "KnownBits_Sub",
+        "KnownBits_UaddSat",
+        "KnownBits_Umax",
+        "KnownBits_Umin",
+        "KnownBits_Xor"
+      ],
+      "component_proofs": 87,
+      "prepared": 411,
+      "prepared_supported": 226,
+      "new_rewrites": {},
+      "interface_rules": {},
+      "result_requests": {},
+      "producer_statuses": {
+        "unsupported_target": 23,
+        "unsupported_candidate": 2,
+        "explicit_target_refuted": 5,
+        "certificate_produced": 9
+      },
+      "producer_seconds": 47.54806202603504,
+      "replay_seconds": 28.02824571405654,
+      "certificate_bytes": 18007147,
+      "replayed_preparations": 411,
+      "search_modules_loaded": [],
+      "programs": 39,
+      "whole_count": 9
+    },
+    "sign": {
+      "whole": [
+        "KnownBits_And",
+        "KnownBits_Or",
+        "KnownBits_Smax",
+        "KnownBits_Smin",
+        "KnownBits_Sub",
+        "KnownBits_UaddSat",
+        "KnownBits_Umax",
+        "KnownBits_Umin",
+        "KnownBits_Xor"
+      ],
+      "component_proofs": 90,
+      "prepared": 411,
+      "prepared_supported": 229,
+      "new_rewrites": {
+        "sign": 10
+      },
+      "interface_rules": {
+        "aligned-leading-bit-excluded": 1,
+        "negative-native-constant": 6,
+        "bit-complement": 4,
+        "native-sign-observation": 12,
+        "same-coordinate-operation": 7,
+        "signed-quotient-observation-row": 4,
+        "logical-right-shift-sign": 3
+      },
+      "result_requests": {
+        "sign/covered": 10,
+        "sign/unresolved": 4
+      },
+      "producer_statuses": {
+        "unsupported_target": 23,
+        "unsupported_candidate": 2,
+        "explicit_target_refuted": 5,
+        "certificate_produced": 9
+      },
+      "producer_seconds": 48.89725892692513,
+      "replay_seconds": 28.41842157195788,
+      "certificate_bytes": 18014032,
+      "replayed_preparations": 411,
+      "search_modules_loaded": [],
+      "programs": 39,
+      "whole_count": 9
+    },
+    "observed": {
+      "whole": [
+        "KnownBits_Add",
+        "KnownBits_And",
+        "KnownBits_Or",
+        "KnownBits_Smax",
+        "KnownBits_Smin",
+        "KnownBits_Sub",
+        "KnownBits_UaddSat",
+        "KnownBits_Umax",
+        "KnownBits_Umin",
+        "KnownBits_UsubSat",
+        "KnownBits_Xor"
+      ],
+      "component_proofs": 104,
+      "prepared": 411,
+      "prepared_supported": 241,
+      "new_rewrites": {
+        "action-on-word": 18,
+        "division-action": 9,
+        "sign": 10,
+        "word": 3
+      },
+      "interface_rules": {
+        "source-selected-action-row": 18,
+        "native-sign-observation": 19,
+        "bit-complement": 6,
+        "complement-low-prefix-mask": 1,
+        "aligned-leading-bit-excluded": 1,
+        "negative-native-constant": 12,
+        "same-coordinate-operation": 14,
+        "signed-quotient-observation-row": 4,
+        "logical-right-shift-sign": 3,
+        "nonnegative-native-constant": 2,
+        "source-selected-observation": 1,
+        "zero": 1,
+        "sign-is-one": 8,
+        "selected-carrier": 1,
+        "actual-path-sign-fact": 2,
+        "universal-native-cell-identities": 3
+      },
+      "result_requests": {
+        "action-on-word/unresolved": 79,
+        "division-action/unresolved": 75,
+        "word/unresolved": 177,
+        "action-on-word/covered": 16,
+        "division-action/covered": 8,
+        "sign/covered": 10,
+        "sign/unresolved": 4,
+        "word/covered": 3
+      },
+      "producer_statuses": {
+        "unsupported_target": 23,
+        "certificate_produced": 11,
+        "explicit_target_refuted": 5
+      },
+      "producer_seconds": 51.92465762302163,
+      "replay_seconds": 29.40874247996544,
+      "certificate_bytes": 19907162,
+      "replayed_preparations": 411,
+      "search_modules_loaded": [],
+      "programs": 39,
+      "whole_count": 11
+    }
+  },
+  "matrix": [
+    {
+      "case": "KnownBits_Abds",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 9,
+        "supported": 7,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 9,
+        "supported": 7,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 9,
+        "supported": 7,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Abdu",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 16,
+        "supported": 10,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 16,
+        "supported": 10,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 16,
+        "supported": 11,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_8",
+            "kind": "action-on-word",
+            "source_hash": "a7a7cb0bb3520c277e8d67ea3fef3d6f4fe480fa182d10c72432e57dc30e5e38"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Add",
+      "baseline": {
+        "whole": false,
+        "proved": 8,
+        "components": 13,
+        "supported": 11,
+        "status": "unsupported_candidate",
+        "stopped_at": "partial_solution_8",
+        "new_rewrites": [],
+        "stopped_blockers": {
+          "urem": 1
+        }
+      },
+      "sign": {
+        "whole": false,
+        "proved": 8,
+        "components": 13,
+        "supported": 12,
+        "status": "unsupported_candidate",
+        "stopped_at": "partial_solution_8",
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_12",
+            "kind": "sign",
+            "source_hash": "666add4187918564931d961e98f144cf31c72abb6947d9c70e5b046d27346909"
+          }
+        ],
+        "stopped_blockers": {
+          "urem": 1
+        }
+      },
+      "observed": {
+        "whole": true,
+        "proved": 13,
+        "components": 13,
+        "supported": 13,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_8",
+            "kind": "division-action",
+            "source_hash": "f67e0d28267e357d37d4d727e9a74ec74d553f3ccbbbb81b828def0384f54a33"
+          },
+          {
+            "entry": "partial_solution_12",
+            "kind": "sign",
+            "source_hash": "666add4187918564931d961e98f144cf31c72abb6947d9c70e5b046d27346909"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_AddNsw",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 20,
+        "supported": 16,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 20,
+        "supported": 16,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_18",
+            "kind": "sign",
+            "source_hash": "0e9a9eb323c5d59195015bd1e85eeeb3cd9432f2d34800c51a3e202e4dc8f210"
+          }
+        ],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 20,
+        "supported": 16,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_18",
+            "kind": "sign",
+            "source_hash": "0e9a9eb323c5d59195015bd1e85eeeb3cd9432f2d34800c51a3e202e4dc8f210"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_AddNswNuw",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 17,
+        "supported": 9,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 17,
+        "supported": 9,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_4",
+            "kind": "sign",
+            "source_hash": "6aade19f6aec8e3690cc8135e676bd8ac5de1deffd488e29b64f15e1631d6b95"
+          }
+        ],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 17,
+        "supported": 10,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_2",
+            "kind": "action-on-word",
+            "source_hash": "f3d64416d261202d2281779e4e63415f6cb192b8e8703fd6923be1244372d613"
+          },
+          {
+            "entry": "partial_solution_4",
+            "kind": "sign",
+            "source_hash": "6aade19f6aec8e3690cc8135e676bd8ac5de1deffd488e29b64f15e1631d6b95"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_AddNuw",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 12,
+        "supported": 9,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 12,
+        "supported": 9,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 12,
+        "supported": 9,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_4",
+            "kind": "action-on-word",
+            "source_hash": "e0d00ad75e5adffc870d2819af3a802e1921e41349ac4ba28240231ac1895b32"
+          },
+          {
+            "entry": "partial_solution_4",
+            "kind": "action-on-word",
+            "source_hash": "e0d00ad75e5adffc870d2819af3a802e1921e41349ac4ba28240231ac1895b32"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_And",
+      "baseline": {
+        "whole": true,
+        "proved": 1,
+        "components": 1,
+        "supported": 1,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": true,
+        "proved": 1,
+        "components": 1,
+        "supported": 1,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": true,
+        "proved": 1,
+        "components": 1,
+        "supported": 1,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Ashr",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 7,
+        "supported": 0,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 7,
+        "supported": 1,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_2",
+            "kind": "sign",
+            "source_hash": "cfe634e4b93db254b7e49e15e816e436c212346139cdc1dc6ca45bd3d3faf823"
+          },
+          {
+            "entry": "partial_solution_4",
+            "kind": "sign",
+            "source_hash": "affd49e27808c547aa7152c9ce5ac4e9fd06e34e04ec1c051679548c72bcd132"
+          },
+          {
+            "entry": "partial_solution_4",
+            "kind": "sign",
+            "source_hash": "affd49e27808c547aa7152c9ce5ac4e9fd06e34e04ec1c051679548c72bcd132"
+          },
+          {
+            "entry": "partial_solution_4",
+            "kind": "sign",
+            "source_hash": "affd49e27808c547aa7152c9ce5ac4e9fd06e34e04ec1c051679548c72bcd132"
+          }
+        ],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 7,
+        "supported": 1,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_2",
+            "kind": "sign",
+            "source_hash": "cfe634e4b93db254b7e49e15e816e436c212346139cdc1dc6ca45bd3d3faf823"
+          },
+          {
+            "entry": "partial_solution_3",
+            "kind": "action-on-word",
+            "source_hash": "08fd3f2c01df27fd5aedcb60aa0e1dd700e216c57722aea1a3e8e82b87b41bfa"
+          },
+          {
+            "entry": "partial_solution_3",
+            "kind": "action-on-word",
+            "source_hash": "c07a69d6bd72a23677b639c54b1e9d8437bbc15f5329ebcd330bb273d5f95221"
+          },
+          {
+            "entry": "partial_solution_4",
+            "kind": "sign",
+            "source_hash": "affd49e27808c547aa7152c9ce5ac4e9fd06e34e04ec1c051679548c72bcd132"
+          },
+          {
+            "entry": "partial_solution_4",
+            "kind": "sign",
+            "source_hash": "affd49e27808c547aa7152c9ce5ac4e9fd06e34e04ec1c051679548c72bcd132"
+          },
+          {
+            "entry": "partial_solution_4",
+            "kind": "sign",
+            "source_hash": "affd49e27808c547aa7152c9ce5ac4e9fd06e34e04ec1c051679548c72bcd132"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_AshrExact",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 8,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 8,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 8,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_AvgCeilS",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 8,
+        "supported": 2,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 8,
+        "supported": 2,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 8,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_2",
+            "kind": "division-action",
+            "source_hash": "14442766f069503781dcd0447b76dd9a86b7f9c2b9a7784066da34225d6fb594"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_AvgCeilU",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 9,
+        "supported": 5,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 9,
+        "supported": 5,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 9,
+        "supported": 5,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_4",
+            "kind": "action-on-word",
+            "source_hash": "e524b40baff40e284919312fc834bacda82bb5272c9d58017f8308e09ec7329f"
+          },
+          {
+            "entry": "partial_solution_4",
+            "kind": "action-on-word",
+            "source_hash": "e524b40baff40e284919312fc834bacda82bb5272c9d58017f8308e09ec7329f"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_AvgFloorS",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 9,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 9,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 9,
+        "supported": 4,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_2",
+            "kind": "action-on-word",
+            "source_hash": "028db1d932f604f67df43f280a095f030002e9461d3628db76bd4c399acda11a"
+          },
+          {
+            "entry": "partial_solution_4",
+            "kind": "action-on-word",
+            "source_hash": "7fedb9a73de9ba04260ea0d79a89a166428da33d89497085fe5bf0304c8a382b"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_AvgFloorU",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 13,
+        "supported": 7,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 13,
+        "supported": 7,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 13,
+        "supported": 8,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_0",
+            "kind": "action-on-word",
+            "source_hash": "a5dbf4b4a1288f49e196a6b94d05511681d7f0698f1421dace332a41395ea6d1"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Lshr",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 7,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 7,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 7,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_LshrExact",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 5,
+        "supported": 1,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 5,
+        "supported": 1,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 5,
+        "supported": 1,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Mods",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 15,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 15,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 15,
+        "supported": 5,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_0",
+            "kind": "division-action",
+            "source_hash": "a28e751f658787d5d95069f3cc5d1b59b776d69133a498101a5af65560c3b608"
+          },
+          {
+            "entry": "partial_solution_6",
+            "kind": "action-on-word",
+            "source_hash": "e91ac741e677d4e91ac5d48fef9721112bea5387b3952387c17a876ef446a8ea"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Modu",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 16,
+        "supported": 9,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 16,
+        "supported": 9,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_12",
+            "kind": "sign",
+            "source_hash": "416c21c3b13861e4ccbca790a377dc7640836784831503f0f81b2ea44a1687a4"
+          }
+        ],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 16,
+        "supported": 9,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_12",
+            "kind": "sign",
+            "source_hash": "416c21c3b13861e4ccbca790a377dc7640836784831503f0f81b2ea44a1687a4"
+          },
+          {
+            "entry": "partial_solution_14",
+            "kind": "division-action",
+            "source_hash": "885e025e9b25ec1c9b2e3a472fbaf8dde71e5736026199c17be0cc313adcd178"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Mul",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 10,
+        "supported": 4,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 10,
+        "supported": 4,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 10,
+        "supported": 4,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Or",
+      "baseline": {
+        "whole": true,
+        "proved": 1,
+        "components": 1,
+        "supported": 1,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": true,
+        "proved": 1,
+        "components": 1,
+        "supported": 1,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": true,
+        "proved": 1,
+        "components": 1,
+        "supported": 1,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Sdiv",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 16,
+        "supported": 1,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 16,
+        "supported": 1,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 16,
+        "supported": 1,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_1",
+            "kind": "division-action",
+            "source_hash": "37ebe035d10618f8265cd952edb6d674403e1315d12cd21759512cee4f667357"
+          },
+          {
+            "entry": "partial_solution_1",
+            "kind": "division-action",
+            "source_hash": "37ebe035d10618f8265cd952edb6d674403e1315d12cd21759512cee4f667357"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_SdivExact",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 2,
+        "supported": 2,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 2,
+        "supported": 2,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 2,
+        "supported": 2,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Shl",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 11,
+        "supported": 0,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 11,
+        "supported": 0,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 11,
+        "supported": 0,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_1",
+            "kind": "action-on-word",
+            "source_hash": "8ae65f2f91395ba7235b9be18c9c52a10e210a0dacc93711a0fc2a2ab1d210b6"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_ShlNsw",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 10,
+        "supported": 1,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 10,
+        "supported": 1,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 10,
+        "supported": 1,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_ShlNswNuw",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 8,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 8,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 8,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_ShlNuw",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 10,
+        "supported": 2,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 10,
+        "supported": 2,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 10,
+        "supported": 2,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Smax",
+      "baseline": {
+        "whole": true,
+        "proved": 12,
+        "components": 12,
+        "supported": 12,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": true,
+        "proved": 12,
+        "components": 12,
+        "supported": 12,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": true,
+        "proved": 12,
+        "components": 12,
+        "supported": 12,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Smin",
+      "baseline": {
+        "whole": true,
+        "proved": 12,
+        "components": 12,
+        "supported": 12,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": true,
+        "proved": 12,
+        "components": 12,
+        "supported": 12,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": true,
+        "proved": 12,
+        "components": 12,
+        "supported": 12,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_SshlSat",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 9,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 9,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 9,
+        "supported": 3,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Sub",
+      "baseline": {
+        "whole": true,
+        "proved": 16,
+        "components": 16,
+        "supported": 16,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": true,
+        "proved": 16,
+        "components": 16,
+        "supported": 16,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": true,
+        "proved": 16,
+        "components": 16,
+        "supported": 16,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_SubNswNuw",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 18,
+        "supported": 10,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 18,
+        "supported": 10,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_2",
+            "kind": "sign",
+            "source_hash": "02ef89042bca5676b052e9bf275de6df621fc29a41d7c12d4f40cea1526c9210"
+          }
+        ],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 18,
+        "supported": 10,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_2",
+            "kind": "division-action",
+            "source_hash": "dd99c0f668d7d3f26d33e2169c9b9adbe1e8f8ce2d2264c5727677e7c03f2958"
+          },
+          {
+            "entry": "partial_solution_2",
+            "kind": "sign",
+            "source_hash": "02ef89042bca5676b052e9bf275de6df621fc29a41d7c12d4f40cea1526c9210"
+          },
+          {
+            "entry": "partial_solution_7",
+            "kind": "action-on-word",
+            "source_hash": "8f89407667435b764f8a702afe17359604f6cf4d9cefc442867246815d8a07cf"
+          },
+          {
+            "entry": "partial_solution_13",
+            "kind": "division-action",
+            "source_hash": "23ab43fc98af753e6b128453f13396b5752df8dc7b716f3231d32304cfd27d70"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_SubNuw",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 18,
+        "supported": 13,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 18,
+        "supported": 13,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 18,
+        "supported": 13,
+        "status": "explicit_target_refuted",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_0",
+            "kind": "action-on-word",
+            "source_hash": "f22b60b9474089b02b5c0dc9d4d602b262decf3653ea6955e65b83949e228e4c"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_UaddSat",
+      "baseline": {
+        "whole": true,
+        "proved": 14,
+        "components": 14,
+        "supported": 14,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": true,
+        "proved": 14,
+        "components": 14,
+        "supported": 14,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": true,
+        "proved": 14,
+        "components": 14,
+        "supported": 14,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Udiv",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 16,
+        "supported": 1,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 16,
+        "supported": 1,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 16,
+        "supported": 1,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_UdivExact",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 5,
+        "supported": 2,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 5,
+        "supported": 2,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 5,
+        "supported": 2,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_1",
+            "kind": "word",
+            "source_hash": "292a4b7d00dd14215665acde64ab1ef90827c922ebdf93acb41133a615df9c11"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Umax",
+      "baseline": {
+        "whole": true,
+        "proved": 10,
+        "components": 10,
+        "supported": 10,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": true,
+        "proved": 10,
+        "components": 10,
+        "supported": 10,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": true,
+        "proved": 10,
+        "components": 10,
+        "supported": 10,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Umin",
+      "baseline": {
+        "whole": true,
+        "proved": 7,
+        "components": 7,
+        "supported": 7,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": true,
+        "proved": 7,
+        "components": 7,
+        "supported": 7,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": true,
+        "proved": 7,
+        "components": 7,
+        "supported": 7,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_UshlSat",
+      "baseline": {
+        "whole": false,
+        "proved": 0,
+        "components": 3,
+        "supported": 0,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": false,
+        "proved": 0,
+        "components": 3,
+        "supported": 0,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": false,
+        "proved": 0,
+        "components": 3,
+        "supported": 0,
+        "status": "unsupported_target",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_0",
+            "kind": "division-action",
+            "source_hash": "0655df9c910a287ac68021bcbd09fd63fe1f5366d64f78ddf40074bbdcaa5d0c"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_UsubSat",
+      "baseline": {
+        "whole": false,
+        "proved": 4,
+        "components": 16,
+        "supported": 11,
+        "status": "unsupported_candidate",
+        "stopped_at": "partial_solution_4",
+        "new_rewrites": [],
+        "stopped_blockers": {
+          "sdiv": 1
+        }
+      },
+      "sign": {
+        "whole": false,
+        "proved": 7,
+        "components": 16,
+        "supported": 12,
+        "status": "unsupported_candidate",
+        "stopped_at": "partial_solution_7",
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_4",
+            "kind": "sign",
+            "source_hash": "b1d188bb616479f3240c558820b0ae4843a1b4f947cf16e822bb2b7beb47e39c"
+          }
+        ],
+        "stopped_blockers": {
+          "clear_high_bits": 1
+        }
+      },
+      "observed": {
+        "whole": true,
+        "proved": 16,
+        "components": 16,
+        "supported": 16,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [
+          {
+            "entry": "partial_solution_4",
+            "kind": "sign",
+            "source_hash": "b1d188bb616479f3240c558820b0ae4843a1b4f947cf16e822bb2b7beb47e39c"
+          },
+          {
+            "entry": "partial_solution_7",
+            "kind": "action-on-word",
+            "source_hash": "55c77843918bc31c25b7f2e21e86b68e2787f51bf8c22ca0fa9ec122f19a0a92"
+          },
+          {
+            "entry": "partial_solution_10",
+            "kind": "action-on-word",
+            "source_hash": "49aed28b7545ec022b4ac8da2dd3779bc47fe55927c96d163a375a7228f12f06"
+          },
+          {
+            "entry": "partial_solution_12",
+            "kind": "word",
+            "source_hash": "91d5f7d6a80d40bd23267325075e0a0df220b8fc7ac436a19afe1356ed298bb0"
+          },
+          {
+            "entry": "partial_solution_12",
+            "kind": "word",
+            "source_hash": "91d5f7d6a80d40bd23267325075e0a0df220b8fc7ac436a19afe1356ed298bb0"
+          },
+          {
+            "entry": "partial_solution_13",
+            "kind": "action-on-word",
+            "source_hash": "10fba2845614ae4874fe576250921664bc1ef8cab9547bbaff2c6b76b294b691"
+          }
+        ],
+        "stopped_blockers": {}
+      }
+    },
+    {
+      "case": "KnownBits_Xor",
+      "baseline": {
+        "whole": true,
+        "proved": 2,
+        "components": 2,
+        "supported": 2,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "sign": {
+        "whole": true,
+        "proved": 2,
+        "components": 2,
+        "supported": 2,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      },
+      "observed": {
+        "whole": true,
+        "proved": 2,
+        "components": 2,
+        "supported": 2,
+        "status": "certificate_produced",
+        "stopped_at": null,
+        "new_rewrites": [],
+        "stopped_blockers": {}
+      }
+    }
+  ],
+  "mechanism_tests": {
+    "cases": 304,
+    "representation_checks": 233472,
+    "exhaustive_signed_division_checks": 87376,
+    "exhaustive_high_divisor_checks": 88392,
+    "contextual_checks": 7371,
+    "corruptions_rejected": 315,
+    "producer_normalization_cases": 6,
+    "carrier_refusals": 3,
+    "separating_inputs": 5
+  },
+  "unchanged_targets_contracts_and_budgets": true,
+  "strict_replay_processes": 117,
+  "first_frozen_run": {
+    "failures": [
+      {
+        "mode": "observed",
+        "case": "KnownBits_AvgCeilU",
+        "status": "error",
+        "error": "IndexError('tuple index out of range')"
+      }
+    ],
+    "strict_replay_processes": 116,
+    "unchanged_available_final_expressions": 1224
+  },
+  "regressions": [],
+  "new_whole": [
+    "KnownBits_Add",
+    "KnownBits_UsubSat"
+  ],
+  "interpretation": "known development corpus; proofs stop at first component failure; grammar-supported preparations are not target proofs"
+}

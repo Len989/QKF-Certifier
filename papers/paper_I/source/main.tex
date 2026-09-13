@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,longtable,tabularx}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\geometry{a4paper,margin=27mm}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0.12em}
+\setlist{nosep}
+\setlength{\emergencystretch}{2em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\depth}{\operatorname{dep}}
+\newcommand{\Cg}{\operatorname{Cg}}
+\newcommand{\Con}{\operatorname{Con}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Alg}{\mathbf{Alg}}
+\newcommand{\A}{\mathsf{A}}
+\newcommand{\B}{\mathsf{B}}
+\newcommand{\op}{\mathsf{Op}}
+\newcommand{\st}{\mathsf{St}}
+\newcommand{\DeltaA}{\Delta_A}
+\newcommand{\nablaA}{\nabla_A}
+
+\hypersetup{
+  pdftitle={Initial semantics of incompletely specified actions: forced quotients, kernel saturation, and completion},
+  pdfauthor={Leonid Shcherbakov}
+}
+
+\title{Initial semantics of incompletely specified actions:\\
+forced quotients, kernel saturation, and completion}
+\author{Leonid Shcherbakov}
+\date{11 September 2026\\[0.3em]\small Preprint, version 1.0}
+
+
+\numberwithin{equation}{section}
+
+\begin{document}
+\maketitle
+\input{abstract}
+\input{01_introduction}
+\input{02_setup}
+\input{03_rows}
+\input{04_kernels}
+\input{05_quotient}
+\input{06_examples}
+\input{09_visibility}
+\input{07_repair}
+\input{08_actions}
+\input{10_onesorted}
+\input{11_computation}
+\input{12_related}
+\input{13_conclusion}
+\input{references}
+\end{document}

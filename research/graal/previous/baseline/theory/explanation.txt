@@ -1,0 +1,12 @@
+Goal: alpha(B::joint,A::both) = A::one
+Optimal proof horizon: D=2.
+  event 11, D=1: A::union(A::one,A::both) = A::both by AXIOM [E11]
+event 86, D=2: alpha(B::joint,A::union(A::one,A::both)) = alpha(B::joint,A::both) by congruence under alpha
+  (reuse event 11)
+  event 6, D=1: A::union(A::zero,A::one) = A::both by AXIOM [E6]
+event 83, D=2: alpha(B::joint,A::union(A::one,A::both)) = alpha(B::joint,A::union(A::zero,A::one)) by congruence under alpha
+event 40, D=2: alpha(B::joint,A::union(A::zero,A::one)) = A::union(alpha(B::joint,A::zero),alpha(B::joint,A::one)) by AXIOM [E38]
+  event 32, D=1: alpha(B::joint,A::zero) = A::empty by AXIOM [E64]
+  event 33, D=1: alpha(B::joint,A::one) = A::one by AXIOM [E65]
+event 70, D=2: A::union(A::empty,A::one) = A::union(alpha(B::joint,A::zero),alpha(B::joint,A::one)) by congruence under A::union
+event 2, D=1: A::union(A::empty,A::one) = A::one by AXIOM [E2]

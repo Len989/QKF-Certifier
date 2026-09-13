@@ -1,6 +1,6 @@
 """QKF Certifier: checkable width-independent KnownBits proofs."""
 
-__version__ = "0.1.0a1"
+__version__ = "0.2.0a1"
 from .api import check_certificate, inspect, normalize, verify
 from .errors import InvalidCertificate, InvalidInput, QKFError, ResourceLimit, Unsupported
 

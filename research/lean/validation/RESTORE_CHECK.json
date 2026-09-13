@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "method": "ZIP extraction to a fresh directory with no build cache, followed by lake build",
+  "exit_code": 0,
+  "seconds": 6.403,
+  "source_hashes": {
+    "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b",
+    "lakefile.toml": "a8d1f9c9e59d7f52967f1aa7248fd422a23a29e8c7505c971932b6c42b7065a5",
+    "lake-manifest.json": "ab73f25569f33b89e63f2429d8671178a73bb0be1be7c4a3c453c494c436f1d3",
+    "QKF.lean": "1893bd07540ed66d38c05e800aa022ebcde6760ca17fb2da278b05b9115912d0",
+    "Audit.lean": "f0f4dfecd0280406e6f7b09d10931d16c16a768529c087bf726c077f04cac151",
+    "QKF/Gluing.lean": "ed5ff4663227e2c1d57ac0d7b1aff986e2639550a87e540b82d298b8dabb2801",
+    "QKF/SourceBridge.lean": "dd298bab727f776cd2a111a5bee7e4a06317f60179039165ad62ce59969fe1dd",
+    "QKF/Data.lean": "4f617f6d7685fd966e0de33055bbc213e16f43b783996d225a7de7cba05ed34b",
+    "QKF/WordSemantics.lean": "d9da07891727199557d40e9136a67fa5fd60026641b4a604cb35cef4450525f8",
+    "QKF/RowRules.lean": "4da5b092ad927fc08ab63071b6da208cb04c92cdb50251428ac01ebbf634f409",
+    "QKF/Checked.lean": "ed4243a7fb5ff932cb3eb1f6e572b5562c632fbce8f9c2aecce5b647a2d29e4b",
+    "QKF/Examples.lean": "96be4a7861fedcf04db3cf8f89626dc64fbc6adeda1c4475ddb42108952a64ce",
+    "QKF/Core.lean": "e20bd7b2fdb57763dca7fad381dc1faa04b801b63bf616ce2cdbaaed014efd04"
+  }
+}

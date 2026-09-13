@@ -1,0 +1,27 @@
+\section{Reproducible finite validation}\label{sec:validation}
+
+The source supplement contains a Python prototype, a reference bounded-universe closure engine, and deterministic checks for the examples in this paper. The prototype implements congruence visibility on finite ground input. It is a research implementation of the results in Section~\ref{sec:algorithm}; it is not an implementation of arbitrary universal word-problem search or of semigroup space.
+
+The article-specific verifier reconstructs each input from its displayed definition. It checks both strict resource gaps, all 195 admissible Catalan profiles for $1\le h\le5$, fourteen visibility-flattening extensions, the shared action example, and the five-case visibility square. For the Catalan constructions it compares 1,077 threshold partitions with an independent full bounded-universe closure. The square contributes fifteen further partition comparisons, using bounded universes of sizes $4$, $56$, and $9{,}468$. Its query-subterm DAGs contain only 80 or 96 nodes. These are instance sizes, not a claim of a measured runtime speedup.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Validation family & Result of the packaged run\\
+\midrule
+Catalan realization & $2,5,14,42,132$ profiles for $h=1,2,3,4,5$.\\
+Common action example & $N_1=5$, $N_2=3$; both target depths equal two.\\
+Strict proof-format gaps & Congruence/rewrite depths $2/3$ and $4/5$.\\
+Fast versus reference DAG closure & 1,000 deterministic random presentations.\\
+Ground DAG versus bounded universe & 500 deterministic random presentations.\\
+Chronological proof validation & 300 presentations; 3,418 equal queries.\\
+Finite-model construction & 200 deterministic random presentations.\\
+Two-sided certificates & 81 delayed equalities; 3,662 final nonequalities.\\
+Merge-forest stabilization & 500 deterministic random presentations.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+All listed checks passed in the packaged run under Python 3.12.14. The supplement records exact commands, random seeds in the scripts, JSON results, finite model tables, and proof explanations. The explicit typed models of Section~\ref{sec:actionlab} are evaluated separately from congruence closure. The prototype validates explanations generated from its own closure run; it does not define a standalone interchange format for certificates supplied by an external program. The generic prototype represents one-sorted ground syntax; the mathematical many-sorted extension follows the sortwise construction in Theorem~\ref{thm:thresholdmodel}.
+
+These checks are reproducible evidence for finite instances and implementation invariants. The general spectrum, word-problem, and contextual-envelope theorems are supported by the proofs in the text; they have not been formalized in a proof assistant.

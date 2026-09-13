@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "integrity": {
+    "inherited_files": 343,
+    "frozen_files": 428
+  },
+  "universal_status": "proved_universal_upper_contract",
+  "universal_certificate_bytes": 95545,
+  "sweep": {
+    "status": "proved_all_widths_all_inputs",
+    "states": 49,
+    "columns": 12,
+    "transitions": 588,
+    "sign_boundaries": 196,
+    "native_row_templates": 24,
+    "protected_carrier_size": 8,
+    "forced_row_domain": 8,
+    "central_carrier_quotient": "diagonal",
+    "row_kernel_class_counts": [
+      2,
+      4,
+      8
+    ]
+  },
+  "order_total_preorders": 47293,
+  "order_admitted_cases": 744,
+  "semantic_inputs": {
+    "exhaustive_upper": 111972,
+    "wide_upper": 2160,
+    "native_java": 114040,
+    "exact_joint_ranges": 24174
+  },
+  "negative_checks": 23,
+  "source_mutants_with_concrete_witnesses": 5,
+  "source_variants": 2,
+  "strict_specializations": 18,
+  "graal_coverage": {
+    "control": {
+      "proved": 1,
+      "selected": 5,
+      "operations": [
+        "or"
+      ]
+    },
+    "joint": {
+      "proved": 2,
+      "selected": 5,
+      "operations": [
+        "and",
+        "or"
+      ]
+    }
+  },
+  "graal_source_word_replays": 3,
+  "historical_NiceToMeetYou": {
+    "whole": "11/39",
+    "components": "104/411"
+  },
+  "full_create": "not proved; incompatible temporary masks and lower/stabilization stages remain outside this contract",
+  "search_modules_loaded": []
+}

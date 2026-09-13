@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.2.0a1 — prepared candidate, 2026-09-13
+
+- Rewrite Paper III as manuscript 2.0 around consumer observations, forced rows,
+  whole-word reconstruction and signed mask/interval carriers. Preserve v1.
+- Include frozen KnownBits research (11/39 whole programs, 104/411 components)
+  and Graal universal upper / conditional lower proof capsules.
+- Add a standalone Lean 4.33.0 pilot with audited assumptions and saved controls.
+- Add a source-integrity-checking research replay runner and dedicated CI jobs.
+- Add claim/evidence maps, historical reports and current release validation.
+- Keep CLI semantics, its 29 rewrite rules and qkf-rewrite-v3 schema unchanged.
+  The research profiles are separate; installing the wheel does not enable them.
+
+This is a research alpha, not full Graal create verification or general SMT
+replacement. Publication and the final remote CI status are separate steps.
+
 ## 0.1.0a1 — 2026-09-11
 
 First prepared public alpha of QKF Certifier.

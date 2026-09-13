@@ -1,0 +1,41 @@
+{
+  "parent_archive": "QKF_UNIVERSAL_LOWER_2026-09-13.zip",
+  "parent_sha256": "d6c6c165ba2753caa266b75aca98c80b02f564708b79f919c19fecdf0d5be4ce",
+  "files": {
+    "evidence/lower_certificate.json": {
+      "source": "results/main/certificate.json",
+      "bytes": 117549,
+      "sha256": "1507523bd6f88a4e1b9bc1e3ee8979b1033d89656b701523729bce7193963e51"
+    },
+    "evidence/carry_kernel.py": {
+      "source": "carry_kernel.py",
+      "bytes": 7811,
+      "sha256": "ff94f5f1c54f7801c6f26ef412611a0c05b00d78ca48086f0f0b6796bd17f2cf"
+    },
+    "evidence/carry_producer.py": {
+      "source": "carry_producer.py",
+      "bytes": 1517,
+      "sha256": "1204cd3022a7de1eddeb156998abe85019ef2777b93777e5e6c921dbea02a04a"
+    },
+    "docs/LOWER_THEORY_RU.md": {
+      "source": "THEORY_RU.md",
+      "bytes": 15016,
+      "sha256": "ab1ab912e69ed70e93f85892db029167c1cc874ad13a1653887f0fedd3d5169c"
+    },
+    "docs/LOWER_REPORT_RU.md": {
+      "source": "REPORT_RU.md",
+      "bytes": 12380,
+      "sha256": "342804e6796489e553a3c947a2410f8226d4409c91215f44dea7865338fcddb7"
+    },
+    "docs/PROJECT_PRINCIPLES_RU.md": {
+      "source": "PROJECT_PRINCIPLES_RU.md",
+      "bytes": 4618,
+      "sha256": "572439cab38a914cb5a271675b7b310361578ba7ecf8380a4230004217a46cc3"
+    },
+    "evidence/computeLowerBound.java": {
+      "source": "previous/baseline/native/helper_15.inc",
+      "bytes": 3181,
+      "sha256": "06ee5ad4cc134abea13a43f69c1dbc47f71a23e3ba466a5830c44b6bc7b942a0"
+    }
+  }
+}

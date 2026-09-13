@@ -1,0 +1,5576 @@
+[
+  {
+    "name": "Ann",
+    "equations": [
+      [
+        "plus(c0,c0)",
+        "c0"
+      ],
+      [
+        "plus(c0,c1)",
+        "c1"
+      ],
+      [
+        "plus(c1,c0)",
+        "c1"
+      ],
+      [
+        "plus(c1,c1)",
+        "c0"
+      ],
+      [
+        "neg(c0)",
+        "c0"
+      ],
+      [
+        "neg(c1)",
+        "c1"
+      ],
+      [
+        "times(b0,b0)",
+        "b0"
+      ],
+      [
+        "times(b0,b1)",
+        "b0"
+      ],
+      [
+        "times(b1,b0)",
+        "b0"
+      ],
+      [
+        "times(b1,b1)",
+        "b1"
+      ],
+      [
+        "alpha(b0,plus(c0,c0))",
+        "plus(alpha(b0,c0),alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,plus(c0,c1))",
+        "plus(alpha(b0,c0),alpha(b0,c1))"
+      ],
+      [
+        "alpha(b0,plus(c1,c0))",
+        "plus(alpha(b0,c1),alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,plus(c1,c1))",
+        "plus(alpha(b0,c1),alpha(b0,c1))"
+      ],
+      [
+        "alpha(b1,plus(c0,c0))",
+        "plus(alpha(b1,c0),alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,plus(c0,c1))",
+        "plus(alpha(b1,c0),alpha(b1,c1))"
+      ],
+      [
+        "alpha(b1,plus(c1,c0))",
+        "plus(alpha(b1,c1),alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,plus(c1,c1))",
+        "plus(alpha(b1,c1),alpha(b1,c1))"
+      ],
+      [
+        "alpha(b0,neg(c0))",
+        "neg(alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,neg(c1))",
+        "neg(alpha(b0,c1))"
+      ],
+      [
+        "alpha(b1,neg(c0))",
+        "neg(alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,neg(c1))",
+        "neg(alpha(b1,c1))"
+      ],
+      [
+        "alpha(b0,c0)",
+        "c0"
+      ],
+      [
+        "alpha(b0,c1)",
+        "c0"
+      ]
+    ],
+    "models": {
+      "0": {
+        "domain": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 3
+        },
+        "default": 0,
+        "arities": {},
+        "operations": {}
+      },
+      "1": {
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 3
+        },
+        "default": 0,
+        "arities": {
+          "alpha": 2,
+          "neg": 1,
+          "plus": 2,
+          "times": 2
+        },
+        "operations": {
+          "alpha": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 4
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 5
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 6
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 7
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 9
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 10
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 11
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 12
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 13
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 14
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 15
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 16
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 17
+            }
+          ],
+          "neg": [
+            {
+              "args": [
+                0
+              ],
+              "value": 18
+            },
+            {
+              "args": [
+                1
+              ],
+              "value": 19
+            },
+            {
+              "args": [
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                3
+              ],
+              "value": 3
+            }
+          ],
+          "plus": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 20
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 21
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 22
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 23
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 24
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 25
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 26
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 27
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 28
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 29
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 30
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 31
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 2
+            }
+          ],
+          "times": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 32
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 33
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 1
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 34
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 35
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 36
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 37
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 38
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 39
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 40
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 41
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 42
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 43
+            }
+          ]
+        }
+      },
+      "2": {
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 3
+        },
+        "default": 0,
+        "arities": {
+          "alpha": 2,
+          "neg": 1,
+          "plus": 2,
+          "times": 2
+        },
+        "operations": {
+          "alpha": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 4
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 5
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 6
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 7
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 9
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 10
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 11
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 12
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 13
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 14
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 15
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 16
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 17
+            }
+          ],
+          "neg": [
+            {
+              "args": [
+                0
+              ],
+              "value": 18
+            },
+            {
+              "args": [
+                1
+              ],
+              "value": 19
+            },
+            {
+              "args": [
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                3
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                8
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                9
+              ],
+              "value": 9
+            }
+          ],
+          "plus": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 20
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 21
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 22
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 23
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 24
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 25
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 26
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 27
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 28
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 29
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 30
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 31
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                8,
+                8
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                8,
+                9
+              ],
+              "value": 9
+            },
+            {
+              "args": [
+                9,
+                8
+              ],
+              "value": 9
+            },
+            {
+              "args": [
+                9,
+                9
+              ],
+              "value": 8
+            }
+          ],
+          "times": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 32
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 33
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 1
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 34
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 35
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 36
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 37
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 38
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 39
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 40
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 41
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 42
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 43
+            }
+          ]
+        }
+      }
+    },
+    "query_partitions": {
+      "0": [
+        [
+          "b0"
+        ],
+        [
+          "b1"
+        ],
+        [
+          "c0"
+        ],
+        [
+          "c1"
+        ]
+      ],
+      "1": [
+        [
+          "alpha(b0,b0)"
+        ],
+        [
+          "alpha(b0,b1)"
+        ],
+        [
+          "alpha(b0,c0)",
+          "alpha(b0,c1)",
+          "c0",
+          "neg(c0)",
+          "plus(c0,c0)",
+          "plus(c1,c1)"
+        ],
+        [
+          "alpha(b1,b0)"
+        ],
+        [
+          "alpha(b1,b1)"
+        ],
+        [
+          "alpha(b1,c0)"
+        ],
+        [
+          "alpha(b1,c1)"
+        ],
+        [
+          "alpha(c0,b0)"
+        ],
+        [
+          "alpha(c0,b1)"
+        ],
+        [
+          "alpha(c0,c0)"
+        ],
+        [
+          "alpha(c0,c1)"
+        ],
+        [
+          "alpha(c1,b0)"
+        ],
+        [
+          "alpha(c1,b1)"
+        ],
+        [
+          "alpha(c1,c0)"
+        ],
+        [
+          "alpha(c1,c1)"
+        ],
+        [
+          "b0",
+          "times(b0,b0)",
+          "times(b0,b1)",
+          "times(b1,b0)"
+        ],
+        [
+          "b1",
+          "times(b1,b1)"
+        ],
+        [
+          "c1",
+          "neg(c1)",
+          "plus(c0,c1)",
+          "plus(c1,c0)"
+        ],
+        [
+          "neg(b0)"
+        ],
+        [
+          "neg(b1)"
+        ],
+        [
+          "plus(b0,b0)"
+        ],
+        [
+          "plus(b0,b1)"
+        ],
+        [
+          "plus(b0,c0)"
+        ],
+        [
+          "plus(b0,c1)"
+        ],
+        [
+          "plus(b1,b0)"
+        ],
+        [
+          "plus(b1,b1)"
+        ],
+        [
+          "plus(b1,c0)"
+        ],
+        [
+          "plus(b1,c1)"
+        ],
+        [
+          "plus(c0,b0)"
+        ],
+        [
+          "plus(c0,b1)"
+        ],
+        [
+          "plus(c1,b0)"
+        ],
+        [
+          "plus(c1,b1)"
+        ],
+        [
+          "times(b0,c0)"
+        ],
+        [
+          "times(b0,c1)"
+        ],
+        [
+          "times(b1,c0)"
+        ],
+        [
+          "times(b1,c1)"
+        ],
+        [
+          "times(c0,b0)"
+        ],
+        [
+          "times(c0,b1)"
+        ],
+        [
+          "times(c0,c0)"
+        ],
+        [
+          "times(c0,c1)"
+        ],
+        [
+          "times(c1,b0)"
+        ],
+        [
+          "times(c1,b1)"
+        ],
+        [
+          "times(c1,c0)"
+        ],
+        [
+          "times(c1,c1)"
+        ]
+      ],
+      "2": [
+        [
+          "alpha(b0,b0)"
+        ],
+        [
+          "alpha(b0,b1)"
+        ],
+        [
+          "alpha(b0,c0)",
+          "alpha(b0,c1)",
+          "c0",
+          "neg(c0)",
+          "plus(c0,c0)",
+          "plus(c1,c1)"
+        ],
+        [
+          "alpha(b1,b0)"
+        ],
+        [
+          "alpha(b1,b1)"
+        ],
+        [
+          "alpha(b1,c0)"
+        ],
+        [
+          "alpha(b1,c1)"
+        ],
+        [
+          "alpha(c0,b0)"
+        ],
+        [
+          "alpha(c0,b1)"
+        ],
+        [
+          "alpha(c0,c0)"
+        ],
+        [
+          "alpha(c0,c1)"
+        ],
+        [
+          "alpha(c1,b0)"
+        ],
+        [
+          "alpha(c1,b1)"
+        ],
+        [
+          "alpha(c1,c0)"
+        ],
+        [
+          "alpha(c1,c1)"
+        ],
+        [
+          "b0",
+          "times(b0,b0)",
+          "times(b0,b1)",
+          "times(b1,b0)"
+        ],
+        [
+          "b1",
+          "times(b1,b1)"
+        ],
+        [
+          "c1",
+          "neg(c1)",
+          "plus(c0,c1)",
+          "plus(c1,c0)"
+        ],
+        [
+          "neg(b0)"
+        ],
+        [
+          "neg(b1)"
+        ],
+        [
+          "plus(b0,b0)"
+        ],
+        [
+          "plus(b0,b1)"
+        ],
+        [
+          "plus(b0,c0)"
+        ],
+        [
+          "plus(b0,c1)"
+        ],
+        [
+          "plus(b1,b0)"
+        ],
+        [
+          "plus(b1,b1)"
+        ],
+        [
+          "plus(b1,c0)"
+        ],
+        [
+          "plus(b1,c1)"
+        ],
+        [
+          "plus(c0,b0)"
+        ],
+        [
+          "plus(c0,b1)"
+        ],
+        [
+          "plus(c1,b0)"
+        ],
+        [
+          "plus(c1,b1)"
+        ],
+        [
+          "times(b0,c0)"
+        ],
+        [
+          "times(b0,c1)"
+        ],
+        [
+          "times(b1,c0)"
+        ],
+        [
+          "times(b1,c1)"
+        ],
+        [
+          "times(c0,b0)"
+        ],
+        [
+          "times(c0,b1)"
+        ],
+        [
+          "times(c0,c0)"
+        ],
+        [
+          "times(c0,c1)"
+        ],
+        [
+          "times(c1,b0)"
+        ],
+        [
+          "times(c1,b1)"
+        ],
+        [
+          "times(c1,c0)"
+        ],
+        [
+          "times(c1,c1)"
+        ]
+      ]
+    }
+  },
+  {
+    "name": "Ann+Comp",
+    "equations": [
+      [
+        "plus(c0,c0)",
+        "c0"
+      ],
+      [
+        "plus(c0,c1)",
+        "c1"
+      ],
+      [
+        "plus(c1,c0)",
+        "c1"
+      ],
+      [
+        "plus(c1,c1)",
+        "c0"
+      ],
+      [
+        "neg(c0)",
+        "c0"
+      ],
+      [
+        "neg(c1)",
+        "c1"
+      ],
+      [
+        "times(b0,b0)",
+        "b0"
+      ],
+      [
+        "times(b0,b1)",
+        "b0"
+      ],
+      [
+        "times(b1,b0)",
+        "b0"
+      ],
+      [
+        "times(b1,b1)",
+        "b1"
+      ],
+      [
+        "alpha(b0,plus(c0,c0))",
+        "plus(alpha(b0,c0),alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,plus(c0,c1))",
+        "plus(alpha(b0,c0),alpha(b0,c1))"
+      ],
+      [
+        "alpha(b0,plus(c1,c0))",
+        "plus(alpha(b0,c1),alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,plus(c1,c1))",
+        "plus(alpha(b0,c1),alpha(b0,c1))"
+      ],
+      [
+        "alpha(b1,plus(c0,c0))",
+        "plus(alpha(b1,c0),alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,plus(c0,c1))",
+        "plus(alpha(b1,c0),alpha(b1,c1))"
+      ],
+      [
+        "alpha(b1,plus(c1,c0))",
+        "plus(alpha(b1,c1),alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,plus(c1,c1))",
+        "plus(alpha(b1,c1),alpha(b1,c1))"
+      ],
+      [
+        "alpha(b0,neg(c0))",
+        "neg(alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,neg(c1))",
+        "neg(alpha(b0,c1))"
+      ],
+      [
+        "alpha(b1,neg(c0))",
+        "neg(alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,neg(c1))",
+        "neg(alpha(b1,c1))"
+      ],
+      [
+        "alpha(b0,c0)",
+        "c0"
+      ],
+      [
+        "alpha(b0,c1)",
+        "c0"
+      ],
+      [
+        "alpha(times(b0,b0),c0)",
+        "alpha(b0,alpha(b0,c0))"
+      ],
+      [
+        "alpha(times(b0,b0),c1)",
+        "alpha(b0,alpha(b0,c1))"
+      ],
+      [
+        "alpha(times(b0,b1),c0)",
+        "alpha(b0,alpha(b1,c0))"
+      ],
+      [
+        "alpha(times(b0,b1),c1)",
+        "alpha(b0,alpha(b1,c1))"
+      ],
+      [
+        "alpha(times(b1,b0),c0)",
+        "alpha(b1,alpha(b0,c0))"
+      ],
+      [
+        "alpha(times(b1,b0),c1)",
+        "alpha(b1,alpha(b0,c1))"
+      ],
+      [
+        "alpha(times(b1,b1),c0)",
+        "alpha(b1,alpha(b1,c0))"
+      ],
+      [
+        "alpha(times(b1,b1),c1)",
+        "alpha(b1,alpha(b1,c1))"
+      ]
+    ],
+    "models": {
+      "0": {
+        "domain": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 3
+        },
+        "default": 0,
+        "arities": {},
+        "operations": {}
+      },
+      "1": {
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 3
+        },
+        "default": 0,
+        "arities": {
+          "alpha": 2,
+          "neg": 1,
+          "plus": 2,
+          "times": 2
+        },
+        "operations": {
+          "alpha": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 4
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 5
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 6
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 7
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 9
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 10
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 11
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 12
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 13
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 14
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 15
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 16
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 17
+            }
+          ],
+          "neg": [
+            {
+              "args": [
+                0
+              ],
+              "value": 18
+            },
+            {
+              "args": [
+                1
+              ],
+              "value": 19
+            },
+            {
+              "args": [
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                3
+              ],
+              "value": 3
+            }
+          ],
+          "plus": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 20
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 21
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 22
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 23
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 24
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 25
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 26
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 27
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 28
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 29
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 30
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 31
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 2
+            }
+          ],
+          "times": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 32
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 33
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 1
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 34
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 35
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 36
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 37
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 38
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 39
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 40
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 41
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 42
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 43
+            }
+          ]
+        }
+      },
+      "2": {
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 3
+        },
+        "default": 0,
+        "arities": {
+          "alpha": 2,
+          "neg": 1,
+          "plus": 2,
+          "times": 2
+        },
+        "operations": {
+          "alpha": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 4
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 5
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                0,
+                8
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 6
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 7
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                1,
+                8
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 9
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 10
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 11
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 12
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 13
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 14
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 15
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 16
+            }
+          ],
+          "neg": [
+            {
+              "args": [
+                0
+              ],
+              "value": 17
+            },
+            {
+              "args": [
+                1
+              ],
+              "value": 18
+            },
+            {
+              "args": [
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                3
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                8
+              ],
+              "value": 8
+            }
+          ],
+          "plus": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 19
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 20
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 21
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 22
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 23
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 24
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 25
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 26
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 27
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 28
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                2,
+                8
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 29
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 30
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                8,
+                2
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                8,
+                8
+              ],
+              "value": 2
+            }
+          ],
+          "times": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 31
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 32
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 1
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 33
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 34
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 35
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 36
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 37
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 38
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 39
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 40
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 41
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 42
+            }
+          ]
+        }
+      }
+    },
+    "query_partitions": {
+      "0": [
+        [
+          "b0"
+        ],
+        [
+          "b1"
+        ],
+        [
+          "c0"
+        ],
+        [
+          "c1"
+        ]
+      ],
+      "1": [
+        [
+          "alpha(b0,b0)"
+        ],
+        [
+          "alpha(b0,b1)"
+        ],
+        [
+          "alpha(b0,c0)",
+          "alpha(b0,c1)",
+          "c0",
+          "neg(c0)",
+          "plus(c0,c0)",
+          "plus(c1,c1)"
+        ],
+        [
+          "alpha(b1,b0)"
+        ],
+        [
+          "alpha(b1,b1)"
+        ],
+        [
+          "alpha(b1,c0)"
+        ],
+        [
+          "alpha(b1,c1)"
+        ],
+        [
+          "alpha(c0,b0)"
+        ],
+        [
+          "alpha(c0,b1)"
+        ],
+        [
+          "alpha(c0,c0)"
+        ],
+        [
+          "alpha(c0,c1)"
+        ],
+        [
+          "alpha(c1,b0)"
+        ],
+        [
+          "alpha(c1,b1)"
+        ],
+        [
+          "alpha(c1,c0)"
+        ],
+        [
+          "alpha(c1,c1)"
+        ],
+        [
+          "b0",
+          "times(b0,b0)",
+          "times(b0,b1)",
+          "times(b1,b0)"
+        ],
+        [
+          "b1",
+          "times(b1,b1)"
+        ],
+        [
+          "c1",
+          "neg(c1)",
+          "plus(c0,c1)",
+          "plus(c1,c0)"
+        ],
+        [
+          "neg(b0)"
+        ],
+        [
+          "neg(b1)"
+        ],
+        [
+          "plus(b0,b0)"
+        ],
+        [
+          "plus(b0,b1)"
+        ],
+        [
+          "plus(b0,c0)"
+        ],
+        [
+          "plus(b0,c1)"
+        ],
+        [
+          "plus(b1,b0)"
+        ],
+        [
+          "plus(b1,b1)"
+        ],
+        [
+          "plus(b1,c0)"
+        ],
+        [
+          "plus(b1,c1)"
+        ],
+        [
+          "plus(c0,b0)"
+        ],
+        [
+          "plus(c0,b1)"
+        ],
+        [
+          "plus(c1,b0)"
+        ],
+        [
+          "plus(c1,b1)"
+        ],
+        [
+          "times(b0,c0)"
+        ],
+        [
+          "times(b0,c1)"
+        ],
+        [
+          "times(b1,c0)"
+        ],
+        [
+          "times(b1,c1)"
+        ],
+        [
+          "times(c0,b0)"
+        ],
+        [
+          "times(c0,b1)"
+        ],
+        [
+          "times(c0,c0)"
+        ],
+        [
+          "times(c0,c1)"
+        ],
+        [
+          "times(c1,b0)"
+        ],
+        [
+          "times(c1,b1)"
+        ],
+        [
+          "times(c1,c0)"
+        ],
+        [
+          "times(c1,c1)"
+        ]
+      ],
+      "2": [
+        [
+          "alpha(b0,b0)"
+        ],
+        [
+          "alpha(b0,b1)"
+        ],
+        [
+          "alpha(b0,c0)",
+          "alpha(b0,c1)",
+          "alpha(b1,c0)",
+          "c0",
+          "neg(c0)",
+          "plus(c0,c0)",
+          "plus(c1,c1)"
+        ],
+        [
+          "alpha(b1,b0)"
+        ],
+        [
+          "alpha(b1,b1)"
+        ],
+        [
+          "alpha(b1,c1)"
+        ],
+        [
+          "alpha(c0,b0)"
+        ],
+        [
+          "alpha(c0,b1)"
+        ],
+        [
+          "alpha(c0,c0)"
+        ],
+        [
+          "alpha(c0,c1)"
+        ],
+        [
+          "alpha(c1,b0)"
+        ],
+        [
+          "alpha(c1,b1)"
+        ],
+        [
+          "alpha(c1,c0)"
+        ],
+        [
+          "alpha(c1,c1)"
+        ],
+        [
+          "b0",
+          "times(b0,b0)",
+          "times(b0,b1)",
+          "times(b1,b0)"
+        ],
+        [
+          "b1",
+          "times(b1,b1)"
+        ],
+        [
+          "c1",
+          "neg(c1)",
+          "plus(c0,c1)",
+          "plus(c1,c0)"
+        ],
+        [
+          "neg(b0)"
+        ],
+        [
+          "neg(b1)"
+        ],
+        [
+          "plus(b0,b0)"
+        ],
+        [
+          "plus(b0,b1)"
+        ],
+        [
+          "plus(b0,c0)"
+        ],
+        [
+          "plus(b0,c1)"
+        ],
+        [
+          "plus(b1,b0)"
+        ],
+        [
+          "plus(b1,b1)"
+        ],
+        [
+          "plus(b1,c0)"
+        ],
+        [
+          "plus(b1,c1)"
+        ],
+        [
+          "plus(c0,b0)"
+        ],
+        [
+          "plus(c0,b1)"
+        ],
+        [
+          "plus(c1,b0)"
+        ],
+        [
+          "plus(c1,b1)"
+        ],
+        [
+          "times(b0,c0)"
+        ],
+        [
+          "times(b0,c1)"
+        ],
+        [
+          "times(b1,c0)"
+        ],
+        [
+          "times(b1,c1)"
+        ],
+        [
+          "times(c0,b0)"
+        ],
+        [
+          "times(c0,b1)"
+        ],
+        [
+          "times(c0,c0)"
+        ],
+        [
+          "times(c0,c1)"
+        ],
+        [
+          "times(c1,b0)"
+        ],
+        [
+          "times(c1,b1)"
+        ],
+        [
+          "times(c1,c0)"
+        ],
+        [
+          "times(c1,c1)"
+        ]
+      ]
+    }
+  },
+  {
+    "name": "Ann+R",
+    "equations": [
+      [
+        "plus(c0,c0)",
+        "c0"
+      ],
+      [
+        "plus(c0,c1)",
+        "c1"
+      ],
+      [
+        "plus(c1,c0)",
+        "c1"
+      ],
+      [
+        "plus(c1,c1)",
+        "c0"
+      ],
+      [
+        "neg(c0)",
+        "c0"
+      ],
+      [
+        "neg(c1)",
+        "c1"
+      ],
+      [
+        "times(b0,b0)",
+        "b0"
+      ],
+      [
+        "times(b0,b1)",
+        "b0"
+      ],
+      [
+        "times(b1,b0)",
+        "b0"
+      ],
+      [
+        "times(b1,b1)",
+        "b1"
+      ],
+      [
+        "alpha(b0,plus(c0,c0))",
+        "plus(alpha(b0,c0),alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,plus(c0,c1))",
+        "plus(alpha(b0,c0),alpha(b0,c1))"
+      ],
+      [
+        "alpha(b0,plus(c1,c0))",
+        "plus(alpha(b0,c1),alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,plus(c1,c1))",
+        "plus(alpha(b0,c1),alpha(b0,c1))"
+      ],
+      [
+        "alpha(b1,plus(c0,c0))",
+        "plus(alpha(b1,c0),alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,plus(c0,c1))",
+        "plus(alpha(b1,c0),alpha(b1,c1))"
+      ],
+      [
+        "alpha(b1,plus(c1,c0))",
+        "plus(alpha(b1,c1),alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,plus(c1,c1))",
+        "plus(alpha(b1,c1),alpha(b1,c1))"
+      ],
+      [
+        "alpha(b0,neg(c0))",
+        "neg(alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,neg(c1))",
+        "neg(alpha(b0,c1))"
+      ],
+      [
+        "alpha(b1,neg(c0))",
+        "neg(alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,neg(c1))",
+        "neg(alpha(b1,c1))"
+      ],
+      [
+        "alpha(b0,c0)",
+        "c0"
+      ],
+      [
+        "alpha(b0,c1)",
+        "c0"
+      ],
+      [
+        "alpha(b0,c0)",
+        "c1"
+      ]
+    ],
+    "models": {
+      "0": {
+        "domain": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 3
+        },
+        "default": 0,
+        "arities": {},
+        "operations": {}
+      },
+      "1": {
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 2
+        },
+        "default": 0,
+        "arities": {
+          "alpha": 2,
+          "neg": 1,
+          "plus": 2,
+          "times": 2
+        },
+        "operations": {
+          "alpha": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 4
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 5
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 6
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 7
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 9
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 10
+            }
+          ],
+          "neg": [
+            {
+              "args": [
+                0
+              ],
+              "value": 11
+            },
+            {
+              "args": [
+                1
+              ],
+              "value": 12
+            },
+            {
+              "args": [
+                2
+              ],
+              "value": 2
+            }
+          ],
+          "plus": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 13
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 14
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 15
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 16
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 17
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 18
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 19
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 20
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 2
+            }
+          ],
+          "times": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 21
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 1
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 22
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 23
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 24
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 25
+            }
+          ]
+        }
+      },
+      "2": {
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 2
+        },
+        "default": 0,
+        "arities": {
+          "alpha": 2,
+          "neg": 1,
+          "plus": 2,
+          "times": 2
+        },
+        "operations": {
+          "alpha": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 4
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 5
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 6
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 7
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 9
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 10
+            }
+          ],
+          "neg": [
+            {
+              "args": [
+                0
+              ],
+              "value": 11
+            },
+            {
+              "args": [
+                1
+              ],
+              "value": 12
+            },
+            {
+              "args": [
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                7
+              ],
+              "value": 7
+            }
+          ],
+          "plus": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 13
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 14
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 15
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 16
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 17
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 18
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 19
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 20
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                7,
+                7
+              ],
+              "value": 7
+            }
+          ],
+          "times": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 21
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 1
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 22
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 23
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 24
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 25
+            }
+          ]
+        }
+      }
+    },
+    "query_partitions": {
+      "0": [
+        [
+          "b0"
+        ],
+        [
+          "b1"
+        ],
+        [
+          "c0"
+        ],
+        [
+          "c1"
+        ]
+      ],
+      "1": [
+        [
+          "alpha(b0,b0)"
+        ],
+        [
+          "alpha(b0,b1)"
+        ],
+        [
+          "alpha(b0,c0)",
+          "alpha(b0,c1)",
+          "c0",
+          "c1",
+          "neg(c0)",
+          "neg(c1)",
+          "plus(c0,c0)",
+          "plus(c0,c1)",
+          "plus(c1,c0)",
+          "plus(c1,c1)"
+        ],
+        [
+          "alpha(b1,b0)"
+        ],
+        [
+          "alpha(b1,b1)"
+        ],
+        [
+          "alpha(b1,c0)",
+          "alpha(b1,c1)"
+        ],
+        [
+          "alpha(c0,b0)",
+          "alpha(c1,b0)"
+        ],
+        [
+          "alpha(c0,b1)",
+          "alpha(c1,b1)"
+        ],
+        [
+          "alpha(c0,c0)",
+          "alpha(c0,c1)",
+          "alpha(c1,c0)",
+          "alpha(c1,c1)"
+        ],
+        [
+          "b0",
+          "times(b0,b0)",
+          "times(b0,b1)",
+          "times(b1,b0)"
+        ],
+        [
+          "b1",
+          "times(b1,b1)"
+        ],
+        [
+          "neg(b0)"
+        ],
+        [
+          "neg(b1)"
+        ],
+        [
+          "plus(b0,b0)"
+        ],
+        [
+          "plus(b0,b1)"
+        ],
+        [
+          "plus(b0,c0)",
+          "plus(b0,c1)"
+        ],
+        [
+          "plus(b1,b0)"
+        ],
+        [
+          "plus(b1,b1)"
+        ],
+        [
+          "plus(b1,c0)",
+          "plus(b1,c1)"
+        ],
+        [
+          "plus(c0,b0)",
+          "plus(c1,b0)"
+        ],
+        [
+          "plus(c0,b1)",
+          "plus(c1,b1)"
+        ],
+        [
+          "times(b0,c0)",
+          "times(b0,c1)"
+        ],
+        [
+          "times(b1,c0)",
+          "times(b1,c1)"
+        ],
+        [
+          "times(c0,b0)",
+          "times(c1,b0)"
+        ],
+        [
+          "times(c0,b1)",
+          "times(c1,b1)"
+        ],
+        [
+          "times(c0,c0)",
+          "times(c0,c1)",
+          "times(c1,c0)",
+          "times(c1,c1)"
+        ]
+      ],
+      "2": [
+        [
+          "alpha(b0,b0)"
+        ],
+        [
+          "alpha(b0,b1)"
+        ],
+        [
+          "alpha(b0,c0)",
+          "alpha(b0,c1)",
+          "c0",
+          "c1",
+          "neg(c0)",
+          "neg(c1)",
+          "plus(c0,c0)",
+          "plus(c0,c1)",
+          "plus(c1,c0)",
+          "plus(c1,c1)"
+        ],
+        [
+          "alpha(b1,b0)"
+        ],
+        [
+          "alpha(b1,b1)"
+        ],
+        [
+          "alpha(b1,c0)",
+          "alpha(b1,c1)"
+        ],
+        [
+          "alpha(c0,b0)",
+          "alpha(c1,b0)"
+        ],
+        [
+          "alpha(c0,b1)",
+          "alpha(c1,b1)"
+        ],
+        [
+          "alpha(c0,c0)",
+          "alpha(c0,c1)",
+          "alpha(c1,c0)",
+          "alpha(c1,c1)"
+        ],
+        [
+          "b0",
+          "times(b0,b0)",
+          "times(b0,b1)",
+          "times(b1,b0)"
+        ],
+        [
+          "b1",
+          "times(b1,b1)"
+        ],
+        [
+          "neg(b0)"
+        ],
+        [
+          "neg(b1)"
+        ],
+        [
+          "plus(b0,b0)"
+        ],
+        [
+          "plus(b0,b1)"
+        ],
+        [
+          "plus(b0,c0)",
+          "plus(b0,c1)"
+        ],
+        [
+          "plus(b1,b0)"
+        ],
+        [
+          "plus(b1,b1)"
+        ],
+        [
+          "plus(b1,c0)",
+          "plus(b1,c1)"
+        ],
+        [
+          "plus(c0,b0)",
+          "plus(c1,b0)"
+        ],
+        [
+          "plus(c0,b1)",
+          "plus(c1,b1)"
+        ],
+        [
+          "times(b0,c0)",
+          "times(b0,c1)"
+        ],
+        [
+          "times(b1,c0)",
+          "times(b1,c1)"
+        ],
+        [
+          "times(c0,b0)",
+          "times(c1,b0)"
+        ],
+        [
+          "times(c0,b1)",
+          "times(c1,b1)"
+        ],
+        [
+          "times(c0,c0)",
+          "times(c0,c1)",
+          "times(c1,c0)",
+          "times(c1,c1)"
+        ]
+      ]
+    }
+  },
+  {
+    "name": "Ann+R+Comp",
+    "equations": [
+      [
+        "plus(c0,c0)",
+        "c0"
+      ],
+      [
+        "plus(c0,c1)",
+        "c1"
+      ],
+      [
+        "plus(c1,c0)",
+        "c1"
+      ],
+      [
+        "plus(c1,c1)",
+        "c0"
+      ],
+      [
+        "neg(c0)",
+        "c0"
+      ],
+      [
+        "neg(c1)",
+        "c1"
+      ],
+      [
+        "times(b0,b0)",
+        "b0"
+      ],
+      [
+        "times(b0,b1)",
+        "b0"
+      ],
+      [
+        "times(b1,b0)",
+        "b0"
+      ],
+      [
+        "times(b1,b1)",
+        "b1"
+      ],
+      [
+        "alpha(b0,plus(c0,c0))",
+        "plus(alpha(b0,c0),alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,plus(c0,c1))",
+        "plus(alpha(b0,c0),alpha(b0,c1))"
+      ],
+      [
+        "alpha(b0,plus(c1,c0))",
+        "plus(alpha(b0,c1),alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,plus(c1,c1))",
+        "plus(alpha(b0,c1),alpha(b0,c1))"
+      ],
+      [
+        "alpha(b1,plus(c0,c0))",
+        "plus(alpha(b1,c0),alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,plus(c0,c1))",
+        "plus(alpha(b1,c0),alpha(b1,c1))"
+      ],
+      [
+        "alpha(b1,plus(c1,c0))",
+        "plus(alpha(b1,c1),alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,plus(c1,c1))",
+        "plus(alpha(b1,c1),alpha(b1,c1))"
+      ],
+      [
+        "alpha(b0,neg(c0))",
+        "neg(alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,neg(c1))",
+        "neg(alpha(b0,c1))"
+      ],
+      [
+        "alpha(b1,neg(c0))",
+        "neg(alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,neg(c1))",
+        "neg(alpha(b1,c1))"
+      ],
+      [
+        "alpha(b0,c0)",
+        "c0"
+      ],
+      [
+        "alpha(b0,c1)",
+        "c0"
+      ],
+      [
+        "alpha(b0,c0)",
+        "c1"
+      ],
+      [
+        "alpha(times(b0,b0),c0)",
+        "alpha(b0,alpha(b0,c0))"
+      ],
+      [
+        "alpha(times(b0,b0),c1)",
+        "alpha(b0,alpha(b0,c1))"
+      ],
+      [
+        "alpha(times(b0,b1),c0)",
+        "alpha(b0,alpha(b1,c0))"
+      ],
+      [
+        "alpha(times(b0,b1),c1)",
+        "alpha(b0,alpha(b1,c1))"
+      ],
+      [
+        "alpha(times(b1,b0),c0)",
+        "alpha(b1,alpha(b0,c0))"
+      ],
+      [
+        "alpha(times(b1,b0),c1)",
+        "alpha(b1,alpha(b0,c1))"
+      ],
+      [
+        "alpha(times(b1,b1),c0)",
+        "alpha(b1,alpha(b1,c0))"
+      ],
+      [
+        "alpha(times(b1,b1),c1)",
+        "alpha(b1,alpha(b1,c1))"
+      ]
+    ],
+    "models": {
+      "0": {
+        "domain": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 3
+        },
+        "default": 0,
+        "arities": {},
+        "operations": {}
+      },
+      "1": {
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 2
+        },
+        "default": 0,
+        "arities": {
+          "alpha": 2,
+          "neg": 1,
+          "plus": 2,
+          "times": 2
+        },
+        "operations": {
+          "alpha": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 4
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 5
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 6
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 7
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 9
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 10
+            }
+          ],
+          "neg": [
+            {
+              "args": [
+                0
+              ],
+              "value": 11
+            },
+            {
+              "args": [
+                1
+              ],
+              "value": 12
+            },
+            {
+              "args": [
+                2
+              ],
+              "value": 2
+            }
+          ],
+          "plus": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 13
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 14
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 15
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 16
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 17
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 18
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 19
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 20
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 2
+            }
+          ],
+          "times": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 21
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 1
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 22
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 23
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 24
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 25
+            }
+          ]
+        }
+      },
+      "2": {
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 2
+        },
+        "default": 0,
+        "arities": {
+          "alpha": 2,
+          "neg": 1,
+          "plus": 2,
+          "times": 2
+        },
+        "operations": {
+          "alpha": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 4
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 5
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 6
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 7
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 9
+            }
+          ],
+          "neg": [
+            {
+              "args": [
+                0
+              ],
+              "value": 10
+            },
+            {
+              "args": [
+                1
+              ],
+              "value": 11
+            },
+            {
+              "args": [
+                2
+              ],
+              "value": 2
+            }
+          ],
+          "plus": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 12
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 13
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 14
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 15
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 16
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 17
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 18
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 19
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 2
+            }
+          ],
+          "times": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 20
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 1
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 21
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 22
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 23
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 24
+            }
+          ]
+        }
+      }
+    },
+    "query_partitions": {
+      "0": [
+        [
+          "b0"
+        ],
+        [
+          "b1"
+        ],
+        [
+          "c0"
+        ],
+        [
+          "c1"
+        ]
+      ],
+      "1": [
+        [
+          "alpha(b0,b0)"
+        ],
+        [
+          "alpha(b0,b1)"
+        ],
+        [
+          "alpha(b0,c0)",
+          "alpha(b0,c1)",
+          "c0",
+          "c1",
+          "neg(c0)",
+          "neg(c1)",
+          "plus(c0,c0)",
+          "plus(c0,c1)",
+          "plus(c1,c0)",
+          "plus(c1,c1)"
+        ],
+        [
+          "alpha(b1,b0)"
+        ],
+        [
+          "alpha(b1,b1)"
+        ],
+        [
+          "alpha(b1,c0)",
+          "alpha(b1,c1)"
+        ],
+        [
+          "alpha(c0,b0)",
+          "alpha(c1,b0)"
+        ],
+        [
+          "alpha(c0,b1)",
+          "alpha(c1,b1)"
+        ],
+        [
+          "alpha(c0,c0)",
+          "alpha(c0,c1)",
+          "alpha(c1,c0)",
+          "alpha(c1,c1)"
+        ],
+        [
+          "b0",
+          "times(b0,b0)",
+          "times(b0,b1)",
+          "times(b1,b0)"
+        ],
+        [
+          "b1",
+          "times(b1,b1)"
+        ],
+        [
+          "neg(b0)"
+        ],
+        [
+          "neg(b1)"
+        ],
+        [
+          "plus(b0,b0)"
+        ],
+        [
+          "plus(b0,b1)"
+        ],
+        [
+          "plus(b0,c0)",
+          "plus(b0,c1)"
+        ],
+        [
+          "plus(b1,b0)"
+        ],
+        [
+          "plus(b1,b1)"
+        ],
+        [
+          "plus(b1,c0)",
+          "plus(b1,c1)"
+        ],
+        [
+          "plus(c0,b0)",
+          "plus(c1,b0)"
+        ],
+        [
+          "plus(c0,b1)",
+          "plus(c1,b1)"
+        ],
+        [
+          "times(b0,c0)",
+          "times(b0,c1)"
+        ],
+        [
+          "times(b1,c0)",
+          "times(b1,c1)"
+        ],
+        [
+          "times(c0,b0)",
+          "times(c1,b0)"
+        ],
+        [
+          "times(c0,b1)",
+          "times(c1,b1)"
+        ],
+        [
+          "times(c0,c0)",
+          "times(c0,c1)",
+          "times(c1,c0)",
+          "times(c1,c1)"
+        ]
+      ],
+      "2": [
+        [
+          "alpha(b0,b0)"
+        ],
+        [
+          "alpha(b0,b1)"
+        ],
+        [
+          "alpha(b0,c0)",
+          "alpha(b0,c1)",
+          "alpha(b1,c0)",
+          "alpha(b1,c1)",
+          "c0",
+          "c1",
+          "neg(c0)",
+          "neg(c1)",
+          "plus(c0,c0)",
+          "plus(c0,c1)",
+          "plus(c1,c0)",
+          "plus(c1,c1)"
+        ],
+        [
+          "alpha(b1,b0)"
+        ],
+        [
+          "alpha(b1,b1)"
+        ],
+        [
+          "alpha(c0,b0)",
+          "alpha(c1,b0)"
+        ],
+        [
+          "alpha(c0,b1)",
+          "alpha(c1,b1)"
+        ],
+        [
+          "alpha(c0,c0)",
+          "alpha(c0,c1)",
+          "alpha(c1,c0)",
+          "alpha(c1,c1)"
+        ],
+        [
+          "b0",
+          "times(b0,b0)",
+          "times(b0,b1)",
+          "times(b1,b0)"
+        ],
+        [
+          "b1",
+          "times(b1,b1)"
+        ],
+        [
+          "neg(b0)"
+        ],
+        [
+          "neg(b1)"
+        ],
+        [
+          "plus(b0,b0)"
+        ],
+        [
+          "plus(b0,b1)"
+        ],
+        [
+          "plus(b0,c0)",
+          "plus(b0,c1)"
+        ],
+        [
+          "plus(b1,b0)"
+        ],
+        [
+          "plus(b1,b1)"
+        ],
+        [
+          "plus(b1,c0)",
+          "plus(b1,c1)"
+        ],
+        [
+          "plus(c0,b0)",
+          "plus(c1,b0)"
+        ],
+        [
+          "plus(c0,b1)",
+          "plus(c1,b1)"
+        ],
+        [
+          "times(b0,c0)",
+          "times(b0,c1)"
+        ],
+        [
+          "times(b1,c0)",
+          "times(b1,c1)"
+        ],
+        [
+          "times(c0,b0)",
+          "times(c1,b0)"
+        ],
+        [
+          "times(c0,b1)",
+          "times(c1,b1)"
+        ],
+        [
+          "times(c0,c0)",
+          "times(c0,c1)",
+          "times(c1,c0)",
+          "times(c1,c1)"
+        ]
+      ]
+    }
+  },
+  {
+    "name": "Flip",
+    "equations": [
+      [
+        "plus(c0,c0)",
+        "c0"
+      ],
+      [
+        "plus(c0,c1)",
+        "c1"
+      ],
+      [
+        "plus(c1,c0)",
+        "c1"
+      ],
+      [
+        "plus(c1,c1)",
+        "c0"
+      ],
+      [
+        "neg(c0)",
+        "c0"
+      ],
+      [
+        "neg(c1)",
+        "c1"
+      ],
+      [
+        "times(b0,b0)",
+        "b0"
+      ],
+      [
+        "times(b0,b1)",
+        "b0"
+      ],
+      [
+        "times(b1,b0)",
+        "b0"
+      ],
+      [
+        "times(b1,b1)",
+        "b1"
+      ],
+      [
+        "alpha(b0,plus(c0,c0))",
+        "plus(alpha(b0,c0),alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,plus(c0,c1))",
+        "plus(alpha(b0,c0),alpha(b0,c1))"
+      ],
+      [
+        "alpha(b0,plus(c1,c0))",
+        "plus(alpha(b0,c1),alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,plus(c1,c1))",
+        "plus(alpha(b0,c1),alpha(b0,c1))"
+      ],
+      [
+        "alpha(b1,plus(c0,c0))",
+        "plus(alpha(b1,c0),alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,plus(c0,c1))",
+        "plus(alpha(b1,c0),alpha(b1,c1))"
+      ],
+      [
+        "alpha(b1,plus(c1,c0))",
+        "plus(alpha(b1,c1),alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,plus(c1,c1))",
+        "plus(alpha(b1,c1),alpha(b1,c1))"
+      ],
+      [
+        "alpha(b0,neg(c0))",
+        "neg(alpha(b0,c0))"
+      ],
+      [
+        "alpha(b0,neg(c1))",
+        "neg(alpha(b0,c1))"
+      ],
+      [
+        "alpha(b1,neg(c0))",
+        "neg(alpha(b1,c0))"
+      ],
+      [
+        "alpha(b1,neg(c1))",
+        "neg(alpha(b1,c1))"
+      ],
+      [
+        "alpha(b0,c0)",
+        "c1"
+      ],
+      [
+        "alpha(b0,c1)",
+        "c0"
+      ],
+      [
+        "alpha(b1,c0)",
+        "c1"
+      ],
+      [
+        "alpha(b1,c1)",
+        "c0"
+      ]
+    ],
+    "models": {
+      "0": {
+        "domain": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 3
+        },
+        "default": 0,
+        "arities": {},
+        "operations": {}
+      },
+      "1": {
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 3
+        },
+        "default": 0,
+        "arities": {
+          "alpha": 2,
+          "neg": 1,
+          "plus": 2,
+          "times": 2
+        },
+        "operations": {
+          "alpha": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 4
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 5
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 6
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 7
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 9
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 10
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 11
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 12
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 13
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 14
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 15
+            }
+          ],
+          "neg": [
+            {
+              "args": [
+                0
+              ],
+              "value": 16
+            },
+            {
+              "args": [
+                1
+              ],
+              "value": 17
+            },
+            {
+              "args": [
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                3
+              ],
+              "value": 3
+            }
+          ],
+          "plus": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 18
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 19
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 20
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 21
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 22
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 23
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 24
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 25
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 26
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 27
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 28
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 29
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 2
+            }
+          ],
+          "times": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 30
+            },
+            {
+              "args": [
+                0,
+                3
+              ],
+              "value": 31
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 1
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 32
+            },
+            {
+              "args": [
+                1,
+                3
+              ],
+              "value": 33
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 34
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 35
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 36
+            },
+            {
+              "args": [
+                2,
+                3
+              ],
+              "value": 37
+            },
+            {
+              "args": [
+                3,
+                0
+              ],
+              "value": 38
+            },
+            {
+              "args": [
+                3,
+                1
+              ],
+              "value": 39
+            },
+            {
+              "args": [
+                3,
+                2
+              ],
+              "value": 40
+            },
+            {
+              "args": [
+                3,
+                3
+              ],
+              "value": 41
+            }
+          ]
+        }
+      },
+      "2": {
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "constants": {
+          "b0": 0,
+          "b1": 1,
+          "c0": 2,
+          "c1": 2
+        },
+        "default": 0,
+        "arities": {
+          "alpha": 2,
+          "neg": 1,
+          "plus": 2,
+          "times": 2
+        },
+        "operations": {
+          "alpha": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 3
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 4
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 5
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 6
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 2
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 7
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 8
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 9
+            }
+          ],
+          "neg": [
+            {
+              "args": [
+                0
+              ],
+              "value": 10
+            },
+            {
+              "args": [
+                1
+              ],
+              "value": 11
+            },
+            {
+              "args": [
+                2
+              ],
+              "value": 2
+            }
+          ],
+          "plus": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 12
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 13
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 14
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 15
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 16
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 17
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 18
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 19
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 2
+            }
+          ],
+          "times": [
+            {
+              "args": [
+                0,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                1
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                0,
+                2
+              ],
+              "value": 20
+            },
+            {
+              "args": [
+                1,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "args": [
+                1,
+                1
+              ],
+              "value": 1
+            },
+            {
+              "args": [
+                1,
+                2
+              ],
+              "value": 21
+            },
+            {
+              "args": [
+                2,
+                0
+              ],
+              "value": 22
+            },
+            {
+              "args": [
+                2,
+                1
+              ],
+              "value": 23
+            },
+            {
+              "args": [
+                2,
+                2
+              ],
+              "value": 24
+            }
+          ]
+        }
+      }
+    },
+    "query_partitions": {
+      "0": [
+        [
+          "b0"
+        ],
+        [
+          "b1"
+        ],
+        [
+          "c0"
+        ],
+        [
+          "c1"
+        ]
+      ],
+      "1": [
+        [
+          "alpha(b0,b0)"
+        ],
+        [
+          "alpha(b0,b1)"
+        ],
+        [
+          "alpha(b0,c0)",
+          "alpha(b1,c0)",
+          "c1",
+          "neg(c1)",
+          "plus(c0,c1)",
+          "plus(c1,c0)"
+        ],
+        [
+          "alpha(b0,c1)",
+          "alpha(b1,c1)",
+          "c0",
+          "neg(c0)",
+          "plus(c0,c0)",
+          "plus(c1,c1)"
+        ],
+        [
+          "alpha(b1,b0)"
+        ],
+        [
+          "alpha(b1,b1)"
+        ],
+        [
+          "alpha(c0,b0)"
+        ],
+        [
+          "alpha(c0,b1)"
+        ],
+        [
+          "alpha(c0,c0)"
+        ],
+        [
+          "alpha(c0,c1)"
+        ],
+        [
+          "alpha(c1,b0)"
+        ],
+        [
+          "alpha(c1,b1)"
+        ],
+        [
+          "alpha(c1,c0)"
+        ],
+        [
+          "alpha(c1,c1)"
+        ],
+        [
+          "b0",
+          "times(b0,b0)",
+          "times(b0,b1)",
+          "times(b1,b0)"
+        ],
+        [
+          "b1",
+          "times(b1,b1)"
+        ],
+        [
+          "neg(b0)"
+        ],
+        [
+          "neg(b1)"
+        ],
+        [
+          "plus(b0,b0)"
+        ],
+        [
+          "plus(b0,b1)"
+        ],
+        [
+          "plus(b0,c0)"
+        ],
+        [
+          "plus(b0,c1)"
+        ],
+        [
+          "plus(b1,b0)"
+        ],
+        [
+          "plus(b1,b1)"
+        ],
+        [
+          "plus(b1,c0)"
+        ],
+        [
+          "plus(b1,c1)"
+        ],
+        [
+          "plus(c0,b0)"
+        ],
+        [
+          "plus(c0,b1)"
+        ],
+        [
+          "plus(c1,b0)"
+        ],
+        [
+          "plus(c1,b1)"
+        ],
+        [
+          "times(b0,c0)"
+        ],
+        [
+          "times(b0,c1)"
+        ],
+        [
+          "times(b1,c0)"
+        ],
+        [
+          "times(b1,c1)"
+        ],
+        [
+          "times(c0,b0)"
+        ],
+        [
+          "times(c0,b1)"
+        ],
+        [
+          "times(c0,c0)"
+        ],
+        [
+          "times(c0,c1)"
+        ],
+        [
+          "times(c1,b0)"
+        ],
+        [
+          "times(c1,b1)"
+        ],
+        [
+          "times(c1,c0)"
+        ],
+        [
+          "times(c1,c1)"
+        ]
+      ],
+      "2": [
+        [
+          "alpha(b0,b0)"
+        ],
+        [
+          "alpha(b0,b1)"
+        ],
+        [
+          "alpha(b0,c0)",
+          "alpha(b0,c1)",
+          "alpha(b1,c0)",
+          "alpha(b1,c1)",
+          "c0",
+          "c1",
+          "neg(c0)",
+          "neg(c1)",
+          "plus(c0,c0)",
+          "plus(c0,c1)",
+          "plus(c1,c0)",
+          "plus(c1,c1)"
+        ],
+        [
+          "alpha(b1,b0)"
+        ],
+        [
+          "alpha(b1,b1)"
+        ],
+        [
+          "alpha(c0,b0)",
+          "alpha(c1,b0)"
+        ],
+        [
+          "alpha(c0,b1)",
+          "alpha(c1,b1)"
+        ],
+        [
+          "alpha(c0,c0)",
+          "alpha(c0,c1)",
+          "alpha(c1,c0)",
+          "alpha(c1,c1)"
+        ],
+        [
+          "b0",
+          "times(b0,b0)",
+          "times(b0,b1)",
+          "times(b1,b0)"
+        ],
+        [
+          "b1",
+          "times(b1,b1)"
+        ],
+        [
+          "neg(b0)"
+        ],
+        [
+          "neg(b1)"
+        ],
+        [
+          "plus(b0,b0)"
+        ],
+        [
+          "plus(b0,b1)"
+        ],
+        [
+          "plus(b0,c0)",
+          "plus(b0,c1)"
+        ],
+        [
+          "plus(b1,b0)"
+        ],
+        [
+          "plus(b1,b1)"
+        ],
+        [
+          "plus(b1,c0)",
+          "plus(b1,c1)"
+        ],
+        [
+          "plus(c0,b0)",
+          "plus(c1,b0)"
+        ],
+        [
+          "plus(c0,b1)",
+          "plus(c1,b1)"
+        ],
+        [
+          "times(b0,c0)",
+          "times(b0,c1)"
+        ],
+        [
+          "times(b1,c0)",
+          "times(b1,c1)"
+        ],
+        [
+          "times(c0,b0)",
+          "times(c1,b0)"
+        ],
+        [
+          "times(c0,b1)",
+          "times(c1,b1)"
+        ],
+        [
+          "times(c0,c0)",
+          "times(c0,c1)",
+          "times(c1,c0)",
+          "times(c1,c1)"
+        ]
+      ]
+    }
+  }
+]

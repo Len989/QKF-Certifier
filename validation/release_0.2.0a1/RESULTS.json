@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+  "python_tests": 67,
+  "ruff_check": "passed",
+  "ruff_format": "passed",
+  "wheel_sdist_build": "passed",
+  "installed_wheel_outside_checkout": "certified; optimal; all_positive_widths",
+  "research": {
+    "status": "passed",
+    "suites": {
+      "knownbits": {
+        "status": "passed",
+        "programs_checked": 39,
+        "complete_programs_proved": 11,
+        "source_components_checked": 411,
+        "component_target_proofs": 104,
+        "search_or_smt_loaded": false
+      },
+      "graal": {
+        "status": "passed",
+        "fresh_proof_processes": 7,
+        "upper": "exact masked maximum and empty-case distinction",
+        "lower": "conditional carrier preservation",
+        "complete_graal_results": "control 1/5; joint 2/5"
+      }
+    }
+  },
+  "lean": "fresh build: 13 jobs, including enforced axiom audit",
+  "lean_version": "4.33.0",
+  "pdf": {
+    "pages": 27,
+    "sha256": "67d8526c3e6086ad2185587763e5725eeba3a45c0a4e944327a866b1d403e80c",
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "fonts": "all embedded Type 1",
+    "visual_review": "all pages reviewed; final adjusted theorem/reference pages separately reviewed"
+  },
+  "remote_github": "not created: connected plugin did not expose callable GitHub write tools",
+  "scope": "Historical native/SMT/producer/negative-control measurements retained; not rerun for this release."
+}

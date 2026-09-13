@@ -1,0 +1,7 @@
+{
+  "status": "goal_not_forced",
+  "equations": 64,
+  "supplied_cells": 0,
+  "cause": "The original Paper II API requires schemes=(Tab,) to activate the supplied row table; the first call omitted that switch.",
+  "correction": "Explicitly activate the two actual supplied cells; preserve the no-supplied-cell case as a negative observation."
+}

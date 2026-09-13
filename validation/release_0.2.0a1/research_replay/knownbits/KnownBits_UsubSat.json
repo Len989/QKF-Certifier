@@ -1,0 +1,28 @@
+{
+  "case": "KnownBits_UsubSat",
+  "mode": "observed",
+  "phase": "replay",
+  "status": "proved_original_whole_all_positive_widths",
+  "components": 16,
+  "component_target_proofs": 16,
+  "component_width_one": [],
+  "whole_verification": {
+    "status": "proved_original_whole_all_positive_widths",
+    "states": 1414,
+    "transitions": 23301,
+    "components": 16,
+    "native_lemmas": 0,
+    "native_symbolic_steps": 0,
+    "rewrites": 156,
+    "action_rewrites": 12,
+    "action_tail_steps": 17,
+    "observation_rewrites": 9,
+    "observation_proof_steps": 49
+  },
+  "search_modules_loaded": [],
+  "action_rewrites": 12,
+  "observation_rewrites": 9,
+  "native_symbolic_lemmas": 0,
+  "seconds": 1.2500811819918454,
+  "peak_rss_kib": 21312
+}

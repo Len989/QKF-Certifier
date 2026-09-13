@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "implicit_bit_examples": [
+    {
+      "width": 4,
+      "represented_words": 2,
+      "original_must": 0,
+      "derived_must": 1,
+      "cover_cells": 4,
+      "negative_contexts": 3
+    },
+    {
+      "width": 8,
+      "represented_words": 2,
+      "original_must": 0,
+      "derived_must": 1,
+      "cover_cells": 8,
+      "negative_contexts": 3
+    },
+    {
+      "width": 32,
+      "represented_words": 2,
+      "original_must": 0,
+      "derived_must": 1,
+      "cover_cells": 32,
+      "negative_contexts": 3
+    },
+    {
+      "width": 64,
+      "represented_words": 2,
+      "original_must": 0,
+      "derived_must": 1,
+      "cover_cells": 64,
+      "negative_contexts": 3
+    }
+  ],
+  "theory_mutations_rejected": [
+    "missing derivation",
+    "collapsed lower separator",
+    "changed ground equation",
+    "false row kernel"
+  ],
+  "timing": "After the frozen main run; diagnostic examples are not added to the five-program denominator."
+}

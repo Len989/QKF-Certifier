@@ -1,0 +1,148 @@
+{
+  "records": [
+    {
+      "case": "And",
+      "producer": {
+        "case": "And",
+        "mode": "observed",
+        "phase": "producer",
+        "target": "and",
+        "target_scope": "explicit_total_target",
+        "status": "certificate_produced",
+        "sources": {
+          "program": "5cebee13b7455dea24ecdefd70b50577b8bf2869cda8d61b74e49ca29b7d22f2"
+        },
+        "components": {
+          "solution": {
+            "status": "proved_component",
+            "blockers": {},
+            "native_lemmas": 0,
+            "action_rewrites": 0,
+            "observation_rewrites": 0,
+            "prepare_seconds": 0.010628420001012273,
+            "progress": {
+              "states": 0,
+              "search_states": 2,
+              "transition_attempts": 48,
+              "leaves": 1,
+              "branches": 0,
+              "guard_refinements": 0
+            },
+            "last_leaf": {
+              "leaf": 1,
+              "depth": 0,
+              "path": [],
+              "expression_hash": "ebccf02e93ed0104de4f618bd68eda940c6d1c4f0f8edfc38c9937a24a8b9977",
+              "status": "proved_sound",
+              "initial_states": 1,
+              "unrestricted_initial_states": 1,
+              "guard_trials": [
+                {
+                  "assumption_indices": [],
+                  "status": "proved_sound",
+                  "transition_attempts": 48,
+                  "states": 2
+                }
+              ],
+              "assumption_indices": [],
+              "transition_attempts": 48,
+              "states": 2
+            },
+            "leaves": [
+              {
+                "leaf": 1,
+                "depth": 0,
+                "path": [],
+                "expression_hash": "ebccf02e93ed0104de4f618bd68eda940c6d1c4f0f8edfc38c9937a24a8b9977",
+                "status": "proved_sound",
+                "initial_states": 1,
+                "unrestricted_initial_states": 1,
+                "guard_trials": [
+                  {
+                    "assumption_indices": [],
+                    "status": "proved_sound",
+                    "transition_attempts": 48,
+                    "states": 2
+                  }
+                ],
+                "assumption_indices": [],
+                "transition_attempts": 48,
+                "states": 2
+              }
+            ],
+            "search_seconds": 0.0009563579951645806
+          }
+        },
+        "symbolic_attempts": {
+          "solution": {
+            "attempts": [],
+            "totals": {
+              "search_nodes": 0,
+              "fm_constructed_rows": 0
+            }
+          }
+        },
+        "totals": {
+          "states": 2,
+          "search_states": 2,
+          "transition_attempts": 48
+        },
+        "budgets": {
+          "states_total": 100000,
+          "initial_enumeration_limit": 100000,
+          "transition_attempts_total": 2000000,
+          "max_branch_leaves": 512,
+          "max_branch_depth": 24,
+          "symbolic_search_nodes": 10000,
+          "symbolic_fm_rows": 100000,
+          "producer_seconds": 60,
+          "replay_seconds": 60
+        },
+        "component_count": 1,
+        "symbolic_totals": {
+          "search_nodes": 0,
+          "fm_constructed_rows": 0
+        },
+        "preparation_seconds": 0.013064811006188393,
+        "prepared_sha256": "50fd195e94f1377bc4e6821e996ce3870fe90f14c84f253f2086672d9e89880a",
+        "prepared_bytes": 5406,
+        "final_component_count": 1,
+        "certificate_sha256": "b449009b7e121dd7c9133d9e660065e0084db7903fd6662685d72def82aa4a57",
+        "certificate_bytes": 8078,
+        "seconds": 0.032311404997017235,
+        "peak_rss_kib": 13952
+      },
+      "producer_wall_seconds": 0.1156476659962209,
+      "status": "proved_original_whole_all_positive_widths",
+      "replay": {
+        "case": "And",
+        "mode": "observed",
+        "phase": "replay",
+        "status": "proved_original_whole_all_positive_widths",
+        "components": 1,
+        "component_target_proofs": 1,
+        "component_width_one": [],
+        "whole_verification": {
+          "status": "proved_original_whole_all_positive_widths",
+          "states": 2,
+          "transitions": 48,
+          "components": 1,
+          "native_lemmas": 0,
+          "native_symbolic_steps": 0,
+          "rewrites": 0,
+          "action_rewrites": 0,
+          "action_tail_steps": 0,
+          "observation_rewrites": 0,
+          "observation_proof_steps": 0
+        },
+        "search_modules_loaded": [],
+        "action_rewrites": 0,
+        "observation_rewrites": 0,
+        "native_symbolic_lemmas": 0,
+        "seconds": 0.01690390800649766,
+        "peak_rss_kib": 13568
+      },
+      "replay_wall_seconds": 0.06525756999326404
+    }
+  ]
+}

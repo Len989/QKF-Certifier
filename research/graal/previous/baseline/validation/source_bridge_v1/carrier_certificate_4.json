@@ -1,0 +1,3433 @@
+{
+  "spec": {
+    "width": 64,
+    "must": 7102466930919016964,
+    "may": 16346283495303907935,
+    "lower": -3785881606991010546,
+    "upper": 6786276333527684744,
+    "can_zero": true
+  },
+  "java_output": "OK -2120905105935758844 -2100460578405643681 e291080b0e630a04 e2d9aa3b8f6b8a5f 0",
+  "output_spec": {
+    "width": 64,
+    "lower": -2120905105935758844,
+    "upper": -2100460578405643681,
+    "must": 16325838967773792772,
+    "may": 16346283495303907935,
+    "can_zero": false
+  },
+  "input_certificate": {
+    "schema": "qkf-joint-carrier-certificate-v1",
+    "spec": {
+      "width": 64,
+      "must": 7102466930919016964,
+      "may": 16346283495303907935,
+      "lower": -3785881606991010546,
+      "upper": 6786276333527684744,
+      "can_zero": true
+    },
+    "query": {
+      "kind": "summary"
+    },
+    "binding": "5b88e46089d55be74ffdb600dc24ce051ab985a66a5b565546873bcf8671279c",
+    "cells": [
+      {
+        "start": 5437490429863765262,
+        "free": 1,
+        "must_key": 7779362249155522318,
+        "may_key": 4778750455948345359,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490429863765264,
+        "free": 4,
+        "must_key": 7779362249155522324,
+        "may_key": 4778750455948345375,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490429863765280,
+        "free": 5,
+        "must_key": 7779362249155522340,
+        "may_key": 4778750455948345375,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490429863765312,
+        "free": 6,
+        "must_key": 7779362249155522372,
+        "may_key": 4778750455948345439,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490429863765376,
+        "free": 7,
+        "must_key": 7779362249155522436,
+        "may_key": 4778750455948345439,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490429863765504,
+        "free": 9,
+        "must_key": 7779362249155522052,
+        "may_key": 4778750455948345951,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490429863766016,
+        "free": 11,
+        "must_key": 7779362249155521028,
+        "may_key": 4778750455948347999,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490429863768064,
+        "free": 12,
+        "must_key": 7779362249155525124,
+        "may_key": 4778750455948347999,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490429863772160,
+        "free": 14,
+        "must_key": 7779362249155529220,
+        "may_key": 4778750455948347999,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490429863788544,
+        "free": 17,
+        "must_key": 7779362249155480068,
+        "may_key": 4778750455948479071,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490429863919616,
+        "free": 21,
+        "must_key": 7779362249153645060,
+        "may_key": 4778750455950576223,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490429866016768,
+        "free": 22,
+        "must_key": 7779362249153645060,
+        "may_key": 4778750455954770527,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490429870211072,
+        "free": 25,
+        "must_key": 7779362249128479236,
+        "may_key": 4778750455988324959,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490429903765504,
+        "free": 27,
+        "must_key": 7779362249128479236,
+        "may_key": 4778750456122542687,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490430037983232,
+        "free": 28,
+        "must_key": 7779362249396914692,
+        "may_key": 4778750456122542687,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490430306418688,
+        "free": 30,
+        "must_key": 7779362249665350148,
+        "may_key": 4778750456122542687,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490431380160512,
+        "free": 32,
+        "must_key": 7779362246444124676,
+        "may_key": 4778750460417509983,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490435675127808,
+        "free": 33,
+        "must_key": 7779362246444124676,
+        "may_key": 4778750469007444575,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490444265062400,
+        "free": 38,
+        "must_key": 7779362297983732228,
+        "may_key": 4778750469007444575,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437490719142969344,
+        "free": 40,
+        "must_key": 7779362572861639172,
+        "may_key": 4778750469007444575,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437491818654597120,
+        "free": 41,
+        "must_key": 7779363672373266948,
+        "may_key": 4778752668030700127,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437494017677852672,
+        "free": 42,
+        "must_key": 7779365871396522500,
+        "may_key": 4778752668030700127,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437498415724363776,
+        "free": 45,
+        "must_key": 7779379065536055812,
+        "may_key": 4778787852402788959,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5437533600096452608,
+        "free": 49,
+        "must_key": 7779695724884855300,
+        "may_key": 4778787852402788959,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5438096550049873920,
+        "free": 51,
+        "must_key": 7780258674838276612,
+        "may_key": 4781039652216474207,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5440348349863559168,
+        "free": 55,
+        "must_key": 7750985277260368388,
+        "may_key": 4817068449235438175,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5476377146882523136,
+        "free": 58,
+        "must_key": 7967158059374152196,
+        "may_key": 4817068449235438175,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 5764607523034234880,
+        "free": 60,
+        "must_key": 8255388435525863940,
+        "may_key": 4817068449235438175,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 6917529027641081856,
+        "free": 61,
+        "must_key": 7102466930919016964,
+        "may_key": 7122911458449132127,
+        "observation": {
+          "count": 65536,
+          "lower": -2120905105935758844,
+          "upper": -2100460578405643681,
+          "must": 16325838967773792772,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "start": 9223372036854775808,
+        "free": 62,
+        "must_key": 16325838967773792772,
+        "may_key": 11734597476876520031,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 13835058055282163712,
+        "free": 60,
+        "must_key": 16325838967773792772,
+        "may_key": 14040440486090213983,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 14987979559889010688,
+        "free": 59,
+        "must_key": 17478760472380639748,
+        "may_key": 14040440486090213983,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 15564440312192434176,
+        "free": 58,
+        "must_key": 18055221224684063236,
+        "may_key": 14040440486090213983,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 15852670688344145920,
+        "free": 57,
+        "must_key": 18343451600835774980,
+        "may_key": 13896325298014358111,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 15996785876420001792,
+        "free": 53,
+        "must_key": 18343451600835774980,
+        "may_key": 13986397290561768031,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16005793075674742784,
+        "free": 51,
+        "must_key": 18352458800090515972,
+        "may_key": 13979641891120712287,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16008044875488428032,
+        "free": 50,
+        "must_key": 18354710599904201220,
+        "may_key": 13981893690934397535,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009170775395270656,
+        "free": 48,
+        "must_key": 18355836499811043844,
+        "may_key": 13981612215957686879,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009452250371981312,
+        "free": 47,
+        "must_key": 18355836499811043844,
+        "may_key": 13981752953446042207,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009592987860336640,
+        "free": 45,
+        "must_key": 18355977237299399172,
+        "may_key": 13981858506562308703,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009628172232425472,
+        "free": 44,
+        "must_key": 18356012421671488004,
+        "may_key": 13981893690934397535,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009645764418469888,
+        "free": 41,
+        "must_key": 18356030013857532420,
+        "may_key": 13981882695818119775,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009647963441725440,
+        "free": 38,
+        "must_key": 18356032212880787972,
+        "may_key": 13981884894841375327,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648238319632384,
+        "free": 36,
+        "must_key": 18356032487758694916,
+        "may_key": 13981884688682945119,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648307039109120,
+        "free": 35,
+        "must_key": 18356032556478171652,
+        "may_key": 13981884723042683487,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648341398847488,
+        "free": 34,
+        "must_key": 18356032556478171652,
+        "may_key": 13981884757402421855,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648358578716672,
+        "free": 33,
+        "must_key": 18356032573658040836,
+        "may_key": 13981884748812487263,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648367168651264,
+        "free": 31,
+        "must_key": 18356032573658040836,
+        "may_key": 13981884750959970911,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648369316134912,
+        "free": 29,
+        "must_key": 18356032575805524484,
+        "may_key": 13981884753107454559,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648369853005824,
+        "free": 28,
+        "must_key": 18356032576342395396,
+        "may_key": 13981884753107454559,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370121441280,
+        "free": 27,
+        "must_key": 18356032576610830852,
+        "may_key": 13981884752973236831,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370255659008,
+        "free": 26,
+        "must_key": 18356032576610830852,
+        "may_key": 13981884753040345695,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370322767872,
+        "free": 25,
+        "must_key": 18356032576610830852,
+        "may_key": 13981884753073900127,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370356322304,
+        "free": 24,
+        "must_key": 18356032576610830852,
+        "may_key": 13981884753090677343,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370373099520,
+        "free": 23,
+        "must_key": 18356032576627608068,
+        "may_key": 13981884753107454559,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370381488128,
+        "free": 19,
+        "must_key": 18356032576635996676,
+        "may_key": 13981884753100638815,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370382012416,
+        "free": 18,
+        "must_key": 18356032576636520964,
+        "may_key": 13981884753101163103,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370382274560,
+        "free": 17,
+        "must_key": 18356032576636783108,
+        "may_key": 13981884753101032031,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370382405632,
+        "free": 15,
+        "must_key": 18356032576636783108,
+        "may_key": 13981884753101064799,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370382438400,
+        "free": 14,
+        "must_key": 18356032576636815876,
+        "may_key": 13981884753101097567,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370382454784,
+        "free": 12,
+        "must_key": 18356032576636832260,
+        "may_key": 13981884753101097567,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370382458880,
+        "free": 10,
+        "must_key": 18356032576636836356,
+        "may_key": 13981884753101095519,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370382459904,
+        "free": 9,
+        "must_key": 18356032576636837380,
+        "may_key": 13981884753101095007,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370382460416,
+        "free": 7,
+        "must_key": 18356032576636837380,
+        "may_key": 13981884753101095519,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370382460544,
+        "free": 3,
+        "must_key": 18356032576636837508,
+        "may_key": 13981884753101095431,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 16009648370382460552,
+        "free": 0,
+        "must_key": 18356032576636837516,
+        "may_key": 13981884753101095432,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      }
+    ],
+    "joins": [
+      {
+        "left": 0,
+        "right": 1,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 2,
+        "right": 3,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 4,
+        "right": 5,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 6,
+        "right": 7,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 8,
+        "right": 9,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 10,
+        "right": 11,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 12,
+        "right": 13,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 14,
+        "right": 15,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 16,
+        "right": 17,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 18,
+        "right": 19,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 20,
+        "right": 21,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 22,
+        "right": 23,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 24,
+        "right": 25,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 26,
+        "right": 27,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 28,
+        "right": 29,
+        "observation": {
+          "count": 65536,
+          "lower": -2120905105935758844,
+          "upper": -2100460578405643681,
+          "must": 16325838967773792772,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 30,
+        "right": 31,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 32,
+        "right": 33,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 34,
+        "right": 35,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 36,
+        "right": 37,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 38,
+        "right": 39,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 40,
+        "right": 41,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 42,
+        "right": 43,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 44,
+        "right": 45,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 46,
+        "right": 47,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 48,
+        "right": 49,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 50,
+        "right": 51,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 52,
+        "right": 53,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 54,
+        "right": 55,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 56,
+        "right": 57,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 58,
+        "right": 59,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 60,
+        "right": 61,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 62,
+        "right": 63,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 64,
+        "right": 65,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 66,
+        "right": 67,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 68,
+        "right": 69,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 70,
+        "right": 71,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 72,
+        "right": 73,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 74,
+        "right": 75,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 76,
+        "right": 77,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 78,
+        "right": 79,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 80,
+        "right": 81,
+        "observation": {
+          "count": 65536,
+          "lower": -2120905105935758844,
+          "upper": -2100460578405643681,
+          "must": 16325838967773792772,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 82,
+        "right": 83,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 84,
+        "right": 85,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 86,
+        "right": 87,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 88,
+        "right": 89,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 90,
+        "right": 91,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 92,
+        "right": 93,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 94,
+        "right": 95,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 96,
+        "right": 97,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 99,
+        "right": 100,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 101,
+        "right": 102,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 103,
+        "right": 104,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 105,
+        "right": 106,
+        "observation": {
+          "count": 65536,
+          "lower": -2120905105935758844,
+          "upper": -2100460578405643681,
+          "must": 16325838967773792772,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 107,
+        "right": 108,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 109,
+        "right": 110,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 111,
+        "right": 112,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 113,
+        "right": 114,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 115,
+        "right": 116,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 117,
+        "right": 118,
+        "observation": {
+          "count": 65536,
+          "lower": -2120905105935758844,
+          "upper": -2100460578405643681,
+          "must": 16325838967773792772,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 119,
+        "right": 120,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 121,
+        "right": 122,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 123,
+        "right": 124,
+        "observation": {
+          "count": 65536,
+          "lower": -2120905105935758844,
+          "upper": -2100460578405643681,
+          "must": 16325838967773792772,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 125,
+        "right": 126,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 127,
+        "right": 128,
+        "observation": {
+          "count": 65536,
+          "lower": -2120905105935758844,
+          "upper": -2100460578405643681,
+          "must": 16325838967773792772,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 129,
+        "right": 98,
+        "observation": {
+          "count": 65536,
+          "lower": -2120905105935758844,
+          "upper": -2100460578405643681,
+          "must": 16325838967773792772,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      }
+    ],
+    "root": 130,
+    "answer": {
+      "count": 65536,
+      "lower": -2120905105935758844,
+      "upper": -2100460578405643681,
+      "must": 16325838967773792772,
+      "may": 16346283495303907935,
+      "zero": false,
+      "word": null
+    }
+  },
+  "output_certificate": {
+    "schema": "qkf-joint-carrier-certificate-v1",
+    "spec": {
+      "width": 64,
+      "lower": -2120905105935758844,
+      "upper": -2100460578405643681,
+      "must": 16325838967773792772,
+      "may": 16346283495303907935,
+      "can_zero": false
+    },
+    "query": {
+      "kind": "summary"
+    },
+    "binding": "f427c099c25ea8f12d57b69795a7f6569648fc7b5d612bbf75627e68afa05343",
+    "cells": [
+      {
+        "start": 7102466930919016964,
+        "free": 2,
+        "must_key": 7102466930919016964,
+        "may_key": 7102466930919016967,
+        "observation": {
+          "count": 4,
+          "lower": -2120905105935758844,
+          "upper": -2120905105935758841,
+          "must": 16325838967773792772,
+          "may": 16325838967773792775,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930919016968,
+        "free": 3,
+        "must_key": 7102466930919016972,
+        "may_key": 7102466930919016975,
+        "observation": {
+          "count": 4,
+          "lower": -2120905105935758836,
+          "upper": -2120905105935758833,
+          "must": 16325838967773792780,
+          "may": 16325838967773792783,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930919016976,
+        "free": 4,
+        "must_key": 7102466930919016980,
+        "may_key": 7102466930919016991,
+        "observation": {
+          "count": 8,
+          "lower": -2120905105935758828,
+          "upper": -2120905105935758817,
+          "must": 16325838967773792788,
+          "may": 16325838967773792799,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930919016992,
+        "free": 5,
+        "must_key": 7102466930919016996,
+        "may_key": 7102466930919016991,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930919017024,
+        "free": 6,
+        "must_key": 7102466930919017028,
+        "may_key": 7102466930919017055,
+        "observation": {
+          "count": 16,
+          "lower": -2120905105935758780,
+          "upper": -2120905105935758753,
+          "must": 16325838967773792836,
+          "may": 16325838967773792863,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930919017088,
+        "free": 7,
+        "must_key": 7102466930919017092,
+        "may_key": 7102466930919017055,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930919017216,
+        "free": 8,
+        "must_key": 7102466930919017220,
+        "may_key": 7102466930919017055,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930919017472,
+        "free": 10,
+        "must_key": 7102466930919017988,
+        "may_key": 7102466930919017055,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930919018496,
+        "free": 12,
+        "must_key": 7102466930919021060,
+        "may_key": 7102466930919017055,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930919022592,
+        "free": 13,
+        "must_key": 7102466930919025156,
+        "may_key": 7102466930919017055,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930919030784,
+        "free": 14,
+        "must_key": 7102466930919033348,
+        "may_key": 7102466930919017055,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930919047168,
+        "free": 15,
+        "must_key": 7102466930919049732,
+        "may_key": 7102466930919049823,
+        "observation": {
+          "count": 32,
+          "lower": -2120905105935726076,
+          "upper": -2120905105935725985,
+          "must": 16325838967773825540,
+          "may": 16325838967773825631,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930919079936,
+        "free": 18,
+        "must_key": 7102466930919279108,
+        "may_key": 7102466930919049823,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930919342080,
+        "free": 19,
+        "must_key": 7102466930919541252,
+        "may_key": 7102466930919574111,
+        "observation": {
+          "count": 64,
+          "lower": -2120905105935234556,
+          "upper": -2120905105935201697,
+          "must": 16325838967774317060,
+          "may": 16325838967774349919,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930919866368,
+        "free": 20,
+        "must_key": 7102466930920065540,
+        "may_key": 7102466930919574111,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930920914944,
+        "free": 23,
+        "must_key": 7102466930927405572,
+        "may_key": 7102466930919574111,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930929303552,
+        "free": 24,
+        "must_key": 7102466930935794180,
+        "may_key": 7102466930936351327,
+        "observation": {
+          "count": 128,
+          "lower": -2120905105918981628,
+          "upper": -2120905105918424481,
+          "must": 16325838967790569988,
+          "may": 16325838967791127135,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466930946080768,
+        "free": 28,
+        "must_key": 7102466931187452420,
+        "may_key": 7102466930936351327,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466931214516224,
+        "free": 29,
+        "must_key": 7102466931455887876,
+        "may_key": 7102466930936351327,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466931751387136,
+        "free": 30,
+        "must_key": 7102466931992758788,
+        "may_key": 7102466930936351327,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466932825128960,
+        "free": 31,
+        "must_key": 7102466933066500612,
+        "may_key": 7102466933083834975,
+        "observation": {
+          "count": 256,
+          "lower": -2120905103788275196,
+          "upper": -2120905103770940833,
+          "must": 16325838969921276420,
+          "may": 16325838969938610783,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466934972612608,
+        "free": 34,
+        "must_key": 7102466948098886148,
+        "may_key": 7102466933083834975,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102466952152481792,
+        "free": 36,
+        "must_key": 7102466999638493700,
+        "may_key": 7102467001803311711,
+        "observation": {
+          "count": 512,
+          "lower": -2120905037216282108,
+          "upper": -2120905035051464097,
+          "must": 16325839036493269508,
+          "may": 16325839038658087519,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102467020871958528,
+        "free": 37,
+        "must_key": 7102467068357970436,
+        "may_key": 7102467139242265183,
+        "observation": {
+          "count": 1024,
+          "lower": -2120904968496805372,
+          "upper": -2120904897612510625,
+          "must": 16325839105212746244,
+          "may": 16325839176097040991,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102467158310912000,
+        "free": 38,
+        "must_key": 7102467205796923908,
+        "may_key": 7102467139242265183,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102467433188818944,
+        "free": 39,
+        "must_key": 7102467480674830852,
+        "may_key": 7102467139242265183,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102467982944632832,
+        "free": 40,
+        "must_key": 7102468030430644740,
+        "may_key": 7102467139242265183,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102469082456260608,
+        "free": 41,
+        "must_key": 7102469129942272516,
+        "may_key": 7102469338265520735,
+        "observation": {
+          "count": 2048,
+          "lower": -2120902906912503292,
+          "upper": -2120902698589255073,
+          "must": 16325841166797048324,
+          "may": 16325841375120296543,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102471281479516160,
+        "free": 42,
+        "must_key": 7102471328965528068,
+        "may_key": 7102469338265520735,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102475679526027264,
+        "free": 44,
+        "must_key": 7102484523105061380,
+        "may_key": 7102469338265520735,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102493271712071680,
+        "free": 45,
+        "must_key": 7102502115291105796,
+        "may_key": 7102504522637609567,
+        "observation": {
+          "count": 4096,
+          "lower": -2120869921563670012,
+          "upper": -2120867514217166241,
+          "must": 16325874152145881604,
+          "may": 16325876559492385375,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102528456084160512,
+        "free": 46,
+        "must_key": 7102537299663194628,
+        "may_key": 7102504522637609567,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102598824828338176,
+        "free": 47,
+        "must_key": 7102607668407372292,
+        "may_key": 7102645260125964895,
+        "observation": {
+          "count": 8192,
+          "lower": -2120764368447403516,
+          "upper": -2120726776728810913,
+          "must": 16325979705262148100,
+          "may": 16326017296980740703,
+          "zero": false
+        }
+      },
+      {
+        "start": 7102739562316693504,
+        "free": 49,
+        "must_key": 7103029880872438276,
+        "may_key": 7102645260125964895,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7103302512270114816,
+        "free": 50,
+        "must_key": 7103592830825859588,
+        "may_key": 7102645260125964895,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7104428412176957440,
+        "free": 51,
+        "must_key": 7104718730732702212,
+        "may_key": 7104897059939650143,
+        "observation": {
+          "count": 16384,
+          "lower": -2118653306122073596,
+          "upper": -2118474976915125665,
+          "must": 16328090767587478020,
+          "may": 16328269096794425951,
+          "zero": false
+        }
+      },
+      {
+        "start": 7106680211990642688,
+        "free": 53,
+        "must_key": 7111474130173757956,
+        "may_key": 7104897059939650143,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7115687411245383680,
+        "free": 52,
+        "must_key": 7120481329428498948,
+        "may_key": 7118407858821761631,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7120191010872754176,
+        "free": 51,
+        "must_key": 7120481329428498948,
+        "may_key": 7120659658635446879,
+        "observation": {
+          "count": 16384,
+          "lower": -2102890707426276860,
+          "upper": -2102712378219328929,
+          "must": 16343853366283274756,
+          "may": 16344031695490222687,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122442810686439424,
+        "free": 48,
+        "must_key": 7122733129242184196,
+        "may_key": 7122629983472421471,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122724285663150080,
+        "free": 47,
+        "must_key": 7122733129242184196,
+        "may_key": 7122770720960776799,
+        "observation": {
+          "count": 8192,
+          "lower": -2100638907612591612,
+          "upper": -2100601315893999009,
+          "must": 16346105166096960004,
+          "may": 16346142757815552607,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122865023151505408,
+        "free": 45,
+        "must_key": 7122873866730539524,
+        "may_key": 7122876274077043295,
+        "observation": {
+          "count": 4096,
+          "lower": -2100498170124236284,
+          "upper": -2100495762777732513,
+          "must": 16346245903585315332,
+          "may": 16346248310931819103,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122900207523594240,
+        "free": 43,
+        "must_key": 7122909051102628356,
+        "may_key": 7122902662356109919,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122909003616616448,
+        "free": 41,
+        "must_key": 7122909051102628356,
+        "may_key": 7122909259425876575,
+        "observation": {
+          "count": 2048,
+          "lower": -2100462985752147452,
+          "upper": -2100462777428899233,
+          "must": 16346281087957404164,
+          "may": 16346281296280652383,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911202639872000,
+        "free": 37,
+        "must_key": 7122911250125883908,
+        "may_key": 7122911321010178655,
+        "observation": {
+          "count": 1024,
+          "lower": -2100460786728891900,
+          "upper": -2100460715844597153,
+          "must": 16346283286980659716,
+          "may": 16346283357864954463,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911340078825472,
+        "free": 36,
+        "must_key": 7122911387564837380,
+        "may_key": 7122911389729655391,
+        "observation": {
+          "count": 512,
+          "lower": -2100460649289938428,
+          "upper": -2100460647125120417,
+          "must": 16346283424419613188,
+          "may": 16346283426584431199,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911408798302208,
+        "free": 35,
+        "must_key": 7122911456284314116,
+        "may_key": 7122911424089393759,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911443158040576,
+        "free": 33,
+        "must_key": 7122911456284314116,
+        "may_key": 7122911449859197535,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911451747975168,
+        "free": 32,
+        "must_key": 7122911456284314116,
+        "may_key": 7122911454154164831,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911456042942464,
+        "free": 31,
+        "must_key": 7122911456284314116,
+        "may_key": 7122911456301648479,
+        "observation": {
+          "count": 256,
+          "lower": -2100460580570461692,
+          "upper": -2100460580553127329,
+          "must": 16346283493139089924,
+          "may": 16346283493156424287,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911458190426112,
+        "free": 27,
+        "must_key": 7122911458431797764,
+        "may_key": 7122911458314914399,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911458324643840,
+        "free": 26,
+        "must_key": 7122911458431797764,
+        "may_key": 7122911458382023263,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911458391752704,
+        "free": 25,
+        "must_key": 7122911458431797764,
+        "may_key": 7122911458415577695,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911458425307136,
+        "free": 24,
+        "must_key": 7122911458431797764,
+        "may_key": 7122911458432354911,
+        "observation": {
+          "count": 128,
+          "lower": -2100460578422978044,
+          "upper": -2100460578422420897,
+          "must": 16346283495286573572,
+          "may": 16346283495287130719,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911458442084352,
+        "free": 22,
+        "must_key": 7122911458448574980,
+        "may_key": 7122911458444937823,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911458446278656,
+        "free": 21,
+        "must_key": 7122911458448574980,
+        "may_key": 7122911458447034975,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911458448375808,
+        "free": 19,
+        "must_key": 7122911458448574980,
+        "may_key": 7122911458448607839,
+        "observation": {
+          "count": 64,
+          "lower": -2100460578406200828,
+          "upper": -2100460578406167969,
+          "must": 16346283495303350788,
+          "may": 16346283495303383647,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911458448900096,
+        "free": 17,
+        "must_key": 7122911458449099268,
+        "may_key": 7122911458449001055,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911458449031168,
+        "free": 16,
+        "must_key": 7122911458449099268,
+        "may_key": 7122911458449066591,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911458449096704,
+        "free": 15,
+        "must_key": 7122911458449099268,
+        "may_key": 7122911458449099359,
+        "observation": {
+          "count": 32,
+          "lower": -2100460578405676540,
+          "upper": -2100460578405676449,
+          "must": 16346283495303875076,
+          "may": 16346283495303875167,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911458449129472,
+        "free": 11,
+        "must_key": 7122911458449132036,
+        "may_key": 7122911458449130079,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911458449131520,
+        "free": 9,
+        "must_key": 7122911458449132036,
+        "may_key": 7122911458449131615,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911458449132032,
+        "free": 6,
+        "must_key": 7122911458449132036,
+        "may_key": 7122911458449132063,
+        "observation": {
+          "count": 16,
+          "lower": -2100460578405643772,
+          "upper": -2100460578405643745,
+          "must": 16346283495303907844,
+          "may": 16346283495303907871,
+          "zero": false
+        }
+      },
+      {
+        "start": 7122911458449132096,
+        "free": 5,
+        "must_key": 7122911458449132100,
+        "may_key": 7122911458449132127,
+        "observation": {
+          "count": 16,
+          "lower": -2100460578405643708,
+          "upper": -2100460578405643681,
+          "must": 16346283495303907908,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      }
+    ],
+    "joins": [
+      {
+        "left": 0,
+        "right": 1,
+        "observation": {
+          "count": 8,
+          "lower": -2120905105935758844,
+          "upper": -2120905105935758833,
+          "must": 16325838967773792772,
+          "may": 16325838967773792783,
+          "zero": false
+        }
+      },
+      {
+        "left": 2,
+        "right": 3,
+        "observation": {
+          "count": 8,
+          "lower": -2120905105935758828,
+          "upper": -2120905105935758817,
+          "must": 16325838967773792788,
+          "may": 16325838967773792799,
+          "zero": false
+        }
+      },
+      {
+        "left": 4,
+        "right": 5,
+        "observation": {
+          "count": 16,
+          "lower": -2120905105935758780,
+          "upper": -2120905105935758753,
+          "must": 16325838967773792836,
+          "may": 16325838967773792863,
+          "zero": false
+        }
+      },
+      {
+        "left": 6,
+        "right": 7,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 8,
+        "right": 9,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 10,
+        "right": 11,
+        "observation": {
+          "count": 32,
+          "lower": -2120905105935726076,
+          "upper": -2120905105935725985,
+          "must": 16325838967773825540,
+          "may": 16325838967773825631,
+          "zero": false
+        }
+      },
+      {
+        "left": 12,
+        "right": 13,
+        "observation": {
+          "count": 64,
+          "lower": -2120905105935234556,
+          "upper": -2120905105935201697,
+          "must": 16325838967774317060,
+          "may": 16325838967774349919,
+          "zero": false
+        }
+      },
+      {
+        "left": 14,
+        "right": 15,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 16,
+        "right": 17,
+        "observation": {
+          "count": 128,
+          "lower": -2120905105918981628,
+          "upper": -2120905105918424481,
+          "must": 16325838967790569988,
+          "may": 16325838967791127135,
+          "zero": false
+        }
+      },
+      {
+        "left": 18,
+        "right": 19,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 20,
+        "right": 21,
+        "observation": {
+          "count": 256,
+          "lower": -2120905103788275196,
+          "upper": -2120905103770940833,
+          "must": 16325838969921276420,
+          "may": 16325838969938610783,
+          "zero": false
+        }
+      },
+      {
+        "left": 22,
+        "right": 23,
+        "observation": {
+          "count": 1536,
+          "lower": -2120905037216282108,
+          "upper": -2120904897612510625,
+          "must": 16325838967773792772,
+          "may": 16325839176097040991,
+          "zero": false
+        }
+      },
+      {
+        "left": 24,
+        "right": 25,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 26,
+        "right": 27,
+        "observation": {
+          "count": 2048,
+          "lower": -2120902906912503292,
+          "upper": -2120902698589255073,
+          "must": 16325841166797048324,
+          "may": 16325841375120296543,
+          "zero": false
+        }
+      },
+      {
+        "left": 28,
+        "right": 29,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 30,
+        "right": 31,
+        "observation": {
+          "count": 4096,
+          "lower": -2120869921563670012,
+          "upper": -2120867514217166241,
+          "must": 16325874152145881604,
+          "may": 16325876559492385375,
+          "zero": false
+        }
+      },
+      {
+        "left": 32,
+        "right": 33,
+        "observation": {
+          "count": 8192,
+          "lower": -2120764368447403516,
+          "upper": -2120726776728810913,
+          "must": 16325979705262148100,
+          "may": 16326017296980740703,
+          "zero": false
+        }
+      },
+      {
+        "left": 34,
+        "right": 35,
+        "observation": {
+          "count": 16384,
+          "lower": -2118653306122073596,
+          "upper": -2118474976915125665,
+          "must": 16328090767587478020,
+          "may": 16328269096794425951,
+          "zero": false
+        }
+      },
+      {
+        "left": 36,
+        "right": 37,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 38,
+        "right": 39,
+        "observation": {
+          "count": 16384,
+          "lower": -2102890707426276860,
+          "upper": -2102712378219328929,
+          "must": 16343853366283274756,
+          "may": 16344031695490222687,
+          "zero": false
+        }
+      },
+      {
+        "left": 40,
+        "right": 41,
+        "observation": {
+          "count": 12288,
+          "lower": -2100638907612591612,
+          "upper": -2100495762777732513,
+          "must": 16346105166096960004,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 42,
+        "right": 43,
+        "observation": {
+          "count": 2048,
+          "lower": -2100462985752147452,
+          "upper": -2100462777428899233,
+          "must": 16346281087957404164,
+          "may": 16346281296280652383,
+          "zero": false
+        }
+      },
+      {
+        "left": 44,
+        "right": 45,
+        "observation": {
+          "count": 1536,
+          "lower": -2100460786728891900,
+          "upper": -2100460647125120417,
+          "must": 16346283286980659716,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 46,
+        "right": 47,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 48,
+        "right": 49,
+        "observation": {
+          "count": 256,
+          "lower": -2100460580570461692,
+          "upper": -2100460580553127329,
+          "must": 16346283493139089924,
+          "may": 16346283493156424287,
+          "zero": false
+        }
+      },
+      {
+        "left": 50,
+        "right": 51,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 52,
+        "right": 53,
+        "observation": {
+          "count": 128,
+          "lower": -2100460578422978044,
+          "upper": -2100460578422420897,
+          "must": 16346283495286573572,
+          "may": 16346283495287130719,
+          "zero": false
+        }
+      },
+      {
+        "left": 54,
+        "right": 55,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 56,
+        "right": 57,
+        "observation": {
+          "count": 64,
+          "lower": -2100460578406200828,
+          "upper": -2100460578406167969,
+          "must": 16346283495303350788,
+          "may": 16346283495303383647,
+          "zero": false
+        }
+      },
+      {
+        "left": 58,
+        "right": 59,
+        "observation": {
+          "count": 32,
+          "lower": -2100460578405676540,
+          "upper": -2100460578405676449,
+          "must": 16346283495303875076,
+          "may": 16346283495303875167,
+          "zero": false
+        }
+      },
+      {
+        "left": 60,
+        "right": 61,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 62,
+        "right": 63,
+        "observation": {
+          "count": 32,
+          "lower": -2100460578405643772,
+          "upper": -2100460578405643681,
+          "must": 16346283495303907844,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 64,
+        "right": 65,
+        "observation": {
+          "count": 16,
+          "lower": -2120905105935758844,
+          "upper": -2120905105935758817,
+          "must": 16325838967773792772,
+          "may": 16325838967773792799,
+          "zero": false
+        }
+      },
+      {
+        "left": 66,
+        "right": 67,
+        "observation": {
+          "count": 16,
+          "lower": -2120905105935758780,
+          "upper": -2120905105935758753,
+          "must": 16325838967773792836,
+          "may": 16325838967773792863,
+          "zero": false
+        }
+      },
+      {
+        "left": 68,
+        "right": 69,
+        "observation": {
+          "count": 32,
+          "lower": -2120905105935726076,
+          "upper": -2120905105935725985,
+          "must": 16325838967773825540,
+          "may": 16325838967773825631,
+          "zero": false
+        }
+      },
+      {
+        "left": 70,
+        "right": 71,
+        "observation": {
+          "count": 64,
+          "lower": -2120905105935234556,
+          "upper": -2120905105935201697,
+          "must": 16325838967774317060,
+          "may": 16325838967774349919,
+          "zero": false
+        }
+      },
+      {
+        "left": 72,
+        "right": 73,
+        "observation": {
+          "count": 128,
+          "lower": -2120905105918981628,
+          "upper": -2120905105918424481,
+          "must": 16325838967790569988,
+          "may": 16325838967791127135,
+          "zero": false
+        }
+      },
+      {
+        "left": 74,
+        "right": 75,
+        "observation": {
+          "count": 1792,
+          "lower": -2120905103788275196,
+          "upper": -2120904897612510625,
+          "must": 16325838967773792772,
+          "may": 16325839176097040991,
+          "zero": false
+        }
+      },
+      {
+        "left": 76,
+        "right": 77,
+        "observation": {
+          "count": 2048,
+          "lower": -2120902906912503292,
+          "upper": -2120902698589255073,
+          "must": 16325841166797048324,
+          "may": 16325841375120296543,
+          "zero": false
+        }
+      },
+      {
+        "left": 78,
+        "right": 79,
+        "observation": {
+          "count": 4096,
+          "lower": -2120869921563670012,
+          "upper": -2120867514217166241,
+          "must": 16325874152145881604,
+          "may": 16325876559492385375,
+          "zero": false
+        }
+      },
+      {
+        "left": 80,
+        "right": 81,
+        "observation": {
+          "count": 24576,
+          "lower": -2120764368447403516,
+          "upper": -2118474976915125665,
+          "must": 16325838967773792772,
+          "may": 16328269096794425951,
+          "zero": false
+        }
+      },
+      {
+        "left": 82,
+        "right": 83,
+        "observation": {
+          "count": 16384,
+          "lower": -2102890707426276860,
+          "upper": -2102712378219328929,
+          "must": 16343853366283274756,
+          "may": 16344031695490222687,
+          "zero": false
+        }
+      },
+      {
+        "left": 84,
+        "right": 85,
+        "observation": {
+          "count": 14336,
+          "lower": -2100638907612591612,
+          "upper": -2100462777428899233,
+          "must": 16346105166096960004,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 86,
+        "right": 87,
+        "observation": {
+          "count": 1536,
+          "lower": -2100460786728891900,
+          "upper": -2100460647125120417,
+          "must": 16346283286980659716,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 88,
+        "right": 89,
+        "observation": {
+          "count": 256,
+          "lower": -2100460580570461692,
+          "upper": -2100460580553127329,
+          "must": 16346283493139089924,
+          "may": 16346283493156424287,
+          "zero": false
+        }
+      },
+      {
+        "left": 90,
+        "right": 91,
+        "observation": {
+          "count": 128,
+          "lower": -2100460578422978044,
+          "upper": -2100460578422420897,
+          "must": 16346283495286573572,
+          "may": 16346283495287130719,
+          "zero": false
+        }
+      },
+      {
+        "left": 92,
+        "right": 93,
+        "observation": {
+          "count": 96,
+          "lower": -2100460578406200828,
+          "upper": -2100460578405676449,
+          "must": 16346283495303350788,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 94,
+        "right": 95,
+        "observation": {
+          "count": 32,
+          "lower": -2100460578405643772,
+          "upper": -2100460578405643681,
+          "must": 16346283495303907844,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 96,
+        "right": 97,
+        "observation": {
+          "count": 32,
+          "lower": -2120905105935758844,
+          "upper": -2120905105935758753,
+          "must": 16325838967773792772,
+          "may": 16325838967773792863,
+          "zero": false
+        }
+      },
+      {
+        "left": 98,
+        "right": 99,
+        "observation": {
+          "count": 96,
+          "lower": -2120905105935726076,
+          "upper": -2120905105935201697,
+          "must": 16325838967773792772,
+          "may": 16325838967774349919,
+          "zero": false
+        }
+      },
+      {
+        "left": 100,
+        "right": 101,
+        "observation": {
+          "count": 1920,
+          "lower": -2120905105918981628,
+          "upper": -2120904897612510625,
+          "must": 16325838967773792772,
+          "may": 16325839176097040991,
+          "zero": false
+        }
+      },
+      {
+        "left": 102,
+        "right": 103,
+        "observation": {
+          "count": 6144,
+          "lower": -2120902906912503292,
+          "upper": -2120867514217166241,
+          "must": 16325838967773792772,
+          "may": 16325876559492385375,
+          "zero": false
+        }
+      },
+      {
+        "left": 104,
+        "right": 105,
+        "observation": {
+          "count": 40960,
+          "lower": -2120764368447403516,
+          "upper": -2102712378219328929,
+          "must": 16325838967773792772,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 106,
+        "right": 107,
+        "observation": {
+          "count": 15872,
+          "lower": -2100638907612591612,
+          "upper": -2100460647125120417,
+          "must": 16346105166096960004,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 108,
+        "right": 109,
+        "observation": {
+          "count": 384,
+          "lower": -2100460580570461692,
+          "upper": -2100460578422420897,
+          "must": 16346283493139089924,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 110,
+        "right": 111,
+        "observation": {
+          "count": 128,
+          "lower": -2100460578406200828,
+          "upper": -2100460578405643681,
+          "must": 16346283495303350788,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 112,
+        "right": 113,
+        "observation": {
+          "count": 128,
+          "lower": -2120905105935758844,
+          "upper": -2120905105935201697,
+          "must": 16325838967773792772,
+          "may": 16325838967774349919,
+          "zero": false
+        }
+      },
+      {
+        "left": 114,
+        "right": 115,
+        "observation": {
+          "count": 8064,
+          "lower": -2120905105918981628,
+          "upper": -2120867514217166241,
+          "must": 16325838967773792772,
+          "may": 16325876559492385375,
+          "zero": false
+        }
+      },
+      {
+        "left": 116,
+        "right": 117,
+        "observation": {
+          "count": 56832,
+          "lower": -2120764368447403516,
+          "upper": -2100460647125120417,
+          "must": 16325838967773792772,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 118,
+        "right": 119,
+        "observation": {
+          "count": 512,
+          "lower": -2100460580570461692,
+          "upper": -2100460578405643681,
+          "must": 16346283493139089924,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 120,
+        "right": 121,
+        "observation": {
+          "count": 8192,
+          "lower": -2120905105935758844,
+          "upper": -2120867514217166241,
+          "must": 16325838967773792772,
+          "may": 16325876559492385375,
+          "zero": false
+        }
+      },
+      {
+        "left": 122,
+        "right": 123,
+        "observation": {
+          "count": 57344,
+          "lower": -2120764368447403516,
+          "upper": -2100460578405643681,
+          "must": 16325838967773792772,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      },
+      {
+        "left": 124,
+        "right": 125,
+        "observation": {
+          "count": 65536,
+          "lower": -2120905105935758844,
+          "upper": -2100460578405643681,
+          "must": 16325838967773792772,
+          "may": 16346283495303907935,
+          "zero": false
+        }
+      }
+    ],
+    "root": 126,
+    "answer": {
+      "count": 65536,
+      "lower": -2120905105935758844,
+      "upper": -2100460578405643681,
+      "must": 16325838967773792772,
+      "may": 16346283495303907935,
+      "zero": false,
+      "word": null
+    }
+  }
+}

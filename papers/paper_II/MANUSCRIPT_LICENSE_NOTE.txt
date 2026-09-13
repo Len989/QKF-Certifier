@@ -1,0 +1,6 @@
+The author has not selected a manuscript license in this preparation step.
+CC BY 4.0 is recommended for the manuscript and prose materials; the author
+should select the intended license in the publication record.
+This note does not itself grant a manuscript license on the author's behalf.
+Python code in prototype/ and verification/ is covered by LICENSE_CODE_MIT.txt,
+in accordance with the author's earlier choice of MIT for project code.

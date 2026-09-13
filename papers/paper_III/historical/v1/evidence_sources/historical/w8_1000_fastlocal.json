@@ -1,0 +1,1 @@
+{"n":6561,"theta_blocks":6561,"known_count":364572,"stats":{"endpoints":831389,"compat_records":32336252,"compat_groups":4133552,"compat_unions":27629,"local_closures":121422,"local_merges":678332,"rounds":10,"time_ms":{"mirror":3638.75,"local":1506.37,"conflict":36.2087,"compat":3550.72}}}

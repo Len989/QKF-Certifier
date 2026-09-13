@@ -1,0 +1,199 @@
+running egg_info
+writing src/qkf_certifier.egg-info/PKG-INFO
+writing dependency_links to src/qkf_certifier.egg-info/dependency_links.txt
+writing entry points to src/qkf_certifier.egg-info/entry_points.txt
+writing requirements to src/qkf_certifier.egg-info/requires.txt
+writing top-level names to src/qkf_certifier.egg-info/top_level.txt
+reading manifest file 'src/qkf_certifier.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+adding license file 'third_party/xdsl-smt-LICENSE'
+writing manifest file 'src/qkf_certifier.egg-info/SOURCES.txt'
+running sdist
+running egg_info
+writing src/qkf_certifier.egg-info/PKG-INFO
+writing dependency_links to src/qkf_certifier.egg-info/dependency_links.txt
+writing entry points to src/qkf_certifier.egg-info/entry_points.txt
+writing requirements to src/qkf_certifier.egg-info/requires.txt
+writing top-level names to src/qkf_certifier.egg-info/top_level.txt
+reading manifest file 'src/qkf_certifier.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+adding license file 'third_party/xdsl-smt-LICENSE'
+writing manifest file 'src/qkf_certifier.egg-info/SOURCES.txt'
+running check
+creating qkf_certifier-0.2.0a1
+creating qkf_certifier-0.2.0a1/benchmarks
+creating qkf_certifier-0.2.0a1/docs
+creating qkf_certifier-0.2.0a1/examples
+creating qkf_certifier-0.2.0a1/examples/ntmy
+creating qkf_certifier-0.2.0a1/src/qkf_certifier
+creating qkf_certifier-0.2.0a1/src/qkf_certifier.egg-info
+creating qkf_certifier-0.2.0a1/tests
+creating qkf_certifier-0.2.0a1/third_party
+creating qkf_certifier-0.2.0a1/third_party/graal
+copying files to qkf_certifier-0.2.0a1...
+copying CHANGELOG.md -> qkf_certifier-0.2.0a1
+copying CITATION.cff -> qkf_certifier-0.2.0a1
+copying CONTRIBUTING.md -> qkf_certifier-0.2.0a1
+copying LICENSE -> qkf_certifier-0.2.0a1
+copying MANIFEST.in -> qkf_certifier-0.2.0a1
+copying NOTICE.md -> qkf_certifier-0.2.0a1
+copying README.md -> qkf_certifier-0.2.0a1
+copying README_RU.md -> qkf_certifier-0.2.0a1
+copying pyproject.toml -> qkf_certifier-0.2.0a1
+copying benchmarks/README.md -> qkf_certifier-0.2.0a1/benchmarks
+copying benchmarks/package_timings.json -> qkf_certifier-0.2.0a1/benchmarks
+copying benchmarks/run.py -> qkf_certifier-0.2.0a1/benchmarks
+copying docs/CERTIFICATES.md -> qkf_certifier-0.2.0a1/docs
+copying docs/CLAIMS.md -> qkf_certifier-0.2.0a1/docs
+copying docs/INTEGRATION.md -> qkf_certifier-0.2.0a1/docs
+copying docs/LOCAL_VALIDATION.md -> qkf_certifier-0.2.0a1/docs
+copying docs/RELEASE_VALIDATION_0.2.0a1.md -> qkf_certifier-0.2.0a1/docs
+copying docs/RELEASING.md -> qkf_certifier-0.2.0a1/docs
+copying docs/SEMANTICS.md -> qkf_certifier-0.2.0a1/docs
+copying docs/certificate.schema.json -> qkf_certifier-0.2.0a1/docs
+copying docs/paper-version.json -> qkf_certifier-0.2.0a1/docs
+copying examples/README.md -> qkf_certifier-0.2.0a1/examples
+copying examples/batch.json -> qkf_certifier-0.2.0a1/examples
+copying examples/fallback_add.mlir -> qkf_certifier-0.2.0a1/examples
+copying examples/ntmy/SOURCES.json -> qkf_certifier-0.2.0a1/examples/ntmy
+copying examples/ntmy/and.mlir -> qkf_certifier-0.2.0a1/examples/ntmy
+copying examples/ntmy/meet.mlir -> qkf_certifier-0.2.0a1/examples/ntmy
+copying examples/ntmy/or.mlir -> qkf_certifier-0.2.0a1/examples/ntmy
+copying examples/ntmy/top.mlir -> qkf_certifier-0.2.0a1/examples/ntmy
+copying examples/ntmy/xor.mlir -> qkf_certifier-0.2.0a1/examples/ntmy
+copying src/qkf_certifier/__init__.py -> qkf_certifier-0.2.0a1/src/qkf_certifier
+copying src/qkf_certifier/__main__.py -> qkf_certifier-0.2.0a1/src/qkf_certifier
+copying src/qkf_certifier/api.py -> qkf_certifier-0.2.0a1/src/qkf_certifier
+copying src/qkf_certifier/certificate.py -> qkf_certifier-0.2.0a1/src/qkf_certifier
+copying src/qkf_certifier/cli.py -> qkf_certifier-0.2.0a1/src/qkf_certifier
+copying src/qkf_certifier/errors.py -> qkf_certifier-0.2.0a1/src/qkf_certifier
+copying src/qkf_certifier/frontend.py -> qkf_certifier-0.2.0a1/src/qkf_certifier
+copying src/qkf_certifier/kernel.py -> qkf_certifier-0.2.0a1/src/qkf_certifier
+copying src/qkf_certifier/limits.py -> qkf_certifier-0.2.0a1/src/qkf_certifier
+copying src/qkf_certifier/producer.py -> qkf_certifier-0.2.0a1/src/qkf_certifier
+copying src/qkf_certifier.egg-info/PKG-INFO -> qkf_certifier-0.2.0a1/src/qkf_certifier.egg-info
+copying src/qkf_certifier.egg-info/SOURCES.txt -> qkf_certifier-0.2.0a1/src/qkf_certifier.egg-info
+copying src/qkf_certifier.egg-info/dependency_links.txt -> qkf_certifier-0.2.0a1/src/qkf_certifier.egg-info
+copying src/qkf_certifier.egg-info/entry_points.txt -> qkf_certifier-0.2.0a1/src/qkf_certifier.egg-info
+copying src/qkf_certifier.egg-info/requires.txt -> qkf_certifier-0.2.0a1/src/qkf_certifier.egg-info
+copying src/qkf_certifier.egg-info/top_level.txt -> qkf_certifier-0.2.0a1/src/qkf_certifier.egg-info
+copying tests/conftest.py -> qkf_certifier-0.2.0a1/tests
+copying tests/mutation_helpers.py -> qkf_certifier-0.2.0a1/tests
+copying tests/test_cli.py -> qkf_certifier-0.2.0a1/tests
+copying tests/test_core.py -> qkf_certifier-0.2.0a1/tests
+copying tests/test_frontend.py -> qkf_certifier-0.2.0a1/tests
+copying tests/test_mutations.py -> qkf_certifier-0.2.0a1/tests
+copying tests/test_properties.py -> qkf_certifier-0.2.0a1/tests
+copying tests/word_oracle.py -> qkf_certifier-0.2.0a1/tests
+copying third_party/xdsl-smt-LICENSE -> qkf_certifier-0.2.0a1/third_party
+copying third_party/graal/LICENSE -> qkf_certifier-0.2.0a1/third_party/graal
+copying third_party/graal/NOTICE.md -> qkf_certifier-0.2.0a1/third_party/graal
+Writing qkf_certifier-0.2.0a1/setup.cfg
+Creating tar archive
+removing 'qkf_certifier-0.2.0a1' (and everything under it)
+running egg_info
+writing src/qkf_certifier.egg-info/PKG-INFO
+writing dependency_links to src/qkf_certifier.egg-info/dependency_links.txt
+writing entry points to src/qkf_certifier.egg-info/entry_points.txt
+writing requirements to src/qkf_certifier.egg-info/requires.txt
+writing top-level names to src/qkf_certifier.egg-info/top_level.txt
+reading manifest file 'src/qkf_certifier.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+adding license file 'third_party/xdsl-smt-LICENSE'
+writing manifest file 'src/qkf_certifier.egg-info/SOURCES.txt'
+running bdist_wheel
+running build
+running build_py
+creating build/lib/qkf_certifier
+copying src/qkf_certifier/producer.py -> build/lib/qkf_certifier
+copying src/qkf_certifier/__init__.py -> build/lib/qkf_certifier
+copying src/qkf_certifier/kernel.py -> build/lib/qkf_certifier
+copying src/qkf_certifier/certificate.py -> build/lib/qkf_certifier
+copying src/qkf_certifier/frontend.py -> build/lib/qkf_certifier
+copying src/qkf_certifier/errors.py -> build/lib/qkf_certifier
+copying src/qkf_certifier/api.py -> build/lib/qkf_certifier
+copying src/qkf_certifier/__main__.py -> build/lib/qkf_certifier
+copying src/qkf_certifier/cli.py -> build/lib/qkf_certifier
+copying src/qkf_certifier/limits.py -> build/lib/qkf_certifier
+running egg_info
+writing src/qkf_certifier.egg-info/PKG-INFO
+writing dependency_links to src/qkf_certifier.egg-info/dependency_links.txt
+writing entry points to src/qkf_certifier.egg-info/entry_points.txt
+writing requirements to src/qkf_certifier.egg-info/requires.txt
+writing top-level names to src/qkf_certifier.egg-info/top_level.txt
+reading manifest file 'src/qkf_certifier.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+adding license file 'third_party/xdsl-smt-LICENSE'
+writing manifest file 'src/qkf_certifier.egg-info/SOURCES.txt'
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/qkf_certifier
+copying build/lib/qkf_certifier/producer.py -> build/bdist.linux-x86_64/wheel/./qkf_certifier
+copying build/lib/qkf_certifier/__init__.py -> build/bdist.linux-x86_64/wheel/./qkf_certifier
+copying build/lib/qkf_certifier/kernel.py -> build/bdist.linux-x86_64/wheel/./qkf_certifier
+copying build/lib/qkf_certifier/certificate.py -> build/bdist.linux-x86_64/wheel/./qkf_certifier
+copying build/lib/qkf_certifier/frontend.py -> build/bdist.linux-x86_64/wheel/./qkf_certifier
+copying build/lib/qkf_certifier/errors.py -> build/bdist.linux-x86_64/wheel/./qkf_certifier
+copying build/lib/qkf_certifier/api.py -> build/bdist.linux-x86_64/wheel/./qkf_certifier
+copying build/lib/qkf_certifier/__main__.py -> build/bdist.linux-x86_64/wheel/./qkf_certifier
+copying build/lib/qkf_certifier/cli.py -> build/bdist.linux-x86_64/wheel/./qkf_certifier
+copying build/lib/qkf_certifier/limits.py -> build/bdist.linux-x86_64/wheel/./qkf_certifier
+running install_egg_info
+Copying src/qkf_certifier.egg-info to build/bdist.linux-x86_64/wheel/./qkf_certifier-0.2.0a1-py3.12.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/qkf_certifier-0.2.0a1.dist-info/WHEEL
+creating '/workspace/scratch/6c319201c5cc/qkf_release_work_2026-09-13/repository/dist/.tmp-ibjjuhb0/qkf_certifier-0.2.0a1-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'qkf_certifier/__init__.py'
+adding 'qkf_certifier/__main__.py'
+adding 'qkf_certifier/api.py'
+adding 'qkf_certifier/certificate.py'
+adding 'qkf_certifier/cli.py'
+adding 'qkf_certifier/errors.py'
+adding 'qkf_certifier/frontend.py'
+adding 'qkf_certifier/kernel.py'
+adding 'qkf_certifier/limits.py'
+adding 'qkf_certifier/producer.py'
+adding 'qkf_certifier-0.2.0a1.dist-info/licenses/LICENSE'
+adding 'qkf_certifier-0.2.0a1.dist-info/licenses/third_party/xdsl-smt-LICENSE'
+adding 'qkf_certifier-0.2.0a1.dist-info/METADATA'
+adding 'qkf_certifier-0.2.0a1.dist-info/WHEEL'
+adding 'qkf_certifier-0.2.0a1.dist-info/entry_points.txt'
+adding 'qkf_certifier-0.2.0a1.dist-info/top_level.txt'
+adding 'qkf_certifier-0.2.0a1.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+Successfully built qkf_certifier-0.2.0a1.tar.gz and qkf_certifier-0.2.0a1-py3-none-any.whl
+* Getting build dependencies for sdist...
+no previously-included directories found matching 'research'
+no previously-included directories found matching 'papers'
+no previously-included directories found matching 'reproduction'
+no previously-included directories found matching 'tools'
+no previously-included directories found matching 'releases'
+no previously-included directories found matching 'validation'
+* Building sdist...
+no previously-included directories found matching 'research'
+no previously-included directories found matching 'papers'
+no previously-included directories found matching 'reproduction'
+no previously-included directories found matching 'tools'
+no previously-included directories found matching 'releases'
+no previously-included directories found matching 'validation'
+* Building wheel from sdist
+* Getting build dependencies for wheel...
+no previously-included directories found matching 'research'
+no previously-included directories found matching 'papers'
+no previously-included directories found matching 'reproduction'
+no previously-included directories found matching 'tools'
+no previously-included directories found matching 'releases'
+no previously-included directories found matching 'validation'
+* Building wheel...
+no previously-included directories found matching 'research'
+no previously-included directories found matching 'papers'
+no previously-included directories found matching 'reproduction'
+no previously-included directories found matching 'tools'
+no previously-included directories found matching 'releases'
+no previously-included directories found matching 'validation'

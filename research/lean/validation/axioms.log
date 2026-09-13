@@ -1,0 +1,8 @@
+'QKF.forced_sound' does not depend on any axioms
+'QKF.atoms_force_row' does not depend on any axioms
+'QKF.source_phase_factor' depends on axioms: [propext]
+'QKF.forced_rows_correct' depends on axioms: [propext]
+'QKF.certificate_accepted' depends on axioms: [propext]
+'QKF.observation_all_lengths' depends on axioms: [propext]
+'QKF.source_word_factor' depends on axioms: [propext]
+'QKF.mask_successor_all_widths' depends on axioms: [propext, Quot.sound]

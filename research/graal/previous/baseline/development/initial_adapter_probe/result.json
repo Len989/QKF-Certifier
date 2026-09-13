@@ -1,0 +1,7 @@
+{
+  "phase": "development before main freeze",
+  "and_result": "complete source observation replayed; 5 leaves, 4 hull calls",
+  "or_result": "adapter error: unsupported Stamp method mustBeSet",
+  "correction": "Support source-bound zero-argument Stamp getters in the generic interpreter, alongside equivalent fields.",
+  "source_kernel_sha256": "1ef152da5187019197fcce90ecab39b7b84c3a34b10bc0909ea2396fe8af7bde"
+}

@@ -1,0 +1,40 @@
+{
+  "manuscript_inputs": {
+    "QKF_PAPER_I_2026-09-11.pdf": "0972214280054fbb7430607adbcc27d55075efb9ce59a99be2e989e1817fc814",
+    "QKF_PAPER_II_2026-09-12.pdf": "249f04aaff1dab4fdb8ab41288f6fa92292b29e7f1e3bdb3113042ffe26cc0a6"
+  },
+  "historical_files": {
+    "component_pair_differential.json": "8e5da16d488bf3d2ae5fae6416a9e2f3799ef19bb0fdd129e7e1bc43e2a8006d",
+    "corpus_summary.json": "03769810dde779881e5e6bf10281f5d7a6ce00aa8d7bb41d773f5d2f85b2ea4f",
+    "fastlocal_differential.json": "c6a5cdf0b5b726f53252db05c5b41e0504fda9eb5782c1690f1891c23817e63e",
+    "kb_polyqkf_component_fastlocal.cpp": "e4b027a3470a173658ebf79eddaffef2480571af4bfd659cf0374f8fafbacecb",
+    "w8_1000_fastlocal.json": "1b4aa59e37ca5075452cc160abd60a7dbe45e5dba749aef37c07a2a51eed4351",
+    "w8_1000_fastlocal.time": "91555740ca84d16ce736362b82b7e2eaaf27d3750d0edf1748aea1bf97648937"
+  },
+  "reference_oracle_origin": "papers_contract_2026-09-11/evidence_sources/relation_matrix_exact.py",
+  "reference_oracle_changes": [
+    "Require nonempty finite carrier, positive native arities, complete in-range operation tables.",
+    "Default saturation has no arbitrary pass limit and returns only at a common fixed point. Optional limit raises RuntimeError on exhaustion."
+  ],
+  "historical_status": "Preserved prior records; not rerun for this manuscript. Historical C++ pass limit remains and is disclosed.",
+  "fresh_evidence": [
+    "verification/release_pytest.log",
+    "verification/core_results.json",
+    "verification/release_results.json"
+  ],
+  "external_primary_sources_checked": [
+    "https://arxiv.org/html/2512.06442",
+    "https://doi.org/10.5281/zenodo.17371668",
+    "https://llvm.org/doxygen/structllvm_1_1KnownBits.html",
+    "https://arxiv.org/abs/2105.05398",
+    "https://link.springer.com/article/10.1007/s00012-026-00942-x",
+    "https://cvc4.github.io/papers/cade2019-bvproof",
+    "https://web.ist.utl.pt/nuno.lopes/pubs.php?id=alive2-pldi21"
+  ],
+  "access_date": "2026-09-12",
+  "external_workflow_sources_checked": [
+    "https://help.zenodo.org/docs/deposit/manage-versions/",
+    "https://help.zenodo.org/docs/deposit/create-new-upload/",
+    "https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md"
+  ]
+}

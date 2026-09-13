@@ -1,0 +1,166 @@
+\section{The exact carrier quotient for an arbitrary incomplete table}\label{sec:mainquotient}
+
+\subsection{Row-stable congruences}
+
+For $\theta\in\Con(A)$ let $Q=A/\theta$ and project every supplied row occurrence to $Q$.  For each named $b$, form the raw row pushout \eqref{eq:rawpo} over $Q$.
+
+\begin{definition}[Row stability]
+A congruence $\theta\in\Con(A)$ is \emph{row-stable} if, for every named $b\in B$, the distinguished carrier leg of the corresponding raw row pushout over $A/\theta$ is injective.  Equivalently, every row satisfies the two conditions of Theorem~\ref{thm:raw}.
+\end{definition}
+
+\begin{theorem}[Least row-stable carrier quotient]\label{thm:leaststable}
+For the pure row fragment,
+\begin{equation}\label{eq:leaststable}
+\boxed{
+\theta_E^A
+=
+\min\{\theta\in\Con(A):\theta\text{ is row-stable}\}.
+}
+\end{equation}
+In particular, the full carrier congruence forced by an arbitrary incomplete action table is determined entirely inside the finite congruence lattice of $A$.
+\end{theorem}
+
+\begin{proof}
+Put $\theta=\theta_E^A$ and $Q=Q_E$.  The named carrier quotient $Q$ embeds in the initial $\A$-sort.  For every row, Proposition~\ref{prop:rowhom} and the supplied cells realize the corresponding gluing inside that initial algebra while preserving $Q$.  By the universal property of the raw pushout, its carrier leg must therefore be injective.  Thus $\theta_E^A$ is row-stable.
+
+Conversely let $\theta$ be row-stable and put $Q=A/\theta$.  For each $b$, Theorem~\ref{thm:raw} gives a homomorphism $h_b:S_b\to Q$ whose generated kernel $\kappa_b$ satisfies the extension condition.  Factor the row copy by $\kappa_b$ and strongly amalgamate $Q/\kappa_b$ with the distinguished $Q$ along the common copy of $S_b/\ker h_b$.  Do this successively for all finitely many rows, always over the same embedded distinguished copy of $Q$.  Lemma~\ref{lem:sap} preserves that central copy at every step.
+
+Use the resulting amalgam as the carrier sort of a model.  Interpret the operator sort exactly as $B$.  For a named $b$ and a central element $[a]\in Q$, define $\alpha(b,[a])$ to be the corresponding point of the $b$-row image; define all remaining action values arbitrarily.  Native operations are those of the amalgam.  Carrier compatibility holds on the named central inputs because each row image is a homomorphic quotient of $Q$, and the supplied cells hold by construction.  Hence this is a model of $E$ whose kernel on the named carrier is exactly $\theta$.
+
+Every provable carrier equality must hold in this model, so $\theta_E^A\subseteq\theta$.  Since $\theta_E^A$ itself is row-stable, it is the least such congruence.
+\end{proof}
+
+Theorem~\ref{thm:leaststable} is the structural center of the paper.  It separates two effects that are conflated by direct table completion.  The quotient $\theta_E^A$ is forced by unrestricted equational semantics; only after this quotient has been taken does each row possess a canonical forced partial homomorphism, whose exact domain is given by Theorem~\ref{thm:kernelsat}.
+
+
+\subsection{All rows inside the full initial algebra}
+
+The preceding proof also supplies the separation model needed to transfer
+local pushout geometry to the full presentation. This transfer is important:
+a local upper bound on forcing would not by itself rule out extra
+identifications caused by other rows.
+
+\begin{theorem}[Exact global row geometry]\label{thm:globalrows}
+Let $Q=Q_E$ and let $\iota:Q\hookrightarrow\mathbb I_E^{\A}$ be the named
+carrier embedding. For each nonempty row, form $S_b,h_b,K_b,\kappa_b$ over
+$Q$. Then
+\begin{align}
+\ker\bar j_b&=\kappa_b,\label{eq:globalrowkernel}\\
+\bar j_b(Q)\cap\iota(Q)&=\iota(h_b(S_b)),\label{eq:globalrowintersection}\\
+D_b&=S_b^{\kappa_b}.\label{eq:globaldomain}
+\end{align}
+If $x\equiv_{\kappa_b}s$ with $s\in S_b$, its forced value is $h_b(s)$.
+The external parts of distinct named rows are disjoint in the initial
+algebra. For an empty row, the row kernel is diagonal, its image is disjoint
+from the carrier and all other row images, and $D_b=\varnothing$.
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:leaststable} makes every row protected over $Q$.
+The supplied equations imply $\bar j_b(s)=\iota(h_b(s))$ on $S_b$.
+Consequently $K_b\subseteq\ker\bar j_b$, and the row-homomorphism principle
+implies $\kappa_b\subseteq\ker\bar j_b$. This proves all equalities claimed
+by the theorem, including the values on $S_b^{\kappa_b}$.
+
+For exactness, construct a model as in the second half of the proof of
+Theorem~\ref{thm:leaststable}. At each step attach $Q/\kappa_b$ by a strong
+amalgam along the embedded $S_b/K_b$ in the central $Q$. The new row meets
+the entire previously constructed algebra only along that subalgebra of
+$Q$. Thus its kernel is exactly $\kappa_b$, its carrier intersection is
+exactly $h_b(S_b)$, and it adds no intersection between external row parts.
+Attach an empty row by a disjoint coproduct. Interpreting the action on
+central inputs by these row maps gives a model of all of $E$.
+Every pair excluded by the theorem is separated in this one model, so it
+cannot become equal in the initial algebra.
+\end{proof}
+
+\subsection{A finite feedback computation}
+
+The theorem also gives a canonical closure procedure.  For $\theta\in\Con(A)$ let $Q_\theta=A/\theta$, form every raw row pushout over $Q_\theta$, and write
+\[
+\chi_{b,\theta}=\ker(m_{b,\theta})\in\Con(Q_\theta).
+\]
+Let $\pi_\theta:A\twoheadrightarrow Q_\theta$ and define
+\begin{equation}\label{eq:Phi}
+\Phi(\theta)
+=
+\bigvee_{b\in B}\pi_\theta^{-1}(\chi_{b,\theta}).
+\end{equation}
+For an unspecified row, $\chi_{b,\theta}=\Delta_{Q_\theta}$.
+
+\begin{proposition}[Pushout feedback operator]\label{prop:Phi}
+The operator $\Phi:\Con(A)\to\Con(A)$ is inflationary and monotone.  Its fixed points are exactly the row-stable congruences.  Consequently
+\begin{equation}\label{eq:lfp}
+\boxed{\theta_E^A=\operatorname{lfp}(\Phi).}
+\end{equation}
+Starting with $\theta^{[0]}=\Delta_A$ and $\theta^{[r+1]}=\Phi(\theta^{[r]})$, at most $|A|-1$ strict steps occur.
+\end{proposition}
+
+\begin{proof}
+Each pullback $\pi_\theta^{-1}(\chi_{b,\theta})$ contains $\theta$, giving inflationarity.  If $\theta\subseteq\varphi$, the quotient map $A/\theta\twoheadrightarrow A/\varphi$ induces a morphism between the two raw row spans and hence between their pushouts.  Equality created in the carrier leg at level $\theta$ therefore remains equality after passage to $\varphi$, which gives monotonicity after pulling back to $A$.
+
+The join in \eqref{eq:Phi} equals $\theta$ precisely when every $\chi_{b,\theta}$ is diagonal, i.e. precisely when every raw row pushout protects the carrier.  The fixed-point statement now follows from Theorem~\ref{thm:leaststable}.  In a strict step the number of congruence classes decreases by at least one, so a finite $A$ allows at most $|A|-1$ strict steps.
+\end{proof}
+
+\begin{proposition}[Sharpness of the feedback bound]\label{prop:sharpfeedback}
+For every $n\ge2$ there is an $n$-element unary carrier and an incomplete action presentation for which the iteration of Proposition~\ref{prop:Phi} has exactly $n-1$ strict steps.
+\end{proposition}
+
+\begin{proof}
+Let $A_n=\{0,1,\ldots,n-1\}$ with one unary operation $f(x)=0$ for all $x$.  Take distinct operators $b_1,\ldots,b_{n-1}$ and supply exactly
+\[
+\alpha(b_i,i-1)=i
+\qquad(1\le i<n).
+\]
+At the first stage the $b_1$ row asks for $h(0)=1$.  A protected homomorphic row would satisfy
+\[
+1=h(0)=h(f(0))=f(h(0))=f(1)=0,
+\]
+so $0\equiv1$ is forced.  After quotienting by this equality, the source of the $b_2$ row is the zero class and the same argument forces $[0]=[2]$.  To check that no other collapse occurs in the same round, suppose the
+current blocks are $\{0,\ldots,k\}$ and the remaining singletons. Rows with
+$i\le k$ already map the zero class to itself. Row $i=k+1$ forces exactly
+its target into the zero class. For $i>k+1$, the supplied input generates
+the two-element subalgebra consisting of the zero class and $[i-1]$;
+the prescribed extension sends these to the zero class and $[i]$.
+It is an injective homomorphism and hence protected by
+Theorem~\ref{thm:raw}. Because the update is simultaneous, these later rows
+contribute no additional equality in that round. Induction therefore gives
+exactly the block $\{0,\ldots,r\}$ after $r$ strict rounds, and total
+collapse first occurs after $n-1$ rounds.
+\end{proof}
+
+\subsection{Two endpoint corollaries}
+
+The earlier special cases now become immediate consequences.
+
+\begin{corollary}[Annihilator row]\label{cor:ann}
+Assume designated elements $0_A,0_B$ are present and that $\Gamma$ consists only of the complete row
+\[
+\alpha(0_B,a)=0_A
+\qquad(a\in A).
+\]
+All other rows are unspecified. Then the exact carrier congruence is
+\begin{equation}\label{eq:thetaann}
+\theta_{\rm Ann}
+=
+\Cg_A\{(0,f^A(0,\ldots,0)):f\in\Sigma_A\}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+On a quotient $Q$, the annihilator row is the constant-zero map $Q\to Q$.  Since the row is complete, stability is exactly the assertion that this map is an endomorphism, i.e. that $[0]$ is closed under every positive-arity carrier operation.  The least quotient with that property is \eqref{eq:thetaann}.
+\end{proof}
+
+\begin{corollary}[Complete action table]\label{cor:complete}
+Suppose one value
+\[
+\alpha(b,a)=\tau_b(a)
+\]
+is supplied for every $(b,a)\in B\times A$.  Then $\theta_E^A$ is the least native carrier congruence $\theta$ for which every $\tau_b$ descends to an endomorphism of $A/\theta$.  Equivalently, it is generated, in the expanded algebra $(A,\Sigma_A,\{\tau_b\}_{b\in B})$, by the compatibility defects
+\[
+\bigl(\tau_b(f(\bar a)),\ f(\tau_b(a_1),\ldots,\tau_b(a_k))\bigr).
+\]
+\end{corollary}
+
+Thus the annihilator and complete-table formulas are not isolated regimes.  They are instances of the case $S_b=Q$ of the same arbitrary-partial-row theorem.
+

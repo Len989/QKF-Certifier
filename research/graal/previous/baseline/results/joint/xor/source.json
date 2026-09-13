@@ -1,0 +1,10 @@
+{
+  "mode": "joint",
+  "operation": "xor",
+  "phase": "source",
+  "status": "adapter_unsupported",
+  "error": "ValueError('unsupported binary source action: &&')",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/step_run.py\", line 35, in worker\n    certificate=produce_source(source,args.operation)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_producer.py\", line 11, in produce_source\n    observation=observe_source(source,operation,handler)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 194, in observe_source\n    terminal=interpreter.execute(ast,[State(dict(zip(names,[Stamp(a),Stamp(b)])))])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 164, in execute\n    for child in node[1]:states=self.execute(child,states)\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 176, in execute\n    condition=self.evaluate(node[1],state)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 134, in evaluate\n    raise ValueError('unsupported binary source action: '+op)\nValueError: unsupported binary source action: &&\n",
+  "seconds": 0.040020176995312795,
+  "peak_rss_kib": 16244
+}

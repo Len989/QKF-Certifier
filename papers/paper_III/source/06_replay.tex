@@ -1,0 +1,78 @@
+\section{From source text to a checked all-width verdict}\label{sec:replay}
+
+\subsection{The source-semantics contract}
+The source bundle maps caller-chosen labels to UTF-8 program texts. The entry function takes two KnownBits pairs. The supported grammar is a restricted, line-oriented subset of transfer MLIR: single-block typed SSA functions, pure operations, acyclic calls with explicitly supplied definitions, and an actual return instruction. It is not the full MLIR language. Unknown syntax, unresolved calls, recursion, type inconsistencies, and exhausted resource budgets do not produce a successful target verdict.
+
+At width $w\ge1$, word arithmetic is modulo $2^w$. Boolean expressions have separate two-valued semantics. Counts return integers in $[0,w]$, encoded as words; $w<2^w$ ensures this is possible. Shifts and division use the total semantics specified in Appendix~\ref{app:rules}. In particular, the source operation \texttt{transfer.neg} denotes bitwise NOT in this contract. No poison or undefined behavior is introduced. Since every operation is pure and total, discarding an unused computation preserves the returned value.
+
+\begin{lemma}[Expression construction]\label{lem:frontend}
+For this grammar and semantics, symbolic evaluation of SSA instructions, expansion of acyclic calls, and projection of the actual return produce an expression $e_0$ with the same value as the source entry at every positive width on every valid input.
+\end{lemma}
+\begin{proof}
+Maintain an environment mapping each defined SSA name to an expression with its current semantic value. Input projections initialize the four mask variables. Pair construction and projection preserve the pair semantics. Each primitive instruction adds its specified operation to already-correct operand expressions. A call substitutes the actual argument expressions for the callee's formal arguments; induction on the acyclic call graph justifies its expansion. Induction on instruction order maintains the environment invariant. Selecting the expression for the actual return gives the result. Totality justifies ignoring expressions that do not contribute to that return.
+\end{proof}
+
+The frontend module performs this translation through its \texttt{parse\_bundle} and \texttt{expression} functions. The lemma describes the translation algorithm; correspondence of the Python parser with the documented text grammar is part of the implementation trust described below.
+
+\subsection{Local rules and semantic guards}
+The release has 29 rule identifiers. Most implement direct constant, idempotence, cancellation, count, comparison, and selection laws. Two guards reason about support: \texttt{disjoint} establishes that two operands have no common one bits, and \texttt{subset} establishes inclusion of one operand's support in another's. On coordinatewise expressions they exhaust the nine valid input rows; structural cases use AND restriction and OR inclusion. The \texttt{lowbit} guard proves a constant low bit using bitwise laws and parity of modular addition/subtraction.
+
+\begin{lemma}[Sound guards]\label{lem:guards}
+If the release's support guards return true, their respective disjointness or inclusion assertions hold at every positive width on every valid input. If \texttt{lowbit} returns $c\in\{0,1\}$, the operand has low bit $c$ at every positive width.
+\end{lemma}
+\begin{proof}
+For coordinatewise guards, Lemma~\ref{lem:coordinate} lifts the exhaustive one-bit checks. The structural disjointness cases replace an AND-expression by an operand with a superset of its support, so established disjointness is preserved. The subset cases use reflexivity, empty support, full support, inclusion into either branch of OR, and inclusion from either operand of AND.
+
+For the low bit, zero, all-ones, and integer literals have their stated parity. A shift left by the word constant one clears that bit, including at $w=1$. NOT flips it, AND/OR use their Boolean laws, and XOR, modular addition, and modular subtraction have low bit equal to parity XOR. Each recursive case is therefore sound.
+\end{proof}
+
+For example, if $x\mathbin{\&}y=0$, addition has no carries and $x+y=x\mathbin{|}y$ at every width. If $\operatorname{supp}(x)\subseteq\operatorname{supp}(y)$, setting the leading $\operatorname{countl\_one}(x)$ bits of $y$ changes nothing. These are precisely the guarded rules \texttt{disjoint-add} and \texttt{set-leading-included}. Appendix~\ref{app:rules} gives the complete rule catalogue and proof arguments for the remaining families.
+
+\begin{proposition}[Local rewrite preservation]\label{prop:rules}
+Every applicable rewrite in the mathematical rule system listed in Appendix~\ref{app:rules} preserves value at every positive width on valid KnownBits inputs.
+\end{proposition}
+\begin{proof}
+The guarded rules use Lemma~\ref{lem:guards}. The remaining rules follow from the stated modular, Boolean, order, count, and total division/shift semantics, as checked by the cases in the appendix. In particular, the rules involving zero remainders remain valid at divisor zero under this contract. Replacing an equal-valued subexpression preserves every enclosing operation by congruence.
+\end{proof}
+
+\subsection{Termination without a normal-form optimality claim}
+For an expression tree $e$, let $N(e)$ count operation and leaf nodes, with numeric literal payloads treated as part of a leaf, and let $A(e)$ count occurrences of word addition. Shared occurrences are counted as occurrences in the expanded tree. Put
+\[
+\mu(e)=N(e)+A(e).
+\]
+
+\begin{proposition}[A decreasing measure]\label{prop:termination}
+Every rewrite step of the release decreases $\mu$ strictly. Thus any rewrite sequence has at most $\mu(e_0)-\mu(e_N)$ steps. In particular the unbudgeted normalization strategy terminates.
+\end{proposition}
+\begin{proof}
+The rule \texttt{disjoint-add} changes an addition node to an OR node without changing its children; it preserves $N$ and decreases $A$ by one. Every other rule replaces a term by a proper subterm or a single constant, hence strictly decreases $N$ and introduces no addition. In an enclosing context the change in $\mu$ is unchanged. The nonnegative integer measure proves termination and the bound.
+\end{proof}
+
+This statement does not claim confluence, a unique syntactic normal form, minimum proof length, or minimum depth. The producer uses a fixed rule order after recursively processing children. Its finite proof-step budget can stop a terminating computation early; the API then returns \texttt{fallback\_required}. The extensional signature of Section~\ref{sec:knownbits}, when applicable, provides canonical semantic information independently of syntactic choices.
+
+\subsection{Replay and the composition theorem}
+A certificate records the schema identifier, source-label fingerprints, entry, semantic contract, initial-expression fingerprint, a sequence of rule/path instructions, and a claimed final expression. For a target certificate it also records the nine rows and target name. The caller supplies the source bundle and target again. The checker reparses that source, checks the bindings, replays every instruction, compares the obtained expression with the claimed one, and recomputes the target rows. A certificate cannot introduce an unproved assumption or substitute its own target for the caller's target.
+
+\begin{theorem}[Source-to-verdict composition, K4]\label{thm:replay}
+Assume the frontend implements the source contract of Lemma~\ref{lem:frontend}, the checker implements the rules of Proposition~\ref{prop:rules}, and replay successfully establishes $e_0\leadsto e_N$. Then the source and $e_N$ return the same value at every positive width on valid inputs. If $e_N$ is an accepted pair and its recomputed table for the external target passes, the source transformer is sound at every positive width. If every table row is optimal, so is the source transformer. A failed row supplies a width-one refutation of the source.
+\end{theorem}
+\begin{proof}
+Induct on the replay instructions. Each instruction selects a valid subtree path and replaces its current subexpression by an instance of a value-preserving rule, establishing equivalence of successive whole expressions. Transitivity and Lemma~\ref{lem:frontend} establish source equivalence with $e_N$. Apply Theorem~\ref{thm:ninerows} to the recomputed rows. Its concrete witness also refutes the source because normalization preserved the returned masks.
+\end{proof}
+
+The producer's search strategy is absent from this implication. The implementation's checker does not run that search, although producer and checker share local-rule code. The trusted implementation comprises parsing, call expansion, schema validation, guards, local rules, replay, and the finite table evaluator. The mathematical proofs and finite regressions have not been replaced by a proof-assistant verification of that Python code. Nor does this theorem certify a separate compiler lowering of the source language.
+
+\subsection{Result semantics}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Result & Meaning under the declared contract\\\midrule
+\texttt{certified} & Target soundness at all positive widths; \texttt{optimal} reports the separate precision check.\\
+\texttt{unsound} & Replayed normalization and a concrete width-one target counterexample.\\
+\texttt{normalized} & Source-to-expression equality only; no target soundness claim.\\
+\texttt{fallback\_required} & Unsupported source/target/residual or exhausted budget; no complete target verdict.\\
+\texttt{invalid\_certificate} & A supplied certificate fails validation, binding, or replay.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+Input and internal errors are separate failure outcomes. A normalization-only certificate has a null target and no rows; a target check does not accept it as a soundness certificate. Consumers must accept a transformer only from a successful target verification or check with status \certified.

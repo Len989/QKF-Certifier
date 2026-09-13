@@ -1,0 +1,64 @@
+\section{Semantic operations and the complete rule catalogue}\label{app:rules}
+
+\subsection{Word operations used by the frontend}
+Let $M=2^w-1$. Integer literals are reduced modulo $2^w$, and signed values use two's-complement interpretation. Bitwise NOT is $M\mathbin{\mathrm{XOR}}x$. Addition, subtraction, and multiplication are modular. Unsigned and signed minima/maxima use their respective orders.
+
+For unsigned shift count $c$, logical shifts return zero if $c\ge w$; arithmetic right shift fills with the sign bit, including for $c\ge w$. Clearing or setting $c$ low/high bits affects $\min(c,w)$ positions. Sign-bit operations affect position $w-1$. Leading/trailing zero/one counts are the number of consecutive matching bits from the chosen end, in $[0,w]$.
+
+Unsigned division/remainder by zero return $M$ and the dividend, respectively. Signed division truncates toward zero and is then reduced modulo width; division by zero returns one for a negative dividend and $M$ otherwise. Signed remainder has the dividend's sign and returns the dividend at divisor zero. Comparisons \texttt{cmp0} through \texttt{cmp9} denote, in order, equality, inequality, signed $<$, $\le$, $>$, $\ge$, and unsigned $<$, $\le$, $>$, $\ge$. Boolean connectives operate on Boolean values; selection chooses a word branch by a Boolean condition. Pair construction and projection have their ordinary meanings.
+
+These definitions specify a pure total word language. They are not a claim that an arbitrary LLVM/MLIR backend implements this contract. The exact contract identifier and source grammar are part of the release manifest.
+
+\subsection{All 29 identifiers}
+In the table, $0$ and $\top$ denote zero and all-ones words, $W$ denotes the width word, and $1$ denotes the ordinary integer-one word. An identity with two operand orders is used only when the implementation permits both. Guards are those of Lemma~\ref{lem:guards}.
+
+\small
+\begin{longtable}{@{}p{0.30\textwidth}p{0.65\textwidth}@{}}
+\toprule
+Identifier & Accepted law or condition\\\midrule
+\endfirsthead
+\toprule Identifier & Accepted law or condition\\\midrule
+\endhead
+\bottomrule\endfoot
+\texttt{idempotent} & $x\circ x=x$ for bitwise AND/OR and signed/unsigned min/max.\\
+\texttt{self-cancel} & $x\mathbin{\mathrm{XOR}}x=0$ and $x-x=0$.\\
+\texttt{zero-and} & AND or multiplication with either operand zero gives zero.\\
+\texttt{ones-or} & OR with either operand all-ones gives all-ones.\\
+\texttt{zero-identity} & OR, XOR, and addition with zero on either side; subtraction with zero on the right.\\
+\texttt{ones-and} & AND with all-ones on either side returns the other operand.\\
+\texttt{not-constant} & NOT interchanges zero and all-ones.\\
+\texttt{not-not} & Double bitwise NOT is identity.\\
+\texttt{disjoint-and} & $x\mathbin{\&}y=0$ when the disjoint-support guard succeeds.\\
+\texttt{disjoint-add} & $x+y=x\mathbin{|}y$ under the same guard.\\
+\texttt{clear-width} & Clearing $W$ low or high bits gives zero.\\
+\texttt{count-constant} & A matching bit count on a constant word is $W$; a nonmatching count is zero.\\
+\texttt{clear-zero-count} & Clearing zero low/high bits is identity; clearing bits from zero gives zero.\\
+\texttt{set-zero-count} & Setting zero low/high bits is identity.\\
+\texttt{set-leading-included} & Setting $\operatorname{countl\_one}(x)$ high bits of $y$ is identity when support of $x$ is included in support of $y$.\\
+\texttt{umin-zero} & Unsigned minimum with zero gives zero.\\
+\texttt{umax-ones} & Unsigned maximum with all-ones gives all-ones.\\
+\texttt{remainder-zero} & Unsigned or signed remainder of zero gives zero, including a zero divisor.\\
+\texttt{urem-one} & Unsigned remainder by integer one gives zero.\\
+\texttt{udiv-one} & Unsigned division by integer one is identity.\\
+\texttt{count-bound} & $W<_{u}\operatorname{count}(x)$ is false and $W\ge_u\operatorname{count}(x)$ is true.\\
+\texttt{compare-reflexive} & Reflexive comparison is true for eq, signed/unsigned $\le,\ge$; false for ne and strict comparisons.\\
+\texttt{compare-unsigned-bound} & Strict comparisons beyond unsigned endpoints are false; inclusive comparisons from zero or to all-ones are true. Also $0<_u x$ and $x>_u0$ are true if the low-bit guard proves one.\\
+\texttt{select-constant} & A constant Boolean condition selects its corresponding branch.\\
+\texttt{select-same} & Equal branches remove a selection.\\
+\texttt{bool-constant} & Evaluate two Boolean constants; false absorbs Boolean AND and true absorbs Boolean OR.\\
+\texttt{set-low-one} & Setting one low bit of zero returns integer one.\\
+\texttt{zero-shift} & Shifting zero in any supported direction returns zero.\\
+\texttt{shift-zero-count} & Shifting by zero is identity.\\
+\end{longtable}
+\normalsize
+
+\subsection{Proof arguments by family}
+Bitwise identities follow separately at every bit; modular cancellation and zero multiplication follow in $\mathbb Z/2^w\mathbb Z$. Signed and unsigned min/max are idempotent because each is a minimum or maximum in a total order. No signed-order law is substituted for an unsigned-order law.
+
+Disjoint addition is ordinary addition without carries: at each position at most one operand bit is one, and induction from carry zero keeps carry zero. Reduction modulo $2^w$ then gives OR. In the leading-bit rule, every leading one of $x$ is already a one of $y$ by support inclusion; setting these positions changes no value. These arguments use proved guards rather than sampled word instances.
+
+The clear/set/count rules follow directly from the affected position sets and the definitions of counts. Every count is at most $w$, and the encoded width word is its exact unsigned integer value. The integer-one rules remain valid at width one. That does not make arbitrary uses of integer one coordinatewise.
+
+Unsigned comparisons with zero and $M$ use the extrema of $B_w$. An operand with low bit one is nonzero, hence strictly positive in unsigned order. Reflexive comparisons and Boolean/selection identities follow from their truth tables. Remainder of zero is zero for nonzero divisors and, by the specified total extension, also for zero divisors. Division or unsigned remainder by one has the indicated value. The shift identities also cover oversized counts because the shifted zero's sign is zero.
+
+The rule catalogue specifies local semantic equalities. Checking that the implementation tests the matching syntax and side conditions is part of the code audit and release regressions. An altered rule set requires a renewed correspondence check before applying the old source-to-verdict theorem to a new executable.

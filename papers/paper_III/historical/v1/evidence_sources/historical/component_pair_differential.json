@@ -1,0 +1,25 @@
+{
+  "status": "ok",
+  "comparison": "canonical carrier partition + canonical known mapping",
+  "cases": 3720,
+  "seed": 2609111842,
+  "by_width": {
+    "1": {
+      "cases": 1600,
+      "seconds": 4.77396977799981
+    },
+    "2": {
+      "cases": 1200,
+      "seconds": 3.6887998440006413
+    },
+    "3": {
+      "cases": 700,
+      "seconds": 2.2535864649998985
+    },
+    "4": {
+      "cases": 220,
+      "seconds": 0.7866999870002473
+    }
+  },
+  "seconds": 11.510261694999826
+}

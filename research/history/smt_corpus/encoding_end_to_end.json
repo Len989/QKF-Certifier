@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "byte_identical_queries": 117,
+  "full_process_wall_seconds": 38.823873964000086,
+  "fresh_per_query_encoding_seconds": 37.996443551986886,
+  "original_per_query_encoding_seconds": 38.327500457991846,
+  "peak_rss_kib": 128632,
+  "scope": "single supplementary post-run measurement including fresh Python/imports, source read/parse, generation and output writes; does not replace original measurements"
+}

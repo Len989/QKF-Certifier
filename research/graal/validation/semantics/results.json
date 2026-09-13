@@ -1,0 +1,204 @@
+{
+  "status": "passed",
+  "counts": {
+    "inputs": 159398,
+    "admitted": 110250,
+    "unsupported": 49148,
+    "exact_minimum": 76230,
+    "conservative_bound": 813,
+    "empty": 33207,
+    "java_calls": 114044
+  },
+  "groups": [
+    {
+      "group": "exhaustive_native",
+      "width": 1,
+      "inputs": 12,
+      "admitted": 12,
+      "unsupported": 0,
+      "exact_minimum": 7,
+      "conservative_bound": 0,
+      "empty": 5,
+      "java_calls": 12
+    },
+    {
+      "group": "exhaustive_native",
+      "width": 2,
+      "inputs": 72,
+      "admitted": 60,
+      "unsupported": 12,
+      "exact_minimum": 44,
+      "conservative_bound": 1,
+      "empty": 15,
+      "java_calls": 72
+    },
+    {
+      "group": "exhaustive_native",
+      "width": 3,
+      "inputs": 432,
+      "admitted": 324,
+      "unsupported": 108,
+      "exact_minimum": 255,
+      "conservative_bound": 6,
+      "empty": 63,
+      "java_calls": 432
+    },
+    {
+      "group": "exhaustive_native",
+      "width": 4,
+      "inputs": 2592,
+      "admitted": 1836,
+      "unsupported": 756,
+      "exact_minimum": 1485,
+      "conservative_bound": 28,
+      "empty": 323,
+      "java_calls": 2592
+    },
+    {
+      "group": "exhaustive_native",
+      "width": 5,
+      "inputs": 15552,
+      "admitted": 10692,
+      "unsupported": 4860,
+      "exact_minimum": 8757,
+      "conservative_bound": 120,
+      "empty": 1815,
+      "java_calls": 15552
+    },
+    {
+      "group": "exhaustive_native",
+      "width": 6,
+      "inputs": 93312,
+      "admitted": 63180,
+      "unsupported": 30132,
+      "exact_minimum": 52089,
+      "conservative_bound": 496,
+      "empty": 10595,
+      "java_calls": 93312
+    },
+    {
+      "group": "sparse_wide_native",
+      "width": 8,
+      "inputs": 518,
+      "admitted": 437,
+      "unsupported": 81,
+      "exact_minimum": 230,
+      "conservative_bound": 1,
+      "empty": 206,
+      "java_calls": 518
+    },
+    {
+      "group": "sparse_wide_native",
+      "width": 16,
+      "inputs": 518,
+      "admitted": 458,
+      "unsupported": 60,
+      "exact_minimum": 207,
+      "conservative_bound": 1,
+      "empty": 250,
+      "java_calls": 518
+    },
+    {
+      "group": "sparse_wide_native",
+      "width": 32,
+      "inputs": 518,
+      "admitted": 454,
+      "unsupported": 64,
+      "exact_minimum": 171,
+      "conservative_bound": 1,
+      "empty": 282,
+      "java_calls": 518
+    },
+    {
+      "group": "sparse_wide_native",
+      "width": 64,
+      "inputs": 518,
+      "admitted": 462,
+      "unsupported": 56,
+      "exact_minimum": 160,
+      "conservative_bound": 1,
+      "empty": 301,
+      "java_calls": 518
+    },
+    {
+      "group": "sparse_mathematical_lift",
+      "width": 128,
+      "inputs": 38,
+      "admitted": 32,
+      "unsupported": 6,
+      "exact_minimum": 10,
+      "conservative_bound": 1,
+      "empty": 21,
+      "java_calls": 0
+    },
+    {
+      "group": "sparse_mathematical_lift",
+      "width": 256,
+      "inputs": 38,
+      "admitted": 36,
+      "unsupported": 2,
+      "exact_minimum": 11,
+      "conservative_bound": 1,
+      "empty": 24,
+      "java_calls": 0
+    },
+    {
+      "group": "sparse_mathematical_lift",
+      "width": 4096,
+      "inputs": 38,
+      "admitted": 35,
+      "unsupported": 3,
+      "exact_minimum": 10,
+      "conservative_bound": 1,
+      "empty": 24,
+      "java_calls": 0
+    },
+    {
+      "group": "all_lower_upper_intersections",
+      "width": 1,
+      "inputs": 24,
+      "admitted": 24,
+      "unsupported": 0,
+      "exact_minimum": 11,
+      "conservative_bound": 0,
+      "empty": 13,
+      "java_calls": 0
+    },
+    {
+      "group": "all_lower_upper_intersections",
+      "width": 2,
+      "inputs": 288,
+      "admitted": 240,
+      "unsupported": 48,
+      "exact_minimum": 101,
+      "conservative_bound": 1,
+      "empty": 138,
+      "java_calls": 0
+    },
+    {
+      "group": "all_lower_upper_intersections",
+      "width": 3,
+      "inputs": 3456,
+      "admitted": 2592,
+      "unsupported": 864,
+      "exact_minimum": 1048,
+      "conservative_bound": 14,
+      "empty": 1530,
+      "java_calls": 0
+    },
+    {
+      "group": "all_lower_upper_intersections",
+      "width": 4,
+      "inputs": 41472,
+      "admitted": 29376,
+      "unsupported": 12096,
+      "exact_minimum": 11634,
+      "conservative_bound": 140,
+      "empty": 17602,
+      "java_calls": 0
+    }
+  ],
+  "failures": [],
+  "seconds": 8.421787579994998,
+  "scope": "Finite semantic checks; all-width claims come from separate source-bound row/induction/order certificates. Wide oracles enumerate at most nine optional bits. Native production widths are 1,8,16,32,64; other <=64 widths are helper diagnostics."
+}

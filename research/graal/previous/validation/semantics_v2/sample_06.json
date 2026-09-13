@@ -1,0 +1,38 @@
+{
+  "instance": {
+    "status": "proved_upper_refinement",
+    "spec": {
+      "width": 64,
+      "must": 6960414207493683844,
+      "may": 16255984577091108484,
+      "lower": 9112188679894776856,
+      "upper": 7032612540093709956,
+      "can_zero": false
+    },
+    "binding": "877d88a83266e1465a17a88909d0e1c89ae03980b06d1052f448e880aa5ac8f4",
+    "universal_certificate_sha256": "f4c3e7cdbc624f8c5b3a6c3bb340bb945ce9d1f771af05ac61756d2995fe962b",
+    "answer": {
+      "upper_query_status": "value",
+      "source_long_result": 7032612540093709956,
+      "maximum": 7032612540093709956,
+      "source_path": [
+        false,
+        false,
+        false
+      ],
+      "initial_value": 6960414207493683844
+    },
+    "joint_empty": true,
+    "refined_spec": {
+      "width": 64,
+      "must": 6960414207493683844,
+      "may": 16255984577091108484,
+      "lower": 9112188679894776856,
+      "upper": 7032612540093709956,
+      "can_zero": false
+    },
+    "guarantee": "same complete joint word carrier; maximum is the exact upper observation when the joint carrier is nonempty"
+  },
+  "oracle_maximum": 7032612540093709956,
+  "java_value": 7032612540093709956
+}

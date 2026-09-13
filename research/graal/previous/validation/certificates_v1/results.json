@@ -1,0 +1,112 @@
+{
+  "status": "passed",
+  "negative_checks": 23,
+  "rejections": [
+    {
+      "name": "missing supplied atom",
+      "error": "ValueError('native supplied atoms')"
+    },
+    {
+      "name": "false native supplied image",
+      "error": "ValueError('native supplied atoms')"
+    },
+    {
+      "name": "missing forced row step",
+      "error": "ValueError('full forced row domain')"
+    },
+    {
+      "name": "invented row kernel",
+      "error": "ValueError('row kernel')"
+    },
+    {
+      "name": "missing observation state",
+      "error": "ValueError('complete induction obligations')"
+    },
+    {
+      "name": "missing bit-column transition",
+      "error": "ValueError('all bit columns')"
+    },
+    {
+      "name": "wrong transition target",
+      "error": "ValueError('closed observation transition')"
+    },
+    {
+      "name": "missing signed boundary",
+      "error": "ValueError('signed final property')"
+    },
+    {
+      "name": "invented universal order coverage",
+      "error": "ValueError('complete universal order certificate')"
+    },
+    {
+      "name": "changed order case stream",
+      "error": "ValueError('complete universal order certificate')"
+    },
+    {
+      "name": "expanded incompatible-mask contract",
+      "error": "ValueError('universal input/output contract')"
+    },
+    {
+      "name": "changed specialization lower bound",
+      "error": "ValueError('universal specialization binding and source execution')"
+    },
+    {
+      "name": "changed specialization zero flag",
+      "error": "ValueError('universal specialization binding and source execution')"
+    },
+    {
+      "name": "invented specialization maximum",
+      "error": "ValueError('universal specialization binding and source execution')"
+    },
+    {
+      "name": "incompatible runtime mask",
+      "error": "ValueError('compatible masks')"
+    },
+    {
+      "name": "Boolean width",
+      "error": "ValueError('runtime width budget')"
+    },
+    {
+      "name": "changed trusted native mask helper",
+      "error": "ValueError('changed native helper: helper_11')"
+    },
+    {
+      "name": "ascending source sweep",
+      "error": "ValueError('descending source traversal')"
+    },
+    {
+      "name": "stale source certificate: strict_comparison",
+      "error": "ValueError('actual source and compiled IR binding')"
+    },
+    {
+      "name": "stale source certificate: reversed_comparison",
+      "error": "ValueError('actual source and compiled IR binding')"
+    },
+    {
+      "name": "stale source certificate: wrong_sign_choice",
+      "error": "ValueError('actual source and compiled IR binding')"
+    },
+    {
+      "name": "stale source certificate: zero_permission_reversed",
+      "error": "ValueError('actual source and compiled IR binding')"
+    },
+    {
+      "name": "stale source certificate: unproved_bound_return",
+      "error": "ValueError('actual source and compiled IR binding')"
+    }
+  ],
+  "source_mutants": 5,
+  "concrete_mutant_witnesses": 5,
+  "source_variants": [
+    {
+      "name": "local_and_parameter_renaming",
+      "status": "proved_universal_upper_contract",
+      "sweep_states": 49
+    },
+    {
+      "name": "comparison_and_or_operand_order",
+      "status": "proved_universal_upper_contract",
+      "sweep_states": 49
+    }
+  ]
+}

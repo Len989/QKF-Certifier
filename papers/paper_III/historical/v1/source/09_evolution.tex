@@ -1,0 +1,26 @@
+\section{Keeping the paper and software connected}\label{sec:evolution}
+
+This paper is the primary scientific reference for QKF-Certifier. Papers I and II remain the foundations for initial semantics and equality visibility; they should not need rewriting whenever a parser feature or rewrite rule is added. The repository should link to this paper from its description of the algorithm, while preserving a separate software citation for reproducibility.
+
+Four version axes must remain explicit: the manuscript version, the software version and immutable commit, the certificate schema, and the semantic contract. In this version they are respectively manuscript 1.0, software \texttt{0.1.0a1} at the pinned commit, \texttt{qkf-rewrite-v3}, and the contract quoted in Section~\ref{sec:implementation}. A theorem about an abstract rule system and a test result for a particular commit have different lifetimes. Neither a moving branch URL nor a paper's title identifies the code that was checked.
+
+The supplement's \texttt{CODE\_VERSION.json} records this tuple, source-file SHA-256 values, example provenance, and claim identifiers. A repository-facing version records the same tuple and points back to the paper. For a deposited paper, maintainers should add both its version-specific DOI, which fixes the cited text, and its concept DOI, which resolves to the evolving paper record. No DOI is invented in the present pre-deposit package. A later software release should cite the specific manuscript version that describes its semantics, while a general README link may lead to the latest paper version.
+
+\begin{table}[htbp]\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.27\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+Change & Scientific work required & Version/evidence action\\\midrule
+Normalizer strategy or performance & Preserve the rule set and check replay behavior; update claims only if behavior changes. & New software commit and measurements; retain old evidence.\\
+New local rewrite rule & Prove the rule under the declared semantics; revisit guards and termination. & Update the rule catalogue, witnesses, and claim map.\\
+Frontend operation or helper handling & Specify semantics and prove expression construction; test source binding and returns. & Update supported grammar and semantic contract if meaning changes.\\
+New target or residual language & Supply the appropriate lifting/decision theorem; nine rows alone do not cover cross-bit behavior. & New target scope, evidence, and manuscript revision.\\
+Certificate representation & Specify accepted fields, validation, and replay compatibility. & Advance schema when incompatible; do not reinterpret old certificates.\\
+Relation backend integration & Meet K2/K3 closure and representation obligations; expose budget exhaustion as failure. & Add implementation mapping and independent differential evidence.\\
+\bottomrule
+\end{tabularx}
+\caption{A change protocol for the evolving scientific reference.}
+\end{table}
+
+The package includes proposed \texttt{CITATION.cff}, a README citation block, a paper-link document, and a version manifest. They are reviewable repository additions, not a claim that the remote repository has already been changed. After actual deposition, reserved or issued identifiers can replace the explicit null DOI fields. Old manuscript packages and their manifests should remain available.
+
+The next mathematical extensions have concrete obligations. A carry-state proof for addition must connect the finite transition invariant to source semantics at every width. A symbolic relation backend must establish exact compatible closure and detect unfinished saturation. A broader search interface may rank and deduplicate candidates by signatures only after it has established the relevant semantic contract. These extensions can be added to this paper without obscuring which claims support the current release.

@@ -1,0 +1,445 @@
+{
+  "schema": "qkf-original-corpus-certificate-v14-requested-result-observations",
+  "case": "And",
+  "target": "and",
+  "target_scope": "explicit_total_target",
+  "semantics": "total-transfer-words-v2; positive-width; modular-arithmetic; SMT-total-div-shift; standard-counts; nonbottom-KB",
+  "sources": {
+    "program": "5cebee13b7455dea24ecdefd70b50577b8bf2869cda8d61b74e49ca29b7d22f2"
+  },
+  "minimum_rewrite_width": 2,
+  "width_one": [
+    {
+      "inputs": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "output": [
+        1,
+        0
+      ]
+    },
+    {
+      "inputs": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        0
+      ]
+    },
+    {
+      "inputs": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "output": [
+        1,
+        0
+      ]
+    },
+    {
+      "inputs": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "output": [
+        1,
+        0
+      ]
+    },
+    {
+      "inputs": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "output": [
+        0,
+        1
+      ]
+    },
+    {
+      "inputs": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "output": [
+        0,
+        0
+      ]
+    },
+    {
+      "inputs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "output": [
+        1,
+        0
+      ]
+    },
+    {
+      "inputs": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "output": [
+        0,
+        0
+      ]
+    },
+    {
+      "inputs": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "output": [
+        0,
+        0
+      ]
+    }
+  ],
+  "components": {
+    "solution": {
+      "context_authority": {
+        "schema": "qkf-source-mask-authority-v1",
+        "semantics": "total-transfer-words-v2; positive-width; modular-arithmetic; SMT-total-div-shift; standard-counts; nonbottom-KB",
+        "sources": {
+          "program": "5cebee13b7455dea24ecdefd70b50577b8bf2869cda8d61b74e49ca29b7d22f2"
+        },
+        "entry": "solution",
+        "initial_hash": "ebccf02e93ed0104de4f618bd68eda940c6d1c4f0f8edfc38c9937a24a8b9977",
+        "inputs": [
+          {
+            "argument": "%a",
+            "position": 0,
+            "zero": [
+              "var",
+              0
+            ],
+            "one": [
+              "var",
+              1
+            ]
+          },
+          {
+            "argument": "%b",
+            "position": 1,
+            "zero": [
+              "var",
+              2
+            ],
+            "one": [
+              "var",
+              3
+            ]
+          }
+        ],
+        "premise": "each original nonbottom KnownBits input has disjoint zero and one masks"
+      },
+      "normalization": {
+        "schema": "qkf-rewrite-v3",
+        "sources": {
+          "program": "5cebee13b7455dea24ecdefd70b50577b8bf2869cda8d61b74e49ca29b7d22f2"
+        },
+        "entry": "solution",
+        "semantics": "total-transfer-words-v2; positive-width; modular-arithmetic; SMT-total-div-shift; standard-counts; nonbottom-KB",
+        "initial_hash": "ebccf02e93ed0104de4f618bd68eda940c6d1c4f0f8edfc38c9937a24a8b9977",
+        "steps": [],
+        "normal_form": [
+          "pair",
+          [
+            "not",
+            [
+              "and",
+              [
+                "not",
+                [
+                  "var",
+                  0
+                ]
+              ],
+              [
+                "not",
+                [
+                  "var",
+                  2
+                ]
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "var",
+              1
+            ],
+            [
+              "var",
+              3
+            ]
+          ]
+        ],
+        "target": null
+      },
+      "guarded": [
+        "pair",
+        [
+          "not",
+          [
+            "and",
+            [
+              "not",
+              [
+                "var",
+                0
+              ]
+            ],
+            [
+              "not",
+              [
+                "var",
+                2
+              ]
+            ]
+          ]
+        ],
+        [
+          "and",
+          [
+            "var",
+            1
+          ],
+          [
+            "var",
+            3
+          ]
+        ]
+      ],
+      "guard_trace": [],
+      "observed": [
+        "pair",
+        [
+          "not",
+          [
+            "and",
+            [
+              "not",
+              [
+                "var",
+                0
+              ]
+            ],
+            [
+              "not",
+              [
+                "var",
+                2
+              ]
+            ]
+          ]
+        ],
+        [
+          "and",
+          [
+            "var",
+            1
+          ],
+          [
+            "var",
+            3
+          ]
+        ]
+      ],
+      "observer_trace": [],
+      "premasked": [
+        "pair",
+        [
+          "not",
+          [
+            "and",
+            [
+              "not",
+              [
+                "var",
+                0
+              ]
+            ],
+            [
+              "not",
+              [
+                "var",
+                2
+              ]
+            ]
+          ]
+        ],
+        [
+          "and",
+          [
+            "var",
+            1
+          ],
+          [
+            "var",
+            3
+          ]
+        ]
+      ],
+      "premask_trace": [],
+      "action_rounds": [],
+      "observation_rounds": [],
+      "observation_attempts": [
+        {
+          "trials": [],
+          "attempts": 20,
+          "accepted": 0,
+          "support_queries": [],
+          "failures": {
+            "no supporting semantic bridge": 20
+          },
+          "selected_proof_steps": 0,
+          "boundary_queries": [],
+          "boundary_choices": [],
+          "boundary_failures": {},
+          "context_requests": [],
+          "context_choices": [],
+          "context_failures": {},
+          "result_requests": [],
+          "result_choices": []
+        }
+      ],
+      "symbolic_trace": [],
+      "postmask_trace": [],
+      "final": [
+        "pair",
+        [
+          "not",
+          [
+            "and",
+            [
+              "not",
+              [
+                "var",
+                0
+              ]
+            ],
+            [
+              "not",
+              [
+                "var",
+                2
+              ]
+            ]
+          ]
+        ],
+        [
+          "and",
+          [
+            "var",
+            1
+          ],
+          [
+            "var",
+            3
+          ]
+        ]
+      ],
+      "final_hash": "ebccf02e93ed0104de4f618bd68eda940c6d1c4f0f8edfc38c9937a24a8b9977",
+      "proof": {
+        "backend": "composed",
+        "tree": {
+          "expression_hash": "ebccf02e93ed0104de4f618bd68eda940c6d1c4f0f8edfc38c9937a24a8b9977",
+          "guard_hash": "8894cdad26ef749f311249c169d54f2f48118502d7fdacfad532d5d190fb98ff",
+          "kind": "invariant",
+          "invariant": [
+            [
+              0,
+              [],
+              0,
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              0
+            ],
+            [
+              1,
+              [],
+              0,
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              0
+            ]
+          ],
+          "assumption_indices": [],
+          "proof_guard_hash": "8894cdad26ef749f311249c169d54f2f48118502d7fdacfad532d5d190fb98ff"
+        }
+      }
+    }
+  },
+  "composition": [
+    "solution"
+  ]
+}

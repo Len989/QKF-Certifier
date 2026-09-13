@@ -1,0 +1,13 @@
+{
+  "qkf_commit": "f93561682319e8b911ed32c01583f2a496dc59fc",
+  "unchanged_dependencies": {
+    "guard_kernel.py": "d8741ad8d03dabd4ead1b2adabdd65bdf7c826d59dceae05d44743d6a7af2da6",
+    "regular_interfaces.py": "4eb0b0823af9eb063cf587c6cac71240cacea32cfa1b259703cf833da6d4af05"
+  },
+  "rules_added_for_this_corpus_run": 0,
+  "target_registry": "Unchanged regular_interfaces.target_for and target_expression",
+  "minimum_rewrite_width": 2,
+  "state_budget_per_component": 100000,
+  "transition_attempt_budget_per_component": 2000000,
+  "schema": "qkf-fixed-rules-corpus-experiment-v1"
+}

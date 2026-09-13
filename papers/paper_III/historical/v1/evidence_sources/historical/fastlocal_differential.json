@@ -1,0 +1,25 @@
+{
+  "status": "ok",
+  "comparison": "component-pair baseline vs direct persistent principal generators; canonical theta + full known",
+  "seed": 2609112031,
+  "by_width": {
+    "1": {
+      "cases": 1000,
+      "seconds": 2.907048439999926
+    },
+    "2": {
+      "cases": 900,
+      "seconds": 2.7040766670006633
+    },
+    "3": {
+      "cases": 700,
+      "seconds": 2.2391287989994453
+    },
+    "4": {
+      "cases": 400,
+      "seconds": 1.8456521409998459
+    }
+  },
+  "cases": 3000,
+  "seconds": 9.695929329999672
+}

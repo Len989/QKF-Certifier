@@ -1,0 +1,96 @@
+{
+  "freeze_sha256": "40566ae799bfdda15d46b39de0a9ba5752d206c13db308dffaf0154966806797",
+  "selection": "All eighteen source files written after freeze, before any evaluation engine run.",
+  "files": [
+    {
+      "file": "signed_leading_return.json",
+      "sha256": "dd340fbbe79a42e57ac05f3bce3c8856f63428f0a79f7743f030cd06d56f9026",
+      "expected": "valid"
+    },
+    {
+      "file": "reflected_trailing_piecewise.json",
+      "sha256": "006c1946e2738cd01b3ed030ed0d4932eb37b1c793eb2a1da7c3de1aff7ca4ed",
+      "expected": "valid"
+    },
+    {
+      "file": "masked_xor_composite.json",
+      "sha256": "3c88e0e50306552254732299fb816276cd94909d68e140a9431190f3f862baa6",
+      "expected": "valid"
+    },
+    {
+      "file": "two_left_consumers_one_factor.json",
+      "sha256": "97a460403b4e51b2b7a6a94be7b84a9c4f8aa83473986267f5de30384a4a2e9c",
+      "expected": "valid"
+    },
+    {
+      "file": "both_clamps_including_zero.json",
+      "sha256": "ddaebe118227de9e531ff39527d472cb2a890b568d801d03b3dfd9c65a059a5d",
+      "expected": "valid"
+    },
+    {
+      "file": "right_shift_captured_from_other_word.json",
+      "sha256": "9297ace0d8462da8484d8f9314d17a7eafc1d95edc717221d7951e6fb56a5bfb",
+      "expected": "valid"
+    },
+    {
+      "file": "width_shift_on_zero_input.json",
+      "sha256": "934896d09cfca80b39ad0a01b40f1a2813f0d7e5b8e41a69b3db8bc234a1ecf3",
+      "expected": "valid"
+    },
+    {
+      "file": "restore_then_prefix_observation.json",
+      "sha256": "88ceb08494b40b62866eb1f3c1f65431d68fb86fad7ecb041d653da8df99de0a",
+      "expected": "valid"
+    },
+    {
+      "file": "restore_and_previous_zero_cell.json",
+      "sha256": "c15df64b36bfafdb03ee5b7e231684c15c41afba25de08cbe834b6c20584c7be",
+      "expected": "valid"
+    },
+    {
+      "file": "repeated_identity_cost_control.json",
+      "sha256": "2652d4bee8c315598222643f74979d7bc713de317c05f3d243d9748770082fe9",
+      "expected": "valid"
+    },
+    {
+      "file": "negative_shift_fallback_control.json",
+      "sha256": "cd82900c45988f25b5d77d661377cd988b1237e4a50e2887b903c347586c22c1",
+      "expected": "valid"
+    },
+    {
+      "file": "mutant_missing_lost_bit_guard.json",
+      "sha256": "2ea03be195d9b8409cac7aa00493dfac0d9618cc7b9907356e995bd4207f748f",
+      "expected": "invalid"
+    },
+    {
+      "file": "mutant_missing_nonnegative_guard.json",
+      "sha256": "7c42e7418ccb85d2d0d17ce0b2fc8976689f9efa340db7f0f5afc3313d72884f",
+      "expected": "invalid"
+    },
+    {
+      "file": "mutant_mismatched_return_amount.json",
+      "sha256": "46ab9fd212c984e0ad14917e6a2116b265f520635e9eca3131d5255673c50b69",
+      "expected": "invalid"
+    },
+    {
+      "file": "mutant_wrong_returned_word.json",
+      "sha256": "26423d71995f4f4a7e3ac99ed023251353f93f9330ea30c3466896cfed3b0eb2",
+      "expected": "invalid"
+    },
+    {
+      "file": "mutant_mask_one_lost_bit_too_wide.json",
+      "sha256": "6070aa19f5598c1ca2dbe26a4170a762c26e78669c8215e6f14c64330074407b",
+      "expected": "invalid"
+    },
+    {
+      "file": "unsupported_nested_binary_capture.json",
+      "sha256": "948880f6a8527d5375dc68cd795c1b9f7e52eb8fbf0886dba26e003b9db071cb",
+      "expected": "unsupported"
+    },
+    {
+      "file": "unsupported_binary_count_consumer.json",
+      "sha256": "ba1a02c1722a186b24a6c909de6a312f2e20c5804dfff5925d6d25c905842fc2",
+      "expected": "unsupported"
+    }
+  ]
+}

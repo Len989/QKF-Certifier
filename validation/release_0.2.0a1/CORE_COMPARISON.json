@@ -1,0 +1,12 @@
+{
+  "src/qkf_certifier/producer.py": true,
+  "src/qkf_certifier/__init__.py": false,
+  "src/qkf_certifier/kernel.py": true,
+  "src/qkf_certifier/certificate.py": true,
+  "src/qkf_certifier/frontend.py": true,
+  "src/qkf_certifier/errors.py": true,
+  "src/qkf_certifier/api.py": true,
+  "src/qkf_certifier/__main__.py": true,
+  "src/qkf_certifier/cli.py": true,
+  "src/qkf_certifier/limits.py": true
+}

@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "candidate_sha256": "4ca7a5f625f2837acd28aca79c77a08ead9125d67567747c21a277eed581e5ce",
+  "candidate_bytes": 52037143,
+  "restore": {
+    "status": "restored",
+    "data_files": 701,
+    "paper_files": 93,
+    "restored_data": 701,
+    "restored_papers": 93,
+    "prior_archive": "Complete exact previous archive retained",
+    "history_chain_archives": 5
+  },
+  "fresh_proof_processes": 7,
+  "fresh_audit": {
+    "status": "passed",
+    "integrity": {
+      "inherited_files": 491,
+      "frozen_files": 608
+    },
+    "certificate_bytes": 117549,
+    "source_sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+    "universal_status": "proved_universal_conditional_lower_contract",
+    "successor": {
+      "status": "proved_universal_mask_successor",
+      "states": 8,
+      "columns": 6,
+      "transitions": 48,
+      "sign_boundaries": 32,
+      "source_phase_states": 3,
+      "phase_quotient_classes": 2,
+      "native_row_templates": 8,
+      "protected_carrier_size": 4,
+      "forced_row_domain": 4,
+      "row_kernel_classes": [
+        1,
+        2,
+        4
+      ],
+      "central_carrier_quotient": "diagonal"
+    },
+    "sweep_states": 49,
+    "outer": {
+      "status": "proved_universal_conditional_lower_preservation",
+      "weak_orders": 47293,
+      "flag_combinations": 189172,
+      "admitted_orders": 25737,
+      "paths": {
+        "minimum": 22768,
+        "minimum/exclude_zero": 472,
+        "minimum/greedy/successor": 312,
+        "minimum/greedy": 665,
+        "minimum/no_optional_zero": 1140,
+        "minimum/no_optional_zero/exclude_zero": 372,
+        "minimum/greedy/successor/exclude_zero": 8
+      },
+      "obligations_sha256": "96116995f399adcd53dd17e25554614eddf823ad56bb125f86bd1f58ce6e3233"
+    },
+    "semantics": {
+      "inputs": 159398,
+      "admitted": 110250,
+      "unsupported": 49148,
+      "exact_minimum": 76230,
+      "conservative_bound": 813,
+      "empty": 33207,
+      "java_calls": 114044
+    },
+    "checked_saved_specializations": 49,
+    "certificate_corruptions": 20,
+    "faulty_native_mutants": 5,
+    "positive_variants": 3,
+    "fresh_proof_processes": 7,
+    "graal": "control 1/5; joint 2/5 unchanged",
+    "NiceToMeetYou": "historical 11/39 whole; 104/411 components",
+    "full_create": "not proved",
+    "search_modules_loaded": []
+  },
+  "packed_archive_sha256": "cc04192a7d195e5a51e34081546fef2f511df602cbf0147121ed1be9961baf93",
+  "scope": "Clean path restored all 701 packed files and 93 paper files, then ran seven fresh strict proof processes and an audit. Final package adds this record while retaining the verified payload byte-for-byte."
+}

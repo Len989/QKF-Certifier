@@ -1,0 +1,693 @@
+{
+  "schema": "qkf-joint-carrier-certificate-v1",
+  "spec": {
+    "width": 32,
+    "must": 2251147916,
+    "may": 3330264797,
+    "lower": 849794017,
+    "upper": 973457068,
+    "can_zero": false
+  },
+  "query": {
+    "kind": "summary"
+  },
+  "binding": "6ae25c6b79835d80da12ae0beb14c98fdc55c75857198895bf5bb4e8556c3c92",
+  "cells": [
+    {
+      "start": 2997277665,
+      "free": 0,
+      "must_key": 3064978413,
+      "may_key": 36094657,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 2997277666,
+      "free": 1,
+      "must_key": 3064978414,
+      "may_key": 36094657,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 2997277668,
+      "free": 2,
+      "must_key": 3064978412,
+      "may_key": 36094661,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 2997277672,
+      "free": 3,
+      "must_key": 3064978412,
+      "may_key": 36094669,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 2997277680,
+      "free": 4,
+      "must_key": 3064978428,
+      "may_key": 36094685,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 2997277696,
+      "free": 10,
+      "must_key": 3064979084,
+      "may_key": 36095709,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 2997278720,
+      "free": 11,
+      "must_key": 3064978060,
+      "may_key": 36097757,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 2997280768,
+      "free": 13,
+      "must_key": 3064982156,
+      "may_key": 36097757,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 2997288960,
+      "free": 16,
+      "must_key": 3064973964,
+      "may_key": 36163293,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 2997354496,
+      "free": 19,
+      "must_key": 3064842892,
+      "may_key": 36687581,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 2997878784,
+      "free": 20,
+      "must_key": 3065891468,
+      "may_key": 37736157,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 2998927360,
+      "free": 22,
+      "must_key": 3069037196,
+      "may_key": 41930461,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 3003121664,
+      "free": 24,
+      "must_key": 3073231500,
+      "may_key": 41930461,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 3019898880,
+      "free": 26,
+      "must_key": 3056454284,
+      "may_key": 109039325,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 3087007744,
+      "free": 25,
+      "must_key": 3190672012,
+      "may_key": 8376029,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 3120562176,
+      "free": 18,
+      "must_key": 3190672012,
+      "may_key": 33803997,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 3120824320,
+      "free": 16,
+      "must_key": 3190672012,
+      "may_key": 33869533,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 3120889856,
+      "free": 15,
+      "must_key": 3190672012,
+      "may_key": 33902301,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 3120922624,
+      "free": 14,
+      "must_key": 3190672012,
+      "may_key": 33918685,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 3120939008,
+      "free": 10,
+      "must_key": 3190672012,
+      "may_key": 33931997,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 3120940032,
+      "free": 9,
+      "must_key": 3190673036,
+      "may_key": 33932509,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 3120940544,
+      "free": 7,
+      "must_key": 3190673036,
+      "may_key": 33932893,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 3120940672,
+      "free": 5,
+      "must_key": 3190673036,
+      "may_key": 33932957,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 3120940704,
+      "free": 3,
+      "must_key": 3190673068,
+      "may_key": 33932933,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 3120940712,
+      "free": 2,
+      "must_key": 3190673068,
+      "may_key": 33932937,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "start": 3120940716,
+      "free": 0,
+      "must_key": 3190673068,
+      "may_key": 33932940,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    }
+  ],
+  "joins": [
+    {
+      "left": 0,
+      "right": 1,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 2,
+      "right": 3,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 4,
+      "right": 5,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 6,
+      "right": 7,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 8,
+      "right": 9,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 10,
+      "right": 11,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 12,
+      "right": 13,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 14,
+      "right": 15,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 16,
+      "right": 17,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 18,
+      "right": 19,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 20,
+      "right": 21,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 22,
+      "right": 23,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 24,
+      "right": 25,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 26,
+      "right": 27,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 28,
+      "right": 29,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 30,
+      "right": 31,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 32,
+      "right": 33,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 34,
+      "right": 35,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 36,
+      "right": 37,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 39,
+      "right": 40,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 41,
+      "right": 42,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 43,
+      "right": 44,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 45,
+      "right": 46,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 47,
+      "right": 38,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    },
+    {
+      "left": 48,
+      "right": 49,
+      "observation": {
+        "count": 0,
+        "lower": null,
+        "upper": null,
+        "must": 0,
+        "may": 0,
+        "zero": false
+      }
+    }
+  ],
+  "root": 50,
+  "answer": {
+    "count": 0,
+    "lower": null,
+    "upper": null,
+    "must": 0,
+    "may": 0,
+    "zero": false,
+    "word": null
+  }
+}

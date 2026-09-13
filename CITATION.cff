@@ -1,12 +1,21 @@
 cff-version: 1.2.0
-message: "If you use this software, cite it using this metadata."
+message: "Cite the software version used; Paper III describes the accompanying research."
 type: software
-title: "QKF Certifier: Width-independent KnownBits certificates"
+title: "QKF Certifier: observation kernels and width-independent certificates"
 authors:
   - family-names: Shcherbakov
     given-names: Leonid
-version: 0.1.0a1
-date-released: 2026-09-11
+version: 0.2.0a1
 license: MIT
 repository-code: "https://github.com/Len989/QKF-Certifier"
-abstract: "A research tool for source-bound normalization proofs and finite verification of a coordinatewise KnownBits fragment."
+abstract: "Research alpha combining the coordinatewise KnownBits CLI with separately scoped observation and signed-word proof capsules and a Lean pilot."
+preferred-citation:
+  type: unpublished
+  title: "QKF-Certifier: observation kernels and width-independent word proofs"
+  authors:
+    - family-names: Shcherbakov
+      given-names: Leonid
+  year: 2026
+  version: "2.0"
+  url: "https://github.com/Len989/QKF-Certifier"
+  notes: "Prepared manuscript, 13 September 2026. No DOI assigned by this workflow."

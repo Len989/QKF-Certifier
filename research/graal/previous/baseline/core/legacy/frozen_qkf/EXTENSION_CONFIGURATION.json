@@ -1,0 +1,31 @@
+{
+  "extension": "qkf-observer-identities-v1",
+  "preserved_relation_backend": "qkf-count-mask-relation-v1",
+  "new_rule_families": [
+    "width-comparison",
+    "count-boundary-zero",
+    "literal-count",
+    "literal-not",
+    "literal-order",
+    "unsigned-unit-bound",
+    "unsigned-smax-threshold",
+    "unit-right-shift",
+    "count-zero-test",
+    "terminal-window",
+    "distribute-observer-select",
+    "shifted-leading-mask"
+  ],
+  "new_rule_family_count": 12,
+  "minimum_rewrite_width": 2,
+  "width_one": "Actual source SSA checked exhaustively",
+  "target_registry": "Unchanged regular_interfaces.target_for and target_expression",
+  "state_budget_per_component": 100000,
+  "transition_attempt_budget_per_component": 2000000,
+  "preserved_module_sha256": {
+    "prefix_masks.py": "3e13468630d46a04e37cecbf7bab47043d84076956e22c54fd870334d8bdbccd",
+    "audit_fixed.py": "b40f5aa6fcda9ccc4a8cb90306ed2b5f46ac55a8db5563a604f3d917e7cedd6e",
+    "dependencies/guard_kernel.py": "d8741ad8d03dabd4ead1b2adabdd65bdf7c826d59dceae05d44743d6a7af2da6",
+    "dependencies/regular_interfaces.py": "4eb0b0823af9eb063cf587c6cac71240cacea32cfa1b259703cf833da6d4af05",
+    "check_semantics.py": "31226f27dd0123e360f94a857c9c46b7220268beb66ba0a956a2d71b55c5a134"
+  }
+}

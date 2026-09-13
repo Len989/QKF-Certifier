@@ -1,0 +1,21 @@
+✔ [2/13] Built QKF.RowRules (455ms)
+✔ [3/13] Built QKF.Gluing (442ms)
+✔ [4/13] Built QKF.Core (1.2s)
+✔ [5/13] Built QKF.Data (511ms)
+✖ [6/13] Building QKF.Checked (676ms)
+trace: .> LEAN_PATH=/workspace/scratch/6c319201c5cc/qkf_negative_8fg0ctlr/project/.lake/build/lib/lean /workspace/scratch/6c319201c5cc/qkf_lean_tools/lean-4.33.0-linux/bin/lean /workspace/scratch/6c319201c5cc/qkf_negative_8fg0ctlr/project/QKF/Checked.lean -o /workspace/scratch/6c319201c5cc/qkf_negative_8fg0ctlr/project/.lake/build/lib/lean/QKF/Checked.olean -i /workspace/scratch/6c319201c5cc/qkf_negative_8fg0ctlr/project/.lake/build/lib/lean/QKF/Checked.ilean -c /workspace/scratch/6c319201c5cc/qkf_negative_8fg0ctlr/project/.lake/build/ir/QKF/Checked.c --setup /workspace/scratch/6c319201c5cc/qkf_negative_8fg0ctlr/project/.lake/build/ir/QKF/Checked.setup.json --json
+error: QKF/Checked.lean:22:2: Tactic `decide` proved that the proposition
+  ∀ (r : Fin 8) (a b c d : Bool),
+    completedRow Data.rows r (cup (a, b) (c, d)) =
+      cup (completedRow Data.rows r (a, b)) (completedRow Data.rows r (c, d))
+is false
+error: QKF/Checked.lean:30:67: Tactic `decide` proved that the proposition
+  ∀ (r : Fin 8) (b : Bool), completedRow Data.rows r (atom b) = nativeRow r (atom b)
+is false
+error: QKF/Checked.lean:66:61: Tactic `decide` proved that the proposition
+  checkCertificate = true
+is false
+error: Lean exited with code 1
+Some required targets logged failures:
+- QKF.Checked
+error: build failed

@@ -1,0 +1,126 @@
+{
+  "schema": "qkf-complete-source-mask-observation-v1",
+  "operation": "or",
+  "contract": "two nonbottom KnownBits pairs (Z,O), disjoint Z/O per input, one common positive width",
+  "source_observation": {
+    "source_sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+    "body_sha256": "ab308f79fffb6f60c2ee92e356ef616eb43487b7eedfb4129d7fe9b9e691de28",
+    "parsed_body_sha256": "b5344a00a244169eb3509880c11401f43983885ae2e9defbfa6ddfdb9078de51",
+    "native_bindings": {
+      "helper_hashes": {
+        "helper_0": "bd732abcbd8795848e4e0a5454cefa3fb0513f67744a18764c20a6fe2c94c37e",
+        "helper_1": "0ff2224c987788e5c11150c83f4501aa89da78ecc7711091cf1c9a2deb41301b",
+        "helper_2": "f2ab8559dacf02676d69c209d3c4a668387c91336428c25691129e675b36749e",
+        "helper_3": "b5e34e5036672f14abd2aecba89026dc4daf3657f78558c4286ff96ced995489",
+        "helper_4": "4bef8117184eaff5f88d621df7a61c9c56691a4a315ee3fff4dcc5bacd3f9c5b",
+        "helper_5": "5e5db0d9572c3b9d53e9d6ba836c41fe551df101ff296c052a9f6b46b157518c",
+        "helper_6": "8748588e7909fa3c3530086a09ba5c60c3e2731cbdff3cccc03d4bc052848270",
+        "helper_7": "f5744ecf2539d0ed3980b853875bc07347f4f8c93c1b7804e55a79eddbf55270",
+        "helper_8": "d7082fad83c56e7ffad2e3581df8257f42b93d1321b51aa693fdf57daa10d21e",
+        "helper_9": "2fc1d7fc9bfa72d4cfc353766df00572b4b4c6fb187c3a24c7067a74b698b17a",
+        "helper_10": "971796bcc9b33a9b53491ea15f45f628a361d1d2ffb090a7901b12ffae83de2e",
+        "helper_11": "62cd7fbf64fff24f874985e72047d3913979d9903e336fe7ad158a9dd6f9ae47",
+        "helper_12": "b5574abcdb9700a882390058aae60c6aa6b35ea56ae2b7bff106ee2296500c17",
+        "helper_13": "62242b8e28444ef0ff92bf30cb3a4e25dc84b13db7f08b5c75fc7af96530641f",
+        "helper_14": "7c0645e351c2c0af56045690d745860f0962f6d2c904909559bb12937b05338f",
+        "helper_15": "39c20410053d03002e8dab9291d4ce3d922f2845b749d4fdaab2e645452a8182",
+        "helper_16": "a03d37d0d4fd8fcd24241bca0283e54a0c3f94d65022de845c1a961a46b76f40",
+        "helper_17": "24b2063b9ce893c0adae4de6d6052d5bab5e66bc22b6bfe8134f7c733e365ecf",
+        "helper_18": "0575c03da3404cfccf16cc6e004b41712d4c4df9b8353a071b16fc4f00e1d99e",
+        "helper_19": "0558ef01e5ad8022a99755b95496fc70f415c81b0b0acd45c9e914499b634c1d",
+        "helper_20": "acf1d0eaea35dd95e52042037cc578360fa832840dcb07bdc3e487194710e663",
+        "helper_21": "e1d40a9d54787ed9fc65d31ea6574870141dcff4d3d1007d398269d07af5fa69",
+        "helper_22": "f9dce17e9a971fa947c54001ec0300dea561959da019f55582d6bd309275bb08",
+        "helper_23": "0250bd09583fcffb3e7ddfbab9a94f07531d15056af303fea6631e5a017b2681",
+        "helper_24": "8c2325487cc502acbaed141baf7439589a6156541fd7358ba91a43a0cac8d4a6",
+        "helper_25": "5b0488b03293cbb68a06b52d111b493d0a80ce4942a0dab42720dac0d8877639",
+        "helper_26": "e3bb5154695a19dc1a351494ce14b0b66fbb2ab03f79354ff727dc9f768aac45",
+        "helper_27": "d7e5f309b03a63da111317272e70286c832adc63cbbe1118af875efe3a27b018"
+      },
+      "iteration_limit": 3,
+      "dependency_semantics": "The documented CodeUtil/uncached-factory shims of the previous frozen Graal transcription."
+    },
+    "leaves": [
+      {
+        "guards": [],
+        "decisions": [
+          [
+            false,
+            false
+          ],
+          [
+            false,
+            false
+          ]
+        ],
+        "carrier": [
+          "cube",
+          [
+            "or",
+            [
+              "v",
+              1
+            ],
+            [
+              "v",
+              3
+            ]
+          ],
+          [
+            "or",
+            [
+              "not",
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "not",
+              [
+                "v",
+                2
+              ]
+            ]
+          ]
+        ]
+      }
+    ],
+    "create_calls": 0,
+    "expression": [
+      "pair",
+      [
+        "not",
+        [
+          "or",
+          [
+            "not",
+            [
+              "var",
+              0
+            ]
+          ],
+          [
+            "not",
+            [
+              "var",
+              2
+            ]
+          ]
+        ]
+      ],
+      [
+        "or",
+        [
+          "var",
+          1
+        ],
+        [
+          "var",
+          3
+        ]
+      ]
+    ]
+  },
+  "hull_certificates": []
+}

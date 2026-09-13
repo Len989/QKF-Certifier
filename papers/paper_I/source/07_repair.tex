@@ -1,0 +1,267 @@
+\section{Completion and quotient repair}\label{sec:repair}
+
+Initial semantics asks what every model must satisfy.  Carrier-valued completion asks for the existence of a much more special model, one in which no named action value leaves the carrier.  The distinction is already visible in one protected row.
+
+\subsection{Completion is splitting}
+
+Let
+\[
+\begin{array}{ccc}
+S & \hookrightarrow & Q_r\\
+{\scriptstyle h}\downarrow && \downarrow{\scriptstyle p_r}\\
+Q_* & \xrightarrow{m} & P
+\end{array}
+\]
+be a protected row pushout, so $m$ is injective.
+
+\begin{theorem}[Completion as a split monomorphism]\label{thm:splitting}
+The partial homomorphism $h:S\to Q$ extends to an endomorphism $\tau:Q\to Q$ if and only if the distinguished carrier embedding
+\[
+m:Q\hookrightarrow P
+\]
+is split: there exists $r:P\to Q$ with $rm=\id_Q$.  In that case
+\[
+\tau=rp_r.
+\]
+\end{theorem}
+
+\begin{proof}
+If $\tau$ extends $h$, the maps $\tau:Q_r\to Q$ and $\id_Q:Q_*\to Q$ agree on $S$.  The pushout universal property gives a unique $r:P\to Q$ with
+\[
+rp_r=\tau,
+\qquad
+rm=\id_Q.
+\]
+Conversely, if $r$ is a retraction of $m$, then $\tau=rp_r$ satisfies, for $s\in S$,
+\[
+\tau(s)=rp_r(s)=rmh(s)=h(s).
+\]
+\end{proof}
+
+\begin{theorem}[Forced closure as image containment]\label{thm:closurecontainment}
+For a protected row, every row point is forced into the distinguished carrier if and only if
+\[
+p_r(Q)\subseteq m(Q),
+\]
+equivalently if and only if
+\[
+S^{\kappa}=Q.
+\]
+When this holds, $m^{-1}p_r:Q\to Q$ is the unique endomorphism extending $h$.
+\end{theorem}
+
+\begin{proof}
+The equivalence with $S^\kappa=Q$ is Theorem~\ref{thm:kernelsat}.  If $p_r(Q)\subseteq m(Q)$, define $\tau=m^{-1}p_r$.  Since both $p_r$ and $m$ are homomorphisms and $m$ is injective,
+$\tau$ is an endomorphism extending $h$. Every extension identifies $K$ and
+therefore $\kappa$; if $x\equiv_\kappa s$ with $s\in S$, it must send $x$
+to $h(s)$. Since $S^\kappa=Q$, these values determine the whole extension.
+\end{proof}
+
+Hence
+\begin{equation}\label{eq:dictionary}
+\boxed{
+\begin{array}{rcl}
+\text{protection}&\Longleftrightarrow&m\text{ monic},\\
+\text{completion}&\Longleftrightarrow&m\text{ split monic},\\
+\text{forced closure}&\Longleftrightarrow&p_r(Q)\subseteq m(Q).
+\end{array}}
+\end{equation}
+Forced closure implies completion, and completion implies protection.
+The converses fail. Example~\ref{ex:externalcompletion} gives a completion
+with external row points. Example~\ref{ex:strictgap} below gives protection
+without a completion on the protected carrier.
+
+For several independent rows, strongly amalgamate all protected row factors over the same central $Q$.  A family of simultaneous endomorphism completions exists exactly when the single central embedding into this wide row amalgam splits.  Thus the local dictionary extends unchanged to the pure multirow fragment.
+
+\subsection{Every repair lies above the forced quotient}
+
+\begin{proposition}[Forced congruence is a universal lower bound]\label{prop:repairlower}
+For every repair $\theta\in\mathcal R(E)$,
+\[
+\theta_E^A\subseteq\theta.
+\]
+\end{proposition}
+
+\begin{proof}
+A completion on $A/\theta$ is a model of the original ground theory in which the kernel of the named carrier map is exactly $\theta$.  Every provable carrier equality must therefore belong to $\theta$.
+\end{proof}
+
+Complete tables behave especially well: once the table is well defined on a quotient, protection already gives total endomorphisms, so the least repair is exactly the complete-table congruence of Corollary~\ref{cor:complete}.  Incomplete tables behave differently.
+
+\subsection{No least repair}
+
+\begin{example}[Two incomparable minimal repairs]\label{ex:noleastrepair}
+Let $A=\{0,1,2,3\}$ have one unary operation
+\[
+f(0)=f(1)=f(2)=0,
+\qquad
+f(3)=1,
+\]
+and supply one row
+\[
+\alpha(b,1)=2.
+\]
+There is no completion on $A$.  Indeed, if $\tau$ were an endomorphism with $\tau(1)=2$, then $f(1)=0$ gives
+\[
+\tau(0)=\tau(f(1))=f(\tau(1))=f(2)=0,
+\]
+while $f(3)=1$ gives
+\[
+2=\tau(1)=\tau(f(3))=f(\tau(3)),
+\]
+impossible because $\im f=\{0,1\}$.
+
+Nevertheless both
+\[
+\theta_a=\{0,2\}\mid\{1\}\mid\{3\}
+\]
+and
+\[
+\theta_b=\{0\}\mid\{1,2\}\mid\{3\}
+\]
+are repairs.  On $A/\theta_a$ the constant map to $[0,2]$ is an endomorphism satisfying the row; on $A/\theta_b$ the identity map satisfies it.  The congruences are incomparable and
+\[
+\theta_a\cap\theta_b=\Delta_A,
+\]
+which is not a repair. Each of $\theta_a,\theta_b$ merges only one pair,
+so its only strictly finer equivalence relation is the diagonal. They are
+therefore minimal repairs, and $\mathcal R(E)$ has no least element.
+\end{example}
+
+This failure is impossible for a complete table and is therefore a specifically incomplete-table phenomenon.
+
+\subsection{Repair feasibility is not upward closed}
+
+\begin{example}[A coarser quotient can destroy completion]\label{ex:nonmonotone}
+Let $A=\{0,1,2,3\}$ have the constant unary operation $f(x)=0$ and supply
+\[
+\alpha(b,0)=1,
+\qquad
+\alpha(b,3)=2.
+\]
+The congruence
+\[
+\theta=\{0,1\}\mid\{2\}\mid\{3\}
+\]
+is a repair.  In the quotient, the only endomorphism constraint imposed by the constant operation is that $[0,1]$ map to itself; one may send $[3]$ to $[2]$.
+
+Now coarsen to
+\[
+\phi=\{0,1,3\}\mid\{2\}.
+\]
+The two supplied source inputs $0$ and $3$ have become equal while their targets $1$ and $2$ remain distinct.  The projected row is not even a function, so $\phi$ is not a repair.  Total collapse is again a repair.  Thus $\mathcal R(E)$ is not an upper set of $\Con(A)$.
+\end{example}
+
+Consequently quotient repair cannot in general be found by a monotone search that simply coarsens until completion appears.
+
+\subsection{The repair kernel and the cost of forbidding junk}
+
+Define
+\begin{equation}\label{eq:repairkernel}
+\kappa_E^{\mathrm{NJ}}=
+\bigcap_{\theta\in\mathcal R(E)}\theta.
+\end{equation}
+By Proposition~\ref{prop:repairlower},
+\[
+\theta_E^A\subseteq\kappa_E^{\mathrm{NJ}}.
+\]
+The inclusion can be strict.
+
+\begin{example}[Strict repair-kernel gap]\label{ex:strictgap}
+Let $A=\{0,1,2,3\}$ with
+\[
+f(0)=1,
+\quad f(1)=1,
+\quad f(2)=1,
+\quad f(3)=2,
+\]
+and supply
+\[
+\alpha(b,0)=2,
+\qquad
+\alpha(b,1)=1,
+\qquad
+\alpha(b,2)=0.
+\]
+The original carrier is protected.  Indeed, adjoin one new element $x$, set $f(x)=0$, and define $\alpha(b,3)=x$. Give $\alpha(b,x)$ any value
+to make the action total. Then all named-input compatibility equations hold while the four named carrier elements remain distinct.  Hence
+\[
+\theta_E^A=\Delta_A.
+\]
+
+There is no carrier-valued completion on $A$.  For any completion on a quotient, compatibility at input $3$ gives
+\[
+[0]=\tau([2])=\tau(f([3]))=f(\tau([3])).
+\]
+Thus $[0]$ must lie in the image of the quotient operation $f$, whose named image is represented by $[1]$ or $[2]$.  Hence $[0]=[1]$ or $[0]=[2]$.  In the first case the supplied rows at inputs $0$ and $1$ force $[2]=[1]=[0]$ as well.  Therefore every repair identifies $0$ and $2$.
+
+The congruence
+\[
+\theta_*=\{0,2\}\mid\{1\}\mid\{3\}
+\]
+is itself a repair: the identity endomorphism of $A/\theta_*$ satisfies all projected rows.  Thus
+\[
+\boxed{
+\theta_E^A=\Delta_A
+<
+\kappa_E^{\mathrm{NJ}}=\theta_*.
+}
+\]
+\end{example}
+
+
+The model-theoretic meaning of this gap can be stated without choosing any
+completion procedure. Add the finite family of disjunctions
+\begin{equation}\label{eq:nojunk}
+E^{\mathrm{NJ}}=E\cup
+\left\{\ \bigvee_{c\in A}\alpha(b,a)=c:
+ b\in B,\ a\in A\ \right\}.
+\end{equation}
+This is a first-order theory of total algebras, not an equational theory.
+Its additional condition concerns only the named action interface; it does
+not require every element of a model to be named.
+
+\begin{theorem}[Repairs as kernels of interface no-junk models]\label{thm:nojunk}
+Writing $\ker_A(M)$ for the kernel of the named carrier map into $M$, one has
+\begin{equation}\label{eq:repairmodels}
+\mathcal R(E)=\{\ker_A(M):M\models E^{\mathrm{NJ}}\}.
+\end{equation}
+Consequently
+\[
+\kappa_E^{\mathrm{NJ}}
+=\bigcap_{M\models E^{\mathrm{NJ}}}\ker_A(M),
+\qquad
+\theta_E^A=\bigcap_{M\models E}\ker_A(M)
+\subseteq\kappa_E^{\mathrm{NJ}}.
+\]
+\end{theorem}
+
+\begin{proof}
+If $\theta$ is a repair, choose its endomorphism completions and interpret
+the carrier sort by $A/\theta$ and the operator sort by $B$. This is a model
+of $E^{\mathrm{NJ}}$ with named carrier kernel $\theta$.
+
+Conversely, suppose $M\models E^{\mathrm{NJ}}$ and put
+$\theta=\ker_A(M)$. For each $b$ and $[a]\in A/\theta$, choose a name $c$
+with $\alpha^M(b^M,a^M)=c^M$, and set $\tau_b([a])=[c]$.
+The choice of $c$ does not matter because all such names have the same
+$\theta$-class. Nor does the representative $a$ matter, since equality of
+its interpretations is preserved by the total operation $\alpha^M$.
+Native ground diagrams and compatibility show that $\tau_b$ is an
+endomorphism of $A/\theta$. The supplied cells hold by construction.
+Thus $\theta$ is a repair. The intersection identities follow, the second
+also being the usual model-theoretic characterization of ground equality.
+\end{proof}
+
+A pair in $\kappa_E^{\mathrm{NJ}}\setminus\theta_E^A$ can be kept distinct
+only by allowing some named action value to be external. This is the
+precise cost, in carrier distinctions, of requiring interface no-junk.
+Example~\ref{ex:strictgap} shows that the cost can be nonzero even when the
+original carrier is protected.
+
+The no-junk condition is not generally preserved by direct products.
+Each coordinate can choose a different carrier name for the same missing
+cell, leaving its product value outside the diagonal named carrier image.
+Thus a product can intersect carrier kernels while ceasing to satisfy
+\eqref{eq:nojunk}. This explains why an intersection of repairs need not
+itself be a repair, without asserting that repairs form a closure system.

@@ -1,0 +1,545 @@
+{
+  "equations": [
+    [
+      "f(0,0)",
+      "0"
+    ],
+    [
+      "f(0,1)",
+      "2"
+    ],
+    [
+      "f(0,2)",
+      "0"
+    ],
+    [
+      "f(0,3)",
+      "0"
+    ],
+    [
+      "f(1,0)",
+      "1"
+    ],
+    [
+      "f(1,1)",
+      "2"
+    ],
+    [
+      "f(1,2)",
+      "1"
+    ],
+    [
+      "f(1,3)",
+      "3"
+    ],
+    [
+      "f(2,0)",
+      "0"
+    ],
+    [
+      "f(2,1)",
+      "2"
+    ],
+    [
+      "f(2,2)",
+      "2"
+    ],
+    [
+      "f(2,3)",
+      "0"
+    ],
+    [
+      "f(3,0)",
+      "3"
+    ],
+    [
+      "f(3,1)",
+      "0"
+    ],
+    [
+      "f(3,2)",
+      "3"
+    ],
+    [
+      "f(3,3)",
+      "0"
+    ],
+    [
+      "alpha(b,0)",
+      "0"
+    ],
+    [
+      "alpha(b,2)",
+      "2"
+    ],
+    [
+      "alpha(b,3)",
+      "0"
+    ],
+    [
+      "alpha(b,f(0,0))",
+      "f(alpha(b,0),alpha(b,0))"
+    ],
+    [
+      "alpha(b,f(0,1))",
+      "f(alpha(b,0),alpha(b,1))"
+    ],
+    [
+      "alpha(b,f(0,2))",
+      "f(alpha(b,0),alpha(b,2))"
+    ],
+    [
+      "alpha(b,f(0,3))",
+      "f(alpha(b,0),alpha(b,3))"
+    ],
+    [
+      "alpha(b,f(1,0))",
+      "f(alpha(b,1),alpha(b,0))"
+    ],
+    [
+      "alpha(b,f(1,1))",
+      "f(alpha(b,1),alpha(b,1))"
+    ],
+    [
+      "alpha(b,f(1,2))",
+      "f(alpha(b,1),alpha(b,2))"
+    ],
+    [
+      "alpha(b,f(1,3))",
+      "f(alpha(b,1),alpha(b,3))"
+    ],
+    [
+      "alpha(b,f(2,0))",
+      "f(alpha(b,2),alpha(b,0))"
+    ],
+    [
+      "alpha(b,f(2,1))",
+      "f(alpha(b,2),alpha(b,1))"
+    ],
+    [
+      "alpha(b,f(2,2))",
+      "f(alpha(b,2),alpha(b,2))"
+    ],
+    [
+      "alpha(b,f(2,3))",
+      "f(alpha(b,2),alpha(b,3))"
+    ],
+    [
+      "alpha(b,f(3,0))",
+      "f(alpha(b,3),alpha(b,0))"
+    ],
+    [
+      "alpha(b,f(3,1))",
+      "f(alpha(b,3),alpha(b,1))"
+    ],
+    [
+      "alpha(b,f(3,2))",
+      "f(alpha(b,3),alpha(b,2))"
+    ],
+    [
+      "alpha(b,f(3,3))",
+      "f(alpha(b,3),alpha(b,3))"
+    ]
+  ],
+  "partitions": {
+    "1": [
+      [
+        "0",
+        "alpha(b,0)",
+        "alpha(b,3)"
+      ],
+      [
+        "1"
+      ],
+      [
+        "2",
+        "alpha(b,2)"
+      ],
+      [
+        "3"
+      ],
+      [
+        "alpha(b,1)"
+      ]
+    ],
+    "2": [
+      [
+        "0",
+        "2",
+        "alpha(b,0)",
+        "alpha(b,1)",
+        "alpha(b,2)",
+        "alpha(b,3)"
+      ],
+      [
+        "1"
+      ],
+      [
+        "3"
+      ]
+    ]
+  },
+  "proofs": [
+    "Goal: 0 = 2\nOptimal proof horizon: D=2.\nevent 8, D=1: f(2,0) = 0 by AXIOM [E8]\n  event 17, D=1: alpha(b,2) = 2 by AXIOM [E17]\n  event 18, D=1: alpha(b,3) = 0 by AXIOM [E18]\n    event 7, D=1: f(1,3) = 3 by AXIOM [E7]\n  event 42, D=2: alpha(b,3) = alpha(b,f(1,3)) by congruence under alpha\n  event 26, D=2: alpha(b,f(1,3)) = f(alpha(b,1),alpha(b,3)) by AXIOM [E26]\n    event 16, D=1: alpha(b,0) = 0 by AXIOM [E16]\n    (reuse event 18)\n  event 51, D=2: f(alpha(b,1),alpha(b,0)) = f(alpha(b,1),alpha(b,3)) by congruence under f\n  event 23, D=2: alpha(b,f(1,0)) = f(alpha(b,1),alpha(b,0)) by AXIOM [E23]\n    event 4, D=1: f(1,0) = 1 by AXIOM [E4]\n  event 39, D=2: alpha(b,1) = alpha(b,f(1,0)) by congruence under alpha\nevent 52, D=2: f(2,0) = f(alpha(b,2),alpha(b,1)) by congruence under f\nevent 28, D=2: alpha(b,f(2,1)) = f(alpha(b,2),alpha(b,1)) by AXIOM [E28]\n  event 9, D=1: f(2,1) = 2 by AXIOM [E9]\nevent 44, D=2: alpha(b,2) = alpha(b,f(2,1)) by congruence under alpha\n(reuse event 17)",
+    "Goal: alpha(b,1) = 0\nOptimal proof horizon: D=2.\n  event 4, D=1: f(1,0) = 1 by AXIOM [E4]\nevent 39, D=2: alpha(b,1) = alpha(b,f(1,0)) by congruence under alpha\nevent 23, D=2: alpha(b,f(1,0)) = f(alpha(b,1),alpha(b,0)) by AXIOM [E23]\n  event 16, D=1: alpha(b,0) = 0 by AXIOM [E16]\n  event 18, D=1: alpha(b,3) = 0 by AXIOM [E18]\nevent 51, D=2: f(alpha(b,1),alpha(b,0)) = f(alpha(b,1),alpha(b,3)) by congruence under f\nevent 26, D=2: alpha(b,f(1,3)) = f(alpha(b,1),alpha(b,3)) by AXIOM [E26]\n  event 7, D=1: f(1,3) = 3 by AXIOM [E7]\nevent 42, D=2: alpha(b,3) = alpha(b,f(1,3)) by congruence under alpha\n(reuse event 18)"
+  ],
+  "dag_model_D1": {
+    "domain": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "constants": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "b": 4
+    },
+    "default": 0,
+    "arities": {
+      "alpha": 2,
+      "f": 2
+    },
+    "operations": {
+      "alpha": [
+        {
+          "args": [
+            4,
+            0
+          ],
+          "value": 0
+        },
+        {
+          "args": [
+            4,
+            1
+          ],
+          "value": 5
+        },
+        {
+          "args": [
+            4,
+            2
+          ],
+          "value": 2
+        },
+        {
+          "args": [
+            4,
+            3
+          ],
+          "value": 0
+        }
+      ],
+      "f": [
+        {
+          "args": [
+            0,
+            0
+          ],
+          "value": 0
+        },
+        {
+          "args": [
+            0,
+            1
+          ],
+          "value": 2
+        },
+        {
+          "args": [
+            0,
+            2
+          ],
+          "value": 0
+        },
+        {
+          "args": [
+            0,
+            3
+          ],
+          "value": 0
+        },
+        {
+          "args": [
+            1,
+            0
+          ],
+          "value": 1
+        },
+        {
+          "args": [
+            1,
+            1
+          ],
+          "value": 2
+        },
+        {
+          "args": [
+            1,
+            2
+          ],
+          "value": 1
+        },
+        {
+          "args": [
+            1,
+            3
+          ],
+          "value": 3
+        },
+        {
+          "args": [
+            2,
+            0
+          ],
+          "value": 0
+        },
+        {
+          "args": [
+            2,
+            1
+          ],
+          "value": 2
+        },
+        {
+          "args": [
+            2,
+            2
+          ],
+          "value": 2
+        },
+        {
+          "args": [
+            2,
+            3
+          ],
+          "value": 0
+        },
+        {
+          "args": [
+            3,
+            0
+          ],
+          "value": 3
+        },
+        {
+          "args": [
+            3,
+            1
+          ],
+          "value": 0
+        },
+        {
+          "args": [
+            3,
+            2
+          ],
+          "value": 3
+        },
+        {
+          "args": [
+            3,
+            3
+          ],
+          "value": 0
+        }
+      ]
+    }
+  },
+  "dag_model_D2": {
+    "domain": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "constants": {
+      "0": 0,
+      "1": 1,
+      "2": 0,
+      "3": 2,
+      "b": 3
+    },
+    "default": 0,
+    "arities": {
+      "alpha": 2,
+      "f": 2
+    },
+    "operations": {
+      "alpha": [
+        {
+          "args": [
+            3,
+            0
+          ],
+          "value": 0
+        },
+        {
+          "args": [
+            3,
+            1
+          ],
+          "value": 0
+        },
+        {
+          "args": [
+            3,
+            2
+          ],
+          "value": 0
+        }
+      ],
+      "f": [
+        {
+          "args": [
+            0,
+            0
+          ],
+          "value": 0
+        },
+        {
+          "args": [
+            0,
+            1
+          ],
+          "value": 0
+        },
+        {
+          "args": [
+            0,
+            2
+          ],
+          "value": 0
+        },
+        {
+          "args": [
+            1,
+            0
+          ],
+          "value": 1
+        },
+        {
+          "args": [
+            1,
+            1
+          ],
+          "value": 0
+        },
+        {
+          "args": [
+            1,
+            2
+          ],
+          "value": 2
+        },
+        {
+          "args": [
+            2,
+            0
+          ],
+          "value": 2
+        },
+        {
+          "args": [
+            2,
+            1
+          ],
+          "value": 0
+        },
+        {
+          "args": [
+            2,
+            2
+          ],
+          "value": 0
+        }
+      ]
+    }
+  },
+  "typed_lower_model": {
+    "carrier": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "operator": [
+      "b"
+    ],
+    "native_table_on_0_to_3": [
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        1,
+        3
+      ],
+      [
+        0,
+        2,
+        2,
+        0
+      ],
+      [
+        3,
+        0,
+        3,
+        0
+      ]
+    ],
+    "other_f_value": 0,
+    "row": [
+      0,
+      4,
+      2,
+      0,
+      0
+    ]
+  },
+  "typed_full_model": {
+    "carrier": [
+      0,
+      1,
+      2
+    ],
+    "quotient_map": [
+      0,
+      1,
+      0,
+      2
+    ],
+    "native_table": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        2
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "row": [
+      0,
+      0,
+      0
+    ]
+  }
+}

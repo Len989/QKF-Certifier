@@ -1,0 +1,9 @@
+name = "qkf_lean_pilot"
+version = "0.1.0"
+defaultTargets = ["QKF", "Audit"]
+
+[[lean_lib]]
+name = "QKF"
+
+[[lean_lib]]
+name = "Audit"

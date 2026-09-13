@@ -1,0 +1,20 @@
+{
+  "mode": "joint",
+  "operation": "paper_row",
+  "phase": "theory",
+  "status": "passed",
+  "native_observation_support": 2,
+  "carrier_elements": 4,
+  "forced_row_domain": 4,
+  "row_kernel_classes": 2,
+  "carrier_collapsed": false,
+  "visibility": 2,
+  "lower_horizon": 1,
+  "lower_model_elements": 7,
+  "all_lower_horizon_equations_checked": 34,
+  "positive_events": 9,
+  "scope": "Exact depth optimum of this finite ground presentation, not a width/complexity optimum for arbitrary arithmetic.",
+  "search_modules_loaded": [],
+  "seconds": 0.016808875996503048,
+  "peak_rss_kib": 14208
+}

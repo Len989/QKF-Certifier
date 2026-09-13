@@ -1,0 +1,158 @@
+{
+  "status": "passed",
+  "create": [
+    {
+      "width": 1,
+      "source_calls": 18,
+      "full_carrier_equivalences": 18,
+      "hull_specializations": 5
+    },
+    {
+      "width": 2,
+      "source_calls": 180,
+      "full_carrier_equivalences": 180,
+      "hull_specializations": 31
+    },
+    {
+      "width": 3,
+      "source_calls": 1944,
+      "full_carrier_equivalences": 1944,
+      "hull_specializations": 237
+    },
+    {
+      "width": 4,
+      "source_calls": 22032,
+      "full_carrier_equivalences": 22032,
+      "hull_specializations": 2151
+    },
+    {
+      "width": 8,
+      "source_calls": 320,
+      "full_carrier_equivalences": 320,
+      "hull_specializations": 89
+    },
+    {
+      "width": 16,
+      "source_calls": 320,
+      "full_carrier_equivalences": 320,
+      "hull_specializations": 87
+    },
+    {
+      "width": 32,
+      "source_calls": 320,
+      "full_carrier_equivalences": 320,
+      "hull_specializations": 87
+    },
+    {
+      "width": 64,
+      "source_calls": 320,
+      "full_carrier_equivalences": 320,
+      "hull_specializations": 86
+    }
+  ],
+  "source_calls": 25454,
+  "carrier_equivalences": 25454,
+  "hull_specializations": 2773,
+  "source_errors": [],
+  "mismatches": [],
+  "projection": [
+    {
+      "operation": "and",
+      "width": 1,
+      "checks": 9
+    },
+    {
+      "operation": "and",
+      "width": 2,
+      "checks": 81
+    },
+    {
+      "operation": "and",
+      "width": 3,
+      "checks": 729
+    },
+    {
+      "operation": "and",
+      "width": 4,
+      "checks": 6561
+    },
+    {
+      "operation": "and",
+      "width": 8,
+      "checks": 320
+    },
+    {
+      "operation": "and",
+      "width": 16,
+      "checks": 320
+    },
+    {
+      "operation": "and",
+      "width": 32,
+      "checks": 320
+    },
+    {
+      "operation": "and",
+      "width": 64,
+      "checks": 320
+    },
+    {
+      "operation": "or",
+      "width": 1,
+      "checks": 9
+    },
+    {
+      "operation": "or",
+      "width": 2,
+      "checks": 81
+    },
+    {
+      "operation": "or",
+      "width": 3,
+      "checks": 729
+    },
+    {
+      "operation": "or",
+      "width": 4,
+      "checks": 6561
+    },
+    {
+      "operation": "or",
+      "width": 8,
+      "checks": 320
+    },
+    {
+      "operation": "or",
+      "width": 16,
+      "checks": 320
+    },
+    {
+      "operation": "or",
+      "width": 32,
+      "checks": 320
+    },
+    {
+      "operation": "or",
+      "width": 64,
+      "checks": 320
+    }
+  ],
+  "projection_checks": 17320,
+  "negative_checks": [
+    "missing reachable create proof",
+    "missing source branch",
+    "removed source guards",
+    "false prefix induction cell",
+    "incomplete native derivation",
+    "zero permission removed",
+    "shortened source stabilization budget",
+    "changed native loop condition",
+    "narrower unproved source range"
+  ],
+  "source_variants": {
+    "local_renaming": "passed",
+    "field_to_getter": "passed"
+  },
+  "seconds": 6.219412335005472,
+  "scope": "Concrete abstract inputs have whole-carrier certificates; universal AND uses the separate reviewed hull source lemma."
+}

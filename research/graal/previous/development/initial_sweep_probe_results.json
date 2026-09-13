@@ -1,0 +1,1 @@
+{"full": {"status": "passed", "states": 49, "transitions": 588, "sign_checks": 196}, "weakened": {"status": "counterexample", "states": 14, "width": 2, "words": {"base": 0, "optional": 1, "bound": 0, "candidate": 0, "output": 1}}}

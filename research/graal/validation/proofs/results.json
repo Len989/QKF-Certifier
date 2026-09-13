@@ -1,0 +1,217 @@
+{
+  "status": "passed",
+  "certificate_corruptions": 20,
+  "rejections": [
+    {
+      "name": "source_hash",
+      "reason": "full source binding"
+    },
+    {
+      "name": "source_program",
+      "reason": "full source binding"
+    },
+    {
+      "name": "remove_sign_precondition",
+      "reason": "conditional lower contract"
+    },
+    {
+      "name": "false_exact_minimum",
+      "reason": "conditional lower contract"
+    },
+    {
+      "name": "sweep_atom",
+      "reason": "native supplied atoms"
+    },
+    {
+      "name": "sweep_edge",
+      "reason": "closed observation transition"
+    },
+    {
+      "name": "sweep_empty",
+      "reason": "empty suffix"
+    },
+    {
+      "name": "carry_bridge",
+      "reason": "complete source-cell quotient binding"
+    },
+    {
+      "name": "carry_atom",
+      "reason": "native atom cells"
+    },
+    {
+      "name": "carry_forced_step",
+      "reason": "forced image"
+    },
+    {
+      "name": "carry_table",
+      "reason": "completed row table"
+    },
+    {
+      "name": "carry_kernel",
+      "reason": "row kernel"
+    },
+    {
+      "name": "carry_missing_row",
+      "reason": "complete successor row family"
+    },
+    {
+      "name": "carry_missing_state",
+      "reason": "complete successor obligations"
+    },
+    {
+      "name": "carry_missing_edge",
+      "reason": "all successor bit columns"
+    },
+    {
+      "name": "carry_wrong_edge",
+      "reason": "closed successor observation carrier"
+    },
+    {
+      "name": "carry_wrong_boundary",
+      "reason": "universal signed successor obligation"
+    },
+    {
+      "name": "outer_count",
+      "reason": "complete finite order evidence"
+    },
+    {
+      "name": "outer_digest",
+      "reason": "complete finite order evidence"
+    },
+    {
+      "name": "outer_ir",
+      "reason": "full source binding"
+    }
+  ],
+  "positive_source_variants": [
+    {
+      "name": "renamed_formals_and_locals",
+      "status": "proved_universal_conditional_lower_contract",
+      "carry_states": 8
+    },
+    {
+      "name": "reversed_comparison_operands",
+      "status": "proved_universal_conditional_lower_contract",
+      "carry_states": 8
+    },
+    {
+      "name": "zero_bit_add_equals_or",
+      "status": "proved_universal_conditional_lower_contract",
+      "carry_states": 8
+    }
+  ],
+  "native_faulty_mutants": [
+    {
+      "name": "reversed_greedy_comparison",
+      "proof_rejection": "sweep_counterexample",
+      "native_witness": {
+        "spec": {
+          "width": 2,
+          "must": 0,
+          "may": 3,
+          "lower": 0,
+          "upper": 1,
+          "can_zero": true
+        },
+        "feasible_words": [
+          0,
+          1
+        ],
+        "native_output": "LO 1",
+        "reason": "lower refinement loses a feasible word or moves backward"
+      },
+      "native_calls": 2232
+    },
+    {
+      "name": "first_optional_or",
+      "proof_rejection": "source phase quotient is a congruence for output and continuation",
+      "native_witness": {
+        "spec": {
+          "width": 2,
+          "must": 0,
+          "may": 3,
+          "lower": 0,
+          "upper": 1,
+          "can_zero": true
+        },
+        "feasible_words": [
+          0,
+          1
+        ],
+        "native_output": "LO 1",
+        "reason": "lower refinement loses a feasible word or moves backward"
+      },
+      "native_calls": 2232
+    },
+    {
+      "name": "forbidden_cell_or",
+      "proof_rejection": "unknown forbidden action",
+      "native_witness": {
+        "spec": {
+          "width": 3,
+          "must": 0,
+          "may": 5,
+          "lower": -1,
+          "upper": 3,
+          "can_zero": false
+        },
+        "feasible_words": [
+          1
+        ],
+        "native_output": "LO 3",
+        "reason": "lower refinement loses a feasible word or moves backward"
+      },
+      "native_calls": 2232
+    },
+    {
+      "name": "inverted_optional_branch",
+      "proof_rejection": "complete lower source shape, masks, directions, guards, zero handling and returns",
+      "native_witness": {
+        "spec": {
+          "width": 2,
+          "must": 0,
+          "may": 2,
+          "lower": -1,
+          "upper": 1,
+          "can_zero": true
+        },
+        "feasible_words": [
+          0
+        ],
+        "native_output": "LO 1",
+        "reason": "lower refinement loses a feasible word or moves backward"
+      },
+      "native_calls": 2232
+    },
+    {
+      "name": "inverted_zero_flag",
+      "proof_rejection": "complete lower source shape, masks, directions, guards, zero handling and returns",
+      "native_witness": {
+        "spec": {
+          "width": 1,
+          "must": 0,
+          "may": 0,
+          "lower": -1,
+          "upper": 0,
+          "can_zero": true
+        },
+        "feasible_words": [
+          0
+        ],
+        "native_output": "LO 1",
+        "reason": "lower refinement loses a feasible word or moves backward"
+      },
+      "native_calls": 2232
+    }
+  ],
+  "native_mutant_calls": 11160,
+  "strategy_limitation": {
+    "variant": "strict predecessor",
+    "proof_status": "sweep_counterexample",
+    "native_cases": 2232,
+    "finite_failures": [],
+    "interpretation": "A rejected intermediate lemma is not by itself a bug in the complete lower procedure. No all-width proof of this variant is claimed."
+  },
+  "changed_instance_rejected": true,
+  "seconds": 12.395366156008095
+}

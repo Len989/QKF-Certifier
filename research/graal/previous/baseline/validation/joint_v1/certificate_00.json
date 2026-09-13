@@ -1,0 +1,147 @@
+{
+  "schema": "qkf-joint-carrier-certificate-v1",
+  "spec": {
+    "width": 8,
+    "must": 0,
+    "may": 255,
+    "lower": 58,
+    "upper": 74,
+    "can_zero": false
+  },
+  "query": {
+    "kind": "summary"
+  },
+  "binding": "9c2ef820ca667526015f899f7a25458a2fbc50dcb7de3f9dbeb4d402b3c8032a",
+  "cells": [
+    {
+      "start": 186,
+      "free": 1,
+      "must_key": 186,
+      "may_key": 187,
+      "observation": {
+        "count": 2,
+        "lower": 58,
+        "upper": 59,
+        "must": 58,
+        "may": 59,
+        "zero": false
+      }
+    },
+    {
+      "start": 188,
+      "free": 2,
+      "must_key": 188,
+      "may_key": 191,
+      "observation": {
+        "count": 4,
+        "lower": 60,
+        "upper": 63,
+        "must": 60,
+        "may": 63,
+        "zero": false
+      }
+    },
+    {
+      "start": 192,
+      "free": 3,
+      "must_key": 192,
+      "may_key": 199,
+      "observation": {
+        "count": 8,
+        "lower": 64,
+        "upper": 71,
+        "must": 64,
+        "may": 71,
+        "zero": false
+      }
+    },
+    {
+      "start": 200,
+      "free": 1,
+      "must_key": 200,
+      "may_key": 201,
+      "observation": {
+        "count": 2,
+        "lower": 72,
+        "upper": 73,
+        "must": 72,
+        "may": 73,
+        "zero": false
+      }
+    },
+    {
+      "start": 202,
+      "free": 0,
+      "must_key": 202,
+      "may_key": 202,
+      "observation": {
+        "count": 1,
+        "lower": 74,
+        "upper": 74,
+        "must": 74,
+        "may": 74,
+        "zero": false
+      }
+    }
+  ],
+  "joins": [
+    {
+      "left": 0,
+      "right": 1,
+      "observation": {
+        "count": 6,
+        "lower": 58,
+        "upper": 63,
+        "must": 56,
+        "may": 63,
+        "zero": false
+      }
+    },
+    {
+      "left": 2,
+      "right": 3,
+      "observation": {
+        "count": 10,
+        "lower": 64,
+        "upper": 73,
+        "must": 64,
+        "may": 79,
+        "zero": false
+      }
+    },
+    {
+      "left": 5,
+      "right": 6,
+      "observation": {
+        "count": 16,
+        "lower": 58,
+        "upper": 73,
+        "must": 0,
+        "may": 127,
+        "zero": false
+      }
+    },
+    {
+      "left": 7,
+      "right": 4,
+      "observation": {
+        "count": 17,
+        "lower": 58,
+        "upper": 74,
+        "must": 0,
+        "may": 127,
+        "zero": false
+      }
+    }
+  ],
+  "root": 8,
+  "answer": {
+    "count": 17,
+    "lower": 58,
+    "upper": 74,
+    "must": 0,
+    "may": 127,
+    "zero": false,
+    "word": null
+  }
+}

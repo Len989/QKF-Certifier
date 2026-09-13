@@ -1,0 +1,80 @@
+\section{Introduction}\label{sec:introduction}
+
+Paper I~\cite{ShcherbakovI} asks what an incomplete action specification
+forces: which carrier elements become equal, which missing values are
+already determined, and which quotients admit carrier-valued completions.
+The present paper asks when those consequences become visible if the
+syntax available to a proof is bounded. This is a question about the
+chosen presentation, not just its final equality relation.
+
+A small example captures the distinction. Let
+\[
+E=\{p=f^2(r),\ q=f^2(r)\}.
+\]
+Then $p=q$ follows through a term of depth two. At horizon zero or one,
+neither input equation is available. Adding the derived equation $p=q$
+changes no full equational consequence, but makes that equality available
+already at horizon zero. The full theory is the same; its visibility
+filtration is different.
+
+There is a second distinction that must be fixed before measuring a proof.
+One can bound the terms occurring in a proof DAG that uses reflexivity,
+symmetry, transitivity, and congruence. Alternatively, one can bound the
+whole terms in a sequential derivation, where each step replaces one
+instance of an input equation inside a context. These proof formats give
+the same unrestricted equality, but their bounded versions differ.
+For the example above, a congruence proof of $f(p)=f(q)$ first proves
+$p=q$ at depth two and then applies $f$ to the endpoints. Its maximum term
+depth is two. A sequential derivation must pass through $f^3(r)$ and has
+minimum depth three. Section~\ref{sec:rewrite} makes this separation exact.
+
+We use $\lambda_E$ and $\delta_E$ for the congruence-proof filtration,
+which is the resource computed by the finite-ground algorithm and used in
+Paper I. A superscript $\mathrm{rw}$ always denotes sequential rewrite
+visibility. The distinction is also necessary in the universal regime:
+semigroup derivational space measures intermediate words in a rewrite
+sequence, and transfers to the latter invariant.
+
+The paper has four main contributions.
+\begin{enumerate}
+\item \textbf{A complete finite-ground spectrum.} Classical ground locality
+bounds $\delta_E(d)$ by $\max\{d,h(E)\}$. Together with monotonicity, it
+leaves a finite low-depth profile. Theorem~\ref{thm:catalan} shows that all
+admissible profiles occur and that their number is Catalan. A finite
+extension by derived equations can eliminate the overhead altogether;
+the size of that extension remains a separate issue.
+\item \textbf{Exact finite-query certificates.} Theorem~\ref{thm:querysubterm}
+reduces every threshold query to one fixed input/query DAG. Incremental
+activation gives the exact first-equality levels. Chronological explanation
+capture prevents circular proofs, while finite threshold models certify
+that an equality was unavailable below its claimed optimum. Neither
+chronology alone nor a positive proof alone establishes minimality.
+\item \textbf{A structural application from Paper I.} On its named action
+interface, the first two quotients are the sets $X_1,X_2$ described in
+Paper I, Theorem~6.6. We give the proof and lower separator for the common
+four-element example, whose class counts are $N_1=5$ and $N_2=3$.
+This also distinguishes visibility depth from the number of quotient
+feedback rounds.
+\item \textbf{The universal and sequential boundaries.} For finite
+universal presentations, a computable majorant for either visibility
+function is equivalent to a decidable ground word problem.
+For sequential action-chain derivations, the typed invariant is exactly
+semigroup space. Theorem~\ref{thm:envelope} shows that arbitrary one-sorted
+contexts replace it by the least majorant with nondecreasing overhead.
+The semigroup realization results are stated for $\delta^{\mathrm{rw}}$.
+\end{enumerate}
+
+Ground congruence closure, incremental explanations, and semigroup
+space are established tools~\cite{NelsonOppen1980,DowneySethiTarjan1980,
+NieuwenhuisOliveras2005,Olshanskii2013}. Our contribution is the exact
+filtration and spectrum, its two-sided certificate interpretation, and
+the precise contextual envelope for sequential action derivations.
+The resource convention is part of every claim. In particular, no
+finite-ground algorithm is asserted to decide arbitrary universal
+presentations.
+
+The planned Paper III develops computational representations and
+checkable certificates for the project. This paper supplies its general
+finite-ground reference results. The attached visibility prototype is
+separate from the public QKF-Certifier implementation; the latter is not
+assumed to implement every invariant or universal theory considered here.

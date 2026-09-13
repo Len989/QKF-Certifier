@@ -1,0 +1,21 @@
+{
+  "original_paper_II": {
+    "paper": "II",
+    "relative_path": "work/articles/Статья 1/EQUALITY_VISIBILITY_DEPTH_FULL_PACKAGE/main.tex",
+    "sha256": "794beb033f6acb1017c0b610c7254f04220ef5c26c7b9d39791bbe77c2f4150d"
+  },
+  "original_unchanged": true,
+  "reference_paper_I": {
+    "title": "Initial semantics of incompletely specified actions: forced quotients, kernel saturation, and completion",
+    "version": "1.0",
+    "manuscript_revision": "2026-09-11",
+    "doi": null
+  },
+  "version": "1.0",
+  "manuscript_revision": "2026-09-12",
+  "pdf_pages": 19,
+  "publication_status": "prepared; no Zenodo record created in this task",
+  "proof_status": "mathematical manuscript with reproducible finite checks; not a proof-assistant formalization",
+  "prototype_changes": "obsolete absolute paths removed; inherited core retained",
+  "critical_correction": "Congruence-proof visibility and sequential rewrite visibility are distinct; exact semigroup-space transfer is stated for the latter."
+}

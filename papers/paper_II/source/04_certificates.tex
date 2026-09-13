@@ -1,0 +1,78 @@
+\section{Exact computation and certificates}\label{sec:algorithm}
+
+\subsection{The query-subterm theorem}
+Let $\mathcal Q$ be a finite set of ground terms. Put
+\[
+S=\Sub(E)\cup\Sub(\mathcal Q),\qquad
+S_D=\{u\in S:\depth u\le D\},
+\]
+and let $E_D$ contain exactly the input equations whose sides both have depth at most $D$. Denote by $\approx_D^S$ the least congruence of the partial term algebra on $S_D$ containing $E_D$. Here an operation tuple is represented only when the corresponding parent term belongs to $S_D$.
+
+\begin{theorem}[Query-subterm visibility]\label{thm:querysubterm}
+For $s,t\in\mathcal Q$ with $d(s,t)\le D$,
+\[
+\boxed{s\equiv_D t\iff s\approx_D^S t.}
+\]
+If $H=\max\{h(E),d_{\mathcal Q}\}$, then
+$\approx_H^S|_{\mathcal Q}=\equiv_E|_{\mathcal Q}$.
+\end{theorem}
+\begin{proof}
+Every merge on $S_D$ is an admissible bounded equational inference, so the right-hand side implies the left-hand side. For the converse, take the classes of $\approx_D^S$ as a domain. Interpret every represented operation tuple by its parent class; congruence makes this well defined. Complete all unrepresented tuples and constants by a fixed default element. If there are no classes, use a singleton domain instead. Every active term evaluates to its own class, by structural induction, and this algebra satisfies $E_D$. Consequently two different classes cannot be equal in any equational proof from $E_D$, including a proof in $T^{(D)}$. This proves the converse. At $H$, all input equations and queries are present; ground locality gives the final assertion.
+\end{proof}
+
+This proof also explains why filling the entire bounded term universe is unnecessary. The finite partial algebra
+\[
+\mathsf P_D(E,\mathcal Q)=S_D/\!\approx_D^S
+\]
+is determined up to its canonical term labels by the input and query DAG. It is a partial algebra on represented tuples, not a claim that the query set is closed under the signature. The same construction works sort by sort, adding one default element to every empty sort.
+
+\subsection{Activation and first merges}
+Give each node activation level $\act(u)=\depth u$ and each equation activation level $\act(u=v)=d(u,v)$. Activate levels in increasing order, saturating congruence closure at each level before proceeding. The resulting partitions form a nested family on the growing active sets.
+
+A union--find implementation uses parent lists and a signature table keyed by $(f,[u_1],\ldots,[u_k])$. Only affected parent signatures need reconsideration after a merge. Classical congruence-closure algorithms provide the relevant efficiency bounds, with the precise bound depending on representation, arity, and proof bookkeeping \cite{DowneySethiTarjan1980,NieuwenhuisOliveras2007}. We claim no new asymptotic bound for congruence closure itself. The reduction here is to input subterms with activation labels.
+
+\begin{corollary}[First-merge characterization]\label{cor:firstmerge}
+For final-equal query terms,
+\[
+\lambda_E(s,t)=\min\{D\ge d(s,t):s\approx_D^S t\}.
+\]
+For nonempty $\mathcal Q$, $\delta_E(\mathcal Q)$ is the first threshold $D\ge d_{\mathcal Q}$ whose query partition equals its final partition at $H$. For $\mathcal Q=\varnothing$, it is zero.
+\end{corollary}
+
+Successful merges can be stored as a levelled forest instead of retaining all partitions. Proposition~\ref{prop:ultra} describes the first-coalescence levels in this forest, with endpoint activation accounting for the nonzero diagonal.
+
+\subsection{Chronological proof DAGs}
+When a congruence merge identifies $f(s_1,\ldots,s_k)$ with $f(t_1,\ldots,t_k)$, its argument equalities already hold. Freeze paths proving those equalities in the current union forest \emph{before} adding the parent merge. Every premise event then has a smaller event number. Reconstructing premises from the final graph alone would lose this guarantee.
+
+\begin{proposition}[Acyclic depth-optimal certificates]\label{prop:proofdag}
+An activation-ordered, completely saturated run with chronological premise capture yields, for every equal query pair $s,t$, an acyclic proof DAG whose maximum term depth, including the endpoints, is exactly $\lambda_E(s,t)$.
+\end{proposition}
+\begin{proof}
+Input equations give leaves; congruence premises refer only to earlier successful merges. Recursive expansion therefore terminates and supplies valid equational inferences. If the first merge of $s,t$ occurs at $D$, the proof uses only terms active by $D$. A proof using smaller maximum depth would imply a merge at an earlier completed threshold, contradicting Corollary~\ref{cor:firstmerge}. For a reflexive query, the endpoint itself gives the required cost $\depth s$.
+\end{proof}
+
+Chronology proves acyclicity. Optimality additionally uses complete saturation and the first-merge theorem; chronology alone is not a lower-bound certificate. Proof-producing congruence closure is established work \cite{NieuwenhuisOliveras2005,NieuwenhuisOliveras2007}. Our objective is maximum represented term depth, distinct from explanation cardinality and proof size \cite{FellnerFontainePaleo2017,FlattEtAl2022}.
+
+\subsection{Finite lower-horizon models}
+\begin{theorem}[Threshold model]\label{thm:thresholdmodel}
+For every threshold $D$ there is a finite total algebra $M_D\models E_D$ in which each active DAG term evaluates to its $\approx_D^S$-class. In particular, distinct active classes have distinct values. A nonempty sort needs at most one element per active class; an empty sort is supplied with one default element.
+\end{theorem}
+\begin{proof}
+Use the represented-tuple interpretation and default completion in the proof of Theorem~\ref{thm:querysubterm}. The induction there proves the evaluation assertion and satisfaction of every equation of $E_D$.
+\end{proof}
+
+\begin{corollary}[Two-sided optimality certificate]\label{cor:twosided}
+If $\lambda_E(s,t)=D>d(s,t)$, a depth-$D$ proof and a finite model of $E_{D-1}$ separating $s,t$ certify the exact value $D$. If $D=d(s,t)$, endpoint depth itself gives the lower bound.
+\end{corollary}
+
+A checker of the positive certificate verifies the actual input equations, terms, inference rules, and premise order. A checker of the lower certificate must evaluate \emph{all} equations of $E_{D-1}$, not merely those used in the positive proof. The model certifies a bounded lower bound: it need not satisfy deeper input equations. At the final horizon $H$, however, all of $E$ is active.
+
+\begin{corollary}[Effective finite separation]\label{cor:resfinite}
+The initial algebra of a finite ground presentation is residually finite: any unequal ground terms are separated by an effectively constructible finite model of that presentation.
+\end{corollary}
+\begin{proof}
+Apply Theorem~\ref{thm:thresholdmodel} at $H=\max\{h(E),d(s,t)\}$ to the DAG of $E,s,t$. The resulting evaluation homomorphism from the initial algebra separates the two term classes.
+\end{proof}
+
+\subsection{Subset-minimal supports}
+Collect the input equations used by a depth-optimal proof, and repeatedly test whether one can be deleted while preserving the target equality at that depth. Stop when no deletion succeeds. The remaining set is subset-minimal. Its optimal depth remains the full-input optimum: a smaller-depth proof from a subset would also be a smaller-depth proof from the full input. This procedure does not promise minimum cardinality; small conflict-set optimization is a separate problem \cite{FellnerFontainePaleo2017}.

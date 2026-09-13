@@ -1,0 +1,287 @@
+{
+  "spec": {
+    "width": 8,
+    "must": 0,
+    "may": 176,
+    "lower": -128,
+    "upper": 85,
+    "can_zero": true
+  },
+  "java_output": "OK -128 48 0 b0 1",
+  "output_spec": {
+    "width": 8,
+    "lower": -128,
+    "upper": 48,
+    "must": 0,
+    "may": 176,
+    "can_zero": true
+  },
+  "input_certificate": {
+    "schema": "qkf-joint-carrier-certificate-v1",
+    "spec": {
+      "width": 8,
+      "must": 0,
+      "may": 176,
+      "lower": -128,
+      "upper": 85,
+      "can_zero": true
+    },
+    "query": {
+      "kind": "summary"
+    },
+    "binding": "5534540bad7dc3df4901b3bec56ec1ca0e29339796a20db3823087e7024cd1f4",
+    "cells": [
+      {
+        "start": 0,
+        "free": 7,
+        "must_key": 0,
+        "may_key": 48,
+        "observation": {
+          "count": 4,
+          "lower": -128,
+          "upper": -80,
+          "must": 128,
+          "may": 176,
+          "zero": false
+        }
+      },
+      {
+        "start": 128,
+        "free": 6,
+        "must_key": 128,
+        "may_key": 176,
+        "observation": {
+          "count": 4,
+          "lower": 0,
+          "upper": 48,
+          "must": 0,
+          "may": 48,
+          "zero": true
+        }
+      },
+      {
+        "start": 192,
+        "free": 4,
+        "must_key": 192,
+        "may_key": 128,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 208,
+        "free": 2,
+        "must_key": 208,
+        "may_key": 144,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 212,
+        "free": 1,
+        "must_key": 212,
+        "may_key": 144,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      }
+    ],
+    "joins": [
+      {
+        "left": 0,
+        "right": 1,
+        "observation": {
+          "count": 8,
+          "lower": -128,
+          "upper": 48,
+          "must": 0,
+          "may": 176,
+          "zero": true
+        }
+      },
+      {
+        "left": 2,
+        "right": 3,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "left": 5,
+        "right": 6,
+        "observation": {
+          "count": 8,
+          "lower": -128,
+          "upper": 48,
+          "must": 0,
+          "may": 176,
+          "zero": true
+        }
+      },
+      {
+        "left": 7,
+        "right": 4,
+        "observation": {
+          "count": 8,
+          "lower": -128,
+          "upper": 48,
+          "must": 0,
+          "may": 176,
+          "zero": true
+        }
+      }
+    ],
+    "root": 8,
+    "answer": {
+      "count": 8,
+      "lower": -128,
+      "upper": 48,
+      "must": 0,
+      "may": 176,
+      "zero": true,
+      "word": null
+    }
+  },
+  "output_certificate": {
+    "schema": "qkf-joint-carrier-certificate-v1",
+    "spec": {
+      "width": 8,
+      "lower": -128,
+      "upper": 48,
+      "must": 0,
+      "may": 176,
+      "can_zero": true
+    },
+    "query": {
+      "kind": "summary"
+    },
+    "binding": "97e7ba9f95b7b057bbf834b755cffc3396b496e84b49bd058cf06092b04d86c6",
+    "cells": [
+      {
+        "start": 0,
+        "free": 7,
+        "must_key": 0,
+        "may_key": 48,
+        "observation": {
+          "count": 4,
+          "lower": -128,
+          "upper": -80,
+          "must": 128,
+          "may": 176,
+          "zero": false
+        }
+      },
+      {
+        "start": 128,
+        "free": 5,
+        "must_key": 128,
+        "may_key": 144,
+        "observation": {
+          "count": 2,
+          "lower": 0,
+          "upper": 16,
+          "must": 0,
+          "may": 16,
+          "zero": true
+        }
+      },
+      {
+        "start": 160,
+        "free": 4,
+        "must_key": 160,
+        "may_key": 160,
+        "observation": {
+          "count": 1,
+          "lower": 32,
+          "upper": 32,
+          "must": 32,
+          "may": 32,
+          "zero": false
+        }
+      },
+      {
+        "start": 176,
+        "free": 0,
+        "must_key": 176,
+        "may_key": 176,
+        "observation": {
+          "count": 1,
+          "lower": 48,
+          "upper": 48,
+          "must": 48,
+          "may": 48,
+          "zero": false
+        }
+      }
+    ],
+    "joins": [
+      {
+        "left": 0,
+        "right": 1,
+        "observation": {
+          "count": 6,
+          "lower": -128,
+          "upper": 16,
+          "must": 0,
+          "may": 176,
+          "zero": true
+        }
+      },
+      {
+        "left": 2,
+        "right": 3,
+        "observation": {
+          "count": 2,
+          "lower": 32,
+          "upper": 48,
+          "must": 32,
+          "may": 48,
+          "zero": false
+        }
+      },
+      {
+        "left": 4,
+        "right": 5,
+        "observation": {
+          "count": 8,
+          "lower": -128,
+          "upper": 48,
+          "must": 0,
+          "may": 176,
+          "zero": true
+        }
+      }
+    ],
+    "root": 6,
+    "answer": {
+      "count": 8,
+      "lower": -128,
+      "upper": 48,
+      "must": 0,
+      "may": 176,
+      "zero": true,
+      "word": null
+    }
+  }
+}

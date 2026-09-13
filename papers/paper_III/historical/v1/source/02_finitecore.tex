@@ -1,0 +1,46 @@
+\section{The finite partial core inherited from I and II}\label{sec:finitecore}
+
+Let $\Sigma$ be a finite finitary signature, $E$ a finite set of ground equations, and $\mathcal Q$ a finite set of query terms. Constants have depth zero. Put
+\begin{align*}
+S&=\Sub(E)\cup\Sub(\mathcal Q),&
+S_D&=\{u\in S:\dep u\le D\},\\
+E_D&=\{s=t\in E:\max(\dep s,\dep t)\le D\}.&&
+\end{align*}
+Let $\approx_D^S$ be congruence closure on the represented applications in $S_D$. Write $\equiv_D$ for the bounded \emph{congruence-proof} equality of Paper II and $\equiv_E$ for full ground equality.
+
+\begin{proposition}[Partial core and evaluation, K1]\label{prop:core}
+The quotient $\mathsf P_D=S_D/\!\approx_D^S$ is a well-defined partial algebra: a tuple has an operation value when it is represented by an application node, and its value is the parent class. Every total $M\models E_D$ induces an operation-preserving map
+\[
+\eta_M:\mathsf P_D\to M,\qquad [u]\mapsto\lbrack\!\lbrack u\rbrack\!\rbrack_M.
+\]
+For active query terms $s,t$, their classes coincide exactly when $s\equiv_D t$. At $H=\max\{h(E),d_{\mathcal Q}\}$ this is equivalent to $E\vdash s=t$.
+\end{proposition}
+\begin{proof}
+Congruence closure identifies the parents of any two represented tuples with componentwise equal arguments, so the partial operations are well defined. Every generating equation holds in $M$, and equality is preserved by its operations; hence evaluation factors through the quotient and preserves represented operations. The equality assertions are Paper II, Theorems~4.1 and~3.1, respectively. Empty query depth and empty axiom depth are taken to be zero.
+\end{proof}
+
+This core precedes any choice of values for unrepresented tuples. A finite separating total model is obtained by assigning a default value to each unrepresented operation tuple and adding a default element to every empty active sort. That totalization is a certificate-producing construction, not additional canonical information in $\mathsf P_D$.
+
+A positive derivation shows that two classes must merge. Conversely, a total model of $E_D$ separating their labels shows that they cannot merge at that horizon. Paper II, Proposition~4.3 and Corollary~4.5, combine a chronological proof DAG at the first complete threshold with such a lower model. Their resource $\lambda_E$ bounds all terms in a congruence proof. The different sequential resource $\lambda_E^{\mathrm{rw}}$ bounds whole intermediate rewrite terms. Neither is asserted to equal the number of normalization steps in the public certifier.
+
+\subsection{The same action example in all three papers}
+For the carrier $A=\{0,1,2,3\}$, use the operation table
+\[
+\begin{array}{c|rrrr}
+f&0&1&2&3\\\hline
+0&0&2&0&0\\1&1&2&1&3\\2&0&2&2&0\\3&3&0&3&0
+\end{array}
+\]
+and one operator $b$, with $r_i=\alpha(b,i)$ and observations $r_0=0$, $r_2=2$, $r_3=0$. Include the native diagram and named-input compatibility. Paper I, Example~6.2, and Paper II, Section~5.1, give
+\begin{align*}
+\mathcal I/{\equiv_1}&=
+\{\{0,r_0,r_3\},\{1\},\{2,r_2\},\{3\},\{r_1\}\},\\
+\mathcal I/{\equiv_2}&=
+\{\{0,2,r_0,r_1,r_2,r_3\},\{1\},\{3\}\}.
+\end{align*}
+For example, $f(0,1)=2$ and $f(3,1)=0$ yield
+$r_2=f(r_0,r_1)=f(r_3,r_1)=r_0$.
+Likewise $f(1,0)=1$ and $f(1,3)=3$ yield $r_1=r_3$.
+The canonical maps in Proposition~\ref{prop:core} thus recover the five-to-three class change on exactly the named interface described in Paper I, Theorem~6.6.
+
+This is an algebraic example, not a KnownBits program. Its role in III is to fix the meaning of a forced quotient and a finite interface before introducing specialized representations. Quotient-feedback rounds, syntactic depth, proof length, and semantic table size remain different quantities throughout.

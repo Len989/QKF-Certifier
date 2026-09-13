@@ -1,0 +1,443 @@
+{
+  "selected": 5,
+  "records": [
+    {
+      "operation": "and",
+      "source": {
+        "mode": "joint",
+        "operation": "and",
+        "phase": "source",
+        "status": "source_observation_produced",
+        "source_certificate_sha256": "ed04fa130b06b3cf41ffe27da85a546949df48a4ee76622d94eb7e335671086d",
+        "source_certificate_bytes": 113567,
+        "source_sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+        "ssa_sha256": "5cebee13b7455dea24ecdefd70b50577b8bf2869cda8d61b74e49ca29b7d22f2",
+        "hull_calls": 4,
+        "source_leaves": 5,
+        "seconds": 0.0810065819969168,
+        "peak_rss_kib": 16760
+      },
+      "status": "proved_source_observation_and_whole_word_ssa",
+      "word": {
+        "case": "And",
+        "producer": {
+          "case": "And",
+          "mode": "observed",
+          "phase": "producer",
+          "target": "and",
+          "target_scope": "explicit_total_target",
+          "status": "certificate_produced",
+          "sources": {
+            "program": "5cebee13b7455dea24ecdefd70b50577b8bf2869cda8d61b74e49ca29b7d22f2"
+          },
+          "components": {
+            "solution": {
+              "status": "proved_component",
+              "blockers": {},
+              "native_lemmas": 0,
+              "action_rewrites": 0,
+              "observation_rewrites": 0,
+              "prepare_seconds": 0.013490334997186437,
+              "progress": {
+                "states": 0,
+                "search_states": 2,
+                "transition_attempts": 48,
+                "leaves": 1,
+                "branches": 0,
+                "guard_refinements": 0
+              },
+              "last_leaf": {
+                "leaf": 1,
+                "depth": 0,
+                "path": [],
+                "expression_hash": "ebccf02e93ed0104de4f618bd68eda940c6d1c4f0f8edfc38c9937a24a8b9977",
+                "status": "proved_sound",
+                "initial_states": 1,
+                "unrestricted_initial_states": 1,
+                "guard_trials": [
+                  {
+                    "assumption_indices": [],
+                    "status": "proved_sound",
+                    "transition_attempts": 48,
+                    "states": 2
+                  }
+                ],
+                "assumption_indices": [],
+                "transition_attempts": 48,
+                "states": 2
+              },
+              "leaves": [
+                {
+                  "leaf": 1,
+                  "depth": 0,
+                  "path": [],
+                  "expression_hash": "ebccf02e93ed0104de4f618bd68eda940c6d1c4f0f8edfc38c9937a24a8b9977",
+                  "status": "proved_sound",
+                  "initial_states": 1,
+                  "unrestricted_initial_states": 1,
+                  "guard_trials": [
+                    {
+                      "assumption_indices": [],
+                      "status": "proved_sound",
+                      "transition_attempts": 48,
+                      "states": 2
+                    }
+                  ],
+                  "assumption_indices": [],
+                  "transition_attempts": 48,
+                  "states": 2
+                }
+              ],
+              "search_seconds": 0.0012778060045093298
+            }
+          },
+          "symbolic_attempts": {
+            "solution": {
+              "attempts": [],
+              "totals": {
+                "search_nodes": 0,
+                "fm_constructed_rows": 0
+              }
+            }
+          },
+          "totals": {
+            "states": 2,
+            "search_states": 2,
+            "transition_attempts": 48
+          },
+          "budgets": {
+            "states_total": 100000,
+            "initial_enumeration_limit": 100000,
+            "transition_attempts_total": 2000000,
+            "max_branch_leaves": 512,
+            "max_branch_depth": 24,
+            "symbolic_search_nodes": 10000,
+            "symbolic_fm_rows": 100000,
+            "producer_seconds": 60,
+            "replay_seconds": 60
+          },
+          "component_count": 1,
+          "symbolic_totals": {
+            "search_nodes": 0,
+            "fm_constructed_rows": 0
+          },
+          "preparation_seconds": 0.016301693001878448,
+          "prepared_sha256": "50fd195e94f1377bc4e6821e996ce3870fe90f14c84f253f2086672d9e89880a",
+          "prepared_bytes": 5406,
+          "final_component_count": 1,
+          "certificate_sha256": "b449009b7e121dd7c9133d9e660065e0084db7903fd6662685d72def82aa4a57",
+          "certificate_bytes": 8078,
+          "seconds": 0.04014448801171966,
+          "peak_rss_kib": 13952
+        },
+        "producer_wall_seconds": 0.11558554699877277,
+        "status": "proved_original_whole_all_positive_widths",
+        "replay": {
+          "case": "And",
+          "mode": "observed",
+          "phase": "replay",
+          "status": "proved_original_whole_all_positive_widths",
+          "components": 1,
+          "component_target_proofs": 1,
+          "component_width_one": [],
+          "whole_verification": {
+            "status": "proved_original_whole_all_positive_widths",
+            "states": 2,
+            "transitions": 48,
+            "components": 1,
+            "native_lemmas": 0,
+            "native_symbolic_steps": 0,
+            "rewrites": 0,
+            "action_rewrites": 0,
+            "action_tail_steps": 0,
+            "observation_rewrites": 0,
+            "observation_proof_steps": 0
+          },
+          "search_modules_loaded": [],
+          "action_rewrites": 0,
+          "observation_rewrites": 0,
+          "native_symbolic_lemmas": 0,
+          "seconds": 0.01765443099429831,
+          "peak_rss_kib": 13568
+        },
+        "replay_wall_seconds": 0.11566194500483107
+      },
+      "replay": {
+        "mode": "joint",
+        "operation": "and",
+        "phase": "replay",
+        "status": "proved_source_observation_and_whole_word_ssa",
+        "word_verification": {
+          "status": "proved_original_whole_all_positive_widths",
+          "states": 2,
+          "transitions": 48,
+          "components": 1,
+          "native_lemmas": 0,
+          "native_symbolic_steps": 0,
+          "rewrites": 0,
+          "action_rewrites": 0,
+          "action_tail_steps": 0,
+          "observation_rewrites": 0,
+          "observation_proof_steps": 0
+        },
+        "source_leaves": 5,
+        "hull_calls": 4,
+        "search_modules_loaded": [],
+        "source_certificate_sha256": "ed04fa130b06b3cf41ffe27da85a546949df48a4ee76622d94eb7e335671086d",
+        "word_certificate_sha256": "b449009b7e121dd7c9133d9e660065e0084db7903fd6662685d72def82aa4a57",
+        "ssa_sha256": "5cebee13b7455dea24ecdefd70b50577b8bf2869cda8d61b74e49ca29b7d22f2",
+        "mathematical_target": "all positive word widths",
+        "source_execution_widths": [
+          1,
+          8,
+          16,
+          32,
+          64
+        ],
+        "native_boundary": "Reviewed mask-hull loop/ordering lemma and previous source shims; no formal Java compiler proof.",
+        "seconds": 0.084295918000862,
+        "peak_rss_kib": 18260
+      }
+    },
+    {
+      "operation": "or",
+      "source": {
+        "mode": "joint",
+        "operation": "or",
+        "phase": "source",
+        "status": "source_observation_produced",
+        "source_certificate_sha256": "09ad1f8ad5074c73363ccf27a4b0c628a50dbd221227900e3089885abc6094d5",
+        "source_certificate_bytes": 4406,
+        "source_sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+        "ssa_sha256": "899318278b42cc075ad92ca4e3716a32c130229be18ccb2c32f862c4b965dfe9",
+        "hull_calls": 0,
+        "source_leaves": 1,
+        "seconds": 0.03807436100032646,
+        "peak_rss_kib": 16248
+      },
+      "status": "proved_source_observation_and_whole_word_ssa",
+      "word": {
+        "case": "Or",
+        "producer": {
+          "case": "Or",
+          "mode": "observed",
+          "phase": "producer",
+          "target": "or",
+          "target_scope": "explicit_total_target",
+          "status": "certificate_produced",
+          "sources": {
+            "program": "899318278b42cc075ad92ca4e3716a32c130229be18ccb2c32f862c4b965dfe9"
+          },
+          "components": {
+            "solution": {
+              "status": "proved_component",
+              "blockers": {},
+              "native_lemmas": 0,
+              "action_rewrites": 0,
+              "observation_rewrites": 0,
+              "prepare_seconds": 0.014132178999716416,
+              "progress": {
+                "states": 0,
+                "search_states": 2,
+                "transition_attempts": 48,
+                "leaves": 1,
+                "branches": 0,
+                "guard_refinements": 0
+              },
+              "last_leaf": {
+                "leaf": 1,
+                "depth": 0,
+                "path": [],
+                "expression_hash": "36720b62d5efc4b9a2e8ec728c976df5ca9efeff679810a0b16b72514409d20c",
+                "status": "proved_sound",
+                "initial_states": 1,
+                "unrestricted_initial_states": 1,
+                "guard_trials": [
+                  {
+                    "assumption_indices": [],
+                    "status": "proved_sound",
+                    "transition_attempts": 48,
+                    "states": 2
+                  }
+                ],
+                "assumption_indices": [],
+                "transition_attempts": 48,
+                "states": 2
+              },
+              "leaves": [
+                {
+                  "leaf": 1,
+                  "depth": 0,
+                  "path": [],
+                  "expression_hash": "36720b62d5efc4b9a2e8ec728c976df5ca9efeff679810a0b16b72514409d20c",
+                  "status": "proved_sound",
+                  "initial_states": 1,
+                  "unrestricted_initial_states": 1,
+                  "guard_trials": [
+                    {
+                      "assumption_indices": [],
+                      "status": "proved_sound",
+                      "transition_attempts": 48,
+                      "states": 2
+                    }
+                  ],
+                  "assumption_indices": [],
+                  "transition_attempts": 48,
+                  "states": 2
+                }
+              ],
+              "search_seconds": 0.001021489006234333
+            }
+          },
+          "symbolic_attempts": {
+            "solution": {
+              "attempts": [],
+              "totals": {
+                "search_nodes": 0,
+                "fm_constructed_rows": 0
+              }
+            }
+          },
+          "totals": {
+            "states": 2,
+            "search_states": 2,
+            "transition_attempts": 48
+          },
+          "budgets": {
+            "states_total": 100000,
+            "initial_enumeration_limit": 100000,
+            "transition_attempts_total": 2000000,
+            "max_branch_leaves": 512,
+            "max_branch_depth": 24,
+            "symbolic_search_nodes": 10000,
+            "symbolic_fm_rows": 100000,
+            "producer_seconds": 60,
+            "replay_seconds": 60
+          },
+          "component_count": 1,
+          "symbolic_totals": {
+            "search_nodes": 0,
+            "fm_constructed_rows": 0
+          },
+          "preparation_seconds": 0.017080681995139457,
+          "prepared_sha256": "1fe7473206920824228848f7d2be83f44756ea25a041bf2081aa1d3d80c6ddee",
+          "prepared_bytes": 5396,
+          "final_component_count": 1,
+          "certificate_sha256": "ac37982cdb10a60c2cc24ef319d74654f4fb5e75df5db39e63c1f9370a3eae08",
+          "certificate_bytes": 8066,
+          "seconds": 0.040898018996813335,
+          "peak_rss_kib": 13952
+        },
+        "producer_wall_seconds": 0.1157281170017086,
+        "status": "proved_original_whole_all_positive_widths",
+        "replay": {
+          "case": "Or",
+          "mode": "observed",
+          "phase": "replay",
+          "status": "proved_original_whole_all_positive_widths",
+          "components": 1,
+          "component_target_proofs": 1,
+          "component_width_one": [],
+          "whole_verification": {
+            "status": "proved_original_whole_all_positive_widths",
+            "states": 2,
+            "transitions": 48,
+            "components": 1,
+            "native_lemmas": 0,
+            "native_symbolic_steps": 0,
+            "rewrites": 0,
+            "action_rewrites": 0,
+            "action_tail_steps": 0,
+            "observation_rewrites": 0,
+            "observation_proof_steps": 0
+          },
+          "search_modules_loaded": [],
+          "action_rewrites": 0,
+          "observation_rewrites": 0,
+          "native_symbolic_lemmas": 0,
+          "seconds": 0.016872684995178133,
+          "peak_rss_kib": 13568
+        },
+        "replay_wall_seconds": 0.06531318000634201
+      },
+      "replay": {
+        "mode": "joint",
+        "operation": "or",
+        "phase": "replay",
+        "status": "proved_source_observation_and_whole_word_ssa",
+        "word_verification": {
+          "status": "proved_original_whole_all_positive_widths",
+          "states": 2,
+          "transitions": 48,
+          "components": 1,
+          "native_lemmas": 0,
+          "native_symbolic_steps": 0,
+          "rewrites": 0,
+          "action_rewrites": 0,
+          "action_tail_steps": 0,
+          "observation_rewrites": 0,
+          "observation_proof_steps": 0
+        },
+        "source_leaves": 1,
+        "hull_calls": 0,
+        "search_modules_loaded": [],
+        "source_certificate_sha256": "09ad1f8ad5074c73363ccf27a4b0c628a50dbd221227900e3089885abc6094d5",
+        "word_certificate_sha256": "ac37982cdb10a60c2cc24ef319d74654f4fb5e75df5db39e63c1f9370a3eae08",
+        "ssa_sha256": "899318278b42cc075ad92ca4e3716a32c130229be18ccb2c32f862c4b965dfe9",
+        "mathematical_target": "all positive word widths",
+        "source_execution_widths": [
+          1,
+          8,
+          16,
+          32,
+          64
+        ],
+        "native_boundary": "Reviewed mask-hull loop/ordering lemma and previous source shims; no formal Java compiler proof.",
+        "seconds": 0.04829229900497012,
+        "peak_rss_kib": 17856
+      }
+    },
+    {
+      "operation": "xor",
+      "source": {
+        "mode": "joint",
+        "operation": "xor",
+        "phase": "source",
+        "status": "adapter_unsupported",
+        "error": "ValueError('unsupported binary source action: &&')",
+        "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/step_run.py\", line 35, in worker\n    certificate=produce_source(source,args.operation)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_producer.py\", line 11, in produce_source\n    observation=observe_source(source,operation,handler)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 194, in observe_source\n    terminal=interpreter.execute(ast,[State(dict(zip(names,[Stamp(a),Stamp(b)])))])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 164, in execute\n    for child in node[1]:states=self.execute(child,states)\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 176, in execute\n    condition=self.evaluate(node[1],state)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 134, in evaluate\n    raise ValueError('unsupported binary source action: '+op)\nValueError: unsupported binary source action: &&\n",
+        "seconds": 0.040020176995312795,
+        "peak_rss_kib": 16244
+      },
+      "status": "adapter_unsupported"
+    },
+    {
+      "operation": "add",
+      "source": {
+        "mode": "joint",
+        "operation": "add",
+        "phase": "source",
+        "status": "adapter_unsupported",
+        "error": "ValueError('unsupported Java primary')",
+        "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/step_run.py\", line 35, in worker\n    certificate=produce_source(source,args.operation)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_producer.py\", line 11, in produce_source\n    observation=observe_source(source,operation,handler)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 191, in observe_source\n    bindings=native_bindings(source);names,raw=body(source,operation);ast=Parser(raw).parse()\n                                                                          ^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 94, in parse\n    result=self.statement();require(self.peek() is None,'unconsumed Java body');return result\n           ^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 75, in statement\n    while self.peek()!='}':rows.append(self.statement())\n                                       ^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 90, in statement\n    left=self.expression()\n         ^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 49, in expression\n    op=self.take();right=self.expression(PRECEDENCE[op]+1);left=('binary',op,left,right)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 47, in expression\n    left=self.unary()\n         ^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 61, in unary\n    else:require(bool(re.fullmatch(r'[A-Za-z_$][\\w$]*',name)),'unsupported Java primary');left=('name',name)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 20, in require\n    if not p:raise ValueError(message)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: unsupported Java primary\n",
+        "seconds": 0.03213074700033758,
+        "peak_rss_kib": 16248
+      },
+      "status": "adapter_unsupported"
+    },
+    {
+      "operation": "sub",
+      "source": {
+        "mode": "joint",
+        "operation": "sub",
+        "phase": "source",
+        "status": "adapter_unsupported",
+        "error": "ValueError('unbound Java local: OPS')",
+        "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/step_run.py\", line 35, in worker\n    certificate=produce_source(source,args.operation)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_producer.py\", line 11, in produce_source\n    observation=observe_source(source,operation,handler)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 194, in observe_source\n    terminal=interpreter.execute(ast,[State(dict(zip(names,[Stamp(a),Stamp(b)])))])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 164, in execute\n    for child in node[1]:states=self.execute(child,states)\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 174, in execute\n    value=self.evaluate(node[1],state);require(isinstance(value,Stamp),'return is not a proved Stamp projection');out.append(replace(state,result=value))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 136, in evaluate\n    fn=node[1];args=[self.evaluate(a,state) for a in node[2]]\n                     ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 140, in evaluate\n    obj=self.evaluate(fn[1],state);require(isinstance(obj,Stamp) and args==[],'Stamp method receiver')\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 140, in evaluate\n    obj=self.evaluate(fn[1],state);require(isinstance(obj,Stamp) and args==[],'Stamp method receiver')\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 117, in evaluate\n    if kind=='name':require(node[1] in env,'unbound Java local: '+node[1]);return env[node[1]]\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/source_kernel.py\", line 20, in require\n    if not p:raise ValueError(message)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: unbound Java local: OPS\n",
+        "seconds": 0.032268093011225574,
+        "peak_rss_kib": 16124
+      },
+      "status": "adapter_unsupported"
+    }
+  ]
+}

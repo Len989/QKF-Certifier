@@ -1,0 +1,62 @@
+{
+  "name": "unproved_bound_return",
+  "universal_attempt": {
+    "status": "order_counterexample",
+    "evidence": {
+      "status": "counterexample",
+      "case": {
+        "order": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mask_kind": "positive_only",
+        "can_zero": true,
+        "initial": 0,
+        "path": [
+          false,
+          false,
+          false
+        ],
+        "result": [
+          "value",
+          0,
+          false
+        ],
+        "candidate_feasible": true
+      },
+      "order_types_seen": 1
+    }
+  },
+  "concrete_witness": {
+    "spec": {
+      "width": 1,
+      "must": 0,
+      "may": 1,
+      "lower": -1,
+      "upper": 0,
+      "can_zero": false
+    },
+    "exact_carrier": [
+      -1,
+      0
+    ],
+    "expected_maximum": -1,
+    "mutated_execution": {
+      "upper_query_status": "value",
+      "source_long_result": 0,
+      "maximum": 0,
+      "source_path": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "initial_value": 0
+    }
+  }
+}

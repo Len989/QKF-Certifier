@@ -1,0 +1,59 @@
+{
+  "name": "reversed_comparison",
+  "universal_attempt": {
+    "status": "sweep_counterexample",
+    "evidence": {
+      "status": "counterexample",
+      "width": 2,
+      "columns": [
+        [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "words": {
+        "base": 0,
+        "optional": 1,
+        "bound": 0,
+        "candidate": 0,
+        "output": 1
+      }
+    }
+  },
+  "concrete_witness": {
+    "spec": {
+      "width": 2,
+      "must": 0,
+      "may": 1,
+      "lower": -2,
+      "upper": 0,
+      "can_zero": true
+    },
+    "exact_carrier": [
+      0,
+      1
+    ],
+    "expected_maximum": 0,
+    "mutated_execution": {
+      "upper_query_status": "empty",
+      "source_long_result": -2,
+      "maximum": null,
+      "source_path": [
+        false,
+        false,
+        true
+      ],
+      "initial_value": 0
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{"status": "proved_universal_conditional_lower_contract", "certificate_sha256": "8ac9ed836f1ad357f6653e2570ca22c966ca1e33873e5919b0415e9cc44eefed", "search_modules_loaded": []}
+replay proved_universal_upper_contract
+control or replay proved_source_observation_and_whole_word_ssa
+joint and replay proved_source_observation_and_whole_word_ssa
+joint or replay proved_source_observation_and_whole_word_ssa
+joint joint_queries joint passed
+joint paper_row theory passed
+{"status": "passed", "fresh_processes": 5, "source_word_replays": 3, "joint_certificates": 28, "finite_theory_replays": 1}
+{"status": "passed", "fresh_proof_processes": 6, "preceding_source_word_replays": 3, "preceding_joint_certificates": 28, "preceding_finite_theory_replays": 1}
+{"status": "passed", "fresh_proof_processes": 7, "lower_certificate_sha256": "8ac9ed836f1ad357f6653e2570ca22c966ca1e33873e5919b0415e9cc44eefed", "previous_universal_upper": "passed", "graal_whole_programs": "control 1/5; joint 2/5, unchanged", "historical_NiceToMeetYou": "11/39 whole; 104/411 components; not rerun", "full_create": "not yet proved"}

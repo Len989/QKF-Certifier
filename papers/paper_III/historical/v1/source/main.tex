@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,longtable,tabularx}
+\usepackage{enumitem,microtype,geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\geometry{a4paper,margin=27mm}
+\setlength{\parskip}{0.12em}
+\setlength{\emergencystretch}{2em}
+\setlist{nosep}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newcommand{\dep}{\operatorname{dep}}
+\newcommand{\Sub}{\operatorname{Sub}}
+\newcommand{\Cg}{\operatorname{Cg}}
+\newcommand{\KB}{\mathrm{KB}}
+\newcommand{\bits}{\mathbb K}
+\newcommand{\sig}{\sigma}
+\newcommand{\join}{\vee_A}
+\newcommand{\certified}{\texttt{certified}}
+\newcommand{\coderef}[2]{\href{https://github.com/Len989/QKF-Certifier/blob/f93561682319e8b911ed32c01583f2a496dc59fc/#1}{\texttt{#2}}}
+\numberwithin{equation}{section}
+\hypersetup{pdftitle={QKF-Certifier: finite quotient kernels and width-independent KnownBits proofs},pdfauthor={Leonid Shcherbakov}}
+\title{QKF-Certifier: finite quotient kernels and\\width-independent KnownBits proofs}
+\author{Leonid Shcherbakov}
+\date{12 September 2026\\[0.3em]\small Preprint, version 1.0}
+\begin{document}
+\maketitle
+\input{abstract}
+\input{01_introduction}
+\input{02_finitecore}
+\input{03_relations}
+\input{04_sparse}
+\input{05_knownbits}
+\input{06_replay}
+\input{07_implementation}
+\input{08_experiments}
+\input{09_evolution}
+\input{10_related}
+\input{11_conclusion}
+\appendix
+\input{A_rules}
+\input{references}
+\end{document}

@@ -1,0 +1,13 @@
+✔ [2/13] Built QKF.RowRules (531ms)
+✔ [3/13] Built QKF.Gluing (514ms)
+✔ [4/13] Built QKF.Core (837ms)
+✔ [5/13] Built QKF.Data (524ms)
+✖ [6/13] Building QKF.Checked (800ms)
+trace: .> LEAN_PATH=/workspace/scratch/6c319201c5cc/qkf_negative_gllv9w5v/project/.lake/build/lib/lean /workspace/scratch/6c319201c5cc/qkf_lean_tools/lean-4.33.0-linux/bin/lean /workspace/scratch/6c319201c5cc/qkf_negative_gllv9w5v/project/QKF/Checked.lean -o /workspace/scratch/6c319201c5cc/qkf_negative_gllv9w5v/project/.lake/build/lib/lean/QKF/Checked.olean -i /workspace/scratch/6c319201c5cc/qkf_negative_gllv9w5v/project/.lake/build/lib/lean/QKF/Checked.ilean -c /workspace/scratch/6c319201c5cc/qkf_negative_gllv9w5v/project/.lake/build/ir/QKF/Checked.c --setup /workspace/scratch/6c319201c5cc/qkf_negative_gllv9w5v/project/.lake/build/ir/QKF/Checked.setup.json --json
+error: QKF/Checked.lean:66:61: Tactic `decide` proved that the proposition
+  checkCertificate = true
+is false
+error: Lean exited with code 1
+Some required targets logged failures:
+- QKF.Checked
+error: build failed

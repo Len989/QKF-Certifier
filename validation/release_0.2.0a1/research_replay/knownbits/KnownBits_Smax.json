@@ -1,0 +1,28 @@
+{
+  "case": "KnownBits_Smax",
+  "mode": "observed",
+  "phase": "replay",
+  "status": "proved_original_whole_all_positive_widths",
+  "components": 12,
+  "component_target_proofs": 12,
+  "component_width_one": [],
+  "whole_verification": {
+    "status": "proved_original_whole_all_positive_widths",
+    "states": 3132,
+    "transitions": 50524,
+    "components": 12,
+    "native_lemmas": 0,
+    "native_symbolic_steps": 0,
+    "rewrites": 89,
+    "action_rewrites": 0,
+    "action_tail_steps": 0,
+    "observation_rewrites": 0,
+    "observation_proof_steps": 0
+  },
+  "search_modules_loaded": [],
+  "action_rewrites": 0,
+  "observation_rewrites": 0,
+  "native_symbolic_lemmas": 0,
+  "seconds": 1.191540861997055,
+  "peak_rss_kib": 22664
+}

@@ -1,0 +1,4 @@
+{
+  "error": "TypeError(\"unhashable type: 'list'\")",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/emit_cases.py\", line 18, in <module>\n    ssa=emit(observed['expression']);name=op.capitalize();path=ROOT/'core/fixtures/corpus'/name/'solution.mlir';path.parent.mkdir(parents=True,exist_ok=True)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/ssa_emit.py\", line 32, in emit\n    result=visit(expr);lines.extend([f'    func.return {result} : {A}','  }','}'])\n           ^^^^^^^^^^^\n  File \"/workspace/scratch/6c319201c5cc/qkf_joint_carriers_2026-09-13/ssa_emit.py\", line 15, in visit\n    if e in cache:return cache[e]\n       ^^^^^^^^^^\nTypeError: unhashable type: 'list'\n"
+}

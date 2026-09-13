@@ -1,0 +1,47 @@
+{
+  "spec": {
+    "width": 64,
+    "must": 0,
+    "may": 0,
+    "lower": 0,
+    "upper": 9223372036854775807,
+    "can_zero": false
+  },
+  "record": {
+    "status": "proved_lower_refinement",
+    "spec": {
+      "width": 64,
+      "must": 0,
+      "may": 0,
+      "lower": 0,
+      "upper": 9223372036854775807,
+      "can_zero": false
+    },
+    "binding": "9f641e1dcb13f8c9e8d0fcc8f07141cb7eccb39813fa63a5ec79500b091214cb",
+    "universal_certificate_sha256": "8ac9ed836f1ad357f6653e2570ca22c966ca1e33873e5919b0415e9cc44eefed",
+    "upper_dependency_sha256": "f4c3e7cdbc624f8c5b3a6c3bb340bb945ce9d1f771af05ac61756d2995fe962b",
+    "answer": {
+      "source_long_result": 1,
+      "source_path": [
+        "minimum",
+        "exclude_zero"
+      ]
+    },
+    "joint_empty": true,
+    "precision": "empty",
+    "minimum": null,
+    "refined_spec": {
+      "width": 64,
+      "must": 0,
+      "may": 0,
+      "lower": 1,
+      "upper": 9223372036854775807,
+      "can_zero": false
+    },
+    "guarantee": "same complete joint mask/range/nonzero carrier; emptiness uses the preceding upper theorem, not the numeric MAX sentinel"
+  },
+  "oracle_words": [
+    0
+  ],
+  "native": 1
+}

@@ -1,0 +1,48 @@
+{
+  "spec": {
+    "width": 128,
+    "must": 1,
+    "may": 170141183460469231731687303715884105729,
+    "lower": 0,
+    "upper": 170141183460469231731687303715884105727,
+    "can_zero": true
+  },
+  "record": {
+    "status": "proved_lower_refinement",
+    "spec": {
+      "width": 128,
+      "must": 1,
+      "may": 170141183460469231731687303715884105729,
+      "lower": 0,
+      "upper": 170141183460469231731687303715884105727,
+      "can_zero": true
+    },
+    "binding": "a24457cb3029f08ac977ca1747beef13d6bf53343796984d98a1da43f59acca1",
+    "universal_certificate_sha256": "8ac9ed836f1ad357f6653e2570ca22c966ca1e33873e5919b0415e9cc44eefed",
+    "upper_dependency_sha256": "f4c3e7cdbc624f8c5b3a6c3bb340bb945ce9d1f771af05ac61756d2995fe962b",
+    "answer": {
+      "source_long_result": 0,
+      "source_path": [
+        "minimum",
+        "no_optional_zero"
+      ]
+    },
+    "joint_empty": false,
+    "precision": "conservative_bound",
+    "minimum": null,
+    "refined_spec": {
+      "width": 128,
+      "must": 1,
+      "may": 170141183460469231731687303715884105729,
+      "lower": 0,
+      "upper": 170141183460469231731687303715884105727,
+      "can_zero": true
+    },
+    "guarantee": "same complete joint mask/range/nonzero carrier; emptiness uses the preceding upper theorem, not the numeric MAX sentinel"
+  },
+  "oracle_words": [
+    -170141183460469231731687303715884105727,
+    1
+  ],
+  "native": null
+}

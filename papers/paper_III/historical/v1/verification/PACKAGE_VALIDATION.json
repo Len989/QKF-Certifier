@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "pdf_pages": 21,
+  "pdf_sha256": "940d74c4ad3b9b41f22055685d3b677afe9fd3a0404164ac25c36a9bed9e8a6d",
+  "pdf_title": "QKF-Certifier: finite quotient kernels and width-independent KnownBits proofs",
+  "pdf_external_link_annotations": 30,
+  "latex_overfull_boxes": 0,
+  "latex_unresolved_references": 0,
+  "visual_review": "All 21 rendered pages inspected in six contact sheets; no clipping or overlap observed.",
+  "python_sources": "All supplied Python files parse",
+  "citation_file": "YAML parsed; title/version checked against PDF and the CFF 1.2.0 reference guide. Full external schema validator not run.",
+  "software_pin": "Clean pinned checkout and all 53 tracked-file SHA-256 values checked by fetch_release.py --check-only",
+  "release_suite": "67 passed in 16.82s",
+  "fresh_algebraic_results": "verification/core_results.json",
+  "fresh_release_results": "verification/release_results.json",
+  "historical_evidence": "Separated in evidence_sources/historical; not rerun",
+  "publication": "Prepared, not deposited; no assigned DOI claimed"
+}

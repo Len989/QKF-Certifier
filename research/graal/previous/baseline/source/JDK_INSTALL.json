@@ -1,0 +1,61 @@
+{
+  "version": "1",
+  "pip_version": "26.2.1",
+  "install": [
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/02/5a/b572f441714a420d65805cbf8806d9b78a8ab70060ed251310661c0b934c/jdk4py-25.0.2.1-py3-none-manylinux_2_17_x86_64.whl",
+        "archive_info": {
+          "hashes": {
+            "sha256": "383d71d8639d072752d2eaafc84944e0d8de7f1c45d30c28f6dfef8a4a65543c"
+          },
+          "hash": "sha256=383d71d8639d072752d2eaafc84944e0d8de7f1c45d30c28f6dfef8a4a65543c"
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.3",
+        "name": "jdk4py",
+        "version": "25.0.2.1",
+        "summary": "A JDK shipped in a Python package",
+        "description": "# jdk4py\n\nA JDK shipped in a Python package.\n\n[![PyPI version](https://badge.fury.io/py/jdk4py.svg)](https://badge.fury.io/py/jdk4py)\n\n## Install\n\n```bash\npip install jdk4py\n```\n\nor as a Conda package:\n\n```bash\nconda config --add channels https://conda.atoti.io\nconda install jdk4py\n```\n\n## Usage\n\n```python\n>>> from jdk4py import JAVA, JAVA_HOME, JAVA_VERSION\n>>> JAVA_HOME\nPosixPath('/Users/johndoe/dev/jdk4py/jdk4py/java-runtime')\n>>> JAVA\nPosixPath('/Users/johndoe/dev/jdk4py/jdk4py/java-runtime/bin/java')\n>>> JAVA_VERSION\n(25, 0, 2)\n>>> from subprocess import run\n>>> some_java_options = [\"-Xmx16G\", \"-Xms2G\"]\n>>> run(\n...     [JAVA, \"-jar\", \"HelloWorld.jar\", *some_java_options],\n...     capture_output=True,\n...     check=True,\n...     text=True,\n... ).stdout.strip()\n\"Hello, World!\"\n```\n\n## Versioning\n\n`jdk4py`'s version contains 4 numbers:\n\n- The first 3 numbers correspond to the JDK version.\n- The fourth number is the library API version.\n",
+        "description_content_type": "text/markdown",
+        "keywords": [
+          "jdk",
+          "java",
+          "jvm",
+          "jre"
+        ],
+        "author": "ActiveViam",
+        "author_email": "ActiveViam <dev@atoti.io>",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+          "Operating System :: MacOS",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: POSIX :: Linux",
+          "Programming Language :: Python :: 3"
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Repository, https://github.com/activeviam/jdk4py"
+        ]
+      }
+    }
+  ],
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.12.14",
+    "os_name": "posix",
+    "platform_machine": "x86_64",
+    "platform_release": "6.18.35",
+    "platform_system": "Linux",
+    "platform_version": "#1 SMP Mon Aug 31 18:10:37 UTC 2026",
+    "python_full_version": "3.12.14",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.12",
+    "sys_platform": "linux"
+  }
+}

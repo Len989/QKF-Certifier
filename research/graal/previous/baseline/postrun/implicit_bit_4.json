@@ -1,0 +1,593 @@
+{
+  "width": 4,
+  "native_supported": false,
+  "input_spec": {
+    "width": 4,
+    "must": 0,
+    "may": 9,
+    "lower": -7,
+    "upper": 1,
+    "can_zero": false
+  },
+  "java_output": "OK -7 1 0 9 0",
+  "returned_spec": {
+    "width": 4,
+    "lower": -7,
+    "upper": 1,
+    "must": 0,
+    "may": 9,
+    "can_zero": false
+  },
+  "joint_certificate": {
+    "schema": "qkf-joint-carrier-certificate-v1",
+    "spec": {
+      "width": 4,
+      "lower": -7,
+      "upper": 1,
+      "must": 0,
+      "may": 9,
+      "can_zero": false
+    },
+    "query": {
+      "kind": "summary"
+    },
+    "binding": "71ec98701738b0933990ea43ce9fd2b8cc12731eb4f2570e4f4c71921056d836",
+    "cells": [
+      {
+        "start": 1,
+        "free": 0,
+        "must_key": 1,
+        "may_key": 1,
+        "observation": {
+          "count": 1,
+          "lower": -7,
+          "upper": -7,
+          "must": 9,
+          "may": 9,
+          "zero": false
+        }
+      },
+      {
+        "start": 2,
+        "free": 1,
+        "must_key": 2,
+        "may_key": 1,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 4,
+        "free": 2,
+        "must_key": 4,
+        "may_key": 1,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 8,
+        "free": 1,
+        "must_key": 8,
+        "may_key": 9,
+        "observation": {
+          "count": 1,
+          "lower": 1,
+          "upper": 1,
+          "must": 1,
+          "may": 1,
+          "zero": false
+        }
+      }
+    ],
+    "joins": [
+      {
+        "left": 0,
+        "right": 1,
+        "observation": {
+          "count": 1,
+          "lower": -7,
+          "upper": -7,
+          "must": 9,
+          "may": 9,
+          "zero": false
+        }
+      },
+      {
+        "left": 2,
+        "right": 3,
+        "observation": {
+          "count": 1,
+          "lower": 1,
+          "upper": 1,
+          "must": 1,
+          "may": 1,
+          "zero": false
+        }
+      },
+      {
+        "left": 4,
+        "right": 5,
+        "observation": {
+          "count": 2,
+          "lower": -7,
+          "upper": 1,
+          "must": 1,
+          "may": 9,
+          "zero": false
+        }
+      }
+    ],
+    "root": 6,
+    "answer": {
+      "count": 2,
+      "lower": -7,
+      "upper": 1,
+      "must": 1,
+      "may": 9,
+      "zero": false,
+      "word": null
+    }
+  },
+  "strengthened_spec": {
+    "width": 4,
+    "lower": -7,
+    "upper": 1,
+    "must": 1,
+    "may": 9,
+    "can_zero": false
+  },
+  "strengthened_certificate": {
+    "schema": "qkf-joint-carrier-certificate-v1",
+    "spec": {
+      "width": 4,
+      "lower": -7,
+      "upper": 1,
+      "must": 1,
+      "may": 9,
+      "can_zero": false
+    },
+    "query": {
+      "kind": "summary"
+    },
+    "binding": "b6ac32f31cb98bb471fe7081ffe195fbe0e841459fc481d5a71f1ce0502100a5",
+    "cells": [
+      {
+        "start": 1,
+        "free": 0,
+        "must_key": 1,
+        "may_key": 1,
+        "observation": {
+          "count": 1,
+          "lower": -7,
+          "upper": -7,
+          "must": 9,
+          "may": 9,
+          "zero": false
+        }
+      },
+      {
+        "start": 2,
+        "free": 1,
+        "must_key": 3,
+        "may_key": 1,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 4,
+        "free": 2,
+        "must_key": 5,
+        "may_key": 1,
+        "observation": {
+          "count": 0,
+          "lower": null,
+          "upper": null,
+          "must": 0,
+          "may": 0,
+          "zero": false
+        }
+      },
+      {
+        "start": 8,
+        "free": 1,
+        "must_key": 9,
+        "may_key": 9,
+        "observation": {
+          "count": 1,
+          "lower": 1,
+          "upper": 1,
+          "must": 1,
+          "may": 1,
+          "zero": false
+        }
+      }
+    ],
+    "joins": [
+      {
+        "left": 0,
+        "right": 1,
+        "observation": {
+          "count": 1,
+          "lower": -7,
+          "upper": -7,
+          "must": 9,
+          "may": 9,
+          "zero": false
+        }
+      },
+      {
+        "left": 2,
+        "right": 3,
+        "observation": {
+          "count": 1,
+          "lower": 1,
+          "upper": 1,
+          "must": 1,
+          "may": 1,
+          "zero": false
+        }
+      },
+      {
+        "left": 4,
+        "right": 5,
+        "observation": {
+          "count": 2,
+          "lower": -7,
+          "upper": 1,
+          "must": 1,
+          "may": 9,
+          "zero": false
+        }
+      }
+    ],
+    "root": 6,
+    "answer": {
+      "count": 2,
+      "lower": -7,
+      "upper": 1,
+      "must": 1,
+      "may": 9,
+      "zero": false,
+      "word": null
+    }
+  },
+  "extra_explicit_known_one_bits": 1,
+  "same_concrete_carrier": true,
+  "counterexamples": [
+    {
+      "removed": "allow_zero",
+      "spec": {
+        "width": 4,
+        "lower": -7,
+        "upper": 1,
+        "must": 0,
+        "may": 9,
+        "can_zero": true
+      },
+      "certificate": {
+        "schema": "qkf-joint-carrier-certificate-v1",
+        "spec": {
+          "width": 4,
+          "lower": -7,
+          "upper": 1,
+          "must": 0,
+          "may": 9,
+          "can_zero": true
+        },
+        "query": {
+          "kind": "bit",
+          "index": 0
+        },
+        "binding": "e5360f315e141a820fe804bf04a97917ac77818eabe7a32d887e8346c97f78dd",
+        "cells": [
+          {
+            "start": 1,
+            "free": 0,
+            "must_key": 1,
+            "may_key": 1,
+            "observation": {
+              "count": 1,
+              "lower": -7,
+              "upper": -7,
+              "must": 9,
+              "may": 9,
+              "zero": false
+            }
+          },
+          {
+            "start": 2,
+            "free": 1,
+            "must_key": 2,
+            "may_key": 1,
+            "observation": {
+              "count": 0,
+              "lower": null,
+              "upper": null,
+              "must": 0,
+              "may": 0,
+              "zero": false
+            }
+          },
+          {
+            "start": 4,
+            "free": 2,
+            "must_key": 4,
+            "may_key": 1,
+            "observation": {
+              "count": 0,
+              "lower": null,
+              "upper": null,
+              "must": 0,
+              "may": 0,
+              "zero": false
+            }
+          },
+          {
+            "start": 8,
+            "free": 1,
+            "must_key": 8,
+            "may_key": 9,
+            "observation": {
+              "count": 2,
+              "lower": 0,
+              "upper": 1,
+              "must": 0,
+              "may": 1,
+              "zero": true
+            }
+          }
+        ],
+        "joins": [
+          {
+            "left": 0,
+            "right": 1,
+            "observation": {
+              "count": 1,
+              "lower": -7,
+              "upper": -7,
+              "must": 9,
+              "may": 9,
+              "zero": false
+            }
+          },
+          {
+            "left": 2,
+            "right": 3,
+            "observation": {
+              "count": 2,
+              "lower": 0,
+              "upper": 1,
+              "must": 0,
+              "may": 1,
+              "zero": true
+            }
+          },
+          {
+            "left": 4,
+            "right": 5,
+            "observation": {
+              "count": 3,
+              "lower": -7,
+              "upper": 1,
+              "must": 0,
+              "may": 9,
+              "zero": true
+            }
+          }
+        ],
+        "root": 6,
+        "answer": {
+          "support": 3,
+          "witnesses": {
+            "0": 0,
+            "1": 9
+          }
+        }
+      },
+      "separating_word": 0
+    },
+    {
+      "removed": "remove_interval",
+      "spec": {
+        "width": 4,
+        "lower": -8,
+        "upper": 7,
+        "must": 0,
+        "may": 9,
+        "can_zero": false
+      },
+      "certificate": {
+        "schema": "qkf-joint-carrier-certificate-v1",
+        "spec": {
+          "width": 4,
+          "lower": -8,
+          "upper": 7,
+          "must": 0,
+          "may": 9,
+          "can_zero": false
+        },
+        "query": {
+          "kind": "bit",
+          "index": 0
+        },
+        "binding": "32e06ba1144ef79d1e36a273e3827e1b8a56a6b7753d342b4eafe0b6a1e6bd17",
+        "cells": [
+          {
+            "start": 0,
+            "free": 4,
+            "must_key": 0,
+            "may_key": 9,
+            "observation": {
+              "count": 3,
+              "lower": -8,
+              "upper": 1,
+              "must": 0,
+              "may": 9,
+              "zero": false
+            }
+          }
+        ],
+        "joins": [],
+        "root": 0,
+        "answer": {
+          "support": 3,
+          "witnesses": {
+            "0": 8,
+            "1": 9
+          }
+        }
+      },
+      "separating_word": 8
+    },
+    {
+      "removed": "remove_mask",
+      "spec": {
+        "width": 4,
+        "lower": -7,
+        "upper": 1,
+        "must": 0,
+        "may": 15,
+        "can_zero": false
+      },
+      "certificate": {
+        "schema": "qkf-joint-carrier-certificate-v1",
+        "spec": {
+          "width": 4,
+          "lower": -7,
+          "upper": 1,
+          "must": 0,
+          "may": 15,
+          "can_zero": false
+        },
+        "query": {
+          "kind": "bit",
+          "index": 0
+        },
+        "binding": "8b6a7740d130d569f2a466619704bb2a8582b6aedf4143dafe90e7b3dd01f01c",
+        "cells": [
+          {
+            "start": 1,
+            "free": 0,
+            "must_key": 1,
+            "may_key": 1,
+            "observation": {
+              "count": 1,
+              "lower": -7,
+              "upper": -7,
+              "must": 9,
+              "may": 9,
+              "zero": false
+            }
+          },
+          {
+            "start": 2,
+            "free": 1,
+            "must_key": 2,
+            "may_key": 3,
+            "observation": {
+              "count": 2,
+              "lower": -6,
+              "upper": -5,
+              "must": 10,
+              "may": 11,
+              "zero": false
+            }
+          },
+          {
+            "start": 4,
+            "free": 2,
+            "must_key": 4,
+            "may_key": 7,
+            "observation": {
+              "count": 4,
+              "lower": -4,
+              "upper": -1,
+              "must": 12,
+              "may": 15,
+              "zero": false
+            }
+          },
+          {
+            "start": 8,
+            "free": 1,
+            "must_key": 8,
+            "may_key": 9,
+            "observation": {
+              "count": 1,
+              "lower": 1,
+              "upper": 1,
+              "must": 1,
+              "may": 1,
+              "zero": false
+            }
+          }
+        ],
+        "joins": [
+          {
+            "left": 0,
+            "right": 1,
+            "observation": {
+              "count": 3,
+              "lower": -7,
+              "upper": -5,
+              "must": 8,
+              "may": 11,
+              "zero": false
+            }
+          },
+          {
+            "left": 2,
+            "right": 3,
+            "observation": {
+              "count": 5,
+              "lower": -4,
+              "upper": 1,
+              "must": 0,
+              "may": 15,
+              "zero": false
+            }
+          },
+          {
+            "left": 4,
+            "right": 5,
+            "observation": {
+              "count": 8,
+              "lower": -7,
+              "upper": 1,
+              "must": 0,
+              "may": 15,
+              "zero": false
+            }
+          }
+        ],
+        "root": 6,
+        "answer": {
+          "support": 3,
+          "witnesses": {
+            "0": 10,
+            "1": 9
+          }
+        }
+      },
+      "separating_word": 10
+    }
+  ],
+  "interpretation": "The complete Graal stamp already implies this bit. The joint query exposes it and permits a mask update without shrinking its represented word set."
+}

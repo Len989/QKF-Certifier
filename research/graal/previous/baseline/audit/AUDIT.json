@@ -1,0 +1,118 @@
+{
+  "status": "passed",
+  "integrity": {
+    "inherited_files": 201,
+    "frozen_files": 281
+  },
+  "coverage": {
+    "control": {
+      "proved": 1,
+      "selected": 5,
+      "operations": [
+        "or"
+      ]
+    },
+    "joint": {
+      "proved": 2,
+      "selected": 5,
+      "operations": [
+        "and",
+        "or"
+      ]
+    }
+  },
+  "accounting": {
+    "control": [
+      {
+        "operation": "and",
+        "status": "adapter_unsupported",
+        "reason": "ValueError('joint hull observation disabled by control')"
+      },
+      {
+        "operation": "or",
+        "status": "proved_source_observation_and_whole_word_ssa",
+        "source_leaves": 1,
+        "hull_calls": 0
+      },
+      {
+        "operation": "xor",
+        "status": "adapter_unsupported",
+        "reason": "ValueError('unsupported binary source action: &&')"
+      },
+      {
+        "operation": "add",
+        "status": "adapter_unsupported",
+        "reason": "ValueError('unsupported Java primary')"
+      },
+      {
+        "operation": "sub",
+        "status": "adapter_unsupported",
+        "reason": "ValueError('unbound Java local: OPS')"
+      }
+    ],
+    "joint": [
+      {
+        "operation": "and",
+        "status": "proved_source_observation_and_whole_word_ssa",
+        "source_leaves": 5,
+        "hull_calls": 4
+      },
+      {
+        "operation": "or",
+        "status": "proved_source_observation_and_whole_word_ssa",
+        "source_leaves": 1,
+        "hull_calls": 0
+      },
+      {
+        "operation": "xor",
+        "status": "adapter_unsupported",
+        "reason": "ValueError('unsupported binary source action: &&')"
+      },
+      {
+        "operation": "add",
+        "status": "adapter_unsupported",
+        "reason": "ValueError('unsupported Java primary')"
+      },
+      {
+        "operation": "sub",
+        "status": "adapter_unsupported",
+        "reason": "ValueError('unbound Java local: OPS')"
+      }
+    ]
+  },
+  "combined_source_word_replays": 3,
+  "joint_certificates": 28,
+  "native_carrier_certificate_pairs": 6,
+  "postrun_implicit_bit_examples": 4,
+  "exhaustive_summaries": 24174,
+  "exhaustive_bit_queries": 86134,
+  "native_create_cases": 25454,
+  "source_projection_cases": 17320,
+  "negative_checks": {
+    "joint": 10,
+    "source_bridge": 9,
+    "finite_theory": 4
+  },
+  "theory": {
+    "status": "passed",
+    "native_observation_support": 2,
+    "carrier_elements": 4,
+    "forced_row_domain": 4,
+    "row_kernel_classes": 2,
+    "carrier_collapsed": false,
+    "visibility": 2,
+    "lower_horizon": 1,
+    "lower_model_elements": 7,
+    "all_lower_horizon_equations_checked": 34,
+    "positive_events": 9,
+    "scope": "Exact depth optimum of this finite ground presentation, not a width/complexity optimum for arbitrary arithmetic."
+  },
+  "search_modules_loaded": [],
+  "preserved_history": {
+    "NiceToMeetYou_whole": "11/39",
+    "NiceToMeetYou_components": "104/411",
+    "previous_Graal_whole": "1/5",
+    "previous_Graal_SMT": "29/40 UNSAT; 11 timeouts; no new SMT run"
+  },
+  "scope": "Development evidence. Complete source mask observation on mask-only KnownBits inputs; concrete joint input certificates and finite ground visibility are separate guarantees."
+}

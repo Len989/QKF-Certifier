@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "integrity": {
+    "inherited_files": 491,
+    "frozen_files": 581
+  },
+  "producer": {
+    "status": "certificate_produced",
+    "file_sha256": "1507523bd6f88a4e1b9bc1e3ee8979b1033d89656b701523729bce7193963e51",
+    "certificate_bytes": 117549,
+    "seconds": 0.5944633370090742
+  },
+  "replay_status": "passed",
+  "fresh_proof_processes": 7,
+  "lower": "universal conditional carrier preservation; universal mask successor",
+  "upper": "previous universal exact upper contract replayed",
+  "graal": "control 1/5; joint 2/5 unchanged",
+  "NiceToMeetYou": "historical 11/39 whole and 104/411 components; not rerun",
+  "scope": "No full-create theorem, new whole-program result, new benchmark or new SMT run."
+}

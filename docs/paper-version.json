@@ -1,0 +1,67 @@
+{
+  "manifest_schema": "qkf-paper-code-map-v2",
+  "paper": {
+    "series": "QKF",
+    "number": "III",
+    "title": "QKF-Certifier: observation kernels and width-independent word proofs",
+    "author": "Leonid Shcherbakov",
+    "version": "2.0",
+    "manuscript_revision": "2026-09-13",
+    "version_doi": null,
+    "concept_doi": null,
+    "publication_status": "prepared, not deposited"
+  },
+  "software": {
+    "repository": "https://github.com/Len989/QKF-Certifier",
+    "version": "0.2.0a1",
+    "proposed_tag": "v0.2.0a1",
+    "publication_status": "prepared local candidate",
+    "released_commit": null,
+    "base_commit": "f93561682319e8b911ed32c01583f2a496dc59fc",
+    "certificate_schema": "qkf-rewrite-v3",
+    "semantic_contract": "total-transfer-words-v2; positive-width; modular-arithmetic; SMT-total-div-shift; standard-counts; nonbottom-KB"
+  },
+  "claim_map": "docs/CLAIMS.md (repository root)",
+  "claim_ids": {
+    "K1": "Finite ground partial core, inherited from I/II; research reference",
+    "K2": "Exact relation-matrix closure; research reference",
+    "K3": "Conditional sparse refinement theorem; historical C++ prototype is not covered unconditionally",
+    "K4": "Source-to-replay-to-target composition; public certifier",
+    "K5": "Finite coordinatewise semantics, nine rows, signature and precision lattice; public certifier and supplement",
+    "TERM": "All 29 local rules strictly decrease N + number of add occurrences",
+    "MONO": "Additional monotone sound class counts 26/26/16; supplement only",
+    "K6": "Sufficient consumer observations and labeled reconstruction",
+    "K7": "Forced rows and arbitrary-length gluing",
+    "K8": "Exact upper masked maximum and empty distinction",
+    "K9": "Conditional lower joint-carrier preservation",
+    "K10": "Lean ascending mathematical fragment and nonsign source-cell model"
+  },
+  "upstream_examples": [
+    {
+      "file": "and.mlir",
+      "sha256": "515485ef73decd20c038316b871bab3d3603f384821f71e0e2f2ac176abe43d1",
+      "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+    },
+    {
+      "file": "meet.mlir",
+      "sha256": "4db24093258277f76ad11d33826a0e480e945cc1c19ece661fc17655ad7f65f4",
+      "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+    },
+    {
+      "file": "or.mlir",
+      "sha256": "e86a52bce55ce669c9adfb450ebd482faeb2fadc8b8814921ec8af2c4519661f",
+      "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+    },
+    {
+      "file": "top.mlir",
+      "sha256": "04d59189c9c93e6291791891ababb40fbc1431fcffb547014ee2f1c0e260614f",
+      "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+    },
+    {
+      "file": "xor.mlir",
+      "sha256": "451d446fcdd05c14c98e83f04a2df52cd2b31c36260a843feb257ceaa0b54547",
+      "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
+    }
+  ],
+  "candidate_content_manifest": "RELEASE_MANIFEST.json (repository root)"
+}

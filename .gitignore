@@ -12,3 +12,12 @@ dist/
 coverage.xml
 *.tmp
 pytest-of-root/
+
+# Generated proof/build outputs
+.lake/
+/reproduction/
+*.aux
+*.out
+*.synctex.gz
+/papers/paper_III/source/*.log
+/papers/paper_III/source/main.pdf

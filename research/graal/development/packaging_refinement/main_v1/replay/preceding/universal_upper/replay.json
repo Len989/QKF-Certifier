@@ -1,0 +1,211 @@
+{
+  "phase": "replay",
+  "status": "proved_universal_upper_contract",
+  "verification": {
+    "status": "proved_universal_upper_contract",
+    "certificate_sha256": "f4c3e7cdbc624f8c5b3a6c3bb340bb945ce9d1f771af05ac61756d2995fe962b",
+    "source_sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+    "contract": {
+      "width": "every positive mathematical word width",
+      "native_widths": [
+        1,
+        8,
+        16,
+        32,
+        64
+      ],
+      "masks": "0 <= must,may < 2**width and must & ~may == 0",
+      "bound": "every signed width-bit upper bound",
+      "can_zero": "either Boolean value",
+      "nonempty": "exact greatest represented word <= bound, excluding zero when requested",
+      "empty": "source minimum-value return with proof of the empty branch; value equality alone is not an emptiness test",
+      "caller": "tightening the upper bound preserves intersection with every additional lower bound"
+    },
+    "sweep": {
+      "status": "proved_all_widths_all_inputs",
+      "states": 49,
+      "columns": 12,
+      "transitions": 588,
+      "sign_boundaries": 196,
+      "native_row_templates": 24,
+      "protected_carrier_size": 8,
+      "forced_row_domain": 8,
+      "central_carrier_quotient": "diagonal",
+      "row_kernel_class_counts": [
+        2,
+        4,
+        8
+      ]
+    },
+    "order": {
+      "status": "proved_all_order_types",
+      "named_values": [
+        "zero",
+        "must",
+        "minimum",
+        "negative_maximum",
+        "bound",
+        "raw",
+        "candidate"
+      ],
+      "total_preorders": 47293,
+      "admitted_cases": 744,
+      "case_stream_sha256": "56e937ff1f93d727d44fbbd7e2b82aa8880dafa5132d57e1b25e37378d3f4213",
+      "conclusion": "Every value branch returns a feasible word. Every feasible candidate is <= the returned value. Every empty-sentinel branch has no feasible candidate.",
+      "transfer": "Replacing the upper bound by this value, or returning empty on its proved empty branch, preserves intersection with any additional lower bound."
+    },
+    "boundary": "Restricted source-to-observation compiler, native signed-mask extrema and CodeUtil semantics; no formal Java compiler or full create theorem"
+  },
+  "source_sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+  "certificate_sha256": "180d06d1c67c3e5ba13a08ecf0d7b6c8acb2b760fcecb3d5d2b5ab76d3bd290c",
+  "search_modules_loaded": [],
+  "specialized_instances": 18,
+  "instances": [
+    {
+      "file": "sample_00.json",
+      "sha256": "a0fc9988786efc3b9eeaeb59a68ac6af5a86cc89106044e4c633328bd1ae2099",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": true
+      }
+    },
+    {
+      "file": "sample_01.json",
+      "sha256": "8d7899371d4fee27f48e28a35a75e51728badcfe2c3d3e5b5eace0b101745cf3",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": false
+      }
+    },
+    {
+      "file": "sample_02.json",
+      "sha256": "bd9686bfab3b5b0f2f19a4d960418ef90d047e05632a62f130dc164a726ae087",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": true
+      }
+    },
+    {
+      "file": "sample_03.json",
+      "sha256": "c8ab2b6a9d9910d9210247b60f4596efcfc12669dbdd80fddfcb09ca050a844f",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": false
+      }
+    },
+    {
+      "file": "sample_04.json",
+      "sha256": "00dc042c56c1889a6c8386fd63c17f46b0986350857a2c595d7c77913443ec8b",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": false
+      }
+    },
+    {
+      "file": "sample_05.json",
+      "sha256": "02738a0840e7ec9c860f42dc9d5fa42a77ea6e6c33196d0c1d1be1e320add1f4",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": false
+      }
+    },
+    {
+      "file": "sample_06.json",
+      "sha256": "c13637da529c0f9e0c230fd7bf6eae33fe719b194711a9ee0303ee245132aff8",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": true
+      }
+    },
+    {
+      "file": "sample_07.json",
+      "sha256": "c116965a5d2724c2aefded2cded799a2a08356af8800f549ef62a167dd348521",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": false
+      }
+    },
+    {
+      "file": "sample_08.json",
+      "sha256": "f48016685814f0ca39e4ef12da216e7cf2ddb06da7ac78ef8f8d74b0eaf25c76",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": false
+      }
+    },
+    {
+      "file": "sample_09.json",
+      "sha256": "df4951d68f2b13c134c0b36039e2900f0b4d2913379cc4735117a469d65c9e79",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": true
+      }
+    },
+    {
+      "file": "sample_10.json",
+      "sha256": "0b72a021a800d3c9ea3dbc3475be969b297a9aada4a197409c8c35bc483742c6",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": false
+      }
+    },
+    {
+      "file": "sample_11.json",
+      "sha256": "15c7d21bb44cde327aba90f08ba0334308c125d4b978622b87b84f89f0c92cbe",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": false
+      }
+    },
+    {
+      "file": "sample_12.json",
+      "sha256": "73c40eb681301f1750b4a960c6cca45809d572d289272f8808eb1f6a038e6fa1",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": false
+      }
+    },
+    {
+      "file": "sample_13.json",
+      "sha256": "05bf604761f247a0ceab92c2648bc29aa7b8fed853183d88293926a02b1cf16d",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": false
+      }
+    },
+    {
+      "file": "sample_14.json",
+      "sha256": "9b8c99b3309cb7bc752e10299f4e6c47106922d6eb30a53fca6f9816386f0334",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": false
+      }
+    },
+    {
+      "file": "sample_15.json",
+      "sha256": "6576d5600831e94772ac54427f5778e169bc5625f76ebc53961ccf468c12ac12",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": false
+      }
+    },
+    {
+      "file": "sample_16.json",
+      "sha256": "e49d06720b753c447fcdd01b3d317e867ec5e64814837a010d6b841f79001603",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": false
+      }
+    },
+    {
+      "file": "sample_17.json",
+      "sha256": "c1c8750f18b86c200ff5b75e6194aa01d506825a2195ed7088d6390ccad2f536",
+      "result": {
+        "status": "verified_upper_refinement",
+        "joint_empty": true
+      }
+    }
+  ],
+  "seconds": 0.2667965480068233,
+  "peak_rss_kib": 16768
+}

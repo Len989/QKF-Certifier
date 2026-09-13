@@ -1,0 +1,36 @@
+{
+  "mode": "joint",
+  "operation": "and",
+  "phase": "replay",
+  "status": "proved_source_observation_and_whole_word_ssa",
+  "word_verification": {
+    "status": "proved_original_whole_all_positive_widths",
+    "states": 2,
+    "transitions": 48,
+    "components": 1,
+    "native_lemmas": 0,
+    "native_symbolic_steps": 0,
+    "rewrites": 0,
+    "action_rewrites": 0,
+    "action_tail_steps": 0,
+    "observation_rewrites": 0,
+    "observation_proof_steps": 0
+  },
+  "source_leaves": 5,
+  "hull_calls": 4,
+  "search_modules_loaded": [],
+  "source_certificate_sha256": "ed04fa130b06b3cf41ffe27da85a546949df48a4ee76622d94eb7e335671086d",
+  "word_certificate_sha256": "b449009b7e121dd7c9133d9e660065e0084db7903fd6662685d72def82aa4a57",
+  "ssa_sha256": "5cebee13b7455dea24ecdefd70b50577b8bf2869cda8d61b74e49ca29b7d22f2",
+  "mathematical_target": "all positive word widths",
+  "source_execution_widths": [
+    1,
+    8,
+    16,
+    32,
+    64
+  ],
+  "native_boundary": "Reviewed mask-hull loop/ordering lemma and previous source shims; no formal Java compiler proof.",
+  "seconds": 0.08701489500526804,
+  "peak_rss_kib": 18272
+}

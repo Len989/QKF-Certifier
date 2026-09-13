@@ -1,0 +1,70 @@
+\section{One-sorted couplings and reconstruction}\label{sec:onesorted}
+
+The typed theory isolates the intended action.  Some applications deliberately require stronger coupling: carrier and operator names may be identified, or the action symbol may be merged with a native operator operation.  These are naturally one-sorted constructions and should be treated separately because their mixed term sector changes global cardinality.
+
+\subsection{A free mixed sector survives complete named action data}
+
+Consider a one-sorted version with disjoint named copies of $A$ and $B$, no equation identifying an $A$-name with a $B$-name, and a fresh action head $\alpha$.  Supply any complete table on the named block $B\times A$ and any selection of the standard ground laws Un, Ann, Comp, and Inv, whenever the relevant named constants and operations exist.
+
+\begin{proposition}[Mixed-sector infinitude]\label{prop:mixedinfinite}
+If $A$ and $B$ are nonempty and no cross-copy identification is present, the full one-sorted initial algebra is infinite even though every named action value is supplied. In particular, fixing a carrier name $a_0$, the following terms are pairwise distinct in it:
+\[
+t_0=a_0,
+\qquad
+t_{n+1}=\alpha(a_0,t_n).
+\]
+\end{proposition}
+
+\begin{proof}
+It suffices to construct a model separating the tower.  Collapse all carrier names to one element $c$ and all operator names to a distinct element $o$.  Interpret the native ground diagrams accordingly.  Interpret the complete named action block by $\alpha(o,c)=c$; all standard ground action laws then reduce to equalities involving the operator point $o$ and the carrier point $c$ and can be satisfied by the same choice.  Add distinct elements $t_1,t_2,\ldots$ and define
+\[
+\alpha(c,c)=t_1,
+\qquad
+\alpha(c,t_n)=t_{n+1}.
+\]
+Assign all other unconstrained mixed operation values arbitrarily.  No standard named action axiom has the carrier element $c$ in the operator position, so the tower is unconstrained.  Hence the $t_n$ are separated in a model of the theory.
+\end{proof}
+
+This is an encoding artifact rather than an incomplete-action phenomenon: the tower is ill-typed from the intended action perspective.  It is the main reason for using the two-sorted core above.
+
+\subsection{Coupling can reconstruct multiplication}
+
+The one-sorted language is nevertheless useful when cross-identification is intentional.  Let the carrier be the additive group $A=\mathbb Z/n\mathbb Z$ and let $B=M_n$ be the multiplicative monoid on the same underlying set, with distinct names initially.  Add equations identifying like-named residues; call this \emph{by-name coupling}.
+
+\begin{proposition}[Two reconstruction regimes]\label{prop:reconstruction}
+Consider only the native diagrams, by-name coupling, and the additional
+laws listed in the relevant clause below; no extra conflicting cells are
+imposed. Then:
+\begin{enumerate}[label=(\roman*)]
+\item if $\alpha$ is identified as a signature symbol with the multiplication of $M_n$, the native ground tables alone reduce every closed term to a named residue;
+\item if $\alpha$ remains separate but the ground unit law
+\[
+\alpha(1,a)=a
+\]
+and scalar-additivity law
+\[
+\alpha(b_1+b_2,a)
+=
+\alpha(b_1,a)+\alpha(b_2,a)
+\]
+are present on named residues, then
+\[
+E\vdash\alpha(b,a)=ba
+\]
+for every named $b,a$, and every closed term again reduces to a named residue.
+\end{enumerate}
+In either regime the named expansion is the canonical $\mathbb Z/n\mathbb Z$ structure.
+\end{proposition}
+
+\begin{proof}
+In the merged regime, by-name coupling turns every action on named constants into a row of the complete multiplication table; structural induction then reduces all terms by the native tables.
+
+In the separate regime, repeated scalar additivity and the unit row give
+\[
+\alpha(k,a)=ka
+\]
+for residues represented by sums of $k$ copies of $1$.  The final cyclic recurrence yields the zero row.  Hence every named action value is canonical, after which structural induction again reduces all closed terms.  The standard ring expansion is a separating model for distinct residue names.
+\end{proof}
+
+This example is intentionally outside the pure typed theorem: the added name identifications make operations from the two original signatures interact on one common carrier.
+

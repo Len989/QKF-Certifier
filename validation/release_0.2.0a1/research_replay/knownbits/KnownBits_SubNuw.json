@@ -1,0 +1,16 @@
+{
+  "case": "KnownBits_SubNuw",
+  "mode": "observed",
+  "phase": "replay",
+  "status": "all_preparations_and_available_proofs_replayed",
+  "components": 18,
+  "component_target_proofs": 0,
+  "component_width_one": [],
+  "whole_verification": null,
+  "search_modules_loaded": [],
+  "action_rewrites": 2,
+  "observation_rewrites": 4,
+  "native_symbolic_lemmas": 0,
+  "seconds": 1.0397948390018428,
+  "peak_rss_kib": 17404
+}
