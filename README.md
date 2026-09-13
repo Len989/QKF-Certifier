@@ -2,20 +2,46 @@
 
 [![Test and build](https://github.com/Len989/QKF-Certifier/actions/workflows/ci.yml/badge.svg)](https://github.com/Len989/QKF-Certifier/actions/workflows/ci.yml)
 
-**A small, dependency-free checker for width-independent KnownBits certificates.**
+**Width-independent proof certificates for KnownBits and word programs, with research tools and a Lean 4 formalization pilot.**
+
+[Download v0.2.0a1](https://github.com/Len989/QKF-Certifier/releases/tag/v0.2.0a1) · [Papers](#papers) · [Research instructions](research/README.md) · [Русская версия](README_RU.md)
+
+QKF develops proofs from incomplete observations, forced rows, their kernels,
+and compatible quotients. The research tools explore how those observations
+can determine a computation and compose across an arbitrary word width.
+
+## Papers
+
+The three preprints by **Leonid Shcherbakov** develop the foundations and the
+certificate architecture in sequence:
+
+| Paper | Title and published record | Focus |
+|---|---|---|
+| I | [Initial semantics of incompletely specified actions: forced quotients, kernel saturation, and completion](https://doi.org/10.5281/zenodo.22736397) | Forced equalities, determined action values, and carrier-valued completion. |
+| II | [Equality-visibility depth in equational presentations: finite-ground spectra, certificates, and semigroup space](https://doi.org/10.5281/zenodo.22736558) | Equality visibility, proof horizons, and certificates. |
+| III | [QKF-Certifier: observation kernels and width-independent word proofs](https://doi.org/10.5281/zenodo.22736714) | Observation-based word proofs, research evidence, and the Lean pilot. |
+
+Start with Paper III for the algorithm and experiments, then Papers I and II for
+the mathematical foundations. The DOI links identify the published preprints.
+Manuscript copies in the repository and research archive preserve the prepared
+release snapshot; the separately attached Paper III PDF and sources in
+[release v0.2.0a1](https://github.com/Len989/QKF-Certifier/releases/tag/v0.2.0a1)
+include the DOI references to Papers I and II.
+
+## Software and current scope
 
 QKF Certifier reads a supported subset of transfer MLIR, proves local simplifications,
 then checks the remaining coordinatewise function on all nine one-bit KnownBits
 input pairs. For this fragment, the certificate establishes soundness for **every
 positive bit width**, and reports whether the transformer is optimal.
 
-Version **0.2.0a1** is a prepared research alpha candidate. It brings the later
+Version **0.2.0a1** is published as a research alpha pre-release. It brings the later
 observation, whole-word, Graal, and Lean work into one reproducible source release,
 with a substantially revised Paper III. The installable CLI still completes
 coordinatewise AND, OR, and XOR proofs; broader proofs use the separate research
 entry points below. The runtime semantics and certificate format are unchanged.
 
-## Research included in this candidate
+## Research included in v0.2.0a1
 
 | Profile | Current result | How to use it |
 |---|---|---|
@@ -177,8 +203,11 @@ jobs passed for the first uploaded source snapshot; see the
 [recorded successful run](https://github.com/Len989/QKF-Certifier/actions/runs/34636148287). The badge above links to current CI results.
 The [original validation record](docs/LOCAL_VALIDATION.md) describes the earlier
 preparation checks. [Candidate validation](docs/RELEASE_VALIDATION_0.2.0a1.md)
-records the new local checks. The new candidate must pass its own remote CI before
-publication; the earlier successful run does not establish that status.
+records the local checks for 0.2.0a1. On the merged release commit
+`382fc5e2073746fe5154cb4fd781e863266cad55`, both
+[Test and build](https://github.com/Len989/QKF-Certifier/actions/runs/34777754487)
+and [Research and Lean](https://github.com/Len989/QKF-Certifier/actions/runs/34777754528)
+passed. These are recorded results for that commit; consult Actions for later changes.
 
 ## License and provenance
 
