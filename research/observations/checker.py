@@ -3,7 +3,8 @@
 No producer, partition search, SMT solver, or certificate-supplied code is run.
 All checks use exceptions, including under python -O.
 """
-from .model import CERT_SCHEMA, MAX_CLASSES, Model, integer, require
+from .atomic_rows import check_completion, image as atomic_image
+from .model import ATOMIC_CERT_SCHEMA, CERT_SCHEMA, MAX_ATOMIC_CLASSES, MAX_CLASSES, Model, integer, require
 
 
 def check(data, cert):
@@ -11,8 +12,9 @@ def check(data, cert):
     require(type(cert) is dict and set(cert) == {
         "schema", "model_sha256", "predicates", "blocks", "initial", "rows", "cells", "separators"
     }, "certificate fields")
-    require(cert["schema"] == CERT_SCHEMA and cert["model_sha256"] == m.sha256,
+    require(cert["schema"] in {CERT_SCHEMA, ATOMIC_CERT_SCHEMA} and cert["model_sha256"] == m.sha256,
             "certificate belongs to a different native model")
+    atomic = cert["schema"] == ATOMIC_CERT_SCHEMA
     ps = cert["predicates"]
     require(type(ps) is list and len(ps) < len(m.states), "bounded generating questions")
     for i, p in enumerate(ps):
@@ -39,7 +41,8 @@ def check(data, cert):
         require(p["mask"] == expected, "incorrect derived question")
 
     blocks = cert["blocks"]
-    require(type(blocks) is list and 0 < len(blocks) <= MAX_CLASSES, "bounded quotient")
+    require(type(blocks) is list and 0 < len(blocks) <= (MAX_ATOMIC_CLASSES if atomic else MAX_CLASSES),
+            "bounded quotient")
     for b in blocks:
         require(type(b) is list and b and all(type(s) is str and s in m.states for s in b),
                 "quotient block")
@@ -69,9 +72,9 @@ def check(data, cert):
     tables = {}
     supplied_count = forced_count = 0
     for row in rows:
-        require(type(row) is dict and set(row) == {
-            "symbol", "output", "supplied", "steps", "table", "kernel"
-        }, "row proof fields")
+        fields = {"symbol", "output", "supplied"} | (
+            {"empty", "extension", "kernel_projection"} if atomic else {"steps", "table", "kernel"})
+        require(type(row) is dict and set(row) == fields, "row proof fields")
         a, y = row["symbol"], row["output"]
         require(type(a) is str and type(y) is str and a in m.alphabet and y in m.outputs,
                 "row label")
@@ -87,6 +90,12 @@ def check(data, cert):
                     and all(integer(v, 0, top) for v in cell), "supplied cell type")
         require(supplied == expected, "native atomic labels changed")
         values = dict(supplied)
+        if atomic:
+            check_completion(row, k)
+            tables[a, y] = {1 << j: atomic_image(row, 1 << j, k) for j in range(k)}
+            supplied_count += len(supplied)
+            forced_count += (1 << k) - len(supplied)
+            continue
         steps = row["steps"]
         require(type(steps) is list and len(steps) == (1 << k) - len(values), "forced derivation size")
         for step in steps:
@@ -161,14 +170,20 @@ def check(data, cert):
             "supplied_cells": supplied_count, "forced_cells": forced_count,
             "max_witness_length": max((len(w["word"]) for w in separators), default=0),
             "minimality": "coarsest output/terminal-preserving stable partition of this finite model",
-            "scope": "all finite symbol traces of the supplied native model; no Java or signed-word theorem"}
+            "scope": "all finite symbol traces of the supplied native model; no Java or signed-word theorem",
+            **({"row_encoding": "atomic", "stored_forced_steps": 0,
+                "forced_cells_meaning": "logical consequences of finite-union completion, not stored steps"}
+               if atomic else {})}
 
 
 def replay(data, cert, word):
     check(data, cert)
     m = Model(data)
     require(all(type(a) is str and a in m.alphabet for a in word), "legal replay symbols")
-    tables = {(r["symbol"], r["output"]): r["table"] for r in cert["rows"]}
+    k = len(cert["blocks"])
+    tables = {(r["symbol"], r["output"]): (
+        {1 << j: atomic_image(r, 1 << j, k) for j in range(k)}
+        if cert["schema"] == ATOMIC_CERT_SCHEMA else r["table"]) for r in cert["rows"]}
     state = cert["initial"]
     trace = []
     for a in word:

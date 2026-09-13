@@ -1,0 +1,21 @@
+{
+  "status": "certified",
+  "residual_states": 15,
+  "classes": 10,
+  "removed_states": 5,
+  "merged_pairs": 6,
+  "separated_class_pairs": 45,
+  "derived_questions": 5,
+  "max_separator_length": 1,
+  "row_templates": 8,
+  "stored_native_cells": 80,
+  "stored_forced_steps": 0,
+  "logical_forced_cells": 8112,
+  "transitions": 80,
+  "consumer_queries": [
+    "equal"
+  ],
+  "full_context_recoverable": true,
+  "minimality": "coarsest stable factor preserving declared consumer answers for every finite continuation",
+  "scope": "the independently checked finite context model; no new all-width Java or Lean theorem"
+}

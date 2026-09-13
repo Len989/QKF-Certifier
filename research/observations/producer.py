@@ -4,7 +4,8 @@ This module proposes certificates. The checker never imports it.
 """
 from collections import defaultdict
 
-from .model import CERT_SCHEMA, MAX_CLASSES, Model, integer, require
+from .atomic_rows import image as atomic_image
+from .model import ATOMIC_CERT_SCHEMA, CERT_SCHEMA, MAX_ATOMIC_CLASSES, MAX_CLASSES, Model, integer, require
 
 
 def _partition(model, predicates):
@@ -42,10 +43,26 @@ def _row(atoms):
     return {"supplied": supplied, "steps": steps, "table": table, "kernel": kernel}
 
 
-def synthesize(data, *, max_observations=63, max_pullbacks=4096, max_classes=MAX_CLASSES):
+def _atomic_row(atoms):
+    supplied = [[1 << j, value] for j, value in enumerate(atoms)]
+    if len(atoms) == 1:
+        supplied.insert(0, [0, 0])
+    return {"supplied": supplied,
+            "empty": {"kind": "native"} if len(atoms) == 1 else
+                     {"kind": "intersection", "left": 1, "right": 2},
+            "extension": "finite-unions",
+            "kernel_projection": sum(1 << j for j, value in enumerate(atoms) if value)}
+
+
+def synthesize(data, *, max_observations=63, max_pullbacks=4096, max_classes=None,
+               row_encoding="complete"):
     model = Model(data)
+    require(row_encoding in {"complete", "atomic"}, "row encoding")
+    atomic = row_encoding == "atomic"
+    class_limit = MAX_ATOMIC_CLASSES if atomic else MAX_CLASSES
+    max_classes = class_limit if max_classes is None else max_classes
     require(integer(max_observations, 0, 63) and integer(max_pullbacks, 0, 100000)
-            and integer(max_classes, 1, MAX_CLASSES), "producer budgets")
+            and integer(max_classes, 1, class_limit), "producer budgets")
     predicates = []
     blocks = [model.states]
     pullbacks = 0
@@ -87,7 +104,7 @@ def synthesize(data, *, max_observations=63, max_pullbacks=4096, max_classes=MAX
                 return exhausted("observation budget")
         i += 1
     if len(blocks) > max_classes:
-        return exhausted("complete row carrier budget")
+        return exhausted("atomic row carrier budget" if atomic else "complete row carrier budget")
 
     block_of = {s: i for i, block in enumerate(blocks) for s in block}
     native = {(a, i): (model.step[block[0], a][0], block_of[model.step[block[0], a][1]])
@@ -97,14 +114,15 @@ def synthesize(data, *, max_observations=63, max_pullbacks=4096, max_classes=MAX
         for y in model.outputs:
             atoms = [sum(1 << i for i in range(len(blocks)) if native[a, i] == (y, j))
                      for j in range(len(blocks))]
-            rows.append({"symbol": a, "output": y, **_row(atoms)})
+            rows.append({"symbol": a, "output": y, **(_atomic_row(atoms) if atomic else _row(atoms))})
     # The continuation actually consumed below is reconstructed from the
     # completed rows, rather than copied from the native transition table.
     cells = []
     for a in model.alphabet:
         for i in range(len(blocks)):
             choices = [(r["output"], j) for r in rows if r["symbol"] == a
-                       for j in range(len(blocks)) if r["table"][1 << j] & (1 << i)]
+                       for j in range(len(blocks))
+                       if (atomic_image(r, 1 << j, len(blocks)) if atomic else r["table"][1 << j]) & (1 << i)]
             require(len(choices) == 1, "forced row did not label a unique continuation")
             y, j = choices[0]
             cells.append({"symbol": a, "state": i, "output": y, "next": j})
@@ -131,7 +149,7 @@ def synthesize(data, *, max_observations=63, max_pullbacks=4096, max_classes=MAX
             separators.append({"left": i, "right": j, "word": word, "terminal": terminal,
                                "left_value": value(left[0], word, terminal),
                                "right_value": value(right[0], word, terminal)})
-    certificate = {"schema": CERT_SCHEMA, "model_sha256": model.sha256,
+    certificate = {"schema": ATOMIC_CERT_SCHEMA if atomic else CERT_SCHEMA, "model_sha256": model.sha256,
                    "predicates": predicates, "blocks": blocks, "initial": block_of[model.initial],
                    "rows": rows, "cells": cells, "separators": separators}
     return {"status": "candidate", "certificate": certificate,

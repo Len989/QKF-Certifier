@@ -49,6 +49,9 @@ it does not extend the installed CLI scope or the signed-word theorem.
 The same profile now also derives the residual shared-context observation for
 the descending comparison model and finds a two-bit counterexample to forgetting
 its cut constraints. See the [shared-context report](observations/CONTEXT_REPORT_RU.md).
+The [consumer-factor extension](observations/FACTOR_REPORT_RU.md) now reduces
+those 15 residual states to 10 minimal classes, using compact forced-row
+certificates and a checker for the complete source-to-factor chain.
 
 ```sh
 python -m research.observations carry reproduction/observations_carry

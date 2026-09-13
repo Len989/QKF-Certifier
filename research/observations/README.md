@@ -83,7 +83,8 @@ This prototype evaluates finite sets exactly. Its separating-word length is
 operational context depth, not Paper II's term-depth proof horizon.
 
 Limits: at most 64 native states, 32 symbols, 16 output labels and 8 quotient
-classes. Complete row tables are exponential in the number of quotient classes.
+classes in the complete-row encoding. The atomic encoding below permits up to
+64 quotient classes. Complete row tables are exponential in the number of quotient classes.
 Producer budgets are explicit and exhaustion yields no certificate. Automatic
 source vocabulary construction, discovery of source variable identity, incomplete
 native tables and width-parametric symbolic closure remain open.
@@ -139,6 +140,64 @@ Limits: 8 native contexts, 16 controls, 32 symbols, 4,096 residual states and
 65,536 product-search states. Complete rows are exponential in the context
 carrier. Exhaustion of either search budget returns no certificate. A missing
 counterexample is not independently certified as an equivalence result.
+
+## Minimal consumer factor of the residual observation
+
+The [factor report](FACTOR_REPORT_RU.md) connects the two earlier stages into one
+checked chain. The bridge first verifies the local-context certificate, then
+rebuilds its residual model with the declared terminal consumer. Existing
+question closure derives the coarsest stable factor. The default consumer
+observes membership of the native top boundary; additional context queries may
+be declared, but that boundary may not be silently removed.
+
+For the descending model the result is **15 reachable residual states to 10
+minimal classes**, with five generated questions, six equivalent-state pairs
+and 45 separating class pairs. All separators have length at most one. The
+result also recovers the entire allowed-context set from each class. This extra
+recovery is checked from the actual blocks and is not assumed for other models.
+Changing `<=` to `<` changes which comparison states merge.
+
+The new atomic row encoding stores native singleton images, the justification
+of the empty cell, a finite-union completion rule and a kernel projection.
+Disjoint atom images establish intersection preservation. A row kernel is
+equality of subsets after projection to atoms with nonempty images. Thus the
+factor's eight rows need 80 supplied cells instead of enumerating 8,192 table
+positions. The 8,112 forced consequences are logical counts, not executed or
+stored proof steps. No powerset is expanded by this encoding.
+
+```sh
+python -m research.observations.factor_cli descending reproduction/factor_one
+python -O -m research.observations.factor_cli check-descending reproduction/factor_one/certificate.json
+python -m research.observations.run_factor_experiment reproduction/factor_experiment
+```
+
+Generic factor derivation and replay:
+
+```sh
+python -m research.observations.factor_cli derive context_model.json factor_certificate.json
+python -m research.observations.factor_cli check context_model.json factor_certificate.json
+python -m research.observations derive finite_model.json atomic_certificate.json --row-encoding atomic
+```
+
+`context_factor.Runner` validates the complete chain once and then executes the
+80 factor transitions without storing the old residual control/mask state.
+`context_factor.explain` derives merge obligations, question definitions, class
+signatures and separating contexts from the checked chain. The checker
+reconstructs the bridge model; a bundled `*.consumer.json` is only an inspection
+artifact and is not trusted by source-bound replay.
+
+`evidence/factor/` includes original, strict-guard and all-context-query
+experiments. Each agrees with unsigned integer execution on all 37,448 legal
+column words of widths 1–5. Tests additionally cover 80 random context factors
+against a pair-state equivalence oracle, 20 complete semantic renamings,
+30 compact-versus-complete row models, 17 certificate mutations, a 12-class
+example beyond the old dense limit and fresh full-chain replay with
+producer/SMT imports blocked under normal Python and `-O`.
+
+The chain currently accepts at most 64 residual states and 64 factor classes.
+Earlier context-state and question-search budgets still apply. Exhaustion
+returns no chain certificate. Minimality is relative to the supplied finite
+model and consumer; it is not a new theorem about arbitrary Java programs.
 
 ## Evidence
 

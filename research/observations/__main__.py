@@ -14,6 +14,7 @@ def main():
     derive.add_argument("certificate", type=Path)
     derive.add_argument("--max-observations", type=int, default=63)
     derive.add_argument("--max-pullbacks", type=int, default=4096)
+    derive.add_argument("--row-encoding", choices=["complete", "atomic"], default="complete")
     verify = sub.add_parser("check")
     verify.add_argument("model", type=Path)
     verify.add_argument("certificate", type=Path)
@@ -37,7 +38,7 @@ def main():
             else:
                 data = json.loads(args.model.read_text())
                 proposal = synthesize(data, max_observations=args.max_observations,
-                                      max_pullbacks=args.max_pullbacks)
+                                      max_pullbacks=args.max_pullbacks, row_encoding=args.row_encoding)
             if proposal["status"] != "candidate":
                 print(json.dumps(proposal, indent=2))
                 return 2

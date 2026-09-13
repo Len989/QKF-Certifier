@@ -4,8 +4,10 @@ import json
 
 MODEL_SCHEMA = "qkf-finite-observation-model-v1"
 CERT_SCHEMA = "qkf-derived-observation-v1"
+ATOMIC_CERT_SCHEMA = "qkf-derived-observation-atomic-v1"
 MAX_STATES = 64
 MAX_CLASSES = 8  # Complete powerset rows are deliberately bounded.
+MAX_ATOMIC_CLASSES = MAX_STATES  # No enumeration of the powerset in this encoding.
 
 
 def require(condition, message):
