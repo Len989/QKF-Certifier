@@ -61,6 +61,13 @@ is also extracted from the code. The exact arithmetic certificate covers a
 restricted unsigned mathematical word profile; the Java connection is tested
 at payload widths 1–5, not proved for all signed machine words.
 
+The [independent property stage](observations/PROPERTY_REPORT_RU.md) checks a
+separately supplied maximum/bound specification after source inference. The
+original helper satisfies the maximum contract in the restricted mathematical
+profile; `bound + 1` yields an above-bound counterexample, while a strict guard
+preserves the bound but loses maximality. Source-model equivalence and target
+correctness are reported as separate claims.
+
 ```sh
 python -m research.observations carry reproduction/observations_carry
 python -m research.observations check-carry reproduction/observations_carry/certificate.json

@@ -258,7 +258,61 @@ Limits are eight interval values, sixteen suffix actions and sixty-four
 residual states in the complete factor chain. Budget exhaustion returns no
 certificate. Full Java correctness and new Lean results are outside this step.
 
-## Evidence
+## Independently supplied masked-upper properties
+
+The [property report](PROPERTY_REPORT_RU.md) adds a target check after source
+observation inference. A source-model certificate now reports
+`claim: source_model_equivalence`; it does not by itself establish that the
+program meets a user's specification.
+
+The caller supplies a separate versioned specification: either a legal output
+within the bound, or the maximum legal output within that bound. Legal words
+are `seed | s`, where `s` ranges over subsets of the optional mask. The contract
+requires disjoint seed/optional masks and `seed <= bound`. Inputs with no
+feasible word are outside this property; no emptiness verdict is inferred.
+
+The checker verifies a closed joint observation of the source factor and four
+word-order questions. A separately quantified legal alternative detects a
+non-maximal result. Every input column is checked, so induction covers every
+positive payload width of the restricted mathematical source model. The source
+frontend and word-split rules remain trusted; there is no new all-width JVM or
+Lean result. The target vocabulary is a supported contract with explicit order
+rules, not a general specification-language inference engine.
+
+| Source condition | Maximum legal output | Legal output within bound |
+|---|---|---|
+| `trial <= bound` | Certified: 49 joint states, 980 transitions | Certified |
+| `trial <= bound + 1` | Refuted: output exceeds bound | Refuted |
+| `trial < bound` | Refuted: a better legal output exists | Certified |
+| `trial <= initialValue` | Refuted: a better legal output exists | Certified |
+
+All four sources still have valid source-model certificates. A valid refutation
+is checked against the source factor, direct integer execution and an independent
+integer evaluation of the target. Source, source certificate and the separately
+supplied specification are bound together; merely rehashing a weaker goal does
+not bypass the protected target checks.
+
+```sh
+python -m research.observations.run_property_experiment reproduction/property --native
+python -O -m research.observations.property_cli check reproduction/property/original.java --source-certificate reproduction/property/original.source_certificate.json --spec reproduction/property/maximum.spec.json --certificate reproduction/property/original.maximum.certificate.json
+```
+
+To create a target template use `python -m research.observations.property_cli spec
+maximum.spec.json`; `--claim bound` selects the weaker target. Use `derive` with
+the same source/model/specification arguments and a new certificate path to
+produce a property package. Replay needs no native Java, source producer or SMT.
+CLI exit codes are 0 for a certified property, 1 for a checked refutation, 2 for
+an exhausted producer budget and 3 for a rejected input or certificate. Existing
+files are preserved. Positive certificates and refutations use distinct kinds.
+
+`evidence/property/` retains all sources, source certificates, both independent
+targets, eight property results and validation data. At widths 1–3, the experiment
+executes all 2,954 disjoint raw parameter inputs for each of four variants, rather
+than just one representative per source column. Of these, 1,859 per variant meet
+the additional nonempty-domain precondition. In total 11,816 native helper calls
+and 17,472 comparisons with legal alternatives agree with the observations.
+
+## Earlier evidence
 
 `evidence/` contains newly derived certificates for the original carry cell, a
 semantically changed cell, a delayed-observation example and an unobserved-state

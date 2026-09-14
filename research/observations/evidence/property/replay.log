@@ -1,0 +1,249 @@
+original / maximum
+{
+  "status": "certified",
+  "claim": "masked_upper_maximum",
+  "specification_sha256": "22252f6bbfdf735fe033d9b1a5138c5be9c9b2d84571cc44a919f3d1e49f12de",
+  "preconditions": [
+    "positive payload width",
+    "extra zero sign bit",
+    "seed & optional == 0",
+    "seed <= bound"
+  ],
+  "all_positive_payload_widths": true,
+  "semantics": "restricted unsigned mathematical source model",
+  "source_connection": "trusted restricted frontend and word-split rules",
+  "native_java_all_widths": false,
+  "new_lean_theorem": false,
+  "closed_states": 49,
+  "checked_transitions": 980,
+  "alphabet_columns": 20,
+  "source_factor_classes": 10,
+  "obligations": [
+    "legal output",
+    "output <= bound",
+    "every legal alternative <= bound is <= output"
+  ],
+  "native_validation": "separate bounded experiment"
+}
+
+original / bound
+{
+  "status": "certified",
+  "claim": "masked_upper_bound",
+  "specification_sha256": "b62f278b7d6bf0dabd208112f877b1a4c8255b6bea3f7c73e173b8ede073c392",
+  "preconditions": [
+    "positive payload width",
+    "extra zero sign bit",
+    "seed & optional == 0",
+    "seed <= bound"
+  ],
+  "all_positive_payload_widths": true,
+  "semantics": "restricted unsigned mathematical source model",
+  "source_connection": "trusted restricted frontend and word-split rules",
+  "native_java_all_widths": false,
+  "new_lean_theorem": false,
+  "closed_states": 49,
+  "checked_transitions": 980,
+  "alphabet_columns": 20,
+  "source_factor_classes": 10,
+  "obligations": [
+    "legal output",
+    "output <= bound"
+  ],
+  "native_validation": "separate bounded experiment"
+}
+
+plus_one / maximum
+{
+  "status": "refuted",
+  "claim": "masked_upper_maximum",
+  "specification_sha256": "22252f6bbfdf735fe033d9b1a5138c5be9c9b2d84571cc44a919f3d1e49f12de",
+  "preconditions": [
+    "positive payload width",
+    "extra zero sign bit",
+    "seed & optional == 0",
+    "seed <= bound"
+  ],
+  "all_positive_payload_widths": false,
+  "semantics": "restricted unsigned mathematical source model",
+  "source_connection": "trusted restricted frontend and word-split rules",
+  "native_java_all_widths": false,
+  "new_lean_theorem": false,
+  "reason": "above_bound",
+  "counterexample": {
+    "width": 1,
+    "bound": 0,
+    "must": 0,
+    "may": 1,
+    "seed": 0,
+    "optional": 1,
+    "output": 1,
+    "alternative": 0
+  },
+  "witness_width": 1,
+  "checked_by": [
+    "source factor",
+    "integer execution",
+    "integer target"
+  ]
+}
+
+plus_one / bound
+{
+  "status": "refuted",
+  "claim": "masked_upper_bound",
+  "specification_sha256": "b62f278b7d6bf0dabd208112f877b1a4c8255b6bea3f7c73e173b8ede073c392",
+  "preconditions": [
+    "positive payload width",
+    "extra zero sign bit",
+    "seed & optional == 0",
+    "seed <= bound"
+  ],
+  "all_positive_payload_widths": false,
+  "semantics": "restricted unsigned mathematical source model",
+  "source_connection": "trusted restricted frontend and word-split rules",
+  "native_java_all_widths": false,
+  "new_lean_theorem": false,
+  "reason": "above_bound",
+  "counterexample": {
+    "width": 1,
+    "bound": 0,
+    "must": 0,
+    "may": 1,
+    "seed": 0,
+    "optional": 1,
+    "output": 1,
+    "alternative": 0
+  },
+  "witness_width": 1,
+  "checked_by": [
+    "source factor",
+    "integer execution",
+    "integer target"
+  ]
+}
+
+strict / maximum
+{
+  "status": "refuted",
+  "claim": "masked_upper_maximum",
+  "specification_sha256": "22252f6bbfdf735fe033d9b1a5138c5be9c9b2d84571cc44a919f3d1e49f12de",
+  "preconditions": [
+    "positive payload width",
+    "extra zero sign bit",
+    "seed & optional == 0",
+    "seed <= bound"
+  ],
+  "all_positive_payload_widths": false,
+  "semantics": "restricted unsigned mathematical source model",
+  "source_connection": "trusted restricted frontend and word-split rules",
+  "native_java_all_widths": false,
+  "new_lean_theorem": false,
+  "reason": "not_maximal",
+  "counterexample": {
+    "width": 1,
+    "bound": 1,
+    "must": 0,
+    "may": 1,
+    "seed": 0,
+    "optional": 1,
+    "output": 0,
+    "alternative": 1
+  },
+  "witness_width": 1,
+  "checked_by": [
+    "source factor",
+    "integer execution",
+    "integer target"
+  ]
+}
+
+strict / bound
+{
+  "status": "certified",
+  "claim": "masked_upper_bound",
+  "specification_sha256": "b62f278b7d6bf0dabd208112f877b1a4c8255b6bea3f7c73e173b8ede073c392",
+  "preconditions": [
+    "positive payload width",
+    "extra zero sign bit",
+    "seed & optional == 0",
+    "seed <= bound"
+  ],
+  "all_positive_payload_widths": true,
+  "semantics": "restricted unsigned mathematical source model",
+  "source_connection": "trusted restricted frontend and word-split rules",
+  "native_java_all_widths": false,
+  "new_lean_theorem": false,
+  "closed_states": 51,
+  "checked_transitions": 1020,
+  "alphabet_columns": 20,
+  "source_factor_classes": 10,
+  "obligations": [
+    "legal output",
+    "output <= bound"
+  ],
+  "native_validation": "separate bounded experiment"
+}
+
+shared_input / maximum
+{
+  "status": "refuted",
+  "claim": "masked_upper_maximum",
+  "specification_sha256": "22252f6bbfdf735fe033d9b1a5138c5be9c9b2d84571cc44a919f3d1e49f12de",
+  "preconditions": [
+    "positive payload width",
+    "extra zero sign bit",
+    "seed & optional == 0",
+    "seed <= bound"
+  ],
+  "all_positive_payload_widths": false,
+  "semantics": "restricted unsigned mathematical source model",
+  "source_connection": "trusted restricted frontend and word-split rules",
+  "native_java_all_widths": false,
+  "new_lean_theorem": false,
+  "reason": "not_maximal",
+  "counterexample": {
+    "width": 1,
+    "bound": 1,
+    "must": 0,
+    "may": 1,
+    "seed": 0,
+    "optional": 1,
+    "output": 0,
+    "alternative": 1
+  },
+  "witness_width": 1,
+  "checked_by": [
+    "source factor",
+    "integer execution",
+    "integer target"
+  ]
+}
+
+shared_input / bound
+{
+  "status": "certified",
+  "claim": "masked_upper_bound",
+  "specification_sha256": "b62f278b7d6bf0dabd208112f877b1a4c8255b6bea3f7c73e173b8ede073c392",
+  "preconditions": [
+    "positive payload width",
+    "extra zero sign bit",
+    "seed & optional == 0",
+    "seed <= bound"
+  ],
+  "all_positive_payload_widths": true,
+  "semantics": "restricted unsigned mathematical source model",
+  "source_connection": "trusted restricted frontend and word-split rules",
+  "native_java_all_widths": false,
+  "new_lean_theorem": false,
+  "closed_states": 28,
+  "checked_transitions": 560,
+  "alphabet_columns": 20,
+  "source_factor_classes": 2,
+  "obligations": [
+    "legal output",
+    "output <= bound"
+  ],
+  "native_validation": "separate bounded experiment"
+}
+

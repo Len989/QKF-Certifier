@@ -12,7 +12,7 @@ def check(source, cert):
     word = check_word(source, cert['word'])
     model = compiled_model(source, cert['word'])
     factor = check_factor(model, cert['factor'])
-    return {'status': 'certified', 'word': word, 'factor': factor,
+    return {'status': 'certified', 'claim': 'source_model_equivalence', 'word': word, 'factor': factor,
             'scope': 'restricted source profile, exact integer observations and finite shared-context factor; not full Java verification'}
 
 

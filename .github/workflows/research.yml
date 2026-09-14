@@ -36,6 +36,15 @@ jobs:
         run: python -m research.observations.run_source_experiment reproduction/observations/source --native
       - name: Replay the source-derived vocabulary and factor under Python -O
         run: python -O -m research.observations.source_cli check-java reproduction/observations/source/original.certificate.json
+      - name: Check independent maximum and bound targets against native Java
+        run: python -m research.observations.run_property_experiment reproduction/observations/property --native
+      - name: Replay the maximum property under Python -O
+        run: >-
+          python -O -m research.observations.property_cli check
+          reproduction/observations/property/original.java
+          --source-certificate reproduction/observations/property/original.source_certificate.json
+          --spec reproduction/observations/property/maximum.spec.json
+          --certificate reproduction/observations/property/original.maximum.certificate.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
