@@ -45,6 +45,13 @@ jobs:
           --source-certificate reproduction/observations/property/original.source_certificate.json
           --spec reproduction/observations/property/maximum.spec.json
           --certificate reproduction/observations/property/original.maximum.certificate.json
+      - name: Derive ascending residuals from Java operations and execute the exact region
+        run: python -m research.observations.run_ascending_experiment reproduction/observations/ascending --native
+      - name: Replay the ascending source and observation proof under Python -O
+        run: >-
+          python -O -m research.observations.ascending_cli check
+          reproduction/observations/ascending/original.java
+          reproduction/observations/ascending/original.certificate.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:

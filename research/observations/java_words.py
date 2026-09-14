@@ -11,7 +11,7 @@ from pathlib import Path
 
 from .model import digest, require
 
-TOKEN = re.compile(r'\s+|//[^\n]*|/\*[\s\S]*?\*/|"(?:\\.|[^"\\])*"|\d+[lL]?|[A-Za-z_$][\w$]*|>>>|>>|<<|>=|<=|==|!=|&&|\|\||\|=|\+=|\S')
+TOKEN = re.compile(r'\s+|//[^\n]*|/\*[\s\S]*?\*/|"(?:\\.|[^"\\])*"|\d+[lL]?|[A-Za-z_$][\w$]*|>>>|>>|<<|>=|<=|==|!=|&&|\|\||\|=|\+=|&=|\^=|\S')
 PRECEDENCE = {'||': 1, '&&': 2, '|': 3, '^': 4, '&': 5, '==': 6, '!=': 6,
               '<': 7, '>': 7, '<=': 7, '>=': 7, '<<': 8, '>>': 8, '>>>': 8, '+': 9, '-': 9}
 OPS = {'<', '<=', '==', '!=', '>', '>='}
@@ -132,31 +132,41 @@ class Parser:
         if t in {'long', 'int', 'boolean'}:
             typ = self.take(); name = self.take(); self.take('='); value = self.expression(); self.take(';')
             return ('declare', typ, name, value)
-        name = self.take(); self.take('|='); value = self.expression(); self.take(';')
-        return ('or_assign', name, value)
+        name = self.take(); op = self.take()
+        kinds = {'|=': 'or_assign', '+=': 'add_assign', '&=': 'and_assign',
+                 '^=': 'xor_assign', '=': 'assign'}
+        require(op in kinds, 'supported assignment operator')
+        value = self.expression(); self.take(';')
+        return (kinds[op], name, value)
 
 
-def extract_method(source):
+def extract_declaration(source, method, types):
+    """Locate one typed method without requiring its whole body to be supported."""
     ts = tokens(source); words = [m.group() for m in ts]
-    prefix = ['private', 'static', 'long', 'setOptionalBits', '(']
+    prefix = ['private', 'static', 'long', method, '(']
     starts = [i for i in range(len(words)) if words[i:i + len(prefix)] == prefix]
-    require(len(starts) == 1, 'one real setOptionalBits declaration')
+    require(len(starts) == 1, 'one real ' + method + ' declaration')
     first = starts[0]; i = first + len(prefix); parameters = []
     while words[i] != ')':
         typ, name = words[i:i + 2]; parameters.append((typ, name)); i += 2
         require(words[i] in {',', ')'}, 'typed Java parameters')
         if words[i] == ',': i += 1
-    require([t for t, _ in parameters] == ['int', 'long', 'long', 'long', 'long'], 'helper ABI')
+    require([t for t, _ in parameters] == types, 'helper ABI')
     require(all(re.fullmatch(r'[A-Za-z_$][\w$]*', n) for _, n in parameters), 'formal identifiers')
-    require(len({n for _, n in parameters}) == 5, 'distinct formal parameters')
+    require(len({n for _, n in parameters}) == len(types), 'distinct formal parameters')
     i += 1; require(words[i] == '{', 'helper body'); start = i; depth = 0
     for end in range(start, len(words)):
         depth += (words[end] == '{') - (words[end] == '}')
         if depth == 0: break
     require(depth == 0, 'closed helper body')
     body = source[ts[start].start():ts[end].end()]
+    return [n for _, n in parameters], body, source[ts[first].start():ts[end].end()]
+
+
+def extract_method(source):
+    names, body, helper = extract_declaration(source, 'setOptionalBits', ['int', 'long', 'long', 'long', 'long'])
     parser = Parser(body); ast = parser.statement(); require(parser.peek() is None, 'complete helper parse')
-    return [n for _, n in parameters], ast, source[ts[first].start():ts[end].end()]
+    return names, ast, helper
 
 
 def normal(node, aliases):

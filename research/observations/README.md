@@ -9,6 +9,14 @@ initial comparison questions and shared-context wiring from a restricted Java
 helper, before the finite model is built. Its arithmetic replay covers all
 integers; actual Java execution is a separate bounded validation.
 
+The [ascending source stage](ASCENDING_REPORT_RU.md) adds a second operation
+family. It derives residual integer offsets and Boolean registers from an
+exact Java loop region, then uses the same observation/forced-row checker.
+The original gives 3 states and 2 classes; adding an irrelevant register gives
+6 states and the same 2 classes. A larger source addition discovers offset 2
+without a preset carry alphabet. This certifies the region's payload model,
+not its surrounding helper or a separately specified successor property.
+
 The first application reads only `require` and `source_cell` from the existing
 Graal carry model. Reachable physical states are enumerated from the initial
 state. The old `PHASES`, `quotient`, `source_quotient`, proof producer, and saved
@@ -90,9 +98,10 @@ operational context depth, not Paper II's term-depth proof horizon.
 Limits: at most 64 native states, 32 symbols, 16 output labels and 8 quotient
 classes in the complete-row encoding. The atomic encoding below permits up to
 64 quotient classes. Complete row tables are exponential in the number of quotient classes.
-Producer budgets are explicit and exhaustion yields no certificate. Automatic
-source vocabulary construction, discovery of source variable identity, incomplete
-native tables and width-parametric symbolic closure remain open.
+Producer budgets are explicit and exhaustion yields no certificate. The source
+stages below support vocabulary and variable-identity discovery in two narrow
+profiles. General source languages, incomplete native tables and arbitrary
+width-parametric symbolic closure remain open.
 
 ## Derived shared-context observations
 

@@ -68,6 +68,14 @@ profile; `bound + 1` yields an above-bound counterexample, while a strict guard
 preserves the bound but loses maximality. Source-model equivalence and target
 correctness are reported as separate claims.
 
+The [ascending source stage](observations/ASCENDING_REPORT_RU.md) derives
+Boolean-register and integer-offset states from the actual repair loop, using
+shared parsing and observation kernels. No old carry cell or prescribed phase
+table is used. Five source variants agree with 28,105 JVM executions of the
+extracted region. The certificate covers all positive mathematical payload
+widths under a legal-mask entry contract; whole-helper control flow and an
+independent all-width successor target remain separate work.
+
 ```sh
 python -m research.observations carry reproduction/observations_carry
 python -m research.observations check-carry reproduction/observations_carry/certificate.json

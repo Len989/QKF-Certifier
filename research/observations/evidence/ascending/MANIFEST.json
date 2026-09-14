@@ -1,0 +1,17 @@
+{
+  "BUDGET.json": "71ff3792e5715af322e6a5704250fa718556c2a67fb51679fbfa01e1a8b967bf",
+  "IMPLEMENTATION.json": "f1aa2c46b1f61e2566feaa9c98238bb7f6ce316ec76a6ee28972cfde90c6e8a7",
+  "RESULTS.json": "32d3ee71e64812f4d81e046a1f8747db88db1ec04352edd021c85f7f957d937c",
+  "clear_repair.certificate.json": "6faef11049aa36c16b0869b2b807d99bbbfe91af91a87e4c1aa399d88eb45d7c",
+  "clear_repair.java": "663fa1b64e144a4c6e2fd4741341008a46c48ccbf1473256d595bdfc2538abdc",
+  "first_four_bits.certificate.json": "99c974eaa842ed18d2342780f95648cd2cac48caaabc8351d96b37531f45a101",
+  "first_four_bits.java": "ec8b41a0571c43e2affd2191494f28276c5a1ed8715a2b5a09fb2a4ffe0413b5",
+  "first_or.certificate.json": "9db441f07291af83522dd70c1da9d6e32359777b0ecf8928bbfcdb1e45f4d4b5",
+  "first_or.java": "0199453119317a475658fc5b317b37c7fa1b4a2695dcd3fbc221e367c2b80b5a",
+  "irrelevant_register.certificate.json": "97ab32e78bcf8b35a2a10924b8d168bb67a23d65a557492982f01b13767fb692",
+  "irrelevant_register.java": "73f464c030874abce2f60ed5d3e920a9acb95005e693d3c5044ac8700cfda0f0",
+  "original.certificate.json": "64c4a81237be9c088aa8de2bd875e03569df564e2aceebf0ff99ebb086c1984d",
+  "original.java": "1a827adb88f57b8f612979af5b90016077cbf4dad4c54b34e539fee5fce01c95",
+  "replay.log": "e0b99173c8be1125657f76e993a8d0616f2e01155f252e772afd2332bead0af2",
+  "tests.log": "4727cbf5d3bbffc7966d7d5a1a5f0149ced72e8a542fcdc8821b332dfae57797"
+}
