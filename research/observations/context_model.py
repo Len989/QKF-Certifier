@@ -3,6 +3,7 @@ from .model import digest, names, require
 
 SCHEMA = "qkf-native-context-rows-v1"
 CERT_SCHEMA = "qkf-derived-shared-context-v1"
+ATOMIC_CERT_SCHEMA = "qkf-derived-shared-context-atomic-v1"
 MAX_STATES = 4096
 MAX_PRODUCT = 65536
 

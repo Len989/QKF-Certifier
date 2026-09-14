@@ -35,3 +35,12 @@ def image(row, subset, classes):
         if subset & atom:
             result |= value
     return result
+
+
+class Table:
+    """A checked finite-union row supporting subset lookup without expansion."""
+    def __init__(self, row, classes):
+        self.row, self.classes = row, classes
+
+    def __getitem__(self, subset):
+        return image(self.row, subset, self.classes)

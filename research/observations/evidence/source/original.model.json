@@ -1,0 +1,422 @@
+{
+  "schema": "qkf-native-context-rows-v1",
+  "contexts": [
+    "q00",
+    "q01",
+    "q02"
+  ],
+  "controls": [
+    "m00",
+    "m01",
+    "m02"
+  ],
+  "alphabet": [
+    "0000",
+    "0010",
+    "0100",
+    "0101",
+    "0110",
+    "0111",
+    "1001",
+    "1011"
+  ],
+  "initial_control": "m00",
+  "bottom": [
+    "q00",
+    "q01",
+    "q02"
+  ],
+  "boundary": "q01",
+  "binding": {
+    "adapter": "source-derived-integer-word-actions-v1",
+    "source_sha256": "1a827adb88f57b8f612979af5b90016077cbf4dad4c54b34e539fee5fce01c95",
+    "word_certificate_sha256": "fdc7244d33ca12947962e4ac17a6fcd248ba3ae81009416ea9e1932289e09576",
+    "source_profile": "unsigned mathematical payload; fixed zero sign bit; disjoint initial and optional masks"
+  },
+  "rows": [
+    {
+      "control": "m00",
+      "symbol": "0000",
+      "next_control": "m00",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q01"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m00",
+      "symbol": "0010",
+      "next_control": "m01",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q00"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m00",
+      "symbol": "0100",
+      "next_control": "m00",
+      "edges": [
+        [
+          "q01",
+          "q01"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m00",
+      "symbol": "0101",
+      "next_control": "m00",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ]
+      ]
+    },
+    {
+      "control": "m00",
+      "symbol": "0110",
+      "next_control": "m01",
+      "edges": [
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m00",
+      "symbol": "0111",
+      "next_control": "m01",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q01"
+        ]
+      ]
+    },
+    {
+      "control": "m00",
+      "symbol": "1001",
+      "next_control": "m02",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q02"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m00",
+      "symbol": "1011",
+      "next_control": "m00",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q01"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m01",
+      "symbol": "0000",
+      "next_control": "m01",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q01"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m01",
+      "symbol": "0010",
+      "next_control": "m01",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q00"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m01",
+      "symbol": "0100",
+      "next_control": "m01",
+      "edges": [
+        [
+          "q01",
+          "q01"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m01",
+      "symbol": "0101",
+      "next_control": "m01",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ]
+      ]
+    },
+    {
+      "control": "m01",
+      "symbol": "0110",
+      "next_control": "m01",
+      "edges": [
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m01",
+      "symbol": "0111",
+      "next_control": "m01",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q01"
+        ]
+      ]
+    },
+    {
+      "control": "m01",
+      "symbol": "1001",
+      "next_control": "m02",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q02"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m01",
+      "symbol": "1011",
+      "next_control": "m01",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q01"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m02",
+      "symbol": "0000",
+      "next_control": "m02",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q01"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m02",
+      "symbol": "0010",
+      "next_control": "m01",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q00"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m02",
+      "symbol": "0100",
+      "next_control": "m02",
+      "edges": [
+        [
+          "q01",
+          "q01"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m02",
+      "symbol": "0101",
+      "next_control": "m02",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ]
+      ]
+    },
+    {
+      "control": "m02",
+      "symbol": "0110",
+      "next_control": "m01",
+      "edges": [
+        [
+          "q01",
+          "q00"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m02",
+      "symbol": "0111",
+      "next_control": "m01",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ]
+      ]
+    },
+    {
+      "control": "m02",
+      "symbol": "1001",
+      "next_control": "m02",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q02"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m02",
+      "symbol": "1011",
+      "next_control": "m02",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q01"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    }
+  ]
+}

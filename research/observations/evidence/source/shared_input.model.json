@@ -1,0 +1,96 @@
+{
+  "schema": "qkf-native-context-rows-v1",
+  "contexts": [
+    "q00",
+    "q01",
+    "q02"
+  ],
+  "controls": [
+    "m00"
+  ],
+  "alphabet": [
+    "0000",
+    "0100",
+    "0101",
+    "1011"
+  ],
+  "initial_control": "m00",
+  "bottom": [
+    "q00",
+    "q01",
+    "q02"
+  ],
+  "boundary": "q01",
+  "binding": {
+    "adapter": "source-derived-integer-word-actions-v1",
+    "source_sha256": "5842ffe768e72b76337f2a1e1d914c25e0c24cc4748ec13ee1e2e0c93bb46826",
+    "word_certificate_sha256": "597b4309a2f5a27bbe33fc6d870ff22750bef6c41d759fdafa058dfe8ca84675",
+    "source_profile": "unsigned mathematical payload; fixed zero sign bit; disjoint initial and optional masks"
+  },
+  "rows": [
+    {
+      "control": "m00",
+      "symbol": "0000",
+      "next_control": "m00",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q01"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m00",
+      "symbol": "0100",
+      "next_control": "m00",
+      "edges": [
+        [
+          "q01",
+          "q01"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    },
+    {
+      "control": "m00",
+      "symbol": "0101",
+      "next_control": "m00",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ]
+      ]
+    },
+    {
+      "control": "m00",
+      "symbol": "1011",
+      "next_control": "m00",
+      "edges": [
+        [
+          "q00",
+          "q00"
+        ],
+        [
+          "q01",
+          "q01"
+        ],
+        [
+          "q02",
+          "q02"
+        ]
+      ]
+    }
+  ]
+}

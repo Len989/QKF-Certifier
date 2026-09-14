@@ -1,0 +1,1048 @@
+{
+  "consumer_queries": [
+    "q01"
+  ],
+  "questions": [
+    {
+      "word": [],
+      "terminal_label": "0"
+    },
+    {
+      "word": [
+        "0010"
+      ],
+      "terminal_label": "0"
+    },
+    {
+      "word": [
+        "0110"
+      ],
+      "terminal_label": "0"
+    },
+    {
+      "word": [
+        "0111"
+      ],
+      "terminal_label": "0"
+    },
+    {
+      "word": [
+        "1001"
+      ],
+      "terminal_label": "0"
+    }
+  ],
+  "classes": [
+    {
+      "class": 0,
+      "members": [
+        {
+          "state": "s00",
+          "control": "m00",
+          "allowed": [
+            "q00",
+            "q01",
+            "q02"
+          ]
+        },
+        {
+          "state": "s01",
+          "control": "m01",
+          "allowed": [
+            "q00",
+            "q01",
+            "q02"
+          ]
+        }
+      ],
+      "terminal": "1",
+      "question_answers": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "recovered_contexts": [
+        "q00",
+        "q01",
+        "q02"
+      ]
+    },
+    {
+      "class": 1,
+      "members": [
+        {
+          "state": "s02",
+          "control": "m00",
+          "allowed": [
+            "q01",
+            "q02"
+          ]
+        },
+        {
+          "state": "s07",
+          "control": "m01",
+          "allowed": [
+            "q01",
+            "q02"
+          ]
+        }
+      ],
+      "terminal": "1",
+      "question_answers": [
+        false,
+        true,
+        true,
+        false,
+        false
+      ],
+      "recovered_contexts": [
+        "q01",
+        "q02"
+      ]
+    },
+    {
+      "class": 2,
+      "members": [
+        {
+          "state": "s03",
+          "control": "m00",
+          "allowed": [
+            "q00"
+          ]
+        },
+        {
+          "state": "s08",
+          "control": "m01",
+          "allowed": [
+            "q00"
+          ]
+        }
+      ],
+      "terminal": "0",
+      "question_answers": [
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "recovered_contexts": [
+        "q00"
+      ]
+    },
+    {
+      "class": 3,
+      "members": [
+        {
+          "state": "s04",
+          "control": "m01",
+          "allowed": [
+            "q02"
+          ]
+        }
+      ],
+      "terminal": "0",
+      "question_answers": [
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "recovered_contexts": [
+        "q02"
+      ]
+    },
+    {
+      "class": 4,
+      "members": [
+        {
+          "state": "s05",
+          "control": "m01",
+          "allowed": [
+            "q00",
+            "q01"
+          ]
+        }
+      ],
+      "terminal": "1",
+      "question_answers": [
+        false,
+        false,
+        true,
+        false,
+        true
+      ],
+      "recovered_contexts": [
+        "q00",
+        "q01"
+      ]
+    },
+    {
+      "class": 5,
+      "members": [
+        {
+          "state": "s06",
+          "control": "m02",
+          "allowed": [
+            "q00",
+            "q01",
+            "q02"
+          ]
+        }
+      ],
+      "terminal": "1",
+      "question_answers": [
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "recovered_contexts": [
+        "q00",
+        "q01",
+        "q02"
+      ]
+    },
+    {
+      "class": 6,
+      "members": [
+        {
+          "state": "s09",
+          "control": "m00",
+          "allowed": []
+        },
+        {
+          "state": "s12",
+          "control": "m01",
+          "allowed": []
+        },
+        {
+          "state": "s14",
+          "control": "m02",
+          "allowed": []
+        }
+      ],
+      "terminal": "0",
+      "question_answers": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "recovered_contexts": []
+    },
+    {
+      "class": 7,
+      "members": [
+        {
+          "state": "s10",
+          "control": "m01",
+          "allowed": [
+            "q01"
+          ]
+        }
+      ],
+      "terminal": "1",
+      "question_answers": [
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "recovered_contexts": [
+        "q01"
+      ]
+    },
+    {
+      "class": 8,
+      "members": [
+        {
+          "state": "s11",
+          "control": "m02",
+          "allowed": [
+            "q01",
+            "q02"
+          ]
+        }
+      ],
+      "terminal": "1",
+      "question_answers": [
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "recovered_contexts": [
+        "q01",
+        "q02"
+      ]
+    },
+    {
+      "class": 9,
+      "members": [
+        {
+          "state": "s13",
+          "control": "m02",
+          "allowed": [
+            "q00"
+          ]
+        }
+      ],
+      "terminal": "0",
+      "question_answers": [
+        true,
+        false,
+        false,
+        true,
+        true
+      ],
+      "recovered_contexts": [
+        "q00"
+      ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "s00",
+      "right": "s01",
+      "terminal": "1",
+      "obligations": [
+        {
+          "symbol": "0000",
+          "left_next": "s00",
+          "right_next": "s01",
+          "shared_next_class": 0
+        },
+        {
+          "symbol": "0010",
+          "left_next": "s01",
+          "right_next": "s01",
+          "shared_next_class": 0
+        },
+        {
+          "symbol": "0100",
+          "left_next": "s02",
+          "right_next": "s07",
+          "shared_next_class": 1
+        },
+        {
+          "symbol": "0101",
+          "left_next": "s03",
+          "right_next": "s08",
+          "shared_next_class": 2
+        },
+        {
+          "symbol": "0110",
+          "left_next": "s04",
+          "right_next": "s04",
+          "shared_next_class": 3
+        },
+        {
+          "symbol": "0111",
+          "left_next": "s05",
+          "right_next": "s05",
+          "shared_next_class": 4
+        },
+        {
+          "symbol": "1001",
+          "left_next": "s06",
+          "right_next": "s06",
+          "shared_next_class": 5
+        },
+        {
+          "symbol": "1011",
+          "left_next": "s00",
+          "right_next": "s01",
+          "shared_next_class": 0
+        }
+      ]
+    },
+    {
+      "left": "s02",
+      "right": "s07",
+      "terminal": "1",
+      "obligations": [
+        {
+          "symbol": "0000",
+          "left_next": "s02",
+          "right_next": "s07",
+          "shared_next_class": 1
+        },
+        {
+          "symbol": "0010",
+          "left_next": "s04",
+          "right_next": "s04",
+          "shared_next_class": 3
+        },
+        {
+          "symbol": "0100",
+          "left_next": "s02",
+          "right_next": "s07",
+          "shared_next_class": 1
+        },
+        {
+          "symbol": "0101",
+          "left_next": "s09",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0110",
+          "left_next": "s04",
+          "right_next": "s04",
+          "shared_next_class": 3
+        },
+        {
+          "symbol": "0111",
+          "left_next": "s10",
+          "right_next": "s10",
+          "shared_next_class": 7
+        },
+        {
+          "symbol": "1001",
+          "left_next": "s11",
+          "right_next": "s11",
+          "shared_next_class": 8
+        },
+        {
+          "symbol": "1011",
+          "left_next": "s02",
+          "right_next": "s07",
+          "shared_next_class": 1
+        }
+      ]
+    },
+    {
+      "left": "s03",
+      "right": "s08",
+      "terminal": "0",
+      "obligations": [
+        {
+          "symbol": "0000",
+          "left_next": "s03",
+          "right_next": "s08",
+          "shared_next_class": 2
+        },
+        {
+          "symbol": "0010",
+          "left_next": "s05",
+          "right_next": "s05",
+          "shared_next_class": 4
+        },
+        {
+          "symbol": "0100",
+          "left_next": "s09",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0101",
+          "left_next": "s03",
+          "right_next": "s08",
+          "shared_next_class": 2
+        },
+        {
+          "symbol": "0110",
+          "left_next": "s12",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0111",
+          "left_next": "s08",
+          "right_next": "s08",
+          "shared_next_class": 2
+        },
+        {
+          "symbol": "1001",
+          "left_next": "s13",
+          "right_next": "s13",
+          "shared_next_class": 9
+        },
+        {
+          "symbol": "1011",
+          "left_next": "s03",
+          "right_next": "s08",
+          "shared_next_class": 2
+        }
+      ]
+    },
+    {
+      "left": "s09",
+      "right": "s12",
+      "terminal": "0",
+      "obligations": [
+        {
+          "symbol": "0000",
+          "left_next": "s09",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0010",
+          "left_next": "s12",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0100",
+          "left_next": "s09",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0101",
+          "left_next": "s09",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0110",
+          "left_next": "s12",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0111",
+          "left_next": "s12",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "1001",
+          "left_next": "s14",
+          "right_next": "s14",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "1011",
+          "left_next": "s09",
+          "right_next": "s12",
+          "shared_next_class": 6
+        }
+      ]
+    },
+    {
+      "left": "s09",
+      "right": "s14",
+      "terminal": "0",
+      "obligations": [
+        {
+          "symbol": "0000",
+          "left_next": "s09",
+          "right_next": "s14",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0010",
+          "left_next": "s12",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0100",
+          "left_next": "s09",
+          "right_next": "s14",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0101",
+          "left_next": "s09",
+          "right_next": "s14",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0110",
+          "left_next": "s12",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0111",
+          "left_next": "s12",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "1001",
+          "left_next": "s14",
+          "right_next": "s14",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "1011",
+          "left_next": "s09",
+          "right_next": "s14",
+          "shared_next_class": 6
+        }
+      ]
+    },
+    {
+      "left": "s12",
+      "right": "s14",
+      "terminal": "0",
+      "obligations": [
+        {
+          "symbol": "0000",
+          "left_next": "s12",
+          "right_next": "s14",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0010",
+          "left_next": "s12",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0100",
+          "left_next": "s12",
+          "right_next": "s14",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0101",
+          "left_next": "s12",
+          "right_next": "s14",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0110",
+          "left_next": "s12",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "0111",
+          "left_next": "s12",
+          "right_next": "s12",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "1001",
+          "left_next": "s14",
+          "right_next": "s14",
+          "shared_next_class": 6
+        },
+        {
+          "symbol": "1011",
+          "left_next": "s12",
+          "right_next": "s14",
+          "shared_next_class": 6
+        }
+      ]
+    }
+  ],
+  "separators": [
+    {
+      "left": 0,
+      "right": 1,
+      "word": [
+        "0010"
+      ],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 0,
+      "right": 2,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 0,
+      "right": 3,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 0,
+      "right": 4,
+      "word": [
+        "1001"
+      ],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 0,
+      "right": 5,
+      "word": [
+        "0110"
+      ],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 0,
+      "right": 6,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 0,
+      "right": 7,
+      "word": [
+        "0010"
+      ],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 0,
+      "right": 8,
+      "word": [
+        "0010"
+      ],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 0,
+      "right": 9,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 1,
+      "right": 2,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 1,
+      "right": 3,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 1,
+      "right": 4,
+      "word": [
+        "0010"
+      ],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 1,
+      "right": 5,
+      "word": [
+        "0010"
+      ],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 1,
+      "right": 6,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 1,
+      "right": 7,
+      "word": [
+        "1001"
+      ],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 1,
+      "right": 8,
+      "word": [
+        "0111"
+      ],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 1,
+      "right": 9,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 2,
+      "right": 3,
+      "word": [
+        "0010"
+      ],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 2,
+      "right": 4,
+      "word": [],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 2,
+      "right": 5,
+      "word": [],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 2,
+      "right": 6,
+      "word": [
+        "0010"
+      ],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 2,
+      "right": 7,
+      "word": [],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 2,
+      "right": 8,
+      "word": [],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 2,
+      "right": 9,
+      "word": [
+        "0110"
+      ],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 3,
+      "right": 4,
+      "word": [],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 3,
+      "right": 5,
+      "word": [],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 3,
+      "right": 6,
+      "word": [
+        "1001"
+      ],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 3,
+      "right": 7,
+      "word": [],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 3,
+      "right": 8,
+      "word": [],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 3,
+      "right": 9,
+      "word": [
+        "0010"
+      ],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 4,
+      "right": 5,
+      "word": [
+        "0110"
+      ],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 4,
+      "right": 6,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 4,
+      "right": 7,
+      "word": [
+        "0010"
+      ],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 4,
+      "right": 8,
+      "word": [
+        "0010"
+      ],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 4,
+      "right": 9,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 5,
+      "right": 6,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 5,
+      "right": 7,
+      "word": [
+        "0010"
+      ],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 5,
+      "right": 8,
+      "word": [
+        "0010"
+      ],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 5,
+      "right": 9,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 6,
+      "right": 7,
+      "word": [],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 6,
+      "right": 8,
+      "word": [],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 6,
+      "right": 9,
+      "word": [
+        "0010"
+      ],
+      "terminal": true,
+      "left_value": "0",
+      "right_value": "1"
+    },
+    {
+      "left": 7,
+      "right": 8,
+      "word": [
+        "0111"
+      ],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 7,
+      "right": 9,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    },
+    {
+      "left": 8,
+      "right": 9,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    }
+  ],
+  "merge_justification": "same terminal answers and successor classes for every symbol; induction covers all continuations"
+}

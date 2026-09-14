@@ -1,13 +1,16 @@
 """Force local preimage rows, compose residuals, then look for a lost shared cut."""
 from collections import deque
 
-from .context_model import CERT_SCHEMA, MAX_PRODUCT, MAX_STATES, ContextModel
+from .atomic_rows import Table
+from .context_model import ATOMIC_CERT_SCHEMA, CERT_SCHEMA, MAX_PRODUCT, MAX_STATES, ContextModel
 from .model import integer, require
-from .producer import _row
+from .producer import _atomic_row, _row
 
 
-def synthesize(data, *, max_states=MAX_STATES, max_product=MAX_PRODUCT):
+def synthesize(data, *, max_states=MAX_STATES, max_product=MAX_PRODUCT, row_encoding="complete"):
     m = ContextModel(data)
+    require(row_encoding in {"complete", "atomic"}, "context row encoding")
+    atomic = row_encoding == "atomic"
     require(integer(max_states, 1, MAX_STATES) and integer(max_product, 1, MAX_PRODUCT),
             "context producer budgets")
     rows = []
@@ -17,9 +20,9 @@ def synthesize(data, *, max_states=MAX_STATES, max_product=MAX_PRODUCT):
             _, edges = m.rows[c, a]
             atoms = [sum(1 << m.index[h] for h, below in edges.items() if below == target)
                      for target in m.contexts]
-            proof = _row(atoms)
+            proof = _atomic_row(atoms) if atomic else _row(atoms)
             rows.append({"control": c, "symbol": a, **proof})
-            tables[c, a] = proof["table"]
+            tables[c, a] = Table(proof, len(m.contexts)) if atomic else proof["table"]
 
     def exhausted(reason):
         return {"status": "budget_exhausted", "reason": reason, "certificate": None}
@@ -76,7 +79,7 @@ def synthesize(data, *, max_states=MAX_STATES, max_product=MAX_PRODUCT):
                "trace": [{"control": c, "exact": e, "independent": w} for c, e, w in trace],
                "conflict": {"position": len(word) - 1, "above": m.boundary, "below": below,
                             "required_below": m.members(exact)}}
-    cert = {"schema": CERT_SCHEMA, "model_sha256": m.sha256, "initial": 0,
+    cert = {"schema": ATOMIC_CERT_SCHEMA if atomic else CERT_SCHEMA, "model_sha256": m.sha256, "initial": 0,
             "rows": rows, "states": [
                 {"control": c, "allowed": mask, "parent": parents[i],
                  "accept": bool(mask & boundary_bit)} for i, (c, mask) in enumerate(nodes)],

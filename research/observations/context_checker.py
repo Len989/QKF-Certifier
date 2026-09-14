@@ -1,17 +1,18 @@
 """Independent row and shared-cut certificate replay; no producer or search."""
-from .context_model import CERT_SCHEMA, MAX_PRODUCT, MAX_STATES, ContextModel
+from .atomic_rows import Table, check_completion
+from .context_model import ATOMIC_CERT_SCHEMA, CERT_SCHEMA, MAX_PRODUCT, MAX_STATES, ContextModel
 from .model import integer, require
 
 
-def _tables(m, rows):
+def _tables(m, rows, atomic=False):
     require(type(rows) is list and len(rows) == len(m.rows), "complete context row proofs")
     tables = {}
     k, top = len(m.contexts), m.top
     supplied_count = forced_count = 0
     for row in rows:
-        require(type(row) is dict and set(row) == {
-            "control", "symbol", "supplied", "steps", "table", "kernel"
-        }, "context row proof fields")
+        fields = {"control", "symbol", "supplied"} | (
+            {"empty", "extension", "kernel_projection"} if atomic else {"steps", "table", "kernel"})
+        require(type(row) is dict and set(row) == fields, "context row proof fields")
         c, a = row["control"], row["symbol"]
         require(type(c) is str and type(a) is str and (c, a) in m.rows
                 and (c, a) not in tables, "unique native context row")
@@ -25,6 +26,12 @@ def _tables(m, rows):
                 and all(integer(v, 0, top) for v in cell) for cell in supplied)
                 and supplied == expected, "context native atoms changed")
         values = dict(supplied)
+        if atomic:
+            check_completion(row, k)
+            tables[c, a] = Table(row, k)
+            supplied_count += len(supplied)
+            forced_count += (1 << k) - len(supplied)
+            continue
         steps = row["steps"]
         require(type(steps) is list and len(steps) == (1 << k) - len(values), "context forced proof size")
         for step in steps:
@@ -62,9 +69,10 @@ def check(data, cert):
     require(type(cert) is dict and set(cert) == {
         "schema", "model_sha256", "initial", "rows", "states", "cells", "gap"
     }, "context certificate fields")
-    require(cert["schema"] == CERT_SCHEMA and cert["model_sha256"] == m.sha256,
+    require(cert["schema"] in {CERT_SCHEMA, ATOMIC_CERT_SCHEMA} and cert["model_sha256"] == m.sha256,
             "context certificate belongs to a different native model")
-    tables, supplied, forced = _tables(m, cert["rows"])
+    atomic = cert["schema"] == ATOMIC_CERT_SCHEMA
+    tables, supplied, forced = _tables(m, cert["rows"], atomic)
     states = cert["states"]
     require(type(states) is list and 0 < len(states) <= MAX_STATES, "bounded residual states")
     require(integer(cert["initial"], 0, 0), "context initial state id")
@@ -138,7 +146,8 @@ def check(data, cert):
             "forced_cells": forced, "transitions": len(cells),
             "context_loss_witness_length": 0 if gap is None else len(gap["word"]),
             "scope": "all finite words of supplied local constraints with the declared shared cuts and boundaries",
-            "minimality": "not claimed", "absence_of_gap_certified": False}
+            "minimality": "not claimed", "absence_of_gap_certified": False,
+            **({"row_encoding": "atomic", "stored_forced_steps": 0} if atomic else {})}
 
 
 def accepts(data, cert, word):

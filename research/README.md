@@ -53,6 +53,14 @@ The [consumer-factor extension](observations/FACTOR_REPORT_RU.md) now reduces
 those 15 residual states to 10 minimal classes, using compact forced-row
 certificates and a checker for the complete source-to-factor chain.
 
+The [source observation extension](observations/SOURCE_REPORT_RU.md) now derives
+the initial integer questions and shared slices from the actual descending
+Java helper. For guards with offsets 0, +1 and +3 it discovers 3, 4 and 6
+context values, then 10, 13 and 20 minimal factor classes. Shared input identity
+is also extracted from the code. The exact arithmetic certificate covers a
+restricted unsigned mathematical word profile; the Java connection is tested
+at payload widths 1–5, not proved for all signed machine words.
+
 ```sh
 python -m research.observations carry reproduction/observations_carry
 python -m research.observations check-carry reproduction/observations_carry/certificate.json

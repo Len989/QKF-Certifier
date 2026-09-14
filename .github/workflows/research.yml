@@ -28,6 +28,14 @@ jobs:
         run: python -m research.observations.run_factor_experiment reproduction/observations/factor
       - name: Replay the complete source-to-factor certificate under Python -O
         run: python -O -m research.observations.factor_cli check-descending reproduction/observations/factor/descending.certificate.json
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Derive the observation vocabulary from Java and execute the native helper
+        run: python -m research.observations.run_source_experiment reproduction/observations/source --native
+      - name: Replay the source-derived vocabulary and factor under Python -O
+        run: python -O -m research.observations.source_cli check-java reproduction/observations/source/original.certificate.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:

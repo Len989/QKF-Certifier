@@ -1,0 +1,657 @@
+{
+  "schema": "qkf-source-derived-factor-v1",
+  "word": {
+    "schema": "qkf-integer-word-observation-v1",
+    "source_ir": {
+      "schema": "qkf-descending-word-source-v1",
+      "source_sha256": "5842ffe768e72b76337f2a1e1d914c25e0c24cc4748ec13ee1e2e0c93bb46826",
+      "helper_sha256": "6d0aab6d5f0341baf841a6d0f409a9b531cfeb8d1f12a18dbf014c9a9e1dac45",
+      "parsed_sha256": "a325fbe328b99183cfa4900b8a99b8d42ecfeb29348153dc518174b5468cf1f0",
+      "primitive_bindings": {
+        "CodeUtil.mask": "5137ee1881d6d0020a0a860095e4db6fbb5ef2ca7a4422c8d296b6b273d116b1"
+      },
+      "guard": [
+        "and",
+        [
+          "optional"
+        ],
+        [
+          "test",
+          0
+        ]
+      ],
+      "tests": [
+        {
+          "op": "<=",
+          "offset": 0
+        }
+      ],
+      "comparison_word": "arg4",
+      "columns": [
+        {
+          "symbol": "0000",
+          "input_bits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "symbol": "0100",
+          "input_bits": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "symbol": "0101",
+          "input_bits": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "symbol": "1011",
+          "input_bits": [
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "wiring": {
+        "rules": [
+          "descending-outside-write",
+          "or-one-bit-slices"
+        ],
+        "trial": {
+          "higher": [
+            "slice",
+            [
+              "output",
+              "value"
+            ],
+            "higher"
+          ],
+          "bit": 1,
+          "lower": [
+            "slice",
+            [
+              "input",
+              "arg4"
+            ],
+            "lower"
+          ]
+        },
+        "through": {
+          "higher": [
+            "slice",
+            [
+              "output",
+              "value"
+            ],
+            "higher"
+          ],
+          "bit": [
+            "proposed_bit"
+          ]
+        },
+        "lower_control": {
+          "left": [
+            "slice",
+            [
+              "input",
+              "arg4"
+            ],
+            "lower"
+          ],
+          "right": [
+            "slice",
+            [
+              "input",
+              "arg4"
+            ],
+            "lower"
+          ]
+        },
+        "right_slices": {
+          "higher": [
+            "slice",
+            [
+              "input",
+              "arg4"
+            ],
+            "higher"
+          ],
+          "bit": [
+            "slice",
+            [
+              "input",
+              "arg4"
+            ],
+            "bit"
+          ],
+          "lower": [
+            "slice",
+            [
+              "input",
+              "arg4"
+            ],
+            "lower"
+          ]
+        }
+      },
+      "profile": "unsigned mathematical payload; fixed zero sign bit; disjoint initial and optional masks"
+    },
+    "questions": [
+      {
+        "kind": "seed",
+        "cut": 0,
+        "test": 0
+      },
+      {
+        "kind": "pullback",
+        "cut": -1,
+        "parent": 0,
+        "delta": 1
+      }
+    ],
+    "intervals": [
+      {
+        "lower": null,
+        "upper": -1
+      },
+      {
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "lower": 1,
+        "upper": null
+      }
+    ],
+    "actions": [
+      {
+        "delta": 0,
+        "targets": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "delta": 1,
+        "targets": [
+          0,
+          2,
+          2
+        ]
+      }
+    ],
+    "origin": 1,
+    "consumer": [
+      [
+        true
+      ],
+      [
+        true
+      ],
+      [
+        false
+      ]
+    ],
+    "monoid": [
+      {
+        "map": [
+          0,
+          1,
+          2
+        ],
+        "parent": null
+      }
+    ],
+    "composition": [
+      {
+        "state": 0,
+        "delta": 0,
+        "next": 0
+      }
+    ]
+  },
+  "factor": {
+    "schema": "qkf-context-consumer-factor-v1",
+    "context_model_sha256": "39ac964fe9f2a589dfdfe75071c22f361b532b2a02997e591efc5fa4e1dee3f1",
+    "consumer_queries": [
+      "q01"
+    ],
+    "context": {
+      "schema": "qkf-derived-shared-context-atomic-v1",
+      "model_sha256": "39ac964fe9f2a589dfdfe75071c22f361b532b2a02997e591efc5fa4e1dee3f1",
+      "initial": 0,
+      "rows": [
+        {
+          "control": "m00",
+          "symbol": "0000",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 7
+        },
+        {
+          "control": "m00",
+          "symbol": "0100",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 6
+        },
+        {
+          "control": "m00",
+          "symbol": "0101",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 1
+        },
+        {
+          "control": "m00",
+          "symbol": "1011",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 7
+        }
+      ],
+      "states": [
+        {
+          "control": "m00",
+          "allowed": 7,
+          "parent": null,
+          "accept": true
+        },
+        {
+          "control": "m00",
+          "allowed": 6,
+          "parent": {
+            "state": 0,
+            "symbol": "0100"
+          },
+          "accept": true
+        },
+        {
+          "control": "m00",
+          "allowed": 1,
+          "parent": {
+            "state": 0,
+            "symbol": "0101"
+          },
+          "accept": false
+        },
+        {
+          "control": "m00",
+          "allowed": 0,
+          "parent": {
+            "state": 1,
+            "symbol": "0101"
+          },
+          "accept": false
+        }
+      ],
+      "cells": [
+        {
+          "state": 0,
+          "symbol": "0000",
+          "next": 0
+        },
+        {
+          "state": 0,
+          "symbol": "0100",
+          "next": 1
+        },
+        {
+          "state": 0,
+          "symbol": "0101",
+          "next": 2
+        },
+        {
+          "state": 0,
+          "symbol": "1011",
+          "next": 0
+        },
+        {
+          "state": 1,
+          "symbol": "0000",
+          "next": 1
+        },
+        {
+          "state": 1,
+          "symbol": "0100",
+          "next": 1
+        },
+        {
+          "state": 1,
+          "symbol": "0101",
+          "next": 3
+        },
+        {
+          "state": 1,
+          "symbol": "1011",
+          "next": 1
+        },
+        {
+          "state": 2,
+          "symbol": "0000",
+          "next": 2
+        },
+        {
+          "state": 2,
+          "symbol": "0100",
+          "next": 3
+        },
+        {
+          "state": 2,
+          "symbol": "0101",
+          "next": 2
+        },
+        {
+          "state": 2,
+          "symbol": "1011",
+          "next": 2
+        },
+        {
+          "state": 3,
+          "symbol": "0000",
+          "next": 3
+        },
+        {
+          "state": 3,
+          "symbol": "0100",
+          "next": 3
+        },
+        {
+          "state": 3,
+          "symbol": "0101",
+          "next": 3
+        },
+        {
+          "state": 3,
+          "symbol": "1011",
+          "next": 3
+        }
+      ],
+      "gap": {
+        "word": [
+          "0101",
+          "0000"
+        ],
+        "trace": [
+          {
+            "control": "m00",
+            "exact": 7,
+            "independent": 7
+          },
+          {
+            "control": "m00",
+            "exact": 1,
+            "independent": 1
+          },
+          {
+            "control": "m00",
+            "exact": 1,
+            "independent": 7
+          }
+        ],
+        "conflict": {
+          "position": 1,
+          "above": "q01",
+          "below": "q01",
+          "required_below": [
+            "q00"
+          ]
+        }
+      }
+    },
+    "factor": {
+      "schema": "qkf-derived-observation-atomic-v1",
+      "model_sha256": "60679c5608a08fe68fc219190dbc5ef5554e3fd5ab7f63d99b5f6c911733f2bb",
+      "predicates": [
+        {
+          "kind": "terminal",
+          "label": "0",
+          "mask": 12
+        }
+      ],
+      "blocks": [
+        [
+          "s00",
+          "s01"
+        ],
+        [
+          "s02",
+          "s03"
+        ]
+      ],
+      "initial": 0,
+      "rows": [
+        {
+          "symbol": "0000",
+          "output": "tick",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 3
+        },
+        {
+          "symbol": "0100",
+          "output": "tick",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 3
+        },
+        {
+          "symbol": "0101",
+          "output": "tick",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 2
+        },
+        {
+          "symbol": "1011",
+          "output": "tick",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 3
+        }
+      ],
+      "cells": [
+        {
+          "symbol": "0000",
+          "state": 0,
+          "output": "tick",
+          "next": 0
+        },
+        {
+          "symbol": "0000",
+          "state": 1,
+          "output": "tick",
+          "next": 1
+        },
+        {
+          "symbol": "0100",
+          "state": 0,
+          "output": "tick",
+          "next": 0
+        },
+        {
+          "symbol": "0100",
+          "state": 1,
+          "output": "tick",
+          "next": 1
+        },
+        {
+          "symbol": "0101",
+          "state": 0,
+          "output": "tick",
+          "next": 1
+        },
+        {
+          "symbol": "0101",
+          "state": 1,
+          "output": "tick",
+          "next": 1
+        },
+        {
+          "symbol": "1011",
+          "state": 0,
+          "output": "tick",
+          "next": 0
+        },
+        {
+          "symbol": "1011",
+          "state": 1,
+          "output": "tick",
+          "next": 1
+        }
+      ],
+      "separators": [
+        {
+          "left": 0,
+          "right": 1,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        }
+      ]
+    }
+  }
+}

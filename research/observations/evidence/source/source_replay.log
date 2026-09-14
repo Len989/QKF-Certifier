@@ -1,0 +1,242 @@
+original
+{
+  "status": "certified",
+  "word": {
+    "status": "certified",
+    "integer_cuts": [
+      -1,
+      0
+    ],
+    "context_values": 3,
+    "suffix_actions": 3,
+    "source_tests": [
+      {
+        "op": "<=",
+        "offset": 0
+      }
+    ],
+    "append_deltas": [
+      -1,
+      0,
+      1
+    ],
+    "scope": "exact integer pullbacks and word-action composition for the restricted unsigned source profile"
+  },
+  "factor": {
+    "status": "certified",
+    "residual_states": 15,
+    "classes": 10,
+    "removed_states": 5,
+    "merged_pairs": 6,
+    "separated_class_pairs": 45,
+    "derived_questions": 5,
+    "max_separator_length": 1,
+    "row_templates": 8,
+    "stored_native_cells": 80,
+    "stored_forced_steps": 0,
+    "logical_forced_cells": 8112,
+    "transitions": 80,
+    "consumer_queries": [
+      "q01"
+    ],
+    "full_context_recoverable": true,
+    "minimality": "coarsest stable factor preserving declared consumer answers for every finite continuation",
+    "scope": "the independently checked finite context model; no new all-width Java or Lean theorem"
+  },
+  "scope": "restricted source profile, exact integer observations and finite shared-context factor; not full Java verification"
+}
+
+plus_one
+{
+  "status": "certified",
+  "word": {
+    "status": "certified",
+    "integer_cuts": [
+      -1,
+      0,
+      1
+    ],
+    "context_values": 4,
+    "suffix_actions": 6,
+    "source_tests": [
+      {
+        "op": "<=",
+        "offset": 1
+      }
+    ],
+    "append_deltas": [
+      -1,
+      0,
+      1
+    ],
+    "scope": "exact integer pullbacks and word-action composition for the restricted unsigned source profile"
+  },
+  "factor": {
+    "status": "certified",
+    "residual_states": 27,
+    "classes": 13,
+    "removed_states": 14,
+    "merged_pairs": 23,
+    "separated_class_pairs": 78,
+    "derived_questions": 7,
+    "max_separator_length": 1,
+    "row_templates": 8,
+    "stored_native_cells": 104,
+    "stored_forced_steps": 0,
+    "logical_forced_cells": 65432,
+    "transitions": 104,
+    "consumer_queries": [
+      "q01"
+    ],
+    "full_context_recoverable": true,
+    "minimality": "coarsest stable factor preserving declared consumer answers for every finite continuation",
+    "scope": "the independently checked finite context model; no new all-width Java or Lean theorem"
+  },
+  "scope": "restricted source profile, exact integer observations and finite shared-context factor; not full Java verification"
+}
+
+plus_three
+{
+  "status": "certified",
+  "word": {
+    "status": "certified",
+    "integer_cuts": [
+      -1,
+      0,
+      1,
+      2,
+      3
+    ],
+    "context_values": 6,
+    "suffix_actions": 13,
+    "source_tests": [
+      {
+        "op": "<=",
+        "offset": 3
+      }
+    ],
+    "append_deltas": [
+      -1,
+      0,
+      1
+    ],
+    "scope": "exact integer pullbacks and word-action composition for the restricted unsigned source profile"
+  },
+  "factor": {
+    "status": "certified",
+    "residual_states": 62,
+    "classes": 20,
+    "removed_states": 42,
+    "merged_pairs": 107,
+    "separated_class_pairs": 190,
+    "derived_questions": 11,
+    "max_separator_length": 2,
+    "row_templates": 8,
+    "stored_native_cells": 160,
+    "stored_forced_steps": 0,
+    "logical_forced_cells": 8388448,
+    "transitions": 160,
+    "consumer_queries": [
+      "q01"
+    ],
+    "full_context_recoverable": true,
+    "minimality": "coarsest stable factor preserving declared consumer answers for every finite continuation",
+    "scope": "the independently checked finite context model; no new all-width Java or Lean theorem"
+  },
+  "scope": "restricted source profile, exact integer observations and finite shared-context factor; not full Java verification"
+}
+
+shared_input
+{
+  "status": "certified",
+  "word": {
+    "status": "certified",
+    "integer_cuts": [
+      -1,
+      0
+    ],
+    "context_values": 3,
+    "suffix_actions": 1,
+    "source_tests": [
+      {
+        "op": "<=",
+        "offset": 0
+      }
+    ],
+    "append_deltas": [
+      0,
+      1
+    ],
+    "scope": "exact integer pullbacks and word-action composition for the restricted unsigned source profile"
+  },
+  "factor": {
+    "status": "certified",
+    "residual_states": 4,
+    "classes": 2,
+    "removed_states": 2,
+    "merged_pairs": 2,
+    "separated_class_pairs": 1,
+    "derived_questions": 1,
+    "max_separator_length": 0,
+    "row_templates": 4,
+    "stored_native_cells": 8,
+    "stored_forced_steps": 0,
+    "logical_forced_cells": 8,
+    "transitions": 8,
+    "consumer_queries": [
+      "q01"
+    ],
+    "full_context_recoverable": false,
+    "minimality": "coarsest stable factor preserving declared consumer answers for every finite continuation",
+    "scope": "the independently checked finite context model; no new all-width Java or Lean theorem"
+  },
+  "scope": "restricted source profile, exact integer observations and finite shared-context factor; not full Java verification"
+}
+
+pinned original
+{
+  "status": "certified",
+  "word": {
+    "status": "certified",
+    "integer_cuts": [
+      -1,
+      0
+    ],
+    "context_values": 3,
+    "suffix_actions": 3,
+    "source_tests": [
+      {
+        "op": "<=",
+        "offset": 0
+      }
+    ],
+    "append_deltas": [
+      -1,
+      0,
+      1
+    ],
+    "scope": "exact integer pullbacks and word-action composition for the restricted unsigned source profile"
+  },
+  "factor": {
+    "status": "certified",
+    "residual_states": 15,
+    "classes": 10,
+    "removed_states": 5,
+    "merged_pairs": 6,
+    "separated_class_pairs": 45,
+    "derived_questions": 5,
+    "max_separator_length": 1,
+    "row_templates": 8,
+    "stored_native_cells": 80,
+    "stored_forced_steps": 0,
+    "logical_forced_cells": 8112,
+    "transitions": 80,
+    "consumer_queries": [
+      "q01"
+    ],
+    "full_context_recoverable": true,
+    "minimality": "coarsest stable factor preserving declared consumer answers for every finite continuation",
+    "scope": "the independently checked finite context model; no new all-width Java or Lean theorem"
+  },
+  "scope": "restricted source profile, exact integer observations and finite shared-context factor; not full Java verification"
+}

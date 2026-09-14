@@ -1,0 +1,137 @@
+{
+  "consumer_queries": [
+    "q01"
+  ],
+  "questions": [
+    {
+      "word": [],
+      "terminal_label": "0"
+    }
+  ],
+  "classes": [
+    {
+      "class": 0,
+      "members": [
+        {
+          "state": "s00",
+          "control": "m00",
+          "allowed": [
+            "q00",
+            "q01",
+            "q02"
+          ]
+        },
+        {
+          "state": "s01",
+          "control": "m00",
+          "allowed": [
+            "q01",
+            "q02"
+          ]
+        }
+      ],
+      "terminal": "1",
+      "question_answers": [
+        false
+      ],
+      "recovered_contexts": null
+    },
+    {
+      "class": 1,
+      "members": [
+        {
+          "state": "s02",
+          "control": "m00",
+          "allowed": [
+            "q00"
+          ]
+        },
+        {
+          "state": "s03",
+          "control": "m00",
+          "allowed": []
+        }
+      ],
+      "terminal": "0",
+      "question_answers": [
+        true
+      ],
+      "recovered_contexts": null
+    }
+  ],
+  "merges": [
+    {
+      "left": "s00",
+      "right": "s01",
+      "terminal": "1",
+      "obligations": [
+        {
+          "symbol": "0000",
+          "left_next": "s00",
+          "right_next": "s01",
+          "shared_next_class": 0
+        },
+        {
+          "symbol": "0100",
+          "left_next": "s01",
+          "right_next": "s01",
+          "shared_next_class": 0
+        },
+        {
+          "symbol": "0101",
+          "left_next": "s02",
+          "right_next": "s03",
+          "shared_next_class": 1
+        },
+        {
+          "symbol": "1011",
+          "left_next": "s00",
+          "right_next": "s01",
+          "shared_next_class": 0
+        }
+      ]
+    },
+    {
+      "left": "s02",
+      "right": "s03",
+      "terminal": "0",
+      "obligations": [
+        {
+          "symbol": "0000",
+          "left_next": "s02",
+          "right_next": "s03",
+          "shared_next_class": 1
+        },
+        {
+          "symbol": "0100",
+          "left_next": "s03",
+          "right_next": "s03",
+          "shared_next_class": 1
+        },
+        {
+          "symbol": "0101",
+          "left_next": "s02",
+          "right_next": "s03",
+          "shared_next_class": 1
+        },
+        {
+          "symbol": "1011",
+          "left_next": "s02",
+          "right_next": "s03",
+          "shared_next_class": 1
+        }
+      ]
+    }
+  ],
+  "separators": [
+    {
+      "left": 0,
+      "right": 1,
+      "word": [],
+      "terminal": true,
+      "left_value": "1",
+      "right_value": "0"
+    }
+  ],
+  "merge_justification": "same terminal answers and successor classes for every symbol; induction covers all continuations"
+}

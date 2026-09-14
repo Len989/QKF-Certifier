@@ -4,6 +4,11 @@ This research prototype derives an observation interface from a finite native
 cell model and its declared output/terminal consumers. It does not receive a
 partition, a desired number of classes, or a catalog of carry observations.
 
+The latest [source observation stage](SOURCE_REPORT_RU.md) also derives the
+initial comparison questions and shared-context wiring from a restricted Java
+helper, before the finite model is built. Its arithmetic replay covers all
+integers; actual Java execution is a separate bounded validation.
+
 The first application reads only `require` and `source_cell` from the existing
 Graal carry model. Reachable physical states are enumerated from the initial
 state. The old `PHASES`, `quotient`, `source_quotient`, proof producer, and saved
@@ -198,6 +203,60 @@ The chain currently accepts at most 64 residual states and 64 factor classes.
 Earlier context-state and question-search budgets still apply. Exhaustion
 returns no chain certificate. Minimality is relative to the supplied finite
 model and consumer; it is not a new theorem about arbitrary Java programs.
+
+## Initial vocabulary and shared slices from Java source
+
+`java_words` reads the actual `setOptionalBits` helper in
+`research/graal/native/IntegerStamp.java`, checks its descending single-bit OR
+shape and binds the implementation of its `CodeUtil.mask` primitive. It extracts
+the input identities, comparison predicates, write footprint and legal columns.
+The old comparison adapter is not imported. The parser retains Java literal
+types, so an int shift cannot impersonate the accepted long shift.
+
+For a word difference `d`, appending bits gives `2*d + a - b`. Pulling a source
+question `d <= t` back gives `d <= floor((t - a + b)/2)`. Closing those questions
+derives a finite interval observation over all integers. The independent
+checker validates entire affine interval images, protected predicate labels,
+and a supplied closed family of suffix transformations. The latter is derived
+by composition, without a predefined less/equal/greater suffix vocabulary.
+
+| Source guard | Context values | Suffix actions | Residual states | Minimal factor classes |
+|---|---:|---:|---:|---:|
+| `trial <= bound` | 3 | 3 | 15 | 10 |
+| `trial <= bound + 1` | 4 | 6 | 27 | 13 |
+| `trial <= bound + 3` | 6 | 13 | 62 | 20 |
+| `trial <= initialValue` | 3 | 1 | 4 | 2 |
+
+The last row derives equality of both lower input slices from their source
+identity. Both the alphabet and the reachable suffix actions become smaller.
+Context rows now support the same compact atomic completion principle as factor
+rows. The complete row encoding remains available and is still the default of
+the generic context API; this source pipeline explicitly selects atomic rows.
+
+```sh
+python -m research.observations.source_cli java reproduction/source_one
+python -O -m research.observations.source_cli check-java reproduction/source_one/certificate.json
+python -m research.observations.source_cli derive modified.java source_certificate.json
+python -m research.observations.source_cli check modified.java source_certificate.json
+python -m research.observations.run_source_experiment reproduction/source_experiment --native
+```
+
+Only the last command needs Java 17+; certificate replay needs Python alone.
+`evidence/source/` retains all four sources, extracted IRs, models, certificates,
+factor explanations, execution results and validation logs. The experiment
+checks 113,708 legal column words and 28,353 concrete native helper calls across
+the four variants at payload widths 1–5. Inputs are column representatives,
+not exhaustive enumeration of the helper's four word parameters.
+
+The trusted source front end still contains the accepted loop skeleton and
+generic arithmetic/slice rules. It supports one immutable comparison word,
+six comparison operators, literal offsets and Boolean guards. It does not
+handle arbitrary loops, cross-bit writes, general overflow or signed semantics.
+The threshold basis is sufficient but not claimed minimal for every Boolean
+predicate; the subsequent factor is minimal for its declared finite consumer.
+Limits are eight interval values, sixteen suffix actions and sixty-four
+residual states in the complete factor chain. Budget exhaustion returns no
+certificate. Full Java correctness and new Lean results are outside this step.
 
 ## Evidence
 

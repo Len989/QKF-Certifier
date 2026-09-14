@@ -8,9 +8,11 @@ from .producer import synthesize as synthesize_observations
 
 
 def synthesize(data, *, context_certificate=None, queries=None, max_context_states=MAX_STATES,
-               max_product=65536, max_observations=63, max_pullbacks=4096, max_classes=MAX_STATES):
+               max_product=65536, max_observations=63, max_pullbacks=4096, max_classes=MAX_STATES,
+               context_row_encoding="complete"):
     if context_certificate is None:
-        p = synthesize_context(data, max_states=max_context_states, max_product=max_product)
+        p = synthesize_context(data, max_states=max_context_states, max_product=max_product,
+                               row_encoding=context_row_encoding)
         if p["status"] != "candidate":
             return {**p, "stage": "context"}
         context_certificate = p["certificate"]
