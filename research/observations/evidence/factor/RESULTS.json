@@ -1,0 +1,304 @@
+{
+  "descending": {
+    "status": "certified",
+    "residual_states": 15,
+    "classes": 10,
+    "removed_states": 5,
+    "merged_pairs": 6,
+    "separated_class_pairs": 45,
+    "derived_questions": 5,
+    "max_separator_length": 1,
+    "row_templates": 8,
+    "stored_native_cells": 80,
+    "stored_forced_steps": 0,
+    "logical_forced_cells": 8112,
+    "transitions": 80,
+    "consumer_queries": [
+      "equal"
+    ],
+    "full_context_recoverable": true,
+    "minimality": "coarsest stable factor preserving declared consumer answers for every finite continuation",
+    "scope": "the independently checked finite context model; no new all-width Java or Lean theorem",
+    "integer_validation": {
+      "cases": 37448,
+      "mismatches": 0,
+      "by_width": [
+        {
+          "width": 1,
+          "cases": 8,
+          "accepted": 6,
+          "mismatches": 0
+        },
+        {
+          "width": 2,
+          "cases": 64,
+          "accepted": 36,
+          "mismatches": 0
+        },
+        {
+          "width": 3,
+          "cases": 512,
+          "accepted": 216,
+          "mismatches": 0
+        },
+        {
+          "width": 4,
+          "cases": 4096,
+          "accepted": 1296,
+          "mismatches": 0
+        },
+        {
+          "width": 5,
+          "cases": 32768,
+          "accepted": 7776,
+          "mismatches": 0
+        }
+      ],
+      "scope": "bounded unsigned check; all-continuation factor correctness is certified separately"
+    },
+    "blocks": [
+      [
+        "s00",
+        "s01"
+      ],
+      [
+        "s02",
+        "s07"
+      ],
+      [
+        "s03",
+        "s08"
+      ],
+      [
+        "s04"
+      ],
+      [
+        "s05"
+      ],
+      [
+        "s06"
+      ],
+      [
+        "s09",
+        "s12",
+        "s14"
+      ],
+      [
+        "s10"
+      ],
+      [
+        "s11"
+      ],
+      [
+        "s13"
+      ]
+    ],
+    "pullbacks_attempted": 40,
+    "old_context_loss_witness_rejected": true
+  },
+  "strict_guard": {
+    "status": "certified",
+    "residual_states": 15,
+    "classes": 10,
+    "removed_states": 5,
+    "merged_pairs": 6,
+    "separated_class_pairs": 45,
+    "derived_questions": 5,
+    "max_separator_length": 1,
+    "row_templates": 8,
+    "stored_native_cells": 80,
+    "stored_forced_steps": 0,
+    "logical_forced_cells": 8112,
+    "transitions": 80,
+    "consumer_queries": [
+      "equal"
+    ],
+    "full_context_recoverable": true,
+    "minimality": "coarsest stable factor preserving declared consumer answers for every finite continuation",
+    "scope": "the independently checked finite context model; no new all-width Java or Lean theorem",
+    "integer_validation": {
+      "cases": 37448,
+      "mismatches": 0,
+      "by_width": [
+        {
+          "width": 1,
+          "cases": 8,
+          "accepted": 6,
+          "mismatches": 0
+        },
+        {
+          "width": 2,
+          "cases": 64,
+          "accepted": 36,
+          "mismatches": 0
+        },
+        {
+          "width": 3,
+          "cases": 512,
+          "accepted": 216,
+          "mismatches": 0
+        },
+        {
+          "width": 4,
+          "cases": 4096,
+          "accepted": 1296,
+          "mismatches": 0
+        },
+        {
+          "width": 5,
+          "cases": 32768,
+          "accepted": 7776,
+          "mismatches": 0
+        }
+      ],
+      "scope": "bounded unsigned check; all-continuation factor correctness is certified separately"
+    },
+    "blocks": [
+      [
+        "s00",
+        "s06"
+      ],
+      [
+        "s01"
+      ],
+      [
+        "s02",
+        "s11"
+      ],
+      [
+        "s03",
+        "s13"
+      ],
+      [
+        "s04"
+      ],
+      [
+        "s05"
+      ],
+      [
+        "s07"
+      ],
+      [
+        "s08"
+      ],
+      [
+        "s09",
+        "s10",
+        "s14"
+      ],
+      [
+        "s12"
+      ]
+    ],
+    "pullbacks_attempted": 40,
+    "old_context_loss_witness_rejected": true
+  },
+  "all_contexts": {
+    "status": "certified",
+    "residual_states": 15,
+    "classes": 10,
+    "removed_states": 5,
+    "merged_pairs": 6,
+    "separated_class_pairs": 45,
+    "derived_questions": 9,
+    "max_separator_length": 1,
+    "row_templates": 8,
+    "stored_native_cells": 80,
+    "stored_forced_steps": 0,
+    "logical_forced_cells": 8112,
+    "transitions": 80,
+    "consumer_queries": [
+      "equal",
+      "greater",
+      "less"
+    ],
+    "full_context_recoverable": true,
+    "minimality": "coarsest stable factor preserving declared consumer answers for every finite continuation",
+    "scope": "the independently checked finite context model; no new all-width Java or Lean theorem",
+    "integer_validation": {
+      "cases": 37448,
+      "mismatches": 0,
+      "by_width": [
+        {
+          "width": 1,
+          "cases": 8,
+          "accepted": 6,
+          "mismatches": 0
+        },
+        {
+          "width": 2,
+          "cases": 64,
+          "accepted": 36,
+          "mismatches": 0
+        },
+        {
+          "width": 3,
+          "cases": 512,
+          "accepted": 216,
+          "mismatches": 0
+        },
+        {
+          "width": 4,
+          "cases": 4096,
+          "accepted": 1296,
+          "mismatches": 0
+        },
+        {
+          "width": 5,
+          "cases": 32768,
+          "accepted": 7776,
+          "mismatches": 0
+        }
+      ],
+      "scope": "bounded unsigned check; all-continuation factor correctness is certified separately"
+    },
+    "blocks": [
+      [
+        "s00",
+        "s01"
+      ],
+      [
+        "s02",
+        "s07"
+      ],
+      [
+        "s03",
+        "s08"
+      ],
+      [
+        "s04"
+      ],
+      [
+        "s05"
+      ],
+      [
+        "s06"
+      ],
+      [
+        "s09",
+        "s12",
+        "s14"
+      ],
+      [
+        "s10"
+      ],
+      [
+        "s11"
+      ],
+      [
+        "s13"
+      ]
+    ],
+    "pullbacks_attempted": 72,
+    "old_context_loss_witness_rejected": true
+  },
+  "insufficient_class_budget": {
+    "status": "budget_exhausted",
+    "reason": "atomic row carrier budget",
+    "certificate": null,
+    "observations": 5,
+    "classes": 10,
+    "pullbacks": 40,
+    "stage": "factor"
+  }
+}

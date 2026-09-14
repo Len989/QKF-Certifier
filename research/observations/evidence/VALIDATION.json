@@ -1,0 +1,28 @@
+{
+  "base_commit": "d7e631155b9382c787baf72a28b1e335a7074d7e",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "checks": [
+    {
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/observations/tests",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "args": [
+        "-O",
+        "-m",
+        "research.observations",
+        "check-carry",
+        "research/observations/evidence/carry.certificate.json"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "native_source_sha256": "ff94f5f1c54f7801c6f26ef412611a0c05b00d78ca48086f0f0b6796bd17f2cf"
+}

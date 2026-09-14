@@ -1,0 +1,77 @@
+{
+  "schema": "qkf-finite-observation-model-v1",
+  "states": [
+    "0",
+    "1",
+    "2",
+    "3"
+  ],
+  "alphabet": [
+    "advance",
+    "probe"
+  ],
+  "outputs": [
+    "0",
+    "1"
+  ],
+  "initial": "0",
+  "terminal": {
+    "0": "",
+    "1": "",
+    "2": "",
+    "3": ""
+  },
+  "binding": {
+    "example": "delayed distinction"
+  },
+  "steps": [
+    {
+      "state": "0",
+      "symbol": "advance",
+      "output": "0",
+      "next": "1"
+    },
+    {
+      "state": "0",
+      "symbol": "probe",
+      "output": "0",
+      "next": "0"
+    },
+    {
+      "state": "1",
+      "symbol": "advance",
+      "output": "0",
+      "next": "2"
+    },
+    {
+      "state": "1",
+      "symbol": "probe",
+      "output": "0",
+      "next": "1"
+    },
+    {
+      "state": "2",
+      "symbol": "advance",
+      "output": "0",
+      "next": "3"
+    },
+    {
+      "state": "2",
+      "symbol": "probe",
+      "output": "0",
+      "next": "2"
+    },
+    {
+      "state": "3",
+      "symbol": "advance",
+      "output": "0",
+      "next": "0"
+    },
+    {
+      "state": "3",
+      "symbol": "probe",
+      "output": "1",
+      "next": "3"
+    }
+  ]
+}

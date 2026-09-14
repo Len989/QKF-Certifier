@@ -1,0 +1,783 @@
+{
+  "schema": "qkf-finite-observation-model-v1",
+  "states": [
+    "s00",
+    "s01",
+    "s02",
+    "s03",
+    "s04",
+    "s05",
+    "s06",
+    "s07",
+    "s08",
+    "s09",
+    "s10",
+    "s11",
+    "s12",
+    "s13",
+    "s14"
+  ],
+  "alphabet": [
+    "0000",
+    "0010",
+    "0100",
+    "0101",
+    "0110",
+    "0111",
+    "1001",
+    "1011"
+  ],
+  "outputs": [
+    "tick"
+  ],
+  "initial": "s00",
+  "terminal": {
+    "s00": "111",
+    "s01": "111",
+    "s02": "110",
+    "s03": "001",
+    "s04": "010",
+    "s05": "101",
+    "s06": "111",
+    "s07": "110",
+    "s08": "001",
+    "s09": "000",
+    "s10": "100",
+    "s11": "110",
+    "s12": "000",
+    "s13": "001",
+    "s14": "000"
+  },
+  "binding": {
+    "adapter": "checked-context-residual-v1",
+    "context_model_sha256": "0bcb6bb746ca526d2bbfd4ec3d8212642cd4f7216cf7330519beb70f0093e6aa",
+    "context_certificate_sha256": "54f58fc0b33da679dfa4a204291e18093c1d44030cdf6a171f7b284dcf687822",
+    "consumer_queries": [
+      "equal",
+      "greater",
+      "less"
+    ]
+  },
+  "steps": [
+    {
+      "state": "s00",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s00"
+    },
+    {
+      "state": "s00",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s01"
+    },
+    {
+      "state": "s00",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s02"
+    },
+    {
+      "state": "s00",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s03"
+    },
+    {
+      "state": "s00",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s04"
+    },
+    {
+      "state": "s00",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s05"
+    },
+    {
+      "state": "s00",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s06"
+    },
+    {
+      "state": "s00",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s00"
+    },
+    {
+      "state": "s01",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s01"
+    },
+    {
+      "state": "s01",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s01"
+    },
+    {
+      "state": "s01",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s07"
+    },
+    {
+      "state": "s01",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s08"
+    },
+    {
+      "state": "s01",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s04"
+    },
+    {
+      "state": "s01",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s05"
+    },
+    {
+      "state": "s01",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s06"
+    },
+    {
+      "state": "s01",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s01"
+    },
+    {
+      "state": "s02",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s02"
+    },
+    {
+      "state": "s02",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s04"
+    },
+    {
+      "state": "s02",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s02"
+    },
+    {
+      "state": "s02",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s09"
+    },
+    {
+      "state": "s02",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s04"
+    },
+    {
+      "state": "s02",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s10"
+    },
+    {
+      "state": "s02",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s11"
+    },
+    {
+      "state": "s02",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s02"
+    },
+    {
+      "state": "s03",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s03"
+    },
+    {
+      "state": "s03",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s05"
+    },
+    {
+      "state": "s03",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s09"
+    },
+    {
+      "state": "s03",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s03"
+    },
+    {
+      "state": "s03",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s03",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s08"
+    },
+    {
+      "state": "s03",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s13"
+    },
+    {
+      "state": "s03",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s03"
+    },
+    {
+      "state": "s04",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s04"
+    },
+    {
+      "state": "s04",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s04"
+    },
+    {
+      "state": "s04",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s04"
+    },
+    {
+      "state": "s04",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s04",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s04"
+    },
+    {
+      "state": "s04",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s04",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s11"
+    },
+    {
+      "state": "s04",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s04"
+    },
+    {
+      "state": "s05",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s05"
+    },
+    {
+      "state": "s05",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s05"
+    },
+    {
+      "state": "s05",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s10"
+    },
+    {
+      "state": "s05",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s08"
+    },
+    {
+      "state": "s05",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s05",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s05"
+    },
+    {
+      "state": "s05",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s13"
+    },
+    {
+      "state": "s05",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s05"
+    },
+    {
+      "state": "s06",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s06"
+    },
+    {
+      "state": "s06",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s01"
+    },
+    {
+      "state": "s06",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s11"
+    },
+    {
+      "state": "s06",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s13"
+    },
+    {
+      "state": "s06",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s07"
+    },
+    {
+      "state": "s06",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s08"
+    },
+    {
+      "state": "s06",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s06"
+    },
+    {
+      "state": "s06",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s06"
+    },
+    {
+      "state": "s07",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s07"
+    },
+    {
+      "state": "s07",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s04"
+    },
+    {
+      "state": "s07",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s07"
+    },
+    {
+      "state": "s07",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s07",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s04"
+    },
+    {
+      "state": "s07",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s10"
+    },
+    {
+      "state": "s07",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s11"
+    },
+    {
+      "state": "s07",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s07"
+    },
+    {
+      "state": "s08",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s08"
+    },
+    {
+      "state": "s08",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s05"
+    },
+    {
+      "state": "s08",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s08",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s08"
+    },
+    {
+      "state": "s08",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s08",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s08"
+    },
+    {
+      "state": "s08",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s13"
+    },
+    {
+      "state": "s08",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s08"
+    },
+    {
+      "state": "s09",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s09"
+    },
+    {
+      "state": "s09",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s09",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s09"
+    },
+    {
+      "state": "s09",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s09"
+    },
+    {
+      "state": "s09",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s09",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s09",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s14"
+    },
+    {
+      "state": "s09",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s09"
+    },
+    {
+      "state": "s10",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s10"
+    },
+    {
+      "state": "s10",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s10",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s10"
+    },
+    {
+      "state": "s10",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s10",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s10",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s10"
+    },
+    {
+      "state": "s10",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s14"
+    },
+    {
+      "state": "s10",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s10"
+    },
+    {
+      "state": "s11",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s11"
+    },
+    {
+      "state": "s11",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s04"
+    },
+    {
+      "state": "s11",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s11"
+    },
+    {
+      "state": "s11",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s14"
+    },
+    {
+      "state": "s11",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s04"
+    },
+    {
+      "state": "s11",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s11",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s11"
+    },
+    {
+      "state": "s11",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s11"
+    },
+    {
+      "state": "s12",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s12",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s12",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s12",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s12",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s12",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s12",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s14"
+    },
+    {
+      "state": "s12",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s13",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s13"
+    },
+    {
+      "state": "s13",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s05"
+    },
+    {
+      "state": "s13",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s14"
+    },
+    {
+      "state": "s13",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s13"
+    },
+    {
+      "state": "s13",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s10"
+    },
+    {
+      "state": "s13",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s08"
+    },
+    {
+      "state": "s13",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s13"
+    },
+    {
+      "state": "s13",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s13"
+    },
+    {
+      "state": "s14",
+      "symbol": "0000",
+      "output": "tick",
+      "next": "s14"
+    },
+    {
+      "state": "s14",
+      "symbol": "0010",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s14",
+      "symbol": "0100",
+      "output": "tick",
+      "next": "s14"
+    },
+    {
+      "state": "s14",
+      "symbol": "0101",
+      "output": "tick",
+      "next": "s14"
+    },
+    {
+      "state": "s14",
+      "symbol": "0110",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s14",
+      "symbol": "0111",
+      "output": "tick",
+      "next": "s12"
+    },
+    {
+      "state": "s14",
+      "symbol": "1001",
+      "output": "tick",
+      "next": "s14"
+    },
+    {
+      "state": "s14",
+      "symbol": "1011",
+      "output": "tick",
+      "next": "s14"
+    }
+  ]
+}

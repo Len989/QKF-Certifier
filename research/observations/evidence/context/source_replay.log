@@ -1,0 +1,14 @@
+{
+  "status": "certified",
+  "native_contexts": 3,
+  "forward_controls": 3,
+  "residual_states": 15,
+  "row_templates": 24,
+  "supplied_cells": 72,
+  "forced_cells": 120,
+  "transitions": 120,
+  "context_loss_witness_length": 2,
+  "scope": "all finite words of supplied local constraints with the declared shared cuts and boundaries",
+  "minimality": "not claimed",
+  "absence_of_gap_certified": false
+}

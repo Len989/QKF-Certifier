@@ -1,0 +1,40 @@
+{
+  "test_methods": 37,
+  "random_factor_models": 80,
+  "compact_complete_models": 30,
+  "semantic_renamings": 20,
+  "certificate_mutations": 17,
+  "commands": {
+    "tests": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/observations/tests",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    "source_replay": {
+      "command": [
+        "python",
+        "-O",
+        "-m",
+        "research.observations.factor_cli",
+        "check-descending",
+        "research/observations/evidence/factor/descending.certificate.json"
+      ],
+      "exit_code": 0
+    }
+  },
+  "legacy_certificates_reproduced_exactly": [
+    "research/observations/evidence/unobserved_internal_state.model.json",
+    "research/observations/evidence/delayed_observation.model.json",
+    "research/observations/evidence/carry.model.json",
+    "research/observations/evidence/changed_forbidden_action.model.json",
+    "research/observations/evidence/context/descending.model.json",
+    "research/observations/evidence/context/strict_guard.model.json"
+  ]
+}

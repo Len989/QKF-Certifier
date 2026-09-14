@@ -1,0 +1,199 @@
+{
+  "date": "2026-09-14",
+  "test_methods": 59,
+  "new_property_test_methods": 12,
+  "positive_certificate_mutations": 13,
+  "negative_certificate_mutations": 7,
+  "source_variants": 4,
+  "independent_specifications": 2,
+  "replayed_results": [
+    {
+      "case": "original",
+      "goal": "maximum",
+      "command": [
+        "python",
+        "-O",
+        "-m",
+        "research.observations.property_cli",
+        "check",
+        "research/observations/evidence/property/original.java",
+        "--source-certificate",
+        "research/observations/evidence/property/original.source_certificate.json",
+        "--spec",
+        "research/observations/evidence/property/maximum.spec.json",
+        "--certificate",
+        "research/observations/evidence/property/original.maximum.certificate.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "case": "original",
+      "goal": "bound",
+      "command": [
+        "python",
+        "-O",
+        "-m",
+        "research.observations.property_cli",
+        "check",
+        "research/observations/evidence/property/original.java",
+        "--source-certificate",
+        "research/observations/evidence/property/original.source_certificate.json",
+        "--spec",
+        "research/observations/evidence/property/bound.spec.json",
+        "--certificate",
+        "research/observations/evidence/property/original.bound.certificate.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "case": "plus_one",
+      "goal": "maximum",
+      "command": [
+        "python",
+        "-O",
+        "-m",
+        "research.observations.property_cli",
+        "check",
+        "research/observations/evidence/property/plus_one.java",
+        "--source-certificate",
+        "research/observations/evidence/property/plus_one.source_certificate.json",
+        "--spec",
+        "research/observations/evidence/property/maximum.spec.json",
+        "--certificate",
+        "research/observations/evidence/property/plus_one.maximum.certificate.json"
+      ],
+      "exit_code": 1
+    },
+    {
+      "case": "plus_one",
+      "goal": "bound",
+      "command": [
+        "python",
+        "-O",
+        "-m",
+        "research.observations.property_cli",
+        "check",
+        "research/observations/evidence/property/plus_one.java",
+        "--source-certificate",
+        "research/observations/evidence/property/plus_one.source_certificate.json",
+        "--spec",
+        "research/observations/evidence/property/bound.spec.json",
+        "--certificate",
+        "research/observations/evidence/property/plus_one.bound.certificate.json"
+      ],
+      "exit_code": 1
+    },
+    {
+      "case": "strict",
+      "goal": "maximum",
+      "command": [
+        "python",
+        "-O",
+        "-m",
+        "research.observations.property_cli",
+        "check",
+        "research/observations/evidence/property/strict.java",
+        "--source-certificate",
+        "research/observations/evidence/property/strict.source_certificate.json",
+        "--spec",
+        "research/observations/evidence/property/maximum.spec.json",
+        "--certificate",
+        "research/observations/evidence/property/strict.maximum.certificate.json"
+      ],
+      "exit_code": 1
+    },
+    {
+      "case": "strict",
+      "goal": "bound",
+      "command": [
+        "python",
+        "-O",
+        "-m",
+        "research.observations.property_cli",
+        "check",
+        "research/observations/evidence/property/strict.java",
+        "--source-certificate",
+        "research/observations/evidence/property/strict.source_certificate.json",
+        "--spec",
+        "research/observations/evidence/property/bound.spec.json",
+        "--certificate",
+        "research/observations/evidence/property/strict.bound.certificate.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "case": "shared_input",
+      "goal": "maximum",
+      "command": [
+        "python",
+        "-O",
+        "-m",
+        "research.observations.property_cli",
+        "check",
+        "research/observations/evidence/property/shared_input.java",
+        "--source-certificate",
+        "research/observations/evidence/property/shared_input.source_certificate.json",
+        "--spec",
+        "research/observations/evidence/property/maximum.spec.json",
+        "--certificate",
+        "research/observations/evidence/property/shared_input.maximum.certificate.json"
+      ],
+      "exit_code": 1
+    },
+    {
+      "case": "shared_input",
+      "goal": "bound",
+      "command": [
+        "python",
+        "-O",
+        "-m",
+        "research.observations.property_cli",
+        "check",
+        "research/observations/evidence/property/shared_input.java",
+        "--source-certificate",
+        "research/observations/evidence/property/shared_input.source_certificate.json",
+        "--spec",
+        "research/observations/evidence/property/bound.spec.json",
+        "--certificate",
+        "research/observations/evidence/property/shared_input.bound.certificate.json"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "native_experiment": {
+    "command": [
+      "python",
+      "-m",
+      "research.observations.run_property_experiment",
+      "reproduction/property_initial_2026_09_14",
+      "--native"
+    ],
+    "exit_code": 0,
+    "raw_inputs_per_variant": 2954,
+    "native_method_calls": 11816,
+    "precondition_inputs_per_variant": 1859,
+    "outside_precondition_per_variant": 1095,
+    "target_alternatives_checked": 17472,
+    "mismatches": 0,
+    "payload_widths": [
+      1,
+      2,
+      3
+    ]
+  },
+  "scope": "Exact finite joint closure for all positive mathematical payload widths; native Java validation is bounded.",
+  "fresh_replay_blockers": [
+    "producer modules",
+    "old source adapters",
+    "source_validation",
+    "property_validation",
+    "subprocess",
+    "z3",
+    "pysmt",
+    "cvc5"
+  ],
+  "fresh_replay_modes": [
+    "normal Python",
+    "Python -O"
+  ]
+}

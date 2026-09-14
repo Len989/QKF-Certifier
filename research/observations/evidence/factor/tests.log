@@ -1,0 +1,42 @@
+test_budget_exhaustion_does_not_certify (test_context.ContextTests.test_budget_exhaustion_does_not_certify) ... ok
+test_certificate_mutations (test_context.ContextTests.test_certificate_mutations) ... ok
+test_changed_guard_and_forged_source_binding (test_context.ContextTests.test_changed_guard_and_forged_source_binding) ... ok
+test_changed_primitive_and_guard_domain (test_context.ContextTests.test_changed_primitive_and_guard_domain) ... ok
+test_context_control_symbol_renaming (test_context.ContextTests.test_context_control_symbol_renaming) ... ok
+test_exhaustive_unsigned_integer_loop (test_context.ContextTests.test_exhaustive_unsigned_integer_loop) ... ok
+test_fresh_replay_with_producer_and_smt_blocked (test_context.ContextTests.test_fresh_replay_with_producer_and_smt_blocked) ... ok
+test_malformed_and_nondeterministic_native_rows (test_context.ContextTests.test_malformed_and_nondeterministic_native_rows) ... ok
+test_no_gap_and_single_context (test_context.ContextTests.test_no_gap_and_single_context) ... ok
+test_old_observer_and_top_level_not_executed (test_context.ContextTests.test_old_observer_and_top_level_not_executed) ... ok
+test_primitive_alpha_renaming (test_context.ContextTests.test_primitive_alpha_renaming) ... ok
+test_random_models_against_whole_cut_assignments (test_context.ContextTests.test_random_models_against_whole_cut_assignments) ... ok
+test_source_residuals_and_automatic_loss_witness (test_context.ContextTests.test_source_residuals_and_automatic_loss_witness) ... ok
+test_budgets_never_return_a_chain_certificate (test_factor.FactorTests.test_budgets_never_return_a_chain_certificate) ... ok
+test_changed_source_and_forged_bridge_hashes (test_factor.FactorTests.test_changed_source_and_forged_bridge_hashes) ... ok
+test_compact_encoding_passes_old_eight_class_limit (test_factor.FactorTests.test_compact_encoding_passes_old_eight_class_limit) ... ok
+test_compact_rows_match_complete_rows_and_kernels (test_factor.FactorTests.test_compact_rows_match_complete_rows_and_kernels) ... ok
+test_consumer_strengthening_and_context_recovery (test_factor.FactorTests.test_consumer_strengthening_and_context_recovery) ... ok
+test_descending_minimal_factor_and_merge_explanations (test_factor.FactorTests.test_descending_minimal_factor_and_merge_explanations) ... ok
+test_exhaustive_factor_residual_integer_agreement (test_factor.FactorTests.test_exhaustive_factor_residual_integer_agreement) ... ok
+test_factor_certificate_mutations (test_factor.FactorTests.test_factor_certificate_mutations) ... ok
+test_fresh_full_chain_and_cli_under_optimization (test_factor.FactorTests.test_fresh_full_chain_and_cli_under_optimization) ... ok
+test_random_context_factors_against_pair_oracle (test_factor.FactorTests.test_random_context_factors_against_pair_oracle) ... ok
+test_renaming_preserves_semantic_factor (test_factor.FactorTests.test_renaming_preserves_semantic_factor) ... ok
+test_alpha_renamed_source (test_inference.InferenceTests.test_alpha_renamed_source) ... ok
+test_budget_failure_is_not_a_certificate (test_inference.InferenceTests.test_budget_failure_is_not_a_certificate) ... ok
+test_carry_discovered_without_partition (test_inference.InferenceTests.test_carry_discovered_without_partition) ... ok
+test_certificate_mutations (test_inference.InferenceTests.test_certificate_mutations) ... ok
+test_forced_rows_execute_native_traces (test_inference.InferenceTests.test_forced_rows_execute_native_traces) ... ok
+test_fresh_checker_blocks_producer_and_smt (test_inference.InferenceTests.test_fresh_checker_blocks_producer_and_smt) ... ok
+test_manual_quotient_and_tables_are_not_executed (test_inference.InferenceTests.test_manual_quotient_and_tables_are_not_executed) ... ok
+test_one_class_and_terminal_consumer (test_inference.InferenceTests.test_one_class_and_terminal_consumer) ... ok
+test_pullback_discovers_delayed_difference (test_inference.InferenceTests.test_pullback_discovers_delayed_difference) ... ok
+test_random_models_against_independent_oracle (test_inference.InferenceTests.test_random_models_against_independent_oracle) ... ok
+test_renaming_and_input_order (test_inference.InferenceTests.test_renaming_and_input_order) ... ok
+test_source_change_needs_three_classes (test_inference.InferenceTests.test_source_change_needs_three_classes) ... ok
+test_wrong_native_table_rejected (test_inference.InferenceTests.test_wrong_native_table_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 2.529s
+
+OK

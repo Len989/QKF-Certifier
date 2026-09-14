@@ -37,3 +37,46 @@ Lean selects version 4.33.0 from lean-toolchain. Python, Mathlib, SMT and Java a
 The Lean proof covers the explicit ascending mathematical model and modeled nonsign source cells. Complete Java helpers, full Graal create and Python certifiers are outside that formalization. The lower source contract requires lower <= 0 or a forbidden negative sign; it preserves the joint carrier and need not return its exact minimum.
 
 CAPSULE_ORIGIN.json records unchanged files in each Python profile. QKF research code is covered by the project MIT code license. Upstream sources and examples retain their own notices and licenses.
+
+## Automatic observation inference (post-release research)
+
+The [observation inference prototype](observations/README.md) derives a finite
+consumer interface directly from the existing native carry cell, without its
+hand-written phase quotient. It emits replayable observation and forced-row
+certificates, including separating contexts. This is new research after 0.2.0a1;
+it does not extend the installed CLI scope or the signed-word theorem.
+
+The same profile now also derives the residual shared-context observation for
+the descending comparison model and finds a two-bit counterexample to forgetting
+its cut constraints. See the [shared-context report](observations/CONTEXT_REPORT_RU.md).
+The [consumer-factor extension](observations/FACTOR_REPORT_RU.md) now reduces
+those 15 residual states to 10 minimal classes, using compact forced-row
+certificates and a checker for the complete source-to-factor chain.
+
+The [source observation extension](observations/SOURCE_REPORT_RU.md) now derives
+the initial integer questions and shared slices from the actual descending
+Java helper. For guards with offsets 0, +1 and +3 it discovers 3, 4 and 6
+context values, then 10, 13 and 20 minimal factor classes. Shared input identity
+is also extracted from the code. The exact arithmetic certificate covers a
+restricted unsigned mathematical word profile; the Java connection is tested
+at payload widths 1–5, not proved for all signed machine words.
+
+The [independent property stage](observations/PROPERTY_REPORT_RU.md) checks a
+separately supplied maximum/bound specification after source inference. The
+original helper satisfies the maximum contract in the restricted mathematical
+profile; `bound + 1` yields an above-bound counterexample, while a strict guard
+preserves the bound but loses maximality. Source-model equivalence and target
+correctness are reported as separate claims.
+
+The [ascending source stage](observations/ASCENDING_REPORT_RU.md) derives
+Boolean-register and integer-offset states from the actual repair loop, using
+shared parsing and observation kernels. No old carry cell or prescribed phase
+table is used. Five source variants agree with 28,105 JVM executions of the
+extracted region. The certificate covers all positive mathematical payload
+widths under a legal-mask entry contract; whole-helper control flow and an
+independent all-width successor target remain separate work.
+
+```sh
+python -m research.observations carry reproduction/observations_carry
+python -m research.observations check-carry reproduction/observations_carry/certificate.json
+```

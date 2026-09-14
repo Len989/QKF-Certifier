@@ -6,6 +6,57 @@ on:
 permissions:
   contents: read
 jobs:
+  observation-inference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test automatic observation inference and certificate rejection
+        run: python -m unittest discover -s research/observations/tests -v
+      - name: Derive observation certificates from native cells
+        run: python -m research.observations.run_experiment reproduction/observations
+      - name: Replay source-bound carry certificate under Python -O
+        run: python -O -m research.observations check-carry reproduction/observations/carry.certificate.json
+      - name: Derive shared-context observations and compare with integer execution
+        run: python -m research.observations.run_context_experiment reproduction/observations/context
+      - name: Replay source-bound shared-context certificate under Python -O
+        run: python -O -m research.observations.context_cli check-descending reproduction/observations/context/descending.certificate.json
+      - name: Derive minimal context factors and replay integer execution
+        run: python -m research.observations.run_factor_experiment reproduction/observations/factor
+      - name: Replay the complete source-to-factor certificate under Python -O
+        run: python -O -m research.observations.factor_cli check-descending reproduction/observations/factor/descending.certificate.json
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Derive the observation vocabulary from Java and execute the native helper
+        run: python -m research.observations.run_source_experiment reproduction/observations/source --native
+      - name: Replay the source-derived vocabulary and factor under Python -O
+        run: python -O -m research.observations.source_cli check-java reproduction/observations/source/original.certificate.json
+      - name: Check independent maximum and bound targets against native Java
+        run: python -m research.observations.run_property_experiment reproduction/observations/property --native
+      - name: Replay the maximum property under Python -O
+        run: >-
+          python -O -m research.observations.property_cli check
+          reproduction/observations/property/original.java
+          --source-certificate reproduction/observations/property/original.source_certificate.json
+          --spec reproduction/observations/property/maximum.spec.json
+          --certificate reproduction/observations/property/original.maximum.certificate.json
+      - name: Derive ascending residuals from Java operations and execute the exact region
+        run: python -m research.observations.run_ascending_experiment reproduction/observations/ascending --native
+      - name: Replay the ascending source and observation proof under Python -O
+        run: >-
+          python -O -m research.observations.ascending_cli check
+          reproduction/observations/ascending/original.java
+          reproduction/observations/ascending/original.certificate.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: observation-inference
+          path: reproduction/observations/
   research-replay:
     runs-on: ubuntu-latest
     timeout-minutes: 15

@@ -1,0 +1,183 @@
+{
+  "schema": "qkf-descending-word-source-v1",
+  "source_sha256": "1a827adb88f57b8f612979af5b90016077cbf4dad4c54b34e539fee5fce01c95",
+  "helper_sha256": "7c0645e351c2c0af56045690d745860f0962f6d2c904909559bb12937b05338f",
+  "parsed_sha256": "3b4a049c018761db2345b56083f54dc3bdde56783ea7bd9809e55ad5f234899d",
+  "primitive_bindings": {
+    "CodeUtil.mask": "5137ee1881d6d0020a0a860095e4db6fbb5ef2ca7a4422c8d296b6b273d116b1"
+  },
+  "guard": [
+    "and",
+    [
+      "optional"
+    ],
+    [
+      "test",
+      0
+    ]
+  ],
+  "tests": [
+    {
+      "op": "<=",
+      "offset": 0
+    }
+  ],
+  "comparison_word": "arg1",
+  "columns": [
+    {
+      "symbol": "0000",
+      "input_bits": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "symbol": "0010",
+      "input_bits": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "symbol": "0100",
+      "input_bits": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "symbol": "0101",
+      "input_bits": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "symbol": "0110",
+      "input_bits": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "symbol": "0111",
+      "input_bits": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "symbol": "1001",
+      "input_bits": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "symbol": "1011",
+      "input_bits": [
+        1,
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "wiring": {
+    "rules": [
+      "descending-outside-write",
+      "or-one-bit-slices"
+    ],
+    "trial": {
+      "higher": [
+        "slice",
+        [
+          "output",
+          "value"
+        ],
+        "higher"
+      ],
+      "bit": 1,
+      "lower": [
+        "slice",
+        [
+          "input",
+          "arg4"
+        ],
+        "lower"
+      ]
+    },
+    "through": {
+      "higher": [
+        "slice",
+        [
+          "output",
+          "value"
+        ],
+        "higher"
+      ],
+      "bit": [
+        "proposed_bit"
+      ]
+    },
+    "lower_control": {
+      "left": [
+        "slice",
+        [
+          "input",
+          "arg4"
+        ],
+        "lower"
+      ],
+      "right": [
+        "slice",
+        [
+          "input",
+          "arg1"
+        ],
+        "lower"
+      ]
+    },
+    "right_slices": {
+      "higher": [
+        "slice",
+        [
+          "input",
+          "arg1"
+        ],
+        "higher"
+      ],
+      "bit": [
+        "slice",
+        [
+          "input",
+          "arg1"
+        ],
+        "bit"
+      ],
+      "lower": [
+        "slice",
+        [
+          "input",
+          "arg1"
+        ],
+        "lower"
+      ]
+    }
+  },
+  "profile": "unsigned mathematical payload; fixed zero sign bit; disjoint initial and optional masks"
+}

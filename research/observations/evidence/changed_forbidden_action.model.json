@@ -1,0 +1,108 @@
+{
+  "schema": "qkf-finite-observation-model-v1",
+  "states": [
+    "incremented=0,carry=0",
+    "incremented=1,carry=0",
+    "incremented=1,carry=1"
+  ],
+  "alphabet": [
+    "000",
+    "010",
+    "011",
+    "111"
+  ],
+  "outputs": [
+    "0",
+    "1"
+  ],
+  "initial": "incremented=0,carry=0",
+  "terminal": {
+    "incremented=1,carry=0": "unobserved",
+    "incremented=1,carry=1": "unobserved",
+    "incremented=0,carry=0": "unobserved"
+  },
+  "binding": {
+    "adapter": "reachable states of require/source_cell only",
+    "source_sha256": "ff94f5f1c54f7801c6f26ef412611a0c05b00d78ca48086f0f0b6796bd17f2cf",
+    "carry_program": {
+      "mandatory_action": "or",
+      "forbidden_action": "clear",
+      "first_action": "add"
+    },
+    "scope": "reviewed nonsign cell model; final physical carry is not observed"
+  },
+  "steps": [
+    {
+      "state": "incremented=0,carry=0",
+      "symbol": "000",
+      "output": "0",
+      "next": "incremented=0,carry=0"
+    },
+    {
+      "state": "incremented=0,carry=0",
+      "symbol": "010",
+      "output": "1",
+      "next": "incremented=1,carry=0"
+    },
+    {
+      "state": "incremented=0,carry=0",
+      "symbol": "011",
+      "output": "0",
+      "next": "incremented=1,carry=1"
+    },
+    {
+      "state": "incremented=0,carry=0",
+      "symbol": "111",
+      "output": "1",
+      "next": "incremented=0,carry=0"
+    },
+    {
+      "state": "incremented=1,carry=0",
+      "symbol": "000",
+      "output": "0",
+      "next": "incremented=1,carry=0"
+    },
+    {
+      "state": "incremented=1,carry=0",
+      "symbol": "010",
+      "output": "0",
+      "next": "incremented=1,carry=0"
+    },
+    {
+      "state": "incremented=1,carry=0",
+      "symbol": "011",
+      "output": "1",
+      "next": "incremented=1,carry=0"
+    },
+    {
+      "state": "incremented=1,carry=0",
+      "symbol": "111",
+      "output": "1",
+      "next": "incremented=1,carry=0"
+    },
+    {
+      "state": "incremented=1,carry=1",
+      "symbol": "000",
+      "output": "0",
+      "next": "incremented=1,carry=0"
+    },
+    {
+      "state": "incremented=1,carry=1",
+      "symbol": "010",
+      "output": "1",
+      "next": "incremented=1,carry=0"
+    },
+    {
+      "state": "incremented=1,carry=1",
+      "symbol": "011",
+      "output": "0",
+      "next": "incremented=1,carry=1"
+    },
+    {
+      "state": "incremented=1,carry=1",
+      "symbol": "111",
+      "output": "1",
+      "next": "incremented=1,carry=1"
+    }
+  ]
+}

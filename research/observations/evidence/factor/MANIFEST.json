@@ -1,0 +1,43 @@
+{
+  "schema": "qkf-factor-experiment-manifest-v1",
+  "parent_commit": "06327aec62373f4c9f96a290523fffb38acdda2e",
+  "files": {
+    ".github/workflows/research.yml": "7f5fd6b187ff26a9addf17307f5fe28a7a6515113c16e2c62098bf8e5fa364c3",
+    "research/README.md": "d7ff2a8e8ad16bccef508d2183efd80ff8c67b3d65a721895e3f949c5281502b",
+    "research/observations/README.md": "feb36632e8ff6a2e3911e6d8972a02f78da55c2b229ba36d1e0630566eeb49cb",
+    "research/observations/FACTOR_REPORT_RU.md": "3b7970a383ec58daa245a44169eccd0a5ffa2349f2e1ae81e7398c08e9bc8e4c",
+    "research/observations/model.py": "009357d5d93b28dabc55b2f6e9c9797ea8d452fdc15e2cc7d5e8ff2a7e08327c",
+    "research/observations/producer.py": "34b3b8bc6ee33fbf68be09efebb1059108cdff692fa343623aa75bb96f8cd5f0",
+    "research/observations/checker.py": "803a11c76282b51d2d450422cbbd71c3d2f16eaec33ab282dbf834f311bd4382",
+    "research/observations/__main__.py": "54a8f0f03f17d1250c1828d47c463eaa32b1167640ceeb5f5b6ad7468860a15d",
+    "research/observations/atomic_rows.py": "025d3ff260dcde257702ed28c2355c46c469b54851dade257dddcdc3d785d982",
+    "research/observations/context_factor.py": "d56c9a7a3e0c87afc30636dc52899905bf1ccbac5eceb436cc9b2711fa482308",
+    "research/observations/factor_producer.py": "269d9c42a4894a3213ad2379d22a31aad392a6c26c2ac475f827688fe1ee4d06",
+    "research/observations/factor_cli.py": "198591af1127d4bbb2c0e569c1588f3e6b73ccd6a4641ecc7d7b0dea9602cb43",
+    "research/observations/run_factor_experiment.py": "b7f30469d604a3911e06ef582c879fe25bb0613949ba9a062afd767a3c99acb8",
+    "research/observations/tests/test_factor.py": "72ea0f9d79f6993705e670f971f12314c59194c4b97fc67f709f96ae4c2e1da5",
+    "research/observations/evidence/factor/RESULTS.json": "b56b8a065d12ee648aa9224d6ffce5f6f1437abb6681f45f7efd45b96ea401fc",
+    "research/observations/evidence/factor/VALIDATION.json": "ae03aa93da260c4af255241dd08472df70ea568a6325d6dbfa98d49b3520d4bf",
+    "research/observations/evidence/factor/all_contexts.certificate.json": "058a14788de55fcca3a124a32f6ca831dbf414c1a83107d4689613887cab0582",
+    "research/observations/evidence/factor/all_contexts.consumer.json": "badd0dbc52ac847699ae91592a50049c10ff2fd596ab5c22e55e09e2751dc305",
+    "research/observations/evidence/factor/all_contexts.explanation.json": "d095bca959baf93b7858ae2f73602fb2d03570ae821f93011845dbe5bd1ead81",
+    "research/observations/evidence/factor/all_contexts.model.json": "265a1984e57665960ed5072ce469b89335164b3e0fb54f789fd5172fb26eb355",
+    "research/observations/evidence/factor/descending.certificate.json": "85a84dbd27d23cf182300ed37af7a06aa9e06268268ef1a209a2fcb9f85cb1c0",
+    "research/observations/evidence/factor/descending.consumer.json": "910bcbbf78c05e1351d3270d89bae9ab274d24a188624d525e726f5467b18865",
+    "research/observations/evidence/factor/descending.explanation.json": "356779144200cd79b4818ed0bcec4a89d18619d47b9910252cc0c44274cb5338",
+    "research/observations/evidence/factor/descending.model.json": "265a1984e57665960ed5072ce469b89335164b3e0fb54f789fd5172fb26eb355",
+    "research/observations/evidence/factor/source_replay.log": "263dd1dc064935b689088e724c0466c04e6155f3c65941b09f82bef4240a0631",
+    "research/observations/evidence/factor/strict_guard.certificate.json": "4a83dbb8c290a297ac5b052f3965c110d4b706f66fd929c2cbe7ced26e64b1f1",
+    "research/observations/evidence/factor/strict_guard.consumer.json": "0ff953adf4bb871a22b4701d4b41e65c7cea58cc5824a5bd38952c2a80b7d2bb",
+    "research/observations/evidence/factor/strict_guard.explanation.json": "c07cb8ed82fec3ddb8d0f9d9d0afd1f5bd7998892f0fe2c417f7b7e147133789",
+    "research/observations/evidence/factor/strict_guard.model.json": "eb875af1d219766014231fb4187363f76186de9dbc8d7ce3f6aa80a88d05a939",
+    "research/observations/evidence/factor/tests.log": "b6608cb255aeb45b7647e5c176c63093c3ea4fd93ce10eb7e3c440c7f5d09c37"
+  },
+  "dependencies": {
+    "research/observations/context_model.py": "87c057540f16628285a1b860128aa9f705f188bc1627031b19a7594f935e8077",
+    "research/observations/context_producer.py": "72a68f3c0f14d7a31e4fb933aaa988786aa5bea68d04889367480f0f5d759a61",
+    "research/observations/context_checker.py": "90b57e6b6a10df40111b85c4b08e5cf3a2256b6e8a152f3a7bfdf7f551b68023",
+    "research/observations/descending_adapter.py": "c662b9b2a63f51b6e0d74ebc98488e6cc1082598d1c1e44e27fb0a7c2a34525d",
+    "research/graal/previous/row_kernel.py": "11a4c2f4ced09fbeadf698e79d4347989f258bbf5f54a2cfb13a6f3906eb5460"
+  }
+}

@@ -1,0 +1,5148 @@
+{
+  "schema": "qkf-source-derived-factor-v1",
+  "word": {
+    "schema": "qkf-integer-word-observation-v1",
+    "source_ir": {
+      "schema": "qkf-descending-word-source-v1",
+      "source_sha256": "2cfeb6cdb31aab92a88ab7552290f06eee13920f18a7bc268609d9735b534195",
+      "helper_sha256": "3267bae39fa60a80dd7ffdb1ce2a3fc2dd203d7ffb4597ab7e52fd6278aa0a06",
+      "parsed_sha256": "21ce7d21149a422eacef01bd6c0b0ef2e65b5168e5e8bf0b523893eb90ae51b8",
+      "primitive_bindings": {
+        "CodeUtil.mask": "5137ee1881d6d0020a0a860095e4db6fbb5ef2ca7a4422c8d296b6b273d116b1"
+      },
+      "guard": [
+        "and",
+        [
+          "optional"
+        ],
+        [
+          "test",
+          0
+        ]
+      ],
+      "tests": [
+        {
+          "op": "<=",
+          "offset": 1
+        }
+      ],
+      "comparison_word": "arg1",
+      "columns": [
+        {
+          "symbol": "0000",
+          "input_bits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "symbol": "0010",
+          "input_bits": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "symbol": "0100",
+          "input_bits": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "symbol": "0101",
+          "input_bits": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "symbol": "0110",
+          "input_bits": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "symbol": "0111",
+          "input_bits": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "symbol": "1001",
+          "input_bits": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "symbol": "1011",
+          "input_bits": [
+            1,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "wiring": {
+        "rules": [
+          "descending-outside-write",
+          "or-one-bit-slices"
+        ],
+        "trial": {
+          "higher": [
+            "slice",
+            [
+              "output",
+              "value"
+            ],
+            "higher"
+          ],
+          "bit": 1,
+          "lower": [
+            "slice",
+            [
+              "input",
+              "arg4"
+            ],
+            "lower"
+          ]
+        },
+        "through": {
+          "higher": [
+            "slice",
+            [
+              "output",
+              "value"
+            ],
+            "higher"
+          ],
+          "bit": [
+            "proposed_bit"
+          ]
+        },
+        "lower_control": {
+          "left": [
+            "slice",
+            [
+              "input",
+              "arg4"
+            ],
+            "lower"
+          ],
+          "right": [
+            "slice",
+            [
+              "input",
+              "arg1"
+            ],
+            "lower"
+          ]
+        },
+        "right_slices": {
+          "higher": [
+            "slice",
+            [
+              "input",
+              "arg1"
+            ],
+            "higher"
+          ],
+          "bit": [
+            "slice",
+            [
+              "input",
+              "arg1"
+            ],
+            "bit"
+          ],
+          "lower": [
+            "slice",
+            [
+              "input",
+              "arg1"
+            ],
+            "lower"
+          ]
+        }
+      },
+      "profile": "unsigned mathematical payload; fixed zero sign bit; disjoint initial and optional masks"
+    },
+    "questions": [
+      {
+        "kind": "seed",
+        "cut": 1,
+        "test": 0
+      },
+      {
+        "kind": "pullback",
+        "cut": 0,
+        "parent": 0,
+        "delta": 0
+      },
+      {
+        "kind": "pullback",
+        "cut": -1,
+        "parent": 1,
+        "delta": 1
+      }
+    ],
+    "intervals": [
+      {
+        "lower": null,
+        "upper": -1
+      },
+      {
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "lower": 1,
+        "upper": 1
+      },
+      {
+        "lower": 2,
+        "upper": null
+      }
+    ],
+    "actions": [
+      {
+        "delta": -1,
+        "targets": [
+          0,
+          0,
+          2,
+          3
+        ]
+      },
+      {
+        "delta": 0,
+        "targets": [
+          0,
+          1,
+          3,
+          3
+        ]
+      },
+      {
+        "delta": 1,
+        "targets": [
+          0,
+          2,
+          3,
+          3
+        ]
+      }
+    ],
+    "origin": 1,
+    "consumer": [
+      [
+        true
+      ],
+      [
+        true
+      ],
+      [
+        true
+      ],
+      [
+        false
+      ]
+    ],
+    "monoid": [
+      {
+        "map": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "parent": null
+      },
+      {
+        "map": [
+          0,
+          0,
+          2,
+          3
+        ],
+        "parent": {
+          "state": 0,
+          "delta": -1
+        }
+      },
+      {
+        "map": [
+          0,
+          1,
+          3,
+          3
+        ],
+        "parent": {
+          "state": 0,
+          "delta": 0
+        }
+      },
+      {
+        "map": [
+          0,
+          2,
+          3,
+          3
+        ],
+        "parent": {
+          "state": 0,
+          "delta": 1
+        }
+      },
+      {
+        "map": [
+          0,
+          0,
+          3,
+          3
+        ],
+        "parent": {
+          "state": 1,
+          "delta": 0
+        }
+      },
+      {
+        "map": [
+          0,
+          3,
+          3,
+          3
+        ],
+        "parent": {
+          "state": 2,
+          "delta": 1
+        }
+      }
+    ],
+    "composition": [
+      {
+        "state": 0,
+        "delta": -1,
+        "next": 1
+      },
+      {
+        "state": 0,
+        "delta": 0,
+        "next": 2
+      },
+      {
+        "state": 0,
+        "delta": 1,
+        "next": 3
+      },
+      {
+        "state": 1,
+        "delta": -1,
+        "next": 1
+      },
+      {
+        "state": 1,
+        "delta": 0,
+        "next": 4
+      },
+      {
+        "state": 1,
+        "delta": 1,
+        "next": 3
+      },
+      {
+        "state": 2,
+        "delta": -1,
+        "next": 4
+      },
+      {
+        "state": 2,
+        "delta": 0,
+        "next": 2
+      },
+      {
+        "state": 2,
+        "delta": 1,
+        "next": 5
+      },
+      {
+        "state": 3,
+        "delta": -1,
+        "next": 4
+      },
+      {
+        "state": 3,
+        "delta": 0,
+        "next": 3
+      },
+      {
+        "state": 3,
+        "delta": 1,
+        "next": 5
+      },
+      {
+        "state": 4,
+        "delta": -1,
+        "next": 4
+      },
+      {
+        "state": 4,
+        "delta": 0,
+        "next": 4
+      },
+      {
+        "state": 4,
+        "delta": 1,
+        "next": 5
+      },
+      {
+        "state": 5,
+        "delta": -1,
+        "next": 4
+      },
+      {
+        "state": 5,
+        "delta": 0,
+        "next": 5
+      },
+      {
+        "state": 5,
+        "delta": 1,
+        "next": 5
+      }
+    ]
+  },
+  "factor": {
+    "schema": "qkf-context-consumer-factor-v1",
+    "context_model_sha256": "619093f5e6552990bb4724ef89d401758443061cdba7f537d36a1e6ab52a5de1",
+    "consumer_queries": [
+      "q01"
+    ],
+    "context": {
+      "schema": "qkf-derived-shared-context-atomic-v1",
+      "model_sha256": "619093f5e6552990bb4724ef89d401758443061cdba7f537d36a1e6ab52a5de1",
+      "initial": 0,
+      "rows": [
+        {
+          "control": "m00",
+          "symbol": "0000",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 11
+        },
+        {
+          "control": "m00",
+          "symbol": "0010",
+          "supplied": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 13
+        },
+        {
+          "control": "m00",
+          "symbol": "0100",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 8
+        },
+        {
+          "control": "m00",
+          "symbol": "0101",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 5
+        },
+        {
+          "control": "m00",
+          "symbol": "0110",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 12
+        },
+        {
+          "control": "m00",
+          "symbol": "0111",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 3
+        },
+        {
+          "control": "m00",
+          "symbol": "1001",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 13
+        },
+        {
+          "control": "m00",
+          "symbol": "1011",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 11
+        },
+        {
+          "control": "m01",
+          "symbol": "0000",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 11
+        },
+        {
+          "control": "m01",
+          "symbol": "0010",
+          "supplied": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 13
+        },
+        {
+          "control": "m01",
+          "symbol": "0100",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 8
+        },
+        {
+          "control": "m01",
+          "symbol": "0101",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 5
+        },
+        {
+          "control": "m01",
+          "symbol": "0110",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 12
+        },
+        {
+          "control": "m01",
+          "symbol": "0111",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 3
+        },
+        {
+          "control": "m01",
+          "symbol": "1001",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 13
+        },
+        {
+          "control": "m01",
+          "symbol": "1011",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 11
+        },
+        {
+          "control": "m02",
+          "symbol": "0000",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 11
+        },
+        {
+          "control": "m02",
+          "symbol": "0010",
+          "supplied": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 13
+        },
+        {
+          "control": "m02",
+          "symbol": "0100",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 10
+        },
+        {
+          "control": "m02",
+          "symbol": "0101",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 1
+        },
+        {
+          "control": "m02",
+          "symbol": "0110",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 12
+        },
+        {
+          "control": "m02",
+          "symbol": "0111",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 3
+        },
+        {
+          "control": "m02",
+          "symbol": "1001",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 13
+        },
+        {
+          "control": "m02",
+          "symbol": "1011",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 11
+        },
+        {
+          "control": "m03",
+          "symbol": "0000",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 11
+        },
+        {
+          "control": "m03",
+          "symbol": "0010",
+          "supplied": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 13
+        },
+        {
+          "control": "m03",
+          "symbol": "0100",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 10
+        },
+        {
+          "control": "m03",
+          "symbol": "0101",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 1
+        },
+        {
+          "control": "m03",
+          "symbol": "0110",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 12
+        },
+        {
+          "control": "m03",
+          "symbol": "0111",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 3
+        },
+        {
+          "control": "m03",
+          "symbol": "1001",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 13
+        },
+        {
+          "control": "m03",
+          "symbol": "1011",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 11
+        },
+        {
+          "control": "m04",
+          "symbol": "0000",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 11
+        },
+        {
+          "control": "m04",
+          "symbol": "0010",
+          "supplied": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 13
+        },
+        {
+          "control": "m04",
+          "symbol": "0100",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 10
+        },
+        {
+          "control": "m04",
+          "symbol": "0101",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 1
+        },
+        {
+          "control": "m04",
+          "symbol": "0110",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 12
+        },
+        {
+          "control": "m04",
+          "symbol": "0111",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 3
+        },
+        {
+          "control": "m04",
+          "symbol": "1001",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 13
+        },
+        {
+          "control": "m04",
+          "symbol": "1011",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 11
+        },
+        {
+          "control": "m05",
+          "symbol": "0000",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 11
+        },
+        {
+          "control": "m05",
+          "symbol": "0010",
+          "supplied": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 13
+        },
+        {
+          "control": "m05",
+          "symbol": "0100",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 10
+        },
+        {
+          "control": "m05",
+          "symbol": "0101",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 1
+        },
+        {
+          "control": "m05",
+          "symbol": "0110",
+          "supplied": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 13
+        },
+        {
+          "control": "m05",
+          "symbol": "0111",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 1
+        },
+        {
+          "control": "m05",
+          "symbol": "1001",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 13
+        },
+        {
+          "control": "m05",
+          "symbol": "1011",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 11
+        }
+      ],
+      "states": [
+        {
+          "control": "m00",
+          "allowed": 15,
+          "parent": null,
+          "accept": true
+        },
+        {
+          "control": "m02",
+          "allowed": 15,
+          "parent": {
+            "state": 0,
+            "symbol": "0000"
+          },
+          "accept": true
+        },
+        {
+          "control": "m01",
+          "allowed": 15,
+          "parent": {
+            "state": 0,
+            "symbol": "0010"
+          },
+          "accept": true
+        },
+        {
+          "control": "m02",
+          "allowed": 12,
+          "parent": {
+            "state": 0,
+            "symbol": "0100"
+          },
+          "accept": false
+        },
+        {
+          "control": "m02",
+          "allowed": 3,
+          "parent": {
+            "state": 0,
+            "symbol": "0101"
+          },
+          "accept": true
+        },
+        {
+          "control": "m01",
+          "allowed": 12,
+          "parent": {
+            "state": 0,
+            "symbol": "0110"
+          },
+          "accept": false
+        },
+        {
+          "control": "m01",
+          "allowed": 3,
+          "parent": {
+            "state": 0,
+            "symbol": "0111"
+          },
+          "accept": true
+        },
+        {
+          "control": "m03",
+          "allowed": 15,
+          "parent": {
+            "state": 0,
+            "symbol": "1001"
+          },
+          "accept": true
+        },
+        {
+          "control": "m04",
+          "allowed": 15,
+          "parent": {
+            "state": 1,
+            "symbol": "0010"
+          },
+          "accept": true
+        },
+        {
+          "control": "m02",
+          "allowed": 14,
+          "parent": {
+            "state": 1,
+            "symbol": "0100"
+          },
+          "accept": true
+        },
+        {
+          "control": "m02",
+          "allowed": 1,
+          "parent": {
+            "state": 1,
+            "symbol": "0101"
+          },
+          "accept": false
+        },
+        {
+          "control": "m04",
+          "allowed": 12,
+          "parent": {
+            "state": 1,
+            "symbol": "0110"
+          },
+          "accept": false
+        },
+        {
+          "control": "m04",
+          "allowed": 3,
+          "parent": {
+            "state": 1,
+            "symbol": "0111"
+          },
+          "accept": true
+        },
+        {
+          "control": "m05",
+          "allowed": 15,
+          "parent": {
+            "state": 1,
+            "symbol": "1001"
+          },
+          "accept": true
+        },
+        {
+          "control": "m02",
+          "allowed": 0,
+          "parent": {
+            "state": 3,
+            "symbol": "0101"
+          },
+          "accept": false
+        },
+        {
+          "control": "m04",
+          "allowed": 0,
+          "parent": {
+            "state": 3,
+            "symbol": "0111"
+          },
+          "accept": false
+        },
+        {
+          "control": "m05",
+          "allowed": 14,
+          "parent": {
+            "state": 3,
+            "symbol": "1001"
+          },
+          "accept": true
+        },
+        {
+          "control": "m02",
+          "allowed": 2,
+          "parent": {
+            "state": 4,
+            "symbol": "0100"
+          },
+          "accept": true
+        },
+        {
+          "control": "m05",
+          "allowed": 1,
+          "parent": {
+            "state": 4,
+            "symbol": "1001"
+          },
+          "accept": false
+        },
+        {
+          "control": "m04",
+          "allowed": 2,
+          "parent": {
+            "state": 5,
+            "symbol": "0101"
+          },
+          "accept": true
+        },
+        {
+          "control": "m01",
+          "allowed": 0,
+          "parent": {
+            "state": 5,
+            "symbol": "0111"
+          },
+          "accept": false
+        },
+        {
+          "control": "m03",
+          "allowed": 14,
+          "parent": {
+            "state": 5,
+            "symbol": "1001"
+          },
+          "accept": true
+        },
+        {
+          "control": "m04",
+          "allowed": 1,
+          "parent": {
+            "state": 6,
+            "symbol": "0101"
+          },
+          "accept": false
+        },
+        {
+          "control": "m03",
+          "allowed": 1,
+          "parent": {
+            "state": 6,
+            "symbol": "1001"
+          },
+          "accept": false
+        },
+        {
+          "control": "m04",
+          "allowed": 14,
+          "parent": {
+            "state": 8,
+            "symbol": "0100"
+          },
+          "accept": true
+        },
+        {
+          "control": "m05",
+          "allowed": 0,
+          "parent": {
+            "state": 14,
+            "symbol": "1001"
+          },
+          "accept": false
+        },
+        {
+          "control": "m03",
+          "allowed": 0,
+          "parent": {
+            "state": 20,
+            "symbol": "1001"
+          },
+          "accept": false
+        }
+      ],
+      "cells": [
+        {
+          "state": 0,
+          "symbol": "0000",
+          "next": 1
+        },
+        {
+          "state": 0,
+          "symbol": "0010",
+          "next": 2
+        },
+        {
+          "state": 0,
+          "symbol": "0100",
+          "next": 3
+        },
+        {
+          "state": 0,
+          "symbol": "0101",
+          "next": 4
+        },
+        {
+          "state": 0,
+          "symbol": "0110",
+          "next": 5
+        },
+        {
+          "state": 0,
+          "symbol": "0111",
+          "next": 6
+        },
+        {
+          "state": 0,
+          "symbol": "1001",
+          "next": 7
+        },
+        {
+          "state": 0,
+          "symbol": "1011",
+          "next": 1
+        },
+        {
+          "state": 1,
+          "symbol": "0000",
+          "next": 1
+        },
+        {
+          "state": 1,
+          "symbol": "0010",
+          "next": 8
+        },
+        {
+          "state": 1,
+          "symbol": "0100",
+          "next": 9
+        },
+        {
+          "state": 1,
+          "symbol": "0101",
+          "next": 10
+        },
+        {
+          "state": 1,
+          "symbol": "0110",
+          "next": 11
+        },
+        {
+          "state": 1,
+          "symbol": "0111",
+          "next": 12
+        },
+        {
+          "state": 1,
+          "symbol": "1001",
+          "next": 13
+        },
+        {
+          "state": 1,
+          "symbol": "1011",
+          "next": 1
+        },
+        {
+          "state": 2,
+          "symbol": "0000",
+          "next": 8
+        },
+        {
+          "state": 2,
+          "symbol": "0010",
+          "next": 2
+        },
+        {
+          "state": 2,
+          "symbol": "0100",
+          "next": 11
+        },
+        {
+          "state": 2,
+          "symbol": "0101",
+          "next": 12
+        },
+        {
+          "state": 2,
+          "symbol": "0110",
+          "next": 5
+        },
+        {
+          "state": 2,
+          "symbol": "0111",
+          "next": 6
+        },
+        {
+          "state": 2,
+          "symbol": "1001",
+          "next": 7
+        },
+        {
+          "state": 2,
+          "symbol": "1011",
+          "next": 8
+        },
+        {
+          "state": 3,
+          "symbol": "0000",
+          "next": 3
+        },
+        {
+          "state": 3,
+          "symbol": "0010",
+          "next": 11
+        },
+        {
+          "state": 3,
+          "symbol": "0100",
+          "next": 3
+        },
+        {
+          "state": 3,
+          "symbol": "0101",
+          "next": 14
+        },
+        {
+          "state": 3,
+          "symbol": "0110",
+          "next": 11
+        },
+        {
+          "state": 3,
+          "symbol": "0111",
+          "next": 15
+        },
+        {
+          "state": 3,
+          "symbol": "1001",
+          "next": 16
+        },
+        {
+          "state": 3,
+          "symbol": "1011",
+          "next": 3
+        },
+        {
+          "state": 4,
+          "symbol": "0000",
+          "next": 4
+        },
+        {
+          "state": 4,
+          "symbol": "0010",
+          "next": 12
+        },
+        {
+          "state": 4,
+          "symbol": "0100",
+          "next": 17
+        },
+        {
+          "state": 4,
+          "symbol": "0101",
+          "next": 10
+        },
+        {
+          "state": 4,
+          "symbol": "0110",
+          "next": 15
+        },
+        {
+          "state": 4,
+          "symbol": "0111",
+          "next": 12
+        },
+        {
+          "state": 4,
+          "symbol": "1001",
+          "next": 18
+        },
+        {
+          "state": 4,
+          "symbol": "1011",
+          "next": 4
+        },
+        {
+          "state": 5,
+          "symbol": "0000",
+          "next": 11
+        },
+        {
+          "state": 5,
+          "symbol": "0010",
+          "next": 5
+        },
+        {
+          "state": 5,
+          "symbol": "0100",
+          "next": 11
+        },
+        {
+          "state": 5,
+          "symbol": "0101",
+          "next": 19
+        },
+        {
+          "state": 5,
+          "symbol": "0110",
+          "next": 5
+        },
+        {
+          "state": 5,
+          "symbol": "0111",
+          "next": 20
+        },
+        {
+          "state": 5,
+          "symbol": "1001",
+          "next": 21
+        },
+        {
+          "state": 5,
+          "symbol": "1011",
+          "next": 11
+        },
+        {
+          "state": 6,
+          "symbol": "0000",
+          "next": 12
+        },
+        {
+          "state": 6,
+          "symbol": "0010",
+          "next": 6
+        },
+        {
+          "state": 6,
+          "symbol": "0100",
+          "next": 15
+        },
+        {
+          "state": 6,
+          "symbol": "0101",
+          "next": 22
+        },
+        {
+          "state": 6,
+          "symbol": "0110",
+          "next": 20
+        },
+        {
+          "state": 6,
+          "symbol": "0111",
+          "next": 6
+        },
+        {
+          "state": 6,
+          "symbol": "1001",
+          "next": 23
+        },
+        {
+          "state": 6,
+          "symbol": "1011",
+          "next": 12
+        },
+        {
+          "state": 7,
+          "symbol": "0000",
+          "next": 7
+        },
+        {
+          "state": 7,
+          "symbol": "0010",
+          "next": 8
+        },
+        {
+          "state": 7,
+          "symbol": "0100",
+          "next": 21
+        },
+        {
+          "state": 7,
+          "symbol": "0101",
+          "next": 23
+        },
+        {
+          "state": 7,
+          "symbol": "0110",
+          "next": 11
+        },
+        {
+          "state": 7,
+          "symbol": "0111",
+          "next": 12
+        },
+        {
+          "state": 7,
+          "symbol": "1001",
+          "next": 13
+        },
+        {
+          "state": 7,
+          "symbol": "1011",
+          "next": 7
+        },
+        {
+          "state": 8,
+          "symbol": "0000",
+          "next": 8
+        },
+        {
+          "state": 8,
+          "symbol": "0010",
+          "next": 8
+        },
+        {
+          "state": 8,
+          "symbol": "0100",
+          "next": 24
+        },
+        {
+          "state": 8,
+          "symbol": "0101",
+          "next": 22
+        },
+        {
+          "state": 8,
+          "symbol": "0110",
+          "next": 11
+        },
+        {
+          "state": 8,
+          "symbol": "0111",
+          "next": 12
+        },
+        {
+          "state": 8,
+          "symbol": "1001",
+          "next": 13
+        },
+        {
+          "state": 8,
+          "symbol": "1011",
+          "next": 8
+        },
+        {
+          "state": 9,
+          "symbol": "0000",
+          "next": 9
+        },
+        {
+          "state": 9,
+          "symbol": "0010",
+          "next": 11
+        },
+        {
+          "state": 9,
+          "symbol": "0100",
+          "next": 9
+        },
+        {
+          "state": 9,
+          "symbol": "0101",
+          "next": 14
+        },
+        {
+          "state": 9,
+          "symbol": "0110",
+          "next": 11
+        },
+        {
+          "state": 9,
+          "symbol": "0111",
+          "next": 19
+        },
+        {
+          "state": 9,
+          "symbol": "1001",
+          "next": 16
+        },
+        {
+          "state": 9,
+          "symbol": "1011",
+          "next": 9
+        },
+        {
+          "state": 10,
+          "symbol": "0000",
+          "next": 10
+        },
+        {
+          "state": 10,
+          "symbol": "0010",
+          "next": 12
+        },
+        {
+          "state": 10,
+          "symbol": "0100",
+          "next": 14
+        },
+        {
+          "state": 10,
+          "symbol": "0101",
+          "next": 10
+        },
+        {
+          "state": 10,
+          "symbol": "0110",
+          "next": 15
+        },
+        {
+          "state": 10,
+          "symbol": "0111",
+          "next": 22
+        },
+        {
+          "state": 10,
+          "symbol": "1001",
+          "next": 18
+        },
+        {
+          "state": 10,
+          "symbol": "1011",
+          "next": 10
+        },
+        {
+          "state": 11,
+          "symbol": "0000",
+          "next": 11
+        },
+        {
+          "state": 11,
+          "symbol": "0010",
+          "next": 11
+        },
+        {
+          "state": 11,
+          "symbol": "0100",
+          "next": 11
+        },
+        {
+          "state": 11,
+          "symbol": "0101",
+          "next": 15
+        },
+        {
+          "state": 11,
+          "symbol": "0110",
+          "next": 11
+        },
+        {
+          "state": 11,
+          "symbol": "0111",
+          "next": 15
+        },
+        {
+          "state": 11,
+          "symbol": "1001",
+          "next": 16
+        },
+        {
+          "state": 11,
+          "symbol": "1011",
+          "next": 11
+        },
+        {
+          "state": 12,
+          "symbol": "0000",
+          "next": 12
+        },
+        {
+          "state": 12,
+          "symbol": "0010",
+          "next": 12
+        },
+        {
+          "state": 12,
+          "symbol": "0100",
+          "next": 19
+        },
+        {
+          "state": 12,
+          "symbol": "0101",
+          "next": 22
+        },
+        {
+          "state": 12,
+          "symbol": "0110",
+          "next": 15
+        },
+        {
+          "state": 12,
+          "symbol": "0111",
+          "next": 12
+        },
+        {
+          "state": 12,
+          "symbol": "1001",
+          "next": 18
+        },
+        {
+          "state": 12,
+          "symbol": "1011",
+          "next": 12
+        },
+        {
+          "state": 13,
+          "symbol": "0000",
+          "next": 13
+        },
+        {
+          "state": 13,
+          "symbol": "0010",
+          "next": 8
+        },
+        {
+          "state": 13,
+          "symbol": "0100",
+          "next": 16
+        },
+        {
+          "state": 13,
+          "symbol": "0101",
+          "next": 18
+        },
+        {
+          "state": 13,
+          "symbol": "0110",
+          "next": 24
+        },
+        {
+          "state": 13,
+          "symbol": "0111",
+          "next": 22
+        },
+        {
+          "state": 13,
+          "symbol": "1001",
+          "next": 13
+        },
+        {
+          "state": 13,
+          "symbol": "1011",
+          "next": 13
+        },
+        {
+          "state": 14,
+          "symbol": "0000",
+          "next": 14
+        },
+        {
+          "state": 14,
+          "symbol": "0010",
+          "next": 15
+        },
+        {
+          "state": 14,
+          "symbol": "0100",
+          "next": 14
+        },
+        {
+          "state": 14,
+          "symbol": "0101",
+          "next": 14
+        },
+        {
+          "state": 14,
+          "symbol": "0110",
+          "next": 15
+        },
+        {
+          "state": 14,
+          "symbol": "0111",
+          "next": 15
+        },
+        {
+          "state": 14,
+          "symbol": "1001",
+          "next": 25
+        },
+        {
+          "state": 14,
+          "symbol": "1011",
+          "next": 14
+        },
+        {
+          "state": 15,
+          "symbol": "0000",
+          "next": 15
+        },
+        {
+          "state": 15,
+          "symbol": "0010",
+          "next": 15
+        },
+        {
+          "state": 15,
+          "symbol": "0100",
+          "next": 15
+        },
+        {
+          "state": 15,
+          "symbol": "0101",
+          "next": 15
+        },
+        {
+          "state": 15,
+          "symbol": "0110",
+          "next": 15
+        },
+        {
+          "state": 15,
+          "symbol": "0111",
+          "next": 15
+        },
+        {
+          "state": 15,
+          "symbol": "1001",
+          "next": 25
+        },
+        {
+          "state": 15,
+          "symbol": "1011",
+          "next": 15
+        },
+        {
+          "state": 16,
+          "symbol": "0000",
+          "next": 16
+        },
+        {
+          "state": 16,
+          "symbol": "0010",
+          "next": 11
+        },
+        {
+          "state": 16,
+          "symbol": "0100",
+          "next": 16
+        },
+        {
+          "state": 16,
+          "symbol": "0101",
+          "next": 25
+        },
+        {
+          "state": 16,
+          "symbol": "0110",
+          "next": 11
+        },
+        {
+          "state": 16,
+          "symbol": "0111",
+          "next": 15
+        },
+        {
+          "state": 16,
+          "symbol": "1001",
+          "next": 16
+        },
+        {
+          "state": 16,
+          "symbol": "1011",
+          "next": 16
+        },
+        {
+          "state": 17,
+          "symbol": "0000",
+          "next": 17
+        },
+        {
+          "state": 17,
+          "symbol": "0010",
+          "next": 15
+        },
+        {
+          "state": 17,
+          "symbol": "0100",
+          "next": 17
+        },
+        {
+          "state": 17,
+          "symbol": "0101",
+          "next": 14
+        },
+        {
+          "state": 17,
+          "symbol": "0110",
+          "next": 15
+        },
+        {
+          "state": 17,
+          "symbol": "0111",
+          "next": 19
+        },
+        {
+          "state": 17,
+          "symbol": "1001",
+          "next": 25
+        },
+        {
+          "state": 17,
+          "symbol": "1011",
+          "next": 17
+        },
+        {
+          "state": 18,
+          "symbol": "0000",
+          "next": 18
+        },
+        {
+          "state": 18,
+          "symbol": "0010",
+          "next": 12
+        },
+        {
+          "state": 18,
+          "symbol": "0100",
+          "next": 25
+        },
+        {
+          "state": 18,
+          "symbol": "0101",
+          "next": 18
+        },
+        {
+          "state": 18,
+          "symbol": "0110",
+          "next": 19
+        },
+        {
+          "state": 18,
+          "symbol": "0111",
+          "next": 22
+        },
+        {
+          "state": 18,
+          "symbol": "1001",
+          "next": 18
+        },
+        {
+          "state": 18,
+          "symbol": "1011",
+          "next": 18
+        },
+        {
+          "state": 19,
+          "symbol": "0000",
+          "next": 19
+        },
+        {
+          "state": 19,
+          "symbol": "0010",
+          "next": 15
+        },
+        {
+          "state": 19,
+          "symbol": "0100",
+          "next": 19
+        },
+        {
+          "state": 19,
+          "symbol": "0101",
+          "next": 15
+        },
+        {
+          "state": 19,
+          "symbol": "0110",
+          "next": 15
+        },
+        {
+          "state": 19,
+          "symbol": "0111",
+          "next": 19
+        },
+        {
+          "state": 19,
+          "symbol": "1001",
+          "next": 25
+        },
+        {
+          "state": 19,
+          "symbol": "1011",
+          "next": 19
+        },
+        {
+          "state": 20,
+          "symbol": "0000",
+          "next": 15
+        },
+        {
+          "state": 20,
+          "symbol": "0010",
+          "next": 20
+        },
+        {
+          "state": 20,
+          "symbol": "0100",
+          "next": 15
+        },
+        {
+          "state": 20,
+          "symbol": "0101",
+          "next": 15
+        },
+        {
+          "state": 20,
+          "symbol": "0110",
+          "next": 20
+        },
+        {
+          "state": 20,
+          "symbol": "0111",
+          "next": 20
+        },
+        {
+          "state": 20,
+          "symbol": "1001",
+          "next": 26
+        },
+        {
+          "state": 20,
+          "symbol": "1011",
+          "next": 15
+        },
+        {
+          "state": 21,
+          "symbol": "0000",
+          "next": 21
+        },
+        {
+          "state": 21,
+          "symbol": "0010",
+          "next": 11
+        },
+        {
+          "state": 21,
+          "symbol": "0100",
+          "next": 21
+        },
+        {
+          "state": 21,
+          "symbol": "0101",
+          "next": 26
+        },
+        {
+          "state": 21,
+          "symbol": "0110",
+          "next": 11
+        },
+        {
+          "state": 21,
+          "symbol": "0111",
+          "next": 19
+        },
+        {
+          "state": 21,
+          "symbol": "1001",
+          "next": 16
+        },
+        {
+          "state": 21,
+          "symbol": "1011",
+          "next": 21
+        },
+        {
+          "state": 22,
+          "symbol": "0000",
+          "next": 22
+        },
+        {
+          "state": 22,
+          "symbol": "0010",
+          "next": 12
+        },
+        {
+          "state": 22,
+          "symbol": "0100",
+          "next": 15
+        },
+        {
+          "state": 22,
+          "symbol": "0101",
+          "next": 22
+        },
+        {
+          "state": 22,
+          "symbol": "0110",
+          "next": 15
+        },
+        {
+          "state": 22,
+          "symbol": "0111",
+          "next": 22
+        },
+        {
+          "state": 22,
+          "symbol": "1001",
+          "next": 18
+        },
+        {
+          "state": 22,
+          "symbol": "1011",
+          "next": 22
+        },
+        {
+          "state": 23,
+          "symbol": "0000",
+          "next": 23
+        },
+        {
+          "state": 23,
+          "symbol": "0010",
+          "next": 12
+        },
+        {
+          "state": 23,
+          "symbol": "0100",
+          "next": 26
+        },
+        {
+          "state": 23,
+          "symbol": "0101",
+          "next": 23
+        },
+        {
+          "state": 23,
+          "symbol": "0110",
+          "next": 15
+        },
+        {
+          "state": 23,
+          "symbol": "0111",
+          "next": 22
+        },
+        {
+          "state": 23,
+          "symbol": "1001",
+          "next": 18
+        },
+        {
+          "state": 23,
+          "symbol": "1011",
+          "next": 23
+        },
+        {
+          "state": 24,
+          "symbol": "0000",
+          "next": 24
+        },
+        {
+          "state": 24,
+          "symbol": "0010",
+          "next": 11
+        },
+        {
+          "state": 24,
+          "symbol": "0100",
+          "next": 24
+        },
+        {
+          "state": 24,
+          "symbol": "0101",
+          "next": 15
+        },
+        {
+          "state": 24,
+          "symbol": "0110",
+          "next": 11
+        },
+        {
+          "state": 24,
+          "symbol": "0111",
+          "next": 19
+        },
+        {
+          "state": 24,
+          "symbol": "1001",
+          "next": 16
+        },
+        {
+          "state": 24,
+          "symbol": "1011",
+          "next": 24
+        },
+        {
+          "state": 25,
+          "symbol": "0000",
+          "next": 25
+        },
+        {
+          "state": 25,
+          "symbol": "0010",
+          "next": 15
+        },
+        {
+          "state": 25,
+          "symbol": "0100",
+          "next": 25
+        },
+        {
+          "state": 25,
+          "symbol": "0101",
+          "next": 25
+        },
+        {
+          "state": 25,
+          "symbol": "0110",
+          "next": 15
+        },
+        {
+          "state": 25,
+          "symbol": "0111",
+          "next": 15
+        },
+        {
+          "state": 25,
+          "symbol": "1001",
+          "next": 25
+        },
+        {
+          "state": 25,
+          "symbol": "1011",
+          "next": 25
+        },
+        {
+          "state": 26,
+          "symbol": "0000",
+          "next": 26
+        },
+        {
+          "state": 26,
+          "symbol": "0010",
+          "next": 15
+        },
+        {
+          "state": 26,
+          "symbol": "0100",
+          "next": 26
+        },
+        {
+          "state": 26,
+          "symbol": "0101",
+          "next": 26
+        },
+        {
+          "state": 26,
+          "symbol": "0110",
+          "next": 15
+        },
+        {
+          "state": 26,
+          "symbol": "0111",
+          "next": 15
+        },
+        {
+          "state": 26,
+          "symbol": "1001",
+          "next": 25
+        },
+        {
+          "state": 26,
+          "symbol": "1011",
+          "next": 26
+        }
+      ],
+      "gap": {
+        "word": [
+          "0100",
+          "0000"
+        ],
+        "trace": [
+          {
+            "control": "m00",
+            "exact": 15,
+            "independent": 15
+          },
+          {
+            "control": "m02",
+            "exact": 12,
+            "independent": 12
+          },
+          {
+            "control": "m02",
+            "exact": 12,
+            "independent": 15
+          }
+        ],
+        "conflict": {
+          "position": 1,
+          "above": "q01",
+          "below": "q01",
+          "required_below": [
+            "q02",
+            "q03"
+          ]
+        }
+      }
+    },
+    "factor": {
+      "schema": "qkf-derived-observation-atomic-v1",
+      "model_sha256": "296c0b2795a95cae07969c97fb15dee37c349a00edf70d513d684cecf5a188ac",
+      "predicates": [
+        {
+          "kind": "terminal",
+          "label": "0",
+          "mask": 114609192
+        },
+        {
+          "kind": "pullback",
+          "symbol": "0010",
+          "parent": 0,
+          "mask": 121358888
+        },
+        {
+          "kind": "pullback",
+          "symbol": "0100",
+          "parent": 0,
+          "mask": 114609261
+        },
+        {
+          "kind": "pullback",
+          "symbol": "0101",
+          "parent": 0,
+          "mask": 134217690
+        },
+        {
+          "kind": "pullback",
+          "symbol": "0110",
+          "parent": 0,
+          "mask": 133947391
+        },
+        {
+          "kind": "pullback",
+          "symbol": "0111",
+          "parent": 0,
+          "mask": 114682920
+        },
+        {
+          "kind": "pullback",
+          "symbol": "1001",
+          "parent": 0,
+          "mask": 115266640
+        }
+      ],
+      "blocks": [
+        [
+          "s00",
+          "s02"
+        ],
+        [
+          "s01",
+          "s07",
+          "s08"
+        ],
+        [
+          "s03",
+          "s11"
+        ],
+        [
+          "s04",
+          "s12"
+        ],
+        [
+          "s05"
+        ],
+        [
+          "s06"
+        ],
+        [
+          "s09",
+          "s21",
+          "s24"
+        ],
+        [
+          "s10",
+          "s22",
+          "s23"
+        ],
+        [
+          "s13"
+        ],
+        [
+          "s14",
+          "s15",
+          "s20",
+          "s25",
+          "s26"
+        ],
+        [
+          "s16"
+        ],
+        [
+          "s17",
+          "s19"
+        ],
+        [
+          "s18"
+        ]
+      ],
+      "initial": 0,
+      "rows": [
+        {
+          "symbol": "0000",
+          "output": "tick",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              8,
+              40
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              32,
+              0
+            ],
+            [
+              64,
+              64
+            ],
+            [
+              128,
+              128
+            ],
+            [
+              256,
+              256
+            ],
+            [
+              512,
+              512
+            ],
+            [
+              1024,
+              1024
+            ],
+            [
+              2048,
+              2048
+            ],
+            [
+              4096,
+              4096
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 8142
+        },
+        {
+          "symbol": "0010",
+          "output": "tick",
+          "supplied": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              258
+            ],
+            [
+              4,
+              1092
+            ],
+            [
+              8,
+              4232
+            ],
+            [
+              16,
+              16
+            ],
+            [
+              32,
+              32
+            ],
+            [
+              64,
+              0
+            ],
+            [
+              128,
+              0
+            ],
+            [
+              256,
+              0
+            ],
+            [
+              512,
+              2560
+            ],
+            [
+              1024,
+              0
+            ],
+            [
+              2048,
+              0
+            ],
+            [
+              4096,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 575
+        },
+        {
+          "symbol": "0100",
+          "output": "tick",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              21
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              32,
+              0
+            ],
+            [
+              64,
+              66
+            ],
+            [
+              128,
+              0
+            ],
+            [
+              256,
+              0
+            ],
+            [
+              512,
+              4768
+            ],
+            [
+              1024,
+              1280
+            ],
+            [
+              2048,
+              2056
+            ],
+            [
+              4096,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 3652
+        },
+        {
+          "symbol": "0101",
+          "output": "tick",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              1
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              32,
+              0
+            ],
+            [
+              64,
+              0
+            ],
+            [
+              128,
+              170
+            ],
+            [
+              256,
+              0
+            ],
+            [
+              512,
+              3652
+            ],
+            [
+              1024,
+              0
+            ],
+            [
+              2048,
+              16
+            ],
+            [
+              4096,
+              4352
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 6792
+        },
+        {
+          "symbol": "0110",
+          "output": "tick",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              1094
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              16,
+              17
+            ],
+            [
+              32,
+              0
+            ],
+            [
+              64,
+              256
+            ],
+            [
+              128,
+              0
+            ],
+            [
+              256,
+              0
+            ],
+            [
+              512,
+              2728
+            ],
+            [
+              1024,
+              0
+            ],
+            [
+              2048,
+              4096
+            ],
+            [
+              4096,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 2644
+        },
+        {
+          "symbol": "0111",
+          "output": "tick",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              32,
+              33
+            ],
+            [
+              64,
+              0
+            ],
+            [
+              128,
+              4480
+            ],
+            [
+              256,
+              0
+            ],
+            [
+              512,
+              1556
+            ],
+            [
+              1024,
+              0
+            ],
+            [
+              2048,
+              2112
+            ],
+            [
+              4096,
+              0
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 2728
+        },
+        {
+          "symbol": "1001",
+          "output": "tick",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              32,
+              0
+            ],
+            [
+              64,
+              16
+            ],
+            [
+              128,
+              32
+            ],
+            [
+              256,
+              258
+            ],
+            [
+              512,
+              2560
+            ],
+            [
+              1024,
+              1092
+            ],
+            [
+              2048,
+              0
+            ],
+            [
+              4096,
+              4232
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 6082
+        },
+        {
+          "symbol": "1011",
+          "output": "tick",
+          "supplied": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              8,
+              40
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              32,
+              0
+            ],
+            [
+              64,
+              64
+            ],
+            [
+              128,
+              128
+            ],
+            [
+              256,
+              256
+            ],
+            [
+              512,
+              512
+            ],
+            [
+              1024,
+              1024
+            ],
+            [
+              2048,
+              2048
+            ],
+            [
+              4096,
+              4096
+            ]
+          ],
+          "empty": {
+            "kind": "intersection",
+            "left": 1,
+            "right": 2
+          },
+          "extension": "finite-unions",
+          "kernel_projection": 8142
+        }
+      ],
+      "cells": [
+        {
+          "symbol": "0000",
+          "state": 0,
+          "output": "tick",
+          "next": 1
+        },
+        {
+          "symbol": "0000",
+          "state": 1,
+          "output": "tick",
+          "next": 1
+        },
+        {
+          "symbol": "0000",
+          "state": 2,
+          "output": "tick",
+          "next": 2
+        },
+        {
+          "symbol": "0000",
+          "state": 3,
+          "output": "tick",
+          "next": 3
+        },
+        {
+          "symbol": "0000",
+          "state": 4,
+          "output": "tick",
+          "next": 2
+        },
+        {
+          "symbol": "0000",
+          "state": 5,
+          "output": "tick",
+          "next": 3
+        },
+        {
+          "symbol": "0000",
+          "state": 6,
+          "output": "tick",
+          "next": 6
+        },
+        {
+          "symbol": "0000",
+          "state": 7,
+          "output": "tick",
+          "next": 7
+        },
+        {
+          "symbol": "0000",
+          "state": 8,
+          "output": "tick",
+          "next": 8
+        },
+        {
+          "symbol": "0000",
+          "state": 9,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0000",
+          "state": 10,
+          "output": "tick",
+          "next": 10
+        },
+        {
+          "symbol": "0000",
+          "state": 11,
+          "output": "tick",
+          "next": 11
+        },
+        {
+          "symbol": "0000",
+          "state": 12,
+          "output": "tick",
+          "next": 12
+        },
+        {
+          "symbol": "0010",
+          "state": 0,
+          "output": "tick",
+          "next": 0
+        },
+        {
+          "symbol": "0010",
+          "state": 1,
+          "output": "tick",
+          "next": 1
+        },
+        {
+          "symbol": "0010",
+          "state": 2,
+          "output": "tick",
+          "next": 2
+        },
+        {
+          "symbol": "0010",
+          "state": 3,
+          "output": "tick",
+          "next": 3
+        },
+        {
+          "symbol": "0010",
+          "state": 4,
+          "output": "tick",
+          "next": 4
+        },
+        {
+          "symbol": "0010",
+          "state": 5,
+          "output": "tick",
+          "next": 5
+        },
+        {
+          "symbol": "0010",
+          "state": 6,
+          "output": "tick",
+          "next": 2
+        },
+        {
+          "symbol": "0010",
+          "state": 7,
+          "output": "tick",
+          "next": 3
+        },
+        {
+          "symbol": "0010",
+          "state": 8,
+          "output": "tick",
+          "next": 1
+        },
+        {
+          "symbol": "0010",
+          "state": 9,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0010",
+          "state": 10,
+          "output": "tick",
+          "next": 2
+        },
+        {
+          "symbol": "0010",
+          "state": 11,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0010",
+          "state": 12,
+          "output": "tick",
+          "next": 3
+        },
+        {
+          "symbol": "0100",
+          "state": 0,
+          "output": "tick",
+          "next": 2
+        },
+        {
+          "symbol": "0100",
+          "state": 1,
+          "output": "tick",
+          "next": 6
+        },
+        {
+          "symbol": "0100",
+          "state": 2,
+          "output": "tick",
+          "next": 2
+        },
+        {
+          "symbol": "0100",
+          "state": 3,
+          "output": "tick",
+          "next": 11
+        },
+        {
+          "symbol": "0100",
+          "state": 4,
+          "output": "tick",
+          "next": 2
+        },
+        {
+          "symbol": "0100",
+          "state": 5,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0100",
+          "state": 6,
+          "output": "tick",
+          "next": 6
+        },
+        {
+          "symbol": "0100",
+          "state": 7,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0100",
+          "state": 8,
+          "output": "tick",
+          "next": 10
+        },
+        {
+          "symbol": "0100",
+          "state": 9,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0100",
+          "state": 10,
+          "output": "tick",
+          "next": 10
+        },
+        {
+          "symbol": "0100",
+          "state": 11,
+          "output": "tick",
+          "next": 11
+        },
+        {
+          "symbol": "0100",
+          "state": 12,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0101",
+          "state": 0,
+          "output": "tick",
+          "next": 3
+        },
+        {
+          "symbol": "0101",
+          "state": 1,
+          "output": "tick",
+          "next": 7
+        },
+        {
+          "symbol": "0101",
+          "state": 2,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0101",
+          "state": 3,
+          "output": "tick",
+          "next": 7
+        },
+        {
+          "symbol": "0101",
+          "state": 4,
+          "output": "tick",
+          "next": 11
+        },
+        {
+          "symbol": "0101",
+          "state": 5,
+          "output": "tick",
+          "next": 7
+        },
+        {
+          "symbol": "0101",
+          "state": 6,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0101",
+          "state": 7,
+          "output": "tick",
+          "next": 7
+        },
+        {
+          "symbol": "0101",
+          "state": 8,
+          "output": "tick",
+          "next": 12
+        },
+        {
+          "symbol": "0101",
+          "state": 9,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0101",
+          "state": 10,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0101",
+          "state": 11,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0101",
+          "state": 12,
+          "output": "tick",
+          "next": 12
+        },
+        {
+          "symbol": "0110",
+          "state": 0,
+          "output": "tick",
+          "next": 4
+        },
+        {
+          "symbol": "0110",
+          "state": 1,
+          "output": "tick",
+          "next": 2
+        },
+        {
+          "symbol": "0110",
+          "state": 2,
+          "output": "tick",
+          "next": 2
+        },
+        {
+          "symbol": "0110",
+          "state": 3,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0110",
+          "state": 4,
+          "output": "tick",
+          "next": 4
+        },
+        {
+          "symbol": "0110",
+          "state": 5,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0110",
+          "state": 6,
+          "output": "tick",
+          "next": 2
+        },
+        {
+          "symbol": "0110",
+          "state": 7,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0110",
+          "state": 8,
+          "output": "tick",
+          "next": 6
+        },
+        {
+          "symbol": "0110",
+          "state": 9,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0110",
+          "state": 10,
+          "output": "tick",
+          "next": 2
+        },
+        {
+          "symbol": "0110",
+          "state": 11,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0110",
+          "state": 12,
+          "output": "tick",
+          "next": 11
+        },
+        {
+          "symbol": "0111",
+          "state": 0,
+          "output": "tick",
+          "next": 5
+        },
+        {
+          "symbol": "0111",
+          "state": 1,
+          "output": "tick",
+          "next": 3
+        },
+        {
+          "symbol": "0111",
+          "state": 2,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0111",
+          "state": 3,
+          "output": "tick",
+          "next": 3
+        },
+        {
+          "symbol": "0111",
+          "state": 4,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0111",
+          "state": 5,
+          "output": "tick",
+          "next": 5
+        },
+        {
+          "symbol": "0111",
+          "state": 6,
+          "output": "tick",
+          "next": 11
+        },
+        {
+          "symbol": "0111",
+          "state": 7,
+          "output": "tick",
+          "next": 7
+        },
+        {
+          "symbol": "0111",
+          "state": 8,
+          "output": "tick",
+          "next": 7
+        },
+        {
+          "symbol": "0111",
+          "state": 9,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0111",
+          "state": 10,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "0111",
+          "state": 11,
+          "output": "tick",
+          "next": 11
+        },
+        {
+          "symbol": "0111",
+          "state": 12,
+          "output": "tick",
+          "next": 7
+        },
+        {
+          "symbol": "1001",
+          "state": 0,
+          "output": "tick",
+          "next": 1
+        },
+        {
+          "symbol": "1001",
+          "state": 1,
+          "output": "tick",
+          "next": 8
+        },
+        {
+          "symbol": "1001",
+          "state": 2,
+          "output": "tick",
+          "next": 10
+        },
+        {
+          "symbol": "1001",
+          "state": 3,
+          "output": "tick",
+          "next": 12
+        },
+        {
+          "symbol": "1001",
+          "state": 4,
+          "output": "tick",
+          "next": 6
+        },
+        {
+          "symbol": "1001",
+          "state": 5,
+          "output": "tick",
+          "next": 7
+        },
+        {
+          "symbol": "1001",
+          "state": 6,
+          "output": "tick",
+          "next": 10
+        },
+        {
+          "symbol": "1001",
+          "state": 7,
+          "output": "tick",
+          "next": 12
+        },
+        {
+          "symbol": "1001",
+          "state": 8,
+          "output": "tick",
+          "next": 8
+        },
+        {
+          "symbol": "1001",
+          "state": 9,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "1001",
+          "state": 10,
+          "output": "tick",
+          "next": 10
+        },
+        {
+          "symbol": "1001",
+          "state": 11,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "1001",
+          "state": 12,
+          "output": "tick",
+          "next": 12
+        },
+        {
+          "symbol": "1011",
+          "state": 0,
+          "output": "tick",
+          "next": 1
+        },
+        {
+          "symbol": "1011",
+          "state": 1,
+          "output": "tick",
+          "next": 1
+        },
+        {
+          "symbol": "1011",
+          "state": 2,
+          "output": "tick",
+          "next": 2
+        },
+        {
+          "symbol": "1011",
+          "state": 3,
+          "output": "tick",
+          "next": 3
+        },
+        {
+          "symbol": "1011",
+          "state": 4,
+          "output": "tick",
+          "next": 2
+        },
+        {
+          "symbol": "1011",
+          "state": 5,
+          "output": "tick",
+          "next": 3
+        },
+        {
+          "symbol": "1011",
+          "state": 6,
+          "output": "tick",
+          "next": 6
+        },
+        {
+          "symbol": "1011",
+          "state": 7,
+          "output": "tick",
+          "next": 7
+        },
+        {
+          "symbol": "1011",
+          "state": 8,
+          "output": "tick",
+          "next": 8
+        },
+        {
+          "symbol": "1011",
+          "state": 9,
+          "output": "tick",
+          "next": 9
+        },
+        {
+          "symbol": "1011",
+          "state": 10,
+          "output": "tick",
+          "next": 10
+        },
+        {
+          "symbol": "1011",
+          "state": 11,
+          "output": "tick",
+          "next": 11
+        },
+        {
+          "symbol": "1011",
+          "state": 12,
+          "output": "tick",
+          "next": 12
+        }
+      ],
+      "separators": [
+        {
+          "left": 0,
+          "right": 1,
+          "word": [
+            "0100"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 0,
+          "right": 2,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 0,
+          "right": 3,
+          "word": [
+            "0100"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 0,
+          "right": 4,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 0,
+          "right": 5,
+          "word": [
+            "0101"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 0,
+          "right": 6,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 0,
+          "right": 7,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 0,
+          "right": 8,
+          "word": [
+            "0100"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 0,
+          "right": 9,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 0,
+          "right": 10,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 0,
+          "right": 11,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 0,
+          "right": 12,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 1,
+          "right": 2,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 1,
+          "right": 3,
+          "word": [
+            "1001"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 1,
+          "right": 4,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 1,
+          "right": 5,
+          "word": [
+            "0100"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 1,
+          "right": 6,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 1,
+          "right": 7,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 1,
+          "right": 8,
+          "word": [
+            "0110"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 1,
+          "right": 9,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 1,
+          "right": 10,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 1,
+          "right": 11,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 1,
+          "right": 12,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 2,
+          "right": 3,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 2,
+          "right": 4,
+          "word": [
+            "0101"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 2,
+          "right": 5,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 2,
+          "right": 6,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 2,
+          "right": 7,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 2,
+          "right": 8,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 2,
+          "right": 9,
+          "word": [
+            "1001"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 2,
+          "right": 10,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 2,
+          "right": 11,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 2,
+          "right": 12,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 3,
+          "right": 4,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 3,
+          "right": 5,
+          "word": [
+            "0100"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 3,
+          "right": 6,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 3,
+          "right": 7,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 3,
+          "right": 8,
+          "word": [
+            "0110"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 3,
+          "right": 9,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 3,
+          "right": 10,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 3,
+          "right": 11,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 3,
+          "right": 12,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 4,
+          "right": 5,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 4,
+          "right": 6,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 4,
+          "right": 7,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 4,
+          "right": 8,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 4,
+          "right": 9,
+          "word": [
+            "0101"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 4,
+          "right": 10,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 4,
+          "right": 11,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 4,
+          "right": 12,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 5,
+          "right": 6,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 5,
+          "right": 7,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 5,
+          "right": 8,
+          "word": [
+            "0100"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 5,
+          "right": 9,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 5,
+          "right": 10,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 5,
+          "right": 11,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 5,
+          "right": 12,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 6,
+          "right": 7,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 6,
+          "right": 8,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 6,
+          "right": 9,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 6,
+          "right": 10,
+          "word": [
+            "0111"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 6,
+          "right": 11,
+          "word": [
+            "1001"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 6,
+          "right": 12,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 7,
+          "right": 8,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 7,
+          "right": 9,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 7,
+          "right": 10,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 7,
+          "right": 11,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 7,
+          "right": 12,
+          "word": [
+            "0110"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 8,
+          "right": 9,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 8,
+          "right": 10,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 8,
+          "right": 11,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 8,
+          "right": 12,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 9,
+          "right": 10,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 9,
+          "right": 11,
+          "word": [],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 9,
+          "right": 12,
+          "word": [
+            "0010"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 10,
+          "right": 11,
+          "word": [
+            "0111"
+          ],
+          "terminal": true,
+          "left_value": "0",
+          "right_value": "1"
+        },
+        {
+          "left": 10,
+          "right": 12,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        },
+        {
+          "left": 11,
+          "right": 12,
+          "word": [],
+          "terminal": true,
+          "left_value": "1",
+          "right_value": "0"
+        }
+      ]
+    }
+  }
+}

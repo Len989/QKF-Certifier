@@ -1,0 +1,130 @@
+{
+  "date": "2026-09-14",
+  "test_methods": 47,
+  "new_source_test_methods": 10,
+  "comparison_profiles": 30,
+  "source_renamings": 12,
+  "equivalent_guards": 3,
+  "source_certificate_mutations": 21,
+  "unsupported_source_mutations": 11,
+  "atomic_complete_context_models": 3,
+  "native_payload_widths": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "legal_column_words": 113708,
+  "native_method_calls": 28353,
+  "native_mismatches": 0,
+  "fresh_replay_blocked": [
+    "producer modules",
+    "old source adapters",
+    "subprocess",
+    "z3",
+    "pysmt",
+    "cvc5"
+  ],
+  "fresh_replay_modes": [
+    "normal Python",
+    "Python -O"
+  ],
+  "commands": {
+    "tests": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/observations/tests",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    "native_experiment": {
+      "command": [
+        "python",
+        "-m",
+        "research.observations.run_source_experiment",
+        "reproduction/source_final_2026_09_14",
+        "--native"
+      ],
+      "exit_code": 0
+    },
+    "replay": {
+      "original": {
+        "command": [
+          "python",
+          "-O",
+          "-m",
+          "research.observations.source_cli",
+          "check",
+          "research/observations/evidence/source/original.java",
+          "research/observations/evidence/source/original.certificate.json"
+        ],
+        "exit_code": 0
+      },
+      "plus_one": {
+        "command": [
+          "python",
+          "-O",
+          "-m",
+          "research.observations.source_cli",
+          "check",
+          "research/observations/evidence/source/plus_one.java",
+          "research/observations/evidence/source/plus_one.certificate.json"
+        ],
+        "exit_code": 0
+      },
+      "plus_three": {
+        "command": [
+          "python",
+          "-O",
+          "-m",
+          "research.observations.source_cli",
+          "check",
+          "research/observations/evidence/source/plus_three.java",
+          "research/observations/evidence/source/plus_three.certificate.json"
+        ],
+        "exit_code": 0
+      },
+      "shared_input": {
+        "command": [
+          "python",
+          "-O",
+          "-m",
+          "research.observations.source_cli",
+          "check",
+          "research/observations/evidence/source/shared_input.java",
+          "research/observations/evidence/source/shared_input.certificate.json"
+        ],
+        "exit_code": 0
+      },
+      "pinned_original": {
+        "command": [
+          "python",
+          "-O",
+          "-m",
+          "research.observations.source_cli",
+          "check-java",
+          "research/observations/evidence/source/original.certificate.json"
+        ],
+        "exit_code": 0
+      }
+    }
+  },
+  "legacy_certificates_reproduced_exactly": [
+    "research/observations/evidence/carry.certificate.json",
+    "research/observations/evidence/changed_forbidden_action.certificate.json",
+    "research/observations/evidence/delayed_observation.certificate.json",
+    "research/observations/evidence/unobserved_internal_state.certificate.json",
+    "research/observations/evidence/context/descending.certificate.json",
+    "research/observations/evidence/context/strict_guard.certificate.json",
+    "research/observations/evidence/factor/all_contexts.certificate.json",
+    "research/observations/evidence/factor/descending.certificate.json",
+    "research/observations/evidence/factor/strict_guard.certificate.json"
+  ],
+  "scope": "Exact integer observation replay; bounded native Java validation for legal column representatives, not all machine inputs."
+}

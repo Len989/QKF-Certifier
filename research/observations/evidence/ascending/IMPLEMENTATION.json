@@ -1,0 +1,13 @@
+{
+  "ascending_source.py": "4133bd7f8c40bff3f0e1a72ab25a1223a9c441fdff78aa114782ff4c91fd51cc",
+  "ascending_kernel.py": "f71d5a3447f4920ed4a8c21220a63368f14c4f7bc3b63ea009c6cd314956dc38",
+  "ascending_producer.py": "3b3cf0b5c5b8ded54e239329d88b30f2254cc153137515d2f7919b735361e9c1",
+  "ascending_validation.py": "41cb82f741fb138e69e213a7f9fdf507f6037d50be14108ed68dc560cb17e045",
+  "ascending_cli.py": "db59f22529eeda8dff02d718189c0ad912f5ceab5923c663fbd21d4f02458b9c",
+  "run_ascending_experiment.py": "fac31d244448650705b2dcbc5d918264064810f38c12c7ba897280e5bf53fcc2",
+  "java_words.py": "341c22042a32977c2ee704ddf28e80ccfba703fbb8e2090bfec3ea1f811bd7af",
+  "model.py": "009357d5d93b28dabc55b2f6e9c9797ea8d452fdc15e2cc7d5e8ff2a7e08327c",
+  "producer.py": "34b3b8bc6ee33fbf68be09efebb1059108cdff692fa343623aa75bb96f8cd5f0",
+  "checker.py": "803a11c76282b51d2d450422cbbd71c3d2f16eaec33ab282dbf834f311bd4382",
+  "atomic_rows.py": "6c5198486b03e65de8db5e52ceef464aeb455188a6c2c8b110a80679e6046b65"
+}

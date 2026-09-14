@@ -1,0 +1,435 @@
+{
+  "schema": "qkf-native-context-rows-v1",
+  "contexts": [
+    "equal",
+    "greater",
+    "less"
+  ],
+  "controls": [
+    "equal",
+    "greater",
+    "less"
+  ],
+  "alphabet": [
+    "0000",
+    "0010",
+    "0100",
+    "0101",
+    "0110",
+    "0111",
+    "1001",
+    "1011"
+  ],
+  "initial_control": "equal",
+  "bottom": [
+    "equal",
+    "greater",
+    "less"
+  ],
+  "boundary": "equal",
+  "binding": {
+    "adapter": "descending native compare/prefix/select only",
+    "source_sha256": "11a4c2f4ced09fbeadf698e79d4347989f258bbf5f54a2cfb13a6f3906eb5460",
+    "guard": [
+      "and",
+      [
+        "optional"
+      ],
+      [
+        "comparison",
+        [
+          -1,
+          0
+        ]
+      ]
+    ],
+    "column_order": "low-to-high (a,optional,u,y)",
+    "scope": "unsigned comparison model with explicitly shared cuts"
+  },
+  "rows": [
+    {
+      "control": "equal",
+      "symbol": "0000",
+      "next_control": "equal",
+      "edges": [
+        [
+          "equal",
+          "equal"
+        ],
+        [
+          "greater",
+          "greater"
+        ],
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "equal",
+      "symbol": "0010",
+      "next_control": "less",
+      "edges": [
+        [
+          "equal",
+          "less"
+        ],
+        [
+          "greater",
+          "greater"
+        ],
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "equal",
+      "symbol": "0100",
+      "next_control": "equal",
+      "edges": [
+        [
+          "equal",
+          "equal"
+        ],
+        [
+          "greater",
+          "greater"
+        ]
+      ]
+    },
+    {
+      "control": "equal",
+      "symbol": "0101",
+      "next_control": "equal",
+      "edges": [
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "equal",
+      "symbol": "0110",
+      "next_control": "less",
+      "edges": [
+        [
+          "greater",
+          "greater"
+        ]
+      ]
+    },
+    {
+      "control": "equal",
+      "symbol": "0111",
+      "next_control": "less",
+      "edges": [
+        [
+          "equal",
+          "equal"
+        ],
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "equal",
+      "symbol": "1001",
+      "next_control": "greater",
+      "edges": [
+        [
+          "equal",
+          "greater"
+        ],
+        [
+          "greater",
+          "greater"
+        ],
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "equal",
+      "symbol": "1011",
+      "next_control": "equal",
+      "edges": [
+        [
+          "equal",
+          "equal"
+        ],
+        [
+          "greater",
+          "greater"
+        ],
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "greater",
+      "symbol": "0000",
+      "next_control": "greater",
+      "edges": [
+        [
+          "equal",
+          "equal"
+        ],
+        [
+          "greater",
+          "greater"
+        ],
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "greater",
+      "symbol": "0010",
+      "next_control": "less",
+      "edges": [
+        [
+          "equal",
+          "less"
+        ],
+        [
+          "greater",
+          "greater"
+        ],
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "greater",
+      "symbol": "0100",
+      "next_control": "greater",
+      "edges": [
+        [
+          "equal",
+          "equal"
+        ],
+        [
+          "greater",
+          "greater"
+        ]
+      ]
+    },
+    {
+      "control": "greater",
+      "symbol": "0101",
+      "next_control": "greater",
+      "edges": [
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "greater",
+      "symbol": "0110",
+      "next_control": "less",
+      "edges": [
+        [
+          "equal",
+          "less"
+        ],
+        [
+          "greater",
+          "greater"
+        ]
+      ]
+    },
+    {
+      "control": "greater",
+      "symbol": "0111",
+      "next_control": "less",
+      "edges": [
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "greater",
+      "symbol": "1001",
+      "next_control": "greater",
+      "edges": [
+        [
+          "equal",
+          "greater"
+        ],
+        [
+          "greater",
+          "greater"
+        ],
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "greater",
+      "symbol": "1011",
+      "next_control": "greater",
+      "edges": [
+        [
+          "equal",
+          "equal"
+        ],
+        [
+          "greater",
+          "greater"
+        ],
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "less",
+      "symbol": "0000",
+      "next_control": "less",
+      "edges": [
+        [
+          "equal",
+          "equal"
+        ],
+        [
+          "greater",
+          "greater"
+        ],
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "less",
+      "symbol": "0010",
+      "next_control": "less",
+      "edges": [
+        [
+          "equal",
+          "less"
+        ],
+        [
+          "greater",
+          "greater"
+        ],
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "less",
+      "symbol": "0100",
+      "next_control": "less",
+      "edges": [
+        [
+          "equal",
+          "equal"
+        ],
+        [
+          "greater",
+          "greater"
+        ]
+      ]
+    },
+    {
+      "control": "less",
+      "symbol": "0101",
+      "next_control": "less",
+      "edges": [
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "less",
+      "symbol": "0110",
+      "next_control": "less",
+      "edges": [
+        [
+          "greater",
+          "greater"
+        ]
+      ]
+    },
+    {
+      "control": "less",
+      "symbol": "0111",
+      "next_control": "less",
+      "edges": [
+        [
+          "equal",
+          "equal"
+        ],
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "less",
+      "symbol": "1001",
+      "next_control": "greater",
+      "edges": [
+        [
+          "equal",
+          "greater"
+        ],
+        [
+          "greater",
+          "greater"
+        ],
+        [
+          "less",
+          "less"
+        ]
+      ]
+    },
+    {
+      "control": "less",
+      "symbol": "1011",
+      "next_control": "less",
+      "edges": [
+        [
+          "equal",
+          "equal"
+        ],
+        [
+          "greater",
+          "greater"
+        ],
+        [
+          "less",
+          "less"
+        ]
+      ]
+    }
+  ]
+}
