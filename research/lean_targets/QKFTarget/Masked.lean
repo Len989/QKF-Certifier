@@ -260,9 +260,10 @@ theorem exact_cyclic_successor (m : Machine n) (cert : Certificate n k)
     CyclicSuccessor is (value (emitted m m.initial is)) := by
   obtain ⟨cs, hc, _⟩ := encode_columns (extrema_admissible is).1
   have nonempty : 0 < cs.length := by
-    have lengths := congrArg List.length hc
-    simp only [List.length_map] at lengths
-    omega
+    have lengths : cs.length = is.length := by
+      simpa only [List.length_map] using congrArg List.length hc
+    rw [lengths]
+    exact positive
   obtain ⟨hl, hu, hg, hm, hw⟩ := cyclic_successor_all_widths m cert accepted cs nonempty
   have member := trace_admissible m cs m.initial
     (by simpa only [subsetBits, execute_history, bitEval] using hl)
@@ -273,26 +274,25 @@ theorem exact_cyclic_successor (m : Machine n) (cert : Certificate n k)
   have wrap : value (is.map inputSeed) = value (is.map inputMay) →
       value (emitted m m.initial is) = value (is.map inputMust) := by
     simpa only [number_seed, number_may, number_output, number_must, hc] using hw
-  refine ⟨⟨emitted m m.initial is, by simpa only [hc] using member, rfl⟩, ?_, ?_⟩
-  · intro hex
-    refine ⟨greater ((greater_exists_iff is).mp hex), ?_⟩
-    intro z hz hgz
-    obtain ⟨bs, hb, hv⟩ := hz
-    obtain ⟨zs, hi, ha⟩ := encode_columns hb
-    have nz : 0 < zs.length := by
-      have lengths := congrArg List.length hi
-      simp only [List.length_map] at lengths
-      omega
-    have hzpost := (cyclic_successor_all_widths m cert accepted zs nz).2.2.2.1
-    have hmz : value (is.map inputSeed) < z → value (emitted m m.initial is) ≤ z := by
-      simpa only [number_seed, number_alternative, number_output, hi, ha, hv] using hzpost
-    exact hmz hgz
-  · intro none
-    apply wrap
-    have hn : ¬ value (is.map inputSeed) ≠ value (is.map inputMay) := by
-      intro hne
-      exact none ((greater_exists_iff is).mpr hne)
-    omega
+  refine cyclic_extrema_characterization (Masked is)
+    (value (is.map inputMust)) (value (is.map inputMay))
+    (value (is.map inputSeed)) (value (emitted m m.initial is))
+    ⟨is.map inputSeed, (extrema_admissible is).2.2, rfl⟩
+    (masked_extrema is).2.1
+    (fun z hz => ((masked_extrema is).2.2 z hz).2)
+    ⟨emitted m m.initial is, by simpa only [hc] using member, rfl⟩ greater ?_ wrap
+  intro z hz hgz
+  obtain ⟨bs, hb, hv⟩ := hz
+  obtain ⟨zs, hi, ha⟩ := encode_columns hb
+  have nz : 0 < zs.length := by
+    have lengths : zs.length = is.length := by
+      simpa only [List.length_map] using congrArg List.length hi
+    rw [lengths]
+    exact positive
+  have hzpost := (cyclic_successor_all_widths m cert accepted zs nz).2.2.2.1
+  have hmz : value (is.map inputSeed) < z → value (emitted m m.initial is) ≤ z := by
+    simpa only [number_seed, number_alternative, number_output, hi, ha, hv] using hzpost
+  exact hmz hgz
 
 theorem original_exact (is : List Input) (positive : 0 < is.length) :
     CyclicSuccessor is (value (emitted Original.machine Original.machine.initial is)) := by
