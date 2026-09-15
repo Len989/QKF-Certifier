@@ -107,7 +107,7 @@ theorem observe_step {n k : Nat} (m : Machine k) (p : Program n)
     observe p (execStep m s c) = jointStep m p (observe p s) c := by
   apply joint_ext
   refine ⟨rfl, ?_, ?_⟩
-  · simp [observe, execStep]
+  · cases s.history <;> rfl
   · intro i
     exact atom_snoc (p.atoms i) s.history (environment m s.source c)
 
@@ -164,7 +164,9 @@ theorem accepted_all_widths {n k size : Nat} (m : Machine k) (p : Program n)
   cases hh : (execute m xs).history with
   | nil =>
     have hx : xs.length = 0 := by simpa [hh] using len.symm
-    exact (positive (List.length_eq_zero.mp hx)).elim
+    cases xs with
+    | nil => exact (positive rfl).elim
+    | cons a rest => simp at hx
   | cons e es =>
     simpa [good, observe, semanticGoal, hh] using hg
 
