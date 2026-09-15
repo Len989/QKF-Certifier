@@ -41,6 +41,7 @@ def Bounded (s : Numbers) : Prop := ∀ w, s.value w < 2 ^ s.width
 
 theorem start_bounded : Bounded numberStart := by
   intro w
+  change 0 < 1
   decide
 
 theorem step_bounded (s : Numbers) (h : Bounded s) (e : Env) : Bounded (numberStep s e) := by
@@ -73,6 +74,7 @@ theorem atom_numerical_step (a : Atom) (s : Numbers) (h : Bounded s) (e : Env) :
     | eq =>
       have he := equality_high (h l) (h r) (bitEval l e) (bitEval r e)
       simp [atomStep, numericAtom, numberStep, he]
+      cases bitEval l e <;> cases bitEval r e <;> rfl
     | subset => simp [atomStep, numericAtom, subsetBits, numberStep, List.all_append]
     | disjoint => simp [atomStep, numericAtom, disjointBits, numberStep, List.all_append]
     | order =>
@@ -84,7 +86,7 @@ theorem zip_map {A B C : Type} (xs : List A) (f : A → B) (g : A → B → C) :
     List.zipWith g xs (xs.map f) = xs.map (fun a => g a (f a)) := by
   induction xs with
   | nil => rfl
-  | cons a xs ih => simp [List.zipWith, ih]
+  | cons a xs ih => simp [ih]
 
 structure Concrete (n : Nat) where
   source : Fin n
@@ -159,7 +161,7 @@ def SuccessorNumeric (s : Numbers) : Prop :=
   (s.value (.var .seed) = s.value (.var .may) → s.value (.var .output) = s.value (.var .must))
 
 def cmpLt : Cmp → Bool | .lt => true | _ => false
-def cmpLe : Cmp → Bool | .gt => false | _ => true
+def cmpLe : Cmp → Bool | .lt | .eq => true | .gt => false
 
 theorem cmpNat_lt_value (a b : Nat) : cmpLt (cmpNat a b) = decide (a < b) := by
   unfold cmpNat
@@ -246,10 +248,10 @@ theorem cyclic_extrema_characterization (L : Nat → Prop) (minimum maximum seed
     exact ⟨advance hne, minimal⟩
   · intro hnone
     have hle := bounded seed seedLegal
-    have heq : seed = maximum := by
-      by_contra hne
-      have hlt : seed < maximum := by omega
+    have hnlt : ¬ seed < maximum := by
+      intro hlt
       exact hnone ⟨maximum, maxLegal, hlt⟩
+    have heq : seed = maximum := by omega
     exact wrap heq
 
 end QKFTarget
