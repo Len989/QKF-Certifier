@@ -190,7 +190,9 @@ theorem successor_formula_numerical (s : Numbers) :
     cases eyz : cmpNat (s.value (.var .output)) (s.value (.var .alternative)) <;>
     simp_all [successorProgram, eval, numericAtom, SuccessorNumeric, cmpLt, cmpLe]
   all_goals
-    by_cases heq : s.value (.var .seed) = s.value (.var .may) <;> simp_all <;> omega
+    cases Nat.decEq (s.value (.var .seed)) (s.value (.var .may)) with
+    | isTrue heq => simp_all <;> omega
+    | isFalse hne => simp_all <;> omega
 
 theorem cyclic_successor_all_widths (m : Machine n) (c : Certificate n k)
     (hc : Accepted m successorProgram c) (xs : List Column) (positive : 0 < xs.length) :
