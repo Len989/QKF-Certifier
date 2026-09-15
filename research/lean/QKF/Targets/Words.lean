@@ -42,21 +42,24 @@ theorem trace_output {k : Nat} (m : Machine k) (xs : List Column) (s : Fin k) :
   rw [execute_history]
   simp only [number, bit]
   rw [trace_read m .must (fun c => must (input c)) (fun _ _ => rfl)]
-  simp [List.map_map]
+  simp only [List.map_map]
+  rfl
 
 @[simp] theorem number_execute_may {k : Nat} (m : Machine k) (xs : List Column) :
     number (.var .may) (execute m xs).history = value ((xs.map input).map may) := by
   rw [execute_history]
   simp only [number, bit]
   rw [trace_read m .may (fun c => may (input c)) (fun _ _ => rfl)]
-  simp [List.map_map]
+  simp only [List.map_map]
+  rfl
 
 @[simp] theorem number_execute_seed {k : Nat} (m : Machine k) (xs : List Column) :
     number (.var .seed) (execute m xs).history = value ((xs.map input).map seed) := by
   rw [execute_history]
   simp only [number, bit]
   rw [trace_read m .seed (fun c => seed (input c)) (fun _ _ => rfl)]
-  simp [List.map_map]
+  simp only [List.map_map]
+  rfl
 
 @[simp] theorem number_execute_alternative {k : Nat} (m : Machine k) (xs : List Column) :
     number (.var .alternative) (execute m xs).history = value (xs.map alternative) := by
@@ -77,8 +80,11 @@ theorem output_independent {k : Nat} (m : Machine k) (xs ys : List Column)
   simp only [number_execute_output, same]
 
 /- Exactly legal output bits, with simultaneous equal lengths. -/
-def AdmissibleBits (is : List Input) (bs : List Bool) : Prop :=
-  List.Forall₂ (fun i b => allowed (must i) (may i) b = true) is bs
+inductive AdmissibleBits : List Input → List Bool → Prop where
+  | nil : AdmissibleBits [] []
+  | cons {i : Input} {b : Bool} {is : List Input} {bs : List Bool} :
+      allowed (must i) (may i) b = true → AdmissibleBits is bs →
+        AdmissibleBits (i :: is) (b :: bs)
 
 /- A numerical carrier: all numbers represented by the legal masked bit lists.
 No source execution or certificate is used in this definition. -/
@@ -154,7 +160,7 @@ theorem trace_admissible {k : Nat} (m : Machine k) (xs : List Column) (s : Fin k
   | nil => exact .nil
   | cons c rest ih =>
     simp only [support, trace, List.all_cons, Bool.and_eq_true, bit, environment] at hl hu
-    apply List.Forall₂.cons
+    apply AdmissibleBits.cons
     · exact Bool.and_eq_true.mpr ⟨hl.1, by simpa [Bool.or_comm] using hu.1⟩
     · exact ih _ hl.2 hu.2
 
