@@ -1,0 +1,6 @@
+name = "qkf_target_pilot"
+version = "0.1.0"
+defaultTargets = ["QKFTarget"]
+
+[[lean_lib]]
+name = "QKFTarget"
