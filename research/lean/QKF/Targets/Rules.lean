@@ -93,6 +93,9 @@ theorem atom_empty (a : Atom) : atomMeaning a [] = atomStart a := by
   cases a with
   | mk k l r => cases k <;> rfl
 
+theorem bool_decide_eq (x y : Bool) : decide (x = y) = (x == y) := by
+  cases x <;> cases y <;> rfl
+
 theorem atom_snoc (a : Atom) (h : List Env) (e : Env) :
     atomMeaning a (h ++ [e]) = atomStep a (atomMeaning a h) e := by
   have hl := number_bound a.left h
@@ -101,7 +104,7 @@ theorem atom_snoc (a : Atom) (h : List Env) (e : Env) :
   | mk k l r =>
     cases k
     · simp only [atomMeaning, atomStep, Answer.asBool, number_snoc]
-      simp [extend_eq hl hr]
+      simp [extend_eq hl hr, bool_decide_eq]
     · simp [atomMeaning, atomStep, Answer.asBool, support, List.all_append]
     · simp [atomMeaning, atomStep, Answer.asBool, apart, List.all_append]
     · simp only [atomMeaning, atomStep, Answer.asOrder, number_snoc]
