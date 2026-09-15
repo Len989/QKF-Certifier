@@ -1,0 +1,14 @@
+{
+  "schema": "qkf-run4-source-bindings-v1",
+  "exported_lean_sha256": "787a75fc3f774f41fe2dd9f798c8ad5fcd8ed582f5b2f0954e9b2a0f9e035b2c",
+  "sources": {
+    "original": {
+      "source_sha256": "1a827adb88f57b8f612979af5b90016077cbf4dad4c54b34e539fee5fce01c95",
+      "source_certificate_sha256": "d1a45b19b586ea954c2026a35f15134046f416399715bec4bed90303363399f2"
+    },
+    "irrelevant_register": {
+      "source_sha256": "73f464c030874abce2f60ed5d3e920a9acb95005e693d3c5044ac8700cfda0f0",
+      "source_certificate_sha256": "a1f827a613c0729e2746bf9b88997d1d25d231cb99f458e3c897f80d9ea67b93"
+    }
+  }
+}

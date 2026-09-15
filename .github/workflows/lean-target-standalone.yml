@@ -23,13 +23,20 @@ jobs:
         with:
           lake-package-directory: research/lean_targets
           use-github-cache: false
-      - name: Record compiler and theorem axiom dependencies
-        working-directory: research/lean_targets
+      - name: Fresh build, exact source bindings, axiom audit and six negative controls
+        run: python -O research/lean_targets/check_ci.py --output reproduction/lean_target_standalone --timeout 300
+      - name: Require the complete accepted result
         run: |
-          mkdir -p ../../reproduction/lean_target_standalone
-          lean --version | tee ../../reproduction/lean_target_standalone/version.log
-          set -o pipefail
-          lake env lean Audit.lean | tee ../../reproduction/lean_target_standalone/axioms.log
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          result = json.loads(Path('reproduction/lean_target_standalone/RESULT.json').read_text())
+          if result['status'] != 'accepted' or result['lean_checked'] is not True:
+              raise SystemExit('formal validation not accepted')
+          if len(result['axioms']) != 10 or len(result['controls']) != 6:
+              raise SystemExit('incomplete axiom audit or negative controls')
+          print(json.dumps(result, sort_keys=True))
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
