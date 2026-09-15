@@ -7,6 +7,7 @@ This directory makes the later QKF work reproducible alongside the Python coordi
 | knownbits/ | Original 39-program corpus: 11 whole proofs, 104/411 component proofs | Repository research runner |
 | graal/ | Universal upper and conditional lower contracts, with their saved proof chain | Repository research runner |
 | lean/ | Formal rows, carry quotient, gluing and numerical successor model | lake build in that directory |
+| observations/ | Source-derived factors; independent descending maximum and ascending cyclic successor goals | Research CLIs and saved-evidence replay below |
 
 Use Python 3.12 on Linux/POSIX, without -O. From the repository root:
 
@@ -72,9 +73,29 @@ The [ascending source stage](observations/ASCENDING_REPORT_RU.md) derives
 Boolean-register and integer-offset states from the actual repair loop, using
 shared parsing and observation kernels. No old carry cell or prescribed phase
 table is used. Five source variants agree with 28,105 JVM executions of the
-extracted region. The certificate covers all positive mathematical payload
-widths under a legal-mask entry contract; whole-helper control flow and an
-independent all-width successor target remain separate work.
+extracted region. That source certificate covers all positive mathematical
+payload widths under a legal-mask entry contract; it does not by itself prove
+an independent successor goal or the surrounding helper control flow.
+
+The [independent successor stage](observations/SUCCESSOR_REPORT_RU.md) now connects
+that source-derived factor to a separately supplied cyclic-successor target.
+The original and irrelevant-register variants have an 8-state / 48-transition
+closed-observation certificate for every positive mathematical payload width.
+Three behavior-changing variants have checked integer counterexamples while
+still satisfying the weaker mask-membership target. The new schema does not
+certify whole-helper control flow, full signed Java returns or a new Lean theorem.
+Ten [retained property packages](observations/evidence/successor/README.md) replay
+without producer search, SMT or native Java, including under Python -O:
+
+```sh
+python -O -m research.observations.replay_successor_evidence
+python -m research.observations.run_successor_experiment reproduction/successor_01
+```
+
+These observation entry points require Python 3.10+ and are separate from the
+publication-capsule runner above and the installed public package. Add `--native`
+to the experiment for bounded Java 17+ validation. Per-source target checking is
+available through `python -m research.observations.successor_cli --help`.
 
 ```sh
 python -m research.observations carry reproduction/observations_carry

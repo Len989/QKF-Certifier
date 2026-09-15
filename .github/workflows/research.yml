@@ -52,6 +52,17 @@ jobs:
           python -O -m research.observations.ascending_cli check
           reproduction/observations/ascending/original.java
           reproduction/observations/ascending/original.certificate.json
+      - name: Check independent cyclic successor and membership targets against native Java
+        run: python -m research.observations.run_successor_experiment reproduction/observations/successor --native
+      - name: Replay the independent successor goal under Python -O
+        run: >-
+          python -O -m research.observations.successor_cli check
+          reproduction/observations/successor/original.java
+          --source-certificate reproduction/observations/successor/original.source_certificate.json
+          --spec reproduction/observations/successor/cyclic_successor.spec.json
+          --certificate reproduction/observations/successor/original.cyclic_successor.certificate.json
+      - name: Record the compact successor replay snapshot
+        run: cat reproduction/observations/successor/SNAPSHOT.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
