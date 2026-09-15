@@ -1,5 +1,5 @@
-import QKF.Targets.Kernel
+import QKF.Targets.Successor
 
-#check QKF.Targets.atom_snoc
-#check QKF.Targets.columns_complete
 #check QKF.Targets.accepted_all_widths
+#check QKF.Targets.successor_semantics
+#check QKF.Targets.successor_from_certificate
