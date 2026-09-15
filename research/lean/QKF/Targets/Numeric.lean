@@ -71,7 +71,7 @@ theorem value_snoc (bs : List Bool) (b : Bool) :
   | nil => simp [value]
   | cons a bs ih =>
     simp only [List.cons_append, value, List.length_cons, ih, Nat.pow_succ]
-    simp [Nat.mul_add, Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm, Nat.add_assoc]
+    simp [Nat.mul_add, Nat.mul_assoc, Nat.mul_comm, Nat.add_assoc]
 
 theorem value_injective {as bs : List Bool} (hl : as.length = bs.length)
     (hv : value as = value bs) : as = bs := by
@@ -86,6 +86,6 @@ theorem value_injective {as bs : List Bool} (hl : as.length = bs.length)
         cases a <;> cases b <;> simp [value, digit] at hv <;> omega
       have bit : a = b := by
         cases a <;> cases b <;> simp_all [value, digit] <;> omega
-      exact congrArg₂ List.cons bit (ih len vals)
+      rw [bit, ih len vals]
 
 end QKF.Targets
