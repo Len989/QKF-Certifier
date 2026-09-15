@@ -1,0 +1,28 @@
+name: Exact masked successor
+on:
+  push:
+    branches: [research/exact-masked-successor-v1]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-successor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned Lean and check the existing project
+        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
+        with:
+          lake-package-directory: research/lean_targets
+          use-github-cache: false
+      - name: Build the exact masked-word bridge
+        working-directory: research/lean_targets
+        run: lake build QKFTarget.Masked
+      - name: Print new theorem dependencies
+        working-directory: research/lean_targets
+        run: lake env lean MaskedAudit.lean
