@@ -112,7 +112,7 @@ theorem trace_output (m : Machine n) (xs : List Column) (s : Fin n) :
   rw [executed_value]
   simp only [bitEval]
   rw [trace_read m .must mustBit (fun _ _ => rfl)]
-  simp only [List.map_map, project_must]
+  simp only [List.map_map, Function.comp_def, project_must]
 
 @[simp] theorem number_may (m : Machine n) (xs : List Column) :
     (run (concreteStep m) (concreteStart m) xs).numbers.value (.var .may) =
@@ -120,7 +120,7 @@ theorem trace_output (m : Machine n) (xs : List Column) (s : Fin n) :
   rw [executed_value]
   simp only [bitEval]
   rw [trace_read m .may mayBit (fun _ _ => rfl)]
-  simp only [List.map_map, project_may]
+  simp only [List.map_map, Function.comp_def, project_may]
 
 @[simp] theorem number_seed (m : Machine n) (xs : List Column) :
     (run (concreteStep m) (concreteStart m) xs).numbers.value (.var .seed) =
@@ -128,7 +128,7 @@ theorem trace_output (m : Machine n) (xs : List Column) (s : Fin n) :
   rw [executed_value]
   simp only [bitEval]
   rw [trace_read m .seed seedBit (fun _ _ => rfl)]
-  simp only [List.map_map, project_seed]
+  simp only [List.map_map, Function.comp_def, project_seed]
 
 @[simp] theorem number_alternative (m : Machine n) (xs : List Column) :
     (run (concreteStep m) (concreteStart m) xs).numbers.value (.var .alternative) =
@@ -302,5 +302,22 @@ theorem irrelevant_exact (is : List Input) (positive : 0 < is.length) :
     CyclicSuccessor is (value (emitted Irrelevant.machine Irrelevant.machine.initial is)) := by
   apply exact_cyclic_successor Irrelevant.machine Irrelevant.certificate _ is positive
   simpa only [Irrelevant.program_matches] using Irrelevant.accepted
+
+theorem cyclic_successor_unique (is : List Input) {y z : Nat}
+    (hy : CyclicSuccessor is y) (hz : CyclicSuccessor is z) : y = z := by
+  by_cases h : value (is.map inputSeed) = value (is.map inputMay)
+  · have none : ¬ ∃ x, Masked is x ∧ value (is.map inputSeed) < x := by
+      rintro ⟨x, hx, hg⟩
+      have upper := (masked_extrema is).2.2 x hx
+      omega
+    exact (hy.2.2 none).trans (hz.2.2 none).symm
+  · have greater := (greater_exists_iff is).mpr h
+    exact Nat.le_antisymm ((hy.2.1 greater).2 z hz.1 (hz.2.1 greater).1)
+      ((hz.2.1 greater).2 y hy.1 (hy.2.1 greater).1)
+
+theorem original_irrelevant_same (is : List Input) (positive : 0 < is.length) :
+    value (emitted Original.machine Original.machine.initial is) =
+      value (emitted Irrelevant.machine Irrelevant.machine.initial is) :=
+  cyclic_successor_unique is (original_exact is positive) (irrelevant_exact is positive)
 
 end QKFTarget.MaskedWords

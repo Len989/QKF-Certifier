@@ -14,3 +14,5 @@ import QKFTarget.Masked
 #print axioms QKFTarget.MaskedWords.exact_cyclic_successor
 #print axioms QKFTarget.MaskedWords.original_exact
 #print axioms QKFTarget.MaskedWords.irrelevant_exact
+#print axioms QKFTarget.MaskedWords.cyclic_successor_unique
+#print axioms QKFTarget.MaskedWords.original_irrelevant_same
