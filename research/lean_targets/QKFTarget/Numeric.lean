@@ -182,44 +182,13 @@ theorem cmpNat_le_value (a b : Nat) : cmpLe (cmpNat a b) = decide (a ≤ b) := b
 theorem successor_formula_numerical (s : Numbers) :
     eval successorProgram.target (successorProgram.atoms.map (fun a => numericAtom a s)) = true ↔
       SuccessorNumeric s := by
-  let g := s.value (.var .seed)
-  let a := s.value (.var .may)
-  let y := s.value (.var .output)
-  let z := s.value (.var .alternative)
-  let m := s.value (.var .must)
-  change
-    (subsetBits s (.var .must) (.var .output) &&
-      (subsetBits s (.var .output) (.var .may) &&
-        ((!(!(decide (g = a))) || cmpLt (cmpNat g y)) &&
-          ((!cmpLt (cmpNat g z) || cmpLe (cmpNat y z)) &&
-            (!(decide (g = a)) || decide (y = m)))))) = true ↔ _
-  rw [cmpNat_lt_value, cmpNat_lt_value, cmpNat_le_value]
-  simp only [Bool.not_not, Bool.and_eq_true, Bool.or_eq_true, Bool.not_eq_true,
-    decide_eq_true_eq, decide_eq_false_iff_not]
-  change
-    (subsetBits s (.var .must) (.var .output) = true ∧
-      subsetBits s (.var .output) (.var .may) = true ∧
-      (g = a ∨ g < y) ∧ (¬ g < z ∨ y ≤ z) ∧ (g ≠ a ∨ y = m)) ↔
-    (subsetBits s (.var .must) (.var .output) = true ∧
-      subsetBits s (.var .output) (.var .may) = true ∧
-      (g ≠ a → g < y) ∧ (g < z → y ≤ z) ∧ (g = a → y = m))
-  constructor
-  · rintro ⟨hm, ha, hg, hz, hw⟩
-    refine ⟨hm, ha, ?_, ?_, ?_⟩
-    · intro hne; exact hg.resolve_left hne
-    · intro hgt; exact hz.resolve_left (fun hn => hn hgt)
-    · intro heq; exact hw.resolve_left (fun hn => hn heq)
-  · rintro ⟨hm, ha, hg, hz, hw⟩
-    refine ⟨hm, ha, ?_, ?_, ?_⟩
-    · by_cases heq : g = a
-      · exact Or.inl heq
-      · exact Or.inr (hg heq)
-    · by_cases hgt : g < z
-      · exact Or.inr (hz hgt)
-      · exact Or.inl hgt
-    · by_cases heq : g = a
-      · exact Or.inr (hw heq)
-      · exact Or.inl heq
+  have hgy := cmpNat_lt_value (s.value (.var .seed)) (s.value (.var .output))
+  have hgz := cmpNat_lt_value (s.value (.var .seed)) (s.value (.var .alternative))
+  have hyz := cmpNat_le_value (s.value (.var .output)) (s.value (.var .alternative))
+  cases egy : cmpNat (s.value (.var .seed)) (s.value (.var .output)) <;>
+    cases egz : cmpNat (s.value (.var .seed)) (s.value (.var .alternative)) <;>
+    cases eyz : cmpNat (s.value (.var .output)) (s.value (.var .alternative)) <;>
+    simp_all [successorProgram, eval, numericAtom, SuccessorNumeric, cmpLt, cmpLe]
 
 theorem cyclic_successor_all_widths (m : Machine n) (c : Certificate n k)
     (hc : Accepted m successorProgram c) (xs : List Column) (positive : 0 < xs.length) :
