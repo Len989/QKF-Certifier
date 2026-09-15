@@ -1,15 +1,18 @@
 """Common research proof envelope. Replay imports no producer or native harness.
 
 The external specification selects one of two fixed profiles. Package data
-cannot select Python modules, files, premises or a weaker target. The two
-embedded certificates keep their existing schemas and are replayed by their
-original checkers. This layer establishes no new source-language theorem.
+cannot select Python modules, files, premises or a weaker target. Legacy
+specifications keep their v1 schemas and checkers. Typed word formulas select a
+separate v2 envelope and generic target checker. Neither route adds a new
+source-language theorem.
 """
 import hashlib
 
 from .model import digest
 
 SCHEMA = "qkf-research-package-v1"
+TYPED_SCHEMA = "qkf-research-package-v2"
+TYPED_SPEC = "qkf-word-observation-spec-v1"
 RESULT_SCHEMA = "qkf-research-run-result-v1"
 EXIT_CODES = {
     "certified": 0, "refuted": 1, "budget_exhausted": 2,
@@ -53,6 +56,16 @@ def profile_for(spec, requested=None):
     """The caller's goal, never the package, determines the replay profile."""
     if type(spec) is not dict or type(spec.get("schema")) is not str:
         raise RunError("input_error", "specification", "a versioned external specification is required")
+    if spec["schema"] == TYPED_SPEC:
+        from .target_syntax import compile_spec
+        try:
+            compile_spec(spec)
+        except VALIDATION_ERRORS as exc:
+            raise RunError("input_error", "specification", str(exc)) from exc
+        selected = spec["profile"]
+        if requested is not None and (type(requested) is not str or requested != selected):
+            raise RunError("input_error", "profile", "profile conflicts with the external specification")
+        return selected
     profiles = [name for name, value in PROFILES.items()
                 if value["specification_schema"] == spec["schema"]]
     if len(profiles) != 1:
@@ -94,16 +107,34 @@ def _binding(source, spec, source_certificate, property_certificate):
     }
 
 
+def contract_for(spec, profile):
+    """Version the new route without changing any v1 envelope or inner proof."""
+    contract = dict(PROFILES[profile])
+    if spec["schema"] == TYPED_SPEC:
+        contract.update(specification_schema=TYPED_SPEC,
+                        property_schema="qkf-word-observation-property-v1")
+    return contract
+
+
+def package_schema(spec):
+    return TYPED_SCHEMA if spec["schema"] == TYPED_SPEC else SCHEMA
+
+
 def _checked_result(source, spec, profile, source_certificate, property_certificate):
     if profile == "ascending":
         from .ascending_kernel import check as check_source
+    else:
+        from .source_factor import check as check_source
+    if spec["schema"] == TYPED_SPEC:
+        from .target_kernel import check as check_property
+        expected_claim = "word_observation_formula"
+    elif profile == "ascending":
         from .successor_kernel import check as check_property
         expected_claim = "masked_" + spec["claim"]
     else:
-        from .source_factor import check as check_source
         from .property_kernel import check as check_property
         expected_claim = "masked_upper_" + spec["claim"]
-    contract = PROFILES[profile]
+    contract = contract_for(spec, profile)
     _require(type(source_certificate) is dict
              and source_certificate.get("schema") == contract["source_schema"], "source certificate schema")
     _require(type(property_certificate) is dict
@@ -137,9 +168,9 @@ def check_package(source, spec, package, *, profile=None):
         _require(type(package) is dict and set(package) == {
             "schema", "profile", "contracts", "binding", "dependencies", "proofs", "result"
         }, "research package fields")
-        _require(package["schema"] == SCHEMA and package["profile"] == selected,
+        _require(package["schema"] == package_schema(spec) and package["profile"] == selected,
                  "package schema and externally selected profile")
-        _require(digest(package["contracts"]) == digest(PROFILES[selected]), "semantic contract identifiers")
+        _require(digest(package["contracts"]) == digest(contract_for(spec, selected)), "semantic contract identifiers")
         _require(digest(package["dependencies"]) == digest(DEPENDENCIES), "fixed proof dependency graph")
         proofs = package["proofs"]
         _require(type(proofs) is dict and set(proofs) == {"source", "property"}, "two embedded proofs")
@@ -159,7 +190,7 @@ def create_package(source, spec, profile, source_certificate, property_certifica
     try:
         result = _checked_result(source, spec, selected, source_certificate, property_certificate)
         return {
-            "schema": SCHEMA, "profile": selected, "contracts": dict(PROFILES[selected]),
+            "schema": package_schema(spec), "profile": selected, "contracts": contract_for(spec, selected),
             "binding": _binding(source, spec, source_certificate, property_certificate),
             "dependencies": {key: list(value) for key, value in DEPENDENCIES.items()},
             "proofs": {"source": source_certificate, "property": property_certificate}, "result": result,
@@ -193,4 +224,9 @@ def explain_package(source, spec, package, *, profile=None):
     else:
         explanation.update(closed_states=goal["closed_states"],
                            checked_transitions=goal["checked_transitions"])
+    if spec["schema"] == TYPED_SPEC:
+        from .target_syntax import compile_spec
+        explanation.update(domain=spec["domain"], quantifier=spec["quantifier"],
+                           derived_observations=compile_spec(spec)["atoms"],
+                           assumption_satisfiability="not certified")
     return {**result, "explanation": explanation}

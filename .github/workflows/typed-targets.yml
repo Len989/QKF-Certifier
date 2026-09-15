@@ -1,0 +1,85 @@
+name: Typed targets and existing Lean regression
+on:
+  push:
+    branches: [main, research/runs-2-and-4]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: typed-targets-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  typed-targets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record exact tested revision
+        run: |
+          mkdir -p reproduction/typed
+          git rev-parse HEAD > reproduction/typed/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/typed/tree.txt
+      - name: All observation tests in ordinary and optimized Python
+        run: |
+          python -m unittest discover -s research/observations/tests -v
+          python -O -m unittest discover -s research/observations/tests -v
+      - name: Fresh inference of all 23 source and target packages
+        run: python -m research.observations.run_target_experiment reproduction/typed/fresh
+      - name: Replay and compare with the frozen package identities
+        run: |
+          python -O -m research.observations.run_target_experiment reproduction/typed/fresh --replay
+          python -O -m research.observations.target_evidence reproduction/typed/fresh --compare-fresh
+          python -O -m research.observations.target_evidence reproduction/typed/retained
+      - name: Preserve all 18 legacy package fingerprints
+        run: python -O -m research.observations.run_unified_experiment reproduction/typed/legacy --retained-only
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: typed-targets-py${{ matrix.python-version }}
+          path: reproduction/typed/
+          retention-days: 30
+  existing-lean-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build unchanged formal project from merged PR8
+        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
+        with:
+          lake-package-directory: research/lean_targets
+          use-github-cache: false
+      - name: Fresh build, ten-theorem axiom audit and six negative controls
+        run: python -O research/lean_targets/check_ci.py --output reproduction/existing_lean --timeout 300
+      - name: Require formal acceptance, not just Python success
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          result = json.loads(Path('reproduction/existing_lean/RESULT.json').read_text())
+          if result['status'] != 'accepted' or result['lean_checked'] is not True:
+              raise SystemExit('existing formal project not accepted')
+          if len(result['axioms']) != 10 or len(result['controls']) != 6:
+              raise SystemExit('incomplete formal regression')
+          print(json.dumps(result, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: typed-targets-existing-lean
+          path: reproduction/existing_lean/
+          retention-days: 30

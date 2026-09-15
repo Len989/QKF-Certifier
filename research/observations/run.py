@@ -26,6 +26,7 @@ def parser():
     target.add_argument("output", type=Path)
     target.add_argument("--profile", choices=tuple(PROFILES), required=True)
     target.add_argument("--claim", required=True)
+    target.add_argument("--language", choices=("legacy", "observations"), default="legacy")
     for command in ("verify", "check", "explain"):
         action = commands.add_parser(command, allow_abbrev=False)
         action.add_argument("source", type=Path)
@@ -41,7 +42,11 @@ def parser():
 
 def execute(args):
     if args.command == "spec":
-        if args.profile == "ascending":
+        if getattr(args, "language", "legacy") == "observations":
+            from .target_templates import template
+            def specification(claim):
+                return template(args.profile, claim)
+        elif args.profile == "ascending":
             from .successor_spec import specification
         else:
             from .upper_spec import specification
