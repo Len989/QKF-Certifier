@@ -1,0 +1,58 @@
+name: Unified research run
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: unified-research-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  common-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Test common packages, CLI, corruption rejection and isolated replay
+        run: python -m unittest discover -s research/observations/tests -p 'test_run*.py' -v
+      - name: Produce all eighteen source-to-target packages
+        run: python -m research.observations.run_unified_experiment reproduction/common/fresh
+      - name: Rebuild and replay all retained packages without search under Python -O
+        run: python -O -m research.observations.run_unified_experiment reproduction/common/retained --retained-only
+      - name: Check fresh and retained package identities
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          fresh = json.loads(Path('reproduction/common/fresh/SUMMARY.json').read_text())
+          retained = json.loads(Path('reproduction/common/retained/SUMMARY.json').read_text())
+          if fresh['cases'] != retained['cases'] or fresh['counts'] != retained['counts']:
+              raise SystemExit('fresh and retained packages differ')
+          print(json.dumps({'identical_packages': len(fresh['cases']), 'counts': fresh['counts']}))
+          PY
+      - name: Replay descending maximum through the public research command
+        run: >-
+          python -O -m research.observations.run check
+          reproduction/common/fresh/descending.original.maximum/source.java
+          --spec reproduction/common/fresh/descending.original.maximum/goal.json
+          --package reproduction/common/fresh/descending.original.maximum/package.json
+      - name: Explain ascending successor through the public research command
+        run: >-
+          python -O -m research.observations.run explain
+          reproduction/common/fresh/ascending.original.cyclic_successor/source.java
+          --spec reproduction/common/fresh/ascending.original.cyclic_successor/goal.json
+          --package reproduction/common/fresh/ascending.original.cyclic_successor/package.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: common-research-run-py${{ matrix.python-version }}
+          path: reproduction/common/
+          retention-days: 30

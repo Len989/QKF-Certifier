@@ -7,7 +7,7 @@ This directory makes the later QKF work reproducible alongside the Python coordi
 | knownbits/ | Original 39-program corpus: 11 whole proofs, 104/411 component proofs | Repository research runner |
 | graal/ | Universal upper and conditional lower contracts, with their saved proof chain | Repository research runner |
 | lean/ | Formal rows, carry quotient, gluing and numerical successor model | lake build in that directory |
-| observations/ | Source-derived factors; independent descending maximum and ascending cyclic successor goals | Research CLIs and saved-evidence replay below |
+| observations/ | Source-derived factors; independent descending maximum and ascending cyclic successor goals | Common research run and saved-evidence replay below |
 
 Use Python 3.12 on Linux/POSIX, without -O. From the repository root:
 
@@ -38,6 +38,33 @@ Lean selects version 4.33.0 from lean-toolchain. Python, Mathlib, SMT and Java a
 The Lean proof covers the explicit ascending mathematical model and modeled nonsign source cells. Complete Java helpers, full Graal create and Python certifiers are outside that formalization. The lower source contract requires lower <= 0 or a forbidden negative sign; it preserves the joint carrier and need not return its exact minimum.
 
 CAPSULE_ORIGIN.json records unchanged files in each Python profile. QKF research code is covered by the project MIT code license. Upstream sources and examples retain their own notices and licenses.
+
+## Common source-to-target run (post-release research)
+
+The [common research interface](observations/UNIFIED_RUN.md) accepts one external
+source, an explicit profile and an independently supplied goal. It produces a
+self-contained proof envelope, or a distinct unresolved/error result. The same
+`check` and `explain` commands replay descending maximum/bound and ascending
+cyclic-successor/membership packages without search, SMT or Java:
+
+```sh
+python -m research.observations.run spec successor.goal.json --profile ascending --claim cyclic_successor
+python -m research.observations.run verify research/graal/native/IntegerStamp.java --profile ascending --spec successor.goal.json --output reproduction/common_successor_01
+python -O -m research.observations.run check research/graal/native/IntegerStamp.java --spec successor.goal.json --package reproduction/common_successor_01/package.json
+```
+
+Use new output paths. Python 3.10+ and a full checkout are required; the installed
+`qkf` application is unchanged. Source-model equivalence and external target
+correctness remain separate claims. For all 18 existing target cases:
+
+```sh
+python -m research.observations.run_unified_experiment reproduction/common_fresh_01
+python -O -m research.observations.run_unified_experiment reproduction/common_retained_01 --retained-only
+```
+
+The second command reconstructs/replays envelopes from retained proofs without
+producer imports. See the guide for exact exit codes, budgets, schema, trust
+boundary and the separate Unified research run CI workflow.
 
 ## Automatic observation inference (post-release research)
 

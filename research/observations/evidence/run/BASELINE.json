@@ -1,0 +1,29 @@
+{
+  "schema": "qkf-common-run-baseline-v1",
+  "base_commit": "655108197d6e2978332829940df80543dea0aec9",
+  "validated_commit": "c6a69fd5554b6bd19f67aa42de6379df186182d2",
+  "workflow_run": 34935915604,
+  "recorded_job": 104273643826,
+  "meaning": "Regression fingerprints of fully replayed packages, not proof acceptance by hash. Rebuild from retained inner certificates with run_unified_experiment --retained-only.",
+  "counts": {"certified": 11, "refuted": 7},
+  "packages": {
+    "ascending.clear_repair.cyclic_successor": {"status": "refuted", "package_bytes": 7605, "package_sha256": "5b3de2e6b80fdb5aa4021b3fa383d221b71c487f2809fdee01b342dcaf746db2"},
+    "ascending.clear_repair.membership": {"status": "certified", "package_bytes": 8843, "package_sha256": "46542c030b71397c06f937edb6bd616b04640d5bd672b9c1a30f8a67556101dc"},
+    "ascending.first_four_bits.cyclic_successor": {"status": "refuted", "package_bytes": 8222, "package_sha256": "b0080148e81756061f192680a25057da0e4c774ae6ce0b0da003104a9e4a3248"},
+    "ascending.first_four_bits.membership": {"status": "certified", "package_bytes": 9809, "package_sha256": "3e1f840204f44a30fa0b8f75c89d2e1ec94096d0065aa12262f846b14eaa3598"},
+    "ascending.first_or.cyclic_successor": {"status": "refuted", "package_bytes": 7009, "package_sha256": "475cceddfc231cb061fd37d2f35e6d9c1a90573212a93d4b05bc8474d556ed05"},
+    "ascending.first_or.membership": {"status": "certified", "package_bytes": 7447, "package_sha256": "07adddab4bb66c950aaae45296cf34df31ccf4661197e4c5d76185f73c8d7aae"},
+    "ascending.irrelevant_register.cyclic_successor": {"status": "certified", "package_bytes": 7814, "package_sha256": "b0b1c2f9790966965e53612bac15a37cb3ff1a170bf6e0f5a142b1bcd9f991cd"},
+    "ascending.irrelevant_register.membership": {"status": "certified", "package_bytes": 7669, "package_sha256": "2972039bfaff87cd021404a0b35d1a037fb1dfc6d909755b17e2d496ae9c179f"},
+    "ascending.original.cyclic_successor": {"status": "certified", "package_bytes": 7542, "package_sha256": "55897c7611f0758fbdd9c57f1607c57490e2f1101c6a25a805d33f8fd95364ca"},
+    "ascending.original.membership": {"status": "certified", "package_bytes": 7397, "package_sha256": "508451fcb76379526329ad6723c1bb67e014606bcf07a097e891321f166f5971"},
+    "descending.original.bound": {"status": "certified", "package_bytes": 28696, "package_sha256": "867551832949d424d5c70c55b45d3cf714521c53c9c6771498c7b57c118711ce"},
+    "descending.original.maximum": {"status": "certified", "package_bytes": 28748, "package_sha256": "3b00ec6e7cc3c5947fef50f5ec5cc87ced2503fc21ea8ab8c89519c559a17730"},
+    "descending.plus_one.bound": {"status": "refuted", "package_bytes": 40884, "package_sha256": "35e1b14f9ac1d58bac75e58be2682c8e6bd4193bdbeeb5b7fffaeebd245a1d54"},
+    "descending.plus_one.maximum": {"status": "refuted", "package_bytes": 40888, "package_sha256": "f84a512eb73d719431d891ceeeec884fc079862248a0ac952bf8027d5d5aa279"},
+    "descending.shared_input.bound": {"status": "certified", "package_bytes": 9961, "package_sha256": "da6e7d24045e332fd23641076d8c43a5ca7dab4af708239952d3f4ebc09673ef"},
+    "descending.shared_input.maximum": {"status": "refuted", "package_bytes": 8843, "package_sha256": "ba9d431c7be233723f08817b84a7c28eb28d051fa1779d8ee7d7a2e82b428432"},
+    "descending.strict.bound": {"status": "certified", "package_bytes": 28781, "package_sha256": "ae07d5c0a39379e79083dd032fc739408bf9b790d08db29b98a2eef3a00ef5a8"},
+    "descending.strict.maximum": {"status": "refuted", "package_bytes": 26599, "package_sha256": "2beecf1706db8f1408596cf676300dd2d3873e96093a0eca8d1997046fd0789f"}
+  }
+}
