@@ -36,7 +36,7 @@ def gate : Bool := checkCertificate originalMachine successorProgram badCertific
 def badCertificate : Certificate 7 2 9 := { originalCertificate with
   states := fun i => if i.val == 2 then
     { (originalCertificate.states i) with answers := fun j =>
-        if j.val == 0 then .boolean false else (originalCertificate.states i).answers j }
+        if j.val == 0 then (Answer.boolean false) else (originalCertificate.states i).answers j }
     else originalCertificate.states i }
 def gate : Bool := checkCertificate originalMachine successorProgram badCertificate
 ''',
@@ -51,11 +51,11 @@ def badCertificate : Certificate 7 2 9 := { originalCertificate with
 def gate : Bool := checkCertificate originalMachine successorProgram badCertificate
 ''',
     'typed_query': '''
-def badProgram : Program 7 := { successorProgram with obligation := .query 3 }
+def badProgram : Program 7 := { successorProgram with obligation := Formula.query 3 }
 def gate : Bool := checkCertificate originalMachine badProgram originalCertificate
 ''',
     'weak_goal_promotion': '''
-def weakProgram : Program 7 := { successorProgram with obligation := .query 0 }
+def weakProgram : Program 7 := { successorProgram with obligation := Formula.query 0 }
 example : checkCertificate originalMachine weakProgram originalCertificate = true := by decide
 def gate : Bool := decide (weakProgram.obligation = successorProgram.obligation)
 ''',
