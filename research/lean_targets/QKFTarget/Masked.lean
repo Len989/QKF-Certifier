@@ -209,7 +209,8 @@ theorem mask_limits {is : List Input} {bs : List Bool} (h : AdmissibleBits is bs
   | @cons i b rest tail hb ht ih =>
     have hd := digit_limits i b hb
     simp only [List.map_cons, value]
-    omega
+    exact ⟨Nat.add_le_add hd.1 (Nat.mul_le_mul_left 2 ih.1),
+      Nat.add_le_add hd.2 (Nat.mul_le_mul_left 2 ih.2)⟩
 
 theorem masked_extrema (is : List Input) :
     Masked is (value (is.map inputMust)) ∧ Masked is (value (is.map inputMay)) ∧
