@@ -1,0 +1,11 @@
+{
+  "exclude_directory": "tests",
+  "file_count": 79,
+  "roots": [
+    "src",
+    "research/observations"
+  ],
+  "serialization": "UTF-8 JSON object path->file SHA256, sort_keys=True, separators=(comma,colon)",
+  "sha256": "b41e2eedccb32595e05ae8cbc53c4d30b5fb366ab75ab33589ab5a6eb3172770",
+  "suffix": ".py"
+}
