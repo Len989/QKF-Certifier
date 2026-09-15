@@ -35,7 +35,7 @@ def gate : Bool := checkCertificate originalMachine successorProgram badCertific
     'observed_mask_answer': '''
 def badCertificate : Certificate 7 2 9 := { originalCertificate with
   states := fun i => if i.val == 2 then
-    { originalCertificate.states i with answers := fun j =>
+    { (originalCertificate.states i) with answers := fun j =>
         if j.val == 0 then .boolean false else (originalCertificate.states i).answers j }
     else originalCertificate.states i }
 def gate : Bool := checkCertificate originalMachine successorProgram badCertificate
@@ -47,7 +47,7 @@ def gate : Bool := checkCertificate badMachine successorProgram originalCertific
 ''',
     'positive_width_erasure': '''
 def badCertificate : Certificate 7 2 9 := { originalCertificate with
-  states := fun i => { originalCertificate.states i with nonempty := false } }
+  states := fun i => { (originalCertificate.states i) with nonempty := false } }
 def gate : Bool := checkCertificate originalMachine successorProgram badCertificate
 ''',
     'typed_query': '''
