@@ -1,0 +1,29 @@
+{
+  "cases": {
+    "irrelevant_register": {
+      "factor_classes": 2,
+      "observations": 7,
+      "package_sha256": "3d188c136d49cf6b39c78cf5a4671535904b232918bc167a355a91ca3ccb6fa1",
+      "property_certificate_sha256": "125009f57843754702dae3a15d35eb635c980ed45986434c34e99d1d4a4e0366",
+      "source_certificate_sha256": "a1f827a613c0729e2746bf9b88997d1d25d231cb99f458e3c897f80d9ea67b93",
+      "source_sha256": "73f464c030874abce2f60ed5d3e920a9acb95005e693d3c5044ac8700cfda0f0",
+      "specification_sha256": "1e1aca6194e662d4c7216e37b6b27c86411950c4c6bf533fc8627c719585db5a",
+      "states": 9,
+      "transitions": 54
+    },
+    "original": {
+      "factor_classes": 2,
+      "observations": 7,
+      "package_sha256": "88c2e878670a8f36a7ddd716b236a06cb9fba7ca07f6f3a33ce386c7c6dde6ac",
+      "property_certificate_sha256": "85c0c98f5ba9345f0bf9fb18de7b5a26339131f2d86b21dd710adbc304d1a7d5",
+      "source_certificate_sha256": "d1a45b19b586ea954c2026a35f15134046f416399715bec4bed90303363399f2",
+      "source_sha256": "1a827adb88f57b8f612979af5b90016077cbf4dad4c54b34e539fee5fce01c95",
+      "specification_sha256": "1e1aca6194e662d4c7216e37b6b27c86411950c4c6bf533fc8627c719585db5a",
+      "states": 9,
+      "transitions": 54
+    }
+  },
+  "data_sha256": "34a52fd006ce5a29fc47585aee1f23a20fa1b8caeaa2f0fcfbe8a7af1dfdd6a1",
+  "schema": "qkf-lean-target-export-v1",
+  "scope": "explicit ascending finite factors and typed successor goal; frontend and exporter not Lean verified"
+}
