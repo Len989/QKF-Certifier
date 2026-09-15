@@ -1,0 +1,26 @@
+{
+  "schema": "qkf-masked-ceiling-spec-v1",
+  "claim": "masked_ceiling",
+  "semantics": "unsigned mathematical payload; tagged value or empty",
+  "preconditions": [
+    "w is a positive integer",
+    "0 <= bound, must, may < 2^w",
+    "must subset may"
+  ],
+  "legal_words": "{x in [0, 2^w): (x & must) == must and (x & ~may) == 0}",
+  "obligations": [
+    "Value(y) iff a legal word >= bound exists",
+    "Value(y) implies legal y and bound <= y",
+    "for every legal z >= bound, Value(y) implies y <= z",
+    "Empty iff no legal word >= bound exists"
+  ],
+  "result_encoding": {
+    "value": [
+      "kind",
+      "value"
+    ],
+    "empty": [
+      "kind"
+    ]
+  }
+}
