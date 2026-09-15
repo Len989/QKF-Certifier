@@ -66,7 +66,7 @@ def gate : Bool := decide (∀ (i : Input) (b : Bool),
     ∃ j : Fin 5, input (incomplete j) = i ∧ alternative (incomplete j) = b)
 ''',
     'low_bit_priority': '''
-def gate : Bool := decide (compare (0 + digit true * 2) (1 + digit false * 2) = compare 0 1)
+def gate : Bool := decide (QKF.Targets.compare (0 + digit true * 2) (1 + digit false * 2) = QKF.Targets.compare 0 1)
 ''',
 }
 
