@@ -21,12 +21,12 @@ jobs:
         with:
           lake-package-directory: research/lean
           use-github-cache: false
-      - name: Check the new target kernel and numerical theorems
+      - name: Check the new target kernel numerical theorems and axiom audit
         working-directory: research/lean
         run: |
           set -o pipefail
           lake env lean --version | tee ../../validation/lean_targets/version.txt
-          lake build QKF.Targets.Checked 2>&1 | tee ../../validation/lean_targets/build.log
+          lake build QKF.Targets.Audit 2>&1 | tee ../../validation/lean_targets/build.log
       - name: Reject ten independent certificate and semantic corruptions
         run: python research/lean/scripts/check_target_mutations.py --output validation/lean_targets/negative
       - uses: actions/upload-artifact@v4
