@@ -43,8 +43,21 @@ def extract_mask(source):
         if depth == 0: break
     require(depth == 0, 'closed mask primitive')
     canonical = ['width' if w == formal else w for w in ws[start:tail + 1]]
-    expected = [m.group() for m in tokens('static long mask(int width){return width==64 ? -1L : (1L<<width)-1;}')]
-    require(canonical == expected, 'changed mask primitive requires a new source contract')
+    # Two explicitly delimited implementations of the same low-bit mask.
+    # The original shim binding is unchanged. The second form is OpenJDK 25's
+    # CodeUtil.mask: on 0..63 modular shift/subtraction gives the low bits; at 64
+    # the hexadecimal long literal has all 64 bits set. The assertion is true on 0..64; it is
+    # NOT a new caller premise or permission to run Java at unbounded widths.
+    # Research all-width claims still use the existing mathematical mask
+    # interpretation, not JVM behavior outside its physical domain.
+    forms = (
+        'static long mask(int width){return width==64 ? -1L : (1L<<width)-1;}',
+        'static long mask(int width){assert 0 <= width && width <= 64; '
+        'if (width == 64){return 0xffffffffffffffffL;} '
+        'else {return (1L << width) - 1;}}',
+    )
+    require(any(canonical == [m.group() for m in tokens(form)] for form in forms),
+            'changed mask primitive requires a new source contract')
     return source[ts[start].start():ts[tail].end()], digest(canonical)
 
 

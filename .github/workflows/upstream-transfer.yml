@@ -1,0 +1,84 @@
+name: Upstream primitive transfer
+on:
+  push:
+    branches: [main, research/upstream-mask-transfer-v1]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: upstream-transfer-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  upstream-fixed-goals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record exact source revision
+        run: |
+          mkdir -p reproduction/upstream
+          git rev-parse HEAD > reproduction/upstream/revision.txt
+      - name: Download pinned unmodified upstream files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import urllib.request
+          from research.observations.upstream_transfer import UPSTREAM, checked_inputs
+          root = Path('reproduction/upstream/input')
+          root.mkdir()
+          for name, entry in UPSTREAM.items():
+              url = 'https://raw.githubusercontent.com/{repository}/{commit}/{path}'.format(**entry)
+              with urllib.request.urlopen(url, timeout=45) as response:
+                  data = response.read(2 * 1024 * 1024 + 1)
+              if len(data) > 2 * 1024 * 1024:
+                  raise SystemExit('upstream input too large')
+              (root / (name + '.java')).write_bytes(data)
+          checked_inputs(root)
+          PY
+      - name: Run primitive regression and negative controls
+        run: |
+          python -m unittest research.observations.tests.test_upstream_mask -v
+          python -O -m unittest research.observations.tests.test_upstream_mask -v
+      - name: Run all existing observation tests on this source frontend
+        run: python -m unittest discover -s research/observations/tests -v
+      - name: Prove fixed goals and compare exact selected Java regions
+        run: >-
+          python -m research.observations.upstream_transfer run
+          reproduction/upstream/input reproduction/upstream/fresh --native
+      - name: Replay packages without producers or deferred runs
+        run: |
+          python -O - <<'PY'
+          import builtins, json
+          original = builtins.__import__
+          def guarded(name, *args, **kwargs):
+              parts = name.split('.')
+              if any('producer' in p or p.startswith(('target_', 'composition_', 'lean_target'))
+                     or p in {'subprocess', 'z3', 'cvc5'} for p in parts):
+                  raise AssertionError('unexpected replay dependency: ' + name)
+              return original(name, *args, **kwargs)
+          builtins.__import__ = guarded
+          from research.observations.upstream_transfer import replay
+          print(json.dumps(replay('reproduction/upstream/fresh'), indent=2))
+          PY
+      - name: Preserve all eighteen legacy envelope fingerprints
+        run: >-
+          python -O -m research.observations.run_unified_experiment
+          reproduction/upstream/legacy --retained-only
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: upstream-transfer-py${{ matrix.python-version }}
+          path: reproduction/upstream/
+          retention-days: 30
