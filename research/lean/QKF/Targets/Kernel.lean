@@ -107,7 +107,8 @@ theorem observe_step {n k : Nat} (m : Machine k) (p : Program n)
     observe p (execStep m s c) = jointStep m p (observe p s) c := by
   apply joint_ext
   refine ⟨rfl, ?_, ?_⟩
-  · cases s.history <;> rfl
+  · change (!(s.history ++ [environment m s.source c]).isEmpty) = true
+    cases s.history <;> rfl
   · intro i
     exact atom_snoc (p.atoms i) s.history (environment m s.source c)
 
