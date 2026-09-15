@@ -1,0 +1,72 @@
+name: Composed masked ceiling
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  composition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record the exact checked tree
+        run: |
+          mkdir -p reproduction/composition_ci
+          git rev-parse HEAD > reproduction/composition_ci/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/composition_ci/tree.txt
+          python --version > reproduction/composition_ci/python.txt
+          java -version 2> reproduction/composition_ci/java.txt
+      - name: Check composition regressions normally and under optimization
+        run: |
+          set -o pipefail
+          python -m unittest discover -s research/observations/tests -p 'test_composition*.py' -v 2>&1 | tee reproduction/composition_ci/tests.log
+          python -O -m unittest discover -s research/observations/tests -p 'test_composition*.py' -v 2>&1 | tee reproduction/composition_ci/tests-optimized.log
+      - name: Generate all typed dependencies from the real sources
+        run: python -m research.observations.run_target_experiment reproduction/composition_ci/fresh_targets
+      - name: Compose fresh dependencies and check exact native wrapper results
+        run: >-
+          python -m research.observations.run_composition_experiment
+          reproduction/composition_ci/proofs
+          --typed-evidence reproduction/composition_ci/fresh_targets --native --max-width 6
+      - name: Independently replay all complete certificates
+        run: >-
+          python -O -m research.observations.run_composition_experiment
+          reproduction/composition_ci/proofs
+          --typed-evidence reproduction/composition_ci/fresh_targets --replay
+      - name: Require exact outcomes and all negative native witnesses
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('reproduction/composition_ci/proofs')
+          s = json.loads((p / 'SUMMARY.json').read_text())
+          v = json.loads((p / 'VALIDATION.json').read_text())
+          if s['counts'] != {'certified': 3, 'refuted': 13, 'unresolved': 1} or s['proof_certificates'] != 16:
+              raise SystemExit('incomplete composition population')
+          if v['exhaustive_inputs'] != 55986 or v['additional_inputs'] != 360:
+              raise SystemExit('incomplete numerical population')
+          if v['native_java'] != 'passed' or v['native_calls'] != 56196 or v['native_negative_calls'] != 13:
+              raise SystemExit('incomplete native composition checks')
+          if any(v[k] != 0 for k in ('integer_target_mismatches', 'source_factor_mismatches')):
+              raise SystemExit('semantic mismatch')
+          print(json.dumps({'counts': s['counts'], 'validation': v}, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: composition-python-${{ matrix.python }}
+          path: reproduction/composition_ci/
+          retention-days: 30

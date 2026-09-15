@@ -1,0 +1,63 @@
+{
+  "schema": "qkf-region-composition-program-v1",
+  "entry": {
+    "op": "if",
+    "test": [
+      "ult",
+      "bound",
+      "must"
+    ],
+    "yes": {
+      "op": "value",
+      "word": "must"
+    },
+    "no": {
+      "op": "if",
+      "test": [
+        "ugt",
+        "bound",
+        "may"
+      ],
+      "yes": {
+        "op": "empty"
+      },
+      "no": {
+        "op": "call",
+        "role": "descending",
+        "bind": "floor",
+        "args": {
+          "bound": "bound",
+          "must": "must",
+          "may": "may",
+          "seed": "must"
+        },
+        "then": {
+          "op": "if",
+          "test": [
+            "eq",
+            "floor",
+            "bound"
+          ],
+          "yes": {
+            "op": "value",
+            "word": "floor"
+          },
+          "no": {
+            "op": "call",
+            "role": "ascending",
+            "bind": "next",
+            "args": {
+              "must": "must",
+              "may": "may",
+              "seed": "floor"
+            },
+            "then": {
+              "op": "value",
+              "word": "next"
+            }
+          }
+        }
+      }
+    }
+  }
+}

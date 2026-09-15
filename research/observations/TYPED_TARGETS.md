@@ -1,14 +1,18 @@
 # Typed target observations — run 2
 
-This research extension is based on main
-`8e482b2f2f7343af24a8c5a2e3a17867e3bd7ae7` (merged PR #5).
-Full local source integration now passes on the uploaded base. See
-`RUN2_REPORT_RU.md` for exact results and limitations. Complete publication to
-GitHub and remote CI are still pending; the partial remote PR is not merge-ready.
+The complete typed-target route and source-bound Lean exporter were merged in
+PR #11 (main commit `861919817ccbdaf966e684b0576d3628496db6a1`).
+That exact source tree passed Python 3.10/3.12 and the fresh Lean integration.
+`RUN2_REPORT_RU.md` and `RUNS_2_4_REBUILD_RU.md` preserve historical preparation
+results; their publication-pending notes are not the current repository status.
+
+The independently versioned masked-ceiling wrapper is described in
+[COMPOSITION.md](COMPOSITION.md). It does not change this goal language or turn
+the Java frontend/Python exporter into a Lean-verified compiler.
 
 ## Use
 
-From a full checkout with this patch applied, Python 3.10+:
+From a full repository checkout, Python 3.10+:
 
 ```sh
 python -m research.observations.run spec changes.goal.json --profile ascending --claim changes --language observations
@@ -142,8 +146,8 @@ The experiment saves complete packages, exact sources, independent goals,
 explanations, a summary and a manifest. Replay reconstructs the intended goals
 from the fixed case selection instead of trusting a package's target choice.
 The 18 translated old cases and 5 `changes` cases have separate denominators;
-they are not 23 new source programs. The proposed CI runs on Python 3.10/3.12.
-Its presence in this patch is not a claim that CI has already passed.
+they are not 23 new source programs. The integration CI runs on Python 3.10/3.12.
+PR #11 passed this complete route; subsequent commits require their own checks.
 
 All 23 complete source/goal/proof packages are retained under
 `research/observations/evidence/typed_targets`. No search is needed to replay:
