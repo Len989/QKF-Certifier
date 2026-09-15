@@ -101,8 +101,7 @@ theorem atom_snoc (a : Atom) (h : List Env) (e : Env) :
   | mk k l r =>
     cases k
     · simp only [atomMeaning, atomStep, Answer.asBool, number_snoc]
-      rw [extend_eq hl hr]
-      simp
+      simp [extend_eq hl hr]
     · simp [atomMeaning, atomStep, Answer.asBool, support, List.all_append]
     · simp [atomMeaning, atomStep, Answer.asBool, apart, List.all_append]
     · simp only [atomMeaning, atomStep, Answer.asOrder, number_snoc]
