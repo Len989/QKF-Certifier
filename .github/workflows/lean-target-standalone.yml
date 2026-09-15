@@ -1,0 +1,57 @@
+name: Lean target standalone
+on:
+  push:
+    branches: [research/lean-target-validation-v1]
+  pull_request:
+    paths:
+      - 'research/lean_targets/**'
+      - '.github/workflows/lean-target-standalone.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  new-lean-target:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build the new exported target project (not the historical Lean pilot)
+        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
+        with:
+          lake-package-directory: research/lean_targets
+          use-github-cache: false
+      - name: Fresh build, exact source bindings, axiom audit and six negative controls
+        run: python -O research/lean_targets/check_ci.py --output reproduction/lean_target_standalone --timeout 300
+      - name: Require the complete accepted result and retain checked source bytes
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import zipfile
+          from pathlib import Path
+          output = Path('reproduction/lean_target_standalone')
+          project = Path('research/lean_targets')
+          result = json.loads((output / 'RESULT.json').read_text())
+          if result['status'] != 'accepted' or result['lean_checked'] is not True:
+              raise SystemExit('formal validation not accepted')
+          if len(result['axioms']) != 10 or len(result['controls']) != 6:
+              raise SystemExit('incomplete axiom audit or negative controls')
+          for name, digest in result['lean_source_sha256'].items():
+              if hashlib.sha256((project / name).read_bytes()).hexdigest() != digest:
+                  raise SystemExit('source changed after verification: ' + name)
+          with zipfile.ZipFile(output / 'checked_project.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
+              for path in sorted(project.rglob('*')):
+                  relative = path.relative_to(project)
+                  if path.is_file() and '.lake' not in relative.parts and '__pycache__' not in relative.parts:
+                      archive.write(path, relative.as_posix())
+          print(json.dumps(result, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lean-target-standalone
+          path: reproduction/lean_target_standalone/
+          retention-days: 30
