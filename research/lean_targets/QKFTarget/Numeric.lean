@@ -179,20 +179,33 @@ theorem cmpNat_le_value (a b : Nat) : cmpLe (cmpNat a b) = decide (a ≤ b) := b
     · have hab : ¬ a ≤ b := by omega
       simp_all [cmpLe]
 
+/- Reflect the finite Boolean implication table without invoking classical
+propositional simplification. Each constructor case is checked by reduction. -/
+set_option maxHeartbeats 1600000 in
+theorem successor_value_reflection (hm ha ga ym : Bool) (gy gz yz : Cmp) :
+    eval successorProgram.target
+      [.flag hm, .flag ha, .flag ga, .order gy, .order gz, .order yz, .flag ym] = true ↔
+    (hm = true ∧ ha = true ∧
+      (ga = false → cmpLt gy = true) ∧
+      (cmpLt gz = true → cmpLe yz = true) ∧
+      (ga = true → ym = true)) := by
+  cases hm <;> cases ha <;> cases ga <;> cases ym <;>
+    cases gy <;> cases gz <;> cases yz <;> decide
+
 theorem successor_formula_numerical (s : Numbers) :
     eval successorProgram.target (successorProgram.atoms.map (fun a => numericAtom a s)) = true ↔
       SuccessorNumeric s := by
-  have hgy := cmpNat_lt_value (s.value (.var .seed)) (s.value (.var .output))
-  have hgz := cmpNat_lt_value (s.value (.var .seed)) (s.value (.var .alternative))
-  have hyz := cmpNat_le_value (s.value (.var .output)) (s.value (.var .alternative))
-  cases egy : cmpNat (s.value (.var .seed)) (s.value (.var .output)) <;>
-    cases egz : cmpNat (s.value (.var .seed)) (s.value (.var .alternative)) <;>
-    cases eyz : cmpNat (s.value (.var .output)) (s.value (.var .alternative)) <;>
-    simp_all [successorProgram, eval, numericAtom, SuccessorNumeric, cmpLt, cmpLe]
-  all_goals
-    cases Nat.decEq (s.value (.var .seed)) (s.value (.var .may)) with
-    | isTrue heq => simp_all <;> omega
-    | isFalse hne => simp_all <;> omega
+  have reflected := successor_value_reflection
+    (subsetBits s (.var .must) (.var .output))
+    (subsetBits s (.var .output) (.var .may))
+    (decide (s.value (.var .seed) = s.value (.var .may)))
+    (decide (s.value (.var .output) = s.value (.var .must)))
+    (cmpNat (s.value (.var .seed)) (s.value (.var .output)))
+    (cmpNat (s.value (.var .seed)) (s.value (.var .alternative)))
+    (cmpNat (s.value (.var .output)) (s.value (.var .alternative)))
+  simp only [cmpNat_lt_value, cmpNat_le_value,
+    decide_eq_true_eq, decide_eq_false_iff_not] at reflected
+  exact reflected
 
 theorem cyclic_successor_all_widths (m : Machine n) (c : Certificate n k)
     (hc : Accepted m successorProgram c) (xs : List Column) (positive : 0 < xs.length) :
