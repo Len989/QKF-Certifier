@@ -1,0 +1,165 @@
+{
+  "budget": {
+    "control_verify_timeout_seconds": 60,
+    "native_compile_timeout_seconds": 30,
+    "native_execution_timeout_seconds": 45,
+    "per_profile_timeout_seconds": 30,
+    "source_bytes_limit": 2000000
+  },
+  "controls": [
+    [
+      "descending",
+      "maximum"
+    ],
+    [
+      "descending",
+      "bound"
+    ],
+    [
+      "ascending",
+      "cyclic_successor"
+    ],
+    [
+      "ascending",
+      "membership"
+    ]
+  ],
+  "engine_commit": "f974410e5635c789c1f76725f1d0c7ae4259bf38",
+  "engine_tree": "23e7b381d117d037fdb3d21893d1acc6b24e7f40",
+  "native": {
+    "interleave_small_bits": 5,
+    "power_of_two_domain": [
+      0,
+      4611686018427387904
+    ],
+    "random_seed": 20260915,
+    "random_words": 512,
+    "small_unsigned_exhaustive_bits": 12,
+    "word_bits": 64
+  },
+  "population": [
+    {
+      "id": "jdk_long.highestOneBit",
+      "method": "highestOneBit",
+      "native_contract": "highest set bit, zero maps to zero",
+      "parameters": "long i",
+      "source": "jdk_long"
+    },
+    {
+      "id": "jdk_long.lowestOneBit",
+      "method": "lowestOneBit",
+      "native_contract": "lowest set bit, zero maps to zero",
+      "parameters": "long i",
+      "source": "jdk_long"
+    },
+    {
+      "id": "jdk_long.numberOfLeadingZeros",
+      "method": "numberOfLeadingZeros",
+      "native_contract": "leading zero count in a 64-bit word",
+      "parameters": "long i",
+      "source": "jdk_long"
+    },
+    {
+      "id": "jdk_long.numberOfTrailingZeros",
+      "method": "numberOfTrailingZeros",
+      "native_contract": "trailing zero count in a 64-bit word",
+      "parameters": "long i",
+      "source": "jdk_long"
+    },
+    {
+      "id": "jdk_long.bitCount",
+      "method": "bitCount",
+      "native_contract": "population count of a 64-bit word",
+      "parameters": "long i",
+      "source": "jdk_long"
+    },
+    {
+      "id": "jdk_long.reverseBytes",
+      "method": "reverseBytes",
+      "native_contract": "reverse the eight bytes of a 64-bit word",
+      "parameters": "long i",
+      "source": "jdk_long"
+    },
+    {
+      "id": "lucene_bits.nextHighestPowerOfTwo",
+      "method": "nextHighestPowerOfTwo",
+      "native_contract": "least power of two >= x, on 0 <= x <= 2^62; zero maps to zero",
+      "parameters": "long v",
+      "source": "lucene_bits"
+    },
+    {
+      "id": "lucene_bits.interleave",
+      "method": "interleave",
+      "native_contract": "interleave both 32-bit inputs into even/odd positions",
+      "parameters": "int even, int odd",
+      "source": "lucene_bits"
+    },
+    {
+      "id": "lucene_bits.deinterleave",
+      "method": "deinterleave",
+      "native_contract": "pack even bit positions into the low 32 bits",
+      "parameters": "long b",
+      "source": "lucene_bits"
+    },
+    {
+      "id": "lucene_bits.flipFlop",
+      "method": "flipFlop",
+      "native_contract": "swap each adjacent bit pair",
+      "parameters": "final long b",
+      "source": "lucene_bits"
+    },
+    {
+      "id": "lucene_bits.zigZagEncode",
+      "method": "zigZagEncode",
+      "native_contract": "encode signed 64-bit x: 2*x if x>=0, -2*x-1 otherwise",
+      "parameters": "long l",
+      "source": "lucene_bits"
+    },
+    {
+      "id": "lucene_bits.zigZagDecode",
+      "method": "zigZagDecode",
+      "native_contract": "decode unsigned 64-bit u: u//2 if even, -(u//2)-1 otherwise",
+      "parameters": "long l",
+      "source": "lucene_bits"
+    }
+  ],
+  "profiles": [
+    "ascending",
+    "descending"
+  ],
+  "rules": {
+    "calibration_is_new_coverage": false,
+    "modify_body": false,
+    "native_is_proof": false,
+    "promote_rejection_to_counterexample": false,
+    "rename_entry": false,
+    "semantic_adapter": "none"
+  },
+  "schema": "qkf-external-source-freeze-v1",
+  "sources": {
+    "graal_control": {
+      "blob": "47a47eb2ac110bc9cc2be2d010140e7b3a55970a",
+      "commit": "3f5efeb49d934f8a0bcb3c115a6a28caa5622975",
+      "path": "compiler/src/jdk.graal.compiler/src/jdk/graal/compiler/core/common/type/IntegerStamp.java",
+      "repository": "oracle/graal"
+    },
+    "jdk_long": {
+      "blob": "2fb2d18a78c80dea8e2ca0c17d6c7c7d8716e85c",
+      "commit": "6c48f4ed707bf0b15f9b6098de30db8aae6fa40f",
+      "path": "src/java.base/share/classes/java/lang/Long.java",
+      "repository": "openjdk/jdk"
+    },
+    "jdk_mask_control": {
+      "blob": "59af250a69518bb948d442ce1025aaa61f2c5544",
+      "commit": "6c48f4ed707bf0b15f9b6098de30db8aae6fa40f",
+      "path": "src/jdk.internal.vm.ci/share/classes/jdk/vm/ci/code/CodeUtil.java",
+      "repository": "openjdk/jdk"
+    },
+    "lucene_bits": {
+      "blob": "2389e3b0485dbd754593957986c78c8b83573aad",
+      "commit": "e2871287e4a378739f0b74081d124e3668347875",
+      "path": "lucene/core/src/java/org/apache/lucene/util/BitUtil.java",
+      "repository": "apache/lucene"
+    }
+  }
+}

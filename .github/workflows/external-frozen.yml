@@ -1,0 +1,57 @@
+name: Frozen external applicability
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/external/frozen_v1/**'
+      - '.github/workflows/external-frozen.yml'
+permissions:
+  contents: read
+jobs:
+  applicability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record exact version and frozen engine
+        run: |
+          mkdir -p reproduction
+          git rev-parse HEAD > reproduction/checkout.txt
+          git rev-parse HEAD^{tree} >> reproduction/checkout.txt
+          python -c 'from research.external.frozen_v1.experiment import check_engine; check_engine()'
+      - name: Test experiment harness in both modes
+        run: |
+          python -m unittest research.external.frozen_v1.test_experiment -v
+          python -O -m unittest research.external.frozen_v1.test_experiment -v
+      - name: Acquire complete original sources
+        run: python -m research.external.frozen_v1.download_sources reproduction/external_inputs
+      - name: Run full frozen-source experiment
+        run: python -m research.external.frozen_v1.experiment reproduction/external_inputs reproduction/external_full
+      - name: Require actual full-mode completion
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path('reproduction/external_full/SUMMARY.json').read_text())
+          if not r['frozen_protocol_complete'] or r['acquisition'] != 'full_original_blobs':
+              raise SystemExit('Full original-source execution did not complete')
+          if r['source_methods'] != 12 or r['source_profile_attempts'] != 24:
+              raise SystemExit('Incomplete external population')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: external-applicability-${{ matrix.python }}
+          path: reproduction/
+          retention-days: 30
