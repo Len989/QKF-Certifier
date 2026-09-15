@@ -1,0 +1,118 @@
+name: Typed targets and Lean integration
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  python-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record the checked revision
+        run: |
+          mkdir -p reproduction/runs24
+          git rev-parse HEAD > reproduction/runs24/revision.txt
+      - name: Test all observation profiles normally and under optimization
+        run: |
+          set -o pipefail
+          python -m unittest discover -s research/observations/tests -v 2>&1 | tee reproduction/runs24/tests.log
+          python -O -m unittest discover -s research/observations/tests -v 2>&1 | tee reproduction/runs24/tests-optimized.log
+      - name: Generate all 23 typed packages and replay them without search
+        run: |
+          python -m research.observations.run_target_experiment reproduction/runs24/fresh
+          python -O -m research.observations.run_target_experiment reproduction/runs24/fresh --replay
+          python -O -m research.observations.run_target_experiment research/observations/evidence/typed_targets --replay
+      - name: Preserve legacy package fingerprints and replay retained Lean export
+        run: |
+          python -O -m research.observations.run_unified_experiment reproduction/runs24/legacy --retained-only
+          python -O -m research.observations.lean_target_export research/lean_targets/evidence --check
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          old = json.loads(Path('research/observations/evidence/run/BASELINE.json').read_text())
+          new = json.loads(Path('reproduction/runs24/legacy/SUMMARY.json').read_text())
+          actual = {name: {k: row[k] for k in ('status', 'package_bytes', 'package_sha256')}
+                    for name, row in new['cases'].items()}
+          if old['packages'] != actual:
+              raise SystemExit('legacy envelope population changed')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: runs24-python-${{ matrix.python }}
+          path: reproduction/runs24/
+          retention-days: 30
+  source-to-lean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned Lean and build the unchanged accepted project
+        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
+        with:
+          lake-package-directory: research/lean_targets
+          use-github-cache: false
+      - name: Regenerate actual-source typed packages
+        run: python -m research.observations.run_target_experiment reproduction/runs24/fresh
+      - name: Export from fresh packages and compare the exact module to be compiled
+        run: |
+          python -O - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          from research.observations.lean_target_export import CASES, ROOT, build_export, render_all, successor_goal
+          from research.observations.run_io import read_json
+          fresh = ROOT / 'reproduction/runs24/fresh'
+          exports = {}
+          for name in CASES:
+              source = (ROOT / 'research/observations/evidence/ascending' / (name + '.java')).read_bytes().decode('utf-8')
+              package = read_json(fresh / ('ascending.' + name + '.cyclic_successor') / 'package.json', package=True)
+              exports[name] = build_export(source, successor_goal(), package)
+          rendered = render_all(exports).encode('utf-8')
+          checked = ROOT / 'research/lean_targets/QKFTarget/Exported.lean'
+          if rendered != checked.read_bytes():
+              raise SystemExit('fresh exported tables differ from the module to be compiled')
+          out = ROOT / 'reproduction/runs24/fresh-export'
+          out.mkdir(parents=True, exist_ok=False)
+          (out / 'Exported.lean').write_bytes(rendered)
+          for name, data in exports.items():
+              (out / (name + '.json')).write_text(json.dumps(data, sort_keys=True, indent=2) + '\n', encoding='utf-8')
+          print(json.dumps({'export_sha256': hashlib.sha256(rendered).hexdigest(), 'lean_checked': False}))
+          PY
+      - name: Fresh Lean build, ten-theorem axiom audit, and six negative controls
+        run: python -O -m research.observations.run_lean_target_validation --output reproduction/runs24/lean --timeout 300
+      - name: Require complete formal acceptance
+        run: |
+          python -O - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path('reproduction/runs24/lean/RESULT.json').read_text())
+          if r['status'] != 'accepted' or r['lean_checked'] is not True:
+              raise SystemExit('Lean integration not accepted')
+          if len(r['axioms']) != 10 or len(r['controls']) != 6:
+              raise SystemExit('incomplete formal validation')
+          print(json.dumps(r, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: runs24-source-to-lean
+          path: reproduction/runs24/
+          retention-days: 30

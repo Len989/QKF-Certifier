@@ -1,0 +1,87 @@
+name: Prepare checked runs24 evidence
+on:
+  push:
+    branches: [research/typed-targets-lean-runs24-publish]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: prepare-runs24-evidence
+  cancel-in-progress: false
+jobs:
+  generated-evidence:
+    if: github.repository == 'Len989/QKF-Certifier' && github.ref == 'refs/heads/research/typed-targets-lean-runs24-publish'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regenerate proof fixtures with the published project generators
+        run: |
+          python -m research.observations.run_target_experiment "$RUNNER_TEMP/runs24-generated"
+          python -O -m research.observations.run_target_experiment "$RUNNER_TEMP/runs24-generated" --replay
+          python - <<'PY'
+          import os
+          import shutil
+          from pathlib import Path
+          from research.observations.lean_target_export import export_all
+          tmp = Path(os.environ['RUNNER_TEMP'])
+          target = Path('research/observations/evidence/typed_targets')
+          shutil.copytree(tmp / 'runs24-generated', target, dirs_exist_ok=True)
+          export_all(tmp / 'runs24-lean-export')
+          shutil.copytree(tmp / 'runs24-lean-export', Path('research/lean_targets/evidence'), dirs_exist_ok=True)
+          PY
+          python -O -m research.observations.lean_target_export research/lean_targets/evidence --check
+      - name: Require the exact previously validated complete tree before committing
+        run: |
+          set -euo pipefail
+          git add -- research/observations/evidence/typed_targets research/lean_targets/evidence
+          git diff --cached --name-only > "$RUNNER_TEMP/runs24-generated-paths.txt"
+          python - <<'PY'
+          import os
+          import subprocess
+          from pathlib import Path
+          tmp = Path(os.environ['RUNNER_TEMP'])
+          paths = (tmp / 'runs24-generated-paths.txt').read_text().splitlines()
+          if not paths or any(not p.startswith(('research/observations/evidence/typed_targets/', 'research/lean_targets/evidence/')) for p in paths):
+              raise SystemExit('unexpected generated-file changes')
+          index = tmp / 'runs24-comparison.index'
+          env = dict(os.environ, GIT_INDEX_FILE=str(index))
+          staged = subprocess.check_output(['git', 'write-tree'], text=True).strip()
+          subprocess.run(['git', 'read-tree', staged], env=env, check=True)
+          subprocess.run(['git', 'update-index', '--force-remove', '.github/workflows/prepare-runs24.yml'], env=env, check=True)
+          actual = subprocess.check_output(['git', 'write-tree'], env=env, text=True).strip()
+          expected = '3ff65f823e0c8c7c16c744d6b7b983db1c389a51'
+          (tmp / 'runs24-result-tree.txt').write_text(actual + '\n')
+          if actual != expected:
+              raise SystemExit('complete generated tree differs from the validated candidate: ' + actual)
+          print('Exact validated tree:', actual)
+          PY
+      - name: Commit generated fixtures only to this feature branch
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          branch=research/typed-targets-lean-runs24-publish
+          test "$GITHUB_REF" = "refs/heads/$branch"
+          git fetch origin "refs/heads/$branch"
+          test "$(git rev-parse FETCH_HEAD)" = "$EXPECTED_SHA"
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Research: retain reproducible typed-target and Lean evidence'
+          git push origin "HEAD:refs/heads/$branch"
+          git rev-parse HEAD > "$RUNNER_TEMP/runs24-generated-commit.txt"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: runs24-evidence-preparation
+          path: |
+            ${{ runner.temp }}/runs24-generated-paths.txt
+            ${{ runner.temp }}/runs24-result-tree.txt
+            ${{ runner.temp }}/runs24-generated-commit.txt
+          retention-days: 30
