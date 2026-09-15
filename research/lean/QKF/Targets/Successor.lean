@@ -31,8 +31,17 @@ def CyclicPost (h : List Env) : Prop :=
 
 theorem successor_semantics (h : List Env) :
     semanticGoal successorProgram h = true ↔ CyclicPost h := by
-  simp [semanticGoal, successorProgram, evaluate, meaning, atomMeaning,
-    Answer.asBool, Answer.asOrder, CyclicPost, compare_lt, compare_le]
+  change
+    (support (.var .must) (.var .output) h &&
+      (support (.var .output) (.var .may) h &&
+       ((!(!decide (number (.var .seed) h = number (.var .may) h)) ||
+          (compare (number (.var .seed) h) (number (.var .output) h) == .lt)) &&
+        ((!(compare (number (.var .seed) h) (number (.var .alternative) h) == .lt) ||
+          (compare (number (.var .output) h) (number (.var .alternative) h) != .gt)) &&
+         ((!decide (number (.var .seed) h = number (.var .may) h) ||
+           decide (number (.var .output) h = number (.var .must) h)) && true))))) = true
+      ↔ CyclicPost h
+  simp [CyclicPost, compare_lt, compare_le] <;> omega
 
 theorem successor_from_certificate {k size : Nat} (m : Machine k)
     (c : Certificate 7 k size) (accepted : checkCertificate m successorProgram c = true)
