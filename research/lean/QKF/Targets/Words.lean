@@ -161,7 +161,8 @@ theorem trace_admissible {k : Nat} (m : Machine k) (xs : List Column) (s : Fin k
   | cons c rest ih =>
     simp only [support, trace, List.all_cons, Bool.and_eq_true, bit, environment] at hl hu
     apply AdmissibleBits.cons
-    · exact Bool.and_eq_true.mpr ⟨hl.1, by simpa [Bool.or_comm] using hu.1⟩
+    · simp only [allowed, Bool.and_eq_true]
+      exact ⟨hl.1, by simpa only [Bool.or_comm] using hu.1⟩
     · exact ih _ hl.2 hu.2
 
 /- Exact numerical cyclic least-element property, including the no-greater case. -/
