@@ -1,0 +1,333 @@
+{
+  "alphabet": [
+    "0000",
+    "0100",
+    "0101",
+    "0110",
+    "0111",
+    "1111"
+  ],
+  "binding": {
+    "goal_sha256": "1e1aca6194e662d4c7216e37b6b27c86411950c4c6bf533fc8627c719585db5a",
+    "package_sha256": "3d188c136d49cf6b39c78cf5a4671535904b232918bc167a355a91ca3ccb6fa1",
+    "source_certificate_sha256": "a1f827a613c0729e2746bf9b88997d1d25d231cb99f458e3c897f80d9ea67b93",
+    "source_sha256": "73f464c030874abce2f60ed5d3e920a9acb95005e693d3c5044ac8700cfda0f0"
+  },
+  "claim": "candidate Lean proof for an explicitly supplied source factor",
+  "edges": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      1
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      1
+    ],
+    [
+      2,
+      2,
+      6,
+      7,
+      2,
+      2
+    ],
+    [
+      3,
+      3,
+      6,
+      7,
+      3,
+      3
+    ],
+    [
+      4,
+      7,
+      3,
+      4,
+      8,
+      4
+    ],
+    [
+      5,
+      2,
+      6,
+      8,
+      5,
+      5
+    ],
+    [
+      6,
+      6,
+      6,
+      7,
+      6,
+      6
+    ],
+    [
+      7,
+      7,
+      6,
+      7,
+      7,
+      7
+    ],
+    [
+      8,
+      7,
+      6,
+      8,
+      8,
+      8
+    ]
+  ],
+  "initial": 0,
+  "lean_checked": false,
+  "machine": {
+    "cells": [
+      [
+        {
+          "next": 0,
+          "output": false
+        },
+        {
+          "next": 1,
+          "output": true
+        },
+        {
+          "next": 0,
+          "output": false
+        },
+        {
+          "next": 0,
+          "output": true
+        }
+      ],
+      [
+        {
+          "next": 1,
+          "output": false
+        },
+        {
+          "next": 1,
+          "output": false
+        },
+        {
+          "next": 1,
+          "output": true
+        },
+        {
+          "next": 1,
+          "output": true
+        }
+      ]
+    ],
+    "initial": 0
+  },
+  "program": {
+    "atoms": [
+      {
+        "kind": "subset",
+        "left": "must",
+        "right": "output"
+      },
+      {
+        "kind": "subset",
+        "left": "output",
+        "right": "may"
+      },
+      {
+        "kind": "eq",
+        "left": "seed",
+        "right": "may"
+      },
+      {
+        "kind": "order",
+        "left": "seed",
+        "right": "output"
+      },
+      {
+        "kind": "order",
+        "left": "seed",
+        "right": "alternative"
+      },
+      {
+        "kind": "order",
+        "left": "output",
+        "right": "alternative"
+      },
+      {
+        "kind": "eq",
+        "left": "output",
+        "right": "must"
+      }
+    ],
+    "domain": "legal-masked-entry-v1",
+    "obligations": [
+      [
+        "query",
+        0
+      ],
+      [
+        "query",
+        1
+      ],
+      [
+        "implies",
+        [
+          "not",
+          [
+            "query",
+            2
+          ]
+        ],
+        [
+          "ult",
+          3
+        ]
+      ],
+      [
+        "implies",
+        [
+          "ult",
+          4
+        ],
+        [
+          "ule",
+          5
+        ]
+      ],
+      [
+        "implies",
+        [
+          "query",
+          2
+        ],
+        [
+          "query",
+          6
+        ]
+      ]
+    ],
+    "preconditions": [],
+    "profile": "ascending",
+    "quantifier": "forall_legal_alternative",
+    "rules": "coordinatewise-words-and-unsigned-order-v1"
+  },
+  "schema": "qkf-lean-target-export-v1",
+  "source_alphabet": [
+    "000",
+    "010",
+    "011",
+    "111"
+  ],
+  "states": [
+    [
+      0,
+      false,
+      true,
+      true,
+      true,
+      0,
+      0,
+      0,
+      true
+    ],
+    [
+      0,
+      true,
+      true,
+      true,
+      true,
+      0,
+      0,
+      0,
+      true
+    ],
+    [
+      1,
+      true,
+      true,
+      true,
+      false,
+      -1,
+      0,
+      1,
+      false
+    ],
+    [
+      1,
+      true,
+      true,
+      true,
+      false,
+      -1,
+      -1,
+      0,
+      false
+    ],
+    [
+      0,
+      true,
+      true,
+      true,
+      true,
+      1,
+      1,
+      0,
+      true
+    ],
+    [
+      0,
+      true,
+      true,
+      true,
+      true,
+      1,
+      0,
+      -1,
+      true
+    ],
+    [
+      1,
+      true,
+      true,
+      true,
+      false,
+      -1,
+      -1,
+      -1,
+      false
+    ],
+    [
+      1,
+      true,
+      true,
+      true,
+      false,
+      -1,
+      1,
+      1,
+      false
+    ],
+    [
+      0,
+      true,
+      true,
+      true,
+      true,
+      1,
+      1,
+      -1,
+      true
+    ]
+  ],
+  "toolchain": "leanprover/lean4:v4.33.0"
+}

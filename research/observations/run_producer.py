@@ -4,7 +4,7 @@ Only verify imports this module. Profile-specific semantics and certificate
 schemas are unchanged. Search budgets are a caller input, never a premise of
 a successful proof. An exhausted search emits no research proof package.
 """
-from .run_package import (RESULT_SCHEMA, RunError, VALIDATION_ERRORS,
+from .run_package import (RESULT_SCHEMA, RunError, TYPED_SPEC, VALIDATION_ERRORS,
                           check_package, create_package, profile_for, source_text)
 
 # (default, minimum, maximum); other source/factor limits remain inherited.
@@ -61,11 +61,15 @@ def verify(source, spec, *, profile, budgets=None):
     if selected == "ascending":
         from .ascending_source import read_source
         from .ascending_producer import synthesize as derive_source
-        from .successor_producer import synthesize as derive_property
         from .ascending_kernel import check as check_source
     else:
         from .java_words import read_source
         from .source_factor import synthesize as derive_source, check as check_source
+    if spec["schema"] == TYPED_SPEC:
+        from .target_producer import synthesize as derive_property
+    elif selected == "ascending":
+        from .successor_producer import synthesize as derive_property
+    else:
         from .property_producer import synthesize as derive_property
     # Unsupported grammar is a source-profile outcome, not a counterexample.
     try:

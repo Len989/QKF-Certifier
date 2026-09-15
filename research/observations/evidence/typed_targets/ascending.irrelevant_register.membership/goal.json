@@ -1,0 +1,1 @@
+{"domain":"legal-masked-entry-v1","obligations":[["subset","must","output"],["subset","output","may"]],"preconditions":[],"profile":"ascending","quantifier":"forall_legal_alternative","schema":"qkf-word-observation-spec-v1"}
