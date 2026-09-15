@@ -1,0 +1,22 @@
+name: Lean target kernel
+on:
+  push:
+    branches: [research/lean-target-kernel-v1]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  target-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - name: Build the unchanged Lean pilot and install pinned Lean
+        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
+        with:
+          lake-package-directory: research/lean
+          use-github-cache: false
+      - name: Check the new target kernel and numerical theorems
+        working-directory: research/lean
+        run: lake build QKF.Targets.Checked
