@@ -1,6 +1,5 @@
-import QKF.Targets.Rules
+import QKF.Targets.Kernel
 
-#check QKF.Targets.compare_higher
-#check QKF.Targets.value_injective
 #check QKF.Targets.atom_snoc
-#check QKF.Targets.advance_meaning
+#check QKF.Targets.columns_complete
+#check QKF.Targets.accepted_all_widths
