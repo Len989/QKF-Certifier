@@ -1,0 +1,143 @@
+{
+  "acquisition": "provisional_connector_slices",
+  "calibration": {
+    "ascending.cyclic_successor": {
+      "package_sha256": "fe914e69051fcde31fa93d06cd02eff1e3cec717fcf8c8fa863a77cdc7d703a2",
+      "status": "certified"
+    },
+    "ascending.membership": {
+      "package_sha256": "08e6cd5eabb827904b424316a7e44607d3c4949ac4764e48e7d80363deaecba7",
+      "status": "certified"
+    },
+    "descending.bound": {
+      "package_sha256": "0be174872688b15f759be285d5c1bdf295bb4e067547e60f70698587bf47a4ea",
+      "status": "certified"
+    },
+    "descending.maximum": {
+      "package_sha256": "3cf25b14d174a2d45991c350e0fb445aef878c22208ee3c0aac982b4e1d1077a",
+      "status": "certified"
+    }
+  },
+  "engine_commit": "f974410e5635c789c1f76725f1d0c7ae4259bf38",
+  "frozen_protocol_complete": false,
+  "harness_tests": {
+    "both_passed": true,
+    "optimized": 22,
+    "ordinary": 22
+  },
+  "native": {
+    "cases": {
+      "jdk_long.bitCount": {
+        "first_mismatches": [],
+        "inputs": 9012,
+        "inputs_sha256": "e60435502f103854c4834811f675ab6174fbf00471c22590469398f8ae1dab2a",
+        "mismatches": 0,
+        "outputs_sha256": "c6ca3c2a178e1fd7a41c12b03bb0de947043c20ddbd220eba6278f50e17e3562"
+      },
+      "jdk_long.highestOneBit": {
+        "first_mismatches": [],
+        "inputs": 9012,
+        "inputs_sha256": "e60435502f103854c4834811f675ab6174fbf00471c22590469398f8ae1dab2a",
+        "mismatches": 0,
+        "outputs_sha256": "ee87a50188fe49a63cab503c74d5278b20c918fce9c2a6e2725c73d9dc6e0cb8"
+      },
+      "jdk_long.lowestOneBit": {
+        "first_mismatches": [],
+        "inputs": 9012,
+        "inputs_sha256": "e60435502f103854c4834811f675ab6174fbf00471c22590469398f8ae1dab2a",
+        "mismatches": 0,
+        "outputs_sha256": "87cbc40bcd6d3ee381d332eecd508964107f19f8bf77822db04d818e892554f1"
+      },
+      "jdk_long.numberOfLeadingZeros": {
+        "first_mismatches": [],
+        "inputs": 9012,
+        "inputs_sha256": "e60435502f103854c4834811f675ab6174fbf00471c22590469398f8ae1dab2a",
+        "mismatches": 0,
+        "outputs_sha256": "442eb8844d37ac8f7eb37e7d3cc3eb89c39f1ede3e2bf41fe0b6002949caabbd"
+      },
+      "jdk_long.numberOfTrailingZeros": {
+        "first_mismatches": [],
+        "inputs": 9012,
+        "inputs_sha256": "e60435502f103854c4834811f675ab6174fbf00471c22590469398f8ae1dab2a",
+        "mismatches": 0,
+        "outputs_sha256": "309a2cf7ec012d568258e33baeedcaba0ddd138fcfd4df5bfc5d63da3604c3ad"
+      },
+      "jdk_long.reverseBytes": {
+        "first_mismatches": [],
+        "inputs": 9012,
+        "inputs_sha256": "e60435502f103854c4834811f675ab6174fbf00471c22590469398f8ae1dab2a",
+        "mismatches": 0,
+        "outputs_sha256": "a9717949f33fe4c086b8c92e0de730bab3eaabcb5efe695d716eff7fcbe5c8e7"
+      },
+      "lucene_bits.deinterleave": {
+        "first_mismatches": [],
+        "inputs": 9012,
+        "inputs_sha256": "e60435502f103854c4834811f675ab6174fbf00471c22590469398f8ae1dab2a",
+        "mismatches": 0,
+        "outputs_sha256": "bf082c08d2d1e722c8b13e4fed212f3b42914370c3817b0468650a009625bdb8"
+      },
+      "lucene_bits.flipFlop": {
+        "first_mismatches": [],
+        "inputs": 9012,
+        "inputs_sha256": "e60435502f103854c4834811f675ab6174fbf00471c22590469398f8ae1dab2a",
+        "mismatches": 0,
+        "outputs_sha256": "f2978e2b8878fd9e51e11d633e92aa78509fdf8e4c935661788f4e32d2c7bb28"
+      },
+      "lucene_bits.interleave": {
+        "first_mismatches": [],
+        "inputs": 1557,
+        "inputs_sha256": "e14eb2cda405ed65fc7eb930698309d92278a81289b945511de06501b4b070a1",
+        "mismatches": 0,
+        "outputs_sha256": "4c9fc00934be35a604447e91e30e4c02916f2abb8363da40ee29cb9f92454e51"
+      },
+      "lucene_bits.nextHighestPowerOfTwo": {
+        "first_mismatches": [],
+        "inputs": 4377,
+        "inputs_sha256": "54f4d7383b6d930e8898f91816be7bd95f13743ae50e2043df2f15a9cdab3024",
+        "mismatches": 0,
+        "outputs_sha256": "f82edb947a71fb3919bb1d7f1f4a2f02c24d7b63abdcda373add60967ec0b9fc"
+      },
+      "lucene_bits.zigZagDecode": {
+        "first_mismatches": [],
+        "inputs": 9012,
+        "inputs_sha256": "e60435502f103854c4834811f675ab6174fbf00471c22590469398f8ae1dab2a",
+        "mismatches": 0,
+        "outputs_sha256": "a3fb38093e3af34be9f681374626f7be49939fea18241066abf3edfc5786a6da"
+      },
+      "lucene_bits.zigZagEncode": {
+        "first_mismatches": [],
+        "inputs": 9012,
+        "inputs_sha256": "e60435502f103854c4834811f675ab6174fbf00471c22590469398f8ae1dab2a",
+        "mismatches": 0,
+        "outputs_sha256": "5107a883602ce841ff5ed2bec00eadc73b6ef86bd7acd4083cc35a7f238900c2"
+      }
+    },
+    "host_dependencies": [
+      "Integer.numberOfLeadingZeros",
+      "Integer.numberOfTrailingZeros"
+    ],
+    "is_proof": false,
+    "java": "openjdk version \"21.0.11\" 2026-04-21\nOpenJDK Runtime Environment (build 21.0.11+10-1-deb13u2-Debian)\nOpenJDK 64-Bit Server VM (build 21.0.11+10-1-deb13u2-Debian, mixed mode, sharing)\n",
+    "javac": "javac 21.0.11\n",
+    "status": "matched",
+    "total_inputs": 96054
+  },
+  "new_program_refutations": 0,
+  "new_target_proofs": 0,
+  "old_observation_suite": "interrupted_by_execution_tool_no_final_verdict",
+  "protocol_files": {
+    "CORPUS.json": "ab0d15f9bf5605588bf188a7ef6f1ff625e124bc3e171cdcf38f2fc72e48c726",
+    "ENGINE.json": "dd0006b424b12a52c6c2de3f79b5bc3aad857b59a7204ca19d56c58101159716",
+    "PROTOCOL.md": "c8de3c7a1cf98e3848788048002f735448c04317c45e11f00b49b26268ef04b9"
+  },
+  "publication": "blocked_before_new_tree_or_branch; no PR or CI created",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "repeated_semantics_equal": true,
+  "schema": "qkf-external-applicability-result-v1",
+  "source_attempt_counts": {
+    "source_unsupported": 24
+  },
+  "source_methods": 12,
+  "source_parsed_methods": 0,
+  "source_profile_attempts": 24
+}
