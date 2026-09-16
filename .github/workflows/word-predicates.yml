@@ -1,0 +1,96 @@
+name: Terminal word predicates
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/wordexpr/**'
+      - 'research/observations/**'
+      - 'research/external/**'
+      - '.github/workflows/word-predicates.yml'
+  push:
+    paths:
+      - 'research/wordexpr/**'
+      - 'research/observations/**'
+      - 'research/external/**'
+      - '.github/workflows/word-predicates.yml'
+permissions:
+  contents: read
+jobs:
+  predicates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record exact revision and frozen baseline
+        run: |
+          mkdir -p reproduction
+          git rev-parse HEAD > reproduction/checkout.txt
+          git rev-parse HEAD^{tree} >> reproduction/checkout.txt
+          python --version > reproduction/environment.txt
+          java -version >> reproduction/environment.txt 2>&1
+          python -c 'from research.external.frozen_v1.experiment import check_engine; check_engine()'
+      - name: New terminal tests and legacy word tests in both modes
+        run: |
+          python -m unittest research.wordexpr.test_predicates -v > reproduction/predicate-tests.log 2>&1
+          python -O -m unittest research.wordexpr.test_predicates -v > reproduction/predicate-tests-O.log 2>&1
+          python -m unittest research.wordexpr.test_wordexpr -v > reproduction/legacy-tests.log 2>&1
+          python -O -m unittest research.wordexpr.test_wordexpr -v > reproduction/legacy-tests-O.log 2>&1
+      - name: Acquire complete pinned original sources
+        run: python -m research.external.frozen_v1.download_sources reproduction/inputs
+      - name: Source-bound proofs and full original class execution
+        run: |
+          python -m research.wordexpr.predicate_experiment reproduction/inputs reproduction/predicates > reproduction/predicates.log
+          python -O -m research.wordexpr.predicate_experiment reproduction/inputs reproduction/predicates-O > reproduction/predicates-O.log
+      - name: Require complete independent results and identical artifacts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a,b=Path('reproduction/predicates'),Path('reproduction/predicates-O')
+          files=lambda r: {str(p.relative_to(r)):p.read_bytes() for p in r.rglob('*') if p.is_file()}
+          if files(a)!=files(b):raise SystemExit('predicate artifact bytes differ')
+          s=json.loads((a/'SUMMARY.json').read_text())
+          if (s['new_external_certified'],s['constructed_certified'],s['constructed_refuted'],
+              s['native_inputs'],s['native_mismatches'],s['native_width'])!=(1,7,5,69711,0,32):
+              raise SystemExit('incomplete predicate experiment')
+          if not s['native_full_original_class']:raise SystemExit('original class not executed')
+          PY
+      - name: Replay all downloaded-format certificates without producer imports
+        run: |
+          python -O - <<'PY'
+          import importlib.abc,json,sys
+          from pathlib import Path
+          class Block(importlib.abc.MetaPathFinder):
+              def find_spec(self, fullname, path=None, target=None):
+                  if any(s in fullname for s in ('producer','synthesis','subprocess','z3','smt','java_words','ascending_java')):
+                      raise ImportError('forbidden replay dependency: '+fullname)
+          sys.meta_path.insert(0,Block())
+          from research.wordexpr.predicate_checker import check
+          root=Path('reproduction/predicates');results=[]
+          for p in sorted(root.glob('*.certificate.json')):
+              name=p.name.removesuffix('.certificate.json')
+              src=(root/(name+'.java')).read_bytes().decode('utf-8')
+              goal=json.loads((root/(name+'.goal.json')).read_text())
+              result=check(src,goal,json.loads(p.read_text()))
+              if result!=json.loads((root/(name+'.result.json')).read_text()):raise SystemExit('replay mismatch')
+              results.append({'id':name,'status':result['status']})
+          if len(results)!=13:raise SystemExit('missing predicate certificates')
+          Path('reproduction/isolated-replay.json').write_text(json.dumps(results,sort_keys=True,indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: word-predicates-${{ matrix.python }}
+          path: reproduction/
+          retention-days: 30

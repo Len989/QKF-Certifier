@@ -1,0 +1,7 @@
+{
+  "schema": "qkf-word-predicate-goal-v1",
+  "contract": "modular-lsb-word-predicates-v1",
+  "entry": {"class": "BitUtil", "method": "isZeroOrPowerOfTwo"},
+  "word_type": "int",
+  "target": ["popcount_le", 1]
+}

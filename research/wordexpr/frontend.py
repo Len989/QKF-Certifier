@@ -52,7 +52,9 @@ def lex(source):
     return result
 
 
-def select(source, entry):
+def select(source, entry, *, word_type="long", result_type="long"):
+    require(word_type in {"int", "long"} and result_type in {word_type, "boolean"},
+            "explicit homogeneous method signature")
     require(type(entry) is dict and set(entry) == {'class', 'method'}, 'explicit entry fields')
     require(all(type(v) is str and IDENT.fullmatch(v) for v in entry.values()), 'entry identifiers')
     ts = lex(source)
@@ -75,12 +77,12 @@ def select(source, entry):
     end, level = closes[c], depths[c] + 1
     candidates = []
     for i in range(c + 1, end):
-        if depths[i] != level or ws[i:i + 3] != ['long', entry['method'], '(']:
+        if depths[i] != level or ws[i:i + 3] != [result_type, entry['method'], '(']:
             continue
         j = i + 3
         if ws[j:j + 1] == ['final']:
             j += 1
-        if j + 3 >= end or ws[j] != 'long' or not IDENT.fullmatch(ws[j + 1]) or ws[j + 1] in KEYWORDS or ws[j + 2] != ')':
+        if j + 3 >= end or ws[j] != word_type or not IDENT.fullmatch(ws[j + 1]) or ws[j + 1] in KEYWORDS or ws[j + 2] != ')':
             continue
         b = j + 3
         need(ws[b] == '{' and b in closes, 'concrete selected method body')
@@ -93,7 +95,7 @@ def select(source, entry):
              len(set(prefix) & {'public', 'private', 'protected'}) <= 1,
              'plain static method modifiers; annotations are not supported')
         candidates.append((a + 1, b, closes[b], ws[j + 1], ws[i + 3] == 'final'))
-    need(len(candidates) == 1, 'one selected long-to-long method')
+    need(len(candidates) == 1, 'one selected ' + word_type + '-to-' + result_type + ' method')
     a, b, e, parameter, final_parameter = candidates[0]
     return ws[b + 1:e], parameter, final_parameter, source[ts[a][1]:ts[e][2]], [ts[a][1], ts[e][2]]
 
