@@ -40,7 +40,7 @@ theorem floor_then_successor (L : Nat → Prop) (minimum maximum bound g y : Nat
     have impossible : ¬ y ≤ bound := by
       intro hy
       exact (Nat.not_le_of_lt advance.1) (floor_ok.2.2 y next_ok.1 hy)
-    omega
+    exact Nat.lt_of_not_ge impossible
   exact ⟨next_ok.1, Nat.le_of_lt above,
     fun z hz hb => advance.2 z hz (Nat.lt_of_lt_of_le gap hb)⟩
 
@@ -57,14 +57,14 @@ theorem compose_correct (L : Nat → Prop) (minimum maximum : Nat)
   · by_cases above : maximum < bound
     · simp only [compose, if_neg below, if_pos above, ExactCeiling]
       exact fun z hz => Nat.lt_of_le_of_lt (limits z hz).2 above
-    · have lower : minimum ≤ bound := by omega
-      have upper : bound ≤ maximum := by omega
+    · have lower : minimum ≤ bound := Nat.le_of_not_gt below
+      have upper : bound ≤ maximum := Nat.le_of_not_gt above
       have hf := floor_ok bound lower upper
       by_cases hit : floor bound = bound
       · simp only [compose, if_neg below, if_neg above, if_pos hit, ExactCeiling]
         exact ⟨hf.1, Nat.le_of_eq hit.symm, fun z _ hz => Nat.le_trans (Nat.le_of_eq hit) hz⟩
       · simp only [compose, if_neg below, if_neg above, if_neg hit]
-        have gap : floor bound < bound := by have h := hf.2.1; omega
+        have gap : floor bound < bound := (Nat.lt_iff_le_and_ne).mpr ⟨hf.2.1, hit⟩
         exact floor_then_successor L minimum maximum bound (floor bound) (next (floor bound))
           maximum_legal upper hf gap (next_ok (floor bound) hf.1)
 
@@ -175,11 +175,15 @@ theorem bitsOf_value (bs : List Bool) : bitsOf bs.length (value bs) = bs := by
   | nil => rfl
   | cons b bs ih =>
     have div : (digit b + 2 * value bs) / 2 = value bs := by
+      clear ih
       have d : digit b < 2 := by cases b <;> decide
       omega
-    have bit : ((digit b + 2 * value bs) % 2 == 1) = b := by
-      cases b <;> simp [digit, Nat.add_mod, Nat.mul_mod]
-    simp only [List.length_cons, value, bitsOf, bit, div, ih]
+    have rem : (digit b + 2 * value bs) % 2 = digit b := by
+      clear ih div
+      have d : digit b < 2 := by cases b <;> decide
+      omega
+    have flag : (digit b == 1) = b := by cases b <;> decide
+    simp only [List.length_cons, value, bitsOf, rem, flag, div, ih]
 
 theorem bitsOf_masked {is : List Input} {z : Nat} (h : Masked is z) :
     AdmissibleBits is (bitsOf is.length z) ∧ value (bitsOf is.length z) = z := by

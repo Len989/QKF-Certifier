@@ -41,7 +41,7 @@ theorem next4_contract (g : Nat) (hg : legal4 g) : SuccessorContract legal4 0 g 
   · change SuccessorContract legal4 0 0 1
     refine ⟨Or.inr (Or.inl rfl), ?_, ?_⟩
     · intro _; refine ⟨by decide, ?_⟩
-      intro z hz hz0; omega
+      intro z _ hz0; exact hz0
     · intro h; exact False.elim (h ⟨1, Or.inr (Or.inl rfl), by decide⟩)
   · change SuccessorContract legal4 0 1 4
     refine ⟨Or.inr (Or.inr (Or.inl rfl)), ?_, ?_⟩
