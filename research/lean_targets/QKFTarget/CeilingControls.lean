@@ -47,18 +47,22 @@ theorem next4_contract (g : Nat) (hg : legal4 g) : SuccessorContract legal4 0 g 
     refine ⟨Or.inr (Or.inr (Or.inl rfl)), ?_, ?_⟩
     · intro _; refine ⟨by decide, ?_⟩
       intro z hz hz1
-      rcases hz with rfl | rfl | rfl | rfl <;> omega
+      rcases hz with rfl | rfl | rfl | rfl
+      · exact False.elim ((Nat.not_lt_zero 1) hz1)
+      · exact False.elim ((Nat.lt_irrefl 1) hz1)
+      · exact Nat.le_refl 4
+      · decide
     · intro h; exact False.elim (h ⟨4, Or.inr (Or.inr (Or.inl rfl)), by decide⟩)
   · change SuccessorContract legal4 0 4 5
     refine ⟨Or.inr (Or.inr (Or.inr rfl)), ?_, ?_⟩
     · intro _; refine ⟨by decide, ?_⟩
-      intro z hz hz4
-      rcases hz with rfl | rfl | rfl | rfl <;> omega
+      intro z _ hz4; exact hz4
     · intro h; exact False.elim (h ⟨5, Or.inr (Or.inr (Or.inr rfl)), by decide⟩)
   · change SuccessorContract legal4 0 5 0
     refine ⟨Or.inl rfl, ?_, fun _ => rfl⟩
     rintro ⟨z, hz, hgt⟩
-    rcases hz with rfl | rfl | rfl | rfl <;> omega
+    rcases hz with rfl | rfl | rfl | rfl <;>
+      exact False.elim ((Nat.not_le_of_lt hgt) (by decide))
 
 theorem four_element_example_all_bounds (b : Nat) :
     ExactCeiling legal4 b (compose 0 5 b floor4 next4) := by
