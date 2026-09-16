@@ -23,7 +23,7 @@ def ExactCeiling (L : Nat → Prop) (bound : Nat) : Option Nat → Prop
 
 /-- The published wrapper's branch structure, at the numerical semantic level. -/
 def compose (minimum maximum bound : Nat) (floor next : Nat → Nat) : Option Nat :=
-  if bound ≤ minimum then some minimum
+  if bound < minimum then some minimum
   else if maximum < bound then none
   else let g := floor bound
        if g = bound then some g else some (next g)
@@ -51,9 +51,9 @@ theorem compose_correct (L : Nat → Prop) (minimum maximum : Nat)
     (floor_ok : ∀ b, minimum ≤ b → b ≤ maximum → FloorContract L b (floor b))
     (next_ok : ∀ g, L g → SuccessorContract L minimum g (next g)) (bound : Nat) :
     ExactCeiling L bound (compose minimum maximum bound floor next) := by
-  by_cases below : bound ≤ minimum
+  by_cases below : bound < minimum
   · simp only [compose, if_pos below, ExactCeiling]
-    exact ⟨minimum_legal, below, fun z hz _ => (limits z hz).1⟩
+    exact ⟨minimum_legal, Nat.le_of_lt below, fun z hz _ => (limits z hz).1⟩
   · by_cases above : maximum < bound
     · simp only [compose, if_neg below, if_pos above, ExactCeiling]
       exact fun z hz => Nat.lt_of_le_of_lt (limits z hz).2 above

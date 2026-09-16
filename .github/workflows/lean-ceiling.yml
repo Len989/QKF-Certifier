@@ -12,11 +12,74 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v6
-      - name: Install pinned Lean and build existing project
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Record exact revision and tree
+        run: |
+          mkdir -p reproduction/ceiling
+          git rev-parse HEAD > reproduction/ceiling/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/ceiling/tree.txt
+      - name: Install pinned Lean and check the existing project
         uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
         with:
           lake-package-directory: research/lean_targets
           use-github-cache: false
-      - name: Check the new conditional composition theorem
-        working-directory: research/lean_targets
-        run: lake build QKFTarget.Ceiling
+      - name: Test ceiling validation driver and numerical bridge
+        run: |
+          python -m unittest research.observations.tests.test_ceiling_lean_bridge -v
+          python -O -m unittest research.observations.tests.test_ceiling_lean_bridge -v
+      - name: Regenerate independently checked source and target packages
+        run: python -m research.observations.run_target_experiment reproduction/ceiling/fresh
+      - name: Bind fresh exports to the exact machine data used by the new theorem
+        run: |
+          python -O - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          from research.observations.lean_target_export import CASES, ROOT, build_export, render_all, successor_goal
+          from research.observations.run_io import read_json
+          fresh = ROOT / 'reproduction/ceiling/fresh'
+          exports = {}
+          for name in CASES:
+              source = (ROOT / 'research/observations/evidence/ascending' / (name + '.java')).read_bytes().decode('utf-8')
+              package = read_json(fresh / ('ascending.' + name + '.cyclic_successor') / 'package.json', package=True)
+              exports[name] = build_export(source, successor_goal(), package)
+          rendered = render_all(exports).encode('utf-8')
+          if rendered != (ROOT / 'research/lean_targets/QKFTarget/Exported.lean').read_bytes():
+              raise SystemExit('fresh packages differ from the compiled data')
+          out = ROOT / 'reproduction/ceiling/export'
+          out.mkdir(parents=True, exist_ok=False)
+          (out / 'Exported.lean').write_bytes(rendered)
+          for name, data in exports.items():
+              (out / (name + '.json')).write_text(json.dumps(data, indent=2, sort_keys=True) + '\n')
+          print(json.dumps({'export_sha256': hashlib.sha256(rendered).hexdigest(), 'lean_checked': False}))
+          PY
+      - name: Fresh conditional composition proof, strict audit and semantic controls
+        run: python -O research/lean_targets/check_ceiling.py --output reproduction/ceiling/lean --timeout 300
+      - name: Require all proof and rejection obligations
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          result = json.loads(Path('reproduction/ceiling/lean/RESULT.json').read_text())
+          if result['status'] != 'accepted' or result['lean_checked'] is not True:
+              raise SystemExit('conditional composition formal validation not accepted')
+          if len(result['axioms']) != 22 or len(result['controls']) != 8:
+              raise SystemExit('missing audited theorem or semantic control')
+          if result.get('conditional_floor_contract') is not True or result.get('json_interpreter_verified') is not False:
+              raise SystemExit('scope boundary changed')
+          if result.get('placeholder_rejected_by_audit') is not True:
+              raise SystemExit('missing real placeholder axiom control')
+          for name, digest in result['lean_source_sha256'].items():
+              if hashlib.sha256((Path('research/lean_targets') / name).read_bytes()).hexdigest() != digest:
+                  raise SystemExit('source changed after compilation: ' + name)
+          print(json.dumps(result, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: conditional-ceiling-composition
+          path: reproduction/ceiling/
+          retention-days: 30
