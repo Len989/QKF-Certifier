@@ -203,9 +203,12 @@ class CeilingBridgeTests(unittest.TestCase):
         self.assertLess(result, 2)
 
     def test_source_bindings_and_deferred_frontend_independence(self):
-        result = bridge.check_source_bindings()
+        # Optional future frontends may be installed; this route must not need them.
+        unavailable = {name: None for name in ('research.wordexpr', 'research.wordexpr.frontend',
+                                               'research.wordexpr.semantics', 'research.wordexpr.checker')}
+        with patch.dict('sys.modules', unavailable):
+            result = bridge.check_source_bindings()
         self.assertEqual(len(result['sources']), 2)
-        self.assertFalse((ROOT / 'research/wordexpr').exists())
         # The committed existing proof modules must still match accepted bindings.
         self.assertEqual(result['status'], 'source_factor_replayed')
 
