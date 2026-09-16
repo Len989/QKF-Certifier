@@ -1,0 +1,22 @@
+name: Conditional ceiling composition
+on:
+  push:
+    branches: [research/lean-ceiling-composition-v1]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ceiling:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install pinned Lean and build existing project
+        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
+        with:
+          lake-package-directory: research/lean_targets
+          use-github-cache: false
+      - name: Check the new conditional composition theorem
+        working-directory: research/lean_targets
+        run: lake build QKFTarget.Ceiling
