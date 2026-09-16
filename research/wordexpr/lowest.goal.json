@@ -1,0 +1,6 @@
+{
+  "schema": "qkf-word-expression-goal-v1",
+  "contract": "modular-lsb-word-expressions-v1",
+  "entry": {"class": "Long", "method": "lowestOneBit"},
+  "target": ["lowest_set_bit"]
+}

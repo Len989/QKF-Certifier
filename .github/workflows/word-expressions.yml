@@ -1,0 +1,66 @@
+name: Selected word expressions
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/wordexpr/**'
+      - 'research/observations/**'
+      - '.github/workflows/word-expressions.yml'
+permissions:
+  contents: read
+jobs:
+  word-expressions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record revision and verify the unchanged frozen baseline
+        run: |
+          mkdir -p reproduction
+          git rev-parse HEAD > reproduction/checkout.txt
+          git rev-parse HEAD^{tree} >> reproduction/checkout.txt
+          python --version > reproduction/environment.txt
+          java -version >> reproduction/environment.txt 2>&1
+          python -c 'from research.external.frozen_v1.experiment import check_engine; check_engine()'
+      - name: New tests normally and under optimization
+        run: |
+          python -m unittest research.wordexpr.test_wordexpr -v > reproduction/unit.log 2>&1
+          python -O -m unittest research.wordexpr.test_wordexpr -v > reproduction/unit-O.log 2>&1
+      - name: Acquire pinned complete original sources
+        run: python -m research.external.frozen_v1.download_sources reproduction/inputs
+      - name: Prove original lowest bit and check Java and designed controls
+        run: |
+          python -m research.wordexpr.experiment reproduction/inputs reproduction/words > reproduction/words.log
+          python -O -m research.wordexpr.experiment reproduction/inputs reproduction/words-O > reproduction/words-O.log
+      - name: Require complete and byte-identical outcomes in both modes
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a, b = Path('reproduction/words'), Path('reproduction/words-O')
+          left = {str(p.relative_to(a)): p.read_bytes() for p in a.rglob('*') if p.is_file()}
+          right = {str(p.relative_to(b)): p.read_bytes() for p in b.rglob('*') if p.is_file()}
+          if left != right:
+              raise SystemExit('Ordinary and optimized evidence differ')
+          r = json.loads((a/'SUMMARY.json').read_text())
+          if (r['new_external_certified'], r['source_unsupported'], r['native_inputs'],
+              r['native_mismatches'], r['constructed_certified'], r['constructed_refuted']) != (1,11,9012,0,7,4):
+              raise SystemExit('Incomplete development result')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: word-expressions-${{ matrix.python }}
+          path: reproduction/
+          retention-days: 30
