@@ -1,0 +1,30 @@
+{
+  "acquisition_commit": "646aabb66b531391d09995bf028e9b414443a9b7",
+  "baseline_commit": "c8c7b4eeaf848d31c8c324a4316ffec8aac81cda",
+  "execution_authorized": false,
+  "files_sha256": {
+    ".github/workflows/frozen-v3-baseline.yml": "e714a4d3ad37d843ab9f1d8fe8b0fb96ed13dd13db1470fcf0afe8cc559d3f60",
+    "research/external/frozen_v3/ENGINE.json": "bdb306b2861e2b5e0789318d7b147516ccdbba497b00cac39a9eff63a08e3ddb",
+    "research/external/frozen_v3/PROTOCOL.md": "8008e24adbef99abe1834301301bef8eba7b061172ea5770ffba7d3059ec5d71",
+    "research/external/frozen_v3/REGISTRATION.json": "35caed9135929c9b290a9a10b3796a967090af20bad0ba5d624d3d0cb23eb505",
+    "research/external/frozen_v3/run27/ACQUISITION.json": "e12fbbf031939ba43ad6738b806ec27a91fb7e814fe9f36dad0b3d6d4f0e845f",
+    "research/external/frozen_v3/run27/CORPUS.json": "2f2612f96e5794d7fb988be2da8b0800a6e53750939f7c3d868b362c61998535",
+    "research/external/frozen_v3/run27/EXPOSURE.json": "0aeed1452ef52d4e1b4c59f0d4aac963575cf865f3b3495f3d913a227ebcc4ca",
+    "research/external/frozen_v3/run27/Inventory.java": "d83c479b91edc030454cc4ea3e74ab32af6427bdd0250d409c0033255106903b",
+    "research/external/frozen_v3/run27/README_RU.md": "b128f1afc6f4ff54edc642f7c3dd3cd27341fb5c934c2ba54d40e3251323df83",
+    "research/external/frozen_v3/run27/RUNTIMES.json": "80223a037b2d9c00ddee367fd23e6d2f3930883dc24614dcb639f4697321a885",
+    "research/external/frozen_v3/run27/acquire.py": "fdc192ae18c4709a13fe2e85856b49929ddbe03e30763890671eea483b5e3f80",
+    "research/external/frozen_v3/run27/agrona.jsonl": "692c9709eb25d1167a6f8582546a0b315c426755c3a5ab4011b922fd54b70bb2",
+    "research/external/frozen_v3/run27/gate.py": "d8d5730fe561ee1aa75e5d61871277c1591e6cd47371c40878eeaa24e36b110e",
+    "research/external/frozen_v3/run27/inventory.py": "5c5192c3130db21005ff270e1e19b78829d6f08a126a2067c2cea043d2e22356",
+    "research/external/frozen_v3/run27/libgdx-math.jsonl": "55597c09faff17795b1477eb8fb8dd73504e0940771e36c3c9a7cacc8b723967",
+    "research/external/frozen_v3/run27/libgdx-native.jsonl": "b09aa9d5e8e096865be90db6a8f8df6e461e7ca301821a559313b0c2011336d4",
+    "research/external/frozen_v3/run27/netty.jsonl": "4fd0647428e54cafcc4950669b11027d02ef3b0b8445bf68692a9848e3dcf52d",
+    "research/external/frozen_v3/run27/runner.py": "7815de9ea01a97f7a244837420bed66e626ea3b21f4e48ab8f9ac875b318ee3c",
+    "research/external/frozen_v3/run27/test_run27.py": "03f29e6e864787a9e44c6e60e239434484b229b714df47d8467108eead01065f",
+    "research/external/frozen_v3/run27/worker.py": "c1522d473ef3cb3990c631e95d4cf4e5d6b77485c021de3bd667bb6082d7b6aa",
+    "research/external/frozen_v3/verify.py": "3f6387f6a64aa933c427632fc19d638625dbdea331b7869b1a4b58a8a5898885"
+  },
+  "measurement": "One discovery and three optimized independent replays per registered proof; sequential fresh processes; 120s and 2GiB; exact RUNTIMES gate.",
+  "schema": "qkf-run27-corpus-lock-v1"
+}
