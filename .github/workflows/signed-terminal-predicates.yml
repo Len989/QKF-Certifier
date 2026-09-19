@@ -1,0 +1,92 @@
+name: Signed terminal predicates
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  signed-predicates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: \${{ matrix.python-version }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record exact revision and preserve frozen v2 engine
+        run: |
+          mkdir -p reproduction/signed-predicates
+          git rev-parse HEAD > reproduction/signed-predicates/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/signed-predicates/tree.txt
+          python - <<'PY'
+          from research.external.frozen_v2.experiment import check_engine
+          check_engine()
+          PY
+      - name: Download exact frozen-v2 source blobs
+        run: >-
+          python -m research.external.frozen_v2.download_sources
+          reproduction/signed-predicates/input
+      - name: New and old predicate tests normally and optimized
+        run: |
+          python -m unittest research.signed_predicates.test_signed_predicates -v
+          python -O -m unittest research.signed_predicates.test_signed_predicates -v
+          python -m unittest research.wordexpr.test_predicates -v
+          python -O -m unittest research.wordexpr.test_predicates -v
+      - name: Fresh three-method development experiment
+        run: >-
+          python -m research.signed_predicates.experiment
+          reproduction/signed-predicates/input
+          reproduction/signed-predicates/fresh
+      - name: Replay with producer, Java and SMT disabled
+        run: |
+          python -O - <<'PY'
+          import builtins, json
+          import research.signed_predicates.experiment as experiment
+
+          def no_native(*args, **kwargs):
+              raise AssertionError('native execution forbidden during replay')
+          experiment.subprocess.run = no_native
+
+          original = builtins.__import__
+          def guarded(name, *args, **kwargs):
+              if 'producer' in name or name in {'z3','cvc5','pysmt'}:
+                  raise AssertionError('unexpected signed replay dependency: ' + name)
+              return original(name, *args, **kwargs)
+          builtins.__import__ = guarded
+
+          result = experiment.run(
+              'reproduction/signed-predicates/input',
+              'reproduction/signed-predicates/fresh',
+              replay=True,
+          )
+          print(json.dumps(result, sort_keys=True))
+          PY
+      - name: Require exact development scope
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('reproduction/signed-predicates/fresh/SUMMARY.json').read_text())
+          assert s['schema'] == 'qkf-signed-predicate-development-v1'
+          assert s['development_after_frozen_v2'] is True
+          assert s['frozen_v2_historical_result_unchanged'] is True
+          assert s['counts'] == {'certified': 3}
+          assert len(s['cases']) == 3
+          assert s['native_mismatches'] == 0
+          assert s['total_native_inputs'] > 100000
+          print(json.dumps(s, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: signed-terminal-predicates-py\${{ matrix.python-version }}
+          path: reproduction/signed-predicates/
+          retention-days: 30
