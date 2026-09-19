@@ -1,0 +1,74 @@
+name: Observation inference v2
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inference-v2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Record exact revision and preserve frozen baseline
+        run: |
+          mkdir -p reproduction/inference-v2
+          git rev-parse HEAD > reproduction/inference-v2/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/inference-v2/tree.txt
+          python -c 'from research.inference.provenance import check_engine; check_engine()'
+      - name: Download pinned external development sources
+        run: python -m research.external.frozen_v1.download_sources reproduction/inference-v2/input
+      - name: Run v1 and v2 inference tests normally and optimized
+        run: |
+          python -m unittest research.inference.test_inference research.inference.test_inference_v2 -v
+          python -O -m unittest research.inference.test_inference research.inference.test_inference_v2 -v
+      - name: Fresh richer inference and direct-target experiment
+        run: >-
+          python -m research.inference.v2_experiment
+          reproduction/inference-v2/input reproduction/inference-v2/fresh
+      - name: Replay v2 with all producers and native tools blocked
+        run: |
+          python -O - <<'PY'
+          import builtins, json
+          original = builtins.__import__
+          def guarded(name, *args, **kwargs):
+              parts = name.split('.')
+              if any('producer' in p for p in parts) or name in {'subprocess','z3','cvc5','pysmt'}:
+                  raise AssertionError('unexpected v2 replay dependency: ' + name)
+              return original(name, *args, **kwargs)
+          builtins.__import__ = guarded
+          from research.inference.v2_experiment import run
+          print(json.dumps(run('reproduction/inference-v2/input',
+                               'reproduction/inference-v2/fresh', replay=True), sort_keys=True))
+          PY
+      - name: Require exact v2 outcomes
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('reproduction/inference-v2/fresh/SUMMARY.json').read_text())
+          assert s['counts'] == {'certified': 5, 'refuted': 1}, s
+          assert s['direct_target_results'] == 6
+          assert s['direct_successor_certified'] == 2
+          assert s['direct_successor_refuted'] == 1
+          assert s['richer_order_cut_selected'] is True
+          assert s['frozen_v1_unchanged'] is True
+          assert s['v1_semantics_preserved_by_separate_schema'] is True
+          assert s['cases']['graal_clear_repair']['target_status'] == 'refuted'
+          assert s['cases']['graal_original']['target_status'] == 'certified'
+          assert s['cases']['graal_irrelevant_register']['target_status'] == 'certified'
+          print(json.dumps(s, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: observation-inference-v2-py${{ matrix.python-version }}
+          path: reproduction/inference-v2/
+          retention-days: 30
