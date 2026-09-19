@@ -1,0 +1,20 @@
+{
+  "schema": "qkf-run27-infrastructure-incident-v1",
+  "run_id": 35472447895,
+  "run_attempt": 1,
+  "failed_job_id": 105975759213,
+  "runtime_track": "3.10.21",
+  "execution_commit": "8fb8ae749a641f486da9a93303e2e28c232eaf70",
+  "corpus_commit": "232964f13caa474bbc2f88942856009334856647",
+  "corpus_lock_sha256": "c179417efef14efa17767d4692928cea15228b2eb6cf8f73510ebeb523bcb133",
+  "observed_failure_utc": "2026-09-19T22:10:01.9224139Z",
+  "failure": "urllib.error.HTTPError: HTTP Error 403: rate limit exceeded",
+  "stage": "acquire.py repository metadata request, before corpus preflight or any QKF candidate diagnostic/native execution",
+  "candidate_methods_attempted": 0,
+  "failed_artifact": {"id": 10594050383, "sha256": "70574e9214570b688d8f49fba554bcfb390b301ec5e8a7cb772b45617db4b524", "bytes": 14500657, "file_count": 6, "contains_evaluation_directory": false},
+  "successful_primary": {"job_id": 105975759237, "runtime": "3.12.14", "artifact_id": 10594095164, "artifact_sha256": "7d3afd5cf180c334df5368dc4e4dc8a8faf66cc74bec8684cb950457763f52ea", "status": "accepted", "denominator": 33, "counts": {"certified": 2, "unsupported": 8, "contract_unavailable": 23}},
+  "authorization": "Retry only failed job 105975759213 through GitHub's job-rerun action at the SAME execution commit and SAME locked workflow. Do not rerun the successful primary, change network code, alter runtime checks or delete the failed evidence.",
+  "changes_to_engine_corpus_targets_budgets_runner": false,
+  "retry_result": null,
+  "preservation": "The failed ZIP was downloaded and its digest and six files verified before this authorization. Original GitHub job logs and failed artifact remain referenced. The retry will record its own GitHub run attempt and UTC start; no measurement result is substituted for a failed attempt."
+}
