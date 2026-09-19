@@ -15,6 +15,7 @@ from .model import digest, require
 ROOT = Path(__file__).resolve().parents[2]
 FIXTURE = ROOT / "research/graal/native/IntegerStamp.java"
 SCHEMA = "qkf-graal-create-source-v1"
+PINNED_FIXTURE_SHA256 = "1a827adb88f57b8f612979af5b90016077cbf4dad4c54b34e539fee5fce01c95"
 
 PREFIXES = {
     "create_full": "public static IntegerStamp create ( int bits , long lowerBoundInput , long upperBoundInput , long mustBeSetInput , long mayBeSetInput , boolean canBeZero ) {",
@@ -130,6 +131,8 @@ def read_source(source):
     """Bind the caller and independently recognized region semantics."""
     require(type(source) is str, "create source text")
     fixture = FIXTURE.read_text(encoding="utf-8")
+    fixture_sha = hashlib.sha256(fixture.encode("utf-8")).hexdigest()
+    require(fixture_sha == PINNED_FIXTURE_SHA256, "pinned source-identical Graal fixture")
     actual, reference = method_tokens(source), method_tokens(fixture)
     for name in PREFIXES:
         require(actual[name] == reference[name], "changed Graal create method contract: " + name)
@@ -146,7 +149,7 @@ def read_source(source):
     return {
         "schema": SCHEMA,
         "source_sha256": hashlib.sha256(source.encode("utf-8")).hexdigest(),
-        "fixture_sha256": hashlib.sha256(fixture.encode("utf-8")).hexdigest(),
+        "fixture_sha256": fixture_sha,
         "methods": {name: digest(actual[name]) for name in PREFIXES},
         "primitives": {name: digest(value) for name, value in primitives.items()},
         "empty_factory": empty_factory,
