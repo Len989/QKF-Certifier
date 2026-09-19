@@ -101,7 +101,7 @@ def run(inputs, output, *, replay=False, native=False, small_bits=4, samples=300
 
     # The selected create/helper algorithm is intentionally unchanged across
     # the two pinned Graal revisions. Full file hashes remain distinct.
-    for field in ("methods", "primitives"):
+    for field in ("methods", "primitives", "empty_factory"):
         require(
             source_contracts["graal_reference"][field]
             == source_contracts["graal_revision"][field],
