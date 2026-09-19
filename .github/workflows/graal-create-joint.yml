@@ -81,7 +81,7 @@ jobs:
           assert validation['physical_digit_dp']['mismatches'] == 0
           assert validation['native']['mismatches'] == 0
           assert validation['native']['inputs'] >= 1500
-          assert validation['physical_digit_dp']['three_iteration_examples'] > 0
+          assert int(validation['small_exhaustive']['iterations'].get('3', 0)) > 0
           print(json.dumps({
               'cases': summary['counts'],
               'small': validation['small_exhaustive']['inputs'],
