@@ -61,7 +61,7 @@ def set_optional_bits(bits, bound, must, may, initial):
     for position in range(bits - 1, -1, -1):
         bit = 1 << position
         if bit & optional:
-            candidate = signed_word(unsigned_word(value, bits) | bit, bits)
+            candidate = value | bit
             if candidate <= bound:
                 value = candidate
     return value
@@ -99,7 +99,7 @@ def compute_lower_bound(bits, lower, must, may, can_zero):
             for position in range(bits - 1, -1, -1):
                 bit = 1 << position
                 if bit & optional:
-                    candidate = signed_word(unsigned_word(value, bits) + bit, bits)
+                    candidate = value + bit
                     if candidate <= lower:
                         value = candidate
 
@@ -108,14 +108,12 @@ def compute_lower_bound(bits, lower, must, may, can_zero):
                 for position in range(0, bits - 1):
                     bit = 1 << position
                     if incremented:
-                        raw = unsigned_word(value, bits)
-                        if bit & must and not raw & bit:
-                            value = signed_word(raw | bit, bits)
-                            raw = unsigned_word(value, bits)
-                        if not bit & may and raw & bit:
-                            value = signed_word(raw + bit, bits)
+                        if bit & must and not value & bit:
+                            value |= bit
+                        if not bit & may and value & bit:
+                            value += bit
                     elif bit & optional:
-                        value = signed_word(unsigned_word(value, bits) + bit, bits)
+                        value += bit
                         incremented = True
 
     if value == 0 and not can_zero:
@@ -124,7 +122,7 @@ def compute_lower_bound(bits, lower, must, may, can_zero):
             value = signed_word(must, bits)
         elif signed_must == 0:
             low_bit = _trailing_zeros_64(may)
-            value = signed_word(1 << (low_bit & 63), bits)
+            value = java_long(1 << (low_bit & 63))
         else:
             value = max_value(bits)
 
