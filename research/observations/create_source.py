@@ -73,6 +73,43 @@ PRIMITIVE_FORMS = {
 }
 
 
+
+EMPTY_FACTORY_FORMS = (
+    "static IntegerStamp createEmptyStamp(int bits){return new IntegerStamp(bits,true);}",
+    "static IntegerStamp createEmptyStamp(int bits){assert isPowerOf2(bits); "
+    "return emptyStamps[CodeUtil.log2(bits)];}",
+)
+EMPTY_CACHE_FORM = (
+    "static final IntegerStamp[] emptyStamps = new IntegerStamp[CodeUtil.log2(64) + 1]; "
+    "static final IntegerStamp[] unrestrictedStamps = new IntegerStamp[CodeUtil.log2(64) + 1]; "
+    "static {for (int logBits = 0; logBits < emptyStamps.length; logBits++) {"
+    "emptyStamps[logBits] = new IntegerStamp(1 << logBits, true); "
+    "unrestrictedStamps[logBits] = new IntegerStamp(1 << logBits, false);}}"
+)
+
+
+def _contains_sequence(words, form):
+    wanted = _words(form)
+    return sum(words[i:i + len(wanted)] == wanted
+               for i in range(len(words) - len(wanted) + 1))
+
+
+def _empty_factory(source):
+    words = _words(source)
+    forms = [_words(x) for x in EMPTY_FACTORY_FORMS]
+    matches = [form for form in forms
+               if any(words[i:i + len(form)] == form
+                      for i in range(len(words) - len(form) + 1))]
+    require(len(matches) == 1, "one accepted createEmptyStamp implementation")
+    cached = matches[0] == forms[1]
+    if cached:
+        require(_contains_sequence(words, EMPTY_CACHE_FORM) == 1,
+                "exact cached empty/unrestricted stamp initialization")
+    return {"kind": "cached" if cached else "direct",
+            "sha256": digest(matches[0]),
+            "cache_sha256": digest(_words(EMPTY_CACHE_FORM)) if cached else None}
+
+
 def method_tokens(source):
     return {name: _extract(source, prefix) for name, prefix in PREFIXES.items()}
 
@@ -103,6 +140,7 @@ def read_source(source):
             "exact three-pass source iteration limit")
 
     primitives = {name: _primitive(source, name) for name in PRIMITIVE_FORMS}
+    empty_factory = _empty_factory(source)
     descending = read_descending(source)
     ascending = read_ascending(source)
     return {
@@ -111,6 +149,7 @@ def read_source(source):
         "fixture_sha256": hashlib.sha256(fixture.encode("utf-8")).hexdigest(),
         "methods": {name: digest(actual[name]) for name in PREFIXES},
         "primitives": {name: digest(value) for name, value in primitives.items()},
+        "empty_factory": empty_factory,
         "descending_source_ir_sha256": digest(descending),
         "ascending_source_ir_sha256": digest(ascending),
         "rules": [
@@ -119,5 +158,6 @@ def read_source(source):
             "existing-ascending-source-frontend",
             "exact-iteration-limit",
             "accepted-CodeUtil-signed-extrema-and-extension",
+            "accepted-direct-or-cached-empty-factory",
         ],
     }
