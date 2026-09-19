@@ -1,0 +1,37 @@
+name: Lean target kernel
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  target-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - name: Record exact proof source revision
+        run: |
+          mkdir -p validation/lean_targets
+          git rev-parse HEAD > validation/lean_targets/revision.txt
+          sha256sum research/lean/QKF/Targets/*.lean > validation/lean_targets/sources.sha256
+      - name: Build the unchanged Lean pilot and install pinned Lean
+        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
+        with:
+          lake-package-directory: research/lean
+          use-github-cache: false
+      - name: Check the new target kernel numerical theorems and axiom audit
+        working-directory: research/lean
+        run: |
+          set -o pipefail
+          lake env lean --version | tee ../../validation/lean_targets/version.txt
+          lake build QKF.Targets.Audit 2>&1 | tee ../../validation/lean_targets/build.log
+      - name: Reject ten independent certificate and semantic corruptions
+        run: python research/lean/scripts/check_target_mutations.py --output validation/lean_targets/negative
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lean-target-kernel
+          path: validation/lean_targets/
+          retention-days: 30
