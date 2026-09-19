@@ -50,7 +50,7 @@ def population(width):
     return sorted(xs)
 
 
-def native(declaration, word_type, width, xs):
+def native(declaration, method_name, word_type, width, xs):
     java, javac = shutil.which("java"), shutil.which("javac")
     require(java is not None and javac is not None, "JDK required for signed predicate validation")
     conversion = (
@@ -65,7 +65,7 @@ public class SignedPredicateProbe {{
     BufferedReader r=new BufferedReader(new InputStreamReader(System.in));
     for(String s;(s=r.readLine())!=null;) {{
       {conversion}
-      System.out.println(f(x));
+      System.out.println(METHOD(x));
     }}
   }}
 }}
@@ -126,7 +126,7 @@ def run(inputs, output, *, replay=False):
             )
             require(body, "selected signed predicate body")
             xs = population(width)
-            ys = native(declaration, word_type, width, xs)
+            ys = native(declaration, goal["entry"]["method"], word_type, width, xs)
             ir = cert["source"]["ir"]
             mismatches = 0
             for x, actual in zip(xs, ys):
