@@ -56,7 +56,7 @@ def _sources(inputs):
 
 def run(inputs, output, *, replay=False):
     inputs, output = Path(inputs), Path(output)
-    check_engine(ROOT)
+    check_engine()
     source_map, target_map = _sources(inputs), targets()
 
     if replay:
