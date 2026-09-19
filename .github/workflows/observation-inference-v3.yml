@@ -1,0 +1,31 @@
+name: Observation inference v3
+on:
+  pull_request:
+  push:
+    branches: ['research/observation-inference-v3-signed']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inference-v3:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Baseline signed profile regression
+        run: python -m unittest research.signed_predicates.test_signed_predicates -v
+      - name: Record reproducible source snapshot
+        run: |
+          mkdir -p reproduction/inference-v3
+          git rev-parse HEAD > reproduction/inference-v3/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/inference-v3/tree.txt
+          git archive HEAD | gzip -n > reproduction/inference-v3/source.tar.gz
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: observation-inference-v3-source
+          path: reproduction/inference-v3/
+          retention-days: 30
