@@ -16,8 +16,8 @@ theorem interval_bounds : Covers interval2to5 2 5 := by
 def bucketOrderGood : Bool :=
   decide (signedWord 4 8 4 ≤ signedWord 4 8 7)
 
-def mixedBucketUnsignedMisleads : Bool :=
-  decide (signedWord 4 8 7 ≤ signedWord 4 8 1)
+def mixedBucketOrderAgrees : Bool :=
+  decide ((signedWord 4 8 7 ≤ signedWord 4 8 1) ↔ (7 ≤ 1))
 
 def commonPrefixPositive : Bool :=
   decide ((fun z => z / 4) 8 = (fun z => z / 4) 11)
@@ -38,7 +38,7 @@ def thirdPassWithoutNormality : Bool :=
 
 def positiveExamples : Bool :=
   bucketOrderGood &&
-  !mixedBucketUnsignedMisleads &&
+  !mixedBucketOrderAgrees &&
   commonPrefixPositive &&
   !commonPrefixBroken &&
   emptyExact &&
