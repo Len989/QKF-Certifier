@@ -19,6 +19,12 @@ SCHEMA = "qkf-graal-create-source-v1"
 PREFIXES = {
     "create_full": "public static IntegerStamp create ( int bits , long lowerBoundInput , long upperBoundInput , long mustBeSetInput , long mayBeSetInput , boolean canBeZero ) {",
     "create_range": "public static IntegerStamp create ( int bits , long lowerBoundInput , long upperBoundInput ) {",
+    "create_constant": "public static IntegerStamp createConstant ( int bits , long value ) {",
+    "ctor_empty": "private IntegerStamp ( int bits , boolean empty ) {",
+    "ctor_constant": "private IntegerStamp ( int bits , long constant ) {",
+    "ctor_range": "private IntegerStamp ( int bits , long lowerBound , long upperBound ) {",
+    "ctor_full": "private IntegerStamp ( int bits , long lowerBound , long upperBound , long mustBeSet , long mayBeSet , boolean canBeZero ) {",
+    "contains": "private boolean contains ( long value , boolean isCanBeZero ) {",
     "is_empty": "private static boolean isEmpty ( long lowerBound , long upperBound , long mustBeSet , long mayBeSet ) {",
     "min_masks": "private static long minValueForMasks ( int bits , long mustBeSet , long mayBeSet ) {",
     "max_masks": "private static long maxValueForMasks ( int bits , long mustBeSet , long mayBeSet ) {",
@@ -48,8 +54,39 @@ def _extract(source, prefix):
     raise ValueError("unclosed Graal method")
 
 
+PRIMITIVE_FORMS = {
+    "minValue": (
+        "static long minValue(int bits){return bits==64 ? Long.MIN_VALUE : -(1L<<(bits-1));}",
+        "public static long minValue(int bits){assert 0 < bits && bits <= 64; return -1L << (bits - 1);}",
+    ),
+    "maxValue": (
+        "static long maxValue(int bits){return bits==64 ? Long.MAX_VALUE : (1L<<(bits-1))-1;}",
+        "public static long maxValue(int bits){assert 0 < bits && bits <= 64; return mask(bits - 1);}",
+    ),
+    "signExtend": (
+        "static long signExtend(long v,int bits){return bits==64 ? v : (v<<(64-bits))>>(64-bits);}",
+        "public static long signExtend(long value, int inputBits){"
+        "if (inputBits < 64){if ((value >>> (inputBits - 1) & 1) == 1){"
+        "return value | (-1L << inputBits);} else {return value & ~(-1L << inputBits);}}"
+        "else {return value;}}",
+    ),
+}
+
+
 def method_tokens(source):
     return {name: _extract(source, prefix) for name, prefix in PREFIXES.items()}
+
+
+def _primitive(source, name):
+    words = _words(source)
+    accepted = [_words(form) for form in PRIMITIVE_FORMS[name]]
+    matches = []
+    for form in accepted:
+        for i in range(len(words) - len(form) + 1):
+            if words[i:i + len(form)] == form:
+                matches.append(form)
+    require(len(matches) == 1, "one accepted CodeUtil." + name + " implementation")
+    return matches[0]
 
 
 def read_source(source):
@@ -60,6 +97,12 @@ def read_source(source):
     for name in PREFIXES:
         require(actual[name] == reference[name], "changed Graal create method contract: " + name)
 
+    words = _words(source)
+    require(sum(words[i:i + 6] == ["static", "final", "int", "ITERATION_LIMIT", "=", "3"]
+                for i in range(len(words) - 5)) == 1,
+            "exact three-pass source iteration limit")
+
+    primitives = {name: _primitive(source, name) for name in PRIMITIVE_FORMS}
     descending = read_descending(source)
     ascending = read_ascending(source)
     return {
@@ -67,11 +110,14 @@ def read_source(source):
         "source_sha256": hashlib.sha256(source.encode("utf-8")).hexdigest(),
         "fixture_sha256": hashlib.sha256(fixture.encode("utf-8")).hexdigest(),
         "methods": {name: digest(actual[name]) for name in PREFIXES},
+        "primitives": {name: digest(value) for name, value in primitives.items()},
         "descending_source_ir_sha256": digest(descending),
         "ascending_source_ir_sha256": digest(ascending),
         "rules": [
             "exact-token-bound-create-caller",
             "existing-descending-source-frontend",
             "existing-ascending-source-frontend",
+            "exact-iteration-limit",
+            "accepted-CodeUtil-signed-extrema-and-extension",
         ],
     }
