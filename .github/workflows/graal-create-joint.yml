@@ -1,0 +1,100 @@
+name: Graal create joint carrier
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  create-joint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+      - name: Record exact revision
+        run: |
+          mkdir -p reproduction/create
+          git rev-parse HEAD > reproduction/create/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/create/tree.txt
+      - name: Download pinned unmodified Graal and OpenJDK sources
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import urllib.request
+          from research.observations.upstream_transfer import UPSTREAM, checked_inputs
+          root = Path('reproduction/create/input')
+          root.mkdir()
+          for name, entry in UPSTREAM.items():
+              url = 'https://raw.githubusercontent.com/{repository}/{commit}/{path}'.format(**entry)
+              with urllib.request.urlopen(url, timeout=45) as response:
+                  data = response.read(2 * 1024 * 1024 + 1)
+              if len(data) > 2 * 1024 * 1024:
+                  raise SystemExit('upstream input too large')
+              (root / (name + '.java')).write_bytes(data)
+          checked_inputs(root)
+          PY
+      - name: Run create joint-carrier tests normally and optimized
+        run: |
+          python -m unittest research.observations.tests.test_create_joint -v
+          python -O -m unittest research.observations.tests.test_create_joint -v
+      - name: Fresh source-bound create proof and independent validation
+        run: >-
+          python -m research.observations.run_create_experiment
+          reproduction/create/input reproduction/create/fresh
+          --native --small-bits 4 --samples 300
+      - name: No-search replay with producers/native tools blocked
+        run: |
+          python -O - <<'PY'
+          import builtins, json
+          original = builtins.__import__
+          def guarded(name, *args, **kwargs):
+              parts = name.split('.')
+              if any('producer' in p or p in {'subprocess', 'z3', 'cvc5', 'pysmt'}
+                     for p in parts):
+                  raise AssertionError('unexpected replay dependency: ' + name)
+              return original(name, *args, **kwargs)
+          builtins.__import__ = guarded
+          from research.observations.run_create_experiment import run
+          result = run('reproduction/create/input', 'reproduction/create/fresh', replay=True)
+          print(json.dumps(result, sort_keys=True))
+          PY
+      - name: Check exact expected acceptance and validation populations
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          summary = json.loads(Path('reproduction/create/fresh/SUMMARY.json').read_text())
+          validation = json.loads(Path('reproduction/create/fresh/VALIDATION.json').read_text())
+          assert summary['counts'] == {'certified': 2}, summary
+          assert all(c['carrier_states'] == 4 for c in summary['cases'].values())
+          assert validation['small_exhaustive']['mismatches'] == 0
+          assert validation['physical_digit_dp']['mismatches'] == 0
+          assert validation['native']['mismatches'] == 0
+          assert validation['native']['inputs'] >= 1500
+          assert validation['physical_digit_dp']['three_iteration_examples'] > 0
+          print(json.dumps({
+              'cases': summary['counts'],
+              'small': validation['small_exhaustive']['inputs'],
+              'physical_dp': validation['physical_digit_dp']['inputs'],
+              'native': validation['native']['inputs'],
+              'iterations': validation['physical_digit_dp']['iterations'],
+          }, sort_keys=True))
+          PY
+      - name: Existing observation regression
+        run: python -m unittest discover -s research/observations/tests -v
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: graal-create-joint-py${{ matrix.python-version }}
+          path: reproduction/create/
+          retention-days: 30
