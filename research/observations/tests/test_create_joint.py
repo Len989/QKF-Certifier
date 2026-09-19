@@ -11,6 +11,7 @@ from research.observations.create_producer import synthesize
 from research.observations.create_source import FIXTURE, read_source
 from research.observations.create_spec import specification
 from research.observations.create_validation import exhaustive_small
+from research.observations.run_package import RunError
 
 SOURCE = FIXTURE.read_text(encoding="utf-8")
 SPEC = specification()
@@ -75,8 +76,9 @@ class CreateJointTests(unittest.TestCase):
         from research.observations.model import digest
 
         broken["dependencies_sha256"] = digest(broken["dependencies"])
-        with self.assertRaises(ValueError):
+        with self.assertRaises(RunError) as rejected:
             check(SOURCE, SPEC, broken)
+        self.assertEqual(rejected.exception.status, "invalid_certificate")
 
     def test_replay_never_imports_producers_or_native_tools(self):
         real_import = builtins.__import__
