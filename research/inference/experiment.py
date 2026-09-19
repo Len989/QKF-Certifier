@@ -6,13 +6,12 @@ import hashlib
 import json
 from pathlib import Path
 
-from research.external.frozen_v1.experiment import check_blob, check_engine
 from research.observations.model import digest, require
 from research.observations.run_io import read_json, write_json
 from research.unified.schema import compile_target
 
 from .checker import check
-from .producer import infer
+from .provenance import check_blob, check_engine
 
 ROOT = Path(__file__).resolve().parents[2]
 CORPUS = ROOT / "research/external/frozen_v1/CORPUS.json"
@@ -79,6 +78,8 @@ def run(inputs, output, *, replay=False):
                     "recomputed inference result")
             existing_target_status = read_json(directory / "existing-target.json")["status"]
         else:
+            from .producer import infer
+
             certificate, result = infer(source, target)
             directory.mkdir()
             (directory / "source.java").write_bytes(source.encode("utf-8"))
