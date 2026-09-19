@@ -75,11 +75,12 @@ def acquire(output):
         slug = name.replace("/", "_")
         meta = json.loads(fetch("https://api.github.com/repos/" + name, ledger))
         commit = json.loads(fetch("https://api.github.com/repos/" + name + "/git/commits/" + revision, ledger))
-        tree = json.loads(fetch("https://api.github.com/repos/" + name + "/git/trees/" + revision + "?recursive=1", ledger))
-        if tree.get("truncated") or tree["sha"] != commit["tree"]["sha"]:
-            raise ValueError("incomplete or unbound tree: " + name)
+        tree = json.loads(fetch("https://api.github.com/repos/" + name + "/git/trees/" + commit["tree"]["sha"] + "?recursive=1", ledger))
         save(output / "metadata" / (slug + ".tree.json"), tree)
         save(output / "metadata" / (slug + ".commit.json"), commit)
+        if tree.get("truncated") or tree["sha"] != commit["tree"]["sha"]:
+            save(output / "acquisition-cost.json", ledger)
+            raise ValueError("incomplete or unbound tree: " + name)
         frame, excluded, licenses = [], [], []
         for entry in tree["tree"]:
             if entry["type"] != "blob":
