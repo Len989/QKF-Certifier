@@ -1,0 +1,133 @@
+{
+  "schema": "qkf-frozen-v3-engine-lock-v1",
+  "scope": "entire-baseline-snapshot",
+  "baseline_commit": "c8c7b4eeaf848d31c8c324a4316ffec8aac81cda",
+  "implementation_head": "eafc23d0a8ad5db9e91752ee09c4ac1d9acebd36",
+  "snapshot": {
+    "git_tree": "4838b8badbb3a56f8a7d2a197ce6c0d3d6b3a77d",
+    "file_count": 1837,
+    "total_bytes": 30048148,
+    "inventory_sha256": "22c113ee8a14df0dcbe6014ae398d4ea97a7a20b027d0775fd162503af18b9b4"
+  },
+  "excluded_additions": [
+    ".github/workflows/frozen-v3-baseline.yml",
+    "docs/CLAIMS_POST_PR25_RU.md",
+    "docs/QKF_ROADMAP_v0.1_RU.md",
+    "research/external/frozen_v3"
+  ],
+  "dependency_policy": "Conservative superset: all 1837 accepted files, including static/dynamic imports, delegated routes, data, tests, historical capsules and paper sources. No minimal-dependency claim. Execute future evaluation from an isolated baseline export; the registration package is not a proof engine.",
+  "engine_id": "observation-inference-v3",
+  "entrypoints": {
+    "prove": "research.unified.v3.prove",
+    "check": "research.unified.v3.check"
+  },
+  "schemas": {
+    "signed_request": "qkf-target-v2",
+    "legacy_request": "qkf-target-v1",
+    "inference_certificate": "qkf-observation-inference-v3",
+    "unified_proof": "qkf-unified-proof-v2",
+    "unified_result": "qkf-unified-result-v2"
+  },
+  "routes": [
+    {
+      "kind": "signed_boolean_predicate",
+      "request": "qkf-target-v2",
+      "route": "observation-inference-v3",
+      "contract": "modular-lsb-signed-word-predicates-v1",
+      "scope": "one int or long input; Boolean result; all positive modular widths"
+    },
+    {
+      "kind": "word_result",
+      "request": "qkf-target-v1",
+      "route": "observation-inference-v3",
+      "contract": "modular-lsb-word-expressions-v1",
+      "scope": "long source profile only; v2 source/target semantics retained"
+    },
+    {
+      "kind": "boolean_predicate",
+      "request": "qkf-target-v1",
+      "route": "observation-inference-v3",
+      "contract": "modular-lsb-word-predicates-v1",
+      "scope": "int or long; v2 source/target semantics retained"
+    },
+    {
+      "kind": "successor",
+      "request": "qkf-target-v1",
+      "route": "observation-inference-v3",
+      "contract_source": "research/observations/ascending_source.py:PROFILE",
+      "scope": "selected ascending payload region, not whole helper"
+    },
+    {
+      "kind": "masked_bound",
+      "request": "qkf-target-v1",
+      "route": "retained-unified-v1",
+      "contract_source": "research/unified/schema.py:compile_target",
+      "scope": "delegated route; not a v3 capability gain"
+    }
+  ],
+  "v3_budgets": {
+    "max_features": 128,
+    "max_target_states": 8192
+  },
+  "implementation_caps": {
+    "source_bytes": 2000000,
+    "word_dag_nodes": 64,
+    "signed_atoms": 12,
+    "predicate_v1_atoms": 8,
+    "native_states": 512,
+    "candidate_observations": 256,
+    "terminal_lookahead": 2,
+    "signed_witness_length": 4096,
+    "signed_target_product": 8192,
+    "v1_delegated_target_product": 4096
+  },
+  "implementation_caps_scope": "Not a replacement for route-specific checks; all inherited caps and diagnostics remain defined by frozen bytes.",
+  "engine_statuses": {
+    "certified": 0,
+    "refuted": 1,
+    "unsupported": 2,
+    "budget_exhausted": 2,
+    "invalid_certificate": 3,
+    "input_error": 64,
+    "internal_error": 70
+  },
+  "evaluation_environment": {
+    "os": "Linux x86_64",
+    "python_series": [
+      "3.10",
+      "3.12"
+    ],
+    "primary_series": "3.12",
+    "java_major": 17,
+    "exact_patch_versions": "record before first measured run; no claim that a major/minor selector pins an executable",
+    "discovery_wall_seconds": 120,
+    "replay_wall_seconds": 120,
+    "memory_limit_bytes": 2147483648,
+    "discovery_repetitions": 1,
+    "fresh_replay_repetitions": 3,
+    "compilation_wall_seconds": 60,
+    "native_wall_seconds": 120
+  },
+  "prior_evidence": {
+    "kind": "post_holdout_development_not_new_evaluation",
+    "pr": 25,
+    "workflow_run": 35463665595,
+    "summary_sha256": "7709793b22c6af4c358fa25e3120e88684ebf9fe3673ebd8e8546dc9f0569beb",
+    "artifacts": {
+      "py3.10": {
+        "id": 10590627811,
+        "zip_sha256": "9d60e0c41fc900212d6e5be9b8f3572486ba146286fcc0135d34bdc800f8082a"
+      },
+      "py3.12": {
+        "id": 10590547913,
+        "zip_sha256": "b9a3b3e81da360c4906f9518a8efb58b86278a13d6ee57c4f8dd12f539f5679e"
+      }
+    }
+  },
+  "historical_frozen_v2": {
+    "path": "research/external/frozen_v2",
+    "result": "1/15",
+    "unchanged": true
+  },
+  "new_holdout_result": null
+}
