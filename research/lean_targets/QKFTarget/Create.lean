@@ -20,16 +20,14 @@ def SameSignBucket (half a b : Nat) : Prop :=
 theorem signed_order_low (half modulus a b : Nat)
     (ha : a < half) (hb : b < half) :
     signedWord half modulus a ≤ signedWord half modulus b ↔ a ≤ b := by
-  simp only [signedWord, if_pos ha, if_pos hb]
-  omega
+  simpa only [signedWord, if_pos ha, if_pos hb, Int.ofNat_le]
 
 theorem signed_order_high (half modulus a b : Nat)
     (ha : half ≤ a) (hb : half ≤ b) :
     signedWord half modulus a ≤ signedWord half modulus b ↔ a ≤ b := by
   have hna : ¬ a < half := Nat.not_lt.mpr ha
   have hnb : ¬ b < half := Nat.not_lt.mpr hb
-  simp only [signedWord, if_neg hna, if_neg hnb]
-  omega
+  simpa only [signedWord, if_neg hna, if_neg hnb, sub_le_sub_iff_right, Int.ofNat_le]
 
 /-- Once the sign bucket is fixed, signed Java order and payload order agree. -/
 theorem signed_order_same_bucket (half modulus a b : Nat)
