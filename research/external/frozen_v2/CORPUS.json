@@ -1,0 +1,217 @@
+{
+  "schema": "qkf-inference-holdout-v1",
+  "frozen_engine_commit": "d1f67817f705f29080d1ee81590d560dbba0fb41",
+  "frozen_engine_tree": "54fccb51d65922929fec0feb566b86e80f6a474c",
+  "selection": {
+    "rule": "for each preselected Java utility file, include every public static unary method whose sole primitive parameter is int or long and whose primitive return type is boolean, int, or long",
+    "proof_outcomes_used_for_selection": false,
+    "target_rule": "attach an independent qkf-target-v1 goal only when the documented/full-word semantics is exactly expressible in the accepted target grammar; otherwise retain the method in the denominator with an explicit target_reason",
+    "repositories_previously_unused_by_qkf_development": [
+      "google/guava",
+      "apache/commons-numbers",
+      "kilim/kilim"
+    ]
+  },
+  "budgets": {
+    "source_bytes": 2000000,
+    "per_case_seconds": 30,
+    "target_states": 8192,
+    "features": 128
+  },
+  "sources": {
+    "guava_long_math": {
+      "repository": "google/guava",
+      "commit": "77b2cf6b922f4646154f9d2940f5aa1f5c11129a",
+      "blob": "ddab4a446fc87b19286a3ebd94cfc75938c9d2c9",
+      "path": "guava/src/com/google/common/math/LongMath.java",
+      "class": "LongMath"
+    },
+    "guava_int_math": {
+      "repository": "google/guava",
+      "commit": "77b2cf6b922f4646154f9d2940f5aa1f5c11129a",
+      "blob": "32d0a984b373f4d869a666e906a5d76303ab38fb",
+      "path": "guava/src/com/google/common/math/IntMath.java",
+      "class": "IntMath"
+    },
+    "commons_arithmetic_utils": {
+      "repository": "apache/commons-numbers",
+      "commit": "811a3b1c34fadc0a28fb00257d3cf16580b889cb",
+      "blob": "153b3202b7f2e56febefd9d54e1cacac3c832d22",
+      "path": "commons-numbers-core/src/main/java/org/apache/commons/numbers/core/ArithmeticUtils.java",
+      "class": "ArithmeticUtils"
+    },
+    "kilim_mpsc_queue": {
+      "repository": "kilim/kilim",
+      "commit": "0a2e2613ef915243b51c2ec5650e4bd1717b3e3b",
+      "blob": "33405f26b293db782e9e42697156eca6ff70f038",
+      "path": "src/kilim/concurrent/MPSCQueue.java",
+      "class": "MPSCQueueColdFields"
+    }
+  },
+  "population": [
+    {
+      "id": "guava_long_math.ceilingPowerOfTwo",
+      "source": "guava_long_math",
+      "method": "ceilingPowerOfTwo",
+      "entry_class": "LongMath",
+      "parameter_type": "long",
+      "return_type": "long",
+      "target": null,
+      "target_reason": "current target language has no highest/next-power word operator or shift"
+    },
+    {
+      "id": "guava_long_math.floorPowerOfTwo",
+      "source": "guava_long_math",
+      "method": "floorPowerOfTwo",
+      "entry_class": "LongMath",
+      "parameter_type": "long",
+      "return_type": "long",
+      "target": null,
+      "target_reason": "current target language has no highest/next-power word operator or shift"
+    },
+    {
+      "id": "guava_long_math.isPowerOfTwo",
+      "source": "guava_long_math",
+      "method": "isPowerOfTwo",
+      "entry_class": "LongMath",
+      "parameter_type": "long",
+      "return_type": "boolean",
+      "target": null,
+      "target_reason": "documented positive-only semantics needs a sign/positivity predicate absent from the current target language"
+    },
+    {
+      "id": "guava_long_math.factorial",
+      "source": "guava_long_math",
+      "method": "factorial",
+      "entry_class": "LongMath",
+      "parameter_type": "int",
+      "return_type": "long",
+      "target": null,
+      "target_reason": "factorial is outside the current finite word target language"
+    },
+    {
+      "id": "guava_long_math.isPrime",
+      "source": "guava_long_math",
+      "method": "isPrime",
+      "entry_class": "LongMath",
+      "parameter_type": "long",
+      "return_type": "boolean",
+      "target": null,
+      "target_reason": "primality is outside the current count/Boolean target language"
+    },
+    {
+      "id": "guava_long_math.saturatedAbs",
+      "source": "guava_long_math",
+      "method": "saturatedAbs",
+      "entry_class": "LongMath",
+      "parameter_type": "long",
+      "return_type": "long",
+      "target": null,
+      "target_reason": "signed saturation/absolute-value conditional is outside the current word target language"
+    },
+    {
+      "id": "guava_int_math.ceilingPowerOfTwo",
+      "source": "guava_int_math",
+      "method": "ceilingPowerOfTwo",
+      "entry_class": "IntMath",
+      "parameter_type": "int",
+      "return_type": "int",
+      "target": null,
+      "target_reason": "current word-result frontend/target path is long-only and the target requires power-of-two order/shift semantics"
+    },
+    {
+      "id": "guava_int_math.floorPowerOfTwo",
+      "source": "guava_int_math",
+      "method": "floorPowerOfTwo",
+      "entry_class": "IntMath",
+      "parameter_type": "int",
+      "return_type": "int",
+      "target": null,
+      "target_reason": "current word-result frontend/target path is long-only and the target requires power-of-two order/shift semantics"
+    },
+    {
+      "id": "guava_int_math.isPowerOfTwo",
+      "source": "guava_int_math",
+      "method": "isPowerOfTwo",
+      "entry_class": "IntMath",
+      "parameter_type": "int",
+      "return_type": "boolean",
+      "target": null,
+      "target_reason": "documented positive-only semantics needs a sign/positivity predicate absent from the current target language"
+    },
+    {
+      "id": "guava_int_math.factorial",
+      "source": "guava_int_math",
+      "method": "factorial",
+      "entry_class": "IntMath",
+      "parameter_type": "int",
+      "return_type": "int",
+      "target": null,
+      "target_reason": "factorial is outside the current finite word target language"
+    },
+    {
+      "id": "guava_int_math.isPrime",
+      "source": "guava_int_math",
+      "method": "isPrime",
+      "entry_class": "IntMath",
+      "parameter_type": "int",
+      "return_type": "boolean",
+      "target": null,
+      "target_reason": "primality is outside the current count/Boolean target language"
+    },
+    {
+      "id": "guava_int_math.saturatedAbs",
+      "source": "guava_int_math",
+      "method": "saturatedAbs",
+      "entry_class": "IntMath",
+      "parameter_type": "int",
+      "return_type": "int",
+      "target": null,
+      "target_reason": "current word-result frontend/target path is long-only and signed saturation is outside the target language"
+    },
+    {
+      "id": "commons_arithmetic_utils.isPowerOfTwo",
+      "source": "commons_arithmetic_utils",
+      "method": "isPowerOfTwo",
+      "entry_class": "ArithmeticUtils",
+      "parameter_type": "long",
+      "return_type": "boolean",
+      "target": null,
+      "target_reason": "documented positive-only semantics needs a sign/positivity predicate absent from the current target language"
+    },
+    {
+      "id": "kilim_mpsc_queue.findNextPositivePowerOfTwo",
+      "source": "kilim_mpsc_queue",
+      "method": "findNextPositivePowerOfTwo",
+      "entry_class": "MPSCQueueColdFields",
+      "parameter_type": "int",
+      "return_type": "int",
+      "target": null,
+      "target_reason": "current word-result frontend/target path is long-only and target requires shift/leading-zero semantics"
+    },
+    {
+      "id": "kilim_mpsc_queue.isPowerOf2",
+      "source": "kilim_mpsc_queue",
+      "method": "isPowerOf2",
+      "entry_class": "MPSCQueueColdFields",
+      "parameter_type": "int",
+      "return_type": "boolean",
+      "target": {
+        "schema": "qkf-target-v1",
+        "kind": "boolean_predicate",
+        "source": {
+          "entry": {
+            "class": "MPSCQueueColdFields",
+            "method": "isPowerOf2"
+          },
+          "word_type": "int"
+        },
+        "goal": [
+          "popcount_le",
+          1
+        ]
+      },
+      "target_reason": null
+    }
+  ]
+}
