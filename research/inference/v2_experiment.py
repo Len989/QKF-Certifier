@@ -169,8 +169,8 @@ def run(inputs, output, *, replay=False):
             require("le" in selected_kinds, "richer order-cut observation selected")
         if case_id == "graal_irrelevant_register":
             labels = " ".join(row["label"] for row in result["selected"])
-            require("register[1]" not in labels and "register[2]" not in labels,
-                    "irrelevant Graal registers pruned")
+            require("register[0]" not in labels,
+                    "irrelevant Graal toggle register pruned")
 
         rows[case_id] = {
             "status": result["status"],
