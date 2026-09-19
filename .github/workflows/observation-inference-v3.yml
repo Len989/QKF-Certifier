@@ -1,0 +1,87 @@
+name: Observation inference v3
+on:
+  pull_request:
+  push:
+    branches: ['research/observation-inference-v3-signed']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: inference-v3-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  inference-v3:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record exact revision and source snapshot
+        run: |
+          mkdir -p reproduction/inference-v3
+          git rev-parse HEAD > reproduction/inference-v3/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/inference-v3/tree.txt
+          git archive HEAD | gzip -n > reproduction/inference-v3/source.tar.gz
+          python - <<'PY'
+          from research.inference.v3_experiment import engine_identity
+          print(engine_identity())
+          PY
+      - name: Download exact retained source blobs
+        run: >-
+          python -m research.external.frozen_v2.download_sources
+          reproduction/inference-v3/input
+      - name: New tests and accepted regression suites
+        run: |
+          set -o pipefail
+          suites="research.inference.test_inference_v3 research.inference.test_inference_v2 research.inference.test_inference research.signed_predicates.test_signed_predicates research.wordexpr.test_predicates research.unified.test_unified"
+          python -m unittest $suites -v 2>&1 | tee reproduction/inference-v3/tests-normal.log
+          python -O -m unittest $suites -v 2>&1 | tee reproduction/inference-v3/tests-optimized.log
+      - name: Fresh inference, reference certificates and Java validation
+        run: >-
+          python -m research.inference.v3_experiment
+          reproduction/inference-v3/input reproduction/inference-v3/fresh
+      - name: Replay in a fresh process without producers, native tools or SMT
+        run: |
+          python -O - <<'PY'
+          import builtins, json
+          original = builtins.__import__
+          def guarded(name, *args, **kwargs):
+              if 'producer' in name or name in {'subprocess', 'z3', 'cvc5', 'pysmt'}:
+                  raise AssertionError('forbidden fresh v3 replay dependency: ' + name)
+              return original(name, *args, **kwargs)
+          builtins.__import__ = guarded
+          from research.inference.v3_experiment import run
+          print(json.dumps(run('reproduction/inference-v3/input',
+                               'reproduction/inference-v3/fresh', replay=True), sort_keys=True))
+          PY
+      - name: CLI example and deterministic development scope
+        run: |
+          python -m research.unified.v3 prove research/inference/examples/SignedPower.java --target research/inference/examples/signed-power-target.json --proof reproduction/inference-v3/example-proof.json
+          python -O -m research.unified.v3 check research/inference/examples/SignedPower.java --target research/inference/examples/signed-power-target.json --proof reproduction/inference-v3/example-proof.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from research.observations.model import require
+          s=json.loads(Path('reproduction/inference-v3/fresh/SUMMARY.json').read_text())
+          require(s['counts'] == {'certified':3,'refuted':3,'unsupported':1,'budget_exhausted':1}, 'scope counts')
+          require(s['external_native_inputs'] == 209389 and s['external_native_mismatches'] == 0, 'native validation')
+          require(s['native_source_ir_mismatches'] == 0, 'native/source correspondence')
+          require(s['frozen_v2_historical_result_unchanged'] is True, 'frozen result preservation')
+          print(json.dumps(s, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: observation-inference-v3-py${{ matrix.python-version }}
+          path: reproduction/inference-v3/
+          retention-days: 30

@@ -1,0 +1,9 @@
+{
+  "schema": "qkf-target-v2",
+  "kind": "signed_boolean_predicate",
+  "source": {
+    "entry": {"class": "SignedPower", "method": "isPowerOfTwo"},
+    "word_type": "long"
+  },
+  "goal": ["and", ["positive"], ["popcount_eq", 1]]
+}
