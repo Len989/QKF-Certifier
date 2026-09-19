@@ -19,7 +19,7 @@ from .create_math import (
     unsigned_word,
     word_mask,
 )
-from .model import require
+from research.observations.model import require
 
 ROOT = Path(__file__).resolve().parents[2]
 FIXTURE = ROOT / "research/graal/native/IntegerStamp.java"

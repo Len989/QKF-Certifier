@@ -14,9 +14,9 @@ from pathlib import Path
 from .create_kernel import check
 from .create_source import read_source
 from .create_spec import specification
-from .model import digest, require
-from .run_io import new_path, read_json, write_json
-from .upstream_transfer import SEPARATOR, UPSTREAM, checked_inputs
+from research.observations.model import digest, require
+from research.observations.run_io import new_path, read_json, write_json
+from research.observations.upstream_transfer import SEPARATOR, UPSTREAM, checked_inputs
 
 SCHEMA = "qkf-graal-create-experiment-v1"
 

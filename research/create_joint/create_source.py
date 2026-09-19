@@ -8,9 +8,9 @@ their existing independent source frontends.
 import hashlib
 from pathlib import Path
 
-from .ascending_source import read_source as read_ascending
-from .java_words import read_source as read_descending, tokens
-from .model import digest, require
+from research.observations.ascending_source import read_source as read_ascending
+from research.observations.java_words import read_source as read_descending, tokens
+from research.observations.model import digest, require
 
 ROOT = Path(__file__).resolve().parents[2]
 FIXTURE = ROOT / "research/graal/native/IntegerStamp.java"

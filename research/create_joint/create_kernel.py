@@ -6,9 +6,9 @@ caller-level denotation/stabilization argument.
 """
 from .create_source import read_source
 from .create_spec import check_spec
-from .composition_spec import dependency_spec
-from .model import digest, require
-from .run_package import check_package
+from research.observations.composition_spec import dependency_spec
+from research.observations.model import digest, require
+from research.observations.run_package import check_package
 
 SCHEMA = "qkf-graal-create-joint-carrier-v1"
 RULES = "graal-create-normalization-joint-carrier-v1"

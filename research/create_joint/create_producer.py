@@ -1,12 +1,12 @@
 """Produce the fixed Graal create joint-carrier proof after fresh region proofs."""
 
-from .composition_spec import dependency_spec
+from research.observations.composition_spec import dependency_spec
 from .create_kernel import CARRIER, DERIVATION, ROLES, SCHEMA, binding, check
-from .model import digest
+from research.observations.model import digest
 
 
 def synthesize(source, spec):
-    from .run_producer import verify
+    from research.observations.run_producer import verify
 
     packages = {}
     for role in ROLES:

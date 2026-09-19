@@ -48,11 +48,11 @@ jobs:
           PY
       - name: Run create joint-carrier tests normally and optimized
         run: |
-          python -m unittest research.observations.tests.test_create_joint -v
-          python -O -m unittest research.observations.tests.test_create_joint -v
+          python -m unittest research.create_joint.test_create_joint -v
+          python -O -m unittest research.create_joint.test_create_joint -v
       - name: Fresh source-bound create proof and independent validation
         run: >-
-          python -m research.observations.run_create_experiment
+          python -m research.create_joint.run_create_experiment
           reproduction/create/input reproduction/create/fresh
           --native --small-bits 4 --samples 300
       - name: No-search replay with producers/native tools blocked
@@ -67,7 +67,7 @@ jobs:
                   raise AssertionError('unexpected replay dependency: ' + name)
               return original(name, *args, **kwargs)
           builtins.__import__ = guarded
-          from research.observations.run_create_experiment import run
+          from research.create_joint.run_create_experiment import run
           result = run('reproduction/create/input', 'reproduction/create/fresh', replay=True)
           print(json.dumps(result, sort_keys=True))
           PY

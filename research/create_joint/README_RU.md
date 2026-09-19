@@ -129,14 +129,14 @@ descending/caller bridge и stabilization argument в Lean. Также не за
 Workflow скачивает точные pinned Graal/OpenJDK файлы и проверяет Git blob identity.
 
 ```sh
-python -m unittest research.observations.tests.test_create_joint -v
-python -O -m unittest research.observations.tests.test_create_joint -v
+python -m unittest research.create_joint.test_create_joint -v
+python -O -m unittest research.create_joint.test_create_joint -v
 
-python -m research.observations.run_create_experiment \
+python -m research.create_joint.run_create_experiment \
   reproduction/create/input reproduction/create/fresh \
   --native --small-bits 4 --samples 300
 
-python -O -m research.observations.run_create_experiment \
+python -O -m research.create_joint.run_create_experiment \
   reproduction/create/input reproduction/create/fresh --replay
 ```
 

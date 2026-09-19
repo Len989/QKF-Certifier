@@ -1,6 +1,6 @@
 """Independent contract for the source-bound Graal create normalization slice."""
 
-from .model import digest, require
+from research.observations.model import digest, require
 
 SCHEMA = "qkf-graal-create-normalization-spec-v1"
 

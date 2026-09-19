@@ -5,12 +5,12 @@ from pathlib import Path
 import unittest
 from unittest import mock
 
-from research.observations.create_kernel import CARRIER, check
-from research.observations.create_math import equivalent_result, execute_create, exact_extrema
-from research.observations.create_producer import synthesize
-from research.observations.create_source import FIXTURE, read_source
-from research.observations.create_spec import specification
-from research.observations.create_validation import exhaustive_small
+from research.create_joint.create_kernel import CARRIER, check
+from research.create_joint.create_math import equivalent_result, execute_create, exact_extrema
+from research.create_joint.create_producer import synthesize
+from research.create_joint.create_source import FIXTURE, read_source
+from research.create_joint.create_spec import specification
+from research.create_joint.create_validation import exhaustive_small
 from research.observations.run_package import RunError
 
 SOURCE = FIXTURE.read_text(encoding="utf-8")

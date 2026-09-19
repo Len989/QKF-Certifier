@@ -6,7 +6,7 @@ decided separately by a small digit-DP over signed-order bit patterns.
 """
 from functools import lru_cache
 
-from .model import integer, require
+from research.observations.model import integer, require
 
 SUPPORTED_BITS = (1, 8, 16, 32, 64)
 U64 = (1 << 64) - 1
