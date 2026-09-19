@@ -189,38 +189,47 @@ def native_kilim(input_dir, output):
     if not java or not javac:
         return {"status": "unavailable", "is_proof": False}
     raw = (Path(input_dir) / "kilim_mpsc_queue.java").read_bytes()
+    text = raw.decode("utf-8")
+    signature = "public static boolean isPowerOf2(final int value)"
+    start = text.index(signature)
+    brace = text.index("{", start)
+    depth, end = 0, brace
+    while end < len(text):
+        depth += (text[end] == "{") - (text[end] == "}")
+        end += 1
+        if depth == 0:
+            break
+    require(depth == 0, "closed Kilim target declaration")
+    declaration = text[start:end]
     rng = random.Random(23001)
     xs = set(range(1 << 16))
     xs.update(rng.getrandbits(32) for _ in range(4096))
     xs.update({0, 1, 2, 3, 0x7fffffff, 0x80000000, 0xffffffff})
     xs = sorted(xs)
-    harness = """package kilim.concurrent;
-import java.io.*;
+    harness = """import java.io.*;
 public class HoldoutProbe {
+  DECLARATION
   public static void main(String[] ignored) throws Exception {
     BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
     for (String s; (s = r.readLine()) != null; ) {
       int x = (int)Long.parseUnsignedLong(s);
-      System.out.println(MPSCQueueColdFields.isPowerOf2(x));
+      System.out.println(isPowerOf2(x));
     }
   }
 }
-"""
+""".replace("DECLARATION", declaration)
     with tempfile.TemporaryDirectory(prefix="qkf-holdout-kilim-") as tmp:
         root = Path(tmp)
-        package = root / "kilim/concurrent"
-        package.mkdir(parents=True)
-        (package / "MPSCQueue.java").write_bytes(raw)
-        (package / "HoldoutProbe.java").write_text(harness, encoding="utf-8")
+        probe = root / "HoldoutProbe.java"
+        probe.write_text(harness, encoding="utf-8")
         cp = subprocess.run(
-            [javac, "--release", "17", "-d", str(root),
-             str(package / "MPSCQueue.java"), str(package / "HoldoutProbe.java")],
+            [javac, "--release", "17", str(probe)],
             capture_output=True, text=True, timeout=45,
         )
         require(cp.returncode == 0, "Kilim holdout native compile: " + cp.stderr[-4000:])
         ip = "".join(str(x) + "\n" for x in xs)
         run = subprocess.run(
-            [java, "-ea", "-cp", str(root), "kilim.concurrent.HoldoutProbe"],
+            [java, "-ea", "-cp", str(root), "HoldoutProbe"],
             input=ip, capture_output=True, text=True, timeout=45,
         )
         require(run.returncode == 0, "Kilim holdout native run: " + run.stderr[-4000:])
@@ -239,6 +248,9 @@ public class HoldoutProbe {
         "first_mismatches": bad[:5],
         "is_proof": False,
         "target": "popcount_le(1) over 32-bit patterns",
+        "whole_class": False,
+        "compiled_input": "exact extracted preregistered method declaration",
+        "declaration_sha256": hashlib.sha256(declaration.encode("utf-8")).hexdigest(),
     }
     save(Path(output) / "NATIVE_KILIM.json", result)
     return result
