@@ -33,7 +33,9 @@ theorem signed_order_high (half modulus a b : Nat)
   simp only [signedWord, if_neg hna, if_neg hnb]
   constructor
   · intro h
-    apply Int.ofNat_le.1
+    apply Nat.le_of_not_gt
+    intro hba
+    have lifted : Int.ofNat b < Int.ofNat a := Int.ofNat_lt.2 hba
     omega
   · intro h
     have lifted : Int.ofNat a ≤ Int.ofNat b := Int.ofNat_le.2 h
