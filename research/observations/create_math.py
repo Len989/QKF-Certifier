@@ -169,7 +169,7 @@ def normalize_input(values):
         "bits", "lower", "upper", "must", "may", "can_zero"
     }, "create input fields")
     bits = values["bits"]
-    require(bits in SUPPORTED_BITS, "supported Graal bit width")
+    require(integer(bits, 1, 64), "mathematical create bit width 1..64")
     lo, hi = min_value(bits), max_value(bits)
     require(integer(values["lower"], lo, hi) and integer(values["upper"], lo, hi),
             "signed create bounds")
