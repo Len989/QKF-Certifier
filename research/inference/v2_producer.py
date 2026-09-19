@@ -64,7 +64,7 @@ def _ascending_target_proof(system, selected, max_states):
 def _target_proof(system, selected, max_states):
     if system.family == "ascending-region":
         return _ascending_target_proof(system, selected, max_states)
-    return v1_target_proof(system, selected, max_states=max_states)
+    return v1_target_proof(system, selected, max_states=min(max_states, 4096))
 
 
 def infer(source, target, *, max_features=128, max_target_states=8192):
