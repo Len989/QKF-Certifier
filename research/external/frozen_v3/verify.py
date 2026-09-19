@@ -135,9 +135,19 @@ def verify_seals(root=ROOT):
     for path, expected in registration["sealed_sha256"].items():
         require(sha256((root / path).read_bytes()) == expected, "registration seal: " + path)
     allowed = {"__init__.py", "ENGINE.json", "PROTOCOL.md", "REGISTRATION.json",
-               "verify.py", "test_registration.py", "__pycache__"}
+               "verify.py", "test_registration.py", "__pycache__", "run27"}
     require({p.name for p in (root / PACKAGE).iterdir()} <= allowed,
             "unexpected registration file; corpus/results must not be added silently")
+    # Run27 is an explicitly versioned preparation/evaluation stage. This
+    # historical PR26 verifier still never declares its corpus ready. Run27's
+    # independent seals and execution gate are checked by its own verifier.
+    stage = root / PACKAGE / "run27"
+    if stage.exists():
+        acquisition = load(stage / "ACQUISITION.json")
+        require(acquisition["schema"] == "qkf-frozen-v3-acquisition-v1"
+                and acquisition["baseline_commit"] == BASE_COMMIT
+                and acquisition["protocol_sha256"] == registration["sealed_sha256"][PACKAGE + "/PROTOCOL.md"],
+                "run27 acquisition anchor")
     return registration
 
 

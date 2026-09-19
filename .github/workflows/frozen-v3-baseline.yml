@@ -2,6 +2,8 @@ name: Frozen v3 baseline registration
 on:
   pull_request:
   workflow_dispatch:
+  push:
+    branches: [research/frozen-v3-holdout-run27]
 permissions:
   contents: read
 jobs:
@@ -76,4 +78,33 @@ jobs:
         with:
           name: frozen-v3-registration-py${{ matrix.python-version }}
           path: reproduction/frozen-v3-registration/
+          retention-days: 30
+  acquisition:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10.21', '3.12.14']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Acquire pinned frame and record environment, never evaluate
+        if: ${{ hashFiles('research/external/frozen_v3/run27/CORPUS_LOCK.json') == '' }}
+        run: |
+          mkdir -p reproduction/run27-acquisition
+          git rev-parse HEAD > reproduction/run27-acquisition/revision.txt
+          git archive HEAD | gzip -n > reproduction/run27-acquisition/source.tar.gz
+          python research/external/frozen_v3/run27/acquire.py reproduction/run27-acquisition/data
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: run27-acquisition-py${{ matrix.python-version }}
+          path: reproduction/run27-acquisition/
           retention-days: 30
