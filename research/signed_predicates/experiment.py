@@ -70,6 +70,7 @@ public class SignedPredicateProbe {{
   }}
 }}
 """
+    source = source.replace("METHOD", method_name)
     payload = "".join(str(x) + "\n" for x in xs)
     with tempfile.TemporaryDirectory(prefix="qkf-signed-predicate-") as temp:
         root = Path(temp)
