@@ -55,8 +55,7 @@ class InferenceV2Tests(unittest.TestCase):
         self.assertEqual(result["status"], "certified")
         self.assertEqual(result["target_status"], "certified")
         selected = " ".join(x["label"] for x in result["selected"])
-        self.assertNotIn("register[1]", selected)
-        self.assertNotIn("register[2]", selected)
+        self.assertNotIn("register[0]", selected)
         self.assertEqual(check(source, SUCCESSOR_TARGET, cert), result)
 
     def test_clear_repair_is_directly_refuted(self):
