@@ -1,0 +1,62 @@
+name: Lean create caller invariants
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  create-lean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Record exact revision and tree
+        run: |
+          mkdir -p reproduction/create-lean
+          git rev-parse HEAD > reproduction/create-lean/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/create-lean/tree.txt
+      - name: Install pinned Lean and check existing project
+        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
+        with:
+          lake-package-directory: research/lean_targets
+          use-github-cache: false
+      - name: Replay accepted PR19 caller/source checks
+        run: |
+          python -m unittest research.create_joint.test_create_joint -v
+          python -O -m unittest research.create_joint.test_create_joint -v
+      - name: Fresh create-caller proof, strict audit and controls
+        run: python -O research/lean_targets/check_create.py --output reproduction/create-lean/lean --timeout 300
+      - name: Require exact formal acceptance boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          result = json.loads(Path('reproduction/create-lean/lean/RESULT.json').read_text())
+          if result['status'] != 'accepted' or result['lean_checked'] is not True:
+              raise SystemExit('create formal validation not accepted')
+          if len(result['axioms']) != 10 or len(result['controls']) != 3:
+              raise SystemExit('missing theorem audit or semantic control')
+          if result.get('placeholder_rejected_by_audit') is not True:
+              raise SystemExit('missing real placeholder rejection')
+          if result.get('source_parser_verified_by_lean') is not False:
+              raise SystemExit('source-parser scope boundary changed')
+          if result.get('python_caller_rules_fully_eliminated') is not False:
+              raise SystemExit('caller trust boundary overstated')
+          bridge = result['create_caller_bridge']
+          if not bridge['all_required_rules_present'] or len(bridge['required_rules']) != 5:
+              raise SystemExit('PR19 rule bridge changed')
+          for name, digest in result['lean_source_sha256'].items():
+              if hashlib.sha256((Path('research/lean_targets') / name).read_bytes()).hexdigest() != digest:
+                  raise SystemExit('Lean source changed after checked build: ' + name)
+          print(json.dumps(result, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lean-create-caller
+          path: reproduction/create-lean/
+          retention-days: 30
