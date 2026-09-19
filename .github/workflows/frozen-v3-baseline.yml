@@ -1,4 +1,6 @@
-name: Frozen v3 baseline registration
+# Live archival harness: historical seal verification runs on the exact PR27 tree.
+# Current-head preservation and new code are checked by signed-source-bridge.yml.
+name: Frozen v3 historical regression
 on:
   pull_request:
   workflow_dispatch:
@@ -8,6 +10,7 @@ permissions:
   contents: read
 jobs:
   registration:
+    name: Archived PR27 registration (${{ matrix.python-version }})
     runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:
@@ -18,6 +21,9 @@ jobs:
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: 4314dc9d6cae00e52b8262f3653d6f72d31d87e1
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
@@ -88,6 +94,9 @@ jobs:
         python-version: ['3.10.21', '3.12.14']
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: 4314dc9d6cae00e52b8262f3653d6f72d31d87e1
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
@@ -109,6 +118,7 @@ jobs:
           path: reproduction/run27-acquisition/
           retention-days: 30
   run27:
+    name: Archived PR27 metadata (${{ matrix.python-version }})
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     strategy:
@@ -121,6 +131,7 @@ jobs:
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
+          ref: 4314dc9d6cae00e52b8262f3653d6f72d31d87e1
           fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065

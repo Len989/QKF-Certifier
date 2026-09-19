@@ -1,0 +1,107 @@
+name: Signed source model bridge
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bridge:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record current tree and preserve every accepted file except the live archival harness
+        run: |
+          mkdir -p reproduction/signed-bridge
+          git rev-parse HEAD > reproduction/signed-bridge/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/signed-bridge/tree.txt
+          git archive HEAD | gzip -n > reproduction/signed-bridge/source.tar.gz
+          python --version > reproduction/signed-bridge/python.txt
+          java -version 2> reproduction/signed-bridge/java.txt
+          cat > reproduction/signed-bridge/check-preservation.py <<'PY'
+          import hashlib, json, stat, subprocess
+          from pathlib import Path
+          base = 'ae75ac6e62ec4213ed88e7555eaff83a148abb78'
+          harness = '.github/workflows/frozen-v3-baseline.yml'
+          entries = subprocess.check_output(['git','ls-tree','-rz',base]).split(b'\0')
+          inventory, paths = {}, set()
+          for entry in filter(None, entries):
+              meta, name = entry.split(b'\t',1)
+              mode, kind, expected = meta.decode().split()
+              name = name.decode(); paths.add(name)
+              if name == harness:
+                  continue
+              path = Path(name); raw = path.read_bytes()
+              actual = hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+              actual_mode = '100755' if path.stat().st_mode & 0o111 else '100644'
+              if path.is_symlink() or kind != 'blob' or actual != expected or actual_mode != mode:
+                  raise RuntimeError('accepted file changed: '+name)
+              inventory[name] = hashlib.sha256(raw).hexdigest()
+          tracked = set(subprocess.check_output(['git','ls-files','-z']).decode().split('\0'))-{''}
+          allowed = {'research/signed_bridge/'+name for name in (
+              '__init__.py','model.py','checker.py','producer.py','cli.py',
+              'test_bridge.py','experiment.py','README_RU.md')}
+          allowed.add('.github/workflows/signed-source-bridge.yml')
+          if tracked - paths != allowed or not paths <= tracked:
+              raise RuntimeError('unexpected added/deleted path')
+          print(json.dumps({'base':base,'preserved_files':len(inventory),
+                            'allowed_live_harness_change':harness,'new_files':sorted(allowed),
+                            'inventory_sha256':hashlib.sha256(json.dumps(inventory,sort_keys=True).encode()).hexdigest()},sort_keys=True))
+          PY
+          python reproduction/signed-bridge/check-preservation.py > reproduction/signed-bridge/preflight.json
+      - name: New bridge tests and retained current-head regressions
+        run: |
+          set -o pipefail
+          python -m unittest research.signed_bridge.test_bridge -v 2>&1 | tee reproduction/signed-bridge/tests-normal.log
+          python -O -m unittest research.signed_bridge.test_bridge -v 2>&1 | tee reproduction/signed-bridge/tests-optimized.log
+          suites='research.inference.test_inference_v3 research.inference.test_inference_v2 research.inference.test_inference research.signed_predicates.test_signed_predicates research.wordexpr.test_predicates research.unified.test_unified research.observations.tests.test_inference research.observations.tests.test_factor'
+          python -m unittest $suites -v 2>&1 | tee reproduction/signed-bridge/regressions-normal.log
+          python -O -m unittest $suites -v 2>&1 | tee reproduction/signed-bridge/regressions-optimized.log
+      - name: Retained PR24 development sources, not a new holdout
+        run: |
+          python -m research.external.frozen_v2.download_sources reproduction/signed-bridge/input
+          python -m research.signed_bridge.experiment reproduction/signed-bridge/input reproduction/signed-bridge/fresh > reproduction/signed-bridge/experiment.json
+      - name: Fresh replay without producers, native execution or SMT
+        run: |
+          python -O - <<'PY'
+          import builtins, json
+          original = builtins.__import__
+          def guarded(name, *args, **kwargs):
+              if 'producer' in name or name.split('.')[0] in {'subprocess','z3','cvc5','pysmt'}:
+                  raise RuntimeError('forbidden replay import: '+name)
+              return original(name, *args, **kwargs)
+          builtins.__import__ = guarded
+          from research.signed_bridge.experiment import run
+          result=run('reproduction/signed-bridge/input','reproduction/signed-bridge/fresh',replay=True)
+          if result['counts'] != {'source_model_verified':3} or result['native_inputs'] != 209389 or result['target_checked']:
+              raise RuntimeError('development scope changed')
+          print(json.dumps(result,sort_keys=True))
+          PY
+      - name: Source-model CLI and postflight identity
+        run: |
+          python -m research.signed_bridge.cli build research/inference/examples/SignedPower.java --class SignedPower --method isPowerOfTwo --word-type long --certificate reproduction/signed-bridge/example.json
+          python -O -m research.signed_bridge.cli check research/inference/examples/SignedPower.java --class SignedPower --method isPowerOfTwo --word-type long --certificate reproduction/signed-bridge/example.json
+          python reproduction/signed-bridge/check-preservation.py > reproduction/signed-bridge/postflight.json
+          cmp reproduction/signed-bridge/preflight.json reproduction/signed-bridge/postflight.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: signed-source-bridge-py${{ matrix.python-version }}
+          path: reproduction/signed-bridge/
+          retention-days: 30
