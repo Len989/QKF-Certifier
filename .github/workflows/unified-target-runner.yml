@@ -1,0 +1,50 @@
+name: Unified target runner
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unified:
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.12"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Record exact revision
+        run: |
+          git rev-parse HEAD
+          git rev-parse HEAD^{tree}
+      - name: Unit tests normally and optimized
+        run: |
+          python -m unittest research.unified.test_unified -v
+          python -O -m unittest research.unified.test_unified -v
+      - name: Fresh five-case unified experiment
+        run: |
+          python -m research.unified.experiment > unified.json
+          python -O -m research.unified.experiment > unified.opt.json
+          cmp unified.json unified.opt.json
+          python - <<'PY'
+          import json
+          a=json.load(open("unified.json"))
+          assert a["counts"] == {"certified": 4, "refuted": 1}, a
+          assert len(a["cases"]) == 5
+          PY
+      - name: Existing profile regressions
+        run: |
+          python -m unittest research.wordexpr.test_wordexpr -v
+          python -m unittest research.wordexpr.test_predicates -v
+      - uses: actions/upload-artifact@v4
+        with:
+          name: unified-target-runner-${{ matrix.python }}
+          path: |
+            unified.json
+            unified.opt.json
