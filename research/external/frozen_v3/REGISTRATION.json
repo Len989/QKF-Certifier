@@ -1,0 +1,13 @@
+{
+  "schema": "qkf-frozen-v3-registration-v1",
+  "phase": "engine_and_protocol_frozen",
+  "baseline_commit": "c8c7b4eeaf848d31c8c324a4316ffec8aac81cda",
+  "corpus": null,
+  "first_holdout_execution": null,
+  "sealed_sha256": {
+    "research/external/frozen_v3/ENGINE.json": "bdb306b2861e2b5e0789318d7b147516ccdbba497b00cac39a9eff63a08e3ddb",
+    "research/external/frozen_v3/PROTOCOL.md": "8008e24adbef99abe1834301301bef8eba7b061172ea5770ffba7d3059ec5d71",
+    "docs/QKF_ROADMAP_v0.1_RU.md": "4da3c9e790dae7251d0ffef28871343d5e0cfadb5d1aaef21f7077501ede6399",
+    "docs/CLAIMS_POST_PR25_RU.md": "2d970e0dba0c97864737f313b0783a89e6f642ec080dff6b2a986f6d27d09f60"
+  }
+}

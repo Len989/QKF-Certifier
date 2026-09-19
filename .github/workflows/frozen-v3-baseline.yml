@@ -1,0 +1,79 @@
+name: Frozen v3 baseline registration
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  registration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Record exact revision and verify the unchanged baseline
+        run: |
+          mkdir -p reproduction/frozen-v3-registration
+          git rev-parse HEAD > reproduction/frozen-v3-registration/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/frozen-v3-registration/tree.txt
+          git archive HEAD | gzip -n > reproduction/frozen-v3-registration/source.tar.gz
+          python --version > reproduction/frozen-v3-registration/python.txt
+          python -m research.external.frozen_v3.verify > reproduction/frozen-v3-registration/preflight.json
+      - name: Registration and corruption tests, normal and optimized
+        run: |
+          set -o pipefail
+          python -m unittest research.external.frozen_v3.test_registration -v 2>&1 | tee reproduction/frozen-v3-registration/tests-normal.log
+          python -O -m unittest research.external.frozen_v3.test_registration -v 2>&1 | tee reproduction/frozen-v3-registration/tests-optimized.log
+      - name: Evaluation must remain closed without a registered corpus
+        run: |
+          set +e
+          python -m research.external.frozen_v3.verify --require-corpus > reproduction/frozen-v3-registration/readiness.json
+          code=$?
+          set -e
+          test "$code" -eq 2
+      - name: Retained targeted regressions only, not the external holdout
+        run: |
+          set -o pipefail
+          suites="research.inference.test_inference_v3 research.inference.test_inference_v2 research.inference.test_inference research.signed_predicates.test_signed_predicates research.wordexpr.test_predicates research.unified.test_unified"
+          python -m unittest $suites -v 2>&1 | tee reproduction/frozen-v3-registration/regressions-normal.log
+          python -O -m unittest $suites -v 2>&1 | tee reproduction/frozen-v3-registration/regressions-optimized.log
+      - name: Existing constructed CLI example and independent replay
+        run: |
+          python -m research.unified.v3 prove research/inference/examples/SignedPower.java --target research/inference/examples/signed-power-target.json --proof reproduction/frozen-v3-registration/example-proof.json > reproduction/frozen-v3-registration/example-result.json
+          python -O - <<'PY'
+          import builtins, json
+          from pathlib import Path
+          original = builtins.__import__
+          def guarded(name, *args, **kwargs):
+              if 'producer' in name or name in {'subprocess', 'z3', 'cvc5', 'pysmt'}:
+                  raise RuntimeError('unexpected replay dependency: ' + name)
+              return original(name, *args, **kwargs)
+          builtins.__import__ = guarded
+          from research.unified.v3 import check
+          source = Path('research/inference/examples/SignedPower.java').read_text()
+          target = json.loads(Path('research/inference/examples/signed-power-target.json').read_text())
+          proof = json.loads(Path('reproduction/frozen-v3-registration/example-proof.json').read_text())
+          result = check(source, target, proof)
+          if result['status'] != 'certified':
+              raise RuntimeError('retained constructed example did not replay')
+          print(json.dumps(result, sort_keys=True))
+          PY
+      - name: Check post-test identity and copy registration metadata
+        run: |
+          python -O -m research.external.frozen_v3.verify > reproduction/frozen-v3-registration/postflight.json
+          cmp reproduction/frozen-v3-registration/preflight.json reproduction/frozen-v3-registration/postflight.json
+          cp research/external/frozen_v3/ENGINE.json research/external/frozen_v3/REGISTRATION.json research/external/frozen_v3/PROTOCOL.md reproduction/frozen-v3-registration/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: frozen-v3-registration-py${{ matrix.python-version }}
+          path: reproduction/frozen-v3-registration/
+          retention-days: 30
