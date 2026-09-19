@@ -1,0 +1,16 @@
+{
+  "schema": "qkf-run27-execution-authorization-v1",
+  "corpus_commit": "232964f13caa474bbc2f88942856009334856647",
+  "corpus_tree": "3b00b6d391d82637bb1aa8d13236a80bce3d49ad",
+  "corpus_lock_sha256": "c179417efef14efa17767d4692928cea15228b2eb6cf8f73510ebeb523bcb133",
+  "baseline_commit": "c8c7b4eeaf848d31c8c324a4316ffec8aac81cda",
+  "acquisition_commit": "646aabb66b531391d09995bf028e9b414443a9b7",
+  "pre_execution_validation_run": 35472286544,
+  "pre_execution_validation_jobs": {"3.12.14": 105975308621, "3.10.21": 105975308615},
+  "authorization": "First measured execution only: primary Python 3.12.14, replication Python 3.10.21, exact registered runtime fingerprints. Neither candidate QKF diagnostics nor candidate native execution occurred before this authorization.",
+  "discovery_attempts_per_case_per_runtime": 1,
+  "replays_per_proof_per_runtime": 3,
+  "no_tuning": true,
+  "retry_policy": "Preserve every attempt. Any infrastructure-only repetition needs a separate incident record and authorization; no source, target, route, runner, runtime policy or budget changes.",
+  "actual_start": "Recorded prospectively by runner.py in each ATTEMPT.json before any method, including failing attempts; not retrospectively supplied here."
+}
