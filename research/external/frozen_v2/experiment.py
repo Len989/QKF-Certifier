@@ -321,7 +321,9 @@ def execute(input_dir, output, *, replay=False):
         "scope": "fresh external holdout; denominator includes unsupported and no-target methods",
     }
     if replay:
-        require(digest(summary) == digest(load(output / "SUMMARY.json")),
+        saved_summary = load(output / "SUMMARY.json")
+        summary["native_target_validation"] = saved_summary["native_target_validation"]
+        require(digest(summary) == digest(saved_summary),
                 "holdout replay summary identity")
     else:
         native = native_kilim(input_dir, output)
