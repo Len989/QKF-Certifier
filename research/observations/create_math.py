@@ -27,6 +27,10 @@ def java_long(value):
     return value - (1 << 64) if value & (1 << 63) else value
 
 
+def java_add(left, right):
+    return java_long(left + right)
+
+
 def unsigned_word(value, bits):
     return value & word_mask(bits)
 
@@ -99,7 +103,7 @@ def compute_lower_bound(bits, lower, must, may, can_zero):
             for position in range(bits - 1, -1, -1):
                 bit = 1 << position
                 if bit & optional:
-                    candidate = value + bit
+                    candidate = java_add(value, bit)
                     if candidate <= lower:
                         value = candidate
 
@@ -111,9 +115,9 @@ def compute_lower_bound(bits, lower, must, may, can_zero):
                         if bit & must and not value & bit:
                             value |= bit
                         if not bit & may and value & bit:
-                            value += bit
+                            value = java_add(value, bit)
                     elif bit & optional:
-                        value += bit
+                        value = java_add(value, bit)
                         incremented = True
 
     if value == 0 and not can_zero:
