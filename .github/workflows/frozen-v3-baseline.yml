@@ -2,6 +2,8 @@ name: Frozen v3 baseline registration
 on:
   pull_request:
   workflow_dispatch:
+  push:
+    branches: [research/frozen-v3-holdout-run27]
 permissions:
   contents: read
 jobs:
@@ -76,4 +78,88 @@ jobs:
         with:
           name: frozen-v3-registration-py${{ matrix.python-version }}
           path: reproduction/frozen-v3-registration/
+          retention-days: 30
+  acquisition:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10.21', '3.12.14']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Acquire pinned frame and record environment, never evaluate
+        if: ${{ hashFiles('research/external/frozen_v3/run27/CORPUS_LOCK.json') == '' }}
+        run: |
+          mkdir -p reproduction/run27-acquisition
+          git rev-parse HEAD > reproduction/run27-acquisition/revision.txt
+          git archive HEAD | gzip -n > reproduction/run27-acquisition/source.tar.gz
+          python research/external/frozen_v3/run27/acquire.py reproduction/run27-acquisition/data
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: run27-acquisition-py${{ matrix.python-version }}
+          path: reproduction/run27-acquisition/
+          retention-days: 30
+  run27:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        python-version: ['3.12.14', '3.10.21']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        with:
+          distribution: temurin
+          java-version: '17.0.20+1'
+      - name: Acquire exact registered bytes and export isolated baseline
+        run: |
+          mkdir -p reproduction/run27
+          git rev-parse HEAD > reproduction/run27/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/run27/tree.txt
+          git archive HEAD | gzip -n > reproduction/run27/source.tar.gz
+          git archive c8c7b4eeaf848d31c8c324a4316ffec8aac81cda | gzip -n > reproduction/run27/baseline.tar.gz
+          mkdir "$RUNNER_TEMP/qkf27-baseline"
+          tar -xzf reproduction/run27/baseline.tar.gz -C "$RUNNER_TEMP/qkf27-baseline"
+          python research/external/frozen_v3/run27/acquire.py reproduction/run27/input
+      - name: Validate registered corpus, runtime and independent declaration inventory
+        run: |
+          python research/external/frozen_v3/run27/gate.py "$RUNNER_TEMP/qkf27-baseline" reproduction/run27/input > reproduction/run27/corpus-preflight.json
+      - name: Test supervisor on constructed cases only
+        run: |
+          set -o pipefail
+          python -m unittest research.external.frozen_v3.run27.test_run27 -v 2>&1 | tee reproduction/run27/tests-normal.log
+          python -O -m unittest research.external.frozen_v3.run27.test_run27 -v 2>&1 | tee reproduction/run27/tests-optimized.log
+      - name: Run frozen evaluation only on the published authorization commit
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = push ] && git diff-tree --no-commit-id --name-only -r HEAD | grep -qx 'research/external/frozen_v3/run27/EXECUTION.json'; then
+            python research/external/frozen_v3/run27/runner.py "$RUNNER_TEMP/qkf27-baseline" reproduction/run27/input reproduction/run27/evaluation
+          else
+            echo 'Metadata/constructed tests only; no external candidate was evaluated in this job.' | tee reproduction/run27/NOT_EVALUATED.txt
+          fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: frozen-v3-run27-py${{ matrix.python-version }}
+          path: reproduction/run27/
           retention-days: 30

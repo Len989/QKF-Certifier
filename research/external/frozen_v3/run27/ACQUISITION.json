@@ -1,0 +1,21 @@
+{
+  "schema": "qkf-frozen-v3-acquisition-v1",
+  "phase": "repository_pool_frozen_before_candidate_body_inspection",
+  "protocol_sha256": "8008e24adbef99abe1834301301bef8eba7b061172ea5770ffba7d3059ec5d71",
+  "registration_commit": "3189e1aa703c218be668f54f55658c3655df6f6b",
+  "parent_main": "09dc88b750f2bdb50c58994b6e5ec3061e0bd305",
+  "baseline_commit": "c8c7b4eeaf848d31c8c324a4316ffec8aac81cda",
+  "selection": "Ordered human metadata-only selection of three independent public Java library repositories. This is a bit/math utility stratum, not random general-Java sampling. No replacement or success-conditioned quota.",
+  "repositories": [
+    {"repository": "aeron-io/agrona", "repository_id": 26136655, "requested_alias": "real-logic/agrona", "revision": "1c1079dc40fbad592d935dea11df9a188d05b1f1", "resolved_branch": "master", "reason": "Java low-level utility library; distinct application domain. Redirect resolved through GitHub metadata before selection."},
+    {"repository": "netty/netty", "repository_id": 1064563, "revision": "8af38d14870e6c0d009c348cadbe6d8df87f2d7d", "resolved_branch": "4.2", "reason": "Java networking library; independent repository with production utility code."},
+    {"repository": "libgdx/libgdx", "repository_id": 5373551, "revision": "e1d69884015ca19061647505f9509db34df5cc82", "resolved_branch": "master", "reason": "Java game-development library; different application domain with mathematics utilities."}
+  ],
+  "file_rule": {"extension": ".java", "basename_contains_case_insensitive": ["bit", "math"], "excluded_path_segments_case_insensitive": ["test", "tests", "benchmark", "benchmarks", "example", "examples", "generated", "build", "target", "vendor", "third_party"], "order": "repository pool order, then UTF-8 path order", "retain_complete_frame_and_exclusions": true},
+  "method_rule": "Every explicitly public static method with exactly one primitive int/long parameter and boolean/int/long return, including nested classes and unsupported or side-effecting bodies. Inventory independently of QKF; preserve exact source spans and all lexical ambiguities.",
+  "exposure": {"candidate_bodies_read_in_this_run": false, "candidate_QKF_or_native_execution": false, "prior_repository_name_familiarity": true, "prior_familiarity_with_common_bit_idioms": true, "baseline_text_provenance_scan": "No repository URL matches for these three repositories or Agrona's former owner in baseline research/examples/third_party/docs text files; this does not prove absence of historical or model-training exposure.", "private_or_training_exposure": "unknown; no claim of training-data blindness", "post_acquisition_review": "Record exact raw and normalized clones against retained development sources and all known exposure before the corpus gate."},
+  "evaluation_has_started": false,
+  "denominator": null,
+  "goals": null,
+  "results": null
+}

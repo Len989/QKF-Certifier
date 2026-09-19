@@ -1,0 +1,404 @@
+{
+  "acquisition_commit": "646aabb66b531391d09995bf028e9b414443a9b7",
+  "acquisition_implementation_commit": "fa701e51104c0fa66719f95d977854b31ba1f1e9",
+  "all_declarations": 1457,
+  "baseline_commit": "c8c7b4eeaf848d31c8c324a4316ffec8aac81cda",
+  "budgets": {
+    "max_features": 128,
+    "max_target_states": 8192
+  },
+  "case_files": {
+    "agrona.jsonl": "692c9709eb25d1167a6f8582546a0b315c426755c3a5ab4011b922fd54b70bb2",
+    "libgdx-math.jsonl": "55597c09faff17795b1477eb8fb8dd73504e0940771e36c3c9a7cacc8b723967",
+    "libgdx-native.jsonl": "b09aa9d5e8e096865be90db6a8f8df6e461e7ca301821a559313b0c2011336d4",
+    "netty.jsonl": "4fd0647428e54cafcc4950669b11027d02ef3b0b8445bf68692a9848e3dcf52d"
+  },
+  "case_inventory_sha256": "c647ac9fb8e98debf0f8aac9b1afb60e78a9a6e544fed31c71c9d8ac5fddcf85",
+  "clone_policy": "Exact and lexical-normalized body groups; parameters/local variable names normalized, member names/literals/operators retained. Native declarations have no body and are not merged into a semantic clone group. Typed and untyped groups reported separately. Semantic-family familiarity is separate from exact/lexical clones.",
+  "declaration_inventory_sha256": "6a5fb93438afcc4a945faf7f584834489e5e6e96d557041954f9f8fc6157bcb3",
+  "denominator": 33,
+  "documentation": "Pinned per-method doc_span/doc_sha256 refers to exact Javadoc in source_files; a prose method name is never its specification.",
+  "evaluation_started": false,
+  "exact_body_groups": {
+    "018884d630f0effcb634d9254e652a74d4c663ad30816394e2be79f6eb92e694": [
+      "m002"
+    ],
+    "1fd72dd317ef8747465853c9e2684f9dbdae93b2c4796ef3d50f4edd1951ffa0": [
+      "m009"
+    ],
+    "2213e14e7dcc71eef7bb5c43f542bdd6662d7a6b7a6045fa3957c6855df7aa8a": [
+      "m015"
+    ],
+    "23f0bfc37a6cdd603d0c079c00c2868bf89c26c4d131d24c8e4d5e82b9fc08d1": [
+      "m032"
+    ],
+    "32b56164ebcd32e06bf52a128733e315ac0ad0c8053f9ce9d86cd2de5283d052": [
+      "m007"
+    ],
+    "35fe0f25b542275eee61154b6435b2038d8a153dd3798ad3cbad62a6ab4d8968": [
+      "m010"
+    ],
+    "493fe3bf257d19b872b45c454cbc1241b45017325e01740b5742b9cb41d77bc2": [
+      "m030"
+    ],
+    "5561d9ea7d685e737055f08a29d2e2da4586ff12fd97904024bbc9e7bfc298fc": [
+      "m016"
+    ],
+    "65d85c6e55387c5bc930594af66dba0d443ae9ca55946cd24afa7b3b892347a1": [
+      "m014"
+    ],
+    "7d78e4c7cd5937984cd206b048b9d2907567c73d6d866af5faf184ba4e14b48b": [
+      "m031"
+    ],
+    "92fa4c57c072d7c493ae392c859319a9fabc143699dd9374e8825e1e7c40f5ef": [
+      "m011"
+    ],
+    "99c8c9d1dbe7ba2a9f3a8950e15f6fbfbf47f86843975bd3b967d65547aa29f4": [
+      "m008"
+    ],
+    "b6584a7806ba8dd51a28a4de459506f5d01f678a571308f3d772a908f151c70c": [
+      "m012"
+    ],
+    "cc5d01985c5277efd779debab96bc135e2002311be065d428c2c5ca2e4ef730e": [
+      "m013"
+    ],
+    "e9a2235c2cddf95ceb17d84a0d12fed9ddfefdfa669528a3c028045d2b424de9": [
+      "m033"
+    ],
+    "ea84db58fa2a4cccce9935baa292aeab3ce47467c8dac728cb694b9ec0962fb1": [
+      "m001"
+    ],
+    "ed1e4612478bd2ac039fa48dfec3f8f5d06d20830cfce60e14c560272e81141d": [
+      "m003",
+      "m004"
+    ],
+    "f694c742dbf2151eb3d36acc8958aff0d2a98944bda8ecb59bb62ec759685df6": [
+      "m005",
+      "m006"
+    ]
+  },
+  "exposure_policy": "All candidate bodies first inspected after acquisition gate 646aabb. None evaluated before corpus gate. Prior source/private/training exposure may be unknown; see EXPOSURE.json. Known semantic-family exposure is not conflated with exact clones.",
+  "frame_files": 24,
+  "frame_sha256": "b1cd0555624fd0aba97c0cdf3cbbe3a45ca0fb14665ad28eb9bfc5841dd5796d",
+  "full_frame_and_exclusions": "Complete FRAME.json, repository trees and all declaration records are retained in acquisition/evaluation artifacts and reconstructed before execution. Their hashes above are frozen, not support-conditioned lists.",
+  "normalized_body_groups": {
+    "06784da0f995f310d47709bec543e580f5776c5516e4c01f5fa8c323cd8d121a": [
+      "m005",
+      "m006"
+    ],
+    "41649a91cb0666793baee965ac374d9e1cf6df27d68403ddcffd480f07ea11d2": [
+      "m015"
+    ],
+    "416d6e9b3b29c5875a64b146d123f2aa9e6794e71641526fb053a936c8c496d2": [
+      "m010"
+    ],
+    "49d07e5e1fcb4193b09869a05b784620169190d477115339ad723c15d8fd1e32": [
+      "m011"
+    ],
+    "5d86357efcb4bbce0293632694efd7f0eaba84e3c11e51b140f51d118882eefc": [
+      "m012"
+    ],
+    "5ee915c0e98c391093cb8e29054ac42f9d0d981619de61440b800498ffb6a88a": [
+      "m013"
+    ],
+    "660bb77a11a397299122b2aabc23358844162f5f9d12db9f3c77491ca6cb9c3b": [
+      "m001"
+    ],
+    "9a13deadb5049b96a1f38682375d94d3f6a4dc702fc6db75c72fe12a88ff7564": [
+      "m007"
+    ],
+    "a106a92c79811cdedf0365524f23743b710b7eb1cb9e73c10c9c0f86e212818e": [
+      "m016"
+    ],
+    "a932f674c0fe0f91d992b5d66526d15037a676fa8966aeff0faed0f1988cc430": [
+      "m014"
+    ],
+    "bb00df2e5d966e54a7bc36e46463dafd34983818941af56557acc2db4d3156b7": [
+      "m008"
+    ],
+    "be579d98df6b5df50fe91becf1fd603a08bd538802598b3613ebd1810abd9ee1": [
+      "m032"
+    ],
+    "cfbbacd3cb4f5ced89ab7ac089e2ceb16464610b1e58225c306753012e062a54": [
+      "m033"
+    ],
+    "dd7c4378af581b9c67fedcdd65a54c309ee4e74b7f550cbe0631f8084b4946b2": [
+      "m030"
+    ],
+    "e4c35568729b714146547ade1471b48b7c5e908fc18b66f011a9d2f170601564": [
+      "m009"
+    ],
+    "e73184c3d7ee92a022dc2f8ce737a517cf28dd8e27cab2ffd5b482c17e741bc0": [
+      "m031"
+    ],
+    "f9248b35c7fd42e8869c64ab2787cbe5b359f08ec6a7b5cba339d69ef8cc78b8": [
+      "m003",
+      "m004"
+    ],
+    "f9ff1f56c1149c15ab89af6ba6ed625628cb6696b756c5c0397c26e224f7fe45": [
+      "m002"
+    ]
+  },
+  "paired_v2": false,
+  "schema": "qkf-frozen-v3-corpus-v1",
+  "source_frames": [
+    {
+      "excluded_java_count": 287,
+      "files": [
+        {
+          "git_blob": "33e4382ce38837fcc7a0b72b075f7e88bd15005a",
+          "mode": "100644",
+          "path": "agrona/src/main/java/org/agrona/BitUtil.java",
+          "sha256": "a6de436edffe93bc4732b0b2a7093515bbc3e6442e484754b6d8638e4a97bd2f",
+          "size": 13345,
+          "source_file": "sources/aeron-io_agrona/agrona/src/main/java/org/agrona/BitUtil.java"
+        }
+      ],
+      "fork": false,
+      "licenses": [
+        {
+          "git_blob": "27ff85aa183a80f7370b908e837721a02f33b5da",
+          "mode": "100644",
+          "path": "LICENSE",
+          "sha256": "af3928565c008fe1dbb38ee9fc01f29c5e29908b8d30bdb259585a7b8ed540a1",
+          "size": 11326,
+          "source_file": "sources/aeron-io_agrona/LICENSE"
+        }
+      ],
+      "repository": "aeron-io/agrona",
+      "revision": "1c1079dc40fbad592d935dea11df9a188d05b1f1",
+      "tree": "ab918e3512c72ffe33e1ce48acc0e7dc432146a5"
+    },
+    {
+      "excluded_java_count": 3587,
+      "files": [
+        {
+          "git_blob": "bb4a7c531e899d1470dd630750996191917fbae3",
+          "mode": "100644",
+          "path": "buffer/src/main/java/io/netty/buffer/search/BitapSearchProcessorFactory.java",
+          "sha256": "7e35bfc6d4e13f801b16af8999d71ed243478e2e0b508ac889f1b57f873eb33b",
+          "size": 2551,
+          "source_file": "sources/netty_netty/buffer/src/main/java/io/netty/buffer/search/BitapSearchProcessorFactory.java"
+        },
+        {
+          "git_blob": "aabb880ac8435847395a237744fe0afb6734f222",
+          "mode": "100644",
+          "path": "codec-compression/src/main/java/io/netty/handler/codec/compression/Bzip2BitReader.java",
+          "sha256": "0b4c4585422a33763dc8617074742a138596be4ccad0c9672ed73acce4ccd837",
+          "size": 5053,
+          "source_file": "sources/netty_netty/codec-compression/src/main/java/io/netty/handler/codec/compression/Bzip2BitReader.java"
+        },
+        {
+          "git_blob": "6916bc0b179013d5c8ec49e5981307e54c3fa0cc",
+          "mode": "100644",
+          "path": "codec-compression/src/main/java/io/netty/handler/codec/compression/Bzip2BitWriter.java",
+          "sha256": "1c8c2b23b0910ee2216ebeb01a477cce03bff2fc36d449b1e0bd926d6591e053",
+          "size": 4093,
+          "source_file": "sources/netty_netty/codec-compression/src/main/java/io/netty/handler/codec/compression/Bzip2BitWriter.java"
+        },
+        {
+          "git_blob": "3d749ca2c40e0c74d2a5227ba91e6b948052988d",
+          "mode": "100644",
+          "path": "common/src/main/java/io/netty/util/internal/MathUtil.java",
+          "sha256": "fb1a3d4e496c4392852da2e4d18c8a00335591556c7c5ae6bc4c3747349db434",
+          "size": 3906,
+          "source_file": "sources/netty_netty/common/src/main/java/io/netty/util/internal/MathUtil.java"
+        },
+        {
+          "git_blob": "3f99f484bd1198c0437a2910b8240e18e9c991f9",
+          "mode": "100644",
+          "path": "microbench/src/main/java/io/netty/microbenchmark/common/MathOperationsBenchmark.java",
+          "sha256": "42c75323ac36313771ad263fd9e7da9e27e1e6d84b8534158aa2dda5ad4691e1",
+          "size": 1166,
+          "source_file": "sources/netty_netty/microbench/src/main/java/io/netty/microbenchmark/common/MathOperationsBenchmark.java"
+        }
+      ],
+      "fork": false,
+      "licenses": [
+        {
+          "git_blob": "62589edd12a37dd28b6b6fed1e2d728ac9f05c8d",
+          "mode": "100644",
+          "path": "LICENSE.txt",
+          "sha256": "aac73b3148f6d1d7111dbca32099f68d26c644c6813ae1e4f05f6579aa2663fe",
+          "size": 11360,
+          "source_file": "sources/netty_netty/LICENSE.txt"
+        },
+        {
+          "git_blob": "21367472ae93ec2e7e2fc2998589023498b0ef18",
+          "mode": "100644",
+          "path": "NOTICE.txt",
+          "sha256": "1775b0d91666fcb82493a5198f761b59a6d4d050bae6a4d26ecc377354068571",
+          "size": 9387,
+          "source_file": "sources/netty_netty/NOTICE.txt"
+        }
+      ],
+      "repository": "netty/netty",
+      "revision": "8af38d14870e6c0d009c348cadbe6d8df87f2d7d",
+      "tree": "1383e5e4c4412e461cef3fe41361e0b321ccb043"
+    },
+    {
+      "excluded_java_count": 2430,
+      "files": [
+        {
+          "git_blob": "dee958d35b7c6db04ae90839c4d8e974b4eef2ba",
+          "mode": "100644",
+          "path": "extensions/gdx-box2d/gdx-box2d-gwt/src/com/badlogic/gdx/physics/box2d/gwt/emu/java/lang/StrictMath.java",
+          "sha256": "942570f2fd3f2c636627efa4d5e935fc15886a0a2f934631712d7745e3311e10",
+          "size": 2275,
+          "source_file": "sources/libgdx_libgdx/extensions/gdx-box2d/gdx-box2d-gwt/src/com/badlogic/gdx/physics/box2d/gwt/emu/java/lang/StrictMath.java"
+        },
+        {
+          "git_blob": "5d932012e38f4894343f240b4bd32694087a90ad",
+          "mode": "100644",
+          "path": "extensions/gdx-box2d/gdx-box2d-gwt/src/com/badlogic/gdx/physics/box2d/gwt/emu/org/jbox2d/common/MathUtils.java",
+          "sha256": "fd28e0c6e1cf4012941cf975fbfe7dca4e88aafdf1e2071f5ff40cceb4b59084",
+          "size": 9163,
+          "source_file": "sources/libgdx_libgdx/extensions/gdx-box2d/gdx-box2d-gwt/src/com/badlogic/gdx/physics/box2d/gwt/emu/org/jbox2d/common/MathUtils.java"
+        },
+        {
+          "git_blob": "e398c0ef4c397de880c05f678c56ecfa5094dab0",
+          "mode": "100644",
+          "path": "extensions/gdx-box2d/gdx-box2d-gwt/src/com/badlogic/gdx/physics/box2d/gwt/emu/org/jbox2d/common/PlatformMathUtils.java",
+          "sha256": "aee634e615a9840cfc0bc6feefcf4172cfa8f7fff056898b7c39256736c80501",
+          "size": 1744,
+          "source_file": "sources/libgdx_libgdx/extensions/gdx-box2d/gdx-box2d-gwt/src/com/badlogic/gdx/physics/box2d/gwt/emu/org/jbox2d/common/PlatformMathUtils.java"
+        },
+        {
+          "git_blob": "7ea11ddfefe62d01bd05642a86ef945e8f41c2ea",
+          "mode": "100644",
+          "path": "extensions/gdx-bullet/jni/swig-src/collision/com/badlogic/gdx/physics/bullet/collision/bt32BitAxisSweep3.java",
+          "sha256": "807c314b3c9560ab8b0e2f867d9d7ebae6c645686674a1a2a48f2c40fcbbb3d7",
+          "size": 2657,
+          "source_file": "sources/libgdx_libgdx/extensions/gdx-bullet/jni/swig-src/collision/com/badlogic/gdx/physics/bullet/collision/bt32BitAxisSweep3.java"
+        },
+        {
+          "git_blob": "cda9a541ff7aebc57ab5f0545a4416cfec65f1b6",
+          "mode": "100644",
+          "path": "extensions/gdx-bullet/jni/swig-src/collision/com/badlogic/gdx/physics/bullet/collision/btUsageBitfield.java",
+          "sha256": "ab88866c9b4678057dd8adf8dc158ff6ffcad523f865c7db18a184ce60f0dc19",
+          "size": 3465,
+          "source_file": "sources/libgdx_libgdx/extensions/gdx-bullet/jni/swig-src/collision/com/badlogic/gdx/physics/bullet/collision/btUsageBitfield.java"
+        },
+        {
+          "git_blob": "a2023e6e8e54ffbfd52f79a30c1789c00c1d7f6f",
+          "mode": "100644",
+          "path": "extensions/gdx-bullet/jni/swig-src/collision/com/badlogic/gdx/physics/bullet/collision/gim_bitset.java",
+          "sha256": "2027c01b2f9260f6ed3f8fcf094f88043d29dc651432c140ab90e41f54f43ca6",
+          "size": 2997,
+          "source_file": "sources/libgdx_libgdx/extensions/gdx-bullet/jni/swig-src/collision/com/badlogic/gdx/physics/bullet/collision/gim_bitset.java"
+        },
+        {
+          "git_blob": "752f5827bab0717c5092c7f9420783e60a0b500e",
+          "mode": "100644",
+          "path": "extensions/gdx-bullet/jni/swig-src/linearmath/com/badlogic/gdx/physics/bullet/linearmath/LinearMath.java",
+          "sha256": "01960b222d09014ad730fbbd6a8f4e481b9fdc749e0f2fe72ac6fe1381c45825",
+          "size": 19394,
+          "source_file": "sources/libgdx_libgdx/extensions/gdx-bullet/jni/swig-src/linearmath/com/badlogic/gdx/physics/bullet/linearmath/LinearMath.java"
+        },
+        {
+          "git_blob": "1951acd2435a719fd351a3a2b986f151b636d785",
+          "mode": "100644",
+          "path": "extensions/gdx-bullet/jni/swig-src/linearmath/com/badlogic/gdx/physics/bullet/linearmath/LinearMathConstants.java",
+          "sha256": "6725d14a9163aa51f93ec0dfa36e89b11e72e68a15c3f1bb5a990a141a4693d2",
+          "size": 1070,
+          "source_file": "sources/libgdx_libgdx/extensions/gdx-bullet/jni/swig-src/linearmath/com/badlogic/gdx/physics/bullet/linearmath/LinearMathConstants.java"
+        },
+        {
+          "git_blob": "7355a5b193e00498dc945708c9d7762e320c22f1",
+          "mode": "100644",
+          "path": "extensions/gdx-bullet/jni/swig-src/linearmath/com/badlogic/gdx/physics/bullet/linearmath/LinearMathJNI.java",
+          "sha256": "3607c2670e98ed6ae7c499812b19ffa4ce8608fbc2a054403ad436b24bc6c00d",
+          "size": 108097,
+          "source_file": "sources/libgdx_libgdx/extensions/gdx-bullet/jni/swig-src/linearmath/com/badlogic/gdx/physics/bullet/linearmath/LinearMathJNI.java"
+        },
+        {
+          "git_blob": "0b85f63bf1b976e3c5435d1363ebedda593a1dbe",
+          "mode": "100644",
+          "path": "extensions/gdx-tools/src/com/badlogic/gdx/tools/bmfont/BitmapFontWriter.java",
+          "sha256": "2d91cf52675b48639f418bfa9044980726548a092e65779238649c5b5a381a6d",
+          "size": 14974,
+          "source_file": "sources/libgdx_libgdx/extensions/gdx-tools/src/com/badlogic/gdx/tools/bmfont/BitmapFontWriter.java"
+        },
+        {
+          "git_blob": "db9d923537c540bc453c4bb49bd11736ea8bc0d0",
+          "mode": "100644",
+          "path": "extensions/gdx-tools/src/com/badlogic/gdx/tools/bmfont/BitmapFontWriterTest.java",
+          "sha256": "02cff7d19fed151ca52acc2dd98bfdb912510bb40a6eb629efa65977b3787a28",
+          "size": 6855,
+          "source_file": "sources/libgdx_libgdx/extensions/gdx-tools/src/com/badlogic/gdx/tools/bmfont/BitmapFontWriterTest.java"
+        },
+        {
+          "git_blob": "26597e7814e68bafbbcf89be6ff77ad64d349f49",
+          "mode": "100644",
+          "path": "gdx/src/com/badlogic/gdx/assets/loaders/BitmapFontLoader.java",
+          "sha256": "20b52873c30e963b7d23ab5b0d9852e0fb9c858f50999835360d4b74a12d4ceb",
+          "size": 5379,
+          "source_file": "sources/libgdx_libgdx/gdx/src/com/badlogic/gdx/assets/loaders/BitmapFontLoader.java"
+        },
+        {
+          "git_blob": "aedfa31af66f8a73b727a7d7684b77a2f400ec6a",
+          "mode": "100644",
+          "path": "gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java",
+          "sha256": "25ea4cd5c675c1e9ae191e26b6d4c494825eafcb71786d658d21fe9374814c07",
+          "size": 37114,
+          "source_file": "sources/libgdx_libgdx/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java"
+        },
+        {
+          "git_blob": "fafc9f545739e21c8d5b6816bce251e4d347f352",
+          "mode": "100644",
+          "path": "gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFontCache.java",
+          "sha256": "04e4271f10e9285c6b137d5be1603d96d531b301ca95c8682249c9abdf42be16",
+          "size": 21030,
+          "source_file": "sources/libgdx_libgdx/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFontCache.java"
+        },
+        {
+          "git_blob": "94964d0d478a16f31cf3f17290708d38f5282e3e",
+          "mode": "100644",
+          "path": "gdx/src/com/badlogic/gdx/math/MathUtils.java",
+          "sha256": "d7df12aba2c8cb10e98ad257848304768a0ad7c7d21597b09b566c93c2ab304d",
+          "size": 32657,
+          "source_file": "sources/libgdx_libgdx/gdx/src/com/badlogic/gdx/math/MathUtils.java"
+        },
+        {
+          "git_blob": "4388cd76019f2e5363033010a96ec7c87a628408",
+          "mode": "100644",
+          "path": "gdx/src/com/badlogic/gdx/utils/Bits.java",
+          "sha256": "58bc2a0e750810a1a2f81d8532a32d9be4228719c644dcf25676dc2670f5202c",
+          "size": 10543,
+          "source_file": "sources/libgdx_libgdx/gdx/src/com/badlogic/gdx/utils/Bits.java"
+        },
+        {
+          "git_blob": "6cbc92c7ce4c9c37a3957a5bec74686e91759ba7",
+          "mode": "100644",
+          "path": "gdx/src/com/badlogic/gdx/utils/compression/rangecoder/BitTreeDecoder.java",
+          "sha256": "7cd06f803d960a46f78ad306e64100e164b9e928b4c5e7e10c87ea1c251a567b",
+          "size": 1978,
+          "source_file": "sources/libgdx_libgdx/gdx/src/com/badlogic/gdx/utils/compression/rangecoder/BitTreeDecoder.java"
+        },
+        {
+          "git_blob": "1775a5b7329575bbf2148a77d92ead03bc86a5e1",
+          "mode": "100644",
+          "path": "gdx/src/com/badlogic/gdx/utils/compression/rangecoder/BitTreeEncoder.java",
+          "sha256": "6e48afa2dc9e6bef8064eadac0cf6d4188f3264a2f8293b1ec743f1e8343efe4",
+          "size": 2780,
+          "source_file": "sources/libgdx_libgdx/gdx/src/com/badlogic/gdx/utils/compression/rangecoder/BitTreeEncoder.java"
+        }
+      ],
+      "fork": false,
+      "licenses": [
+        {
+          "git_blob": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
+          "mode": "100644",
+          "path": "LICENSE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "size": 10174,
+          "source_file": "sources/libgdx_libgdx/LICENSE"
+        }
+      ],
+      "repository": "libgdx/libgdx",
+      "revision": "e1d69884015ca19061647505f9509db34df5cc82",
+      "tree": "60e4404ce0f60a58ec304f8e8ad46473532076f4"
+    }
+  ],
+  "span_unit": "Unicode codepoints in exact UTF-8 file (not bytes); end exclusive"
+}
