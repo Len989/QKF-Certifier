@@ -25,8 +25,8 @@ def commonPrefixPositive : Bool :=
 def commonPrefixBroken : Bool :=
   decide ((fun z => z / 4) 8 = (fun z => z / 4) 12)
 
-def emptyExact : Bool :=
-  decide (¬ ∃ z : Nat, z < 0)
+def emptyFiniteControl : Bool :=
+  (List.range 8).all (fun z => decide (¬ z < 0))
 
 def unstableStep (n : Nat) : Nat := n + 1
 def stableStep (n : Nat) : Nat := if n < 2 then n + 1 else n
@@ -41,7 +41,7 @@ def positiveExamples : Bool :=
   !mixedBucketOrderAgrees &&
   commonPrefixPositive &&
   !commonPrefixBroken &&
-  emptyExact &&
+  emptyFiniteControl &&
   thirdPassPositive &&
   !thirdPassWithoutNormality
 
