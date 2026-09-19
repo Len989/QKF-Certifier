@@ -1,0 +1,81 @@
+name: Frozen inference holdout v1
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  holdout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record exact revision
+        run: |
+          mkdir -p reproduction/holdout-v1
+          git rev-parse HEAD > reproduction/holdout-v1/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/holdout-v1/tree.txt
+      - name: Download preregistered external blobs
+        run: >-
+          python -m research.external.frozen_v2.download_sources
+          reproduction/holdout-v1/input
+      - name: Execute frozen holdout exactly once
+        run: >-
+          python -m research.external.frozen_v2.experiment
+          reproduction/holdout-v1/input reproduction/holdout-v1/fresh
+      - name: Replay without producer/search or native execution
+        run: |
+          python -O - <<'PY'
+          import builtins, json
+          from research.external.frozen_v2.experiment import execute
+          original = builtins.__import__
+          def guarded(name, *args, **kwargs):
+              if 'producer' in name or name in {'z3','cvc5','pysmt'}:
+                  raise AssertionError('unexpected frozen replay dependency: ' + name)
+              return original(name, *args, **kwargs)
+          builtins.__import__ = guarded
+          result = execute(
+              'reproduction/holdout-v1/input',
+              'reproduction/holdout-v1/fresh',
+              replay=True,
+          )
+          print(json.dumps(result, sort_keys=True))
+          PY
+      - name: Require only preregistered protocol invariants
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('reproduction/holdout-v1/fresh/SUMMARY.json').read_text())
+          assert s['schema'] == 'qkf-inference-holdout-result-v1'
+          assert s['source_methods'] == 15
+          assert s['registered_targets'] == 1
+          assert sum(s['source_counts'].values()) == 15
+          assert sum(s['target_counts'].values()) == 15
+          assert s['native_target_validation']['status'] == 'matched'
+          assert s['native_target_validation']['mismatches'] == 0
+          assert s['no_tuning_after_first_run'] is True
+          allowed_source={'source_parsed','source_unsupported','no_source_profile'}
+          allowed_target={'certified','refuted','source_unsupported','budget_exhausted',
+                          'no_supported_target_language','no_source_profile'}
+          assert set(s['source_counts']) <= allowed_source
+          assert set(s['target_counts']) <= allowed_target
+          print(json.dumps(s, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: frozen-inference-holdout-py${{ matrix.python-version }}
+          path: reproduction/holdout-v1/
+          retention-days: 30
