@@ -1,4 +1,4 @@
-name: Signed observation closure
+name: Signed observation closure (archived PR29)
 on:
   pull_request:
   workflow_dispatch:
@@ -6,6 +6,7 @@ permissions:
   contents: read
 jobs:
   observations:
+    name: Archived PR29 observations (${{ matrix.python-version }})
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     strategy:
@@ -17,6 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
+          ref: 012f680989628dbb0a25d7782860a7a843d06c8e
           fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
