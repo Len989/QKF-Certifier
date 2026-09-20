@@ -16,10 +16,11 @@
     "research.wordexpr.test_predicates",
     "research.unified.test_unified",
     "research.observations.tests.test_inference",
-    "research.observations.tests.test_factor"
-  ],
-  "new": [
+    "research.observations.tests.test_factor",
     "research.signed_context.test_context",
     "research.regression.test_registry"
+  ],
+  "new": [
+    "research.signed_compact.test_compact"
   ]
 }

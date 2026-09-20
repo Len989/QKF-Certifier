@@ -49,6 +49,14 @@ jobs:
         run: |
           python -m research.signed_context.replay reproduction/context/fresh > reproduction/context/replay-normal.json
           python -O -m research.signed_context.replay reproduction/context/fresh > reproduction/context/replay-optimized.json
+      - name: Compact proof DAGs and requested separating explanations
+        run: |
+          python -m research.signed_compact.preserve > reproduction/context/compact-preflight.json
+          python -m research.signed_compact.experiment reproduction/context/compact --input reproduction/context/fresh > reproduction/context/compact-experiment.json
+          python -m research.signed_compact.replay reproduction/context/compact > reproduction/context/compact-replay-normal.json
+          python -O -m research.signed_compact.replay reproduction/context/compact > reproduction/context/compact-replay-optimized.json
+          python -m research.signed_compact.preserve > reproduction/context/compact-postflight.json
+          cmp reproduction/context/compact-preflight.json reproduction/context/compact-postflight.json
       - name: Batch CLI and current-tree postflight
         run: |
           python - <<'PY'
