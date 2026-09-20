@@ -1,0 +1,25 @@
+{
+  "schema": "qkf-current-regressions-v1",
+  "prior": [
+    "research.signed_coverage.test_coverage",
+    "research.signed_witness.test_witness",
+    "research.signed_reduction.test_reduction",
+    "research.acceptance.test_acceptance",
+    "research.signed_targets.test_targets",
+    "research.signed_runtime.test_runtime",
+    "research.signed_observations.test_observations",
+    "research.signed_bridge.test_bridge",
+    "research.inference.test_inference_v3",
+    "research.inference.test_inference_v2",
+    "research.inference.test_inference",
+    "research.signed_predicates.test_signed_predicates",
+    "research.wordexpr.test_predicates",
+    "research.unified.test_unified",
+    "research.observations.tests.test_inference",
+    "research.observations.tests.test_factor"
+  ],
+  "new": [
+    "research.signed_context.test_context",
+    "research.regression.test_registry"
+  ]
+}
