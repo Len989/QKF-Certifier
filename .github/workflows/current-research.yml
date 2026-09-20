@@ -80,6 +80,14 @@ jobs:
           python -O -m research.ground_query.replay reproduction/context/ground_query > reproduction/context/ground-replay-optimized.json
           python -m research.ground_query.preserve > reproduction/context/ground-postflight.json
           cmp reproduction/context/ground-preflight.json reproduction/context/ground-postflight.json
+      - name: Guarded source facts, independent consumer proofs and fair direct control
+        run: |
+          python -m research.source_query.preserve > reproduction/context/source-query-preflight.json
+          python -m research.source_query.experiment reproduction/context/source_query > reproduction/context/source-query-experiment.json
+          python -m research.source_query.replay reproduction/context/source_query > reproduction/context/source-query-replay-normal.json
+          python -O -m research.source_query.replay reproduction/context/source_query > reproduction/context/source-query-replay-optimized.json
+          python -m research.source_query.preserve > reproduction/context/source-query-postflight.json
+          cmp reproduction/context/source-query-preflight.json reproduction/context/source-query-postflight.json
       - name: Batch CLI and current-tree postflight
         run: |
           python - <<'PY'
