@@ -1,0 +1,39 @@
+{
+  "schema": "qkf-source-pilot-design-v1",
+  "status": "planned adapters; concrete requests registered in PR41 before measurements",
+  "base": "a92caf36c0b6567bfe509dfda344c12c73314b1a",
+  "previous_protocol": "research/semantic_work/PROTOCOL.json",
+  "families": [
+    {
+      "id": "equality_mask",
+      "source_profile": "modular-lsb-signed-word-predicates-v1",
+      "seed": "x != 2147483648L || (x & 1) == 0",
+      "variants": ["renamed and nested IR", "long irrelevant residual prefix", "compound consumers", "invalid mask implication", "changed guards"],
+      "first_rule": "x=K implies (x&M)=(K&M) under checked modular semantics",
+      "control": "same native rules and ordinary caching without the new planner"
+    },
+    {
+      "id": "arithmetic_low_bits",
+      "source_profile": "modular-lsb-signed-word-predicates-v1",
+      "seed": "low bit of x+x is zero",
+      "variants": ["supported add/sub relations", "compound Boolean consumers", "several independently specified goals", "behavior-changing mutants"],
+      "first_rule": "parameterized low-bit lemma; finite tests are not its all-width proof",
+      "control": "same native rules and direct derivations; one-step simplifications kept as controls"
+    },
+    {
+      "id": "ascending_local_row",
+      "source_profile": "separate local repair-cell pilot, not PR39 signed scope",
+      "source": "research/graal/previous/baseline/source/IntegerStamp.java",
+      "source_sha256": "7a4b84d92654ef22c911dab503efd829b48a72156ff0de51129e767589ad0010",
+      "guard": {"m": 0, "a": 1, "g": 1, "output": 0},
+      "native_carrier_size": 8,
+      "native_binary_table_entries": 128,
+      "seed_domain_size": 4,
+      "forced_domain_size": 8,
+      "control": "direct local obligation with all seed acquisition charged; no assumed benefit"
+    }
+  ],
+  "gate": "two parameter variants are not two structural families; local forcing mechanism alone is not a speedup",
+  "measurements": ["native fact acquisition", "tables and source bridge", "all attempts and fallback", "construction and checker cost", "cold 1/4/16 goals"],
+  "external_holdout": false
+}
