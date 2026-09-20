@@ -1,0 +1,28 @@
+{
+  "case_count": 28,
+  "discovery_processes": 252,
+  "replay_processes": 268,
+  "schema": "qkf-run32-expected-summary-v1",
+  "source": "first sealed local development comparison; no performance gate",
+  "summary_sha256": "11b9d59d96f2d4cce5d30f17e0c2c6855a484fd6638117f60253c7c43740b4b2",
+  "totals": {
+    "closure_cells": {
+      "budget_exhausted": 6,
+      "certified": 14,
+      "refuted": 7,
+      "unsupported": 1
+    },
+    "closure_rows": {
+      "budget_exhausted": 6,
+      "certified": 14,
+      "refuted": 7,
+      "unsupported": 1
+    },
+    "frozen_v3": {
+      "budget_exhausted": 2,
+      "certified": 16,
+      "refuted": 9,
+      "unsupported": 1
+    }
+  }
+}
