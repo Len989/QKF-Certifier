@@ -1,4 +1,4 @@
-name: Signed atomic row runtime
+name: Signed atomic row runtime (archived PR30)
 on:
   pull_request:
   workflow_dispatch:
@@ -17,6 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
+          ref: 5c794dfc9ffdbb5ab8efc05d25a04a80cc213988
           fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
