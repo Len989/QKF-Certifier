@@ -1,0 +1,91 @@
+name: Signed guarded residual coverage
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  coverage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record complete source tree and preserved files
+        run: |
+          mkdir -p reproduction/coverage
+          git rev-parse HEAD > reproduction/coverage/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/coverage/tree.txt
+          git archive HEAD | gzip -n > reproduction/coverage/source.tar.gz
+          python --version > reproduction/coverage/python.txt
+          java -version 2> reproduction/coverage/java.txt
+          python -m research.signed_coverage.preserve > reproduction/coverage/preflight.json
+      - name: New guarded coverage checks and all selected current-tree regressions
+        run: |
+          set -o pipefail
+          python -m unittest research.signed_coverage.test_coverage -v 2>&1 | tee reproduction/coverage/tests-normal.log
+          python -O -m unittest research.signed_coverage.test_coverage -v 2>&1 | tee reproduction/coverage/tests-optimized.log
+          suites='research.signed_witness.test_witness research.signed_reduction.test_reduction research.acceptance.test_acceptance research.signed_targets.test_targets research.signed_runtime.test_runtime research.signed_observations.test_observations research.signed_bridge.test_bridge research.inference.test_inference_v3 research.inference.test_inference_v2 research.inference.test_inference research.signed_predicates.test_signed_predicates research.wordexpr.test_predicates research.unified.test_unified research.observations.tests.test_inference research.observations.tests.test_factor'
+          python -m unittest $suites -v 2>&1 | tee reproduction/coverage/regressions-normal.log
+          python -O -m unittest $suites -v 2>&1 | tee reproduction/coverage/regressions-optimized.log
+      - name: Constructed semantic comparisons and separate Java validation
+        run: |
+          python -m research.signed_coverage.experiment reproduction/coverage/fresh --java > reproduction/coverage/experiment.json
+      - name: Fresh replay with guards before imports, no Java or search
+        run: |
+          for mode in normal optimized; do
+            flags=''; if [ "$mode" = optimized ]; then flags='-O'; fi
+            python -I -B $flags - reproduction/coverage/fresh > reproduction/coverage/replay-$mode.json <<'PY'
+          import importlib.abc, json, sys
+          from pathlib import Path
+          sys.path.insert(0, str(Path.cwd()))
+          class Block(importlib.abc.MetaPathFinder):
+              def find_spec(self, fullname, path=None, target=None):
+                  if fullname in {'subprocess', 'z3', 'cvc5', 'pysmt'} or (fullname.startswith('research.') and fullname.rsplit('.',1)[-1].startswith('producer')):
+                      raise ImportError('blocked during replay: ' + fullname)
+          sys.meta_path.insert(0, Block())
+          from research.signed_coverage.experiment import run
+          print(json.dumps(run(sys.argv[1], replay=True), sort_keys=True))
+          PY
+          done
+      - name: Covered target CLI and exact postflight identity
+        run: |
+          python - <<'PYCODE'
+          import json, subprocess, sys
+          from pathlib import Path
+          from research.signed_coverage.experiment import cases
+          root=Path('reproduction/coverage')
+          _,source,target,_=next(row for row in cases() if row[0]=='tautology_31')
+          (root/'example.java').write_text(source)
+          (root/'target.json').write_text(json.dumps(target))
+          for command in ('prove','check','explain'):
+              flags=['-O'] if command!='prove' else []
+              args=[sys.executable,*flags,'-m','research.unified.v6',command,str(root/'example.java'),
+                    '--target',str(root/'target.json'),'--proof',str(root/'example-proof.json')]
+              done=subprocess.run(args,capture_output=True,text=True)
+              if done.returncode!=0:raise RuntimeError(done.stdout+done.stderr)
+              (root/('cli-'+command+'.json')).write_text(done.stdout)
+          PYCODE
+          python -m research.signed_coverage.preserve > reproduction/coverage/postflight.json
+          cmp reproduction/coverage/preflight.json reproduction/coverage/postflight.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: signed-guarded-coverage-py${{ matrix.python-version }}
+          path: reproduction/coverage/
+          retention-days: 30
