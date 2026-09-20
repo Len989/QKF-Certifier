@@ -394,3 +394,61 @@ class PureRowsTests(unittest.TestCase):
         with self.assertRaises(InvalidCertificate):check_completion(self.p,self.c)
 
     def test_explanations_have_no_universal_disequality_claim(self):
+        e=explain(self.p,self.c,0,2,1)
+        self.assertEqual(e['relation'],'not_forced_equal')
+        self.assertIsNotNone(e['separating_model'])
+        e=explain(self.p,self.c,0,2,2)
+        self.assertEqual(e['relation'],'forced_equal')
+        self.assertIsNotNone(e['equality_evidence'])
+        self.assertIsNone(e['separating_model'])
+
+    def test_strict_json_duplicate_nonfinite_cycle(self):
+        with tempfile.TemporaryDirectory() as t:
+            p=Path(t)/'x.json'
+            for raw in ['{"x":1,"x":2}','{"x":NaN}']:
+                p.write_text(raw)
+                with self.assertRaises(ValueError):read_json(p)
+        p=deepcopy(self.p);p['extra']=p
+        with self.assertRaises(InputError):prove(p)
+
+    def test_cli_roundtrip_exclusive_and_budget(self):
+        from .cli import main
+        from contextlib import redirect_stdout,redirect_stderr
+        import io
+        with tempfile.TemporaryDirectory() as t,redirect_stdout(io.StringIO()),redirect_stderr(io.StringIO()):
+            p=Path(t)/'input.json';c=Path(t)/'proof.json';b=Path(t)/'budget.json'
+            write_json(p,self.p)
+            self.assertEqual(main(['prove',str(p),'--proof',str(c)]),0)
+            self.assertEqual(main(['check',str(p),'--proof',str(c)]),0)
+            self.assertEqual(main(['prove',str(p),'--proof',str(c)]),64)
+            write_json(b,{'max_work':0})
+            out=Path(t)/'no-proof.json'
+            self.assertEqual(main(['prove',str(p),'--proof',str(out),'--budget',str(b)]),2)
+            self.assertFalse(out.exists())
+            c.write_text('{"x":1,"x":2}')
+            self.assertEqual(main(['check',str(p),'--proof',str(c)]),3)
+
+    def test_fresh_checker_imports_no_producer_prototype_or_signed_module(self):
+        with tempfile.TemporaryDirectory() as t:
+            path=Path(t)/'record.json';write_json(path,dict(input=self.p,proof=self.c))
+            code='''import sys,json,importlib.abc
+sys.path.insert(0,sys.argv[1])
+class Guard(importlib.abc.MetaPathFinder):
+ def find_spec(self,name,path=None,target=None):
+  if name in ('subprocess','platform') or name.startswith(('z3','cvc5','papers','research.signed_','research.pure_rows.producer','research.pure_rows.reference')):
+   raise ImportError('forbidden: '+name)
+sys.meta_path.insert(0,Guard())
+from research.pure_rows.checker import check,explain
+with open(sys.argv[2]) as f:r=json.load(f)
+x=check(r['input'],r['proof'])
+if x['interface']['N2']!=3:raise RuntimeError('result')
+explain(r['input'],r['proof'],0,2)
+print('guarded replay passed')
+'''
+            for flags in [[],['-O']]:
+                r=subprocess.run([sys.executable,*flags,'-I','-S','-B','-c',code,str(ROOT),str(path)],
+                                 capture_output=True,text=True)
+                self.assertEqual(r.returncode,0,r.stderr)
+
+
+if __name__=='__main__':unittest.main()
