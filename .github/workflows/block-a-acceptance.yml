@@ -1,4 +1,4 @@
-name: Block A acceptance comparison
+name: Block A acceptance comparison (archived PR32)
 on:
   pull_request:
   workflow_dispatch:
@@ -17,6 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
+          ref: 370d235885528533b9e1b43c860bd0b304d3a849
           fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065

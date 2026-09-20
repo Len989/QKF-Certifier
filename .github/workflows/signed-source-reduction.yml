@@ -1,0 +1,78 @@
+name: Signed source reduction before carrier
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reduction:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record complete source tree and preserved files
+        run: |
+          mkdir -p reproduction/reduction
+          git rev-parse HEAD > reproduction/reduction/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/reduction/tree.txt
+          git archive HEAD | gzip -n > reproduction/reduction/source.tar.gz
+          python --version > reproduction/reduction/python.txt
+          java -version 2> reproduction/reduction/java.txt
+          python -m research.signed_reduction.preserve > reproduction/reduction/preflight.json
+      - name: New reduction checks and all selected current-tree regressions
+        run: |
+          set -o pipefail
+          python -m unittest research.signed_reduction.test_reduction -v 2>&1 | tee reproduction/reduction/tests-normal.log
+          python -O -m unittest research.signed_reduction.test_reduction -v 2>&1 | tee reproduction/reduction/tests-optimized.log
+          suites='research.acceptance.test_acceptance research.signed_targets.test_targets research.signed_runtime.test_runtime research.signed_observations.test_observations research.signed_bridge.test_bridge research.inference.test_inference_v3 research.inference.test_inference_v2 research.inference.test_inference research.signed_predicates.test_signed_predicates research.wordexpr.test_predicates research.unified.test_unified research.observations.tests.test_inference research.observations.tests.test_factor'
+          python -m unittest $suites -v 2>&1 | tee reproduction/reduction/regressions-normal.log
+          python -O -m unittest $suites -v 2>&1 | tee reproduction/reduction/regressions-optimized.log
+      - name: Constructed semantic comparisons and separate Java validation
+        run: |
+          python -m research.signed_reduction.experiment reproduction/reduction/fresh --java > reproduction/reduction/experiment.json
+      - name: Fresh replay with guards before imports, no Java or search
+        run: |
+          for mode in normal optimized; do
+            flags=''; if [ "$mode" = optimized ]; then flags='-O'; fi
+            python -I -B $flags - reproduction/reduction/fresh > reproduction/reduction/replay-$mode.json <<'PY'
+          import importlib.abc, json, sys
+          from pathlib import Path
+          sys.path.insert(0, str(Path.cwd()))
+          class Block(importlib.abc.MetaPathFinder):
+              def find_spec(self, fullname, path=None, target=None):
+                  if fullname in {'subprocess', 'z3', 'pysmt'} or (fullname.startswith('research.') and fullname.endswith('.producer')):
+                      raise ImportError('blocked during replay: ' + fullname)
+          sys.meta_path.insert(0, Block())
+          from research.signed_reduction.experiment import run
+          print(json.dumps(run(sys.argv[1], replay=True), sort_keys=True))
+          PY
+          done
+      - name: CLI builds and rechecks source-only interface; postflight
+        run: |
+          printf '%s\n' 'class Demo { public static boolean f(long x) { return x == 2147483648L || x != 2147483648L; } }' > reproduction/reduction/example.java
+          python -m research.signed_reduction.cli infer reproduction/reduction/example.java --class Demo --method f --word-type long --max-states 2 --certificate reproduction/reduction/example.json > reproduction/reduction/cli-build.json
+          python -O -m research.signed_reduction.cli check reproduction/reduction/example.java --class Demo --method f --word-type long --certificate reproduction/reduction/example.json > reproduction/reduction/cli-check.json
+          python -m research.signed_reduction.preserve > reproduction/reduction/postflight.json
+          cmp reproduction/reduction/preflight.json reproduction/reduction/postflight.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: signed-source-reduction-py${{ matrix.python-version }}
+          path: reproduction/reduction/
+          retention-days: 30
