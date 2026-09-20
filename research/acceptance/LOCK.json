@@ -1,0 +1,17 @@
+{
+  "phase": "sealed_before_main_measurement",
+  "protocol_commit": "dd79ffe2831584748305ed96fb8acd04fd0a9025",
+  "schema": "qkf-run32-harness-lock-v1",
+  "sha256": {
+    "PROTOCOL.md": "a5ba4bd0c8e0f2a3146fdc30a993f6260fdd15456d24e7a6450f4d958b600c9e",
+    "REGISTERED_CASES.json": "3e49dbcc194604b3ea5d0f24bc4c3eac522cad6958293f6782c8f5564cf9c871",
+    "__init__.py": "640e50079369c467af061bd5b8c51d1be96efaf08a21f974a939babf8897915c",
+    "cases.py": "0857a2c7c644bb915e27d35ec40e7948e052b33512049333bbd7a97b6e815083",
+    "control.py": "e834a694e4ff869b7ae759c362eaa705dd64ec6db0774567a2c58596f6b609eb",
+    "identity.py": "378be7e471ceed085698b927a8ec5895d2de6e16d2fdde6223803c07c4372c0a",
+    "phases.py": "4cd237683be192a9c92693fb243535274af5bee430a17554e4a2a95fbb29bbc3",
+    "run.py": "86ae774bd81213131534d9ddf8e6de05e1a11e6eead53dcaff6a4bf5a53db74f",
+    "test_acceptance.py": "ea33489cc016869625c2e9562cd82f55f394232863d7fe864d700344dcd64554",
+    "worker.py": "bc3452b808541d34f70703c1f8e706ef637dda2f633b6481d5d5e1d9e2f0e423"
+  }
+}
