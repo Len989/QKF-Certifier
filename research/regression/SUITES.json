@@ -21,9 +21,10 @@
     "research.regression.test_registry",
     "research.signed_compact.test_compact",
     "research.pure_rows.test_pure_rows",
-    "research.semantic_work.test_work"
+    "research.semantic_work.test_work",
+    "research.ground_query.test_query"
   ],
   "new": [
-    "research.ground_query.test_query"
+    "research.source_query.test_source_query"
   ]
 }
