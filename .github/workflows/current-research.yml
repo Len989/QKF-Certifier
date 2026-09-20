@@ -57,6 +57,13 @@ jobs:
           python -O -m research.signed_compact.replay reproduction/context/compact > reproduction/context/compact-replay-optimized.json
           python -m research.signed_compact.preserve > reproduction/context/compact-postflight.json
           cmp reproduction/context/compact-preflight.json reproduction/context/compact-postflight.json
+      - name: Pure-row forcing, kernel saturation, and independent finite references
+        run: |
+          python -m research.pure_rows.experiment reproduction/context/pure_rows > reproduction/context/pure-rows-experiment.json
+      - name: Pure-row semantic replay without producers or signed profiles
+        run: |
+          python -m research.pure_rows.replay reproduction/context/pure_rows > reproduction/context/pure-rows-replay-normal.json
+          python -O -m research.pure_rows.replay reproduction/context/pure_rows > reproduction/context/pure-rows-replay-optimized.json
       - name: Batch CLI and current-tree postflight
         run: |
           python - <<'PY'

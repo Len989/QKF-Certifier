@@ -18,9 +18,10 @@
     "research.observations.tests.test_inference",
     "research.observations.tests.test_factor",
     "research.signed_context.test_context",
-    "research.regression.test_registry"
+    "research.regression.test_registry",
+    "research.signed_compact.test_compact"
   ],
   "new": [
-    "research.signed_compact.test_compact"
+    "research.pure_rows.test_pure_rows"
   ]
 }
