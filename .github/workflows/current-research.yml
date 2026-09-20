@@ -88,6 +88,14 @@ jobs:
           python -O -m research.source_query.replay reproduction/context/source_query > reproduction/context/source-query-replay-optimized.json
           python -m research.source_query.preserve > reproduction/context/source-query-postflight.json
           cmp reproduction/context/source-query-preflight.json reproduction/context/source-query-postflight.json
+      - name: Source-bound local forcing and fair direct range controls
+        run: |
+          python -m research.source_forcing.preserve > reproduction/context/source-forcing-preflight.json
+          python -m research.source_forcing.experiment reproduction/context/source_forcing > reproduction/context/source-forcing-experiment.json
+          python -m research.source_forcing.replay reproduction/context/source_forcing > reproduction/context/source-forcing-replay-normal.json
+          python -O -m research.source_forcing.replay reproduction/context/source_forcing > reproduction/context/source-forcing-replay-optimized.json
+          python -m research.source_forcing.preserve > reproduction/context/source-forcing-postflight.json
+          cmp reproduction/context/source-forcing-preflight.json reproduction/context/source-forcing-postflight.json
       - name: Batch CLI and current-tree postflight
         run: |
           python - <<'PY'
