@@ -1,0 +1,29 @@
+{
+  "schema": "qkf-semantic-economy-protocol-v1",
+  "base_commit": "0f298687226248e7e5f22bccae242b6891b3df59",
+  "base_tree": "dae909f12f40fa189876840c5fbc046f4934773c",
+  "population": "18 constructed development requests; fixtures.py definitions; not holdout",
+  "registration": "commit protocol and source/goal hashes before running the recorded experiment",
+  "pr39_routes": ["retained v6 direct", "measured covered control", "measured bounded witness then covered"],
+  "future_ablation_slots": ["same route without forcing extra cells", "same route without lemma reuse"],
+  "guarantee_policy": "same semantic obligation; report actual stronger source-interface claims and witness-only outcomes separately",
+  "correctness_modes": ["normal", "optimized"],
+  "ci_runtimes": ["Python 3.10 + Java 17", "Python 3.12 + Java 17"],
+  "measurement": {
+    "timing_repeats": 5,
+    "order": "case order fixed; even repeat direct then wrapped, odd wrapped then direct",
+    "warmups": 0,
+    "fresh_process_per_timing_arm": true,
+    "parallel_measurement": false,
+    "instrumented_counters_separate_from_timing": true,
+    "cold_process_includes_startup_and_imports": true,
+    "future_request_batches": [1, 4, 16],
+    "future_batch_preparation_cost": "included from empty session; all failed candidates retained",
+    "time_limit_seconds_per_child": 120,
+    "failed_attempts": "retain logs/status and include in denominator; no automatic retry",
+    "memory": "separate instrumented Python traced peak including instrumentation; not total RSS",
+    "sizes": "canonical complete certificate bytes; no gzip; single and multi-goal separate"
+  },
+  "nonclaims": ["no new forcing", "no Paper II implementation yet", "no acceleration claim", "no new Java or SMT experiment", "no new Lean theorem"],
+  "future_gate": "at least two structural source families; D>S from actual source facts; no hidden full construction; include bridge/E acquisition and all fallback cost"
+}
