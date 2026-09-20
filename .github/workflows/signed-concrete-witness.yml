@@ -1,4 +1,4 @@
-name: Signed concrete witness without factor
+name: Signed concrete witness without factor (archived PR34)
 on:
   pull_request:
   workflow_dispatch:
@@ -17,6 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
+          ref: a4c2a8373ef18f54af2447b0000f31effe024de7
           fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
