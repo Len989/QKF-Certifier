@@ -1,0 +1,82 @@
+name: Current research regressions and checked context
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  context:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record complete current source and preserved base
+        run: |
+          mkdir -p reproduction/context
+          git rev-parse HEAD > reproduction/context/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/context/tree.txt
+          git archive HEAD | gzip -n > reproduction/context/source.tar.gz
+          python --version > reproduction/context/python.txt
+          java -version 2> reproduction/context/java.txt
+          python -m research.regression.preserve > reproduction/context/preflight.json
+      - name: Registered new and prior CURRENT tree tests
+        run: |
+          set -o pipefail
+          python -m research.regression.run --group new 2>&1 | tee reproduction/context/tests-normal.log
+          python -O -m research.regression.run --group new 2>&1 | tee reproduction/context/tests-optimized.log
+          python -m research.regression.run --group prior 2>&1 | tee reproduction/context/regressions-normal.log
+          python -O -m research.regression.run --group prior 2>&1 | tee reproduction/context/regressions-optimized.log
+      - name: Shared contexts, independent goals, separate Java and complete cost records
+        run: |
+          python -m research.signed_context.experiment reproduction/context/fresh --java > reproduction/context/experiment.json
+      - name: Fresh context replay with guards before imports
+        run: |
+          python -m research.signed_context.replay reproduction/context/fresh > reproduction/context/replay-normal.json
+          python -O -m research.signed_context.replay reproduction/context/fresh > reproduction/context/replay-optimized.json
+      - name: Batch CLI and current-tree postflight
+        run: |
+          python - <<'PY'
+          import json, subprocess, sys
+          from pathlib import Path
+          from research.signed_context.experiment import cases
+          root=Path('reproduction/context')
+          _,text,targets=next(cases())
+          (root/'example.java').write_text(text)
+          (root/'targets.json').write_text(json.dumps(targets))
+          process=subprocess.run([sys.executable,'-m','research.unified.v7','batch',str(root/'example.java'),
+               '--target',str(root/'targets.json'),'--proof',str(root/'batch')],capture_output=True,text=True)
+          if process.returncode!=1:raise RuntimeError(process.stdout+process.stderr)
+          (root/'cli-batch.json').write_text(process.stdout)
+          for i in range(4):
+              process=subprocess.run([sys.executable,'-O','-m','research.unified.v7','check',str(root/'example.java'),
+                  '--target',str(root/'batch'/f'target-{i:03d}.json'),'--proof',str(root/'batch'/f'proof-{i:03d}.json')],capture_output=True,text=True)
+              if process.returncode not in (0,1):raise RuntimeError(process.stdout+process.stderr)
+              result=json.loads(process.stdout)
+              expected=json.loads((root/'batch'/f'result-{i:03d}.json').read_text())
+              if result!=expected:raise RuntimeError('batch target replay differs')
+              (root/f'cli-check-{i}.json').write_text(process.stdout)
+          PY
+          python -m research.regression.preserve > reproduction/context/postflight.json
+          cmp reproduction/context/preflight.json reproduction/context/postflight.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: checked-context-py${{ matrix.python-version }}
+          path: reproduction/context/
+          retention-days: 30
