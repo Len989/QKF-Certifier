@@ -72,6 +72,14 @@ jobs:
           python -O -m research.semantic_work.replay reproduction/context/semantic_work > reproduction/context/work-replay-optimized.json
           python -m research.semantic_work.preserve > reproduction/context/work-postflight.json
           cmp reproduction/context/work-preflight.json reproduction/context/work-postflight.json
+      - name: Registered ground-query conformance and independent certificates
+        run: |
+          python -m research.ground_query.preserve > reproduction/context/ground-preflight.json
+          python -m research.ground_query.conformance reproduction/context/ground_query > reproduction/context/ground-experiment.json
+          python -m research.ground_query.replay reproduction/context/ground_query > reproduction/context/ground-replay-normal.json
+          python -O -m research.ground_query.replay reproduction/context/ground_query > reproduction/context/ground-replay-optimized.json
+          python -m research.ground_query.preserve > reproduction/context/ground-postflight.json
+          cmp reproduction/context/ground-preflight.json reproduction/context/ground-postflight.json
       - name: Batch CLI and current-tree postflight
         run: |
           python - <<'PY'
