@@ -1,0 +1,9 @@
+{
+  "base_commit": "0c3f811e9730771076432ad5104eff7d2fb3b553",
+  "base_tree": "27e9a7c456c928694eee808a8a6c59967b13bc9a",
+  "theory": "typed-ground-pure-rows-v1",
+  "reference_path": "papers/paper_I/verification/verify_article.py",
+  "reference_sha256": "dd1be10b8f242740d628865087dde5025510b2d7a861c0a65ed64371c5e50a91",
+  "compact37_required": false,
+  "formalized_in_lean": false
+}
