@@ -1,0 +1,19 @@
+{
+  "schema": "qkf-source-query-development-protocol-v1",
+  "base_commit": "422891e21d453a6694d924d86f243431bae8ae33",
+  "base_tree": "094246ae637fbdbe3df0f3d00843bed20350783f",
+  "previous_protocol": "research/semantic_work/PROTOCOL.json",
+  "population": "32 exact constructed development requests; two native-rule families plus guard, negative, unresolved, fallback, unsupported and budget controls; no external holdout",
+  "registration": "Commit exact source/request/option hashes and this protocol before comparative runs. Keep failures and disclose corrections; do not change expected outcomes after seeing measurements.",
+  "semantics": "Whole selected method admitted by the retained pure signed profile. G is a conjunction of qkf-target-v2 Boolean sign/popcount formulas. Width is all positive modular widths or one explicit fixed width. Source-local equality guards remain inside implications.",
+  "rules": ["guarded equality-to-constant mask implication", "structural proof of the least-bit projection for each supported word operation", "word identities", "source input sign/zero to target atoms", "guard-only target abstraction and zero input", "local Boolean identities"],
+  "strategy": "Enumerate the same bounded native candidates in fixed IR order, cache equal requests, then normalize source/target terms by these fixed directed facts and local identities. No learned planner, source residual builder or cross-goal lemma synthesis on this route.",
+  "routes": ["native facts then PR40 ground entailment", "same native facts and cached preparation then ordinary unfiltered congruence closure with chronological proof"],
+  "fallback": "Explicit opt-in covered source construction followed by a NEW guard-aware target product; charge preceding failed native work and all fallback construction/checking. No unconditional legacy target verdict is used under G.",
+  "negative_policy": "A model of finite E is only an unresolved source obligation. Refutation requires a concrete modular word satisfying G and the requested width. Empty G is independently checked and marked verified_empty_domain.",
+  "measurements": ["every native candidate attempt including failure/cache hit", "generated ground terms and equations", "source-free guard abstraction work", "both closure algorithms", "concrete witness attempts", "full fallback calls and discovered objects", "independent checking", "complete certificate bytes"],
+  "timing": "Instrumented elapsed time is diagnostic only; no acceleration ranking, no causal contribution claim. Comparative routes are sequential, with identical registered cases and native rules.",
+  "replay": "Fresh process in normal and optimized Python, producer/search imports forbidden. Positive ground proofs also replay with all legacy source-construction modules forbidden.",
+  "preservation": "PR40 and older accepted files byte-identical except current workflow and additive test registry",
+  "nonclaims": ["no new Paper I forcing", "no automatic observation planner", "no new Java grammar", "no new Lean theorem", "no source speedup established", "no public installed CLI switch"]
+}
