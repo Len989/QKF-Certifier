@@ -10,7 +10,6 @@ from collections import Counter
 import hashlib
 import json
 from pathlib import Path
-import platform
 import sys
 import time
 
@@ -225,6 +224,8 @@ def run(output,*,replay=False,java=False,cold=True):
              'scope':'same PR35 sources/semantics; reuse and exact old proof compatibility, not new family coverage'}
     if replay:require(summary==expected,'reconstructed context summary')
     else:
+        # Python 3.10 platform imports subprocess; metadata is discovery-only.
+        import platform
         save_json(output/'SUMMARY.json',summary)
         save_json(output/'PERFORMANCE.json',{'python':sys.version,'platform':platform.platform(),'cases':performance})
         save_json(output/'MANIFEST.json',{p.relative_to(output).as_posix():sha(p) for p in sorted(output.rglob('*')) if p.is_file()})

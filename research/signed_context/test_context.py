@@ -264,6 +264,29 @@ print('guarded replay passed')
                 done=subprocess.run([sys.executable,'-I','-B',*mode,'-c',script,str(ROOT),tmp],capture_output=True,text=True)
                 self.assertEqual(done.returncode,0,done.stderr);self.assertIn('passed',done.stdout)
 
+    def test_replay_import_excludes_discovery_platform_metadata(self):
+        # Python 3.10 platform eagerly imports subprocess. Replay needs neither.
+        script = r'''
+import importlib.abc, sys
+sys.path.insert(0, sys.argv[1])
+class NoMetadata(importlib.abc.MetaPathFinder):
+ def find_spec(self, name, path=None, target=None):
+  if name in {'platform', 'subprocess'}:
+   raise ImportError('discovery-only dependency during replay: '+name)
+sys.meta_path.insert(0, NoMetadata())
+from research.signed_context.replay import Guard
+sys.meta_path.insert(0, Guard())
+from research.signed_context.experiment import run
+if 'platform' in sys.modules or 'subprocess' in sys.modules:
+ raise RuntimeError('replay imported discovery metadata or subprocess')
+print('replay dependencies isolated')
+'''
+        for mode in ([], ['-O']):
+            done = subprocess.run([sys.executable, '-I', '-S', '-B', *mode, '-c', script, str(ROOT)],
+                                  capture_output=True, text=True)
+            self.assertEqual(done.returncode, 0, done.stderr)
+            self.assertIn('dependencies isolated', done.stdout)
+
     def test_legacy_v5_concrete_proof_retains_identity(self):
         from research.unified import v5
         text=source('x>=0');t=target(['positive']);r,p=v5.prove(text,t)
