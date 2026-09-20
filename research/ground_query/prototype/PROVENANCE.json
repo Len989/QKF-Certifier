@@ -1,0 +1,59 @@
+{
+  "schema": "qkf-paper-ii-adapter-provenance-v1",
+  "base": "a92caf36c0b6567bfe509dfda344c12c73314b1a",
+  "files": [
+    {
+      "source": "papers/paper_II/prototype/visibility_cc.py",
+      "target": "research/ground_query/prototype/visibility_cc.py",
+      "source_sha256": "8916ca9d96a7c99ad4bbfab159668bd944cee5511b4e1b688f4ea3afdfbd0d9e",
+      "replacements": [
+        {
+          "old": "from engine import ",
+          "new": "from .terms import "
+        },
+        {
+          "old": "from certificates import ",
+          "new": "from .certificates import "
+        }
+      ],
+      "target_sha256": "013db0e4773b862d7e52df0d745a884335f6565e7f918e9067ca70b65ef30f57"
+    },
+    {
+      "source": "papers/paper_II/prototype/visibility_cc_fast.py",
+      "target": "research/ground_query/prototype/visibility_cc_fast.py",
+      "source_sha256": "2ee61dde34621588f9d34ad71f3d9ec7e92eb1d8219393abaeaa69001fe07b23",
+      "replacements": [
+        {
+          "old": "from engine import ",
+          "new": "from .terms import "
+        },
+        {
+          "old": "from visibility_cc import ",
+          "new": "from .visibility_cc import "
+        },
+        {
+          "old": "for m in moved:",
+          "new": "for m in sorted(moved, key=term_key):"
+        }
+      ],
+      "target_sha256": "bc903a3968e605f1a7b4cf2ba872db0958f5316677d83c4f65134667c6ac9b67"
+    },
+    {
+      "source": "papers/paper_II/prototype/certificates.py",
+      "target": "research/ground_query/prototype/certificates.py",
+      "source_sha256": "f46a9a235e844f82c7f54f1be7575fcbdc1adc8c94a0081bc358e5ced3029f37",
+      "replacements": [
+        {
+          "old": "from engine import ",
+          "new": "from .terms import "
+        },
+        {
+          "old": "from visibility_cc import ",
+          "new": "from .visibility_cc import "
+        }
+      ],
+      "target_sha256": "477cfca94da563ca0c9540e77c6af0ed577cfda6dac2752453c4edb16a4b46de"
+    }
+  ],
+  "term_representation": "New identity-interned input DAG adapter in terms.py; parser enforces unique nodes. Archived Term implementation is untouched."
+}
