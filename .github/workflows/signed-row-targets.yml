@@ -1,0 +1,108 @@
+name: Signed row target proofs
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  target:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record current source and exact accepted-file preservation
+        run: |
+          mkdir -p reproduction/signed-targets
+          git rev-parse HEAD > reproduction/signed-targets/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/signed-targets/tree.txt
+          git archive HEAD | gzip -n > reproduction/signed-targets/source.tar.gz
+          python --version > reproduction/signed-targets/python.txt
+          java -version 2> reproduction/signed-targets/java.txt
+          cat > reproduction/signed-targets/check-preservation.py <<'PY'
+          import hashlib, json, subprocess
+          from pathlib import Path
+          base = 'df51d3629219f820bcbb78664bfff8616b8b6452'
+          tree = 'aacf10d4413d00361843ba182cefac27aaf9e199'
+          harness = '.github/workflows/signed-row-runtime.yml'
+          paths, inventory = set(), {}
+          for entry in filter(None, subprocess.check_output(['git','ls-tree','-rz',tree]).split(b'\0')):
+              meta, name = entry.split(b'\t', 1)
+              mode, kind, expected = meta.decode().split()
+              name = name.decode(); paths.add(name)
+              if name == harness:
+                  continue
+              path = Path(name); raw = path.read_bytes()
+              actual = hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+              actual_mode = '100755' if path.stat().st_mode & 0o111 else '100644'
+              if path.is_symlink() or kind != 'blob' or expected != actual or actual_mode != mode:
+                  raise RuntimeError('accepted file changed: '+name)
+              inventory[name] = hashlib.sha256(raw).hexdigest()
+          tracked = set(subprocess.check_output(['git','ls-files','-z']).decode().split('\0'))-{''}
+          added = {'research/signed_targets/'+n for n in (
+              '__init__.py','common.py','producer.py','checker.py',
+              'experiment.py','test_targets.py','README_RU.md')}
+          added.update({'.github/workflows/signed-row-targets.yml','research/unified/v4.py'})
+          if tracked-paths != added or not paths <= tracked:
+              raise RuntimeError('unexpected added/deleted path')
+          print(json.dumps({'base':base,'base_tree':tree,'preserved_files':len(inventory),
+                            'allowed_live_harness_change':harness,'new_files':sorted(added),
+                            'inventory_sha256':hashlib.sha256(json.dumps(inventory,sort_keys=True).encode()).hexdigest()},sort_keys=True))
+          PY
+          python reproduction/signed-targets/check-preservation.py > reproduction/signed-targets/preflight.json
+      - name: New target proofs and retained current-tree regressions
+        run: |
+          set -o pipefail
+          python -m unittest research.signed_targets.test_targets -v 2>&1 | tee reproduction/signed-targets/tests-normal.log
+          python -O -m unittest research.signed_targets.test_targets -v 2>&1 | tee reproduction/signed-targets/tests-optimized.log
+          suites='research.signed_runtime.test_runtime research.signed_observations.test_observations research.signed_bridge.test_bridge research.inference.test_inference_v3 research.inference.test_inference_v2 research.inference.test_inference research.signed_predicates.test_signed_predicates research.wordexpr.test_predicates research.unified.test_unified research.observations.tests.test_inference research.observations.tests.test_factor'
+          python -m unittest $suites -v 2>&1 | tee reproduction/signed-targets/regressions-normal.log
+          python -O -m unittest $suites -v 2>&1 | tee reproduction/signed-targets/regressions-optimized.log
+      - name: Fresh development target experiment and real Java controls
+        run: |
+          python -m research.external.frozen_v2.download_sources reproduction/signed-targets/input
+          python -m research.signed_targets.experiment reproduction/signed-targets/input reproduction/signed-targets/fresh > reproduction/signed-targets/experiment.json
+      - name: Replay all proof cases without producers, Java or SMT
+        run: |
+          python -O - <<'PY'
+          import builtins, json
+          original = builtins.__import__
+          def guarded(name, *args, **kwargs):
+              if 'producer' in name or name.split('.')[0] in {'subprocess','z3','cvc5','pysmt'}:
+                  raise RuntimeError('forbidden replay import: '+name)
+              return original(name, *args, **kwargs)
+          builtins.__import__ = guarded
+          from research.signed_targets.experiment import run
+          result=run('reproduction/signed-targets/input','reproduction/signed-targets/fresh',replay=True)
+          if result['proof_counts'] != {'certified':7,'refuted':4} or result['external_native_inputs'] != 209389 or result['new_holdout']:
+              raise RuntimeError('development target scope changed')
+          print(json.dumps(result,sort_keys=True))
+          PY
+      - name: Unified CLI and postflight identity
+        run: |
+          python -m research.unified.v4 prove research/inference/examples/SignedPower.java --target research/inference/examples/signed-power-target.json --proof reproduction/signed-targets/example.json > reproduction/signed-targets/example-result.json
+          python -O -m research.unified.v4 check research/inference/examples/SignedPower.java --target research/inference/examples/signed-power-target.json --proof reproduction/signed-targets/example.json > reproduction/signed-targets/example-check.json
+          python -O -m research.unified.v4 explain research/inference/examples/SignedPower.java --target research/inference/examples/signed-power-target.json --proof reproduction/signed-targets/example.json > reproduction/signed-targets/example-explain.json
+          python reproduction/signed-targets/check-preservation.py > reproduction/signed-targets/postflight.json
+          cmp reproduction/signed-targets/preflight.json reproduction/signed-targets/postflight.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: signed-row-targets-py${{ matrix.python-version }}
+          path: reproduction/signed-targets/
+          retention-days: 30
