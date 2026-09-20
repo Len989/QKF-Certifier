@@ -64,6 +64,14 @@ jobs:
         run: |
           python -m research.pure_rows.replay reproduction/context/pure_rows > reproduction/context/pure-rows-replay-normal.json
           python -O -m research.pure_rows.replay reproduction/context/pure_rows > reproduction/context/pure-rows-replay-optimized.json
+      - name: Semantic-work contract, complete cost ledger and registered controls
+        run: |
+          python -m research.semantic_work.preserve > reproduction/context/work-preflight.json
+          python -m research.semantic_work.experiment reproduction/context/semantic_work > reproduction/context/work-experiment.json
+          python -m research.semantic_work.replay reproduction/context/semantic_work > reproduction/context/work-replay-normal.json
+          python -O -m research.semantic_work.replay reproduction/context/semantic_work > reproduction/context/work-replay-optimized.json
+          python -m research.semantic_work.preserve > reproduction/context/work-postflight.json
+          cmp reproduction/context/work-preflight.json reproduction/context/work-postflight.json
       - name: Batch CLI and current-tree postflight
         run: |
           python - <<'PY'
