@@ -1,0 +1,11 @@
+{
+  "schema": "qkf-ground-query-conformance-v1",
+  "base": "a92caf36c0b6567bfe509dfda344c12c73314b1a",
+  "population": "Development conformance fixtures reconstructed from published Paper II definitions; no external holdout or performance ranking.",
+  "catalan": {"axiom_depths": [1, 2, 3, 4, 5], "expected_profiles": [2, 5, 14, 42, 132], "coverage": "Every pair of every complete bounded layer, compared at every horizon to the retained full-universe reference; portable exact-threshold proofs/models for every query pair."},
+  "required_examples": ["strict_ground_congruence_rewrite_gap_2_3", "equal_theories_different_visibility", "typed_paper_I_N1_5_N2_3", "empty_sorts_and_empty_queries", "final_nonconsequence_and_bounded_nonvisibility"],
+  "negative_checks": ["cyclic_premises", "wrong_sorts", "unbound_equation", "missing_active_lower_axiom", "receipt_instead_of_proof", "changed_request", "incomplete_goal_list", "invalid_total_model"],
+  "replay": "Fresh Python process with import guard before checker import; no producer, prototype, search, Java or SMT. Normal and -O.",
+  "metrics": "Input DAG nodes, represented proof events, models, checked goals, full-layer reference comparisons, certificate bytes. Runtime is recorded only as conformance cost, not a speedup experiment.",
+  "failures": "Every failed case aborts with a nonzero exit; never discard a failed case or replace an expected profile after observing output. Corrections to code and reruns are development and must be disclosed."
+}
