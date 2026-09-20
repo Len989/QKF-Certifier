@@ -19,9 +19,10 @@
     "research.observations.tests.test_factor",
     "research.signed_context.test_context",
     "research.regression.test_registry",
-    "research.signed_compact.test_compact"
+    "research.signed_compact.test_compact",
+    "research.pure_rows.test_pure_rows"
   ],
   "new": [
-    "research.pure_rows.test_pure_rows"
+    "research.semantic_work.test_work"
   ]
 }

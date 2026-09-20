@@ -1,0 +1,78 @@
+{
+  "base_commit": "0f298687226248e7e5f22bccae242b6891b3df59",
+  "cases": [
+    {
+      "name": "constant_true",
+      "request_sha256": "21dc10fc510c45eb2995d47116fb755ba6213c9f6145a54686e337911dfd5f62"
+    },
+    {
+      "name": "constant_false",
+      "request_sha256": "1aa4562fc108d64fa3716ee0d115b255e412b699accdafa34d435147a76b2970"
+    },
+    {
+      "name": "power_long",
+      "request_sha256": "9fe4f365d532a5645d3e872426e4292a0ffcd7b83a6a43ba49c7a49a66fe133b"
+    },
+    {
+      "name": "power_missing_zero",
+      "request_sha256": "9bcf81fe8ff1bef860dea376a1efc891e0245b7b5c439ffb9bc14418e7710abc"
+    },
+    {
+      "name": "power_missing_sign",
+      "request_sha256": "0fb26417ccd346fe8a2a2173b66622faafd9ae8e743ea365ffc74edc2365cec3"
+    },
+    {
+      "name": "negative",
+      "request_sha256": "091cf2629f10403d61ac2b1c15aa719b92a0a853e06be853b36ccea9ddb3326c"
+    },
+    {
+      "name": "nonzero",
+      "request_sha256": "0810f8f8b17d0a1ca25fa2869d993269cb74500adea27a05bfd28964b84caf9c"
+    },
+    {
+      "name": "tautology_31",
+      "request_sha256": "a3f74f6bb5b3c0571674be04828959421d59e05b7484e522792b8e3add246a84"
+    },
+    {
+      "name": "delayed_31",
+      "request_sha256": "4f7decd597191a61098aaed7a9affa99c0763ec4245ec08a6fb73be93a2de13e"
+    },
+    {
+      "name": "delayed_61",
+      "request_sha256": "ad85f2e7e1f82c4c1f9ab990b3da9465a7fecab4a180282d03da7e89d53c5ca1"
+    },
+    {
+      "name": "delayed_62_budget",
+      "request_sha256": "41e1ec53261a70662730573ed8c5b515576bedfe961c26e035497385b2110044"
+    },
+    {
+      "name": "mask_implication_31",
+      "request_sha256": "24b7ab5eecd0c008b3d94f33a41e6f40fc5d615798560abf260a7e2925926e12"
+    },
+    {
+      "name": "mask_implication_mutant",
+      "request_sha256": "f6a6ce9d24a87863173f93e83b1b30ee799472881aeb3c46fcb6c56e204554d8"
+    },
+    {
+      "name": "guarded_false_40",
+      "request_sha256": "fe635077a1cdac61e37c7af69a6d72aa52d447c998ca8ab8e67be2cd05a408aa"
+    },
+    {
+      "name": "late_witness",
+      "request_sha256": "41e4993ba16f41420aef430b70ada3a93b14704df9d095c4a5c5e662b30bc66b"
+    },
+    {
+      "name": "small_width_only",
+      "request_sha256": "6cf8926c84686e1ba5d26df886ae14b40c75f8183ebae43fd300f7279bd55268"
+    },
+    {
+      "name": "unsupported_shift",
+      "request_sha256": "904c4a16e11892b5e29da68de6acb3b91ac3c724af158485d306b5e9015e8a58"
+    },
+    {
+      "name": "unsupported_condition",
+      "request_sha256": "52e5f9579dadf02cef7d842fcd340720c0b9af36d6edcd96ddeb9593d4992e0a"
+    }
+  ],
+  "schema": "qkf-semantic-development-registration-v1"
+}
