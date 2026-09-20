@@ -1,0 +1,92 @@
+name: Signed concrete witness without factor
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  witness:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Record complete source tree and preserved files
+        run: |
+          mkdir -p reproduction/witness
+          git rev-parse HEAD > reproduction/witness/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/witness/tree.txt
+          git archive HEAD | gzip -n > reproduction/witness/source.tar.gz
+          python --version > reproduction/witness/python.txt
+          java -version 2> reproduction/witness/java.txt
+          python -m research.signed_witness.preserve > reproduction/witness/preflight.json
+      - name: New concrete-witness checks and all selected current-tree regressions
+        run: |
+          set -o pipefail
+          python -m unittest research.signed_witness.test_witness -v 2>&1 | tee reproduction/witness/tests-normal.log
+          python -O -m unittest research.signed_witness.test_witness -v 2>&1 | tee reproduction/witness/tests-optimized.log
+          suites='research.signed_reduction.test_reduction research.acceptance.test_acceptance research.signed_targets.test_targets research.signed_runtime.test_runtime research.signed_observations.test_observations research.signed_bridge.test_bridge research.inference.test_inference_v3 research.inference.test_inference_v2 research.inference.test_inference research.signed_predicates.test_signed_predicates research.wordexpr.test_predicates research.unified.test_unified research.observations.tests.test_inference research.observations.tests.test_factor'
+          python -m unittest $suites -v 2>&1 | tee reproduction/witness/regressions-normal.log
+          python -O -m unittest $suites -v 2>&1 | tee reproduction/witness/regressions-optimized.log
+      - name: Constructed semantic comparisons and separate Java validation
+        run: |
+          python -m research.signed_witness.experiment reproduction/witness/fresh --java > reproduction/witness/experiment.json
+      - name: Fresh replay with guards before imports, no Java or search
+        run: |
+          for mode in normal optimized; do
+            flags=''; if [ "$mode" = optimized ]; then flags='-O'; fi
+            python -I -B $flags - reproduction/witness/fresh > reproduction/witness/replay-$mode.json <<'PY'
+          import importlib.abc, json, sys
+          from pathlib import Path
+          sys.path.insert(0, str(Path.cwd()))
+          class Block(importlib.abc.MetaPathFinder):
+              def find_spec(self, fullname, path=None, target=None):
+                  if fullname in {'subprocess', 'z3', 'pysmt'} or (fullname.startswith('research.') and fullname.endswith('.producer')):
+                      raise ImportError('blocked during replay: ' + fullname)
+          sys.meta_path.insert(0, Block())
+          from research.signed_witness.experiment import run
+          print(json.dumps(run(sys.argv[1], replay=True), sort_keys=True))
+          PY
+          done
+      - name: Witness-first CLI and exact postflight identity
+        run: |
+          python - <<'PYCODE'
+          import json, subprocess, sys
+          from pathlib import Path
+          from research.signed_witness.experiment import cases
+          root=Path('reproduction/witness')
+          _,source,target,_,_=next(cases())
+          (root/'example.java').write_text(source)
+          (root/'target.json').write_text(json.dumps(target))
+          for command in ('prove','check','explain'):
+              flags=['-O'] if command!='prove' else []
+              args=[sys.executable,*flags,'-m','research.unified.v5',command,str(root/'example.java'),
+                    '--target',str(root/'target.json'),'--proof',str(root/'example-proof.json')]
+              if command=='prove':args+=['--diagnostics',str(root/'example-search.json')]
+              done=subprocess.run(args,capture_output=True,text=True)
+              if done.returncode!=1:raise RuntimeError(done.stdout+done.stderr)
+              (root/('cli-'+command+'.json')).write_text(done.stdout)
+          PYCODE
+          python -m research.signed_witness.preserve > reproduction/witness/postflight.json
+          cmp reproduction/witness/preflight.json reproduction/witness/postflight.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: signed-concrete-witness-py${{ matrix.python-version }}
+          path: reproduction/witness/
+          retention-days: 30
