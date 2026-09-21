@@ -1,0 +1,52 @@
+{
+  "schema": "qkf-sdk-cost-contracts-protocol-v1",
+  "base_commit": "925cf42c83b4e676b20ed18fc301ebb505753c3a",
+  "roadmap_commit": "4977541a1a82191e973e3cee881321cf37b5ef6a",
+  "population": "All 32 PR46 development inputs and independent requests retained. Four singleton core cases, nine diagnostics, 13 cold mask/parity/exact-repeat series, six separate physical-phase cases; one new assessment boundary case. No holdout; no new inference rules.",
+  "deliveries": {
+    "single_summary": "One applicable checked SDK packet, independent source/request, cold check, export/explain and registered applications. Raw direct41 is a separate proof-only row.",
+    "consumer_service": "One SDK batch or one first-query SDK packet plus all independent requests. Receiver cold-checks once and independently assesses every requested consumer. Both may answer future supported consumers. One assess result is not a standalone proof.",
+    "independent_certificates": "Every consumer gets its own singleton SDK packet and request, independently checkable without any other packet; compare each_default and each_ordinary. No derived lemma or semantic cache shared across calls. Request order, all packet bytes, first-call preparation, every built-in check charged.",
+    "local_phase": "Unchanged six local cases and four phase routes; never compared to signed PR41."
+  },
+  "routes": {
+    "sdk_default": "PR45 no_lemmas batch build",
+    "sdk_reuse": "PR45 reuse batch build",
+    "sdk_direct": "PR45 direct_cache batch build; ordinary plus reuse, not plain PR41",
+    "sdk_ordinary": "PR41 ordinary then PR45 from_certificate(source_query); same SDK capabilities",
+    "once_default": "PR45 no_lemmas for first request, then receiver check+assess all requests",
+    "once_ordinary": "PR41 ordinary plus from_certificate for first request, then receiver check+assess all requests",
+    "each_default": "Independent PR45 no_lemmas singleton build for each consumer",
+    "each_ordinary": "Independent PR41 ordinary plus from_certificate for each consumer",
+    "direct41": "Unchanged native proof-only diagnostic control",
+    "phase": "Unchanged forcing/no_saturation/direct_seeds/direct_cell"
+  },
+  "measurement": {
+    "timing_repeats": 7,
+    "warmups": 0,
+    "fresh_process_per_build": true,
+    "fresh_process_per_check": true,
+    "build_timeout_seconds": 360,
+    "check_timeout_seconds": 240,
+    "warm_apply_repetitions": 64,
+    "order": "Fixed registered cases. Rotate arms by case_index+trial and reverse odd trials. Serial timing in each environment. CI shards partition cases only; no pooling machines or Python versions.",
+    "audit": "One fresh common call-trace child; retain existing sys.setprofile budgets and execution guards. Never run with tracemalloc.",
+    "memory": "One separate fresh tracemalloc child; Python peak, not RSS. No PR47 tracer. Exact canonical delivery/result match.",
+    "timing": "Seven fresh children without PR47 tracer/tracemalloc; intrinsic instrumentation retained, instrumented development latency. Include native proof, adapter, all built-in checks and delivery encoding. Cold receiver check, service assess, export/explain and 64 application sequences separately measured.",
+    "cost": "Primary lifecycle = build + cold check + all registered consumer assessments + one export/explain per packet. Apply is additional separate scenario. Whole child process overhead shown separately. Failed work included.",
+    "aggregation": "All samples, median/min/max. Per family and width and delivery. No universal threshold or population speedup claim; packet size is total independent bytes, no free dedup."
+  },
+  "failure_policy": "Every scheduled attempt recorded; no retry inside run. Missing audit still gets an explicit failed checker attempt. Interrupted parent leaves checkpoint and manifest. Unexpected result, timeout, corrupted evidence or identity drift fails engineering acceptance; an economic loss does not.",
+  "trust": "Fresh checker blocks search imports and positive full-source evaluation. Replays all produced intermediate obligations and exact E/E+ scopes. Concrete refutations checked by old verifier. Missing proofs only produce explicitly nonsemantic unsupported/resource-budget diagnostics.",
+  "PR52_plan": {
+    "factors": [
+      "context preparation old/new",
+      "intermediate packet/direct dependency export",
+      "ordinary/query x no_lemmas/reuse with identical native policy, caches and packaging"
+    ],
+    "controls": "For each delivery choose the lowest full median qualifying simple control over the complete registered workload, not fastest trial. Candidate controls: sdk_ordinary singleton, once_ordinary/once_default service, each_ordinary/each_default standalone. Publish the chosen baseline after PR47 before PR48/52 tuning; retain all other rows.",
+    "practical_gate": "At least 20% reduction in median full lifecycle and at least 1 ms absolute at singleton or 10 ms at series N>=4; candidate maximum must be below reference minimum on each claimed workload. No correctness/coverage loss and no >10% Python-peak regression without separate explicit tradeoff. If noisy/inconclusive, no positive gate; new preregistered run. Gate is an engineering criterion for this corpus, not market inference.",
+    "fallback": "Prefer simplest eligible path. F1 remains open. A negative result ends one optimization cycle rather than deleting workloads."
+  },
+  "preservation": "All accepted PR46 files byte/mode identical except current-research workflow wiring and additive SUITES registry. New roadmap added without rewriting history. No algorithms/default changes."
+}

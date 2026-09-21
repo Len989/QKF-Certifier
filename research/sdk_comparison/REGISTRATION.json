@@ -1,0 +1,664 @@
+{
+  "schema": "qkf-sdk-cost-contracts-registration-v1",
+  "protocol_sha256": "669979efa9e29ac2cd6bdb8ad9dc34334f75b5949314810ed7eca39f80141ba8",
+  "cases": [
+    {
+      "name": "mask_31",
+      "shard": "core",
+      "case_sha256": "81aac72ac7e598c688ea458d22ded53519a3e1b597873c3dd379c8c60ac50aa1",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "sdk_ordinary",
+        "direct41"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "sdk_ordinary": "certified",
+        "direct41": "certified"
+      }
+    },
+    {
+      "name": "mask_short_circuit",
+      "shard": "core",
+      "case_sha256": "fa57066ecfc248906af09a343b535ad906a09fafbbc693b50f242a48dbad91c6",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "sdk_ordinary",
+        "direct41"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "sdk_ordinary": "certified",
+        "direct41": "certified"
+      }
+    },
+    {
+      "name": "arithmetic_compound",
+      "shard": "core",
+      "case_sha256": "dcea22ba1b7e33943608d0a07c71b8b396233d5a4f4209598d842d386bc10fed",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "sdk_ordinary",
+        "direct41"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "sdk_ordinary": "certified",
+        "direct41": "certified"
+      }
+    },
+    {
+      "name": "parity_short_circuit",
+      "shard": "core",
+      "case_sha256": "06f5bed076df2c6eb6efc478883741b053ad46d8f4de33333b8745f662b3328f",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "sdk_ordinary",
+        "direct41"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "sdk_ordinary": "certified",
+        "direct41": "certified"
+      }
+    },
+    {
+      "name": "mask_mutant",
+      "shard": "core",
+      "case_sha256": "b6e883eb30bbe2831e4f05086ea499fa70b91b9e2c5eca8dfb5fc3cbcb5d5e48",
+      "routes": [
+        "sdk_default",
+        "sdk_ordinary",
+        "direct41"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "refuted",
+        "sdk_ordinary": "refuted",
+        "direct41": "refuted"
+      }
+    },
+    {
+      "name": "arithmetic_guarded_mutant",
+      "shard": "core",
+      "case_sha256": "651fe2f62dac00005514f012faa4093cc7461aa26172cc4ca6b4b2fd6829135b",
+      "routes": [
+        "sdk_default",
+        "sdk_ordinary",
+        "direct41"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "refuted",
+        "sdk_ordinary": "refuted",
+        "direct41": "refuted"
+      }
+    },
+    {
+      "name": "mask_fixed_alias",
+      "shard": "core",
+      "case_sha256": "8bafc1fe2850ad4d4fa3cb50f8962616a134db7dffa0b6a61c202750c4ccc101",
+      "routes": [
+        "sdk_default",
+        "sdk_ordinary",
+        "direct41"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_ordinary": "certified",
+        "direct41": "certified"
+      }
+    },
+    {
+      "name": "mask_alias_all_widths",
+      "shard": "core",
+      "case_sha256": "4e9f67767cda68b0a71003848ccd8b68bf979f3a7eef6e68312e7152db3c6c72",
+      "routes": [
+        "sdk_default",
+        "sdk_ordinary",
+        "direct41"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "refuted",
+        "sdk_ordinary": "refuted",
+        "direct41": "refuted"
+      }
+    },
+    {
+      "name": "empty_guard",
+      "shard": "core",
+      "case_sha256": "358a8c6678b7a91ca865a5493d433768d790c6b92e93eac92b1845a1a25529c2",
+      "routes": [
+        "sdk_default",
+        "sdk_ordinary",
+        "direct41"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "verified_empty_domain",
+        "sdk_ordinary": "verified_empty_domain",
+        "direct41": "verified_empty_domain"
+      }
+    },
+    {
+      "name": "power_open",
+      "shard": "core",
+      "case_sha256": "edd9bda9f41ce5fe8f09076b652c18fb2f8f6e8ce1560ab62a103051d6c0535c",
+      "routes": [
+        "sdk_default",
+        "sdk_ordinary",
+        "direct41"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "unresolved",
+        "sdk_ordinary": "unresolved",
+        "direct41": "unresolved"
+      }
+    },
+    {
+      "name": "unsupported_dead_statement",
+      "shard": "core",
+      "case_sha256": "4c1093197b73a9b4492e54fac62130a1d671435344c3917defb0d82481160f24",
+      "routes": [
+        "sdk_default",
+        "sdk_ordinary",
+        "direct41"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "unsupported",
+        "sdk_ordinary": "unsupported",
+        "direct41": "unsupported"
+      }
+    },
+    {
+      "name": "fact_budget",
+      "shard": "core",
+      "case_sha256": "97e739cc2f4b5e6ec66685da0a51ce6dd3be37b66f41da02bfa1ebac68d14b09",
+      "routes": [
+        "sdk_default",
+        "sdk_ordinary",
+        "direct41"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "unresolved",
+        "sdk_ordinary": "unresolved",
+        "direct41": "budget_exhausted"
+      }
+    },
+    {
+      "name": "power_unconditional",
+      "shard": "core",
+      "case_sha256": "08fc91838e125c41bde2922bde6a71ff67a4489a9c2536b8c7aac5455ed581a4",
+      "routes": [
+        "sdk_default",
+        "sdk_ordinary",
+        "direct41"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "unresolved",
+        "sdk_ordinary": "unresolved",
+        "direct41": "unresolved"
+      }
+    },
+    {
+      "name": "batch_mask_all_1",
+      "shard": "mask",
+      "case_sha256": "1eeb5a7d7af7d5608d37b1b561eb532148c4d44bad839362e48c0e5e1be80797",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_default",
+        "once_ordinary",
+        "each_default",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_default": "certified",
+        "once_ordinary": "certified",
+        "each_default": "certified",
+        "each_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_mask_all_4",
+      "shard": "mask",
+      "case_sha256": "187ea0e548be50f87edd86fbbb555df1e66c9d6a522b777249b9c355cd9baf59",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_default",
+        "once_ordinary",
+        "each_default",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_default": "certified",
+        "once_ordinary": "certified",
+        "each_default": "certified",
+        "each_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_mask_all_16",
+      "shard": "mask",
+      "case_sha256": "e7096b7b58d2eafc263f931d9c64e7ffdadd3d30a9e04352c2e1a9c633a69934",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_default",
+        "once_ordinary",
+        "each_default",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_default": "certified",
+        "once_ordinary": "certified",
+        "each_default": "certified",
+        "each_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_mask_fixed8_1",
+      "shard": "mask",
+      "case_sha256": "d37281dd2949eb40c4f6f6649ef0ed291d733acab6f03b1b5b4648d6fcfe1785",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_default",
+        "once_ordinary",
+        "each_default",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_default": "certified",
+        "once_ordinary": "certified",
+        "each_default": "certified",
+        "each_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_mask_fixed8_4",
+      "shard": "mask",
+      "case_sha256": "bdbff84cd82209f4511a4780f8aacf35dd5edea92611c5f1ae45f8fcf23b5bd3",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_default",
+        "once_ordinary",
+        "each_default",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_default": "certified",
+        "once_ordinary": "certified",
+        "each_default": "certified",
+        "each_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_mask_fixed8_16",
+      "shard": "mask",
+      "case_sha256": "6c9c97310f8e9da6b01ef6149642072aa425a29c2657332dde545c863bacb047",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_default",
+        "once_ordinary",
+        "each_default",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_default": "certified",
+        "once_ordinary": "certified",
+        "each_default": "certified",
+        "each_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_parity_all_1",
+      "shard": "parity",
+      "case_sha256": "56fb4acdd49cdce58d2075612801e1f6548cebc16eae54570cea947f58ca4460",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_default",
+        "once_ordinary",
+        "each_default",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_default": "certified",
+        "once_ordinary": "certified",
+        "each_default": "certified",
+        "each_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_parity_all_4",
+      "shard": "parity",
+      "case_sha256": "77cd9dcf5871bbbe5ddbd449009b6a75a29ea5d32f3daaa06ce306ce5c2f4dbe",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_default",
+        "once_ordinary",
+        "each_default",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_default": "certified",
+        "once_ordinary": "certified",
+        "each_default": "certified",
+        "each_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_parity_all_16",
+      "shard": "parity",
+      "case_sha256": "9bb02865aef85c3061bb5f88bbd5e084db6496d251b7ffaa57567c3b0a80ad3d",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_default",
+        "once_ordinary",
+        "each_default",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_default": "certified",
+        "once_ordinary": "certified",
+        "each_default": "certified",
+        "each_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_parity_fixed8_1",
+      "shard": "parity",
+      "case_sha256": "29932e1a15b75db618d660382edfe8f78a63640c57d569e4ffee2ad7c1d4e014",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_default",
+        "once_ordinary",
+        "each_default",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_default": "certified",
+        "once_ordinary": "certified",
+        "each_default": "certified",
+        "each_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_parity_fixed8_4",
+      "shard": "parity",
+      "case_sha256": "9ca990f185c709b1b9b3911015fc02d30a9ec6c85b0795f83609836b9158656f",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_default",
+        "once_ordinary",
+        "each_default",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_default": "certified",
+        "once_ordinary": "certified",
+        "each_default": "certified",
+        "each_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_parity_fixed8_16",
+      "shard": "parity",
+      "case_sha256": "a96ade090b1dc1d994b7998f05ff2580ec1c8264ec246f3d19c1ca2c7b6a250d",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_default",
+        "once_ordinary",
+        "each_default",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_default": "certified",
+        "once_ordinary": "certified",
+        "each_default": "certified",
+        "each_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_exact_repeats_16",
+      "shard": "repeat",
+      "case_sha256": "acd4e3ce7907303e73a75e4bd8ef66c7f1a8eea284a319c5556f8171b7e88f86",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_default",
+        "once_ordinary",
+        "each_default",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_default": "certified",
+        "once_ordinary": "certified",
+        "each_default": "certified",
+        "each_ordinary": "certified"
+      }
+    },
+    {
+      "name": "phase_pilot_1",
+      "shard": "phase",
+      "case_sha256": "38b7445b95d17d2e47d9255dd090700fb320c4095841f3c600008a168b7fc89c",
+      "routes": [
+        "phase_forcing",
+        "phase_no_saturation",
+        "phase_direct_seeds",
+        "phase_direct_cell"
+      ],
+      "unavailable": {},
+      "expected": {
+        "phase_forcing": "certified",
+        "phase_no_saturation": "unresolved",
+        "phase_direct_seeds": "certified",
+        "phase_direct_cell": "certified"
+      }
+    },
+    {
+      "name": "phase_pilot_4",
+      "shard": "phase",
+      "case_sha256": "78b2b0b4a071915e95c489e9ca290cb2fb85e0dee6a8c87a230ed417f5deddcb",
+      "routes": [
+        "phase_forcing",
+        "phase_no_saturation",
+        "phase_direct_seeds",
+        "phase_direct_cell"
+      ],
+      "unavailable": {},
+      "expected": {
+        "phase_forcing": "certified",
+        "phase_no_saturation": "unresolved",
+        "phase_direct_seeds": "certified",
+        "phase_direct_cell": "certified"
+      }
+    },
+    {
+      "name": "phase_pilot_16",
+      "shard": "phase",
+      "case_sha256": "f8412349c66d21e96331ce000d7c5db288281773356e4f6c6d4551f61617135c",
+      "routes": [
+        "phase_forcing",
+        "phase_no_saturation",
+        "phase_direct_seeds",
+        "phase_direct_cell"
+      ],
+      "unavailable": {},
+      "expected": {
+        "phase_forcing": "certified",
+        "phase_no_saturation": "unresolved",
+        "phase_direct_seeds": "certified",
+        "phase_direct_cell": "certified"
+      }
+    },
+    {
+      "name": "phase_wrong_value",
+      "shard": "phase",
+      "case_sha256": "cefdbd3c6a126f61007ca6a3cc49db477445be20db0f0e6a688997072637e3d6",
+      "routes": [
+        "phase_forcing",
+        "phase_no_saturation",
+        "phase_direct_seeds",
+        "phase_direct_cell"
+      ],
+      "unavailable": {},
+      "expected": {
+        "phase_forcing": "refuted",
+        "phase_no_saturation": "unresolved",
+        "phase_direct_seeds": "refuted",
+        "phase_direct_cell": "refuted"
+      }
+    },
+    {
+      "name": "phase_mandatory_gap",
+      "shard": "phase",
+      "case_sha256": "09226c9568c45ede91d9e6d88b1e54667e12ef4f8f074343aa858392f481e317",
+      "routes": [
+        "phase_forcing",
+        "phase_no_saturation",
+        "phase_direct_seeds",
+        "phase_direct_cell"
+      ],
+      "unavailable": {},
+      "expected": {
+        "phase_forcing": "unresolved",
+        "phase_no_saturation": "unresolved",
+        "phase_direct_seeds": "certified",
+        "phase_direct_cell": "certified"
+      }
+    },
+    {
+      "name": "phase_forcing_budget",
+      "shard": "phase",
+      "case_sha256": "e481685c4388427fa942e4898e09378c58aafe70a9949ea6d329b4135ba7a1c5",
+      "routes": [
+        "phase_forcing",
+        "phase_no_saturation",
+        "phase_direct_seeds",
+        "phase_direct_cell"
+      ],
+      "unavailable": {},
+      "expected": {
+        "phase_forcing": "unresolved",
+        "phase_no_saturation": "unresolved",
+        "phase_direct_seeds": "certified",
+        "phase_direct_cell": "certified"
+      }
+    },
+    {
+      "name": "assess_boundaries",
+      "shard": "assessment",
+      "case_sha256": "3d5240357712aff912861065d1cea86a1fb7c5b107e16cbdeec33a63ba86a6a9",
+      "routes": [
+        "once_default",
+        "once_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "once_default": "certified",
+        "once_ordinary": "certified"
+      }
+    }
+  ]
+}
