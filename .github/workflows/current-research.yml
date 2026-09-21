@@ -7,7 +7,7 @@ permissions:
 jobs:
   context:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
@@ -146,6 +146,14 @@ jobs:
           PY
           python -m research.regression.preserve > reproduction/context/postflight.json
           cmp reproduction/context/preflight.json reproduction/context/postflight.json
+      - name: PR46 registered causal comparison, fresh processes and complete failures
+        run: |
+          python -m research.causal_comparison.preserve > reproduction/context/causal-preflight.json
+          python -m research.causal_comparison.experiment reproduction/context/causal_comparison > reproduction/context/causal-experiment.json
+          python -m research.causal_comparison.replay reproduction/context/causal_comparison > reproduction/context/causal-replay-normal.json
+          python -O -m research.causal_comparison.replay reproduction/context/causal_comparison > reproduction/context/causal-replay-optimized.json
+          python -m research.causal_comparison.preserve > reproduction/context/causal-postflight.json
+          cmp reproduction/context/causal-preflight.json reproduction/context/causal-postflight.json
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
