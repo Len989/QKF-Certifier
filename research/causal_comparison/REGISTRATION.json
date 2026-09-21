@@ -1,0 +1,550 @@
+{
+  "schema": "qkf-causal-comparison-registration-v1",
+  "protocol_sha256": "14659d5ec21a31843f8d0a8386ba8b77d0be7e3521784a2a1192c637d3a96fd5",
+  "cases": [
+    {
+      "name": "mask_31",
+      "case_sha256": "96c9550ef300a8f9ebd58895b913533b1c0140887fa87b65cc2dec090ca47c34",
+      "routes": [
+        "retained",
+        "direct41",
+        "query41",
+        "planner43",
+        "eager43",
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "retained": "certified",
+        "direct41": "certified",
+        "query41": "certified",
+        "planner43": "certified",
+        "eager43": "certified",
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "mask_short_circuit",
+      "case_sha256": "bb310b4aa30cc8fd55c22df020403175a3574c08e7106c5d280ff6659cbbecc0",
+      "routes": [
+        "retained",
+        "direct41",
+        "query41",
+        "planner43",
+        "eager43",
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "retained": "certified",
+        "direct41": "certified",
+        "query41": "certified",
+        "planner43": "certified",
+        "eager43": "certified",
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "arithmetic_compound",
+      "case_sha256": "245af8d521e6013b90c3911fc0d1ffb86df5c62a706c27d70d7480aa4cbd0479",
+      "routes": [
+        "retained",
+        "direct41",
+        "query41",
+        "planner43",
+        "eager43",
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "retained": "certified",
+        "direct41": "certified",
+        "query41": "certified",
+        "planner43": "certified",
+        "eager43": "certified",
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "parity_short_circuit",
+      "case_sha256": "c52cdf5f88096d6f8d614cb5ae073626dc81e1981ee9ccbe220a7e0219fb101b",
+      "routes": [
+        "retained",
+        "direct41",
+        "query41",
+        "planner43",
+        "eager43",
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "retained": "certified",
+        "direct41": "certified",
+        "query41": "certified",
+        "planner43": "certified",
+        "eager43": "certified",
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "mask_mutant",
+      "case_sha256": "d2b34633338f34574510c4ef403e2ec8d125b1f2f2fc11c90b1603c32805f9a6",
+      "routes": [
+        "retained",
+        "direct41",
+        "sdk_default"
+      ],
+      "expected": {
+        "retained": "refuted",
+        "direct41": "refuted",
+        "sdk_default": "refuted"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "arithmetic_guarded_mutant",
+      "case_sha256": "ccaf0b06517ed93ca4009459802cef9fde25bea4ad72a81e648c33c4a08c46b5",
+      "routes": [
+        "retained",
+        "direct41",
+        "sdk_default"
+      ],
+      "expected": {
+        "retained": "refuted",
+        "direct41": "refuted",
+        "sdk_default": "refuted"
+      },
+      "unavailable": {
+        "retained": "PR38/39 has no conditional/fixed-width consumer contract"
+      }
+    },
+    {
+      "name": "mask_fixed_alias",
+      "case_sha256": "2a476822bcb14f52ee04e9e5cfb4dee3c5c51c93c618181ce7800e6cc96a28a2",
+      "routes": [
+        "retained",
+        "direct41",
+        "sdk_default"
+      ],
+      "expected": {
+        "retained": "certified",
+        "direct41": "certified",
+        "sdk_default": "certified"
+      },
+      "unavailable": {
+        "retained": "PR38/39 has no conditional/fixed-width consumer contract"
+      }
+    },
+    {
+      "name": "mask_alias_all_widths",
+      "case_sha256": "0acefe0159b2c20166d785e7aa4b301326541f0cfbd78f5748227a5f0fe81a0d",
+      "routes": [
+        "retained",
+        "direct41",
+        "sdk_default"
+      ],
+      "expected": {
+        "retained": "refuted",
+        "direct41": "refuted",
+        "sdk_default": "refuted"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "empty_guard",
+      "case_sha256": "b227b20d929614f7b3a86d00806bd4eef621b156becd875c9c022da25639ffb9",
+      "routes": [
+        "retained",
+        "direct41",
+        "sdk_default"
+      ],
+      "expected": {
+        "retained": "verified_empty_domain",
+        "direct41": "verified_empty_domain",
+        "sdk_default": "verified_empty_domain"
+      },
+      "unavailable": {
+        "retained": "PR38/39 has no conditional/fixed-width consumer contract"
+      }
+    },
+    {
+      "name": "power_open",
+      "case_sha256": "a744dafa30d303728c8252fb71a9d734a32bb363d8c11c9879b90d8df09526de",
+      "routes": [
+        "retained",
+        "direct41",
+        "sdk_default"
+      ],
+      "expected": {
+        "retained": "unresolved",
+        "direct41": "unresolved",
+        "sdk_default": "unresolved"
+      },
+      "unavailable": {
+        "retained": "PR38/39 has no conditional/fixed-width consumer contract"
+      }
+    },
+    {
+      "name": "unsupported_dead_statement",
+      "case_sha256": "b8ed037dfc5db41562a0ae467d9c4df07d5e76036b051a279ded062820bfe085",
+      "routes": [
+        "retained",
+        "direct41",
+        "sdk_default"
+      ],
+      "expected": {
+        "retained": "unsupported",
+        "direct41": "unsupported",
+        "sdk_default": "unsupported"
+      },
+      "unavailable": {
+        "retained": "PR38/39 has no conditional/fixed-width consumer contract"
+      }
+    },
+    {
+      "name": "fact_budget",
+      "case_sha256": "4c4950d0c0142f1a26937205d38a992be2f479e2493e5ba9068ec2bff7ac00e3",
+      "routes": [
+        "retained",
+        "direct41",
+        "sdk_default"
+      ],
+      "expected": {
+        "retained": "budget_exhausted",
+        "direct41": "budget_exhausted",
+        "sdk_default": "unresolved"
+      },
+      "unavailable": {
+        "retained": "native-question budget has no counterpart in PR38/39"
+      }
+    },
+    {
+      "name": "power_unconditional",
+      "case_sha256": "260b6938abb9b3dd278b0317356bc5c505547e431c47e84e98b0142016b33715",
+      "routes": [
+        "retained",
+        "direct41",
+        "sdk_default"
+      ],
+      "expected": {
+        "retained": "certified",
+        "direct41": "unresolved",
+        "sdk_default": "unresolved"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "batch_mask_all_1",
+      "case_sha256": "6ea99f899216b35063d4640ac3fec9630329dff2f8589b232b846c3e941d39ea",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "batch_mask_all_4",
+      "case_sha256": "8e5b07a03ec900838384397e52efd3dac7a2fac101b4b944e47bd7d320873149",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "batch_mask_all_16",
+      "case_sha256": "b17ad3da2b654429ed0f1c545769a139fb443f4e232f4d37ea2d68daa8116175",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "batch_mask_fixed8_1",
+      "case_sha256": "9ce08048ada5c5e1c12bcb63a7d7bf52808bf6e77d95f31f223450277fa3963e",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "batch_mask_fixed8_4",
+      "case_sha256": "3bfaa2ea080c13bce40ddae38cdd308239e9f758060f1058e8069611d3495bd9",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "batch_mask_fixed8_16",
+      "case_sha256": "ed2ded585a8c007e4da3433775afd2556afe7a6b0252c353bb951b620aea225c",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "batch_parity_all_1",
+      "case_sha256": "65d06ff905c5186971ec34ba53672a57cb0835851c3ddf5cac37e3e01961575f",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "batch_parity_all_4",
+      "case_sha256": "5c64534c0783fa309bb1f34321ff80dc15b6a3a0408035c37d3a6c44ac9297f2",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "batch_parity_all_16",
+      "case_sha256": "c56a3446da354cd363816d7e5fafa06bfc99b61f9e9d8035260d44b445626f86",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "batch_parity_fixed8_1",
+      "case_sha256": "dba777160952793d1674f4c86a34e46383afcb07d23d7e21d9ede2e3489cd950",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "batch_parity_fixed8_4",
+      "case_sha256": "eae347a3b6d8db7d123c138fc01ddafcc90db07c93d525f3c0ca0d21c9e04ed3",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "batch_parity_fixed8_16",
+      "case_sha256": "0563aec78889438598560a7ae8dc23e38b616c752b30743947ff236cdc67ab64",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "batch_exact_repeats_16",
+      "case_sha256": "9597ccd8ac7b63cc88c2c7d072dbb152325ec9b3b2486eec95aaab0812365006",
+      "routes": [
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct"
+      ],
+      "expected": {
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "phase_pilot_1",
+      "case_sha256": "0c86e78b00c0c07539864e8332ab376ac09838bfc8df646cea77f0e6fc063ccf",
+      "routes": [
+        "phase_forcing",
+        "phase_no_saturation",
+        "phase_direct_seeds",
+        "phase_direct_cell"
+      ],
+      "expected": {
+        "phase_forcing": "certified",
+        "phase_no_saturation": "unresolved",
+        "phase_direct_seeds": "certified",
+        "phase_direct_cell": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "phase_pilot_4",
+      "case_sha256": "d8b3383307c6a364ad94f266681f9b3f3208011cbf474ec5428cef177b432d43",
+      "routes": [
+        "phase_forcing",
+        "phase_no_saturation",
+        "phase_direct_seeds",
+        "phase_direct_cell"
+      ],
+      "expected": {
+        "phase_forcing": "certified",
+        "phase_no_saturation": "unresolved",
+        "phase_direct_seeds": "certified",
+        "phase_direct_cell": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "phase_pilot_16",
+      "case_sha256": "6f700310aa74f2f8086c671a32730048f63823800eac844f40704c838d39d462",
+      "routes": [
+        "phase_forcing",
+        "phase_no_saturation",
+        "phase_direct_seeds",
+        "phase_direct_cell"
+      ],
+      "expected": {
+        "phase_forcing": "certified",
+        "phase_no_saturation": "unresolved",
+        "phase_direct_seeds": "certified",
+        "phase_direct_cell": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "phase_wrong_value",
+      "case_sha256": "35e3f9d214c482b5c24bc457a2a5d3e3d858267f28eca9b860326bea3d9f0192",
+      "routes": [
+        "phase_forcing",
+        "phase_no_saturation",
+        "phase_direct_seeds",
+        "phase_direct_cell"
+      ],
+      "expected": {
+        "phase_forcing": "refuted",
+        "phase_no_saturation": "unresolved",
+        "phase_direct_seeds": "refuted",
+        "phase_direct_cell": "refuted"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "phase_mandatory_gap",
+      "case_sha256": "ac37702159b2ff32fed2947f3291a3c43361224967279791e9fc6ffa6178952e",
+      "routes": [
+        "phase_forcing",
+        "phase_no_saturation",
+        "phase_direct_seeds",
+        "phase_direct_cell"
+      ],
+      "expected": {
+        "phase_forcing": "unresolved",
+        "phase_no_saturation": "unresolved",
+        "phase_direct_seeds": "certified",
+        "phase_direct_cell": "certified"
+      },
+      "unavailable": {}
+    },
+    {
+      "name": "phase_forcing_budget",
+      "case_sha256": "8a4e99f4e38f58440cb23e765009cf3dce6b43f07e5838864cafd2ab833a4d8a",
+      "routes": [
+        "phase_forcing",
+        "phase_no_saturation",
+        "phase_direct_seeds",
+        "phase_direct_cell"
+      ],
+      "expected": {
+        "phase_forcing": "unresolved",
+        "phase_no_saturation": "unresolved",
+        "phase_direct_seeds": "certified",
+        "phase_direct_cell": "certified"
+      },
+      "unavailable": {}
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "qkf-causal-comparison-protocol-v1",
+  "base_commit": "b7e500bf5636b59b2f04f309d7fbddc83cd40186",
+  "base_tree": "cc632563ef94b605c07a284a11281a3ce189d826",
+  "population": "Constructed development cases from accepted PR41/43/44/42, including two structural signed families, 1/4/16 cold series and retained losing/negative/empty/unsupported/budget cases. Exact fixtures and independent requests are registered before any comparison. No new source rule, external corpus or holdout.",
+  "registration": "Freeze protocol and case/source/goal/limit/outcome hashes in a commit before comparison; publish the registration branch before measurement when connection allows. Record every attempt and correction, without replacing failed run directories.",
+  "routes": {
+    "retained": "unchanged PR38/39 signed v6 covered control; stronger source-interface guarantee, only unguarded all-positive-width singleton requests",
+    "direct41": "unchanged PR41 native preparation plus ordinary congruence closure",
+    "query41": "same PR41 native preparation plus Paper II query backend",
+    "planner43": "unchanged PR43 adaptive native policy and Paper II backend",
+    "eager43": "unchanged PR43 eager policy with the same permitted native rules and Paper II backend",
+    "sdk_default": "PR45 no_lemmas: checked native and exact-result caches, no forcing, no derived-lemma promotion",
+    "sdk_reuse": "PR45 reuse: same signed policy and Paper II backend with eligible checked lemma",
+    "sdk_direct": "PR45 direct_cache: same lemma policy and ordinary caches, ordinary unfiltered CC at full horizon; bounded diagnostic fallback remains explicit",
+    "phase_forcing": "PR45 phase adapter over PR42 source seeds and pure-row saturation",
+    "phase_no_saturation": "same seeds and native tables, domain restricted to generated seeds; unresolved is not a source refutation",
+    "phase_direct_seeds": "same physical branches and seed facts, direct range/Boolean derivation closes the original obligation without forcing",
+    "phase_direct_cell": "physical-branch membership directly, with no seed/table preparation"
+  },
+  "attribution": {
+    "source_vs_retained": "bundled policy/rule/interface change, not an isolated I or II effect; retained proves a stronger interface",
+    "II": "query41 versus direct41 on exactly equal native attempts and ground request; sdk_reuse versus sdk_direct on equal source/native/lemma policy, accounting for horizon differences",
+    "observation_selection": "planner43 versus eager43; reduction in requested facts is demand selection, not by itself a theorem-II saturation speedup",
+    "reuse": "sdk_reuse versus sdk_default: same backend, native and exact-result caches; singleton promotion charged; compare sdk_direct to show ordinary control can also reuse",
+    "I": "separate phase table; demonstrate requested D minus S and no direct target queries, then compare the same seeds and physical branch work against direct controls",
+    "signed_without_forcing": "identical to each signed route: I is already disabled by A1; do not count a duplicate no-op arm as evidence",
+    "simple_rules": "equality-mask and parity identities available to the simple control; their benefit is attributed to native semantic rules, not exclusively to I/II"
+  },
+  "measurement": {
+    "timing_repeats": 3,
+    "amendment_to_PR39": "Three rather than five fresh diagnostic repetitions over the expanded registered matrix; no uninstrumented speedup or statistical population inference. All trials retained; no best-run selection.",
+    "order": "fixed case order; audit arms in registered order; trial r rotates arms by (case_index+r) modulo arm_count and reverses odd r; serial, no parallel measurements",
+    "warmups": 0,
+    "fresh_process_per_build": true,
+    "fresh_process_per_check": true,
+    "build_timeout_seconds": 120,
+    "check_timeout_seconds": 120,
+    "memory": "one separate fresh audit child per arm, tracemalloc peak since before backend import, including Python instrumentation and diagnostics; not RSS",
+    "timing": "three fresh build children with existing backend instrumentation but without PR46 tracing or tracemalloc; wall API and whole child process reported. Canonical proof/result identity must match the audit proof. No removal of accepted guards or budget enforcement for timing.",
+    "phases": "retain every named backend phase, failed attempt and fallback. Build includes all built-in checks and PR45 extraction/packing. Separately time fresh cold checking and source-free apply; phase names that combine search/check are labelled mixed rather than decomposed artificially.",
+    "check_trials": "one fresh cold checker per audit and timing output; timing outputs bind identical canonical proof/result bytes to the independently replayed audit packet; no search imports",
+    "warm_apply_repetitions": 64,
+    "application_scope": "SDK only, on registered inputs and only certified summaries. Repeat full input sequence, validate exact outputs. Native/retained proof routes have no SDK runtime and get not_applicable, never zero cost.",
+    "scenario": "build plus fresh cold check plus 64 registered input sequences where applicable; report process overhead separately. Other proof routes are compared on proof-only costs, not on missing application as zero.",
+    "aggregation": "all three samples, median/min/max; no universal break-even interpolation; publish first measured non-losing prefix per family, width, route and metric, including singleton losses",
+    "proof_bytes": "canonical uncompressed complete standalone packet; source/request bytes and diagnostic bytes separate; old stronger source-interface packet not a matched-size guarantee",
+    "common_trace": "separate actual-call audit for every route, outside existing exclusive profilers using call/return tracing; all research calls and declared structural hooks including built-in checks/export. Telemetry is not a proof of execution. Failed attempts remain charged."
+  },
+  "failure_policy": "Every scheduled arm/trial stays in the denominator. Unsupported contract is listed before execution and is distinct from source unsupported. Crashes/timeouts/identity drift fail the engineering gate; an economic hypothesis may fail without a code failure. No retries inside a run. Fresh normal and optimized replay check every available certificate and historical obligation even if another arm failed.",
+  "decision": "Report mechanism, structural-work, total-cost and product gates separately. Require two distinct source families for structural savings. A gain over retained alone does not establish competitive advantage. Keep I/reuse opt-in unless matched full-cost comparisons support a narrower recommendation. F1 remains an explicit uncompleted block-A gate; PR46 adds no Lean theorem. Next choose one bounded source-reasoning/IR pilot plus F1, with an external corpus registered only after freezing that engine.",
+  "preservation": "Every PR45 file stays byte/mode identical except current-research.yml and additive regression SUITES.json. Add new PR46 report/navigation rather than rewrite accepted roadmaps, historical claims, SDK defaults, proofs, installed qkf or old gates."
+}
