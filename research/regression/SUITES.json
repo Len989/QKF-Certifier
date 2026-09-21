@@ -25,9 +25,10 @@
     "research.ground_query.test_query",
     "research.source_query.test_source_query",
     "research.source_forcing.test_source_forcing",
-    "research.source_planner.test_planner"
+    "research.source_planner.test_planner",
+    "research.source_lemmas.test_lemmas"
   ],
   "new": [
-    "research.source_lemmas.test_lemmas"
+    "research.applicable_summary.test_summary"
   ]
 }
