@@ -1,0 +1,60 @@
+name: Full registered cost comparisons
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  measurements:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        python-version: ['3.10', '3.12']
+        suite: ['pr46', 'core', 'mask', 'parity', 'repeat', 'phase', 'assessment']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      COST_SUITE: ${{ matrix.suite }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Record exact measured source and preservation
+        run: |
+          mkdir -p reproduction/cost
+          git rev-parse HEAD > reproduction/cost/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/cost/tree.txt
+          git archive HEAD | gzip -n > reproduction/cost/source.tar.gz
+          python --version > reproduction/cost/python.txt
+          python -m research.sdk_comparison.preserve > reproduction/cost/preflight.json
+      - name: Complete registered comparison and fresh replays
+        run: |
+          set -o pipefail
+          if [ "$COST_SUITE" = pr46 ]; then
+            python -m research.causal_comparison.preserve > reproduction/cost/causal-preflight.json
+            python -m research.causal_comparison.experiment reproduction/cost/causal_comparison 2>&1 | tee reproduction/cost/progress.log
+            python -m research.causal_comparison.replay reproduction/cost/causal_comparison > reproduction/cost/replay-normal.json
+            python -O -m research.causal_comparison.replay reproduction/cost/causal_comparison > reproduction/cost/replay-optimized.json
+            python -m research.causal_comparison.preserve > reproduction/cost/causal-postflight.json
+            cmp reproduction/cost/causal-preflight.json reproduction/cost/causal-postflight.json
+          else
+            python -m research.sdk_comparison.experiment reproduction/cost/sdk_comparison --shard "$COST_SUITE" 2>&1 | tee reproduction/cost/progress.log
+            python -m research.sdk_comparison.replay reproduction/cost/sdk_comparison > reproduction/cost/replay-normal.json
+            python -O -m research.sdk_comparison.replay reproduction/cost/sdk_comparison > reproduction/cost/replay-optimized.json
+          fi
+          python -m research.sdk_comparison.preserve > reproduction/cost/postflight.json
+          cmp reproduction/cost/preflight.json reproduction/cost/postflight.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: full-cost-${{ matrix.suite }}-py${{ matrix.python-version }}
+          path: reproduction/cost/
+          retention-days: 30
+          if-no-files-found: error

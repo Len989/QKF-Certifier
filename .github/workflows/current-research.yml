@@ -7,7 +7,7 @@ permissions:
 jobs:
   context:
     runs-on: ubuntu-24.04
-    timeout-minutes: 60
+    timeout-minutes: 45
     strategy:
       fail-fast: false
       matrix:
@@ -18,6 +18,7 @@ jobs:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
@@ -146,14 +147,6 @@ jobs:
           PY
           python -m research.regression.preserve > reproduction/context/postflight.json
           cmp reproduction/context/preflight.json reproduction/context/postflight.json
-      - name: PR46 registered causal comparison, fresh processes and complete failures
-        run: |
-          python -m research.causal_comparison.preserve > reproduction/context/causal-preflight.json
-          python -m research.causal_comparison.experiment reproduction/context/causal_comparison > reproduction/context/causal-experiment.json
-          python -m research.causal_comparison.replay reproduction/context/causal_comparison > reproduction/context/causal-replay-normal.json
-          python -O -m research.causal_comparison.replay reproduction/context/causal_comparison > reproduction/context/causal-replay-optimized.json
-          python -m research.causal_comparison.preserve > reproduction/context/causal-postflight.json
-          cmp reproduction/context/causal-preflight.json reproduction/context/causal-postflight.json
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:

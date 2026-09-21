@@ -1,0 +1,58 @@
+{
+  "schema": "qkf-transformer-pilot-candidate-v1",
+  "name": "KnownBits_Add whole @solution",
+  "selection": "Already available finite development candidate, chosen before PR47 cost results, no external holdout.",
+  "files": {
+    "research/knownbits/fixtures/corpus/KnownBits_Add/solution.mlir": "2877f948c86c999a7f56a6f17de554d02940ee4c88cdf17b39d6b9bdb3d3c81b",
+    "research/knownbits/fixtures/helpers/meet.mlir": "4db24093258277f76ad11d33826a0e480e945cc1c19ece661fc17655ad7f65f4",
+    "research/knownbits/fixtures/helpers/top.mlir": "04d59189c9c93e6291791891ababb40fbc1431fcffb547014ee2f1c0e260614f"
+  },
+  "operations": [
+    "transfer.add",
+    "transfer.and",
+    "transfer.clear_high_bits",
+    "transfer.clear_low_bits",
+    "transfer.clear_sign_bit",
+    "transfer.cmp",
+    "transfer.constant",
+    "transfer.countl_zero",
+    "transfer.countr_one",
+    "transfer.countr_zero",
+    "transfer.get",
+    "transfer.get_all_ones",
+    "transfer.get_bit_width",
+    "transfer.lshr",
+    "transfer.make",
+    "transfer.mul",
+    "transfer.neg",
+    "transfer.or",
+    "transfer.select",
+    "transfer.set_high_bits",
+    "transfer.set_low_bits",
+    "transfer.shl",
+    "transfer.smax",
+    "transfer.smin",
+    "transfer.srem",
+    "transfer.sub",
+    "transfer.udiv",
+    "transfer.umax",
+    "transfer.umin",
+    "transfer.urem",
+    "transfer.xor"
+  ],
+  "primary_width": 8,
+  "diagnostic_widths": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "concrete_operation": "(x+y) modulo 2^w, no nsw/nuw flag assumption",
+  "goals": [
+    "nonbottom input admissibility",
+    "whole-function soundness",
+    "output well-formedness",
+    "separate known-zero and known-one obligations"
+  ],
+  "next": "Pin exact transfer dialect semantics including bint/count and division before implementation; compare historical all-width route and ordinary fixed-width SMT control; no frontend or theorem introduced by PR47."
+}

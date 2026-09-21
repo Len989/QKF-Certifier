@@ -1,0 +1,189 @@
+{
+  "schema": "qkf-pr52-simple-controls-v1",
+  "basis_protocol_sha256": "669979efa9e29ac2cd6bdb8ad9dc34334f75b5949314810ed7eca39f80141ba8",
+  "basis_results_sha256": "beeed0f38258e6e4928ea7792a407a7cba3e3672ca1d20a734ce992dd1addad3",
+  "engine_commit": "0404ee6caa46671d893ee1d4e303e02eabffc8af",
+  "selected": {
+    "single_summary": {
+      "route": "sdk_ordinary",
+      "evidence_by_environment": [
+        {
+          "environment": "full-cost-core-py3.10",
+          "selection": {
+            "route": "sdk_ordinary",
+            "scope": "this complete registered run/shard; score selects control, not cross-width speedup",
+            "selection_scores_ns": {
+              "sdk_ordinary": 2034120942
+            }
+          }
+        },
+        {
+          "environment": "full-cost-core-py3.12",
+          "selection": {
+            "route": "sdk_ordinary",
+            "scope": "this complete registered run/shard; score selects control, not cross-width speedup",
+            "selection_scores_ns": {
+              "sdk_ordinary": 1489158091
+            }
+          }
+        }
+      ]
+    },
+    "consumer_service": {
+      "route": "once_ordinary",
+      "evidence_by_environment": [
+        {
+          "environment": "full-cost-mask-py3.10",
+          "selection": {
+            "route": "once_ordinary",
+            "scope": "this complete registered run/shard; score selects control, not cross-width speedup",
+            "selection_scores_ns": {
+              "once_default": 15756805710,
+              "once_ordinary": 3788213298
+            }
+          }
+        },
+        {
+          "environment": "full-cost-mask-py3.12",
+          "selection": {
+            "route": "once_ordinary",
+            "scope": "this complete registered run/shard; score selects control, not cross-width speedup",
+            "selection_scores_ns": {
+              "once_default": 7085117189,
+              "once_ordinary": 1690202223
+            }
+          }
+        },
+        {
+          "environment": "full-cost-parity-py3.10",
+          "selection": {
+            "route": "once_ordinary",
+            "scope": "this complete registered run/shard; score selects control, not cross-width speedup",
+            "selection_scores_ns": {
+              "once_default": 17402921569,
+              "once_ordinary": 3822560020
+            }
+          }
+        },
+        {
+          "environment": "full-cost-parity-py3.12",
+          "selection": {
+            "route": "once_ordinary",
+            "scope": "this complete registered run/shard; score selects control, not cross-width speedup",
+            "selection_scores_ns": {
+              "once_default": 12556197972,
+              "once_ordinary": 2710353970
+            }
+          }
+        },
+        {
+          "environment": "full-cost-repeat-py3.10",
+          "selection": {
+            "route": "once_ordinary",
+            "scope": "this complete registered run/shard; score selects control, not cross-width speedup",
+            "selection_scores_ns": {
+              "once_default": 2868914539,
+              "once_ordinary": 776143149
+            }
+          }
+        },
+        {
+          "environment": "full-cost-repeat-py3.12",
+          "selection": {
+            "route": "once_ordinary",
+            "scope": "this complete registered run/shard; score selects control, not cross-width speedup",
+            "selection_scores_ns": {
+              "once_default": 2042046937,
+              "once_ordinary": 525376423
+            }
+          }
+        }
+      ]
+    },
+    "independent_certificates": {
+      "route": "each_ordinary",
+      "evidence_by_environment": [
+        {
+          "environment": "full-cost-mask-py3.10",
+          "selection": {
+            "route": "each_ordinary",
+            "scope": "this complete registered run/shard; score selects control, not cross-width speedup",
+            "selection_scores_ns": {
+              "each_default": 120656407132,
+              "each_ordinary": 21232919673
+            }
+          }
+        },
+        {
+          "environment": "full-cost-mask-py3.12",
+          "selection": {
+            "route": "each_ordinary",
+            "scope": "this complete registered run/shard; score selects control, not cross-width speedup",
+            "selection_scores_ns": {
+              "each_default": 52910336601,
+              "each_ordinary": 8909653056
+            }
+          }
+        },
+        {
+          "environment": "full-cost-parity-py3.10",
+          "selection": {
+            "route": "each_ordinary",
+            "scope": "this complete registered run/shard; score selects control, not cross-width speedup",
+            "selection_scores_ns": {
+              "each_default": 132586406264,
+              "each_ordinary": 21173601332
+            }
+          }
+        },
+        {
+          "environment": "full-cost-parity-py3.12",
+          "selection": {
+            "route": "each_ordinary",
+            "scope": "this complete registered run/shard; score selects control, not cross-width speedup",
+            "selection_scores_ns": {
+              "each_default": 94521170849,
+              "each_ordinary": 14598270386
+            }
+          }
+        },
+        {
+          "environment": "full-cost-repeat-py3.10",
+          "selection": {
+            "route": "each_ordinary",
+            "scope": "this complete registered run/shard; score selects control, not cross-width speedup",
+            "selection_scores_ns": {
+              "each_default": 40888952524,
+              "each_ordinary": 7781005557
+            }
+          }
+        },
+        {
+          "environment": "full-cost-repeat-py3.12",
+          "selection": {
+            "route": "each_ordinary",
+            "scope": "this complete registered run/shard; score selects control, not cross-width speedup",
+            "selection_scores_ns": {
+              "each_default": 29037794655,
+              "each_ordinary": 5276239436
+            }
+          }
+        }
+      ]
+    }
+  },
+  "selection": "Use the preregistered minimum sum of lifecycle medians within each complete eligible CI shard. All eligible shards and both Python versions select the same route. Ordinary also has a smaller median in every eligible matched row, so any full-workload sum would make the same choice; no cross-runner sum or speedup statistic is published.",
+  "limitations": {
+    "independent_certificates": "Registered clients have no cross-call semantic/exact cache. A client retaining an exact-repeat packet may be cheaper; preregister that control before claiming superiority on standalone exact repeats in PR52."
+  },
+  "gates": {
+    "factors": [
+      "context preparation old/new",
+      "intermediate packet/direct dependency export",
+      "ordinary/query x no_lemmas/reuse with identical native policy, caches and packaging"
+    ],
+    "controls": "For each delivery choose the lowest full median qualifying simple control over the complete registered workload, not fastest trial. Candidate controls: sdk_ordinary singleton, once_ordinary/once_default service, each_ordinary/each_default standalone. Publish the chosen baseline after PR47 before PR48/52 tuning; retain all other rows.",
+    "practical_gate": "At least 20% reduction in median full lifecycle and at least 1 ms absolute at singleton or 10 ms at series N>=4; candidate maximum must be below reference minimum on each claimed workload. No correctness/coverage loss and no >10% Python-peak regression without separate explicit tradeoff. If noisy/inconclusive, no positive gate; new preregistered run. Gate is an engineering criterion for this corpus, not market inference.",
+    "fallback": "Prefer simplest eligible path. F1 remains open. A negative result ends one optimization cycle rather than deleting workloads."
+  }
+}
