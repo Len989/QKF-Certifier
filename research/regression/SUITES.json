@@ -23,9 +23,10 @@
     "research.pure_rows.test_pure_rows",
     "research.semantic_work.test_work",
     "research.ground_query.test_query",
-    "research.source_query.test_source_query"
+    "research.source_query.test_source_query",
+    "research.source_forcing.test_source_forcing"
   ],
   "new": [
-    "research.source_forcing.test_source_forcing"
+    "research.source_planner.test_planner"
   ]
 }
