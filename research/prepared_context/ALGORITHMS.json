@@ -1,0 +1,50 @@
+{
+  "ordinary.py": {
+    "source": "research/source_query/ordinary.py",
+    "sha256": "9dfe049dcadb0e7242cec69c1dbdc00dda1c2f2b0afdddeabc0cf0b383cd84ad",
+    "changes": [
+      [
+        "from research.ground_query.schema import parse, PROOF_SCHEMA",
+        "from research.ground_query.schema import PROOF_SCHEMA\nfrom .ground import input_of"
+      ],
+      [
+        "def prove(request):\n    inp = parse(request)",
+        "def prove(prepared):\n    inp = input_of(prepared)"
+      ]
+    ],
+    "bounded_extension": "Run unchanged ordinary CC on depth<=h nodes and active equations. Keep original equation IDs; emit total separating model at h and not_visible below full horizon. No query backend or activation layers. Full-horizon proof and statistics match the original byte for byte on typed ground fixtures."
+  },
+  "query.py": {
+    "source": "research/ground_query/producer.py",
+    "sha256": "d6d3a7e313958aea29968671597483358bb198a9cfa1154118fdc6f297e48497",
+    "changes": [
+      [
+        "from .schema import PROOF_SCHEMA, parse, require",
+        "from research.ground_query.schema import PROOF_SCHEMA, require\nfrom .ground import input_of"
+      ],
+      [
+        "from .prototype.",
+        "from research.ground_query.prototype."
+      ],
+      [
+        "inp = parse(request)",
+        "inp = input_of(request)"
+      ]
+    ]
+  },
+  "ground_check.py": {
+    "source": "research/ground_query/checker.py",
+    "sha256": "8aab091c7a3a91b745afcf0ef860c3e6d433fe2d57bb87b56db8e7d4a54a0970",
+    "changes": [
+      [
+        "from .schema import MAX_STEPS, PROOF_SCHEMA, canonical, fields, index, parse, require",
+        "from research.ground_query.schema import MAX_STEPS, PROOF_SCHEMA, canonical, fields, index, require\nfrom research.ground_query.checker import check_model\nfrom .ground import input_of"
+      ],
+      [
+        "inp = parse(request)",
+        "inp = input_of(request)"
+      ]
+    ],
+    "removed_function": "check_model: imported unchanged from the cold checker"
+  }
+}
