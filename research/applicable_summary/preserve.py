@@ -1,11 +1,11 @@
-"""Preserve accepted PR44 bytes; only the existing CI and registry may change."""
+"""Preserve PR44 bytes except the registered CI and additive registry changes."""
 import hashlib
 import json
 from pathlib import Path
 import subprocess
 
 BASE = 'd53500cac8788a221eb657e239c105834439087c'
-EDITABLE = {'.github/workflows/current-research.yml', 'research/regression/SUITES.json', 'research/README.md'}
+EDITABLE = {'.github/workflows/current-research.yml', 'research/regression/SUITES.json'}
 
 
 def audit():

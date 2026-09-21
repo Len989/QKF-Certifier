@@ -112,6 +112,15 @@ jobs:
           python -O -m research.source_lemmas.replay reproduction/context/source_lemmas > reproduction/context/source-lemmas-replay-optimized.json
           python -m research.source_lemmas.preserve > reproduction/context/source-lemmas-postflight.json
           cmp reproduction/context/source-lemmas-preflight.json reproduction/context/source-lemmas-postflight.json
+      - name: Direct applicable summaries, source-free application and format adapters
+        run: |
+          python -m research.applicable_summary.preserve > reproduction/context/summary-preflight.json
+          python -m research.applicable_summary.experiment reproduction/context/applicable_summary > reproduction/context/summary-experiment.json
+          python -m research.applicable_summary.replay reproduction/context/applicable_summary > reproduction/context/summary-replay-normal.json
+          python -O -m research.applicable_summary.replay reproduction/context/applicable_summary > reproduction/context/summary-replay-optimized.json
+          python -m research.applicable_summary.example > reproduction/context/summary-example.json
+          python -m research.applicable_summary.preserve > reproduction/context/summary-postflight.json
+          cmp reproduction/context/summary-preflight.json reproduction/context/summary-postflight.json
       - name: Batch CLI and current-tree postflight
         run: |
           python - <<'PY'
