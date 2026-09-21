@@ -1,6 +1,6 @@
 {
-  "schema": "qkf-causal-comparison-registration-v1",
-  "protocol_sha256": "14659d5ec21a31843f8d0a8386ba8b77d0be7e3521784a2a1192c637d3a96fd5",
+  "schema": "qkf-causal-comparison-registration-v2",
+  "protocol_sha256": "d151a76e438ed540fb7a07e742621dbff948e61f15628c1b01511e5d02387722",
   "cases": [
     {
       "name": "mask_31",

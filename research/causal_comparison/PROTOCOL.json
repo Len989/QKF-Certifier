@@ -1,9 +1,9 @@
 {
-  "schema": "qkf-causal-comparison-protocol-v1",
+  "schema": "qkf-causal-comparison-protocol-v2",
   "base_commit": "b7e500bf5636b59b2f04f309d7fbddc83cd40186",
   "base_tree": "cc632563ef94b605c07a284a11281a3ce189d826",
   "population": "Constructed development cases from accepted PR41/43/44/42, including two structural signed families, 1/4/16 cold series and retained losing/negative/empty/unsupported/budget cases. Exact fixtures and independent requests are registered before any comparison. No new source rule, external corpus or holdout.",
-  "registration": "Freeze protocol and case/source/goal/limit/outcome hashes in a commit before comparison; publish the registration branch before measurement when connection allows. Record every attempt and correction, without replacing failed run directories.",
+  "registration": "Freeze protocol and case/source/goal/limit/outcome hashes in a commit before comparison; publish the registration branch before measurement when connection allows. Record every attempt and correction, without replacing failed run directories. Measurement-only amendment v2 separates common tracing and tracemalloc into different fresh children after two incomplete parent runs and one stopped audit stress probe; source/case/route/expected identities are unchanged. Both registrations are published before the final full run.",
   "routes": {
     "retained": "unchanged PR38/39 signed v6 covered control; stronger source-interface guarantee, only unguarded all-positive-width singleton requests",
     "direct41": "unchanged PR41 native preparation plus ordinary congruence closure",
@@ -36,16 +36,16 @@
     "fresh_process_per_check": true,
     "build_timeout_seconds": 120,
     "check_timeout_seconds": 120,
-    "memory": "one separate fresh audit child per arm, tracemalloc peak since before backend import, including Python instrumentation and diagnostics; not RSS",
-    "timing": "three fresh build children with existing backend instrumentation but without PR46 tracing or tracemalloc; wall API and whole child process reported. Canonical proof/result identity must match the audit proof. No removal of accepted guards or budget enforcement for timing.",
+    "memory": "One separate fresh tracemalloc-only child per arm, peak since before backend import including intrinsic backend instrumentation and diagnostics but without the PR46 call tracer; not RSS. Proof/result bytes must match the call-audit and timing children.",
+    "timing": "Three fresh build children with existing backend instrumentation but without PR46 tracing or tracemalloc; wall API and whole child process reported. Canonical proof/result identity must match the call-audit and memory probes. No removal of accepted guards or budget enforcement for timing.",
     "phases": "retain every named backend phase, failed attempt and fallback. Build includes all built-in checks and PR45 extraction/packing. Separately time fresh cold checking and source-free apply; phase names that combine search/check are labelled mixed rather than decomposed artificially.",
-    "check_trials": "one fresh cold checker per audit and timing output; timing outputs bind identical canonical proof/result bytes to the independently replayed audit packet; no search imports",
+    "check_trials": "One fresh cold checker per call-audit and timing output. Memory/timing outputs bind identical canonical proof/result bytes to the independently replayed audit packet; no search imports. Full history is additionally checked from the audit packet.",
     "warm_apply_repetitions": 64,
     "application_scope": "SDK only, on registered inputs and only certified summaries. Repeat full input sequence, validate exact outputs. Native/retained proof routes have no SDK runtime and get not_applicable, never zero cost.",
     "scenario": "build plus fresh cold check plus 64 registered input sequences where applicable; report process overhead separately. Other proof routes are compared on proof-only costs, not on missing application as zero.",
     "aggregation": "all three samples, median/min/max; no universal break-even interpolation; publish first measured non-losing prefix per family, width, route and metric, including singleton losses",
     "proof_bytes": "canonical uncompressed complete standalone packet; source/request bytes and diagnostic bytes separate; old stronger source-interface packet not a matched-size guarantee",
-    "common_trace": "separate actual-call audit for every route, outside existing exclusive profilers using call/return tracing; all research calls and declared structural hooks including built-in checks/export. Telemetry is not a proof of execution. Failed attempts remain charged."
+    "common_trace": "One separate fresh call-audit child per arm without tracemalloc, alongside accepted profilers; cached code metadata and selective return hooks observe all research calls and declared structural hooks, including built-in checks/export. Telemetry is not a proof of execution. Failed attempts remain charged."
   },
   "failure_policy": "Every scheduled arm/trial stays in the denominator. Unsupported contract is listed before execution and is distinct from source unsupported. Crashes/timeouts/identity drift fail the engineering gate; an economic hypothesis may fail without a code failure. No retries inside a run. Fresh normal and optimized replay check every available certificate and historical obligation even if another arm failed.",
   "decision": "Report mechanism, structural-work, total-cost and product gates separately. Require two distinct source families for structural savings. A gain over retained alone does not establish competitive advantage. Keep I/reuse opt-in unless matched full-cost comparisons support a narrower recommendation. F1 remains an explicit uncompleted block-A gate; PR46 adds no Lean theorem. Next choose one bounded source-reasoning/IR pilot plus F1, with an external corpus registered only after freezing that engine.",
