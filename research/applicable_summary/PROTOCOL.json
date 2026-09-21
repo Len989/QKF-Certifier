@@ -1,0 +1,14 @@
+{
+  "schema": "qkf-applicable-summary-protocol-v1",
+  "base_commit": "d53500cac8788a221eb657e239c105834439087c",
+  "base_tree": "e8cf320f77b36e7242953d0645b6ed5a52844d45",
+  "registration": "Exact source/request/routes/limits/expected statuses and apply samples committed locally before implementation runs; server publication later. Development functional validation, not an external holdout or speed benchmark.",
+  "scope": "One versioned envelope for signed conditional Boolean summaries and separately one source-bound physical-phase cell. Whole-source admission, exact guards/width/profile/selection; no cross-profile transfer.",
+  "direct": "Extract only chronological positive native/derived dependencies and needed ground events, with independently checked term/event renumbering. Retain unresolved scoped lower models in their original PR44 format. No whole legacy model or pair separators built by the new route.",
+  "adapters": "PR41/43/44 and PR42 retain their native certificates and guarantees. Coverage may be imported explicitly from an already produced proof; new build has no covered fallback. Compatibility fixture preparation is separate from new SDK construction.",
+  "runtime": "check emits immutable process-local capability, not a receipt. apply uses only checked finite action, guards and exact width; no source execution. New signed consumers are assessed over exact capped-count/sign target classes, with explicit refinement_required if unsupported by the summary. Local phase apply is limited to checked requested cells.",
+  "safety": "Independent fresh normal/-O checker blocks planner, producers, Java, SMT and whole-source positive evaluation; concrete negative witnesses are recomputed. Tampered interfaces/scopes/proofs and forward/cyclic/orphan dependencies rejected.",
+  "costs": "Record one sequential functional run: backend work, export/pack/check and warm apply durations separately; do not infer speedups. All unsupported, budget, unresolved and negative cases retained.",
+  "gates": "A1: forcing only explicit in physical-phase profile. A2: signed default no_lemmas; derived-lemma routes explicit.",
+  "preservation": "All accepted PR44 bytes and modes except research/README.md, current research workflow and additive regression registry. Installed qkf unchanged. New F1 theorem and causal comparison remain separate PRs."
+}

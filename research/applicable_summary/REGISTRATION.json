@@ -1,0 +1,96 @@
+{
+  "schema": "qkf-applicable-summary-registration-v1",
+  "protocol_sha256": "77fa13d10d0928a0f5db907deccf621c6b4032a97aa25ceda26e681a80edcf44",
+  "cases": [
+    {
+      "name": "mask_all",
+      "case_sha256": "f5b1fff15b2008e89af9d16f3cae41c7c35e52ac89b3d5f3e151b6e67eeb4db1",
+      "expected": "certified"
+    },
+    {
+      "name": "parity_fixed8_reuse",
+      "case_sha256": "3b399d71778fcc3e80200b71799349aaa9d28e3950545d54d27a846ad5a42451",
+      "expected": "certified"
+    },
+    {
+      "name": "mask_direct",
+      "case_sha256": "5295f9fdd9a7674eb7f03426b662edae63e12d57214380011fb2188abe4d998a",
+      "expected": "certified"
+    },
+    {
+      "name": "mask_refuted",
+      "case_sha256": "6943d9377b19c161c3250ff6cee28953c5f8e255b6b490c22d8505452709f649",
+      "expected": "refuted"
+    },
+    {
+      "name": "empty",
+      "case_sha256": "9e8579e23e9191c7f9245ea75bc82b44050dea68aee54bb1e8e6c45958f61cdb",
+      "expected": "verified_empty_domain"
+    },
+    {
+      "name": "unsupported",
+      "case_sha256": "ac8dab92c067d1a68a27cce64ae75e410e94c854e958ff7577be2ca610d36fbb",
+      "expected": "unsupported"
+    },
+    {
+      "name": "budget",
+      "case_sha256": "5974de8382a2abff70b0c970f059a5951c88c8c63a3bd0952c634dbbec315e42",
+      "expected": "unresolved"
+    },
+    {
+      "name": "representation_gap",
+      "case_sha256": "939104532ffa1d0128590528541f63484adf574658f9a8fae81d86c005fee29b",
+      "expected": "unresolved"
+    },
+    {
+      "name": "horizon",
+      "case_sha256": "133b434133eb18ae6ff30e2b48673503ecf86aef5d64a7924b7ea9d3a0d794c4",
+      "expected": "unresolved"
+    },
+    {
+      "name": "import_pr41",
+      "case_sha256": "45b4571e0d7d7b4354a0866ebffe816102adc3708bbddf7e310f909043dd0e54",
+      "expected": "certified"
+    },
+    {
+      "name": "import_pr43",
+      "case_sha256": "c4e0dce70362349791ba063bca20e0e38f51cf224cd376c32fd29e64533f55a4",
+      "expected": "certified"
+    },
+    {
+      "name": "import_pr44",
+      "case_sha256": "a25765bf3cc6f059f382d201ec34e3c6fa25b3768c21a911e4cd9d0c1c1bdebf",
+      "expected": "certified"
+    },
+    {
+      "name": "import_coverage",
+      "case_sha256": "9af5e679b943e5b0e3bfa3490131e0185f9b00363e67ae7f078a396df62b6b5c",
+      "expected": "certified"
+    },
+    {
+      "name": "phase_direct",
+      "case_sha256": "6caa23219fe78b2810a83d31eca15a0c736b7e0c1367e838cd6389f3b3730bca",
+      "expected": "certified"
+    },
+    {
+      "name": "phase_forcing",
+      "case_sha256": "f3b9e4d3423875398e6a74826feed550901c6925fc3a05882988a9722bd74dc1",
+      "expected": "certified"
+    },
+    {
+      "name": "phase_unresolved",
+      "case_sha256": "97c872e69b75ac2de2db848d9088b6ef23c42247934dd905e2cabccabaf8324f",
+      "expected": "unresolved"
+    },
+    {
+      "name": "phase_refuted",
+      "case_sha256": "4de9bcaa7a93da853bc9df0d73e355c36ba71bd647c9ec912c913e787ac7b51d",
+      "expected": "refuted"
+    },
+    {
+      "name": "phase_budget",
+      "case_sha256": "e83ee45c6d5571355b81b3d3af904c5fbe8a065aa5fc1adf65097c47e0e550ec",
+      "expected": "unresolved"
+    }
+  ]
+}
