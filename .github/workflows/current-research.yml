@@ -96,6 +96,14 @@ jobs:
           python -O -m research.source_forcing.replay reproduction/context/source_forcing > reproduction/context/source-forcing-replay-optimized.json
           python -m research.source_forcing.preserve > reproduction/context/source-forcing-postflight.json
           cmp reproduction/context/source-forcing-preflight.json reproduction/context/source-forcing-postflight.json
+      - name: Goal-driven native questions, early stopping and checked residual obligations
+        run: |
+          python -m research.source_planner.preserve > reproduction/context/source-planner-preflight.json
+          python -m research.source_planner.experiment reproduction/context/source_planner > reproduction/context/source-planner-experiment.json
+          python -m research.source_planner.replay reproduction/context/source_planner > reproduction/context/source-planner-replay-normal.json
+          python -O -m research.source_planner.replay reproduction/context/source_planner > reproduction/context/source-planner-replay-optimized.json
+          python -m research.source_planner.preserve > reproduction/context/source-planner-postflight.json
+          cmp reproduction/context/source-planner-preflight.json reproduction/context/source-planner-postflight.json
       - name: Batch CLI and current-tree postflight
         run: |
           python - <<'PY'
