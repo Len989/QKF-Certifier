@@ -1,0 +1,44 @@
+{
+  "schema": "qkf-prepared-context-protocol-v1",
+  "base_commit": "71f8c8bf1ca1c079aa3c4463c810275a0158af83",
+  "population": "Five development rows: PR47 mask singleton; mask all-width N=4 service; parity fixed8 N=4 service; exact repeats N=16 service; mask N=4 independent singleton packets. Sources, requests, limits, application vectors unchanged. No holdout or default decision.",
+  "matrix": {
+    "backend": [
+      "ordinary",
+      "query"
+    ],
+    "policy": [
+      "no_lemmas",
+      "reuse"
+    ],
+    "shared": "PR43 native-question State/derive, same native cache, terminal exact-goal cache, eligibility/promotion policy, PR44 packet and PR45 extract/components/package/check pipeline.",
+    "horizon": "ordinary runs plain CC on nodes and equations active at min(full horizon,max_horizon), no activation layers; query starts at min(endpoint,cap), then grows to cap when bounded separation is insufficient. Inactive endpoint emits unresolved. Native questioning only follows final current-presentation nonconsequence; bounded model never refutes source."
+  },
+  "measurement": {
+    "timing_repeats": 7,
+    "warmups": 0,
+    "fresh_process_per_build": true,
+    "fresh_process_per_check": true,
+    "build_timeout_seconds": 360,
+    "check_timeout_seconds": 240,
+    "warm_apply_repetitions": 64,
+    "order": "Fixed registered cases. Rotate arms by case_index+trial and reverse odd trials. Serial timing in each environment. CI shards partition cases only; no pooling machines or Python versions.",
+    "audit": "One fresh common call-trace child; retain existing sys.setprofile budgets and execution guards. Never run with tracemalloc.",
+    "memory": "One separate fresh tracemalloc child; Python peak, not RSS. No PR47 tracer. Exact canonical delivery/result match.",
+    "timing": "Seven fresh children without PR47 tracer/tracemalloc; intrinsic instrumentation retained, instrumented development latency. Include native proof, adapter, all built-in checks and delivery encoding. Cold receiver check, service assess, export/explain and 64 application sequences separately measured.",
+    "cost": "Primary lifecycle = build + cold check + all registered consumer assessments + one export/explain per packet. Apply is additional separate scenario. Whole child process overhead shown separately. Failed work included.",
+    "aggregation": "All samples, median/min/max. Per family and width and delivery. No universal threshold or population speedup claim; packet size is total independent bytes, no free dedup."
+  },
+  "controls": {
+    "single_summary": "sdk_ordinary",
+    "consumer_service": "once_ordinary",
+    "independent_certificates": "each_ordinary"
+  },
+  "causal_comparisons": "new query/no_lemmas versus sdk_default; new query/reuse versus sdk_reuse; new ordinary/reuse versus sdk_direct at sufficient full horizon. New ordinary/no_lemmas has no old matched planner arm. Report four-factor outcomes and native questions; do not infer pure reuse from sdk_direct versus sdk_default.",
+  "semantic_population": "All 27 signed PR47 cases across all four configurations, plus inactive horizon, native prefix/promotion attacks, input mutations, ordinary bounded gap, byte-identical full-horizon ground adapters and old cold acceptance. Six phase cases retain the old unchanged path in prior regression/CI.",
+  "resources": "Call budget remains research Python entries, now counts new functions. No free migration to another stage. Equal structural limits; any changed outcome at max_work is separately a resource behavior change, not added semantic coverage.",
+  "failure_policy": "Every scheduled attempt recorded; no retry inside run. Missing audit still gets an explicit failed checker attempt. Interrupted parent leaves checkpoint and manifest. Unexpected result, timeout, corrupted evidence or identity drift fails engineering acceptance; an economic loss does not.",
+  "acceptance": "Old independent checker accepts positives, all histories replay with search and positive execution blocked, normal/-O agree; report all lifecycle samples, peaks and preparation counts. Negative economic result accepted. No PR52 win/default/F1 claim.",
+  "preservation": "All accepted PR47 bytes/modes unchanged except additive research/regression/SUITES.json. New workflow only. Ground algorithm copies have explicit provenance; ground_check/query only use admitted input instead of parse; ordinary adds an explicitly bounded active-node control. Old cold checker unchanged.",
+  "boundary": "Process-local immutable capabilities only; no Python-reflection sandbox or cross-version transport promise. JSON never carries trust. Native evidence fully checked at insertion; old cold checker fully replays final packets."
+}

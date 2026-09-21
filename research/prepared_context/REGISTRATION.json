@@ -1,0 +1,132 @@
+{
+  "schema": "qkf-prepared-context-registration-v1",
+  "protocol_sha256": "769a684ba7a5f875b860ed04ae703f16d39ead4811bc0668434b1c20c5e0a342",
+  "cases": [
+    {
+      "name": "mask_31",
+      "shard": "single",
+      "case_sha256": "ba894ba423f23103e4987102812eb551211de410665be948286be07c9043f67a",
+      "routes": [
+        "prepared_ordinary_no_lemmas",
+        "prepared_ordinary_reuse",
+        "prepared_query_no_lemmas",
+        "prepared_query_reuse",
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "sdk_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "prepared_ordinary_no_lemmas": "certified",
+        "prepared_ordinary_reuse": "certified",
+        "prepared_query_no_lemmas": "certified",
+        "prepared_query_reuse": "certified",
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "sdk_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_mask_all_4",
+      "shard": "mask",
+      "case_sha256": "5a692db00017e1e687068bd0315fbf3af8bafecff32dda40f2482a653d33e574",
+      "routes": [
+        "prepared_ordinary_no_lemmas",
+        "prepared_ordinary_reuse",
+        "prepared_query_no_lemmas",
+        "prepared_query_reuse",
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "prepared_ordinary_no_lemmas": "certified",
+        "prepared_ordinary_reuse": "certified",
+        "prepared_query_no_lemmas": "certified",
+        "prepared_query_reuse": "certified",
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_parity_fixed8_4",
+      "shard": "parity",
+      "case_sha256": "d97afa60e7714ed0c18ba30715c300b0870a55294d180e9229aa05a89e6ef05b",
+      "routes": [
+        "prepared_ordinary_no_lemmas",
+        "prepared_ordinary_reuse",
+        "prepared_query_no_lemmas",
+        "prepared_query_reuse",
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "prepared_ordinary_no_lemmas": "certified",
+        "prepared_ordinary_reuse": "certified",
+        "prepared_query_no_lemmas": "certified",
+        "prepared_query_reuse": "certified",
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_exact_repeats_16",
+      "shard": "repeat",
+      "case_sha256": "8e0b79255b3a0d146a6db32fa2ca5dcd218aba79fe60117650451561001670ee",
+      "routes": [
+        "prepared_ordinary_no_lemmas",
+        "prepared_ordinary_reuse",
+        "prepared_query_no_lemmas",
+        "prepared_query_reuse",
+        "sdk_default",
+        "sdk_reuse",
+        "sdk_direct",
+        "once_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "prepared_ordinary_no_lemmas": "certified",
+        "prepared_ordinary_reuse": "certified",
+        "prepared_query_no_lemmas": "certified",
+        "prepared_query_reuse": "certified",
+        "sdk_default": "certified",
+        "sdk_reuse": "certified",
+        "sdk_direct": "certified",
+        "once_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_mask_all_4_each",
+      "shard": "each",
+      "case_sha256": "430699cb6115545a552b84841b6ef21d9f47d385cb1dba29303862fc7c4b0c42",
+      "routes": [
+        "each_prepared_ordinary_no_lemmas",
+        "each_prepared_ordinary_reuse",
+        "each_prepared_query_no_lemmas",
+        "each_prepared_query_reuse",
+        "each_default",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "each_prepared_ordinary_no_lemmas": "certified",
+        "each_prepared_ordinary_reuse": "certified",
+        "each_prepared_query_no_lemmas": "certified",
+        "each_prepared_query_reuse": "certified",
+        "each_default": "certified",
+        "each_ordinary": "certified"
+      }
+    }
+  ]
+}
