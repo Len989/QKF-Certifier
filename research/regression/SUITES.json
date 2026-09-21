@@ -27,9 +27,10 @@
     "research.source_forcing.test_source_forcing",
     "research.source_planner.test_planner",
     "research.source_lemmas.test_lemmas",
-    "research.applicable_summary.test_summary"
+    "research.applicable_summary.test_summary",
+    "research.causal_comparison.test_comparison"
   ],
   "new": [
-    "research.causal_comparison.test_comparison"
+    "research.sdk_comparison.test_comparison"
   ]
 }
