@@ -1,0 +1,32 @@
+{
+  "schema": "qkf-source-lemmas-development-protocol-v1",
+  "base_commit": "f33467297ad3fd4b1767541636ee7fbdf6a844ed",
+  "registration": "Commit exact sources, independent goals, guards, widths, budgets and expected outcomes before comparative execution. Preserve all failures and corrections. Local registration predates comparison; server publication may be later. Constructed development corpus, no external holdout.",
+  "population": "Mask implications and arithmetic low-bit source families, cold prefixes of 1/4/16 distinct target expressions, separately all-positive and fixed8 widths. All targets are fixed independently of the producer. They agree with the nonconstant negative predicate under popcount<=1, and are not claimed to be 16 semantically independent properties on that domain. Exact repeats, trivial native proof, wrong sources, representation gap, empty G, unsupported, budget and inactive horizon are retained separately.",
+  "scope": "One exact source/IR, semantic profile, selection, guard conjunction and width per batch; fixed PR41 native algebra with target counts 0..3. Closed conditional ground equality only, no universal lemma schema and no automatic scope weakening. Source is fully admitted before vacuity or early exit.",
+  "presentation": "Native E and derived E+ are separate. Every native fact is independently replayed. Each lemma has a positive ground proof in an earlier presentation, with bounded native prefix and strictly earlier lemma dependencies. Self/forward/cyclic dependencies and unchecked axioms are rejected. Ground nonconsequence is not a source counterexample.",
+  "checked_context": "Reuse PR36 strict immutable snapshot/source boundaries and checked process-local capability discipline, adapted to the native ground profile. Do not feed a receipt into the covered-source context. Reuse PR37 bounded acyclic JSON DAG transport directly. A fresh process loads all necessary native and lemma foundations before serving target obligations; hashes are identities, not semantic evidence.",
+  "planner": "Retain PR43 native question schemas and syntax-only policy with one fixed target-domain cap of four, independent of the first consumer. Native facts and failed questions share an ordinary exact cache across the batch. Check after each actual extension. Promote at most the first nontrivial successful source-to-consumer proof, requiring congruence and multiple actual premises; promotion never adds the desired conclusion without its checked prior proof. The same proof need not be searched again.",
+  "reuse": "A later consumer may use the checked lemma instead of its native derivation. Keep exact proof dependencies, and restore the omitted native basis if the bounded policy otherwise exhausts its questions. Every active-presentation extension retires the previous lower model. A model remains scoped only to its own finite basis and horizon. Exact repeated goals can reference an earlier fully checked obligation.",
+  "routes": [
+    "reuse: shared checked context, eligible ground lemma, Paper II query backend",
+    "direct_cache: same native policy, same eligible lemma and ordinary exact caches, ordinary unfiltered CC; shared bounded diagnostic when a full CC is disallowed",
+    "no_lemmas: same shared native facts and exact goal cache, Paper II backend without derived-lemma promotion"
+  ],
+  "failure": "Report checked equality, explicit empty domain, concrete guarded violation, insufficient horizon, finite nonconsequence and bounded candidate exhaustion separately. Budget/unsupported batch has no partial portable packet. Bounded witnesses are charged. No covered-source fallback is enabled in this experiment and no hidden full interface is permitted.",
+  "costs": [
+    "source admission and fixed guard domain",
+    "all successful/failed/cached native requests",
+    "candidate scans and every closure/checkpoint",
+    "lemma eligibility, promotion and derivation checking",
+    "query and exact-repeat caches for every route",
+    "all proof packing and built-in cold package verification",
+    "external fresh verification separately",
+    "full cold series totals and stored/expanded packet bytes"
+  ],
+  "A2": "Publish cold 1/4/16 results, including singleton loss and all failed attempts. Report the first measured break-even prefix, separately by source family/width and metric, or explicitly none within 16. Do not interpolate a universal threshold. Compare against the direct control allowed the same lemmas; any reuse gain also available to that control is not an exclusive I/II gain. Limit recommendation if reuse does not pay.",
+  "timing": "One sequential comparison per exact case and route, fresh semantic state, ordinary caches allowed; module caches persist. Instrumented elapsed is diagnostic, not a speedup benchmark. Do not select best runs or remove failures. Attribution separates shared source checking, native cache, derived lemma and backend.",
+  "A1": "Paper I stays disabled in this signed profile. PR42 physical phases and their lack of economic utility do not authorize a cross-profile transfer.",
+  "preservation": "Accepted PR43 files remain byte/mode identical except the existing current research workflow and additive regression registry. No new Lean theorem or installed CLI switch. PR45 integrated summary/application contract is not claimed.",
+  "base_tree": "8db6dd7b8963f4cbc3753993e0d5b57f7bd7196b"
+}

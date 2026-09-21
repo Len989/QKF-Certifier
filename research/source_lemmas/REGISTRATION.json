@@ -1,0 +1,790 @@
+{
+  "schema": "qkf-source-lemmas-registration-v1",
+  "base": "f33467297ad3fd4b1767541636ee7fbdf6a844ed",
+  "protocol_sha256": "8c752905da672662aa4ccc995b8ff7aff467f64e2efe3eb3243560e24ebc88b2",
+  "cases": [
+    {
+      "name": "mask_all_1",
+      "family": "mask",
+      "case_sha256": "9128c598a783e488d61a5f73add6d509b9413101b296451a18abba941bb64c5b",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "certified"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "certified"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "certified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "mask_all_4",
+      "family": "mask",
+      "case_sha256": "ef445a992c293d27d6b435a63bf0707d898711428f49f5b94b995f8177ebb1aa",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "mask_all_16",
+      "family": "mask",
+      "case_sha256": "b6d34bf2f53d399134512904f0ceb1725d612962435d3c2088464620f29577cb",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "mask_fixed8_1",
+      "family": "mask",
+      "case_sha256": "4a985f28cf5df1a71044a938607fe7a9f2b99752644147fc14cc7b3d41055bb7",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "certified"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "certified"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "certified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "mask_fixed8_4",
+      "family": "mask",
+      "case_sha256": "32503441d7eb34eaadaedfb630da2109175b369fc8fba77630e25ca21e3edaaa",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "mask_fixed8_16",
+      "family": "mask",
+      "case_sha256": "e60252666dfefea16a3100625e2bcd5647b38e0e9c97c300db7688847c9cf276",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "parity_all_1",
+      "family": "parity",
+      "case_sha256": "2827a9783b6989b696eba800750ffb437f384afdb4333731a7be584e8d1c1db4",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "certified"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "certified"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "certified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "parity_all_4",
+      "family": "parity",
+      "case_sha256": "39f2eb89dc8fd4970b58c7ddbd59ece29543fc3de50cc9de1da1ad00961c1ee9",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "parity_all_16",
+      "family": "parity",
+      "case_sha256": "22884120761a8fa38da99cd0b9f7d0bbc16de50bbf1deadc6c707374e6494eb2",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "parity_fixed8_1",
+      "family": "parity",
+      "case_sha256": "0962cd02890470a7f65c56f605f5a845a3fa4dfaaf5805a9eb2e8837a0c9f8e4",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "certified"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "certified"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "certified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "parity_fixed8_4",
+      "family": "parity",
+      "case_sha256": "c13aef46ffa3eeaf81b86f301f85bb1fa1a7eb25f9f401a29f5603961115f2c2",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "parity_fixed8_16",
+      "family": "parity",
+      "case_sha256": "da6ecc7bc2d4f06f1846a7369b21c9e6802e416921e7ac261d7e129858c0a7d5",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "exact_repeats_16",
+      "family": "ordinary_cache",
+      "case_sha256": "3e2514db9330e5222d1110b76643569564e42e8d085c4a84aac07465176f70d4",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "trivial_native_4",
+      "family": "promotion_declined",
+      "case_sha256": "cba7fc516e67116ab787035994c1e07395320f39723e6b24ec471351d8a40088",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "certified",
+            "certified",
+            "certified",
+            "certified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "mask_wrong_source",
+      "family": "negative",
+      "case_sha256": "d216c1ebbe8499c0cca1b3c4d078841b2c1c20f75836a251d9cdc5536eb8c3d7",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "refuted"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "refuted"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "refuted"
+          ]
+        }
+      }
+    },
+    {
+      "name": "parity_wrong_source",
+      "family": "negative",
+      "case_sha256": "0d58519de4d1dfa30eba492d144ecd7ad76034d7232e5e794113849c2f524696",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "refuted"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "refuted"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "refuted"
+          ]
+        }
+      }
+    },
+    {
+      "name": "representation_open",
+      "family": "unresolved",
+      "case_sha256": "acb2274e9668f591e0cc5e938742c6bbb53111454b08ddd356ae30900f1fba17",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "unresolved"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "unresolved"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "unresolved"
+          ]
+        }
+      }
+    },
+    {
+      "name": "empty_guard",
+      "family": "empty",
+      "case_sha256": "b3cae79e62a8038800c5c9e95dc1d3434ad1e41c8c8e17afece649847a865dc4",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "verified_empty_domain"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "verified_empty_domain"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "verified_empty_domain"
+          ]
+        }
+      }
+    },
+    {
+      "name": "unsupported_dead_statement",
+      "family": "unsupported",
+      "case_sha256": "6918d501336c2803ad6b304a89abcb29ac62a99f1b589ce74123492f0bc69c23",
+      "expected": {
+        "reuse": {
+          "status": "unsupported",
+          "goals": []
+        },
+        "direct_cache": {
+          "status": "unsupported",
+          "goals": []
+        },
+        "no_lemmas": {
+          "status": "unsupported",
+          "goals": []
+        }
+      }
+    },
+    {
+      "name": "fact_budget",
+      "family": "budget",
+      "case_sha256": "4eb5294b28ad30832fc39891e65ca7873724de9872fb47ac0aa0df3e84f25a49",
+      "expected": {
+        "reuse": {
+          "status": "budget_exhausted",
+          "goals": []
+        },
+        "direct_cache": {
+          "status": "budget_exhausted",
+          "goals": []
+        },
+        "no_lemmas": {
+          "status": "budget_exhausted",
+          "goals": []
+        }
+      }
+    },
+    {
+      "name": "inactive_horizon",
+      "family": "horizon",
+      "case_sha256": "ebd272fe5a3c2d411249cc11ec00a943a12141b04a8fcb84f70d083467d1d53b",
+      "expected": {
+        "reuse": {
+          "status": "completed",
+          "goals": [
+            "unresolved"
+          ]
+        },
+        "direct_cache": {
+          "status": "completed",
+          "goals": [
+            "unresolved"
+          ]
+        },
+        "no_lemmas": {
+          "status": "completed",
+          "goals": [
+            "unresolved"
+          ]
+        }
+      }
+    }
+  ]
+}
