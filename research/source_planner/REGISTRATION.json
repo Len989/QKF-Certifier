@@ -1,0 +1,397 @@
+{
+  "base": "01541ee22fd59dfe8be2d0453f942984c833d445",
+  "cases": [
+    {
+      "case_sha256": "374f52177d33819af3e8686355e7f16ef29924a6fea4d7905472d69052d5778f",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "equality_mask",
+      "name": "mask_31"
+    },
+    {
+      "case_sha256": "550d58c5c798652a73f8933d3d4b164eb3e5c078b2eb22d9b8e997239d07f8a6",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "equality_mask",
+      "name": "mask_61"
+    },
+    {
+      "case_sha256": "a4bf0da088f393470155fee9c913bca99ab5076ea24819fc811bac5a127219fe",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "equality_mask",
+      "name": "mask_bits"
+    },
+    {
+      "case_sha256": "034eb230548717f5f3a8cfde6f598bf0bce6b15a799b844872bd0f6919cec604",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "equality_mask",
+      "name": "mask_compound"
+    },
+    {
+      "case_sha256": "26fdc7a2f9a8a23a8955011eea5501e382073b548099a6af7e40e95a054ed945",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "equality_mask",
+      "name": "mask_two"
+    },
+    {
+      "case_sha256": "4ea2a95cab39c21d6b8016146489a1189538feea58effb6cb922bc8a17749bfa",
+      "expected": {
+        "eager": "refuted",
+        "ordinary": "refuted",
+        "planner": "refuted"
+      },
+      "family": "equality_mask",
+      "name": "mask_mutant"
+    },
+    {
+      "case_sha256": "30346e2e27bbd2e6c1f0db90480760aafba32937dd56ffcbc7c37b17ade9484d",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "equality_mask",
+      "name": "mask_fixed_alias"
+    },
+    {
+      "case_sha256": "48a881f197f98b742decba8e7304a9350cc904a298a04c52829670ab1b25a063",
+      "expected": {
+        "eager": "refuted",
+        "ordinary": "refuted",
+        "planner": "refuted"
+      },
+      "family": "equality_mask",
+      "name": "mask_alias_all_widths"
+    },
+    {
+      "case_sha256": "ee628386b15f6479bcaf06e59f463c41b5f090604d0c48ea947c1ff3f70d731f",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "equality_mask",
+      "name": "mask_guard_zero"
+    },
+    {
+      "case_sha256": "9690ab005b91c2d38fcbf70b4f57d3bbb1cd6135fce1fa63fef163b3e923705c",
+      "expected": {
+        "eager": "refuted",
+        "ordinary": "refuted",
+        "planner": "refuted"
+      },
+      "family": "equality_mask",
+      "name": "mask_guard_zero_changed"
+    },
+    {
+      "case_sha256": "8432cc4cf170bb45d6c6eda98ade7ccd93c5485b1275ccc8651e305ed3548378",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "arithmetic_low_bits",
+      "name": "double_even"
+    },
+    {
+      "case_sha256": "e1a3ad5f7910bedba930fc7b7174b84a474865e7716faaeb3c5e247e23eaf698",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "arithmetic_low_bits",
+      "name": "double_odd"
+    },
+    {
+      "case_sha256": "323f12a847c6a75f28c9a60c056a28699531db8a631c1f1a43821b16864cb40e",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "arithmetic_low_bits",
+      "name": "subtract_even"
+    },
+    {
+      "case_sha256": "2fcea0752bc27e4e1a86961ab9cf112622063d473434c1e6d2ab251626d4e5c5",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "arithmetic_low_bits",
+      "name": "xor_even"
+    },
+    {
+      "case_sha256": "8c2a3220c8a9104f30ac45a7a38d0eea25af8b49d86fa92bb0cbc307829e0392",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "arithmetic_low_bits",
+      "name": "arithmetic_compound"
+    },
+    {
+      "case_sha256": "cd0b45877a0ba18be99922b8c6f2988f573a1787d4ddfa30d9e685cfdce50962",
+      "expected": {
+        "eager": "refuted",
+        "ordinary": "refuted",
+        "planner": "refuted"
+      },
+      "family": "arithmetic_low_bits",
+      "name": "arithmetic_guarded_mutant"
+    },
+    {
+      "case_sha256": "2c8107f853139d166411e15e7ae63f5b71bd0299a10b6869b4c501681f4e7dbb",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "guards",
+      "name": "signed_guard"
+    },
+    {
+      "case_sha256": "ac98ab4b9ce42ef3d00fcd180faa405e2bc455364a5e0dc8f6c809e2124ebef3",
+      "expected": {
+        "eager": "refuted",
+        "ordinary": "refuted",
+        "planner": "refuted"
+      },
+      "family": "guards",
+      "name": "signed_changed_guard"
+    },
+    {
+      "case_sha256": "272c13b42ae717d5f03f64d74af5fd8976607d8d0c142875d0cf8102eb5d73d2",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "guards",
+      "name": "zero_bridge"
+    },
+    {
+      "case_sha256": "06ab2998e76a52773e9cbcef17c977e19f543e1a6edc95e4d2e85a10aacb3d6e",
+      "expected": {
+        "eager": "verified_empty_domain",
+        "ordinary": "verified_empty_domain",
+        "planner": "verified_empty_domain"
+      },
+      "family": "guards",
+      "name": "empty_guard"
+    },
+    {
+      "case_sha256": "e7ff603ad7927290bda81864bbbce8dde1fff003141c8c7adbf41198bb5a93b8",
+      "expected": {
+        "eager": "verified_empty_domain",
+        "ordinary": "verified_empty_domain",
+        "planner": "verified_empty_domain"
+      },
+      "family": "guards",
+      "name": "empty_fixed_guard"
+    },
+    {
+      "case_sha256": "669b32b033e4aca3ee4be40ae01ae4687756196f6f24354a5e43e18b052b0527",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "guards",
+      "name": "not_empty_other_width"
+    },
+    {
+      "case_sha256": "399d074cca6552faa9e402d970f4d4baa61e175183e3b302ece204f096746f3c",
+      "expected": {
+        "eager": "unresolved",
+        "ordinary": "unresolved",
+        "planner": "unresolved"
+      },
+      "family": "control",
+      "name": "power_open"
+    },
+    {
+      "case_sha256": "1b2cd071435802c9db46c9e54086d699975cd763e3101898280372b216e4a109",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "control",
+      "name": "power_guarded_fallback"
+    },
+    {
+      "case_sha256": "f304009c6e99ad984ddf4747b12a492d57ea13aaa7ab128ae6e5dbb703057bd8",
+      "expected": {
+        "eager": "refuted",
+        "ordinary": "refuted",
+        "planner": "refuted"
+      },
+      "family": "control",
+      "name": "power_wrong_guard"
+    },
+    {
+      "case_sha256": "9eb4d9b48e77812f2317e3394dae1b9f4243f23aa72338b6e990c0549cb1bd19",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "control",
+      "name": "fixed_fallback"
+    },
+    {
+      "case_sha256": "313d7ca27dd9d4ef3ecd0db97437c18d1771ca9b81b0d4853252df84e8cf2002",
+      "expected": {
+        "eager": "unresolved",
+        "ordinary": "unresolved",
+        "planner": "unresolved"
+      },
+      "family": "control",
+      "name": "late_open"
+    },
+    {
+      "case_sha256": "d01015d3295534f9be14f520b36edf017257d2f6d28ab8f935c7e6b41114527c",
+      "expected": {
+        "eager": "unsupported",
+        "ordinary": "unsupported",
+        "planner": "unsupported"
+      },
+      "family": "unsupported",
+      "name": "unsupported_shift"
+    },
+    {
+      "case_sha256": "05c4c3b070a3bdad4b08a0467cbd7a17e5696756148b2c626d03a3d6d9911a3a",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "equality_mask",
+      "name": "renamed_nested"
+    },
+    {
+      "case_sha256": "5a2f3d7563356bded8a5f2501277f76a7b0678118fc322fbab2c4dc016d5d3c1",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "arithmetic_low_bits",
+      "name": "arithmetic_locals_int"
+    },
+    {
+      "case_sha256": "4a3b79562d63fe04cee13986ba2c259b783a57d65c6f75d42910eba69044ed67",
+      "expected": {
+        "eager": "unsupported",
+        "ordinary": "unsupported",
+        "planner": "unsupported"
+      },
+      "family": "unsupported",
+      "name": "unsupported_dead_statement"
+    },
+    {
+      "case_sha256": "1c6eb083e38125b4a6af8f965bc9991a8beab4e579416d63d3b988ce6f97a5ef",
+      "expected": {
+        "eager": "budget_exhausted",
+        "ordinary": "budget_exhausted",
+        "planner": "budget_exhausted"
+      },
+      "family": "budget",
+      "name": "fact_budget"
+    },
+    {
+      "case_sha256": "531677df7f69681f005d1673ae559f5c38b9ed42073f224f2d828c0bd87a5f8a",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "goal_change",
+      "name": "goal_true"
+    },
+    {
+      "case_sha256": "e1a2d3f33f7bfb1c297412502ba115b1851f0147d1ccbfcac2362fdb41203904",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "goal_change",
+      "name": "goal_negative"
+    },
+    {
+      "case_sha256": "73694e9f47ac2861908c9f6c5e1b8d6921dbc6cf55b1bebcecf5dcf431d2bc15",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "equality_mask",
+      "name": "mask_short_circuit"
+    },
+    {
+      "case_sha256": "bc33d3db7301e3ea27e95523ad37ba07d7fdf00cc989e17dc7d67761dc837544",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "arithmetic_low_bits",
+      "name": "parity_short_circuit"
+    },
+    {
+      "case_sha256": "18af54ddf1a32bae8ce8808a89a6902ddd3b6cddddb65f11375ef8bb04506221",
+      "expected": {
+        "eager": "certified",
+        "ordinary": "certified",
+        "planner": "certified"
+      },
+      "family": "early_stop",
+      "name": "irrelevant_local"
+    },
+    {
+      "case_sha256": "1a1aae60fdc51fe587da778c133487f5ee0b9af989c3018fd473ce2269e0e69e",
+      "expected": {
+        "eager": "unresolved",
+        "ordinary": "unresolved",
+        "planner": "unresolved"
+      },
+      "family": "horizon",
+      "name": "inactive_horizon"
+    },
+    {
+      "case_sha256": "d0df2255fcb4c20997389fdeb40ddc59ed2a8c719a90aaf9f855af6fe08b01f8",
+      "expected": {
+        "eager": "unresolved",
+        "ordinary": "unresolved",
+        "planner": "unresolved"
+      },
+      "family": "horizon",
+      "name": "bounded_horizon"
+    }
+  ],
+  "protocol_sha256": "db79e6855899e06dc1d8fe95b5ee74ed444c753dbeec4c81d0eea5e636cd721f",
+  "schema": "qkf-source-planner-registration-v1"
+}
