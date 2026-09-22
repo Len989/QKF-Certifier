@@ -110,7 +110,7 @@ python -m formal.composition.check_ci reproduction/lean_composition --require-cl
 # Экспорт одного сохранённого входа.
 python -m formal.composition.export formal/composition/inputs/lemma_chain.json \
   reproduction/lemma_chain.lean --name lemma_chain
-lake -d formal/composition env lean ../../reproduction/lemma_chain.lean
+lake -d formal/composition env lean reproduction/lemma_chain.lean
 ```
 
 `check_ci` делает чистую сборку PR50 и PR51, повторяет экспорт побайтно,
