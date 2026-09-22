@@ -1,0 +1,52 @@
+{
+  "schema": "qkf-composition-lean-registration-v1",
+  "base": "bee1a2ad64668d86054fa91ab4d23bd399bc4789",
+  "roadmap": "docs/QKF_ROADMAP_v0.5_RU.md#pr51",
+  "toolchain": "leanprover/lean4:v4.33.0",
+  "dependencies": [
+    "Std",
+    "unchanged formal/ground (PR50)"
+  ],
+  "scope": "chronological typed equality composition under explicitly named native assumptions",
+  "required_theorems": [
+    "every admitted lemma follows from original native assumptions",
+    "consumer equality follows from original native assumptions",
+    "accepted typed consumer endpoints have the same actual value"
+  ],
+  "required_formats": [
+    "ground query",
+    "source lemma E/E+",
+    "direct consumer dependencies (including frozen PR49 outputs)"
+  ],
+  "required_controls": [
+    "future lemma prefix",
+    "self support",
+    "foreign guard",
+    "foreign source",
+    "foreign width domain",
+    "wrong via left endpoint",
+    "tampered Lean export",
+    "missing foundation",
+    "wrong premise endpoint",
+    "wrong signature",
+    "cached goal mismatch"
+  ],
+  "exclusions": [
+    "source rule soundness",
+    "Python JSON and name mapping correctness",
+    "lower models and minimal horizon",
+    "source semantics and whole transformer soundness",
+    "interface to runtime soundness",
+    "performance claims"
+  ],
+  "preservation": {
+    "accepted_base": "bee1a2ad64668d86054fa91ab4d23bd399bc4789",
+    "editable": [
+      "research/regression/SUITES.json"
+    ]
+  },
+  "ci_policy": "current regressions plus clean Lean build, exact axiom audit and reproducible exports; no new historical cost matrix",
+  "historical_reports": {
+    "pr50": "e210e63dbf19f045f3ad84b528a22810c1fb4d2e"
+  }
+}
