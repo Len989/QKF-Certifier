@@ -1,6 +1,14 @@
 name: Direct emission PR49 comparisons
 on:
   pull_request:
+    paths:
+      - 'research/**'
+      - '!research/regression/**'
+      - '!research/**/*.md'
+      - '!research/**/RESULTS.json'
+      - '*.py'
+      - 'pyproject.toml'
+      - 'requirements*.txt'
   workflow_dispatch:
 permissions:
   contents: read

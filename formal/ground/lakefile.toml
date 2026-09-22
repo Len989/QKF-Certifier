@@ -1,0 +1,12 @@
+name = "qkf_ground_soundness"
+version = "0.1.0"
+defaultTargets = ["Ground", "Audit", "Examples"]
+
+[[lean_lib]]
+name = "Ground"
+
+[[lean_lib]]
+name = "Audit"
+
+[[lean_lib]]
+name = "Examples"
