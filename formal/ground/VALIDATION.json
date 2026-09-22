@@ -1,0 +1,1232 @@
+{
+  "schema": "qkf-pr50-results-v1",
+  "engine": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+  "tree": "852ee6aef76d8a3cc9cfb2b126797112dc238424",
+  "registration": "69bbab6c5bc150df2bd57ff4a65eace02c6ebc42",
+  "formal_validation": {
+    "schema": "qkf-ground-lean-validation-v1",
+    "status": "passed",
+    "lean_version": "Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+    "revision": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+    "tree": "852ee6aef76d8a3cc9cfb2b126797112dc238424",
+    "source_dirty": false,
+    "source_sha256": {
+      "Audit.lean": "d73f6c9d3fcb0af98b10a3f2590bc4b3b0cd00ec58451c9aced06e68cad1aadb",
+      "Examples.lean": "c3734f9cfc731796436870323d31ab59426c0484563b42f3c729c75465365afc",
+      "FIXTURES.json": "83ec6230c95ab05a127e6c80106ea4217b2ace1635ab452c3df8ca66f5906b9d",
+      "Ground/Checker.lean": "3802471af975533ca968afacc717a2f09c8c5889420cd657219934837217146e",
+      "Ground/Soundness.lean": "478afbf1e7da4c869db0d31c94cfde70a2483fcf4c342f7e448d0adbe8d79195",
+      "Ground/Syntax.lean": "e41f1823fdf67d1f9ff460452a0c2b67a8cbaaaa2a643625bfc1667a8fb02617",
+      "Ground/Typed.lean": "af2190b25b9bb1b39057364603fa155dd47241063e5e01134b9ef0e5b8018c42",
+      "Ground.lean": "c64cd56a38549ac252e16bc522219acb9a1a9adf946ed8d0479d5e5d2e25e255",
+      "README_RU.md": "dce0df366522acd873d0304d7ac06ba9c0d59a7c20c052b0a0f8f68e10821157",
+      "REGISTRATION.json": "8c1492f3ffa510f91d10a15a6adb81d5db91d2aead0003aa593ef3c6bbaca6e0",
+      "__init__.py": "964a45ea396371efd30d08517102ff0eb434f3968ec569140c6986c2210162f3",
+      "check_ci.py": "92990db7910b42b5876484b713fff8252a739f51e1b0c9aafe289866e6fcafc7",
+      "evidence/active_prefix.certificate.json": "5746f1aa7542e7a27ec65aebaf62945e1a8e2772cdaa3b4c3bb76c6787b68bc2",
+      "evidence/active_prefix.decoded.json": "9c6d8346702e4bb5f2423f307ef61701859897282080efab3d6c2e0991cbb3bb",
+      "evidence/active_prefix.request.json": "fb6835e0bf1c0d6ba1833c68e3c860e354da53040df8a74809840c9e7069994e",
+      "evidence/empty.certificate.json": "95554f17decafc7580d2e136f2c5bad08013e61abd970f1c61257902dd6961a6",
+      "evidence/empty.decoded.json": "b62c9c04024c952a516cb04d2a1601689eebb43ee8f9f29c91a7f74bda570f08",
+      "evidence/empty.request.json": "2c3afde73d19978b3b7fd16abd148d570e81cc0a90b63755df5340756ccc8880",
+      "evidence/flattened_nonminimal.certificate.json": "3b159aca83d91744f354e6e3c3e17b73b3cf3ae7354b145219e4711c9fc618c1",
+      "evidence/flattened_nonminimal.decoded.json": "ea05a8a98520bd5b659487c8cf4b1b1ba55cc9c2f46c42541ec00f756bf41863",
+      "evidence/flattened_nonminimal.request.json": "b0e446704242d45a66df7d7029dbf878e4e1957f08fd206c566880c9c06d7df7",
+      "evidence/gap.certificate.json": "2c6ba7e04ef762c11fe68db42004f94d36164e119acf1e1137ad205e120e35f0",
+      "evidence/gap.decoded.json": "9d2eb3732b3bbabda5ee6ae5b4c2a2de67303e58215c6ecbafcf9b471357a077",
+      "evidence/gap.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reflexive.certificate.json": "9228f15769f4240583872da0fc63e491af196f74b910d89b966c8e1bff573ba6",
+      "evidence/reflexive.decoded.json": "c90f6ea5b08af25725a9c8236a4928c1c30a81343feb463e17eb5c810bdd33d7",
+      "evidence/reflexive.request.json": "6b6ef7bf3c4cca11f5e04bc1a519e72054423296da6d3ebe5a1a85bbf2ea79a7",
+      "evidence/reject_axiom_bad_index.certificate.json": "736c2a6e3f757162eb622fdcc2c32c3093585c101abd9bad9e72ec322f3053b4",
+      "evidence/reject_axiom_bad_index.decoded.json": "aa8b27b9ded54fb4231a916343c9daf59caece6be206e4cd889934037bea3307",
+      "evidence/reject_axiom_bad_index.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reject_bad_event_reference.certificate.json": "80471113d5ed4e2558a64fd3aa500da232a5c9b3a70e6fcf5b3e50453beab30e",
+      "evidence/reject_bad_event_reference.decoded.json": "361acada69917d9b38763dcee89cd5c2991f0cf6177ef64bb2a054253f05ad4f",
+      "evidence/reject_bad_event_reference.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reject_broken_goal_path.certificate.json": "3ffe8dad94c356a3882d48bf4a9b2e19d84150d3614ff17f26355ea15958d301",
+      "evidence/reject_broken_goal_path.decoded.json": "82c86081735acbf59972ef9d3520701c740a73e64498c7f2e06161fe3746752c",
+      "evidence/reject_broken_goal_path.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reject_broken_premise_path.certificate.json": "7a298c4aef68afd5b41ddac47a4f8fbbe7c6182412efe80a9fac7709dfa335de",
+      "evidence/reject_broken_premise_path.decoded.json": "7af006d068cb47cf3b3c92549769781589d98bef828409c592f39d4c66031c28",
+      "evidence/reject_broken_premise_path.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reject_congruence_wrong_head.certificate.json": "9cfe7bfea92c7093242b13a79582950d238fd281a4380510da61bb28d5326c03",
+      "evidence/reject_congruence_wrong_head.decoded.json": "4f3bb74b3e221ea7fa95d01cd3bbd50c2a79fca213891b6fbcb2b3bd0c6606e9",
+      "evidence/reject_congruence_wrong_head.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reject_empty_sort_declaration.decoded.json": "1cfab2b0965e51978689057ce9eba9e4657fe31e0c6b68f075b084fe54fdcbeb",
+      "evidence/reject_equation_wrong_sort.certificate.json": "4debb2f963ba842c43518ae6b47e9dc87b2f335d9f4b33abe09a8252bb3a3d7c",
+      "evidence/reject_equation_wrong_sort.decoded.json": "4dd57d87ef036b06928fbdfa56cbe7632071138bafab9a810c285f24f2cf3a11",
+      "evidence/reject_equation_wrong_sort.request.json": "1a98eb13ac4645be00f5c3de80973cb30615f13ea9ae2381f7432ccd81b23296",
+      "evidence/reject_event_bad_endpoint.certificate.json": "db35f3a8129039ca724a2807718a4e2578e1e66763c6bc0fcab3891490ee28e9",
+      "evidence/reject_event_bad_endpoint.decoded.json": "c85526f7aafa5918582e9a25794ae9134548c70c0874b06946414a85c7adee6b",
+      "evidence/reject_event_bad_endpoint.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reject_event_wrong_sort.certificate.json": "8daa610dc0fad520276abbd29dce502ab9967588cabb52605bb9358f8845d27b",
+      "evidence/reject_event_wrong_sort.decoded.json": "736cc3ffbf320ec5909007ca6271910b73c731b54cb286fb5922005071818869",
+      "evidence/reject_event_wrong_sort.request.json": "7deaf7d18fe79ccb82c11976e789d787118e5f4328786c58e1db1515c10db1df",
+      "evidence/reject_extra_goal.decoded.json": "13d75225c829af5629b2c064d7fab11701ec0d38ba8d6266dfdceb054e040a3c",
+      "evidence/reject_extra_premise.certificate.json": "1bac7f7a8f59da042babe66214679ab65c7faf0d1a9f47f8d3419cdf624b3abc",
+      "evidence/reject_extra_premise.decoded.json": "34c26d16c4624e0810e4cf9ea85efe8bfad9aa263256d9a811c91c8a5a86f413",
+      "evidence/reject_extra_premise.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reject_forward_event.certificate.json": "928266b0c6435ea5ae11332e95baf3fc6fa2ffea3a7aa501c793bb4d1cb2b9b7",
+      "evidence/reject_forward_event.decoded.json": "6b2cab3850d44456af6dc93877ec982c4cc971a4501990785d9b72a433e061bb",
+      "evidence/reject_forward_event.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reject_inactive_event.certificate.json": "0bf703736f28c42621bb45365274efbc9d81329f8dd05ceb1eb0d86d3b885a62",
+      "evidence/reject_inactive_event.decoded.json": "22796972c347a4dc492799a53cc5f9b9d8ef6027e80fd07c23b2478a5bebf32c",
+      "evidence/reject_inactive_event.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reject_missing_goal.decoded.json": "0e6cf13064da0d372ef69d8fd2c51c290c78998710d7d1b947bda197a5084420",
+      "evidence/reject_missing_premise.certificate.json": "6027a943b23e7f89065e62405e6c6de50a06b394666744a7dfbd317cdd6dad64",
+      "evidence/reject_missing_premise.decoded.json": "06bca405762dff2976cb44fd676c37a7fef54da7d0fc0ccecb2407bfbbe46575",
+      "evidence/reject_missing_premise.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reject_node_bad_reference.certificate.json": "6e0453ae243f2bd58b805f27b1dbdd377d338cacb0ec931ab7636ce4ec34603e",
+      "evidence/reject_node_bad_reference.decoded.json": "3172aa079dbcc346bd20502d2adbb5adaa9a4185636870a8fd18660103514ca0",
+      "evidence/reject_node_bad_reference.request.json": "e053c82426d5f1fb73d8a106e05de1f08db9da455c8393f48cbcf741a05c7d9b",
+      "evidence/reject_node_forward_reference.certificate.json": "0da381d3f94e1f707b713f21250edc63ab32a453fcf92b971a299d02952d1f76",
+      "evidence/reject_node_forward_reference.decoded.json": "825b840cb571f05f3ca280206a07898cda58602a0e6c40eb89bd71d8e8f1f75c",
+      "evidence/reject_node_forward_reference.request.json": "8693ea8ea85dfb839fd87c8f1f083b56079448d9e1614f8bce2d2ffbe21792e9",
+      "evidence/reject_node_self_reference.certificate.json": "462d5771ede066533073ba0b372cabac32dead7eb8a0ad73db1b3d3f7bec5975",
+      "evidence/reject_node_self_reference.decoded.json": "99ac6a52a519aac87089ab7f6f1e14370ef40e75762c5f71dde0d4c7f57a0be8",
+      "evidence/reject_node_self_reference.request.json": "cd6f12353201a06b344f57a8d12bea2c6bea039250f53b23adc213a3a18dbbed",
+      "evidence/reject_node_wrong_arity.certificate.json": "75a09d775eef63b43c667a999a2808c27da01bf2fce081349c816e9a7913d7d8",
+      "evidence/reject_node_wrong_arity.decoded.json": "7bfdbe66b872f61f8f3e912ec0f72a25ed8418eda5cc88820af5d1f3bea840ba",
+      "evidence/reject_node_wrong_arity.request.json": "a9e738bacb12e24376759ddd60831e514a28be2a1886a31b5a1703df7194e9c7",
+      "evidence/reject_node_wrong_sort.certificate.json": "abe2bbbdff93d37477dde8261da372139ba25d4604a6029cd754dfd7a7233a04",
+      "evidence/reject_node_wrong_sort.decoded.json": "eaa5d3ac1d9172fd1a74e8155d53f72e912370109e73c0608b1653183fdbdf05",
+      "evidence/reject_node_wrong_sort.request.json": "8e900d64650dabc15a0b7dc74e776c12100a7986436f5e4420883a83874d0881",
+      "evidence/reject_out_of_range_sort.decoded.json": "1fb4bd6bb16dd2bc8bb2fb19c699268ef23e6b69c47c6416dc40a23c8a3347e7",
+      "evidence/reject_query_wrong_sort.certificate.json": "5ccd74d42d9368eecf71b21468d31fc2acd5e6acfe56cd5c44422eaa0a9294be",
+      "evidence/reject_query_wrong_sort.decoded.json": "f8edd02f74596fcd0eb446cd61928ca799b997136f79cebee984bba48264e89f",
+      "evidence/reject_query_wrong_sort.request.json": "539bd8ae107050dee62533fcee5c05e5b550b58a57afbf891ce37d101ca91a5c",
+      "evidence/reject_self_event.certificate.json": "c3f942aec9e5b64ed6e643b21c5d87a3d6556d996cb3dfe18f38eac161e61db8",
+      "evidence/reject_self_event.decoded.json": "9b61144ba8c3a95c2b362332159aacb049f3ac6451a1c7e6d0c09f4dfd798051",
+      "evidence/reject_self_event.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reject_substituted_axiom.certificate.json": "f41ae61e75930e65980dc2518e88e777e7ad49ce886768230f2e83cdf943256e",
+      "evidence/reject_substituted_axiom.decoded.json": "9e8b75bff9cdd2bd6dc23239ba285cfa850f1bf5ee06daa71c551cb0a8550abb",
+      "evidence/reject_substituted_axiom.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reject_unknown_numeric_head.decoded.json": "9c41436f6d30a30684fda944fea928dd78727692f4440da7b0674f8657722829",
+      "evidence/reject_unused_bad_event.certificate.json": "4f0418232660a7d34a734076d5d833166feea6f736eb0915fbd221877510b491",
+      "evidence/reject_unused_bad_event.decoded.json": "ce5eb3e60135e8b3e0f8f69e7b4032c0f38b433e4abd7eca91f50504869338e4",
+      "evidence/reject_unused_bad_event.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reject_wrong_event_depth.certificate.json": "9007a8f1c5de971fca95c3b04d0c3a57de37b1c8cbf59ecf640679ce39e8ee88",
+      "evidence/reject_wrong_event_depth.decoded.json": "f59b157a660656d4e8a148754aafc70c1071c4dd37ae90ceb130c5828fe66fc2",
+      "evidence/reject_wrong_event_depth.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reject_wrong_goal_depth.certificate.json": "2ecc2b44b8fd63ea4a0572c24acd07034bb7360e3b9c9e61e970afa5f36c1b52",
+      "evidence/reject_wrong_goal_depth.decoded.json": "a08bd4b33ebe4e8b8762f9381f8e94e9efed12da1517b01151c9aeacd580781a",
+      "evidence/reject_wrong_goal_depth.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/reverse_axioms.certificate.json": "2322a3fc92d2e75b251f3954ef5114288927d8a6241b6cc73c67bd21b1fb9635",
+      "evidence/reverse_axioms.decoded.json": "3c89069d480b148dedf63ecace228299a964031c460f8f4b092ba275bd63e99e",
+      "evidence/reverse_axioms.request.json": "ea2b90b31301fe1ec69abb2b315f0c335e08cb77262807cb24ffbf5a6d725ae1",
+      "evidence/shared_typed.certificate.json": "8fb2536bbca80478ecffc3237604580f78333aeaffdcfd2d793c55443d18f496",
+      "evidence/shared_typed.decoded.json": "dfd093c65c400f356d9ed47dc5891269876e59cde45ec39d98c4053c7da10a9f",
+      "evidence/shared_typed.request.json": "15008b88f80c4f56bd1f310ffef4cdf39383003f6999b1edc0c50e69f4236c1f",
+      "evidence/transitive_chain.certificate.json": "7a99151cfdca15295aa5f907fa9305ded60fed3c5716fb314ad109f38bb8b362",
+      "evidence/transitive_chain.decoded.json": "79174255948aa33ce1f3b3f9322b33e1fbe7de15924a344da8dee23057049078",
+      "evidence/transitive_chain.request.json": "4f067fd8b9990e73500d6c09a0ac3b26e93a4dae66e87a8abc4db859b0ce5dd6",
+      "evidence/typed_binary.certificate.json": "5d3c4d6975bc21c315eeabe1df6096b161826cf8aa27472f59f170cd0a50f06e",
+      "evidence/typed_binary.decoded.json": "c5b61e2a034d913d3e44b468cf3107f572a6c230a67d6b2fb612bf690e37e01f",
+      "evidence/typed_binary.request.json": "7deaf7d18fe79ccb82c11976e789d787118e5f4328786c58e1db1515c10db1df",
+      "export.py": "bd7b5b18472489dd13bc80d788f2231a29f70ea78f80859eaafb6b50dfafb8c8",
+      "fixtures.py": "caa95d861594462ee575ca31d5a60e04e2a9b893834943e58088e4f13c397436",
+      "lake-manifest.json": "92b2a18cb2eedaf03ba3b7f76184d5da7d0a38ab38541ae7dc6fa84569bb8ba0",
+      "lakefile.toml": "a31e48ef30f238abe11fb7621ec7c3c628c230f615173d16cc9452241b4e7f18",
+      "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b",
+      "preserve.py": "6e07db0909e7bb3f7af7bc8327a245c6cad886dc46931cce797f6cc5f048ffdf",
+      "test_export.py": "933a99f2b96b9c6c02d1a4975bb0e2324ec9952d0ed1c30d93003ad758140c4e"
+    },
+    "preservation": {
+      "base": "55942faaeb253f19b849e9a52ea99cfd4b240a77",
+      "preserved_files": 2218,
+      "explicit_edit_exceptions": [
+        ".github/workflows/direct-emission.yml",
+        "research/regression/SUITES.json"
+      ],
+      "inventory_sha256": "662c32dc104007b01b420a3b25877c4a2ccb96661adb918b09faea9afd99da64"
+    },
+    "positive_dags": 9,
+    "negative_dags": 28,
+    "positive_goals": 32,
+    "general_theorems_audited": 13,
+    "axioms": {
+      "QKFGround.walk_sound": [
+        "propext",
+        "Quot.sound"
+      ],
+      "QKFGround.path_sound": [
+        "propext",
+        "Quot.sound"
+      ],
+      "QKFGround.arguments_sound": [
+        "propext",
+        "Quot.sound"
+      ],
+      "QKFGround.event_sound": [
+        "propext",
+        "Quot.sound"
+      ],
+      "QKFGround.events_sound": [
+        "propext",
+        "Quot.sound"
+      ],
+      "QKFGround.goals_sound": [
+        "propext",
+        "Quot.sound"
+      ],
+      "QKFGround.check_sound": [
+        "propext",
+        "Quot.sound"
+      ],
+      "QKFGround.typed_check_sound": [
+        "propext",
+        "Quot.sound"
+      ],
+      "QKFGround.checkRaw_sound": [
+        "propext",
+        "Quot.sound"
+      ],
+      "QKFGround.eval_typed": [
+        "propext",
+        "Quot.sound"
+      ],
+      "QKFGround.typed_goal_sound": [
+        "propext",
+        "Quot.sound"
+      ],
+      "QKFGround.accepted_query_typed": [
+        "propext",
+        "Quot.sound"
+      ],
+      "QKFGround.accepted_goal_values": [
+        "propext",
+        "Quot.sound"
+      ],
+      "QKFGround.Examples.gap_accepted": [
+        "propext"
+      ],
+      "QKFGround.Examples.flattened_nonminimal_accepted": [
+        "propext"
+      ],
+      "QKFGround.Examples.shared_typed_accepted": [
+        "propext"
+      ],
+      "QKFGround.Examples.typed_binary_accepted": [
+        "propext"
+      ],
+      "QKFGround.Examples.reflexive_accepted": [
+        "propext"
+      ],
+      "QKFGround.Examples.reverse_axioms_accepted": [
+        "propext"
+      ],
+      "QKFGround.Examples.active_prefix_accepted": [
+        "propext"
+      ],
+      "QKFGround.Examples.empty_accepted": [
+        "propext"
+      ],
+      "QKFGround.Examples.transitive_chain_accepted": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_node_self_reference_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_node_forward_reference_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_node_bad_reference_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_node_wrong_arity_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_node_wrong_sort_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_equation_wrong_sort_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_query_wrong_sort_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_event_wrong_sort_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_event_bad_endpoint_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_substituted_axiom_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_axiom_bad_index_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_congruence_wrong_head_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_missing_premise_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_extra_premise_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_forward_event_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_self_event_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_bad_event_reference_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_broken_premise_path_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_broken_goal_path_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_wrong_goal_depth_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_wrong_event_depth_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_inactive_event_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_unused_bad_event_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_unknown_numeric_head_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_missing_goal_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_extra_goal_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_empty_sort_declaration_rejected": [
+        "propext"
+      ],
+      "QKFGround.Examples.reject_out_of_range_sort_rejected": [
+        "propext"
+      ]
+    },
+    "integrity_controls": [
+      "forged-export",
+      "proof-hole",
+      "new-axiom"
+    ],
+    "python_tests": 17,
+    "python_modes": [
+      "normal",
+      "-O"
+    ],
+    "commands": [
+      {
+        "label": "version",
+        "args": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "returncode": 0,
+        "expected_success": true
+      },
+      {
+        "label": "clean",
+        "args": [
+          "lake",
+          "clean"
+        ],
+        "returncode": 0,
+        "expected_success": true
+      },
+      {
+        "label": "build",
+        "args": [
+          "lake",
+          "build"
+        ],
+        "returncode": 0,
+        "expected_success": true
+      },
+      {
+        "label": "axioms",
+        "args": [
+          "lake",
+          "env",
+          "lean",
+          "/home/runner/work/QKF-Certifier/QKF-Certifier/reproduction/lean_ground/Axioms.lean"
+        ],
+        "returncode": 0,
+        "expected_success": true
+      },
+      {
+        "label": "forged-export-rejected",
+        "args": [
+          "lake",
+          "env",
+          "lean",
+          "/home/runner/work/QKF-Certifier/QKF-Certifier/reproduction/lean_ground/ForgedExport.lean"
+        ],
+        "returncode": 1,
+        "expected_success": false
+      },
+      {
+        "label": "proof-hole-rejected",
+        "args": [
+          "lake",
+          "env",
+          "lean",
+          "/home/runner/work/QKF-Certifier/QKF-Certifier/reproduction/lean_ground/proof-hole.lean"
+        ],
+        "returncode": 1,
+        "expected_success": false
+      },
+      {
+        "label": "new-axiom-rejected",
+        "args": [
+          "lake",
+          "env",
+          "lean",
+          "/home/runner/work/QKF-Certifier/QKF-Certifier/reproduction/lean_ground/new-axiom.lean"
+        ],
+        "returncode": 1,
+        "expected_success": false
+      },
+      {
+        "label": "python-normal",
+        "args": [
+          "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+          "-m",
+          "unittest",
+          "formal.ground.test_export"
+        ],
+        "returncode": 0,
+        "expected_success": true
+      },
+      {
+        "label": "python-optimized",
+        "args": [
+          "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+          "-O",
+          "-m",
+          "unittest",
+          "formal.ground.test_export"
+        ],
+        "returncode": 0,
+        "expected_success": true
+      }
+    ],
+    "scope": "F1a: decoded positive typed ground-DAG soundness; F1b remains open"
+  },
+  "independent_artifact_verification": {
+    "status": "verified",
+    "engine": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+    "tree": "852ee6aef76d8a3cc9cfb2b126797112dc238424",
+    "artifact_id": 10687264323,
+    "artifact_sha256": "45df725d944763c1f867ca3b967acb9b0729b38963048ff5ec7d61596ce889c1",
+    "source_files": 120,
+    "complete_source_files": 2344,
+    "positive_dags": 9,
+    "positive_goals": 32,
+    "negative_dags": 28,
+    "audited_declarations": 50,
+    "preserved_files": 2218
+  },
+  "github_ci": {
+    "engine": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+    "runs": [
+      {
+        "id": 35712568186,
+        "name": "Signed source model bridge (archived PR28)",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568186",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:51:03Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568330,
+        "name": "Conditional ceiling composition",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568330",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:50:55Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568176,
+        "name": "Graal create joint carrier",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568176",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:52:41Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568260,
+        "name": "Observation inference v2",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568260",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:52:46Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568165,
+        "name": "Lean create caller invariants",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568165",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:52:50Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568219,
+        "name": "Signed atomic row runtime (archived PR30)",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568219",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:53:28Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568144,
+        "name": "Upstream primitive transfer",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568144",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:53:41Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568338,
+        "name": "Unified research run",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568338",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:54:07Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568170,
+        "name": "Exact masked successor",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568170",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:54:09Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568126,
+        "name": "Frozen inference holdout v1",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568126",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:54:04Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568367,
+        "name": "Observation inference v1",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568367",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:54:15Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568196,
+        "name": "Observation inference v3",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568196",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:54:43Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568425,
+        "name": "Signed observation closure (archived PR29)",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568425",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:54:42Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568343,
+        "name": "Lean ground soundness PR50",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568343",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:54:52Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568158,
+        "name": "Composed masked ceiling",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568158",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:55:17Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568153,
+        "name": "Signed guarded residual coverage (archived PR35)",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568153",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:55:25Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568149,
+        "name": "Unified target runner",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568149",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:55:28Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568499,
+        "name": "Signed row target proofs (archived PR31)",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568499",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:55:30Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568427,
+        "name": "Signed concrete witness without factor (archived PR34)",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568427",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:55:36Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568145,
+        "name": "Signed source reduction before carrier (archived PR33)",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568145",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:55:40Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568333,
+        "name": "Signed terminal predicates",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568333",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:55:43Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568251,
+        "name": "Research and Lean",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568251",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:56:19Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568265,
+        "name": "Block A acceptance comparison (archived PR32)",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568265",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:56:28Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568306,
+        "name": "Test and build",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568306",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:56:10Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568376,
+        "name": "Frozen v3 historical regression",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568376",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:56:32Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568283,
+        "name": "Typed targets and Lean integration",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568283",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T09:57:51Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712568101,
+        "name": "Current research regressions and checked context",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712568101",
+        "created_at": "2026-09-22T09:49:33Z",
+        "updated_at": "2026-09-22T10:08:49Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712561895,
+        "name": "Test and build",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712561895",
+        "created_at": "2026-09-22T09:49:29Z",
+        "updated_at": "2026-09-22T09:51:38Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712561809,
+        "name": "Composed masked ceiling",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712561809",
+        "created_at": "2026-09-22T09:49:29Z",
+        "updated_at": "2026-09-22T09:52:02Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712561845,
+        "name": "Research and Lean",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712561845",
+        "created_at": "2026-09-22T09:49:29Z",
+        "updated_at": "2026-09-22T09:53:12Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712561812,
+        "name": "Typed targets and Lean integration",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712561812",
+        "created_at": "2026-09-22T09:49:29Z",
+        "updated_at": "2026-09-22T09:54:31Z",
+        "run_attempt": 1
+      },
+      {
+        "id": 35712561882,
+        "name": "Unified research run",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "db3ff5e98252cd63afe651158a926f1c4936d12f",
+        "url": "https://github.com/Len989/QKF-Certifier/actions/runs/35712561882",
+        "created_at": "2026-09-22T09:49:29Z",
+        "updated_at": "2026-09-22T09:55:24Z",
+        "run_attempt": 1
+      }
+    ],
+    "regressions": [
+      {
+        "python": "3.10",
+        "job_id": 106696410515,
+        "conclusion": "success",
+        "started_at": "2026-09-22T09:50:19Z",
+        "completed_at": "2026-09-22T10:08:48Z",
+        "test_counts": [
+          17,
+          17,
+          1113,
+          1113
+        ],
+        "tests": [
+          {
+            "tests": 17,
+            "seconds": 0.199
+          },
+          {
+            "tests": 17,
+            "seconds": 0.196
+          },
+          {
+            "tests": 1113,
+            "seconds": 388.421
+          },
+          {
+            "tests": 1113,
+            "seconds": 389.864
+          }
+        ],
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T09:50:20Z",
+            "completed_at": "2026-09-22T09:50:21Z"
+          },
+          {
+            "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T09:50:21Z",
+            "completed_at": "2026-09-22T09:50:23Z"
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T09:50:23Z",
+            "completed_at": "2026-09-22T09:50:23Z"
+          },
+          {
+            "name": "Run actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T09:50:23Z",
+            "completed_at": "2026-09-22T09:50:23Z"
+          },
+          {
+            "name": "Record complete current source and preserved base",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T09:50:23Z",
+            "completed_at": "2026-09-22T09:50:26Z"
+          },
+          {
+            "name": "Registered new and prior CURRENT tree tests",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T09:50:26Z",
+            "completed_at": "2026-09-22T10:03:28Z"
+          },
+          {
+            "name": "Shared contexts, independent goals, separate Java and complete cost records",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:03:28Z",
+            "completed_at": "2026-09-22T10:03:41Z"
+          },
+          {
+            "name": "Fresh context replay with guards before imports",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:03:41Z",
+            "completed_at": "2026-09-22T10:03:48Z"
+          },
+          {
+            "name": "Compact proof DAGs and requested separating explanations",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:03:48Z",
+            "completed_at": "2026-09-22T10:04:07Z"
+          },
+          {
+            "name": "Pure-row forcing, kernel saturation, and independent finite references",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:04:07Z",
+            "completed_at": "2026-09-22T10:04:20Z"
+          },
+          {
+            "name": "Pure-row semantic replay without producers or signed profiles",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:04:20Z",
+            "completed_at": "2026-09-22T10:04:31Z"
+          },
+          {
+            "name": "Semantic-work contract, complete cost ledger and registered controls",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:04:31Z",
+            "completed_at": "2026-09-22T10:05:40Z"
+          },
+          {
+            "name": "Registered ground-query conformance and independent certificates",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:05:40Z",
+            "completed_at": "2026-09-22T10:06:15Z"
+          },
+          {
+            "name": "Guarded source facts, independent consumer proofs and fair direct control",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:06:15Z",
+            "completed_at": "2026-09-22T10:06:19Z"
+          },
+          {
+            "name": "Source-bound local forcing and fair direct range controls",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:06:19Z",
+            "completed_at": "2026-09-22T10:06:32Z"
+          },
+          {
+            "name": "Goal-driven native questions, early stopping and checked residual obligations",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:06:32Z",
+            "completed_at": "2026-09-22T10:06:48Z"
+          },
+          {
+            "name": "Checked cross-goal lemmas, fair caches and cold A2 series",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:06:48Z",
+            "completed_at": "2026-09-22T10:08:22Z"
+          },
+          {
+            "name": "Direct applicable summaries, source-free application and format adapters",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:08:22Z",
+            "completed_at": "2026-09-22T10:08:41Z"
+          },
+          {
+            "name": "Batch CLI and current-tree postflight",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:08:41Z",
+            "completed_at": "2026-09-22T10:08:42Z"
+          },
+          {
+            "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:08:42Z",
+            "completed_at": "2026-09-22T10:08:46Z"
+          },
+          {
+            "name": "Post Run actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:08:46Z",
+            "completed_at": "2026-09-22T10:08:46Z"
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:08:46Z",
+            "completed_at": "2026-09-22T10:08:46Z"
+          },
+          {
+            "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:08:46Z",
+            "completed_at": "2026-09-22T10:08:46Z"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:08:46Z",
+            "completed_at": "2026-09-22T10:08:46Z"
+          }
+        ]
+      },
+      {
+        "python": "3.12",
+        "job_id": 106696410242,
+        "conclusion": "success",
+        "started_at": "2026-09-22T09:52:40Z",
+        "completed_at": "2026-09-22T10:07:25Z",
+        "test_counts": [
+          17,
+          17,
+          1113,
+          1113
+        ],
+        "tests": [
+          {
+            "tests": 17,
+            "seconds": 0.198
+          },
+          {
+            "tests": 17,
+            "seconds": 0.198
+          },
+          {
+            "tests": 1113,
+            "seconds": 294.902
+          },
+          {
+            "tests": 1113,
+            "seconds": 288.845
+          }
+        ],
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T09:52:41Z",
+            "completed_at": "2026-09-22T09:52:43Z"
+          },
+          {
+            "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T09:52:43Z",
+            "completed_at": "2026-09-22T09:52:45Z"
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T09:52:45Z",
+            "completed_at": "2026-09-22T09:52:45Z"
+          },
+          {
+            "name": "Run actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T09:52:45Z",
+            "completed_at": "2026-09-22T09:52:45Z"
+          },
+          {
+            "name": "Record complete current source and preserved base",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T09:52:45Z",
+            "completed_at": "2026-09-22T09:52:46Z"
+          },
+          {
+            "name": "Registered new and prior CURRENT tree tests",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T09:52:46Z",
+            "completed_at": "2026-09-22T10:02:33Z"
+          },
+          {
+            "name": "Shared contexts, independent goals, separate Java and complete cost records",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:02:33Z",
+            "completed_at": "2026-09-22T10:02:45Z"
+          },
+          {
+            "name": "Fresh context replay with guards before imports",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:02:45Z",
+            "completed_at": "2026-09-22T10:02:49Z"
+          },
+          {
+            "name": "Compact proof DAGs and requested separating explanations",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:02:49Z",
+            "completed_at": "2026-09-22T10:03:06Z"
+          },
+          {
+            "name": "Pure-row forcing, kernel saturation, and independent finite references",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:03:06Z",
+            "completed_at": "2026-09-22T10:03:17Z"
+          },
+          {
+            "name": "Pure-row semantic replay without producers or signed profiles",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:03:17Z",
+            "completed_at": "2026-09-22T10:03:25Z"
+          },
+          {
+            "name": "Semantic-work contract, complete cost ledger and registered controls",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:03:25Z",
+            "completed_at": "2026-09-22T10:04:45Z"
+          },
+          {
+            "name": "Registered ground-query conformance and independent certificates",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:04:45Z",
+            "completed_at": "2026-09-22T10:05:16Z"
+          },
+          {
+            "name": "Guarded source facts, independent consumer proofs and fair direct control",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:05:16Z",
+            "completed_at": "2026-09-22T10:05:19Z"
+          },
+          {
+            "name": "Source-bound local forcing and fair direct range controls",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:05:19Z",
+            "completed_at": "2026-09-22T10:05:29Z"
+          },
+          {
+            "name": "Goal-driven native questions, early stopping and checked residual obligations",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:05:29Z",
+            "completed_at": "2026-09-22T10:05:43Z"
+          },
+          {
+            "name": "Checked cross-goal lemmas, fair caches and cold A2 series",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:05:43Z",
+            "completed_at": "2026-09-22T10:07:02Z"
+          },
+          {
+            "name": "Direct applicable summaries, source-free application and format adapters",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:07:02Z",
+            "completed_at": "2026-09-22T10:07:16Z"
+          },
+          {
+            "name": "Batch CLI and current-tree postflight",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:07:16Z",
+            "completed_at": "2026-09-22T10:07:17Z"
+          },
+          {
+            "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:07:17Z",
+            "completed_at": "2026-09-22T10:07:22Z"
+          },
+          {
+            "name": "Post Run actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:07:22Z",
+            "completed_at": "2026-09-22T10:07:22Z"
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:07:22Z",
+            "completed_at": "2026-09-22T10:07:22Z"
+          },
+          {
+            "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:07:22Z",
+            "completed_at": "2026-09-22T10:07:22Z"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-09-22T10:07:22Z",
+            "completed_at": "2026-09-22T10:07:22Z"
+          }
+        ]
+      }
+    ]
+  },
+  "scope": "F1a positive decoded typed ground-DAG soundness; F1b remains open",
+  "historical_ci_note": "Initial head ffb88e7 triggered PR49 cost CI because its workflow file was edited. Final head removes workflow-self trigger; no PR46-49 measurement workflow on final head. Those initial measurements are not PR50 evidence."
+}
