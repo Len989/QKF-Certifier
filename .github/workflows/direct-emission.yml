@@ -9,7 +9,6 @@ on:
       - '*.py'
       - 'pyproject.toml'
       - 'requirements*.txt'
-      - '.github/workflows/direct-emission.yml'
   workflow_dispatch:
 permissions:
   contents: read
