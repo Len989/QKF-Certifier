@@ -36,7 +36,7 @@ jobs:
           use-github-cache: false
       - name: Clean rebuild, exact axiom audit and negative integrity controls
         run: |
-          python -O -m formal.composition.check_ci reproduction/lean_composition --require-clean
+          python -O -m formal.composition.check_ci reproduction/lean_composition/checks --require-clean
           git archive HEAD | gzip -n > reproduction/lean_composition/source.tar.gz
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
