@@ -1,0 +1,40 @@
+{
+  "schema": "qkf-ground-lean-registration-v1",
+  "roadmap": "docs/QKF_ROADMAP_v0.5_RU.md#pr50",
+  "base": "55942faaeb253f19b849e9a52ea99cfd4b240a77",
+  "toolchain": "leanprover/lean4:v4.33.0",
+  "dependencies": [
+    "Std"
+  ],
+  "scope": "positive decoded typed ground-DAG entailment",
+  "excluded": [
+    "Python JSON parser correctness",
+    "search completeness",
+    "lower models",
+    "minimal horizon",
+    "source rules",
+    "lemma import (PR51)",
+    "whole-transformer soundness",
+    "performance claims"
+  ],
+  "required_controls": [
+    "wrong sort",
+    "wrong head",
+    "wrong arity",
+    "forward event reference",
+    "broken path",
+    "substituted axiom",
+    "bad node reference",
+    "inactive event",
+    "wrong declared depth"
+  ],
+  "required_theorem": "acceptance implies equality in every typed interpretation satisfying the declared ground equations",
+  "trusted_boundary": [
+    "Lean kernel and toolchain",
+    "JSON/name-to-index exporter correspondence (tested, not proved)"
+  ],
+  "historical_reports": {
+    "pr49": "4e2e152a55cd04c4947ffddb0fe31be039f4aaa2"
+  },
+  "ci_policy": "current Python regressions plus standalone Lean build; historical cost runs remain manual and run on relevant runtime changes"
+}
