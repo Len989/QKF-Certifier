@@ -151,9 +151,34 @@ jobs:
           mkdir "$RUNNER_TEMP/qkf27-baseline"
           tar -xzf reproduction/run27/baseline.tar.gz -C "$RUNNER_TEMP/qkf27-baseline"
           python research/external/frozen_v3/run27/acquire.py reproduction/run27/input
-      - name: Validate registered corpus, runtime and independent declaration inventory
+      - name: Validate corpus and inventory; require exact runtime before authorized evaluation
+        env:
+          EVENT_NAME: ${{ github.event_name }}
         run: |
-          python research/external/frozen_v3/run27/gate.py "$RUNNER_TEMP/qkf27-baseline" reproduction/run27/input > reproduction/run27/corpus-preflight.json
+          if [ "$EVENT_NAME" = push ]; then
+            python research/external/frozen_v3/run27/gate.py "$RUNNER_TEMP/qkf27-baseline" reproduction/run27/input > reproduction/run27/corpus-preflight.json
+          else
+            python - <<'PYMETA'
+          import json, os, platform, sys
+          from pathlib import Path
+          sys.path.insert(0, 'research/external/frozen_v3/run27')
+          import acquire, gate
+          result = gate.preflight(os.environ['RUNNER_TEMP'] + '/qkf27-baseline',
+                                  'reproduction/run27/input', require_runtime=False)
+          Path('reproduction/run27/corpus-preflight.json').write_text(json.dumps(result, indent=2) + '\n')
+          runtime = {'scope': 'archived metadata only; no external evaluation',
+                     'actual': acquire.runtime(),
+                     'registered': gate.load(gate.HERE / 'RUNTIMES.json').get(platform.python_version())}
+          try:
+              gate.runtime_check()
+              runtime['strict_runtime_status'] = 'match'
+          except ValueError as exc:
+              runtime['strict_runtime_status'] = 'drift'
+              runtime['reason'] = str(exc)
+          Path('reproduction/run27/runtime-comparison.json').write_text(json.dumps(runtime, indent=2) + '\n')
+          print(json.dumps({'scope': runtime['scope'], 'strict_runtime_status': runtime['strict_runtime_status']}))
+          PYMETA
+          fi
       - name: Test supervisor on constructed cases only
         run: |
           set -o pipefail

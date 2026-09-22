@@ -14,9 +14,15 @@ jobs:
         python-version: ['3.10', '3.12']
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Audit release metadata and prepare identified research tree
+        run: python .github/scripts/release_compatibility.py --checkout --output reproduction/inference/release-compatibility.json
       - name: Record exact revision and frozen baseline
         run: |
           mkdir -p reproduction/inference
