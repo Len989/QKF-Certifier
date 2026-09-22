@@ -1,0 +1,47 @@
+{
+  "schema": "qkf-direct-emission-protocol-v1",
+  "base_commit": "417f603eb2dd7e70c108d1f911ab4593e6a6ea58",
+  "population": "Five fixed PR48 development rows, unchanged source/request/limits/applications, plus PR47 power_open for explicitly measured scoped-model fallback. No holdout or default decision.",
+  "matrix": {
+    "backend": [
+      "ordinary",
+      "query"
+    ],
+    "policy": [
+      "no_lemmas",
+      "reuse"
+    ],
+    "shared": "Unchanged PR48 admission, ground algorithms, PR43 native questions, exact-goal/native caches, promotion and horizons; only the emission/package path changes. Budget counts new research Python calls.",
+    "horizon": "ordinary runs plain CC on nodes and equations active at min(full horizon,max_horizon), no activation layers; query starts at min(endpoint,cap), then grows to cap when bounded separation is insufficient. Inactive endpoint emits unresolved. Native questioning only follows final current-presentation nonconsequence; bounded model never refutes source."
+  },
+  "measurement": {
+    "timing_repeats": 7,
+    "warmups": 0,
+    "fresh_process_per_build": true,
+    "fresh_process_per_check": true,
+    "build_timeout_seconds": 360,
+    "check_timeout_seconds": 240,
+    "warm_apply_repetitions": 64,
+    "order": "Fixed registered cases. Rotate arms by global case_index+trial and reverse odd trials. Serial timing per environment; six CI case shards, no pooling Python versions or machines.",
+    "audit": "One fresh common call-trace child; retain existing sys.setprofile budgets and execution guards. Never run with tracemalloc.",
+    "memory": "One separate fresh tracemalloc child; Python peak, not RSS. No PR47 tracer. Exact canonical delivery/result match.",
+    "timing": "Seven fresh children without PR47 tracer/tracemalloc; intrinsic instrumentation retained, instrumented development latency. Include native proof, adapter, all built-in checks and delivery encoding. Cold receiver check, service assess, export/explain and 64 application sequences separately measured.",
+    "cost": "Primary lifecycle = build + cold check + all registered consumer assessments + one export/explain per packet. Apply is additional separate scenario. Whole child process overhead shown separately. Failed work included.",
+    "aggregation": "All samples, median/min/max. Per family and width and delivery. No universal threshold or population speedup claim; packet size is total independent bytes, no free dedup."
+  },
+  "controls": {
+    "single_summary": "sdk_ordinary",
+    "consumer_service": "once_ordinary",
+    "independent_certificates": "each_ordinary"
+  },
+  "causal_comparisons": "Match each emitted backend/policy with the identical prepared backend/policy on the same delivery in the same environment. All four factors for five positive rows, query/no_lemmas for fallback. Strong PR47 ordinary SDK controls remain available on equal interface terms; no pure reuse inference from unrelated routes.",
+  "semantic_population": "All 27 signed PR47 cases across four factors, inactive horizon and budget stops; direct-DAG attacks and serialized-final-packet corruption. Existing phase path and old tests unchanged.",
+  "resources": "Call budget remains research Python entries, now counts new functions. No free migration to another stage. Equal structural limits; any changed outcome at max_work is separately a resource behavior change, not added semantic coverage.",
+  "failure_policy": "Every scheduled attempt recorded; no retry inside run. Missing audit still gets an explicit failed checker attempt. Interrupted parent leaves checkpoint and manifest. Unexpected result, timeout, corrupted evidence or identity drift fails engineering acceptance; an economic loss does not.",
+  "acceptance": "Unchanged cold checker accepts final packets and all real intermediate histories under normal/-O with search and positive source execution blocked. Exact matched packet/result and native-question identities where sufficient limits allow. Report complete build+cold+lifecycle, peak and retained bytes, including fallback. Economic loss accepted; no PR52 win/default/F1 claim.",
+  "preservation": "Every accepted PR48 byte/mode unchanged except additive regression registry and two historical measurement workflows. Preserve PR48 engine and old independent checker exactly. Workflow changes limit automatic historical timings to relevant old-code changes; manual historical runs remain available. PR48 workflow uses the new explicit preservation audit because its formerly frozen workflow dependency changes. No protocol or old preservation-script edits.",
+  "boundary": "Only exact process-local PR48 CheckedGoal/Presentation capabilities feed the assembler. No serialized receipts, no hostile Python reflection sandbox. Public final envelope is independently replayed by the byte-preserved old checker; no direct runtime capability issuance.",
+  "emission": "Emit native dependencies at checked insertion and equality nodes at checked conclusion/promotion. Slice from already admitted ground nodes, retain event chronology, exact residual, all used premises and support reflexive declarations. Reachability slice only, no minimal DAG claim. Existing direct schema. Positive path has no intermediate native packet and one final envelope pack followed by one public cold check. Hash/canonicalization work remains charged.",
+  "intermediate_audit": "Retain every actual ground checkpoint/result and all native/lemma foundations, including discarded separators; fresh old checker replays them. Record native attempts, emitted/retained node and event counts, intermediate native packet count/bytes, complete delivery and diagnostic bytes, Python peak. Old redundant execution is compared separately, never reenacted merely for audit symmetry.",
+  "fallback": "Any unresolved final goal retains the full scoped native batch through the prior pack/check/extract/package path. Earlier direct assembly work remains charged and reported. Negative witnesses and empty domains retain checked obligations; they may use direct evidence with no equality root."
+}

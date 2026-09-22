@@ -1,0 +1,162 @@
+{
+  "schema": "qkf-direct-emission-registration-v1",
+  "protocol_sha256": "71f0cfbbd339c7fa27a5fd8b5073523a787fea00c3f27c8894eacf13112f241c",
+  "cases": [
+    {
+      "name": "mask_31",
+      "shard": "single",
+      "case_sha256": "9facb4e61c09b6e1dfbd1eb0028310feab52f1da970dd05ef1f314809c7f9de9",
+      "routes": [
+        "emitted_ordinary_no_lemmas",
+        "emitted_ordinary_reuse",
+        "emitted_query_no_lemmas",
+        "emitted_query_reuse",
+        "prepared_ordinary_no_lemmas",
+        "prepared_ordinary_reuse",
+        "prepared_query_no_lemmas",
+        "prepared_query_reuse",
+        "sdk_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "emitted_ordinary_no_lemmas": "certified",
+        "emitted_ordinary_reuse": "certified",
+        "emitted_query_no_lemmas": "certified",
+        "emitted_query_reuse": "certified",
+        "prepared_ordinary_no_lemmas": "certified",
+        "prepared_ordinary_reuse": "certified",
+        "prepared_query_no_lemmas": "certified",
+        "prepared_query_reuse": "certified",
+        "sdk_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_mask_all_4",
+      "shard": "mask",
+      "case_sha256": "4f0f1cba79ad75359376554437f2b8af8865204fab6f536156bb8601c5cc6cee",
+      "routes": [
+        "emitted_ordinary_no_lemmas",
+        "emitted_ordinary_reuse",
+        "emitted_query_no_lemmas",
+        "emitted_query_reuse",
+        "prepared_ordinary_no_lemmas",
+        "prepared_ordinary_reuse",
+        "prepared_query_no_lemmas",
+        "prepared_query_reuse",
+        "once_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "emitted_ordinary_no_lemmas": "certified",
+        "emitted_ordinary_reuse": "certified",
+        "emitted_query_no_lemmas": "certified",
+        "emitted_query_reuse": "certified",
+        "prepared_ordinary_no_lemmas": "certified",
+        "prepared_ordinary_reuse": "certified",
+        "prepared_query_no_lemmas": "certified",
+        "prepared_query_reuse": "certified",
+        "once_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_parity_fixed8_4",
+      "shard": "parity",
+      "case_sha256": "8d3ba2372f59403444c0acbb379605478de5e5bfb449030d9fbcc82417b71a12",
+      "routes": [
+        "emitted_ordinary_no_lemmas",
+        "emitted_ordinary_reuse",
+        "emitted_query_no_lemmas",
+        "emitted_query_reuse",
+        "prepared_ordinary_no_lemmas",
+        "prepared_ordinary_reuse",
+        "prepared_query_no_lemmas",
+        "prepared_query_reuse",
+        "once_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "emitted_ordinary_no_lemmas": "certified",
+        "emitted_ordinary_reuse": "certified",
+        "emitted_query_no_lemmas": "certified",
+        "emitted_query_reuse": "certified",
+        "prepared_ordinary_no_lemmas": "certified",
+        "prepared_ordinary_reuse": "certified",
+        "prepared_query_no_lemmas": "certified",
+        "prepared_query_reuse": "certified",
+        "once_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_exact_repeats_16",
+      "shard": "repeat",
+      "case_sha256": "7ddad3e551e550db55e197753ea62faf2847b24688a849884df67cf2018e967c",
+      "routes": [
+        "emitted_ordinary_no_lemmas",
+        "emitted_ordinary_reuse",
+        "emitted_query_no_lemmas",
+        "emitted_query_reuse",
+        "prepared_ordinary_no_lemmas",
+        "prepared_ordinary_reuse",
+        "prepared_query_no_lemmas",
+        "prepared_query_reuse",
+        "once_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "emitted_ordinary_no_lemmas": "certified",
+        "emitted_ordinary_reuse": "certified",
+        "emitted_query_no_lemmas": "certified",
+        "emitted_query_reuse": "certified",
+        "prepared_ordinary_no_lemmas": "certified",
+        "prepared_ordinary_reuse": "certified",
+        "prepared_query_no_lemmas": "certified",
+        "prepared_query_reuse": "certified",
+        "once_ordinary": "certified"
+      }
+    },
+    {
+      "name": "batch_mask_all_4_each",
+      "shard": "each",
+      "case_sha256": "7d350b51d1c82d48b5a5e44b5d91f0acc10c912ca8fc20e84ec9aa75775cecd6",
+      "routes": [
+        "each_emitted_ordinary_no_lemmas",
+        "each_emitted_ordinary_reuse",
+        "each_emitted_query_no_lemmas",
+        "each_emitted_query_reuse",
+        "each_prepared_ordinary_no_lemmas",
+        "each_prepared_ordinary_reuse",
+        "each_prepared_query_no_lemmas",
+        "each_prepared_query_reuse",
+        "each_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "each_emitted_ordinary_no_lemmas": "certified",
+        "each_emitted_ordinary_reuse": "certified",
+        "each_emitted_query_no_lemmas": "certified",
+        "each_emitted_query_reuse": "certified",
+        "each_prepared_ordinary_no_lemmas": "certified",
+        "each_prepared_ordinary_reuse": "certified",
+        "each_prepared_query_no_lemmas": "certified",
+        "each_prepared_query_reuse": "certified",
+        "each_ordinary": "certified"
+      }
+    },
+    {
+      "name": "power_open",
+      "shard": "fallback",
+      "case_sha256": "f85bacc9f84dffbb4c19005904dd99de4b8dde92a07bf4cff1cb75d1efb7635d",
+      "routes": [
+        "emitted_query_no_lemmas",
+        "prepared_query_no_lemmas",
+        "sdk_ordinary"
+      ],
+      "unavailable": {},
+      "expected": {
+        "emitted_query_no_lemmas": "unresolved",
+        "prepared_query_no_lemmas": "unresolved",
+        "sdk_ordinary": "unresolved"
+      }
+    }
+  ]
+}
