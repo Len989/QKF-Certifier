@@ -27,7 +27,9 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - name: Record complete current source and preserved base
+      - name: Audit release metadata and prepare identified research tree
+        run: python .github/scripts/release_compatibility.py --checkout --output reproduction/context/release-compatibility.json
+      - name: Record identified research source and preserved base
         run: |
           mkdir -p reproduction/context
           git rev-parse HEAD > reproduction/context/revision.txt
@@ -36,7 +38,7 @@ jobs:
           python --version > reproduction/context/python.txt
           java -version 2> reproduction/context/java.txt
           python -m research.regression.preserve > reproduction/context/preflight.json
-      - name: Registered new and prior CURRENT tree tests
+      - name: Registered new and prior tests on identified research tree
         run: |
           set -o pipefail
           python -m research.regression.run --group new 2>&1 | tee reproduction/context/tests-normal.log

@@ -27,6 +27,8 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
+      - name: Audit release metadata and prepare identified research tree
+        run: python .github/scripts/release_compatibility.py --checkout --output reproduction/lean_composition/release-compatibility.json
       - name: Pinned Lean package and kernel-checked composition examples
         uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
         with:
@@ -34,7 +36,7 @@ jobs:
           use-github-cache: false
       - name: Clean rebuild, exact axiom audit and negative integrity controls
         run: |
-          python -O -m formal.composition.check_ci reproduction/lean_composition --require-clean
+          python -O -m formal.composition.check_ci reproduction/lean_composition/checks --require-clean
           git archive HEAD | gzip -n > reproduction/lean_composition/source.tar.gz
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()

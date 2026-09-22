@@ -1,0 +1,37 @@
+\section{The first Lean verification}\label{sec:lean}
+
+The pilot is a standalone Lean 4.33.0 project using the standard library without Mathlib~\cite{Lean4,LeanReference}. It formalizes the ascending mathematical fragment above. Certificate constants are exported from the saved research certificate as data; handwritten definitions and general lemmas determine what those constants must prove.
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Module & Checked content\\
+\midrule
+\texttt{RowRules} & Union/intersection on $\mathcal P(\{0,1\})$, inductive forced-cell rules, soundness, atomic uniqueness, and row-kernel compatibility.\\
+\texttt{Gluing} & Simulation and invariant preservation along every finite column list; soundness of a closed certificate.\\
+\texttt{Core}, \texttt{Data} & Source-cell phases and their factor; the complete six-column alphabet; row, state, and edge tables.\\
+\texttt{Checked} & Atomic agreement, row uniqueness, recovery of the native action from completed rows, closure, and sign conditions.\\
+\texttt{WordSemantics} & Numerical words, lower-part bounds, signed comparisons, output-mask membership, and the all-width successor theorem.\\
+\texttt{SourceBridge} & Equality of observed numerical states and output traces after any number of modeled nonsign source cells.\\
+\texttt{Audit} & Expected axiom dependencies of the principal theorems, enforced at build time.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{theorem}[Lean pilot scope, K10]\label{thm:leanpilot}
+The distributed Lean source proves the masked-successor result for every list of legal nonsign columns and each allowed sign completion satisfying its witness premise. It proves the source-word factor for the explicitly modeled nonsign repair iteration. Their names are
+\begin{center}\normalfont\small\ttfamily
+QKF.mask\_successor\_all\_widths\\
+QKF.source\_word\_factor.
+\end{center}
+The length lemma identifies the complete signed width as the list length plus one.
+\end{theorem}
+\begin{proof}
+The checked certificate supplies the initial state, every transition, and every sign obligation. General gluing yields the invariant for arbitrary lists. A separate relation connects observations to accumulated natural-number values and proves each lower part less than its power-of-two bound. Signed comparison translates the relational assertions into $g<t\le x$, while trace induction establishes mask membership. For the source bridge, local phase factorization commutes with each numerical step and is lifted by the simulation theorem. These are the dependencies of the named Lean proofs.
+\end{proof}
+
+Finite obligations use \texttt{decide}; elementary integer bridges use \texttt{omega}. The audit reports no axioms for forced-rule soundness and atomic row uniqueness. The main numerical theorem uses only the standard \texttt{propext} and \texttt{Quot.sound}; the source-word factor uses \texttt{propext}. No additional axioms, proof placeholders, \texttt{native\_decide}, or \texttt{bv\_decide} are used. Exact expected axiom lists are enforced by \texttt{\#guard\_msgs}.
+
+The pilot does not formalize both foundational papers in full, the 49-state descending certificate, the outer lower-order argument, the complete Java helper, or the Python checker. Its source bridge concerns the stated operational cell model; translating actual Java and host-long arithmetic remains a separate obligation. Lean verification improves confidence in this fragment without changing whole-program coverage counts.
+
+The package has been built from a fresh extracted copy, and three numerical examples are checked. Four isolated negative controls change an initial state, an edge, a row cell, and a proof; all are rejected at the corresponding certificate or axiom-audit gate. These controls exercise the build and trust checks; proof terms establish the general results.

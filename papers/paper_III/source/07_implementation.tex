@@ -13,32 +13,35 @@ The accepted final coordinatewise targets remain AND, OR, and XOR. A resource li
 
 The original three Nice to Meet You examples retain their upstream provenance and MIT notices. AND normalizes to $(z_a\mathbin{|}z_b,o_a\mathbin{\&}o_b)$; OR has the dual optimal table. XOR expands the actual meet helper and uses a checked disjoint-support addition to recover its optimal table. The checker does not assign semantics from the name of a helper.
 
-\subsection{Research capsules}
-The release distributes the broader research under \texttt{research/knownbits} and \texttt{research/graal}, with its original code and source identities. The KnownBits capsule preserves the result-observation stage and its packed experiment data. The Graal capsule preserves the universal lower stage together with its upper and joint-carrier dependencies. A release runner restores checked data and starts fresh replay processes; existing experiment outputs are retained.
+\subsection{Research execution and summary profiles}
+The distribution preserves the earlier \texttt{research/knownbits} and \texttt{research/graal} capsules and their source identities. Replay restores saved evidence and checks it in fresh processes; regenerating search, native Java correspondence, or measurements is a separate action with separately documented dependencies. The historical POSIX capsules retain their environment requirements. The newer source-query and summary modules are tested on Python 3.10 and 3.12 and require a full checkout; they add no runtime dependency to the coordinatewise package.
 
-These profiles require Python 3.12 on Linux/POSIX for their existing signal and resource controls. Replaying saved proofs does not need SMT, Java, or the producers. Regenerating native Java comparisons requires the separately documented JDK and compiler. Actual Java execution is a finite differential check of extracted helper bodies and shims; the whole Graal build is not part of it.
+The principal new entry points are source-interface inference and execution (Section~\ref{sec:sourceinterfaces}), exact pure-row and typed ground queries, guarded source consumers, and \texttt{research.applicable\_summary} (Section~\ref{sec:consumerproofs}). The SDK retains signed \texttt{no\_lemmas} and local-phase \texttt{direct\_cell} defaults; derived-lemma reuse and forcing remain explicit options. The controlled comparisons did not silently change these defaults.
 
-The checked upper and lower APIs accept concrete mask--interval descriptions after validating the corresponding universal contract. Their operational width limit is 4096 bits. This limit bounds an implementation request and is absent from the mathematical induction theorem. The lower API explicitly rejects source sign contexts outside~\eqref{eq:lowercondition}.
+Certificate kinds have distinct scopes. \texttt{qkf-ground-query-certificate-v1} proves statements from a declared finite ground presentation. \texttt{qkf-source-lemma-packet-v1} additionally binds native premises and checked imports to a source context. The summary root \texttt{qkf-applicable-summary-v1}, transported by \texttt{qkf-json-proof-dag-v1}, supplies the evidence used by an applicable SDK object. Preparation and direct-emission changes preserve these public formats and the independent public checker. A valid certificate of one kind cannot be substituted for an obligation belonging to another.
 
-\subsection{Lean profile and stable claims}
-The project in \texttt{research/lean} is checked with \texttt{lake build}; its toolchain is pinned separately from Python. It includes its data exporter, axiom audit, examples, negative controls, and actual build logs. Table~\ref{tab:traceability} identifies the principal claims.
+Positive fresh replay excludes producer/search/SMT imports and does not execute the complete source program; native premises are still independently checked. A concrete refutation separately evaluates its supplied witness. Model size, source-state limits, proof-DAG limits, and runtime-width limits are implementation budgets with explicit failure outcomes, not premises of an extrapolation from tested widths. Immutable checked objects protect ordinary API use, not a hostile Python process capable of reflection or monkeypatching.
+
+\subsection{Formal projects and stable claims}
+The original \texttt{research/lean}, later \texttt{research/lean\_targets}, and new \texttt{formal/ground} and \texttt{formal/composition} projects pin Lean separately from Python. F1b has a local dependency on F1a. Their build/audit scripts, exporters, positive examples, and negative controls preserve the scope described in Section~\ref{sec:lean}. Table~\ref{tab:traceability} retains the original claim identifiers and identifies the additions separately.
 
 \begin{table}[htbp]\small
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.10\textwidth}XX@{}}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.12\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
 \toprule
 Claim & Artifact & Scope\\
 \midrule
-K1--K2 & Paper supplement: finite core and relation-matrix oracle & Exact finite ground interface; independent finite checks.\\
-K3 & Sparse prototype and representation theorem & Conditional coverage and fixed-point contract; historical pass-limit caveat retained.\\
-K4--K5 & \texttt{src/qkf\_certifier} & Coordinatewise source replay and complete nine-row semantics.\\
-K6 & Research observation kernels and guarded native bridges & Consumer-specific domains and explicitly labeled actions.\\
-K7 & Graal row/closure kernels; Lean \texttt{RowRules}, \texttt{Gluing} & Atomic completion and finite closure lifted to arbitrary lengths.\\
-K8 & \texttt{research/graal/previous} & Universal upper model and limited source bridge; not Lean-checked.\\
-K9 & \texttt{research/graal} & Conditional lower preservation; not an exact-minimum or full-\texttt{create} theorem.\\
-K10 & \texttt{research/lean/QKF} & Machine-checked ascending mathematical fragment and nonsign source-cell model.\\
+K1--K2 & Paper supplement: finite core and relation-matrix oracle & Exact finite ground interface and independent finite checks.\\
+K3 & Sparse prototype and representation theorem & Conditional coverage/fixed-point contract; historical pass-limit caveat retained.\\
+K4--K5 & \texttt{src/qkf\_certifier} & Coordinatewise source replay and nine-row semantics.\\
+K6--K7 & Observation/row kernels and original Lean gluing & Labeled consumer observations and arbitrary-length composition.\\
+K8--K9 & Retained upper/lower Graal capsules & Exact upper model and conditional lower preservation; separate source contracts.\\
+K10 & \texttt{research/lean/QKF} & Original ascending mathematical fragment and nonsign cell model.\\
+New source profiles & \texttt{research/inference}, signed interfaces, \texttt{create\_joint} & Restricted source-derived factors and caller contracts with explicit Python trust boundaries.\\
+New proof profiles & Pure rows, ground queries, source lemmas, summary SDK & Exact finite algebraic evidence and scoped source consumers.\\
+F1a/F1b & \texttt{formal/ground}, \texttt{formal/composition} & Decoded typed positive calculus and conservative checked-lemma composition.\\
 \bottomrule
 \end{tabularx}
-\caption{Claim identifiers remain stable while theorem numbers are local to this revision.}\label{tab:traceability}
+\caption{Stable claims retain their original meaning; new profiles state their additional scope explicitly.}\label{tab:traceability}
 \end{table}
 
-The baseline parser, kernel, producer, and replay modules can still be inspected at the immutable public commit given in Section~\ref{sec:intro}. New files are identified by the release manifest. Historical measurements and the newly executed release checks have separate records. No experiment is promoted to a larger source or semantic scope merely by being bundled in this release.
+Artifact links identify the technical snapshot; measurement reports identify their individual engines and environments. Historical native executions, fresh certificate replay, formal builds, and release packaging checks are separate records. Bundling an experiment does not promote it to a larger source or semantic scope.

@@ -1,0 +1,32 @@
+\section{Introduction}\label{sec:intro}
+
+A word program may inspect a count, use a shift, propagate a carry, and finally return only a few facts about its result. A proof that reconstructs every intermediate value can retain substantially more information than the consumer needs. QKF asks which observations determine this particular action, and which of their values are forced by the supplied information and the operations already justified on the carrier.
+
+This is Paper III of a series by Leonid Shcherbakov. Paper I develops initial semantics for incomplete actions, forced domains, kernel saturation, and completion~\cite{ShcherbakovI}. Paper II studies equality visibility through finite ground interfaces and distinguishes congruence-proof depth from the size of sequential rewriting contexts~\cite{ShcherbakovII}. The present paper uses those distinctions to organize executable proof objects. Native semantics supplies the facts to which the algebra applies; a quotient is useful only when its labels and its interaction with the consumer have been justified.
+
+The first version described an exact finite algebraic kernel and a public KnownBits certifier whose final language was coordinatewise. Nine one-bit rows then suffice for a theorem at every positive width. Subsequent research has made the interface itself a computational object: counts can be replaced by their observed action, contexts can justify observations that fail unconditionally, and a protected row carrier can connect local repair decisions into a proof about a whole signed word. This revision develops that change of emphasis and incorporates the first Lean verification.
+
+\paragraph{Contributions and stable claims.}
+Claims K1--K5 retain their meanings: a finite ground partial core, exact relation-matrix closure, a conditional sparse representation contract, source-to-verdict replay, and the complete coordinatewise semantic quotient. New claims describe (K6) sufficient consumer observations and labeled reconstruction, (K7) forced observation rows and arbitrary-length gluing, (K8) the exact upper masked-bound contract, (K9) the conditional lower carrier-preservation contract, and (K10) the precisely delimited Lean pilot. Elementary quotient and induction arguments provide the foundations of K6--K7; their role here is to expose and check the obligations of the actual word interfaces.
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+Layer & Computation & Evidence in this revision\\
+\midrule
+Finite algebraic core & Forced relations, central feedback, sparse coverage & Mathematical proofs and retained independent finite checks.\\
+Coordinatewise CLI & Source-bound normalization followed by nine-row target checking & Versioned Python package; unchanged core semantics and rule catalogue.\\
+Research interfaces & Contextual observations, complete word certificates, signed mask--interval refinements & Separate executable capsules with source-bound replay.\\
+Lean pilot & Row soundness, carry factor, gluing, numerical successor theorem & Kernel-checked Lean source and audited assumptions.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+These layers have different interfaces. The command-line package does not automatically acquire all research targets by being distributed beside them. The general relation backend is not silently invoked by every word checker. Paper II does not confer a minimum proof-depth guarantee on a heuristic normalizer. The explicit maps between the layers are part of the algorithm's specification.
+
+\paragraph{Version and source identity.}
+This is manuscript version 2.0, prepared with software release candidate \texttt{0.2.0a1}. The public baseline is \texttt{v0.1.0a1}, commit
+\begin{center}\small\texttt{f93561682319e8b911ed32c01583f2a496dc59fc}.\end{center}
+The repository is \url{https://github.com/Len989/QKF-Certifier}. The coordinatewise parser, kernel, producer, and certificate implementation retain that baseline's semantics; the new distribution adds the research and Lean profiles. Content manifests bind the candidate files without assuming that a future tag or DOI already exists. The coordinatewise certificate schema remains \texttt{qkf-rewrite-v3}; research and Lean certificates have their own identifiers.
+
+The long-term research objective is an observation-driven proof architecture capable of taking over substantial tasks currently delegated to general SMT infrastructure. The immediate technical goal is narrower and testable: infer adequate interfaces from source semantics, compose them without losing the joint carrier, and make their successful conclusions independently replayable.

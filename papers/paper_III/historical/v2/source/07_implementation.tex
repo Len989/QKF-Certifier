@@ -1,0 +1,44 @@
+\section{Implementation profiles and claim traceability}\label{sec:implementation}
+
+\subsection{Coordinatewise CLI}
+The installable Python package exposes inspection, normalization, target verification, and certificate checking. Its runtime needs only the standard library. Verification constructs a source expression and produces a rewrite trace. Checking reparses the source and replays the supplied trace without invoking normalization search. The two paths share primitive-rule code.
+
+The certificate format remains \texttt{qkf-rewrite-v3}, API results use \texttt{qkf-result-v1}, and the semantic contract is
+\begin{quote}\small\ttfamily\raggedright
+total-transfer-words-v2; positive-width;\\
+modular-arithmetic; SMT-total-div-shift;\\
+standard-counts; nonbottom-KB.
+\end{quote}
+The accepted final coordinatewise targets remain AND, OR, and XOR. A resource limit or unsupported residual produces an explicit unresolved outcome. SHA-256 fingerprints bind the complete supplied source-label map, including helper definitions; they identify bytes, not authorship.
+
+The original three Nice to Meet You examples retain their upstream provenance and MIT notices. AND normalizes to $(z_a\mathbin{|}z_b,o_a\mathbin{\&}o_b)$; OR has the dual optimal table. XOR expands the actual meet helper and uses a checked disjoint-support addition to recover its optimal table. The checker does not assign semantics from the name of a helper.
+
+\subsection{Research capsules}
+The release distributes the broader research under \texttt{research/knownbits} and \texttt{research/graal}, with its original code and source identities. The KnownBits capsule preserves the result-observation stage and its packed experiment data. The Graal capsule preserves the universal lower stage together with its upper and joint-carrier dependencies. A release runner restores checked data and starts fresh replay processes; existing experiment outputs are retained.
+
+These profiles require Python 3.12 on Linux/POSIX for their existing signal and resource controls. Replaying saved proofs does not need SMT, Java, or the producers. Regenerating native Java comparisons requires the separately documented JDK and compiler. Actual Java execution is a finite differential check of extracted helper bodies and shims; the whole Graal build is not part of it.
+
+The checked upper and lower APIs accept concrete mask--interval descriptions after validating the corresponding universal contract. Their operational width limit is 4096 bits. This limit bounds an implementation request and is absent from the mathematical induction theorem. The lower API explicitly rejects source sign contexts outside~\eqref{eq:lowercondition}.
+
+\subsection{Lean profile and stable claims}
+The project in \texttt{research/lean} is checked with \texttt{lake build}; its toolchain is pinned separately from Python. It includes its data exporter, axiom audit, examples, negative controls, and actual build logs. Table~\ref{tab:traceability} identifies the principal claims.
+
+\begin{table}[htbp]\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.10\textwidth}XX@{}}
+\toprule
+Claim & Artifact & Scope\\
+\midrule
+K1--K2 & Paper supplement: finite core and relation-matrix oracle & Exact finite ground interface; independent finite checks.\\
+K3 & Sparse prototype and representation theorem & Conditional coverage and fixed-point contract; historical pass-limit caveat retained.\\
+K4--K5 & \texttt{src/qkf\_certifier} & Coordinatewise source replay and complete nine-row semantics.\\
+K6 & Research observation kernels and guarded native bridges & Consumer-specific domains and explicitly labeled actions.\\
+K7 & Graal row/closure kernels; Lean \texttt{RowRules}, \texttt{Gluing} & Atomic completion and finite closure lifted to arbitrary lengths.\\
+K8 & \texttt{research/graal/previous} & Universal upper model and limited source bridge; not Lean-checked.\\
+K9 & \texttt{research/graal} & Conditional lower preservation; not an exact-minimum or full-\texttt{create} theorem.\\
+K10 & \texttt{research/lean/QKF} & Machine-checked ascending mathematical fragment and nonsign source-cell model.\\
+\bottomrule
+\end{tabularx}
+\caption{Claim identifiers remain stable while theorem numbers are local to this revision.}\label{tab:traceability}
+\end{table}
+
+The baseline parser, kernel, producer, and replay modules can still be inspected at the immutable public commit given in Section~\ref{sec:intro}. New files are identified by the release manifest. Historical measurements and the newly executed release checks have separate records. No experiment is promoted to a larger source or semantic scope merely by being bundled in this release.

@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.3.0a1 — prepared research alpha, 2026-09-22
+
+- Integrate source-derived observation inference and independently supplied target
+  certificates, with explicit supported, refuted and unresolved outcomes.
+- Add typed word targets, restricted upstream source bindings, conditional ceiling
+  composition, the Graal create joint-carrier profile, and scoped Lean extensions.
+- Add signed source bridges, closed atomic observation rows, reusable execution,
+  target integration, source reduction and checked concrete refutations.
+- Add pure-row forcing, portable typed ground DAGs, source-bound native facts,
+  query-directed planning, cross-goal lemmas and applicable checked summaries.
+- Add matched ordinary/query SDK comparisons, admitted immutable contexts,
+  prepared ground obligations and direct dependency emission.
+- Prove positive typed ground-DAG soundness and chronological lemma composition
+  in standalone Lean 4.33.0 projects, with exact axiom audits and negative controls.
+- Update Paper III to manuscript 3.0; preserve the prior versions and frozen data.
+- Keep the installed CLI semantics and certificate format unchanged; the new
+  research SDKs require the complete source distribution supplied separately.
+
+All changes since the previous release, exact populations, measured comparisons,
+and formal scope are recorded in `releases/CHANGES_v0.3.0a1.md` and
+`releases/v0.3.0a1.md`. No new external holdout or general speedup is claimed.
+
 ## 0.2.0a1 — prepared candidate, 2026-09-13
 
 - Rewrite Paper III as manuscript 2.0 around consumer observations, forced rows,

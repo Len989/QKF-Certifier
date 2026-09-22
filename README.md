@@ -2,9 +2,9 @@
 
 [![Test and build](https://github.com/Len989/QKF-Certifier/actions/workflows/ci.yml/badge.svg)](https://github.com/Len989/QKF-Certifier/actions/workflows/ci.yml)
 
-**Width-independent proof certificates for KnownBits and word programs, with research tools and a Lean 4 formalization pilot.**
+**Width-independent proof certificates for KnownBits and word programs, with research tools and scoped Lean 4 soundness proofs.**
 
-[Download v0.2.0a1](https://github.com/Len989/QKF-Certifier/releases/tag/v0.2.0a1) · [Papers](#papers) · [Research instructions](research/README.md) · [Русская версия](README_RU.md)
+[Release 0.3.0a1 notes](releases/v0.3.0a1.md) · [Papers](#papers) · [Research instructions](research/README.md) · [Русская версия](README_RU.md)
 
 QKF develops proofs from incomplete observations, forced rows, their kernels,
 and compatible quotients. The research tools explore how those observations
@@ -23,10 +23,10 @@ certificate architecture in sequence:
 
 Start with Paper III for the algorithm and experiments, then Papers I and II for
 the mathematical foundations. The DOI links identify the published preprints.
-Manuscript copies in the repository and research archive preserve the prepared
-release snapshot; the separately attached Paper III PDF and sources in
-[release v0.2.0a1](https://github.com/Len989/QKF-Certifier/releases/tag/v0.2.0a1)
-include the DOI references to Papers I and II.
+The Paper III DOI above identifies the earlier published record. This checkout
+contains [Paper III v3.0](papers/paper_III/QKF_PAPER_III_v3.0_2026-09-22.pdf),
+prepared on 22 September 2026 for a new Zenodo version. Its new DOI is not yet
+assigned; see the [paper/code map](docs/paper-version.json).
 
 ## Software and current scope
 
@@ -35,13 +35,31 @@ then checks the remaining coordinatewise function on all nine one-bit KnownBits
 input pairs. For this fragment, the certificate establishes soundness for **every
 positive bit width**, and reports whether the transformer is optimal.
 
-Version **0.2.0a1** is published as a research alpha pre-release. It brings the later
-observation, whole-word, Graal, and Lean work into one reproducible source release,
-with a substantially revised Paper III. The installable CLI still completes
-coordinatewise AND, OR, and XOR proofs; broader proofs use the separate research
-entry points below. The runtime semantics and certificate format are unchanged.
+Version **0.3.0a1** is a research alpha release candidate based on the accepted
+implementation through PR51. It adds source-derived observation inference,
+independent target proofs, signed source interfaces, typed ground proof DAGs,
+checked cross-goal lemmas, reusable contexts, direct dependency emission, and
+standalone Lean proofs for ground soundness and chronological composition.
 
-## Research included in v0.2.0a1
+The ordinary SDK and query-directed SDK are both QKF implementations. The
+registered development comparisons retain the ordinary SDK as the less costly
+matched control; direct emission reduces overhead within the newer path without
+establishing a general speed advantage. See the [complete changes and measured
+scope](releases/v0.3.0a1.md) and [PR inventory](releases/CHANGES_v0.3.0a1.md).
+
+The installable CLI still completes coordinatewise AND, OR, and XOR proofs.
+The research SDKs and formal projects require the full source archive or checkout.
+The CLI runtime semantics and `qkf-rewrite-v3` certificate format are unchanged.
+
+| New research layer | Entry point and scope |
+|---|---|
+| Inference and unified targets | [Inference](research/inference/README_RU.md), [runner](research/unified/README_RU.md) |
+| Signed source observations and execution | [Bridge](research/signed_bridge/README_RU.md), [runtime](research/signed_runtime/README_RU.md), [targets](research/signed_targets/README_RU.md) |
+| Ground DAGs and native source facts | [Ground queries](research/ground_query/README_RU.md), [source queries](research/source_query/README_RU.md) |
+| Checked SDK and direct dependencies | [Applicable summaries](research/applicable_summary/README_RU.md), [direct emission](research/direct_emission/README_RU.md) |
+| Lean ground and composition soundness | [Ground](formal/ground/README_RU.md), [composition](formal/composition/README_RU.md); decoded typed structures under explicit native assumptions |
+
+## Retained v0.2.0a1 baseline
 
 | Profile | Current result | How to use it |
 |---|---|---|
@@ -68,13 +86,14 @@ lake build
 The wheel and PyPI-style source distribution contain the coordinatewise Python
 application. Use the full research archive for `research/`, `papers/`, and the
 repository tools. See [research instructions](research/README.md),
-[Paper III v2](papers/paper_III/QKF_PAPER_III_v2.0_2026-09-13.pdf), and the
+[Paper III v3](papers/paper_III/QKF_PAPER_III_v3.0_2026-09-22.pdf), and the
 [claim map](docs/CLAIMS.md).
 
 The lower Graal theorem requires `lower <= 0` or a forbidden negative sign. It
 preserves the joint mask/interval carrier and may return a conservative bound.
-The complete Graal `create` procedure and the full Python/Java implementations
-have not been formalized in Lean. These results make no general speed claim over
+Later work supplies a source-bound Graal `create` joint-carrier profile and
+conditional Lean caller-invariant lemmas. This is not end-to-end formal
+verification of the Java frontend, complete JVM execution, or Python checkers. These results make no general speed claim over
 SMT solvers. Historical and fresh validation records remain separate.
 
 [Русская версия](README_RU.md) · [Semantics](docs/SEMANTICS.md) ·
@@ -217,3 +236,12 @@ retain the MIT license and attribution of the pinned xdsl-smt artifact; see
 The wheel is the coordinatewise application. The full source release additionally
 contains the selected research capsules and three manuscript packages; manuscript
 licensing is described separately in their author-facing license notes.
+
+## Release verification
+
+The accepted research snapshot is `eca90f9252da4480d77c1f8cb4b7062470c57b89`.
+Its Git tree equals the final PR51 tree. The exact PR51 head had 32 successful
+workflow runs; the merge commit had six successful push workflows. These records
+do not claim CI results for the later release documentation/version changes.
+See [candidate validation](docs/RELEASE_VALIDATION_0.3.0a1.md) for the local
+package checks and limitations, and [release preparation](docs/RELEASING.md).

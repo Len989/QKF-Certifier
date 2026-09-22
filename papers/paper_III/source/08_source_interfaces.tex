@@ -1,0 +1,45 @@
+\section{Inferred source interfaces and their checked execution}\label{sec:sourceinterfaces}
+
+The observation principle of Section~\ref{sec:observations} now has executable producers and independent replay paths. Their scope is a restricted source model, not unrestricted Java. The important change is that a supplied factor can be replaced by a derivation explaining which distinctions are retained, why its labels are correct, and how every source continuation is covered.
+
+\subsection{Finite observation closure and source-derived questions}
+Let $R$ be a finite reachable carrier, $B$ an input alphabet, $T_b:R\to R$ its transitions, $O_b$ its output labels, and $F$ its terminal observation. Start with predicates describing $F$ and $O_b$. If a question $p$ is retained, its backward transfer along $b$ is $p\circ T_b$. The kernel of all retained questions induces a partition. A candidate partition is sufficient when equal classes have equal terminal labels and, for every $b$, equal output labels and successor classes.
+
+\begin{proposition}[Checked observable factor]\label{prop:observedfactor}
+Suppose the supplied partition covers $R$, the initial class is correct, and the preceding local stability and label conditions hold. Executing its quotient yields the same output trace and terminal observation as the source model on every finite input word. If every distinct pair of classes has a checked distinguishing continuation, the quotient is the coarsest behavior-preserving quotient of this model for these observations.
+\end{proposition}
+\begin{proof}
+The initial states correspond. Stability preserves the correspondence at each input symbol, while output agreement preserves the emitted trace. Terminal agreement gives the final observation. A distinguishing continuation prevents any behavior-preserving quotient from identifying the corresponding classes. This proves the stated minimality relative to the fixed model and consumer, not minimality among arbitrary observation languages.
+\end{proof}
+
+The general finite producer in \artifact{research/observations/REPORT_RU.md} recovers the two-class ascending factor from three physical phases without calling the old hand-written quotient. Replacing the repair action produces three classes; a delayed-output example requires three backward-transfer levels and four classes. These cases check that neither the expected number of classes nor an immediate-output heuristic determines the answer. The length of a distinguishing continuation is not Paper II's term-depth horizon.
+
+For restricted word expressions, \artifact{research/inference/README_RU.md} describes a second inference policy. Its finite question library comes from residual-coordinate types: arithmetic carry or constant-tail equalities, accumulated mismatch bits, persistent Boolean registers, and ascending offsets. The search starts with no questions, records a conflicting pair whenever stability or labeling fails, adds a library question separating that pair, and then performs deletion pruning. Replay reconstructs the residual semantics and library and checks the trace. This is automatic selection within an explicit language; it does not synthesize arbitrary arithmetic abstractions. Source-interface success and independent target success remain separate, including when a particular target bridge is unavailable.
+
+\subsection{Positive-width completion and independent consumers}
+The signed source bridge constructs states $(h,r)$, where $r$ is a residual state and $h$ records whether a bit has been read. The initial state has terminal label \texttt{not-a-word}; it is not assigned a Boolean value. Every positive-length trace has $h=\mathrm{true}$ and uses the signed terminal semantics, with the last bit providing the sign. A certificate supplies earlier-parent reachability witnesses and a complete transition table. Replay checks every listed state, every source-derived transition, every label, and closure under both bit symbols. Reachability prevents extraneous states; closure and induction prevent omission of a source trace. See \artifact{research/signed_bridge/README_RU.md}.
+
+The observation factor of this completion model retains the initial distinction. For example, the positive-power-of-two interface has five classes when \texttt{not-a-word} is included, whereas an earlier consumer with different initialization used four. These are different declared consumers, not contradictory minimization results.
+
+Source-bound loading checks the model and observation proof before extracting atomic inverse-image rows. The runtime stores class labels, atomic row images, and source identifiers, without retaining source text, IR, residual states, or a direct transition table. For a class $q$ and input symbol $b$, it recovers the unique output/successor pair $(y,q')$ satisfying
+\[
+ q\in h_{b,y}(\{q'\}).
+\]
+The checked coverage and disjointness of these atomic preimages establish uniqueness. Finite unions reconstruct $h_{b,y}(P)$, and induction gives source-equivalent execution for every admitted positive length. The implementation and its API boundary are documented in \artifact{research/signed_runtime/README_RU.md}. A detached inspection view or receipt is not a replacement for the source proof.
+
+An independent consumer is checked by a reachable product with its separately specified target machine. The source questions do not acquire their semantics from that target. A source-only result retains \texttt{target\_checked:false}; only the completed target obligation can justify \certified. The corresponding implementation is \artifact{research/signed_targets/README_RU.md}. These are conditional all-positive-width statements under the accepted modular source model; Java's physical 32- and 64-bit executions form separate finite correspondence checks.
+
+\subsection{Avoiding unnecessary residual enumeration}
+A full residual carrier can be expensive before its trivial observable factor becomes apparent. In the earlier route, the tautology
+\[
+ (x=2^{31})\lor(x\ne2^{31})
+\]
+required 65 full residual states and exceeded a 64-state construction cap. Three subsequent mechanisms address distinct parts of this problem.
+
+First, checked Boolean reduction and dependency slicing precede residual enumeration. The checker verifies local identities on the actual IR; purity and totality justify removing unused dependencies. It never substitutes the mathematical sign of a literal for its width-dependent modular interpretation. This route is described in \artifact{research/signed_reduction/README_RU.md}.
+
+Second, a concrete negative witness can be checked directly against the source, target, guard, and width, without a complete positive factor. Bounded unsuccessful search establishes no universal result. In particular, a counterexample at width one need not be a Java-long counterexample; see \artifact{research/signed_witness/README_RU.md}.
+
+Third, conditional residual descriptions have a checked coverage relation instead of merely representing a few sampled residual states. Each edge differentiates the live DAG by one bit, justifies accumulated mismatch conditions, replays local reduction, and checks the resulting successor description and terminal label. Local simulation and complete edge coverage lift to every continuation. The coverage route reduces equality with $2^{31}$ from the unavailable 65-state full carrier to 34 descriptions without increasing the cap. For equality with $2^k$, the documented family uses $k+3$ descriptions, reaching the cap at $k=61$; $k=62$ still exhausts the budget. These facts and limitations are recorded in \artifact{research/signed_coverage/README_RU.md}.
+
+A checked immutable context can reuse the common source/coverage/observation proof across separately supplied targets, while a compact DAG shares exact repeated JSON structures in portable packets. The receiving process still checks the common evidence and every target. DAG sharing reduces repeated representation, not semantic obligations, and neither a cached verdict nor a hash establishes a new theorem. The lifecycle and transport contracts are in \artifact{research/signed_context/README_RU.md} and \artifact{research/signed_compact/README_RU.md}.
