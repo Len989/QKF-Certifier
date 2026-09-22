@@ -1,6 +1,15 @@
 name: Prepared context PR48 comparisons
 on:
   pull_request:
+    paths:
+      - 'research/**'
+      - '!research/direct_emission/**'
+      - '!research/regression/**'
+      - '!research/**/*.md'
+      - '!research/**/RESULTS.json'
+      - '*.py'
+      - 'pyproject.toml'
+      - 'requirements*.txt'
   workflow_dispatch:
 permissions:
   contents: read
@@ -33,14 +42,14 @@ jobs:
           git rev-parse HEAD^{tree} > reproduction/prepared/tree.txt
           git archive HEAD | gzip -n > reproduction/prepared/source.tar.gz
           python --version > reproduction/prepared/python.txt
-          python -m research.prepared_context.preserve > reproduction/prepared/preflight.json
+          python -m research.direct_emission.preserve > reproduction/prepared/preflight.json
       - name: Registered PR47 lifecycle protocol and independent replays
         run: |
           set -o pipefail
           python -m research.prepared_context.experiment reproduction/prepared/comparison --shard "$COST_SUITE" 2>&1 | tee reproduction/prepared/progress.log
           python -m research.prepared_context.replay reproduction/prepared/comparison > reproduction/prepared/replay-normal.json
           python -O -m research.prepared_context.replay reproduction/prepared/comparison > reproduction/prepared/replay-optimized.json
-          python -m research.prepared_context.preserve > reproduction/prepared/postflight.json
+          python -m research.direct_emission.preserve > reproduction/prepared/postflight.json
           cmp reproduction/prepared/preflight.json reproduction/prepared/postflight.json
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()

@@ -1,6 +1,16 @@
 name: Full registered cost comparisons
 on:
   pull_request:
+    paths:
+      - 'research/**'
+      - '!research/direct_emission/**'
+      - '!research/prepared_context/**'
+      - '!research/regression/**'
+      - '!research/**/*.md'
+      - '!research/**/RESULTS.json'
+      - '*.py'
+      - 'pyproject.toml'
+      - 'requirements*.txt'
   workflow_dispatch:
 permissions:
   contents: read

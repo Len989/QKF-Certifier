@@ -1,0 +1,51 @@
+name: Direct emission PR49 comparisons
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  measurements:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        python-version: ['3.10', '3.12']
+        suite: ['single', 'mask', 'parity', 'repeat', 'each', 'fallback']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      COST_SUITE: ${{ matrix.suite }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Record measured source and accepted PR48 preservation
+        run: |
+          mkdir -p reproduction/emitted
+          git rev-parse HEAD > reproduction/emitted/revision.txt
+          git rev-parse HEAD^{tree} > reproduction/emitted/tree.txt
+          git archive HEAD | gzip -n > reproduction/emitted/source.tar.gz
+          python --version > reproduction/emitted/python.txt
+          python -m research.direct_emission.preserve > reproduction/emitted/preflight.json
+      - name: Registered PR47 lifecycle protocol and independent replays
+        run: |
+          set -o pipefail
+          python -m research.direct_emission.experiment reproduction/emitted/comparison --shard "$COST_SUITE" 2>&1 | tee reproduction/emitted/progress.log
+          python -m research.direct_emission.replay reproduction/emitted/comparison > reproduction/emitted/replay-normal.json
+          python -O -m research.direct_emission.replay reproduction/emitted/comparison > reproduction/emitted/replay-optimized.json
+          python -m research.direct_emission.preserve > reproduction/emitted/postflight.json
+          cmp reproduction/emitted/preflight.json reproduction/emitted/postflight.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: emitted-${{ matrix.suite }}-py${{ matrix.python-version }}
+          path: reproduction/emitted/
+          retention-days: 30
+          if-no-files-found: error
