@@ -1,0 +1,16 @@
+name = "qkf_composition_soundness"
+version = "0.1.0"
+defaultTargets = ["Composition", "CompositionAudit", "CompositionExamples"]
+
+[[require]]
+name = "qkf_ground_soundness"
+path = "../ground"
+
+[[lean_lib]]
+name = "Composition"
+
+[[lean_lib]]
+name = "CompositionAudit"
+
+[[lean_lib]]
+name = "CompositionExamples"

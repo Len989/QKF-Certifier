@@ -1,0 +1,343 @@
+{
+  "schema": "qkf-composition-fixtures-v1",
+  "cases": [
+    {
+      "name": "ground_gap",
+      "expected": true,
+      "file": "evidence/ground_gap.decoded.json",
+      "assumptions": 2,
+      "entries": 3,
+      "consumers": 1,
+      "via_links": 0,
+      "ground_events": 3
+    },
+    {
+      "name": "ground_reverse_axioms",
+      "expected": true,
+      "file": "evidence/ground_reverse_axioms.decoded.json",
+      "assumptions": 2,
+      "entries": 3,
+      "consumers": 1,
+      "via_links": 0,
+      "ground_events": 3
+    },
+    {
+      "name": "ground_shared_typed",
+      "expected": true,
+      "file": "evidence/ground_shared_typed.decoded.json",
+      "assumptions": 35,
+      "entries": 58,
+      "consumers": 23,
+      "via_links": 0,
+      "ground_events": 345
+    },
+    {
+      "name": "ground_typed_binary",
+      "expected": true,
+      "file": "evidence/ground_typed_binary.decoded.json",
+      "assumptions": 2,
+      "entries": 4,
+      "consumers": 2,
+      "via_links": 0,
+      "ground_events": 6
+    },
+    {
+      "name": "lemma_chain",
+      "expected": true,
+      "file": "evidence/lemma_chain.decoded.json",
+      "assumptions": 10,
+      "entries": 14,
+      "consumers": 4,
+      "via_links": 3,
+      "ground_events": 19
+    },
+    {
+      "name": "lemma_none",
+      "expected": true,
+      "file": "evidence/lemma_none.decoded.json",
+      "assumptions": 8,
+      "entries": 10,
+      "consumers": 2,
+      "via_links": 0,
+      "ground_events": 17
+    },
+    {
+      "name": "lemma_parity_fixed8",
+      "expected": true,
+      "file": "evidence/lemma_parity_fixed8.decoded.json",
+      "assumptions": 11,
+      "entries": 15,
+      "consumers": 4,
+      "via_links": 3,
+      "ground_events": 19
+    },
+    {
+      "name": "lemma_repeats",
+      "expected": true,
+      "file": "evidence/lemma_repeats.decoded.json",
+      "assumptions": 6,
+      "entries": 7,
+      "consumers": 3,
+      "via_links": 0,
+      "ground_events": 7
+    },
+    {
+      "name": "pr49_ordinary_no_lemmas",
+      "expected": true,
+      "file": "evidence/pr49_ordinary_no_lemmas.decoded.json",
+      "assumptions": 9,
+      "entries": 13,
+      "consumers": 4,
+      "via_links": 0,
+      "ground_events": 31
+    },
+    {
+      "name": "pr49_ordinary_reuse",
+      "expected": true,
+      "file": "evidence/pr49_ordinary_reuse.decoded.json",
+      "assumptions": 9,
+      "entries": 13,
+      "consumers": 4,
+      "via_links": 3,
+      "ground_events": 16
+    },
+    {
+      "name": "pr49_query_no_lemmas",
+      "expected": true,
+      "file": "evidence/pr49_query_no_lemmas.decoded.json",
+      "assumptions": 9,
+      "entries": 13,
+      "consumers": 4,
+      "via_links": 0,
+      "ground_events": 33
+    },
+    {
+      "name": "pr49_query_reuse",
+      "expected": true,
+      "file": "evidence/pr49_query_reuse.decoded.json",
+      "assumptions": 9,
+      "entries": 13,
+      "consumers": 4,
+      "via_links": 3,
+      "ground_events": 16
+    },
+    {
+      "name": "reject_future_premise",
+      "expected": false,
+      "file": "evidence/reject_future_premise.decoded.json",
+      "assumptions": 2,
+      "entries": 3,
+      "consumers": 1,
+      "via_links": 0,
+      "ground_events": 3
+    },
+    {
+      "name": "reject_self_support",
+      "expected": false,
+      "file": "evidence/reject_self_support.decoded.json",
+      "assumptions": 2,
+      "entries": 3,
+      "consumers": 1,
+      "via_links": 0,
+      "ground_events": 3
+    },
+    {
+      "name": "reject_missing_foundation",
+      "expected": false,
+      "file": "evidence/reject_missing_foundation.decoded.json",
+      "assumptions": 1,
+      "entries": 3,
+      "consumers": 1,
+      "via_links": 0,
+      "ground_events": 3
+    },
+    {
+      "name": "reject_wrong_premise_endpoint",
+      "expected": false,
+      "file": "evidence/reject_wrong_premise_endpoint.decoded.json",
+      "assumptions": 2,
+      "entries": 3,
+      "consumers": 1,
+      "via_links": 0,
+      "ground_events": 3
+    },
+    {
+      "name": "reject_wrong_signature",
+      "expected": false,
+      "file": "evidence/reject_wrong_signature.decoded.json",
+      "assumptions": 2,
+      "entries": 3,
+      "consumers": 1,
+      "via_links": 0,
+      "ground_events": 3
+    },
+    {
+      "name": "reject_wrong_sort_count",
+      "expected": false,
+      "file": "evidence/reject_wrong_sort_count.decoded.json",
+      "assumptions": 2,
+      "entries": 3,
+      "consumers": 1,
+      "via_links": 0,
+      "ground_events": 3
+    },
+    {
+      "name": "reject_wrong_ground_axiom",
+      "expected": false,
+      "file": "evidence/reject_wrong_ground_axiom.decoded.json",
+      "assumptions": 2,
+      "entries": 3,
+      "consumers": 1,
+      "via_links": 0,
+      "ground_events": 3
+    },
+    {
+      "name": "reject_missing_ground_event",
+      "expected": false,
+      "file": "evidence/reject_missing_ground_event.decoded.json",
+      "assumptions": 2,
+      "entries": 3,
+      "consumers": 1,
+      "via_links": 0,
+      "ground_events": 2
+    },
+    {
+      "name": "reject_wrong_goal_index",
+      "expected": false,
+      "file": "evidence/reject_wrong_goal_index.decoded.json",
+      "assumptions": 2,
+      "entries": 3,
+      "consumers": 1,
+      "via_links": 0,
+      "ground_events": 3
+    },
+    {
+      "name": "reject_wrong_consumer",
+      "expected": false,
+      "file": "evidence/reject_wrong_consumer.decoded.json",
+      "assumptions": 2,
+      "entries": 3,
+      "consumers": 1,
+      "via_links": 0,
+      "ground_events": 3
+    },
+    {
+      "name": "reject_missing_consumer_foundation",
+      "expected": false,
+      "file": "evidence/reject_missing_consumer_foundation.decoded.json",
+      "assumptions": 2,
+      "entries": 3,
+      "consumers": 1,
+      "via_links": 0,
+      "ground_events": 3
+    },
+    {
+      "name": "reject_future_via",
+      "expected": false,
+      "file": "evidence/reject_future_via.decoded.json",
+      "assumptions": 10,
+      "entries": 14,
+      "consumers": 4,
+      "via_links": 3,
+      "ground_events": 19
+    },
+    {
+      "name": "reject_self_via",
+      "expected": false,
+      "file": "evidence/reject_self_via.decoded.json",
+      "assumptions": 10,
+      "entries": 14,
+      "consumers": 4,
+      "via_links": 3,
+      "ground_events": 19
+    },
+    {
+      "name": "reject_via_left_endpoint",
+      "expected": false,
+      "file": "evidence/reject_via_left_endpoint.decoded.json",
+      "assumptions": 10,
+      "entries": 14,
+      "consumers": 4,
+      "via_links": 3,
+      "ground_events": 19
+    },
+    {
+      "name": "reject_lost_via",
+      "expected": false,
+      "file": "evidence/reject_lost_via.decoded.json",
+      "assumptions": 10,
+      "entries": 14,
+      "consumers": 4,
+      "via_links": 2,
+      "ground_events": 19
+    },
+    {
+      "name": "reject_false_residual",
+      "expected": false,
+      "file": "evidence/reject_false_residual.decoded.json",
+      "assumptions": 10,
+      "entries": 14,
+      "consumers": 4,
+      "via_links": 3,
+      "ground_events": 19
+    },
+    {
+      "name": "reject_false_late_lemma",
+      "expected": false,
+      "file": "evidence/reject_false_late_lemma.decoded.json",
+      "assumptions": 10,
+      "entries": 14,
+      "consumers": 4,
+      "via_links": 3,
+      "ground_events": 19
+    }
+  ],
+  "positive_count": 12,
+  "negative_count": 17,
+  "inputs": {
+    "ground_gap.json": "c141a5e3d50f18f98abdfe8a298cf3391b07a3779cf40060d9d96611a1c584aa",
+    "ground_reverse_axioms.json": "57723b7bc29354b397755d3e53482c2f5c6ee39505317b092623ea09db6d74fd",
+    "ground_shared_typed.json": "eecf9da0030acd7c4e72475875225cf9fef32ca7f846641e3fb34aff1c973181",
+    "ground_typed_binary.json": "2678c354b64a1507f700ed56335fccd86542527e77717db721e1a39f73aad15c",
+    "lemma_chain.json": "0d833e499796b2593c5b353ea0ed8f59d8b68c47d63f2726d54e3cc150986ba8",
+    "lemma_none.json": "51e2a29547f395b4658287fecf1f78c8c5665bf5baf71ec79300e06e08f97e5c",
+    "lemma_parity_fixed8.json": "6bba7f8ef5ddceba0df28716537b4ddaeb5d585e3dcbd8b0886f6e1e0ca92108",
+    "lemma_repeats.json": "1c366240e2a828e49143e64d46f98978625e7973667503aa077a4128d3bdd732",
+    "pr49_ordinary_no_lemmas.json": "031c8fccca0ed281123605d9775d5383ab3697a8ca6a4b007269c196d380d1c0",
+    "pr49_ordinary_reuse.json": "57b8aa4a59e6891343dfb48500eedabd27d73fdd8f6076407ae029491310073d",
+    "pr49_query_no_lemmas.json": "4ef07828d5063920b9bc9c30a2495b87031ec2ea393fed7240941394fc6a70ac",
+    "pr49_query_reuse.json": "f43df282f8f8833b75623432ca75bf62769b01ea4f453a5360c17afeb2c79353"
+  },
+  "outputs": {
+    "evidence/ground_gap.decoded.json": "262c9149d66a8d8b7563e4c968cd918fdb395506517bd77b12866f7b99e057f2",
+    "evidence/ground_reverse_axioms.decoded.json": "b7dd88b613d93189c765e4dcd35d189ccc70114d720433344ef45115c9dd642b",
+    "evidence/ground_shared_typed.decoded.json": "7bda3bb9ebcddecc8d0b3456d04e3330802f762a7447166bd23946fad1ce5793",
+    "evidence/ground_typed_binary.decoded.json": "44a8e0d904b304ed48347b3086d087d8b8c8d9cc861ca7a6c779e40accc6dc9c",
+    "evidence/lemma_chain.decoded.json": "74520ad48d9fae4700d159dd632af46bf928d207d61d3a4f74625a57496f32a3",
+    "evidence/lemma_none.decoded.json": "390235a02fe119422dabd20e451860c6408f1bd1fa5e8caeb917b9a4fd9d70eb",
+    "evidence/lemma_parity_fixed8.decoded.json": "c63619cfa0a7d3937d09814f977622f85e08a6122404abd5464b614ae447faf2",
+    "evidence/lemma_repeats.decoded.json": "9e35d0f27af1d53f95d535d275725ef1867ad5858d2c03c104dd65c22959ffa4",
+    "evidence/pr49_ordinary_no_lemmas.decoded.json": "2375791de3cef68883de2513231f95218ac88211ba4ab6f4aaf96dadfae91968",
+    "evidence/pr49_ordinary_reuse.decoded.json": "16c4118ba4ecc71b60b18c24b941800ef0b14b3276f27702c6cafb03e4007da7",
+    "evidence/pr49_query_no_lemmas.decoded.json": "6866065114b0dbc6c8d74a429a6567ef2c7ec64b8f9433a8cddf321e32a553c1",
+    "evidence/pr49_query_reuse.decoded.json": "5eff67c71e5a63a1fb5ffa7c39a78ebb7d28c2803f293c49ea3879d29506575c",
+    "evidence/reject_future_premise.decoded.json": "7b5ca4f2cb4db3d1b544aff59db8936a5c9da68a6806a91c7a5c6d8481505c4e",
+    "evidence/reject_self_support.decoded.json": "58706d5439b27a7c91c760fc583a01cdc06c77ecd3aacc6024114265fa540217",
+    "evidence/reject_missing_foundation.decoded.json": "388fc1a86c6128a7f96b8724449c71e4889c779bc55e4824ea983e3fd24c91e6",
+    "evidence/reject_wrong_premise_endpoint.decoded.json": "ff91326854b80e2ef8baee666b946bb9d43aa9a629e4bb217a3444a8b7e90468",
+    "evidence/reject_wrong_signature.decoded.json": "bce1b93f0e8e9e2e33f1352154038700629890cf9cde90d4d076367ba71346ae",
+    "evidence/reject_wrong_sort_count.decoded.json": "d0a0067c8885a0852bfadca0011f8050ce85276dd140482cd02756bce04b9342",
+    "evidence/reject_wrong_ground_axiom.decoded.json": "be71ff59e9466ad7585a76212a2655f6936067e48f5b6171b5317fcb02f479e2",
+    "evidence/reject_missing_ground_event.decoded.json": "713142c1ea2f33ac98c2b0fd6d8dee1e932e5441144a1a3c2996b3d1c72c66c8",
+    "evidence/reject_wrong_goal_index.decoded.json": "5270ddc9e5d76bf9bbeed30336cc4c2b681eb1a3fa8385fdd95c8b074cd9086f",
+    "evidence/reject_wrong_consumer.decoded.json": "3c8ff5d93f2562011e7c72beb113e45e86e759531e34eceb5be1728998ed171d",
+    "evidence/reject_missing_consumer_foundation.decoded.json": "30e20e725ee58612f9febe6a5ee07d62396ff2517fca09723c2fc863b94aa790",
+    "evidence/reject_future_via.decoded.json": "2400ee30194ed3b74e517a77b6b17b6e4d8b4bcce0259e96795fd06f3d99fcd7",
+    "evidence/reject_self_via.decoded.json": "ea62e7b8918fc4dffda819e6676aa2944e5aa9044f87e768c8ea3bdb43e31c94",
+    "evidence/reject_via_left_endpoint.decoded.json": "f568c97f6c2f1a222867e38289fb11f0e680a604b48ac20c14db464179b9db5b",
+    "evidence/reject_lost_via.decoded.json": "cd6d99eef8fe8a9a389839ef8d8ec28ef63dfdbb96c43bf21c09e4b17afa1f1b",
+    "evidence/reject_false_residual.decoded.json": "4080db7b346852986c58dd69221856e90a785b819bd0f8d174ff6f0a6cf31224",
+    "evidence/reject_false_late_lemma.decoded.json": "86fc9ef3da0fff8ed4bf570ccf6c9507d08a894ee45d7a5b31604f69935bacb4",
+    "CompositionExamples.lean": "fa47f7fae098a00d3fbf9237d6c5dbcae063438c964a90607ce674a6cf3574e0"
+  }
+}

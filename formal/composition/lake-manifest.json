@@ -1,0 +1,13 @@
+{"version": "1.2.0",
+ "packagesDir": ".lake/packages",
+ "packages":
+ [{"type": "path",
+   "scope": "",
+   "name": "qkf_ground_soundness",
+   "manifestFile": "lake-manifest.json",
+   "inherited": false,
+   "dir": "../ground",
+   "configFile": "lakefile.toml"}],
+ "name": "qkf_composition_soundness",
+ "lakeDir": ".lake",
+ "fixedToolchain": false}

@@ -1,0 +1,45 @@
+name: Lean lemma composition PR51
+on:
+  pull_request:
+    paths:
+      - 'formal/composition/**'
+      - 'formal/ground/**'
+      - 'research/source_lemmas/**'
+      - 'research/applicable_summary/**'
+      - 'research/direct_emission/**'
+      - 'research/regression/test_composition_formal.py'
+      - '.github/workflows/lean-composition.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  composition-soundness:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Pinned Lean package and kernel-checked composition examples
+        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
+        with:
+          lake-package-directory: formal/composition
+          use-github-cache: false
+      - name: Clean rebuild, exact axiom audit and negative integrity controls
+        run: |
+          python -O -m formal.composition.check_ci reproduction/lean_composition --require-clean
+          git archive HEAD | gzip -n > reproduction/lean_composition/source.tar.gz
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: lean-composition-pr51
+          path: reproduction/lean_composition/
+          retention-days: 30
+          if-no-files-found: error
