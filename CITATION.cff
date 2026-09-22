@@ -5,10 +5,10 @@ title: "QKF Certifier: observation kernels and width-independent certificates"
 authors:
   - family-names: Shcherbakov
     given-names: Leonid
-version: 0.2.0a1
+version: 0.3.0a1
 license: MIT
 repository-code: "https://github.com/Len989/QKF-Certifier"
-abstract: "Research alpha combining the coordinatewise KnownBits CLI with separately scoped observation and signed-word proof capsules and a Lean pilot."
+abstract: "Research alpha combining the coordinatewise KnownBits CLI with separately scoped observation inference, signed-word proofs, finite ground-query and lemma-composition certificates, ordinary SDK comparisons, and Lean soundness developments."
 preferred-citation:
   type: unpublished
   title: "QKF-Certifier: observation kernels and width-independent word proofs"
@@ -16,6 +16,6 @@ preferred-citation:
     - family-names: Shcherbakov
       given-names: Leonid
   year: 2026
-  version: "2.0"
+  version: "3.0"
   url: "https://github.com/Len989/QKF-Certifier"
-  notes: "Prepared manuscript, 13 September 2026. No DOI assigned by this workflow."
+  notes: "Prepared manuscript, 22 September 2026. No DOI assigned to this version by this workflow."

@@ -1,0 +1,50 @@
+\section{From initial rows to consumer-directed proof DAGs}\label{sec:consumerproofs}
+
+An adequate whole-source interface is one way to answer a consumer. Another is to prove only its requested equality from native source facts. This section separates the exact algebraic kernels from the policies that acquire those facts and from the checked objects subsequently used by a client.
+
+\subsection{Initial pure-row semantics beyond atomic completion}
+The earlier atom-generated word interfaces have $S=D=A$. A separate checker now implements the two-sorted finite ground pure-row fragment of Paper I. Its input consists of finite native carriers $A,B$, their positive-arity operation tables, and supplied equations $\alpha(b,a)=c$. Repeated or conflicting supplied cells are allowed: the input need not define a partial function before quotienting. Compatibility is imposed on the named native tables; no additional composition law for the action follows merely from an operation on $B$.
+
+The certificate establishes the least forced carrier quotient $Q=A/\theta$ by synchronous feedback. Every row sees the same quotient in a round. Positive derivations justify each merge, closure checks exclude missing consequences, and the last round is a common fixed point. On each resulting row, the checker verifies the generated domain $S$, its homomorphism $h$, the exact ambient congruence
+\[
+ \kappa=\operatorname{Cg}_{Q}(\ker h),\qquad
+ \kappa\cap S^2=\ker h,
+\]
+and the forced carrier-valued domain $D=S^\kappa$. External classes remain external initial values; they are not silently assigned arbitrary elements of $Q$. Chronological ground derivations and complete finite separating models provide the two sides of the claimed interface partition. A separately checked chosen completion proves existence of that completion, not leastness of its quotient. The precise restrictions, provenance, and replay format are in \artifact{research/pure_rows/README_RU.md}.
+
+A local source-bound pilot makes $D\supsetneq S$ operational. For one nonsign ascending cell on the three physical phases $A,B,C$, the four supplied inputs are
+\[
+ S=\{\varnothing,\{B\},\{B,C\},\{A,B,C\}\}.
+\]
+Their outputs are respectively $\varnothing,\varnothing,\{A,C\},\{A,C\}$. The kernel contains $\varnothing\sim\{B\}$ and $\{B,C\}\sim\{A,B,C\}$. Intersecting the latter pair with $\{A,B\}$ and using transitivity gives $\{A,B\}\sim\varnothing$, hence the forced value $h(\{A,B\})=\varnothing$ outside $S$. Here $|S|=4$ and $|D|=8$. The native carrier is protected: identifying distinct physical phase observations is not permitted by the source bridge.
+
+The bridge checks the actual local repair instructions and the union/intersection laws of their guarded inverse image. Its scope is one cell under its stated source context, not whole-word reachability. A direct Boolean/range proof on the same seed facts is shorter in this pilot, so the implemented forcing mechanism is retained as a verified option, not as a demonstrated cost improvement. See \artifact{research/source_forcing/README_RU.md}.
+
+\subsection{Typed ground queries and visibility}
+The ground-query input is a finite many-sorted signature, closed equations $E$, and ordered requested pairs $O$. The term DAG is exactly $\operatorname{Sub}(E)\cup\operatorname{Sub}(O)$; every node references earlier arguments and is type checked. A positive event either names an actual equation of $E$ or applies congruence using paths made solely of earlier accepted events. Every argument, endpoint, and claimed depth is checked. Iterative dependency extraction preserves DAG sharing instead of expanding a term such as $f(t,t)$ into an exponential tree.
+
+The ordinary entailment mode verifies the depth of the supplied proof without claiming it is minimal. In exact-threshold mode, a proof at depth $d$ is accompanied by a separating model at $d-1$ whenever that lower horizon contains the query. At a restricted horizon, a model certifies only nonvisibility from the active equations. At the full horizon it can certify nonentailment from $E$. Neither result asserts universal disequality. The model supplies total typed operations and checks all active equations, including those absent from the positive proof. The contract and conformance experiment are given in \artifact{research/ground_query/README_RU.md}.
+
+\subsection{Scoped native facts and an independent target}
+For a supported source $s$, guard $G$, and explicitly chosen width domain $W$, native rules establish closed equalities $E_{s,G,W}$. The word/Boolean terms retain their interpretation and source identity. Rules include checked low-bit propagation, elementary word identities, equality-to-mask implications, source-to-sign predicates, and consequences of the independently defined target abstraction under $G$. The source body is admitted before any shortcut based on an empty guard.
+
+The consumer expression $c$ is supplied independently. The ground certificate must prove the exact compiled obligation $s=c$. Its semantic implication is
+\[
+ \bigl(\forall e\in E_{s,G,W},\;G\Rightarrow e\bigr)
+ \ \land\ E_{s,G,W}\vdash s=c
+ \quad\Longrightarrow\quad G\Rightarrow s=c
+ \qquad(w\in W).
+\]
+The checker recompiles the source, checks every native premise, and replays the ground proof. This positive route does not require the covered residual model. The all-positive mode refers to the declared modular semantics, while a fixed-width request states its width explicitly. Source unsupportedness, verified empty domain, concrete refutation, insufficient premises, and resource exhaustion remain distinct outcomes; see \artifact{research/source_query/README_RU.md}.
+
+A planner chooses source questions from a restricted syntax-derived candidate policy and retries a consumer checkpoint as facts arrive. A failed finite model belongs to exactly its current premises and horizon; adding a fact invalidates its use as a model of the enlarged basis. Exhausting the candidate policy is not a proof that no adequate observations exist. Optional fallback constructs the retained covered source model and a new guarded target product, charging both the failed initial route and fallback. The ordinary route receives the same policy and native attempts but uses unfiltered congruence closure. It is a QKF implementation alternative, not an external solver. See \artifact{research/source_planner/README_RU.md}.
+
+\subsection{Closed lemmas, prepared contexts, and direct emission}
+A batch can share checked native premises $E$ and add derived closed equalities $E^+$. Each imported lemma carries its ground proof and depends only on the preceding checked prefix. Such a lemma is not a universally quantified rewrite schema: matching syntax does not authorize changing the source, guard, width, or native algebra. If an earlier lemma proves $s=p$, a later consumer $s=c$ may explicitly use a residual proof $p=c$; the complete result follows by transitivity. Removing this dependency would invalidate the shortened consumer proof. Cold loading rechecks every imported proof. The evidence and lifecycle are specified in \artifact{research/source_lemmas/README_RU.md}.
+
+Prepared contexts bind immutable source, IR, guard, width, algebra, presentation, and obligation data within one build. Their admitted structures can be shared between search and checking instead of repeatedly parsed from JSON. These process-local objects do not travel as trusted receipts and do not authorize stale or cross-scope promotions. Direct emission then writes the final dependency DAG from the checked positive entries, avoiding the intermediate batch packet and its repeated export checks. Unresolved obligations retain their scoped-model fallback. These are changes in preparation and representation under the same proof obligations, documented in \artifact{research/prepared_context/README_RU.md} and \artifact{research/direct_emission/README_RU.md}.
+
+\subsection{An applicable checked summary}
+The experimental SDK provides \texttt{build}, \texttt{check}, \texttt{apply}, \texttt{assess}, \texttt{explain}, and explicit \texttt{refine}. An independent check of source, request, and packet yields an immutable summary. In the signed Boolean profile, applying it checks the guard and width and executes the established target action without rerunning the source. A new consumer can be assessed against that action on the exact finite sign/capped-popcount abstraction. A changed source, guard, width, selection, or unsupported consumer requires new justification. The local physical-phase profile instead applies only already proved inverse images for its selected cell.
+
+Portable proof dependencies remain available through export and explanation. A receiving process checks the packet anew. A lower model is not turned into an executable positive summary, and a mixed batch exposes only its actually proved guarantees. The runtime accepts widths up to 4096, whereas an all-positive mathematical certificate is not bounded by that execution API limit. The SDK scope is in \artifact{research/applicable_summary/README_RU.md}. It is an experimental checkout API; the installed coordinatewise \texttt{qkf} contract remains separate.

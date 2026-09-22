@@ -1,18 +1,18 @@
-# Paper III, manuscript 2.0
+# Paper III, manuscript 3.0
 
 Leonid Shcherbakov. *QKF-Certifier: observation kernels and width-independent word proofs.*
-Prepared revision: 13 September 2026. Accompanies software candidate 0.2.0a1.
+Prepared revision: 22 September 2026. Software release candidate: 0.3.0a1.
 
-- `QKF_PAPER_III_v2.0_2026-09-13.pdf`: compiled manuscript.
-- `source/`: complete LaTeX sources; embedded bibliography, no BibTeX required.
-- `CODE_VERSION.json`: version, contract and stable claim mapping.
-- `CHANGES_RU.md`: editorial changes, limitations and next priorities.
-- `historical/v1/`: unmodified earlier paper and its evidence/scripts/manifests.
-  Those scripts still check the public 0.1.0a1 commit, not this new candidate.
+- `QKF_PAPER_III_v3.0_2026-09-22.pdf`: complete revised manuscript.
+- `source/`: complete LaTeX sources; embedded bibliography; no BibTeX required.
+- `CODE_VERSION.json`: exact accepted research snapshot and claim/source map.
+- `REVISION_v3.md`: scientific changes and scope of the revision.
+- `historical/v2/source/`: unchanged repository source of the preceding manuscript.
+- `QKF_PAPER_III_v2.0_2026-09-13.pdf` and `historical/v1/`: retained prior material.
 
 ## Build
 
-Use standard TeX Live with pdfLaTeX, Latin Modern, AMS packages, microtype,
+With standard TeX Live and pdfLaTeX, Latin Modern, AMS packages, microtype,
 geometry, hyperref, xurl, booktabs, longtable, tabularx and enumitem:
 
 ```sh
@@ -22,28 +22,22 @@ pdflatex -interaction=nonstopmode -halt-on-error main.tex
 pdflatex -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-The delivered PDF has embedded Type 1 fonts. Compilation logs and the page review
-record are identified in `docs/RELEASE_VALIDATION_0.2.0a1.md` at the repository root.
+## Evidence identity
 
-## Reproduce current evidence
+All new research claims refer to the accepted snapshot
+`eca90f9252da4480d77c1f8cb4b7062470c57b89` (through PR51). Its tree equals
+`d6a352ed072f947429ec0896fad61350ab2540ab`, the final PR51 tree. Measured cost
+reports identify their own earlier engines and environments; this revision
+does not rerun those measurements or change the frozen evaluation protocols.
+The release changes documentation, manuscript and software version metadata.
 
-From the full repository root on Linux/POSIX with Python 3.12, without `-O`:
+See `releases/v0.3.0a1.md` and `docs/RELEASE_VALIDATION_0.3.0a1.md` at the
+repository root for reproduction routes and local validation. The installed
+wheel remains the coordinatewise application. Research and Lean require the
+complete source archive. Formal theorems do not imply verification of JSON
+decoding, source rules, Java execution, or the entire Python implementation.
 
-```sh
-python tools/replay_research.py --suite all --output reproduction/run_01
-cd research/lean
-lake build
-```
-
-See `research/README.md`. This replays saved certificates and builds the Lean
-proofs. Historical producer/native/SMT experiments are retained, not relabeled
-as new runs. The original finite algebraic supplement remains self-contained in
-`historical/v1/`; follow its own source README to reproduce its pinned checks.
-
-## Version identity
-
-The unchanged coordinatewise core refers to public commit
-`f93561682319e8b911ed32c01583f2a496dc59fc` (v0.1.0a1). New candidate files are
-identified by `RELEASE_MANIFEST.json` at the repository root. The manuscript does
-not assume that v0.2.0a1 has been published. A later release record must identify
-its actual reviewed commit. No DOI has been assigned here.
+The earlier Paper III record is https://doi.org/10.5281/zenodo.22736714.
+The DOI of this new manuscript version must be assigned by Zenodo; none is
+invented in these sources. Retain the existing record's author and license
+metadata when creating its new version.

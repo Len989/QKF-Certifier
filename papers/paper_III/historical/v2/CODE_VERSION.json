@@ -1,31 +1,27 @@
 {
-  "manifest_schema": "qkf-paper-code-map-v3",
+  "manifest_schema": "qkf-paper-code-map-v2",
   "paper": {
     "series": "QKF",
     "number": "III",
     "title": "QKF-Certifier: observation kernels and width-independent word proofs",
     "author": "Leonid Shcherbakov",
-    "version": "3.0",
-    "manuscript_revision": "2026-09-22",
+    "version": "2.0",
+    "manuscript_revision": "2026-09-13",
     "version_doi": null,
-    "concept_doi": "10.5281/zenodo.22736713",
-    "publication_status": "prepared new Zenodo version; not deposited",
-    "previous_version_doi": "10.5281/zenodo.22736714",
-    "license": "CC-BY-4.0"
+    "concept_doi": null,
+    "publication_status": "prepared, not deposited"
   },
   "software": {
     "repository": "https://github.com/Len989/QKF-Certifier",
-    "version": "0.3.0a1",
-    "proposed_tag": "v0.3.0a1",
-    "publication_status": "prepared local release candidate",
+    "version": "0.2.0a1",
+    "proposed_tag": "v0.2.0a1",
+    "publication_status": "prepared local candidate",
     "released_commit": null,
-    "base_commit": "eca90f9252da4480d77c1f8cb4b7062470c57b89",
+    "base_commit": "f93561682319e8b911ed32c01583f2a496dc59fc",
     "certificate_schema": "qkf-rewrite-v3",
-    "semantic_contract": "total-transfer-words-v2; positive-width; modular-arithmetic; SMT-total-div-shift; standard-counts; nonbottom-KB",
-    "research_snapshot_commit": "eca90f9252da4480d77c1f8cb4b7062470c57b89",
-    "research_tree": "d6a352ed072f947429ec0896fad61350ab2540ab"
+    "semantic_contract": "total-transfer-words-v2; positive-width; modular-arithmetic; SMT-total-div-shift; standard-counts; nonbottom-KB"
   },
-  "claim_map": "papers/paper_III/REVISION_v3.md; releases/CHANGES_v0.3.0a1.md; docs/CLAIMS.md retains K1-K10",
+  "claim_map": "docs/CLAIMS.md (repository root)",
   "claim_ids": {
     "K1": "Finite ground partial core, inherited from I/II; research reference",
     "K2": "Exact relation-matrix closure; research reference",
@@ -67,13 +63,5 @@
       "upstream_commit": "4ec509edab067d62c00f76778789170061ae299c"
     }
   ],
-  "candidate_content_manifest": "RELEASE_MANIFEST.json (repository root)",
-  "new_evidence": {
-    "inference": "research/inference; research/observations",
-    "signed_interfaces": "research/signed_bridge; research/signed_observations; research/signed_runtime; research/signed_targets",
-    "ground_and_sdk": "research/ground_query; research/source_query; research/source_forcing; research/source_planner; research/source_lemmas; research/applicable_summary",
-    "cost_comparisons": "research/causal_comparison; research/sdk_comparison; research/prepared_context; research/direct_emission",
-    "lean_ground": "formal/ground: decoded typed positive DAG soundness",
-    "lean_composition": "formal/composition: chronological lemmas and typed consumer values under explicit native assumptions"
-  }
+  "candidate_content_manifest": "RELEASE_MANIFEST.json (repository root)"
 }

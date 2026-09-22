@@ -1,8 +1,9 @@
-The manuscript and prose are prepared for publication by Leonid Shcherbakov.
-CC BY 4.0 is the proposed publication choice, consistent with the companion
-paper packages. The author selects the manuscript license when depositing.
-This preparation step does not publish or license the manuscript externally.
+The manuscript is by Leonid Shcherbakov. The existing published Paper III
+record, DOI 10.5281/zenodo.22736714, uses Creative Commons Attribution 4.0
+International (CC BY 4.0), verified from the Zenodo public record on 22 September
+2026. The prepared version 3.0 carries forward that manuscript license.
 
-Research source code supplied under evidence_sources/ and verification/ is
-covered by LICENSE_CODE_MIT.txt. Public QKF-Certifier and the upstream example
-artifact retain their own MIT notices in the pinned repositories.
+QKF-authored source code is covered by the repository MIT license. Third-party
+sources and examples retain their own notices and licenses. The manuscript
+license does not replace those code licenses. New-version preparation does not
+itself create a Zenodo record, assign a DOI, or publish a GitHub release.

@@ -1,0 +1,98 @@
+\section{The complete finite semantics of the accepted word fragment}\label{sec:knownbits}
+
+\subsection{KnownBits and the coordinatewise language}
+For $w\ge1$, write $B_w=\{0,\ldots,2^w-1\}$ and let
+\[
+\KB_w=\{(Z,O)\in B_w^2:Z\mathbin{\&}O=0\}.
+\]
+Its concretization is
+\[
+\gamma_w(Z,O)=\{x\in B_w:x\mathbin{\&}Z=0,\ x\mathbin{\&}O=O\}.
+\]
+Inputs are nonbottom: every bit is known zero, known one, or unknown. We use
+$\bits=\{Z,O,U\}$ for these three one-bit states, encoded respectively by $(1,0)$, $(0,1)$, and $(0,0)$. The context distinguishes the state symbols from word masks. An output with conflicting masks has empty concretization and cannot be sound for the nonempty target images considered here.
+
+The accepted mask language has four variables $z_a,o_a,z_b,o_b$, the constants zero and all-ones, and bitwise AND, OR, XOR, and NOT. A pair $e=(e_Z,e_O)$ consists of two such expressions. The same syntax is interpreted at every width. The ordinary integer constant $1$ is not an all-ones constant at widths above one and is therefore outside this final language, as are counts, shifts, comparisons, and arithmetic residuals.
+
+KnownBits and the closely related tnum domain are established abstract domains \cite{LLVMKnownBits,Vishwanathan2022}. We use raw zero/one masks so that the exact interface matches the program's return value. Our class counts below do not identify distinct invalid masks merely because they denote bottom.
+
+\begin{lemma}[Coordinate evaluation]\label{lem:coordinate}
+For every accepted mask expression $e$, positive width $w$, and bit position $j<w$, its output bit depends only on the four input-mask bits at $j$ and equals the one-bit evaluation of $e$ on those bits.
+\end{lemma}
+\begin{proof}
+Variables and the two constants have the stated property. Each permitted operation applies its Boolean operation independently at each bit. Structural induction gives the result.
+\end{proof}
+
+\begin{theorem}[Nine-row soundness and optimality, K5.1]\label{thm:ninerows}
+Let $f_w$ be the coordinatewise lift of a Boolean binary target $f_1$. An accepted pair expression $e$ is sound at every positive width if and only if, for every $(a,b)\in\bits^2$,
+\begin{equation}\label{eq:ninerows}
+\{f_1(x,y):x\in\gamma_1(a),\ y\in\gamma_1(b)\}
+\subseteq\gamma_1(e_1(a,b)).
+\end{equation}
+Replacing inclusion by equality gives a necessary and sufficient criterion for the best KnownBits result at all positive widths. A failed soundness row yields a concrete width-one counterexample.
+\end{theorem}
+\begin{proof}
+Necessity follows by choosing width one. For sufficiency, every valid word input is a product of its one-bit possibilities. By Lemma~\ref{lem:coordinate}, \eqref{eq:ninerows} at each coordinate includes the corresponding concrete target bit in the output. This proves soundness of the whole word.
+
+For optimality, coordinatewise target evaluation on product inputs has a product image: choices of the input bits at different positions are independent. Each coordinate image is a nonempty subset of $\{0,1\}$ and is represented exactly by one of $Z,O,U$. Equality in all rows therefore gives exactly the product image, which is the best domain value. If inclusion fails, the offending row contains concrete bits whose target result violates an output mask, already at width one.
+\end{proof}
+
+For the three supported targets the exact table is:
+\begin{center}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$a$&$b$&AND&OR&XOR\\\midrule
+$Z$&$Z$&$Z$&$Z$&$Z$\\
+$Z$&$O$&$Z$&$O$&$O$\\
+$Z$&$U$&$Z$&$U$&$U$\\
+$O$&$Z$&$Z$&$O$&$O$\\
+$O$&$O$&$O$&$O$&$Z$\\
+$O$&$U$&$U$&$O$&$U$\\
+$U$&$Z$&$Z$&$U$&$U$\\
+$U$&$O$&$U$&$O$&$U$\\
+$U$&$U$&$U$&$U$&$U$\\\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{An extensional quotient, not a syntactic normal form}
+Order the input rows lexicographically using $(Z,O,U)$ on each argument, with the second argument varying fastest. Encode the zero and one output bits of row $i$ in positions $2i$ and $2i+1$:
+\[
+\sig(e)=\sum_{i=0}^{8}\left(e_Z(i)2^{2i}+e_O(i)2^{2i+1}\right).
+\]
+This is the exact 18-bit signature reported by \texttt{inspect}.
+
+\begin{theorem}[Complete finite signature, K5.2]\label{thm:signature}
+Two accepted pair expressions have equal signatures exactly when they return identical masks at every positive width on every valid input. There are exactly $2^{18}$ raw-mask semantic classes and $3^9$ classes with valid outputs on every valid input. Evaluation of one mask is a Boolean-algebra homomorphism onto the 512-element algebra of Boolean functions on the nine rows.
+\end{theorem}
+\begin{proof}
+Equality of signatures is equality on the nine rows and lifts coordinatewise by Lemma~\ref{lem:coordinate}; conversely, take width one. To show surjectivity, each valid assignment of the four mask bits has a Boolean minterm using variables and their negations that singles it out among the nine rows. Disjunctions of these minterms define every subset of rows. Thus one mask has $2^9$ classes, and two independently chosen masks have $2^{18}$. Restricting each row to the three nonconflicting outputs gives $3^9$. Boolean operations are evaluated pointwise, proving the homomorphism assertion.
+\end{proof}
+
+The kernel of this evaluation is an exact semantic congruence. It is a second concrete instance of the evaluation-kernel viewpoint from Proposition~\ref{prop:core}, but its semantic models and permitted expressions are specified independently of $E_\tau$. The implemented normalizer is not claimed to choose one unique syntax for each signature.
+
+For componentwise mask meet, $(Z,O)\sqcap(Z',O')=(Z\mathbin{|}Z',O\mathbin{|}O')$, the signature obeys
+\begin{equation}\label{eq:meet}
+\sig(e\sqcap e')=\sig(e)\mathbin{\mathrm{OR}}\sig(e').
+\end{equation}
+On arbitrary raw outputs this operation can produce conflicting masks. On sound transformers of the same target, the common nonempty concrete image prevents that conflict.
+
+\subsection{The exact precision classes}
+Let $\mathfrak F_f$ be the input rows on which the target image is a singleton, annotated by that forced bit. These are the possible correct precision facts. No monotonicity assumption is imposed in the following classification.
+
+\begin{theorem}[Sound precision lattice, K5.3]\label{thm:precision}
+Sound coordinatewise transformer classes for $f$ are in bijection with subsets of $\mathfrak F_f$. Every subset is expressible in the accepted language. Meet corresponds to union of precision facts. For AND, OR, and XOR there are respectively $64$, $64$, and $16$ sound classes, and a chain of strict meet refinements starting at all-unknown has at most $6$, $6$, and $4$ strict steps.
+\end{theorem}
+\begin{proof}
+When the target row image is $\{0,1\}$, soundness forces output $U$. When the image is a singleton, the only sound outputs are its correct singleton and $U$. Thus a sound table chooses exactly which forced facts to retain. Theorem~\ref{thm:signature} gives definability of every such table, and \eqref{eq:meet} gives union. The displayed target table has six, six, and four forced rows. Each strict refinement adds at least one previously absent fact.
+\end{proof}
+
+These heights bound semantic precision within the accepted fragment. They do not bound candidate-generation iterations, proof-search cost, or the cost of the best implementation of a class.
+
+\begin{proposition}[Additional monotonicity]\label{prop:monotoneclasses}
+If transformers must also be monotone for the precision order induced by concretization inclusion, the numbers of sound classes are $26$, $26$, and $16$ for AND, OR, and XOR.
+\end{proposition}
+\begin{proof}
+A retained forced fact at an input row requires the same fact at every more precise row. For AND, the five zero rows have three minimal rows $(Z,Z),(Z,O),(O,Z)$ and two further rows $(Z,U),(U,Z)$. Selecting $(Z,U)$ requires the first two minimal rows; selecting $(U,Z)$ requires the first and third. The number of downsets is $8+2+2+1=13$, according to whether neither, only the first, only the second, or both further rows are selected. The one row $(O,O)$ forcing one is independently optional, giving $26$. OR is dual. All four forced XOR rows are minimal, so every subset is monotone.
+\end{proof}
+
+The release computes the 18-bit signature and target soundness/optimality; it does not expose a separate monotonicity flag. The additional classification is a mathematical result checked in the supplement and a possible future interface extension.
