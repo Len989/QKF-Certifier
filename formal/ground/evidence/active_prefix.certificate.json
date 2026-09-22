@@ -1,0 +1,1 @@
+{"events":[{"depth":0,"equation":0,"left":0,"right":1,"rule":"axiom"}],"goals":[{"depth":0,"lower_model":null,"path":[0],"status":"equal"}],"horizon":0,"mode":"entailment","models":[],"request_sha256":"18d769a9169432418d45220a394373659f12ee693924188d1588e295a524c5fb","schema":"qkf-ground-query-certificate-v1"}

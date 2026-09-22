@@ -1,0 +1,1 @@
+{"equations":[[0,1],[1,2],[2,3]],"nodes":[{"args":[],"op":"a"},{"args":[],"op":"b"},{"args":[],"op":"c"},{"args":[],"op":"d"}],"queries":[[0,3],[3,0]],"schema":"qkf-ground-query-input-v1","signature":{"a":{"args":[],"result":"A"},"b":{"args":[],"result":"A"},"c":{"args":[],"result":"A"},"d":{"args":[],"result":"A"},"f":{"args":["A"],"result":"A"}},"sorts":["A"]}

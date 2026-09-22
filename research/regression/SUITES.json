@@ -30,9 +30,10 @@
     "research.applicable_summary.test_summary",
     "research.causal_comparison.test_comparison",
     "research.sdk_comparison.test_comparison",
-    "research.prepared_context.test_prepared"
+    "research.prepared_context.test_prepared",
+    "research.direct_emission.test_emission"
   ],
   "new": [
-    "research.direct_emission.test_emission"
+    "research.regression.test_ground_formal"
   ]
 }

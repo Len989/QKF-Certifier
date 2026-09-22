@@ -1,0 +1,1 @@
+{"equations":[],"nodes":[{"args":[],"op":"a"}],"queries":[[0,0]],"schema":"qkf-ground-query-input-v1","signature":{"a":{"args":[],"result":"A"},"f":{"args":["A"],"result":"A"}},"sorts":["A"]}
