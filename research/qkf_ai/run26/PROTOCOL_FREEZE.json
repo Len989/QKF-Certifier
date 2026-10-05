@@ -1,0 +1,292 @@
+{
+  "execution_order": [
+    {
+      "engine": "minimal_pressure",
+      "expected_state": "POST",
+      "id": "normal_r0_n100000_minimal_pressure",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "ordinary",
+      "expected_state": "POST",
+      "id": "normal_r0_n100000_ordinary",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "staged",
+      "expected_state": "POST",
+      "id": "normal_r0_n100000_staged",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "reference",
+      "expected_state": "POST",
+      "id": "normal_r0_n100000_reference",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "minimal",
+      "expected_state": "POST",
+      "id": "normal_r0_n100000_minimal",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "staged",
+      "expected_state": "POST",
+      "id": "normal_r0_n300000_staged",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "reference",
+      "expected_state": "POST",
+      "id": "normal_r0_n300000_reference",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "minimal",
+      "expected_state": "POST",
+      "id": "normal_r0_n300000_minimal",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "minimal_pressure",
+      "expected_state": "POST",
+      "id": "normal_r0_n300000_minimal_pressure",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "ordinary",
+      "expected_state": "POST",
+      "id": "normal_r0_n300000_ordinary",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "ordinary",
+      "expected_state": "POST",
+      "id": "normal_r1_n100000_ordinary",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "staged",
+      "expected_state": "POST",
+      "id": "normal_r1_n100000_staged",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "reference",
+      "expected_state": "POST",
+      "id": "normal_r1_n100000_reference",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "minimal",
+      "expected_state": "POST",
+      "id": "normal_r1_n100000_minimal",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "minimal_pressure",
+      "expected_state": "POST",
+      "id": "normal_r1_n100000_minimal_pressure",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "reference",
+      "expected_state": "POST",
+      "id": "normal_r1_n300000_reference",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "minimal",
+      "expected_state": "POST",
+      "id": "normal_r1_n300000_minimal",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "minimal_pressure",
+      "expected_state": "POST",
+      "id": "normal_r1_n300000_minimal_pressure",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "ordinary",
+      "expected_state": "POST",
+      "id": "normal_r1_n300000_ordinary",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "staged",
+      "expected_state": "POST",
+      "id": "normal_r1_n300000_staged",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "minimal",
+      "expected_state": "PRE",
+      "id": "kill_n100000_minimal_before_commit",
+      "kill_at": "before_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "minimal_pressure",
+      "expected_state": "PRE",
+      "id": "kill_n100000_minimal_pressure_before_commit",
+      "kill_at": "before_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "ordinary",
+      "expected_state": "PRE",
+      "id": "kill_n100000_ordinary_before_commit",
+      "kill_at": "before_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "staged",
+      "expected_state": "PRE",
+      "id": "kill_n100000_staged_before_commit",
+      "kill_at": "before_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "reference",
+      "expected_state": "PRE",
+      "id": "kill_n100000_reference_before_commit",
+      "kill_at": "before_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "minimal",
+      "expected_state": "POST",
+      "id": "kill_n100000_minimal_after_commit",
+      "kill_at": "after_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "minimal_pressure",
+      "expected_state": "POST",
+      "id": "kill_n100000_minimal_pressure_after_commit",
+      "kill_at": "after_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "ordinary",
+      "expected_state": "POST",
+      "id": "kill_n100000_ordinary_after_commit",
+      "kill_at": "after_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "staged",
+      "expected_state": "POST",
+      "id": "kill_n100000_staged_after_commit",
+      "kill_at": "after_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "reference",
+      "expected_state": "POST",
+      "id": "kill_n100000_reference_after_commit",
+      "kill_at": "after_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    }
+  ],
+  "protocol_sha256": "29bb6aac5a26f426472cfff5cec0cd7ec8b8a5086f4c1d7a9c0ecb14261f4263",
+  "schema": "qkf.run26.freeze.v1",
+  "source_sha256": {
+    ".github/workflows/qkf-ai-run26.yml": "7b3ed4aac84ee07a017550b43752638a8f090716148d02d8dafa2b65a3707965",
+    "research/qkf_ai/run26/HISTORY_RU.md": "9346449dc6ae1e01d2efa3d4e28e537651c26b0e7efe9cf14632e81cbb2cc944",
+    "research/qkf_ai/run26/PROTOCOL_RU.md": "e6e291102fc4a0485634b7b71a95f0b41fabf606b8efbae5a6e6280e90b17bb7",
+    "research/qkf_ai/run26/actor26.py": "6bb4077f28fa7e82cc891086164140c6814477388aa96805c7c81ee79e5732ca",
+    "research/qkf_ai/run26/audit26.py": "e816a0b50a1ca88bf3264b10970548cbedecdb0b1fc52ebe78f09de5a2c28f87",
+    "research/qkf_ai/run26/cold26.py": "6211e74dc6509a0d3b2dfb6825012415e26752db62baabb54cffa74bdaa1576c",
+    "research/qkf_ai/run26/fixture26.py": "029d930ec7c9c317097e3785bd400750f9a78b08cee8a31fda71426805981c88",
+    "research/qkf_ai/run26/observe26.py": "2e83009d44f42d5f0b442e29f95f602fef4ae3b54e72619cd7ab97f513cb803a",
+    "research/qkf_ai/run26/run26.py": "d13ba4302173b17574ec5e0cfbe21b0b12c260e08466f481ef5f17695cf975e6",
+    "research/qkf_ai/run26/test_audit26.py": "2453b70798e9eda7c7c2bbaa253a81c5e04ad2be96fd9cd5d0955f585a53ebd4",
+    "research/qkf_ai/run26/test_trace26.py": "696f4dc4a542ef9f55e081128f6cb8527fd4688cb09820de40564441bae17a23",
+    "research/qkf_ai/run26/vendor/external_reference.py": "5451f768fd79328563bfa6b07b9b9ea080f95261ec81e73907adca4ed4f69f4f",
+    "research/qkf_ai/run26/vendor/qkf_import/__init__.py": "db826a6a7c25553bb825f1e839a313721b37f994d330a7bcc82850d72c329d72",
+    "research/qkf_ai/run26/vendor/qkf_import/core.py": "7e86c746ee3d34203f19aed39794508c94149d3c874ab7c3aa15c63f74dd1b4b"
+  }
+}

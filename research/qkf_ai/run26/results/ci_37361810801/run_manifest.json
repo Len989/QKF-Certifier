@@ -1,0 +1,302 @@
+{
+  "execution_order": [
+    {
+      "engine": "minimal_pressure",
+      "expected_state": "POST",
+      "id": "normal_r0_n100000_minimal_pressure",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "ordinary",
+      "expected_state": "POST",
+      "id": "normal_r0_n100000_ordinary",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "staged",
+      "expected_state": "POST",
+      "id": "normal_r0_n100000_staged",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "reference",
+      "expected_state": "POST",
+      "id": "normal_r0_n100000_reference",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "minimal",
+      "expected_state": "POST",
+      "id": "normal_r0_n100000_minimal",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "staged",
+      "expected_state": "POST",
+      "id": "normal_r0_n300000_staged",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "reference",
+      "expected_state": "POST",
+      "id": "normal_r0_n300000_reference",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "minimal",
+      "expected_state": "POST",
+      "id": "normal_r0_n300000_minimal",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "minimal_pressure",
+      "expected_state": "POST",
+      "id": "normal_r0_n300000_minimal_pressure",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "ordinary",
+      "expected_state": "POST",
+      "id": "normal_r0_n300000_ordinary",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "ordinary",
+      "expected_state": "POST",
+      "id": "normal_r1_n100000_ordinary",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "staged",
+      "expected_state": "POST",
+      "id": "normal_r1_n100000_staged",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "reference",
+      "expected_state": "POST",
+      "id": "normal_r1_n100000_reference",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "minimal",
+      "expected_state": "POST",
+      "id": "normal_r1_n100000_minimal",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "minimal_pressure",
+      "expected_state": "POST",
+      "id": "normal_r1_n100000_minimal_pressure",
+      "kill_at": "none",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "reference",
+      "expected_state": "POST",
+      "id": "normal_r1_n300000_reference",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "minimal",
+      "expected_state": "POST",
+      "id": "normal_r1_n300000_minimal",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "minimal_pressure",
+      "expected_state": "POST",
+      "id": "normal_r1_n300000_minimal_pressure",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "ordinary",
+      "expected_state": "POST",
+      "id": "normal_r1_n300000_ordinary",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "staged",
+      "expected_state": "POST",
+      "id": "normal_r1_n300000_staged",
+      "kill_at": "none",
+      "n": 300000,
+      "operation_key": "run26",
+      "repeat": 1
+    },
+    {
+      "engine": "minimal",
+      "expected_state": "PRE",
+      "id": "kill_n100000_minimal_before_commit",
+      "kill_at": "before_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "minimal_pressure",
+      "expected_state": "PRE",
+      "id": "kill_n100000_minimal_pressure_before_commit",
+      "kill_at": "before_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "ordinary",
+      "expected_state": "PRE",
+      "id": "kill_n100000_ordinary_before_commit",
+      "kill_at": "before_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "staged",
+      "expected_state": "PRE",
+      "id": "kill_n100000_staged_before_commit",
+      "kill_at": "before_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "reference",
+      "expected_state": "PRE",
+      "id": "kill_n100000_reference_before_commit",
+      "kill_at": "before_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "minimal",
+      "expected_state": "POST",
+      "id": "kill_n100000_minimal_after_commit",
+      "kill_at": "after_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "minimal_pressure",
+      "expected_state": "POST",
+      "id": "kill_n100000_minimal_pressure_after_commit",
+      "kill_at": "after_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "ordinary",
+      "expected_state": "POST",
+      "id": "kill_n100000_ordinary_after_commit",
+      "kill_at": "after_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "staged",
+      "expected_state": "POST",
+      "id": "kill_n100000_staged_after_commit",
+      "kill_at": "after_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    },
+    {
+      "engine": "reference",
+      "expected_state": "POST",
+      "id": "kill_n100000_reference_after_commit",
+      "kill_at": "after_commit",
+      "n": 100000,
+      "operation_key": "run26",
+      "repeat": 0
+    }
+  ],
+  "fixture_files": {
+    "fixtures/n100000/fixture.json": {
+      "bytes": 914,
+      "sha256": "8ca5084471b3a5ff3b6fa44acccc8e46d67d839877f5e24bb67f4394e0c70fb3"
+    },
+    "fixtures/n100000/initial.sqlite": {
+      "bytes": 4952064,
+      "sha256": "a2418dc9b1a6329c37a3bddb453920ffbeeee7cdb36b9372c50ea81a11f61fee"
+    },
+    "fixtures/n100000/input.csv": {
+      "bytes": 1806936,
+      "sha256": "ffd78fb599537b15a397bdeec4416957e1d159eac37203b19d07cc2f4763b215"
+    },
+    "fixtures/n300000/fixture.json": {
+      "bytes": 917,
+      "sha256": "a9438da3998c73644e984f92c77e64b2ecb94b1cdff26a6d2cb2f0d86771d6cb"
+    },
+    "fixtures/n300000/initial.sqlite": {
+      "bytes": 14913536,
+      "sha256": "90bcff80bd1e5fa2675d7aa74807f93916a248ec251028eb7987a12ccd5ac040"
+    },
+    "fixtures/n300000/input.csv": {
+      "bytes": 5428507,
+      "sha256": "f85f595a997e4587a5faff7381bbbeca2ced0f7572bd7b6cd1a5598cfcc7a1fc"
+    }
+  },
+  "protocol_sha256": "29bb6aac5a26f426472cfff5cec0cd7ec8b8a5086f4c1d7a9c0ecb14261f4263",
+  "started_ns": 1791227633551708115
+}

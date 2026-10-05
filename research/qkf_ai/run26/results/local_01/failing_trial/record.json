@@ -1,0 +1,691 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/466bb53bffcd/qkf_github/research/qkf_ai/run26/actor26.py",
+    "--db",
+    "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite",
+    "--csv",
+    "/workspace/scratch/466bb53bffcd/run26_local_01/fixtures/n300000/input.csv",
+    "--fixture-json",
+    "/workspace/scratch/466bb53bffcd/run26_local_01/fixtures/n300000/fixture.json",
+    "--engine",
+    "ordinary",
+    "--trace",
+    "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/trace.jsonl",
+    "--kill-at",
+    "none"
+  ],
+  "exit_capture": {
+    "after": {
+      "db": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite",
+      "directory": {
+        "entries": [
+          "database.sqlite",
+          "exit_capture",
+          "stderr.txt",
+          "stdout.txt",
+          "trace.jsonl"
+        ],
+        "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary",
+        "stat": {
+          "ctime_ns": 1791227613165538605,
+          "mode": 16877,
+          "mtime_ns": 1791227613165538605,
+          "size": 4096,
+          "st_dev": 27,
+          "st_ino": 671003
+        }
+      },
+      "files": {
+        "-journal": {
+          "error": {
+            "errno": 2,
+            "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-journal'",
+            "type": "FileNotFoundError"
+          },
+          "exists": false,
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-journal"
+        },
+        "-shm": {
+          "error": {
+            "errno": 2,
+            "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-shm'",
+            "type": "FileNotFoundError"
+          },
+          "exists": false,
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-shm"
+        },
+        "-wal": {
+          "error": {
+            "errno": 2,
+            "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-wal'",
+            "type": "FileNotFoundError"
+          },
+          "exists": false,
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-wal"
+        },
+        "database": {
+          "bytes_read": 20525056,
+          "exists": true,
+          "fd_stat_after": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "fd_stat_before": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "header_hex": "53514c69746520666f726d61742033001000010100402020000000040000139300000000000000000000000200000004000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000004002e95c90d0ff800040dd1000f790fcd0dd10f32000000000000000000000000",
+          "lstat_after": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "lstat_before": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite",
+          "sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+          "stable_during_read": true
+        }
+      }
+    },
+    "before": {
+      "db": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite",
+      "directory": {
+        "entries": [
+          "database.sqlite",
+          "exit_capture",
+          "stderr.txt",
+          "stdout.txt",
+          "trace.jsonl"
+        ],
+        "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary",
+        "stat": {
+          "ctime_ns": 1791227613165538605,
+          "mode": 16877,
+          "mtime_ns": 1791227613165538605,
+          "size": 4096,
+          "st_dev": 27,
+          "st_ino": 671003
+        }
+      },
+      "files": {
+        "-journal": {
+          "error": {
+            "errno": 2,
+            "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-journal'",
+            "type": "FileNotFoundError"
+          },
+          "exists": false,
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-journal"
+        },
+        "-shm": {
+          "error": {
+            "errno": 2,
+            "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-shm'",
+            "type": "FileNotFoundError"
+          },
+          "exists": false,
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-shm"
+        },
+        "-wal": {
+          "error": {
+            "errno": 2,
+            "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-wal'",
+            "type": "FileNotFoundError"
+          },
+          "exists": false,
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-wal"
+        },
+        "database": {
+          "bytes_read": 20525056,
+          "exists": true,
+          "fd_stat_after": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "fd_stat_before": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "header_hex": "53514c69746520666f726d61742033001000010100402020000000040000139300000000000000000000000200000004000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000004002e95c90d0ff800040dd1000f790fcd0dd10f32000000000000000000000000",
+          "lstat_after": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "lstat_before": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite",
+          "sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+          "stable_during_read": true
+        }
+      }
+    },
+    "copied": {
+      "database.sqlite": {
+        "bytes": 20525056,
+        "sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413"
+      }
+    },
+    "time_ns": 1791227613227129572
+  },
+  "exit_view": {
+    "db": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite",
+    "directory": {
+      "entries": [
+        "database.sqlite",
+        "stderr.txt",
+        "stdout.txt",
+        "trace.jsonl"
+      ],
+      "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary",
+      "stat": {
+        "ctime_ns": 1791227613151002973,
+        "mode": 16877,
+        "mtime_ns": 1791227613151002973,
+        "size": 4096,
+        "st_dev": 27,
+        "st_ino": 671003
+      }
+    },
+    "files": {
+      "-journal": {
+        "error": {
+          "errno": 2,
+          "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-journal'",
+          "type": "FileNotFoundError"
+        },
+        "exists": false,
+        "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-journal"
+      },
+      "-shm": {
+        "error": {
+          "errno": 2,
+          "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-shm'",
+          "type": "FileNotFoundError"
+        },
+        "exists": false,
+        "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-shm"
+      },
+      "-wal": {
+        "error": {
+          "errno": 2,
+          "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-wal'",
+          "type": "FileNotFoundError"
+        },
+        "exists": false,
+        "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-wal"
+      },
+      "database": {
+        "bytes_read": 20525056,
+        "exists": true,
+        "fd_stat_after": {
+          "ctime_ns": 1791227613053536418,
+          "mode": 33188,
+          "mtime_ns": 1791227613053536418,
+          "size": 20525056,
+          "st_dev": 27,
+          "st_ino": 671004
+        },
+        "fd_stat_before": {
+          "ctime_ns": 1791227613053536418,
+          "mode": 33188,
+          "mtime_ns": 1791227613053536418,
+          "size": 20525056,
+          "st_dev": 27,
+          "st_ino": 671004
+        },
+        "header_hex": "53514c69746520666f726d61742033001000010100402020000000040000139300000000000000000000000200000004000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000004002e95c90d0ff800040dd1000f790fcd0dd10f32000000000000000000000000",
+        "lstat_after": {
+          "ctime_ns": 1791227613053536418,
+          "mode": 33188,
+          "mtime_ns": 1791227613053536418,
+          "size": 20525056,
+          "st_dev": 27,
+          "st_ino": 671004
+        },
+        "lstat_before": {
+          "ctime_ns": 1791227613053536418,
+          "mode": 33188,
+          "mtime_ns": 1791227613053536418,
+          "size": 20525056,
+          "st_dev": 27,
+          "st_ino": 671004
+        },
+        "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite",
+        "sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+        "stable_during_read": true
+      }
+    }
+  },
+  "fixture": {
+    "after_sha": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+    "before_sha": "75ec4f888192934e9bfc9389b622b1e1ada8be77d9e3684b0456b218efe2bccc",
+    "canonical_input_sha": "9349b19f2f9481a9a65a66d269bb9cb207695873a5f872cdb6eaf3d115350666",
+    "counts": {
+      "after_rows": 420000,
+      "before_rows": 300000,
+      "duplicate_valid_rows": 30000,
+      "existing_ids": 120000,
+      "input_rows": 300000,
+      "inserted_ids": 120000,
+      "invalid_rows": 30000,
+      "valid_ids": 240000
+    },
+    "csv": "/workspace/scratch/466bb53bffcd/run26_local_01/fixtures/n300000/input.csv",
+    "db": "/workspace/scratch/466bb53bffcd/run26_local_01/fixtures/n300000/initial.sqlite",
+    "initial_db_sha": "e72f463297fae4a662c0c96f788beca28968a8352f938b91d286b4fca2377a1a",
+    "n": 300000,
+    "payload_sha": "f85f595a997e4587a5faff7381bbbeca2ced0f7572bd7b6cd1a5598cfcc7a1fc"
+  },
+  "initial": {
+    "db": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite",
+    "directory": {
+      "entries": [
+        "database.sqlite"
+      ],
+      "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary",
+      "stat": {
+        "ctime_ns": 1791227609325463635,
+        "mode": 16877,
+        "mtime_ns": 1791227609325463635,
+        "size": 4096,
+        "st_dev": 27,
+        "st_ino": 671003
+      }
+    },
+    "files": {
+      "-journal": {
+        "error": {
+          "errno": 2,
+          "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-journal'",
+          "type": "FileNotFoundError"
+        },
+        "exists": false,
+        "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-journal"
+      },
+      "-shm": {
+        "error": {
+          "errno": 2,
+          "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-shm'",
+          "type": "FileNotFoundError"
+        },
+        "exists": false,
+        "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-shm"
+      },
+      "-wal": {
+        "error": {
+          "errno": 2,
+          "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-wal'",
+          "type": "FileNotFoundError"
+        },
+        "exists": false,
+        "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-wal"
+      },
+      "database": {
+        "bytes_read": 14913536,
+        "exists": true,
+        "fd_stat_after": {
+          "ctime_ns": 1791227609377464650,
+          "mode": 33188,
+          "mtime_ns": 1791227609377464650,
+          "size": 14913536,
+          "st_dev": 27,
+          "st_ino": 671004
+        },
+        "fd_stat_before": {
+          "ctime_ns": 1791227609377464650,
+          "mode": 33188,
+          "mtime_ns": 1791227609377464650,
+          "size": 14913536,
+          "st_dev": 27,
+          "st_ino": 671004
+        },
+        "header_hex": "53514c69746520666f726d617420330010000101004020200000000300000e3900000000000000000000000200000004000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000003002e95c90d0ff800040dd1000f790fcd0dd10f32000000000000000000000000",
+        "lstat_after": {
+          "ctime_ns": 1791227609377464650,
+          "mode": 33188,
+          "mtime_ns": 1791227609377464650,
+          "size": 14913536,
+          "st_dev": 27,
+          "st_ino": 671004
+        },
+        "lstat_before": {
+          "ctime_ns": 1791227609377464650,
+          "mode": 33188,
+          "mtime_ns": 1791227609377464650,
+          "size": 14913536,
+          "st_dev": 27,
+          "st_ino": 671004
+        },
+        "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite",
+        "sha256": "e72f463297fae4a662c0c96f788beca28968a8352f938b91d286b4fca2377a1a",
+        "stable_during_read": true
+      }
+    }
+  },
+  "late_capture": {
+    "after": {
+      "db": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite",
+      "directory": {
+        "entries": [
+          "database.sqlite",
+          "database.sqlite-journal",
+          "exit_capture",
+          "late_capture",
+          "record.json",
+          "stderr.txt",
+          "stdout.txt",
+          "trace.jsonl"
+        ],
+        "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary",
+        "stat": {
+          "ctime_ns": 1791227641268606092,
+          "mode": 16877,
+          "mtime_ns": 1791227641268606092,
+          "size": 4096,
+          "st_dev": 27,
+          "st_ino": 671003
+        }
+      },
+      "files": {
+        "-journal": {
+          "bytes_read": 54784,
+          "exists": true,
+          "fd_stat_after": {
+            "ctime_ns": 1791227614601566662,
+            "mode": 33188,
+            "mtime_ns": 1791227610565487844,
+            "size": 54784,
+            "st_dev": 27,
+            "st_ino": 671024
+          },
+          "fd_stat_before": {
+            "ctime_ns": 1791227614601566662,
+            "mode": 33188,
+            "mtime_ns": 1791227610565487844,
+            "size": 54784,
+            "st_dev": 27,
+            "st_ino": 671024
+          },
+          "header_hex": "d9d505f920a163d70000000d59b438b500000e39000002000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "journal_header": {
+            "initial_database_pages": 3641,
+            "magic_hex": "d9d505f920a163d7",
+            "n_records": 13,
+            "page_size": 4096,
+            "sector_size": 512
+          },
+          "lstat_after": {
+            "ctime_ns": 1791227614601566662,
+            "mode": 33188,
+            "mtime_ns": 1791227610565487844,
+            "size": 54784,
+            "st_dev": 27,
+            "st_ino": 671024
+          },
+          "lstat_before": {
+            "ctime_ns": 1791227614601566662,
+            "mode": 33188,
+            "mtime_ns": 1791227610565487844,
+            "size": 54784,
+            "st_dev": 27,
+            "st_ino": 671024
+          },
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-journal",
+          "sha256": "af6cb64868d09bc181ce7056d9230f785430c167a193ddf08214c99f8710a24d",
+          "stable_during_read": true
+        },
+        "-shm": {
+          "error": {
+            "errno": 2,
+            "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-shm'",
+            "type": "FileNotFoundError"
+          },
+          "exists": false,
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-shm"
+        },
+        "-wal": {
+          "error": {
+            "errno": 2,
+            "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-wal'",
+            "type": "FileNotFoundError"
+          },
+          "exists": false,
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-wal"
+        },
+        "database": {
+          "bytes_read": 20525056,
+          "exists": true,
+          "fd_stat_after": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "fd_stat_before": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "header_hex": "53514c69746520666f726d61742033001000010100402020000000040000139300000000000000000000000200000004000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000004002e95c90d0ff800040dd1000f790fcd0dd10f32000000000000000000000000",
+          "lstat_after": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "lstat_before": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite",
+          "sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+          "stable_during_read": true
+        }
+      }
+    },
+    "before": {
+      "db": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite",
+      "directory": {
+        "entries": [
+          "database.sqlite",
+          "database.sqlite-journal",
+          "exit_capture",
+          "late_capture",
+          "record.json",
+          "stderr.txt",
+          "stdout.txt",
+          "trace.jsonl"
+        ],
+        "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary",
+        "stat": {
+          "ctime_ns": 1791227641268606092,
+          "mode": 16877,
+          "mtime_ns": 1791227641268606092,
+          "size": 4096,
+          "st_dev": 27,
+          "st_ino": 671003
+        }
+      },
+      "files": {
+        "-journal": {
+          "bytes_read": 54784,
+          "exists": true,
+          "fd_stat_after": {
+            "ctime_ns": 1791227614601566662,
+            "mode": 33188,
+            "mtime_ns": 1791227610565487844,
+            "size": 54784,
+            "st_dev": 27,
+            "st_ino": 671024
+          },
+          "fd_stat_before": {
+            "ctime_ns": 1791227614601566662,
+            "mode": 33188,
+            "mtime_ns": 1791227610565487844,
+            "size": 54784,
+            "st_dev": 27,
+            "st_ino": 671024
+          },
+          "header_hex": "d9d505f920a163d70000000d59b438b500000e39000002000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "journal_header": {
+            "initial_database_pages": 3641,
+            "magic_hex": "d9d505f920a163d7",
+            "n_records": 13,
+            "page_size": 4096,
+            "sector_size": 512
+          },
+          "lstat_after": {
+            "ctime_ns": 1791227614601566662,
+            "mode": 33188,
+            "mtime_ns": 1791227610565487844,
+            "size": 54784,
+            "st_dev": 27,
+            "st_ino": 671024
+          },
+          "lstat_before": {
+            "ctime_ns": 1791227614601566662,
+            "mode": 33188,
+            "mtime_ns": 1791227610565487844,
+            "size": 54784,
+            "st_dev": 27,
+            "st_ino": 671024
+          },
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-journal",
+          "sha256": "af6cb64868d09bc181ce7056d9230f785430c167a193ddf08214c99f8710a24d",
+          "stable_during_read": true
+        },
+        "-shm": {
+          "error": {
+            "errno": 2,
+            "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-shm'",
+            "type": "FileNotFoundError"
+          },
+          "exists": false,
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-shm"
+        },
+        "-wal": {
+          "error": {
+            "errno": 2,
+            "message": "[Errno 2] No such file or directory: '/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-wal'",
+            "type": "FileNotFoundError"
+          },
+          "exists": false,
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite-wal"
+        },
+        "database": {
+          "bytes_read": 20525056,
+          "exists": true,
+          "fd_stat_after": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "fd_stat_before": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "header_hex": "53514c69746520666f726d61742033001000010100402020000000040000139300000000000000000000000200000004000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000004002e95c90d0ff800040dd1000f790fcd0dd10f32000000000000000000000000",
+          "lstat_after": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "lstat_before": {
+            "ctime_ns": 1791227613053536418,
+            "mode": 33188,
+            "mtime_ns": 1791227613053536418,
+            "size": 20525056,
+            "st_dev": 27,
+            "st_ino": 671004
+          },
+          "path": "/workspace/scratch/466bb53bffcd/run26_local_01/trials/normal_r0_n300000_ordinary/database.sqlite",
+          "sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+          "stable_during_read": true
+        }
+      }
+    },
+    "copied": {
+      "database.sqlite": {
+        "bytes": 20525056,
+        "sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413"
+      },
+      "database.sqlite-journal": {
+        "bytes": 54784,
+        "sha256": "af6cb64868d09bc181ce7056d9230f785430c167a193ddf08214c99f8710a24d"
+      }
+    },
+    "time_ns": 1791227641321174490
+  },
+  "protocol_sha256": "29bb6aac5a26f426472cfff5cec0cd7ec8b8a5086f4c1d7a9c0ecb14261f4263",
+  "returncode": 0,
+  "schema": "qkf.run26.record.v1",
+  "spec": {
+    "engine": "ordinary",
+    "expected_state": "POST",
+    "id": "normal_r0_n300000_ordinary",
+    "kill_at": "none",
+    "n": 300000,
+    "operation_key": "run26",
+    "repeat": 0
+  },
+  "timed_out": false,
+  "wall_ns": 3754992078
+}

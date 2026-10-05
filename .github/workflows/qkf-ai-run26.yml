@@ -1,0 +1,36 @@
+name: QKF AI Run26 SQLite diagnostics
+on:
+  push:
+    branches: [research/qkf-ai-run26-sqlite-diagnostics]
+    paths: ['research/qkf_ai/run26/**.py', 'research/qkf_ai/run26/vendor/**', 'research/qkf_ai/run26/PROTOCOL*', 'research/qkf_ai/run26/HISTORY_RU.md', '.github/workflows/qkf-ai-run26.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Independent checker adversarial tests
+        run: |
+          python research/qkf_ai/run26/test_audit26.py
+          python research/qkf_ai/run26/test_trace26.py
+      - name: Frozen 30-trial experiment and cold audit
+        run: python research/qkf_ai/run26/run26.py --output reproduction/qkf_ai_run26
+      - name: Publish compact summary
+        if: always()
+        run: |
+          if [ -f reproduction/qkf_ai_run26/summary.json ]; then
+            cat reproduction/qkf_ai_run26/summary.json >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qkf-ai-run26-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reproduction/qkf_ai_run26/
+          retention-days: 90
+          if-no-files-found: error
