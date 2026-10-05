@@ -1,0 +1,2408 @@
+{
+  "cold_pairs": 60,
+  "cold_states": {
+    "POST": 50,
+    "PRE": 10
+  },
+  "consistency_gate": "PASS",
+  "failed_trials": 0,
+  "normal_trials": 20,
+  "observed_trials": 30,
+  "passed_trials": 30,
+  "protocol_sha256": "29bb6aac5a26f426472cfff5cec0cd7ec8b8a5086f4c1d7a9c0ecb14261f4263",
+  "registered_trials": 30,
+  "release_status": "BLOCKED_PENDING_RUN25_CAUSE",
+  "results": [
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "6104c71176102f594f774128a4b8782c1128e295e01468f372a174a093773eb3",
+            "valid": true
+          },
+          "recovered_sha256": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "6104c71176102f594f774128a4b8782c1128e295e01468f372a174a093773eb3",
+            "valid": true
+          },
+          "recovered_sha256": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "pressure_allocated",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 57665534008,
+      "pass": true,
+      "spec": {
+        "engine": "minimal_pressure",
+        "expected_state": "POST",
+        "id": "normal_r0_n100000_minimal_pressure",
+        "kill_at": "none",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "hook_after_commit",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 56745764388,
+      "pass": true,
+      "spec": {
+        "engine": "ordinary",
+        "expected_state": "POST",
+        "id": "normal_r0_n100000_ordinary",
+        "kill_at": "none",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "hook_after_commit",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 54627019414,
+      "pass": true,
+      "spec": {
+        "engine": "staged",
+        "expected_state": "POST",
+        "id": "normal_r0_n100000_staged",
+        "kill_at": "none",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "hook_after_commit",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 52462893994,
+      "pass": true,
+      "spec": {
+        "engine": "reference",
+        "expected_state": "POST",
+        "id": "normal_r0_n100000_reference",
+        "kill_at": "none",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "6104c71176102f594f774128a4b8782c1128e295e01468f372a174a093773eb3",
+            "valid": true
+          },
+          "recovered_sha256": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "6104c71176102f594f774128a4b8782c1128e295e01468f372a174a093773eb3",
+            "valid": true
+          },
+          "recovered_sha256": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 52252523164,
+      "pass": true,
+      "spec": {
+        "engine": "minimal",
+        "expected_state": "POST",
+        "id": "normal_r0_n100000_minimal",
+        "kill_at": "none",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "4ae50ffad2e2eec1d9051f2f4ebbfa663084e21547821a7553efdbf3e0831a65",
+            "valid": true
+          },
+          "recovered_sha256": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "4ae50ffad2e2eec1d9051f2f4ebbfa663084e21547821a7553efdbf3e0831a65",
+            "valid": true
+          },
+          "recovered_sha256": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "hook_after_commit",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 46026057644,
+      "pass": true,
+      "spec": {
+        "engine": "staged",
+        "expected_state": "POST",
+        "id": "normal_r0_n300000_staged",
+        "kill_at": "none",
+        "n": 300000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "4ae50ffad2e2eec1d9051f2f4ebbfa663084e21547821a7553efdbf3e0831a65",
+            "valid": true
+          },
+          "recovered_sha256": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "4ae50ffad2e2eec1d9051f2f4ebbfa663084e21547821a7553efdbf3e0831a65",
+            "valid": true
+          },
+          "recovered_sha256": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "hook_after_commit",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 39735639613,
+      "pass": true,
+      "spec": {
+        "engine": "reference",
+        "expected_state": "POST",
+        "id": "normal_r0_n300000_reference",
+        "kill_at": "none",
+        "n": 300000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "33f82980a8f50ea191456571f136f4071a6526904a00a0649cdb92cf6f9b47dd",
+            "valid": true
+          },
+          "recovered_sha256": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "33f82980a8f50ea191456571f136f4071a6526904a00a0649cdb92cf6f9b47dd",
+            "valid": true
+          },
+          "recovered_sha256": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 39234428640,
+      "pass": true,
+      "spec": {
+        "engine": "minimal",
+        "expected_state": "POST",
+        "id": "normal_r0_n300000_minimal",
+        "kill_at": "none",
+        "n": 300000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "33f82980a8f50ea191456571f136f4071a6526904a00a0649cdb92cf6f9b47dd",
+            "valid": true
+          },
+          "recovered_sha256": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "33f82980a8f50ea191456571f136f4071a6526904a00a0649cdb92cf6f9b47dd",
+            "valid": true
+          },
+          "recovered_sha256": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "pressure_allocated",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 38686180202,
+      "pass": true,
+      "spec": {
+        "engine": "minimal_pressure",
+        "expected_state": "POST",
+        "id": "normal_r0_n300000_minimal_pressure",
+        "kill_at": "none",
+        "n": 300000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "4ae50ffad2e2eec1d9051f2f4ebbfa663084e21547821a7553efdbf3e0831a65",
+            "valid": true
+          },
+          "recovered_sha256": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "4ae50ffad2e2eec1d9051f2f4ebbfa663084e21547821a7553efdbf3e0831a65",
+            "valid": true
+          },
+          "recovered_sha256": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "hook_after_commit",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 36011447249,
+      "pass": true,
+      "spec": {
+        "engine": "ordinary",
+        "expected_state": "POST",
+        "id": "normal_r0_n300000_ordinary",
+        "kill_at": "none",
+        "n": 300000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "hook_after_commit",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 35107372921,
+      "pass": true,
+      "spec": {
+        "engine": "ordinary",
+        "expected_state": "POST",
+        "id": "normal_r1_n100000_ordinary",
+        "kill_at": "none",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 1
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "hook_after_commit",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 32988811421,
+      "pass": true,
+      "spec": {
+        "engine": "staged",
+        "expected_state": "POST",
+        "id": "normal_r1_n100000_staged",
+        "kill_at": "none",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 1
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "hook_after_commit",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 30839581846,
+      "pass": true,
+      "spec": {
+        "engine": "reference",
+        "expected_state": "POST",
+        "id": "normal_r1_n100000_reference",
+        "kill_at": "none",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 1
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "6104c71176102f594f774128a4b8782c1128e295e01468f372a174a093773eb3",
+            "valid": true
+          },
+          "recovered_sha256": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "6104c71176102f594f774128a4b8782c1128e295e01468f372a174a093773eb3",
+            "valid": true
+          },
+          "recovered_sha256": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 30630131743,
+      "pass": true,
+      "spec": {
+        "engine": "minimal",
+        "expected_state": "POST",
+        "id": "normal_r1_n100000_minimal",
+        "kill_at": "none",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 1
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "6104c71176102f594f774128a4b8782c1128e295e01468f372a174a093773eb3",
+            "valid": true
+          },
+          "recovered_sha256": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "6104c71176102f594f774128a4b8782c1128e295e01468f372a174a093773eb3",
+            "valid": true
+          },
+          "recovered_sha256": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "pressure_allocated",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 30390216054,
+      "pass": true,
+      "spec": {
+        "engine": "minimal_pressure",
+        "expected_state": "POST",
+        "id": "normal_r1_n100000_minimal_pressure",
+        "kill_at": "none",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 1
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "4ae50ffad2e2eec1d9051f2f4ebbfa663084e21547821a7553efdbf3e0831a65",
+            "valid": true
+          },
+          "recovered_sha256": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "4ae50ffad2e2eec1d9051f2f4ebbfa663084e21547821a7553efdbf3e0831a65",
+            "valid": true
+          },
+          "recovered_sha256": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "hook_after_commit",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 24086290584,
+      "pass": true,
+      "spec": {
+        "engine": "reference",
+        "expected_state": "POST",
+        "id": "normal_r1_n300000_reference",
+        "kill_at": "none",
+        "n": 300000,
+        "operation_key": "run26",
+        "repeat": 1
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "33f82980a8f50ea191456571f136f4071a6526904a00a0649cdb92cf6f9b47dd",
+            "valid": true
+          },
+          "recovered_sha256": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "33f82980a8f50ea191456571f136f4071a6526904a00a0649cdb92cf6f9b47dd",
+            "valid": true
+          },
+          "recovered_sha256": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 23573664575,
+      "pass": true,
+      "spec": {
+        "engine": "minimal",
+        "expected_state": "POST",
+        "id": "normal_r1_n300000_minimal",
+        "kill_at": "none",
+        "n": 300000,
+        "operation_key": "run26",
+        "repeat": 1
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "33f82980a8f50ea191456571f136f4071a6526904a00a0649cdb92cf6f9b47dd",
+            "valid": true
+          },
+          "recovered_sha256": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "33f82980a8f50ea191456571f136f4071a6526904a00a0649cdb92cf6f9b47dd",
+            "valid": true
+          },
+          "recovered_sha256": "92655a310626ceef76d5f62b5e8bc635ce98c9334135eb6a152f542d975a5894",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "pressure_allocated",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 23016403790,
+      "pass": true,
+      "spec": {
+        "engine": "minimal_pressure",
+        "expected_state": "POST",
+        "id": "normal_r1_n300000_minimal_pressure",
+        "kill_at": "none",
+        "n": 300000,
+        "operation_key": "run26",
+        "repeat": 1
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "4ae50ffad2e2eec1d9051f2f4ebbfa663084e21547821a7553efdbf3e0831a65",
+            "valid": true
+          },
+          "recovered_sha256": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "4ae50ffad2e2eec1d9051f2f4ebbfa663084e21547821a7553efdbf3e0831a65",
+            "valid": true
+          },
+          "recovered_sha256": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "hook_after_commit",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 20302105088,
+      "pass": true,
+      "spec": {
+        "engine": "ordinary",
+        "expected_state": "POST",
+        "id": "normal_r1_n300000_ordinary",
+        "kill_at": "none",
+        "n": 300000,
+        "operation_key": "run26",
+        "repeat": 1
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "4ae50ffad2e2eec1d9051f2f4ebbfa663084e21547821a7553efdbf3e0831a65",
+            "valid": true
+          },
+          "recovered_sha256": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 420000,
+            "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "4ae50ffad2e2eec1d9051f2f4ebbfa663084e21547821a7553efdbf3e0831a65",
+            "valid": true
+          },
+          "recovered_sha256": "eac729e0a510f87e43029e00e53bdcd7a255c0a188f6b09df5380fc10c5cf342",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "before_close",
+        "after_close",
+        "hook_after_commit",
+        "actor_returned"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 14010392345,
+      "pass": true,
+      "spec": {
+        "engine": "staged",
+        "expected_state": "POST",
+        "id": "normal_r1_n300000_staged",
+        "kill_at": "none",
+        "n": 300000,
+        "operation_key": "run26",
+        "repeat": 1
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 100000,
+            "sha256": "040dd14ed5150c5eb9b41f6478b8fd8119e8dec54f35a652ccd69b7ba103181b",
+            "state": "PRE"
+          },
+          "journal_present": true,
+          "original_hashes": {
+            "database.sqlite": "7f53fced94aed9d99bc1361e018ea127304d6a360ab2f159b3cb4e447907e311",
+            "database.sqlite-journal": "abde16ef74f9a50d29a42f9dc8a4fab5530a526e430acf08ab8a12b6fb4f2e0d"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 0,
+            "valid": true
+          },
+          "recovered_sha256": "a2418dc9b1a6329c37a3bddb453920ffbeeee7cdb36b9372c50ea81a11f61fee",
+          "recovery_journal_present": false,
+          "state": "PRE"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 100000,
+            "sha256": "040dd14ed5150c5eb9b41f6478b8fd8119e8dec54f35a652ccd69b7ba103181b",
+            "state": "PRE"
+          },
+          "journal_present": true,
+          "original_hashes": {
+            "database.sqlite": "7f53fced94aed9d99bc1361e018ea127304d6a360ab2f159b3cb4e447907e311",
+            "database.sqlite-journal": "abde16ef74f9a50d29a42f9dc8a4fab5530a526e430acf08ab8a12b6fb4f2e0d"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 0,
+            "valid": true
+          },
+          "recovered_sha256": "a2418dc9b1a6329c37a3bddb453920ffbeeee7cdb36b9372c50ea81a11f61fee",
+          "recovery_journal_present": false,
+          "state": "PRE"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "before_commit",
+        "kill_requested"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 13836618445,
+      "pass": true,
+      "spec": {
+        "engine": "minimal",
+        "expected_state": "PRE",
+        "id": "kill_n100000_minimal_before_commit",
+        "kill_at": "before_commit",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 100000,
+            "sha256": "040dd14ed5150c5eb9b41f6478b8fd8119e8dec54f35a652ccd69b7ba103181b",
+            "state": "PRE"
+          },
+          "journal_present": true,
+          "original_hashes": {
+            "database.sqlite": "7f53fced94aed9d99bc1361e018ea127304d6a360ab2f159b3cb4e447907e311",
+            "database.sqlite-journal": "f021b3276985571d21f55caa2afdba802b9640e9c9115d4e0a0d89c8f56c219f"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 0,
+            "valid": true
+          },
+          "recovered_sha256": "a2418dc9b1a6329c37a3bddb453920ffbeeee7cdb36b9372c50ea81a11f61fee",
+          "recovery_journal_present": false,
+          "state": "PRE"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 100000,
+            "sha256": "040dd14ed5150c5eb9b41f6478b8fd8119e8dec54f35a652ccd69b7ba103181b",
+            "state": "PRE"
+          },
+          "journal_present": true,
+          "original_hashes": {
+            "database.sqlite": "7f53fced94aed9d99bc1361e018ea127304d6a360ab2f159b3cb4e447907e311",
+            "database.sqlite-journal": "f021b3276985571d21f55caa2afdba802b9640e9c9115d4e0a0d89c8f56c219f"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 0,
+            "valid": true
+          },
+          "recovered_sha256": "a2418dc9b1a6329c37a3bddb453920ffbeeee7cdb36b9372c50ea81a11f61fee",
+          "recovery_journal_present": false,
+          "state": "PRE"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "pressure_allocated",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "before_commit",
+        "kill_requested"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 13628149081,
+      "pass": true,
+      "spec": {
+        "engine": "minimal_pressure",
+        "expected_state": "PRE",
+        "id": "kill_n100000_minimal_pressure_before_commit",
+        "kill_at": "before_commit",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 100000,
+            "sha256": "040dd14ed5150c5eb9b41f6478b8fd8119e8dec54f35a652ccd69b7ba103181b",
+            "state": "PRE"
+          },
+          "journal_present": true,
+          "original_hashes": {
+            "database.sqlite": "7f53fced94aed9d99bc1361e018ea127304d6a360ab2f159b3cb4e447907e311",
+            "database.sqlite-journal": "0e8f153de3bfa80891a4efc6ba46d33999c06e9b90109486d162a217c3d75f4c"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 0,
+            "valid": true
+          },
+          "recovered_sha256": "a2418dc9b1a6329c37a3bddb453920ffbeeee7cdb36b9372c50ea81a11f61fee",
+          "recovery_journal_present": false,
+          "state": "PRE"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 100000,
+            "sha256": "040dd14ed5150c5eb9b41f6478b8fd8119e8dec54f35a652ccd69b7ba103181b",
+            "state": "PRE"
+          },
+          "journal_present": true,
+          "original_hashes": {
+            "database.sqlite": "7f53fced94aed9d99bc1361e018ea127304d6a360ab2f159b3cb4e447907e311",
+            "database.sqlite-journal": "0e8f153de3bfa80891a4efc6ba46d33999c06e9b90109486d162a217c3d75f4c"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 0,
+            "valid": true
+          },
+          "recovered_sha256": "a2418dc9b1a6329c37a3bddb453920ffbeeee7cdb36b9372c50ea81a11f61fee",
+          "recovery_journal_present": false,
+          "state": "PRE"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "kill_requested"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 12752635638,
+      "pass": true,
+      "spec": {
+        "engine": "ordinary",
+        "expected_state": "PRE",
+        "id": "kill_n100000_ordinary_before_commit",
+        "kill_at": "before_commit",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 100000,
+            "sha256": "040dd14ed5150c5eb9b41f6478b8fd8119e8dec54f35a652ccd69b7ba103181b",
+            "state": "PRE"
+          },
+          "journal_present": true,
+          "original_hashes": {
+            "database.sqlite": "7f53fced94aed9d99bc1361e018ea127304d6a360ab2f159b3cb4e447907e311",
+            "database.sqlite-journal": "601dcc960cee866dcc2d328c6e1a8adb40e22475aa1f59d8307b10059867e480"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 0,
+            "valid": true
+          },
+          "recovered_sha256": "a2418dc9b1a6329c37a3bddb453920ffbeeee7cdb36b9372c50ea81a11f61fee",
+          "recovery_journal_present": false,
+          "state": "PRE"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 100000,
+            "sha256": "040dd14ed5150c5eb9b41f6478b8fd8119e8dec54f35a652ccd69b7ba103181b",
+            "state": "PRE"
+          },
+          "journal_present": true,
+          "original_hashes": {
+            "database.sqlite": "7f53fced94aed9d99bc1361e018ea127304d6a360ab2f159b3cb4e447907e311",
+            "database.sqlite-journal": "601dcc960cee866dcc2d328c6e1a8adb40e22475aa1f59d8307b10059867e480"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 0,
+            "valid": true
+          },
+          "recovered_sha256": "a2418dc9b1a6329c37a3bddb453920ffbeeee7cdb36b9372c50ea81a11f61fee",
+          "recovery_journal_present": false,
+          "state": "PRE"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "kill_requested"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 10653023521,
+      "pass": true,
+      "spec": {
+        "engine": "staged",
+        "expected_state": "PRE",
+        "id": "kill_n100000_staged_before_commit",
+        "kill_at": "before_commit",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 100000,
+            "sha256": "040dd14ed5150c5eb9b41f6478b8fd8119e8dec54f35a652ccd69b7ba103181b",
+            "state": "PRE"
+          },
+          "journal_present": true,
+          "original_hashes": {
+            "database.sqlite": "7f53fced94aed9d99bc1361e018ea127304d6a360ab2f159b3cb4e447907e311",
+            "database.sqlite-journal": "91f2e6439cc4bdc0df658168bde4aeff1277cc445ee678581f1bfa884e29cbfd"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 0,
+            "valid": true
+          },
+          "recovered_sha256": "a2418dc9b1a6329c37a3bddb453920ffbeeee7cdb36b9372c50ea81a11f61fee",
+          "recovery_journal_present": false,
+          "state": "PRE"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 100000,
+            "sha256": "040dd14ed5150c5eb9b41f6478b8fd8119e8dec54f35a652ccd69b7ba103181b",
+            "state": "PRE"
+          },
+          "journal_present": true,
+          "original_hashes": {
+            "database.sqlite": "7f53fced94aed9d99bc1361e018ea127304d6a360ab2f159b3cb4e447907e311",
+            "database.sqlite-journal": "91f2e6439cc4bdc0df658168bde4aeff1277cc445ee678581f1bfa884e29cbfd"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 0,
+            "valid": true
+          },
+          "recovered_sha256": "a2418dc9b1a6329c37a3bddb453920ffbeeee7cdb36b9372c50ea81a11f61fee",
+          "recovery_journal_present": false,
+          "state": "PRE"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "kill_requested"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 8554077753,
+      "pass": true,
+      "spec": {
+        "engine": "reference",
+        "expected_state": "PRE",
+        "id": "kill_n100000_reference_before_commit",
+        "kill_at": "before_commit",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "6104c71176102f594f774128a4b8782c1128e295e01468f372a174a093773eb3",
+            "valid": true
+          },
+          "recovered_sha256": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "6104c71176102f594f774128a4b8782c1128e295e01468f372a174a093773eb3",
+            "valid": true
+          },
+          "recovered_sha256": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "before_commit",
+        "after_commit",
+        "kill_requested"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 8365749395,
+      "pass": true,
+      "spec": {
+        "engine": "minimal",
+        "expected_state": "POST",
+        "id": "kill_n100000_minimal_after_commit",
+        "kill_at": "after_commit",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "6104c71176102f594f774128a4b8782c1128e295e01468f372a174a093773eb3",
+            "valid": true
+          },
+          "recovered_sha256": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.run26.control.v1",
+            "sha256": "6104c71176102f594f774128a4b8782c1128e295e01468f372a174a093773eb3",
+            "valid": true
+          },
+          "recovered_sha256": "24a6a91207f5b11a49ba80e6725b661cb98b85f2946de7e64c1b50b45ff398ad",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "pressure_allocated",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "before_commit",
+        "after_commit",
+        "kill_requested"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 8141888979,
+      "pass": true,
+      "spec": {
+        "engine": "minimal_pressure",
+        "expected_state": "POST",
+        "id": "kill_n100000_minimal_pressure_after_commit",
+        "kill_at": "after_commit",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "kill_requested"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 7254640200,
+      "pass": true,
+      "spec": {
+        "engine": "ordinary",
+        "expected_state": "POST",
+        "id": "kill_n100000_ordinary_after_commit",
+        "kill_at": "after_commit",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "kill_requested"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 5183748268,
+      "pass": true,
+      "spec": {
+        "engine": "staged",
+        "expected_state": "POST",
+        "id": "kill_n100000_staged_after_commit",
+        "kill_at": "after_commit",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    },
+    {
+      "captures": {
+        "exit": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        },
+        "late": {
+          "integrity": [
+            "ok"
+          ],
+          "items": {
+            "rows": 140000,
+            "sha256": "fd66dfb3c96acb231975e285332ac78fdd75b22d21953e2776a5599c9e9bb384",
+            "state": "POST"
+          },
+          "journal_present": false,
+          "original_hashes": {
+            "database.sqlite": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b"
+          },
+          "original_unchanged": true,
+          "pass": true,
+          "receipt": {
+            "count": 1,
+            "schema": "qkf.import.receipt.v1",
+            "sha256": "8bd308a6c4e903ed9263eae17660084678aa6ff760c2cddc3bea9032cb42c8db",
+            "valid": true
+          },
+          "recovered_sha256": "620b8b33365d48230c4b1d3a3635f63ffee5a2b483a8ec2af12208246eccc33b",
+          "recovery_journal_present": false,
+          "state": "POST"
+        }
+      },
+      "errors": [],
+      "events": [
+        "actor_started",
+        "connection_opened",
+        "hook_after_begin",
+        "hook_after_stage",
+        "hook_after_effect",
+        "hook_after_receipt",
+        "hook_before_commit",
+        "before_commit",
+        "after_commit",
+        "kill_requested"
+      ],
+      "journal_after_commit": false,
+      "late_delay_ns": 3051816042,
+      "pass": true,
+      "spec": {
+        "engine": "reference",
+        "expected_state": "POST",
+        "id": "kill_n100000_reference_after_commit",
+        "kill_at": "after_commit",
+        "n": 100000,
+        "operation_key": "run26",
+        "repeat": 0
+      }
+    }
+  ],
+  "schema": "qkf.run26.summary.v1",
+  "sigkill_trials": 10
+}

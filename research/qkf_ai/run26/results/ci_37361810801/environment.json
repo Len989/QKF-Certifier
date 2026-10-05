@@ -1,0 +1,29 @@
+{
+  "cwd": "/home/runner/work/QKF-Certifier/QKF-Certifier",
+  "db": "/home/runner/work/QKF-Certifier/QKF-Certifier/database.sqlite",
+  "environment": {
+    "GITHUB_ACTIONS": "true",
+    "RUNNER_ARCH": "X64",
+    "RUNNER_ENVIRONMENT": "github-hosted",
+    "RUNNER_OS": "Linux"
+  },
+  "executable": "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+  "pid": 2322,
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "ppid": 2321,
+  "proc_available": true,
+  "python": "3.12.14 (main, Aug 13 2026, 02:47:42) [GCC 13.3.0]",
+  "sqlite_version": "3.45.1",
+  "statvfs": {
+    "f_bavail": 22543563,
+    "f_bfree": 22547659,
+    "f_blocks": 37815964,
+    "f_bsize": 4096,
+    "f_favail": 18426138,
+    "f_ffree": 18426138,
+    "f_files": 19529728,
+    "f_flag": 4096,
+    "f_frsize": 4096,
+    "f_namemax": 255
+  }
+}

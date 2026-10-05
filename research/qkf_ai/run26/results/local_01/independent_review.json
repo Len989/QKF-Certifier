@@ -1,0 +1,599 @@
+{
+  "schema": "qkf.run26.independent.failure_review.v1",
+  "trial": {
+    "engine": "ordinary",
+    "expected_state": "POST",
+    "id": "normal_r0_n300000_ordinary",
+    "kill_at": "none",
+    "n": 300000,
+    "operation_key": "run26",
+    "repeat": 0
+  },
+  "protocol_sha256": "29bb6aac5a26f426472cfff5cec0cd7ec8b8a5086f4c1d7a9c0ecb14261f4263",
+  "actor_exit_code": 0,
+  "producer_originals_opened_by_sqlite": false,
+  "original_files_before": {
+    "producer": {
+      "database.sqlite": {
+        "bytes": 20525056,
+        "sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+        "mtime_ns": 1791227613053536418,
+        "ctime_ns": 1791227613053536418,
+        "inode": 671004,
+        "dev": 27
+      },
+      "database.sqlite-journal": {
+        "bytes": 54784,
+        "sha256": "af6cb64868d09bc181ce7056d9230f785430c167a193ddf08214c99f8710a24d",
+        "mtime_ns": 1791227610565487844,
+        "ctime_ns": 1791227614601566662,
+        "inode": 671024,
+        "dev": 27
+      }
+    },
+    "exit": {
+      "database.sqlite": {
+        "bytes": 20525056,
+        "sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+        "mtime_ns": 1791227613193539151,
+        "ctime_ns": 1791227613193539151,
+        "inode": 671008,
+        "dev": 27
+      }
+    },
+    "late": {
+      "database.sqlite": {
+        "bytes": 20525056,
+        "sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+        "mtime_ns": 1791227641286088417,
+        "ctime_ns": 1791227641286088417,
+        "inode": 671428,
+        "dev": 27
+      },
+      "database.sqlite-journal": {
+        "bytes": 54784,
+        "sha256": "af6cb64868d09bc181ce7056d9230f785430c167a193ddf08214c99f8710a24d",
+        "mtime_ns": 1791227641305616420,
+        "ctime_ns": 1791227641305616420,
+        "inode": 671429,
+        "dev": 27
+      }
+    }
+  },
+  "evidence_files": {
+    "record.json": "c35cfdcb6015c7c8f29db005162b3f97b8bd855f082114eb505a239ebf326325",
+    "trace.jsonl": "fde9d7a923ade28d7bc9d1eeb467a381a06e80f3a6c4beb706412980c451bb42",
+    "stdout.txt": "f0e86b8fd91336ee6c473937b659d29c2c8b82a6c282cd32e64234bbcd4473f9",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary.json": "ff0606533a8a3bf89dd8e952391af18dec9abe2793928e347f27f5601d23dc5d"
+  },
+  "timeline": [
+    {
+      "seq": 1,
+      "event": "actor_started",
+      "time_ns": 1791227609462388793,
+      "monotonic_ns": 36343863682264,
+      "observation_finished_monotonic_ns": 36343876823199,
+      "pid": 22,
+      "database_sha256": "e72f463297fae4a662c0c96f788beca28968a8352f938b91d286b4fca2377a1a",
+      "journal_exists": false,
+      "journal_sha256": null,
+      "journal_bytes": null,
+      "directory_entries": [
+        "database.sqlite",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "seq": 2,
+      "event": "connection_opened",
+      "time_ns": 1791227609514076631,
+      "monotonic_ns": 36343915369461,
+      "observation_finished_monotonic_ns": 36343925888633,
+      "pid": 22,
+      "database_sha256": "e72f463297fae4a662c0c96f788beca28968a8352f938b91d286b4fca2377a1a",
+      "journal_exists": false,
+      "journal_sha256": null,
+      "journal_bytes": null,
+      "directory_entries": [
+        "database.sqlite",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "seq": 3,
+      "event": "hook_after_begin",
+      "time_ns": 1791227609552299235,
+      "monotonic_ns": 36343953592426,
+      "observation_finished_monotonic_ns": 36343966192836,
+      "pid": 22,
+      "database_sha256": "e72f463297fae4a662c0c96f788beca28968a8352f938b91d286b4fca2377a1a",
+      "journal_exists": false,
+      "journal_sha256": null,
+      "journal_bytes": null,
+      "directory_entries": [
+        "database.sqlite",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "seq": 4,
+      "event": "hook_after_stage",
+      "time_ns": 1791227610226444446,
+      "monotonic_ns": 36344627737917,
+      "observation_finished_monotonic_ns": 36344638435498,
+      "pid": 22,
+      "database_sha256": "e72f463297fae4a662c0c96f788beca28968a8352f938b91d286b4fca2377a1a",
+      "journal_exists": false,
+      "journal_sha256": null,
+      "journal_bytes": null,
+      "directory_entries": [
+        "database.sqlite",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "seq": 5,
+      "event": "hook_after_effect",
+      "time_ns": 1791227610655330786,
+      "monotonic_ns": 36345056624057,
+      "observation_finished_monotonic_ns": 36345070014408,
+      "pid": 22,
+      "database_sha256": "ca940aab655a5d8594baf52e30273c09c6d923de335c22e19b843252c9bb8b84",
+      "journal_exists": true,
+      "journal_sha256": "af6cb64868d09bc181ce7056d9230f785430c167a193ddf08214c99f8710a24d",
+      "journal_bytes": 54784,
+      "directory_entries": [
+        "database.sqlite",
+        "database.sqlite-journal",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "seq": 6,
+      "event": "hook_after_receipt",
+      "time_ns": 1791227613011856104,
+      "monotonic_ns": 36347413149005,
+      "observation_finished_monotonic_ns": 36347428624169,
+      "pid": 22,
+      "database_sha256": "18b8047e0442b2e30b1d3bcffc3ec7500eec9c4b0b5f48e13a5ad4351a63dc59",
+      "journal_exists": true,
+      "journal_sha256": "557d13b3cb6ed3f7729a64f6701a7331511a2e48701244878851defabec687c2",
+      "journal_bytes": 62992,
+      "directory_entries": [
+        "database.sqlite",
+        "database.sqlite-journal",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "seq": 7,
+      "event": "hook_before_commit",
+      "time_ns": 1791227613027413463,
+      "monotonic_ns": 36347428705592,
+      "observation_finished_monotonic_ns": 36347441668358,
+      "pid": 22,
+      "database_sha256": "18b8047e0442b2e30b1d3bcffc3ec7500eec9c4b0b5f48e13a5ad4351a63dc59",
+      "journal_exists": true,
+      "journal_sha256": "557d13b3cb6ed3f7729a64f6701a7331511a2e48701244878851defabec687c2",
+      "journal_bytes": 62992,
+      "directory_entries": [
+        "database.sqlite",
+        "database.sqlite-journal",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "seq": 8,
+      "event": "before_commit",
+      "time_ns": 1791227613040958707,
+      "monotonic_ns": 36347442250906,
+      "observation_finished_monotonic_ns": 36347455521787,
+      "pid": 22,
+      "database_sha256": "18b8047e0442b2e30b1d3bcffc3ec7500eec9c4b0b5f48e13a5ad4351a63dc59",
+      "journal_exists": true,
+      "journal_sha256": "557d13b3cb6ed3f7729a64f6701a7331511a2e48701244878851defabec687c2",
+      "journal_bytes": 62992,
+      "directory_entries": [
+        "database.sqlite",
+        "database.sqlite-journal",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "seq": 9,
+      "event": "after_commit",
+      "time_ns": 1791227613057250934,
+      "monotonic_ns": 36347458543513,
+      "observation_finished_monotonic_ns": 36347473991417,
+      "pid": 22,
+      "database_sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+      "journal_exists": false,
+      "journal_sha256": null,
+      "journal_bytes": null,
+      "directory_entries": [
+        "database.sqlite",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "seq": 10,
+      "event": "before_close",
+      "time_ns": 1791227613072772258,
+      "monotonic_ns": 36347474064467,
+      "observation_finished_monotonic_ns": 36347487850695,
+      "pid": 22,
+      "database_sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+      "journal_exists": false,
+      "journal_sha256": null,
+      "journal_bytes": null,
+      "directory_entries": [
+        "database.sqlite",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "seq": 11,
+      "event": "after_close",
+      "time_ns": 1791227613087637322,
+      "monotonic_ns": 36347488929592,
+      "observation_finished_monotonic_ns": 36347503633823,
+      "pid": 22,
+      "database_sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+      "journal_exists": false,
+      "journal_sha256": null,
+      "journal_bytes": null,
+      "directory_entries": [
+        "database.sqlite",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "seq": 12,
+      "event": "hook_after_commit",
+      "time_ns": 1791227613102413202,
+      "monotonic_ns": 36347503705291,
+      "observation_finished_monotonic_ns": 36347518159536,
+      "pid": 22,
+      "database_sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+      "journal_exists": false,
+      "journal_sha256": null,
+      "journal_bytes": null,
+      "directory_entries": [
+        "database.sqlite",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "seq": 13,
+      "event": "actor_returned",
+      "time_ns": 1791227613121292980,
+      "monotonic_ns": 36347522585690,
+      "observation_finished_monotonic_ns": 36347537726851,
+      "pid": 22,
+      "database_sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+      "journal_exists": false,
+      "journal_sha256": null,
+      "journal_bytes": null,
+      "directory_entries": [
+        "database.sqlite",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "event": "parent_exit",
+      "database_sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+      "journal_exists": false,
+      "journal_sha256": null,
+      "journal_bytes": null,
+      "directory_entries": [
+        "database.sqlite",
+        "stderr.txt",
+        "stdout.txt",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "event": "exit_capture_before",
+      "database_sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+      "journal_exists": false,
+      "journal_sha256": null,
+      "journal_bytes": null,
+      "directory_entries": [
+        "database.sqlite",
+        "exit_capture",
+        "stderr.txt",
+        "stdout.txt",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "event": "exit_capture_after",
+      "database_sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+      "journal_exists": false,
+      "journal_sha256": null,
+      "journal_bytes": null,
+      "directory_entries": [
+        "database.sqlite",
+        "exit_capture",
+        "stderr.txt",
+        "stdout.txt",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "event": "late_capture_before",
+      "database_sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+      "journal_exists": true,
+      "journal_sha256": "af6cb64868d09bc181ce7056d9230f785430c167a193ddf08214c99f8710a24d",
+      "journal_bytes": 54784,
+      "directory_entries": [
+        "database.sqlite",
+        "database.sqlite-journal",
+        "exit_capture",
+        "late_capture",
+        "record.json",
+        "stderr.txt",
+        "stdout.txt",
+        "trace.jsonl"
+      ]
+    },
+    {
+      "event": "late_capture_after",
+      "database_sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+      "journal_exists": true,
+      "journal_sha256": "af6cb64868d09bc181ce7056d9230f785430c167a193ddf08214c99f8710a24d",
+      "journal_bytes": 54784,
+      "directory_entries": [
+        "database.sqlite",
+        "database.sqlite-journal",
+        "exit_capture",
+        "late_capture",
+        "record.json",
+        "stderr.txt",
+        "stdout.txt",
+        "trace.jsonl"
+      ]
+    }
+  ],
+  "late_minus_exit_capture_seconds": 28.094044918,
+  "capture_metadata_matches_record": {
+    "exit": true,
+    "late": true
+  },
+  "late_journal": {
+    "sha256": "af6cb64868d09bc181ce7056d9230f785430c167a193ddf08214c99f8710a24d",
+    "bytes": 54784,
+    "magic_hex": "d9d505f920a163d7",
+    "n_records": 13,
+    "checksum_nonce": 1504983221,
+    "initial_database_pages": 3641,
+    "sector_bytes": 512,
+    "page_bytes": 4096,
+    "undo_pages": [
+      3640,
+      3641,
+      3431,
+      3635,
+      3638,
+      1,
+      3148,
+      2,
+      1636,
+      2441,
+      3,
+      2710,
+      3070
+    ],
+    "next_header_offset": 54272,
+    "next_header_first28_hex": "0000000000000000000000008e66df0e00000e390000020000001000"
+  },
+  "journal_comparison": {
+    "late_equals_after_effect_full_sha256": true,
+    "late_equals_before_commit_full_sha256": false,
+    "late_equals_before_commit_observed_first128_bytes": true,
+    "late_stat_equals_after_effect_observed_stat": false,
+    "after_effect_stat": {
+      "ctime_ns": 1791227610565487844,
+      "mode": 33188,
+      "mtime_ns": 1791227610565487844,
+      "size": 54784,
+      "st_dev": 27,
+      "st_ino": 671006
+    },
+    "before_commit_stat": {
+      "ctime_ns": 1791227613009535559,
+      "mode": 33188,
+      "mtime_ns": 1791227613009535559,
+      "size": 62992,
+      "st_dev": 27,
+      "st_ino": 671006
+    },
+    "late_stat": {
+      "ctime_ns": 1791227614601566662,
+      "mode": 33188,
+      "mtime_ns": 1791227610565487844,
+      "size": 54784,
+      "st_dev": 27,
+      "st_ino": 671024
+    }
+  },
+  "independent_oracle": {
+    "PRE": {
+      "rows": 300000,
+      "sha256": "75ec4f888192934e9bfc9389b622b1e1ada8be77d9e3684b0456b218efe2bccc"
+    },
+    "POST": {
+      "rows": 420000,
+      "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7"
+    },
+    "normalized": {
+      "rows": 240000,
+      "sha256": "9349b19f2f9481a9a65a66d269bb9cb207695873a5f872cdb6eaf3d115350666"
+    }
+  },
+  "fixture_metadata_matches_independent_row_digests": true,
+  "copies_recovered": {
+    "exit": {
+      "copied_physical_matches_capture": true,
+      "integrity": [
+        "ok"
+      ],
+      "items": {
+        "rows": 420000,
+        "sha256": "93f2adcbeceef7345ca272ccb8e038e6f74a6bc8e939167ccf51f7d8e38b5ec7"
+      },
+      "items_state": "POST",
+      "receipt_count": 1,
+      "receipts": [
+        {
+          "sha256": "4ae50ffad2e2eec1d9051f2f4ebbfa663084e21547821a7553efdbf3e0831a65",
+          "checks": {
+            "key": true,
+            "schema": true,
+            "format": true,
+            "payload": true,
+            "fingerprint": true,
+            "checksum": true,
+            "canonical_json": true,
+            "before_sha": true,
+            "after_sha": true,
+            "canonical_input_sha": true,
+            "counts": true,
+            "goal_verified": true
+          },
+          "all_checks_pass": true,
+          "claimed_after_rows": 420000
+        }
+      ],
+      "state": "POST",
+      "recovered_db_sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+      "recovery_journal_remaining": false,
+      "sqlite_schema_roots": [
+        [
+          "items",
+          2
+        ],
+        [
+          "sqlite_autoindex_items_1",
+          3
+        ],
+        [
+          "qkf_import_receipts",
+          4
+        ],
+        [
+          "sqlite_autoindex_qkf_import_receipts_1",
+          5
+        ]
+      ]
+    },
+    "late": {
+      "copied_physical_matches_capture": true,
+      "integrity": [
+        "ok"
+      ],
+      "items": {
+        "rows": 300000,
+        "sha256": "75ec4f888192934e9bfc9389b622b1e1ada8be77d9e3684b0456b218efe2bccc"
+      },
+      "items_state": "PRE",
+      "receipt_count": 1,
+      "receipts": [
+        {
+          "sha256": "4ae50ffad2e2eec1d9051f2f4ebbfa663084e21547821a7553efdbf3e0831a65",
+          "checks": {
+            "key": true,
+            "schema": true,
+            "format": true,
+            "payload": true,
+            "fingerprint": true,
+            "checksum": true,
+            "canonical_json": true,
+            "before_sha": true,
+            "after_sha": true,
+            "canonical_input_sha": true,
+            "counts": true,
+            "goal_verified": true
+          },
+          "all_checks_pass": true,
+          "claimed_after_rows": 420000
+        }
+      ],
+      "state": "MIXED",
+      "recovered_db_sha256": "386149edccdc869d729c6e760ec713335a9f39579bf11489bb74b7f11f9f2da4",
+      "recovery_journal_remaining": false,
+      "sqlite_schema_roots": [
+        [
+          "items",
+          2
+        ],
+        [
+          "sqlite_autoindex_items_1",
+          3
+        ],
+        [
+          "qkf_import_receipts",
+          4
+        ],
+        [
+          "sqlite_autoindex_qkf_import_receipts_1",
+          5
+        ]
+      ]
+    }
+  },
+  "original_files_after": {
+    "producer": {
+      "database.sqlite": {
+        "bytes": 20525056,
+        "sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+        "mtime_ns": 1791227613053536418,
+        "ctime_ns": 1791227613053536418,
+        "inode": 671004,
+        "dev": 27
+      },
+      "database.sqlite-journal": {
+        "bytes": 54784,
+        "sha256": "af6cb64868d09bc181ce7056d9230f785430c167a193ddf08214c99f8710a24d",
+        "mtime_ns": 1791227610565487844,
+        "ctime_ns": 1791227614601566662,
+        "inode": 671024,
+        "dev": 27
+      }
+    },
+    "exit": {
+      "database.sqlite": {
+        "bytes": 20525056,
+        "sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+        "mtime_ns": 1791227613193539151,
+        "ctime_ns": 1791227613193539151,
+        "inode": 671008,
+        "dev": 27
+      }
+    },
+    "late": {
+      "database.sqlite": {
+        "bytes": 20525056,
+        "sha256": "d7aa954b302b15dc5683671a5226ac6c95ab29d38b7854baba122d0a6a7ea413",
+        "mtime_ns": 1791227641286088417,
+        "ctime_ns": 1791227641286088417,
+        "inode": 671428,
+        "dev": 27
+      },
+      "database.sqlite-journal": {
+        "bytes": 54784,
+        "sha256": "af6cb64868d09bc181ce7056d9230f785430c167a193ddf08214c99f8710a24d",
+        "mtime_ns": 1791227641305616420,
+        "ctime_ns": 1791227641305616420,
+        "inode": 671429,
+        "dev": 27
+      }
+    }
+  },
+  "all_originals_unchanged": true,
+  "conclusion": {
+    "established": "Every observed boundary after actual commit through completed exit capture shows no journal and the same POST main DB bytes. Late source and capture show an added 54784-byte journal identical by SHA256 to an earlier after-effect journal, while main DB bytes are unchanged. Ordinary recovery on disposable late copy yields full PRE items with a valid POST receipt; immediate exit copy recovers POST.",
+    "limits": "Absence was observed at discrete sample times and via directory inventories, not continuous syscall/VFS tracing. Matching prior SHA256/stat records localizes visible state reversion but does not establish who created/restored the journal, exact appearance time, syscall success, storage-layer mechanism, or universal SQLite behavior."
+  }
+}
