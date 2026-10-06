@@ -1,0 +1,35 @@
+name: QKF AI Run27 interface utility
+on:
+  push:
+    branches: [research/qkf-ai-run27-interface-utility]
+    paths: ['research/qkf_ai/run27/**.py', 'research/qkf_ai/run27/PROTOCOL*', '.github/workflows/qkf-ai-run27.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Independent contract and adversarial checker tests
+        working-directory: research/qkf_ai/run27
+        run: python -m unittest test_service27 test_planners27 test_online27 test_runner27 test_check27
+      - name: Frozen paired experiment and cold replay
+        run: python research/qkf_ai/run27/run27.py --output reproduction/qkf_ai_run27
+      - name: Experiment conclusions
+        if: always()
+        run: |
+          if [ -f reproduction/qkf_ai_run27/summary.json ]; then
+            python -c 'import json; p=json.load(open("reproduction/qkf_ai_run27/summary.json")); print(json.dumps({k:v for k,v in p.items() if k not in ["results","comparisons"]},indent=2))' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qkf-ai-run27-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reproduction/qkf_ai_run27/
+          retention-days: 90
+          if-no-files-found: error
