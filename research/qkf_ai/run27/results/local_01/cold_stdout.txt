@@ -1,0 +1,359 @@
+{
+  "schema": "qkf.run27.summary.v1",
+  "protocol_sha256": "b51fe0b147da112a5e097d1bfd7c0b5792d7758f8283ed2770c689663d2307fa",
+  "registered_episodes": 192,
+  "audited_episodes": 192,
+  "integrity_passed": 192,
+  "primary_episodes": 144,
+  "primary_goals_passed": 144,
+  "ablation_episodes": 48,
+  "ablation_goals_failed": 24,
+  "consistency_gate": "PASS",
+  "interface_causal_use_gate": "PASS",
+  "oracle_utility_gate": "FAIL",
+  "beyond_strong_ordinary_gate": "FAIL",
+  "csv_release_status": "BLOCKED_BY_UNRESOLVED_RUN25_RUN26",
+  "llm_episodes": 0,
+  "strata": [
+    {
+      "portfolio_id": "selection_n1",
+      "split": "selection",
+      "program_count": 1,
+      "component_count": 1,
+      "costs_sum_four_classes": {
+        "safe": 68,
+        "oracle": 56,
+        "ordinary_fork": 84,
+        "ordinary_full": 100,
+        "ordinary_online": 76,
+        "ordinary_best": 68
+      },
+      "oracle_vs_safe_gain": 0.17647058823529413,
+      "oracle_vs_ordinary_best_gain": 0.17647058823529413,
+      "ordinary_best_vs_safe_gain": 0.0
+    },
+    {
+      "portfolio_id": "selection_n4",
+      "split": "selection",
+      "program_count": 4,
+      "component_count": 4,
+      "costs_sum_four_classes": {
+        "safe": 272,
+        "oracle": 224,
+        "ordinary_fork": 264,
+        "ordinary_full": 268,
+        "ordinary_online": 244,
+        "ordinary_best": 244
+      },
+      "oracle_vs_safe_gain": 0.17647058823529413,
+      "oracle_vs_ordinary_best_gain": 0.08196721311475409,
+      "ordinary_best_vs_safe_gain": 0.10294117647058823
+    },
+    {
+      "portfolio_id": "selection_n12",
+      "split": "selection",
+      "program_count": 12,
+      "component_count": 12,
+      "costs_sum_four_classes": {
+        "safe": 816,
+        "oracle": 672,
+        "ordinary_fork": 744,
+        "ordinary_full": 716,
+        "ordinary_online": 692,
+        "ordinary_best": 692
+      },
+      "oracle_vs_safe_gain": 0.17647058823529413,
+      "oracle_vs_ordinary_best_gain": 0.028901734104046242,
+      "ordinary_best_vs_safe_gain": 0.15196078431372548
+    },
+    {
+      "portfolio_id": "transfer_n1",
+      "split": "transfer",
+      "program_count": 1,
+      "component_count": 1,
+      "costs_sum_four_classes": {
+        "safe": 88,
+        "oracle": 76,
+        "ordinary_fork": 104,
+        "ordinary_full": 120,
+        "ordinary_online": 96,
+        "ordinary_best": 88
+      },
+      "oracle_vs_safe_gain": 0.13636363636363635,
+      "oracle_vs_ordinary_best_gain": 0.13636363636363635,
+      "ordinary_best_vs_safe_gain": 0.0
+    },
+    {
+      "portfolio_id": "transfer_n4",
+      "split": "transfer",
+      "program_count": 4,
+      "component_count": 6,
+      "costs_sum_four_classes": {
+        "safe": 448,
+        "oracle": 376,
+        "ordinary_fork": 424,
+        "ordinary_full": 420,
+        "ordinary_online": 396,
+        "ordinary_best": 396
+      },
+      "oracle_vs_safe_gain": 0.16071428571428573,
+      "oracle_vs_ordinary_best_gain": 0.050505050505050504,
+      "ordinary_best_vs_safe_gain": 0.11607142857142858
+    },
+    {
+      "portfolio_id": "transfer_n12",
+      "split": "transfer",
+      "program_count": 12,
+      "component_count": 18,
+      "costs_sum_four_classes": {
+        "safe": 1344,
+        "oracle": 1128,
+        "ordinary_fork": 1224,
+        "ordinary_full": 1172,
+        "ordinary_online": 1148,
+        "ordinary_best": 1148
+      },
+      "oracle_vs_safe_gain": 0.16071428571428573,
+      "oracle_vs_ordinary_best_gain": 0.017421602787456445,
+      "ordinary_best_vs_safe_gain": 0.14583333333333334
+    }
+  ],
+  "price_sensitivity": [
+    {
+      "price_model": "equal_call",
+      "prices": {
+        "activate": 1,
+        "create": 1,
+        "fork": 1,
+        "read": 1,
+        "snapshot": 1,
+        "validate": 1,
+        "write": 1
+      },
+      "fixed_original_plans": true,
+      "policy_reoptimized": false,
+      "strata": [
+        {
+          "portfolio_id": "selection_n1",
+          "split": "selection",
+          "program_count": 1,
+          "component_count": 1,
+          "costs_sum_four_classes": {
+            "safe": 28,
+            "oracle": 26,
+            "ordinary_fork": 44,
+            "ordinary_full": 50,
+            "ordinary_online": 38,
+            "ordinary_best": 28
+          },
+          "oracle_vs_safe_gain": 0.07142857142857142,
+          "oracle_vs_ordinary_best_gain": 0.07142857142857142,
+          "ordinary_best_vs_safe_gain": 0.0
+        },
+        {
+          "portfolio_id": "selection_n4",
+          "split": "selection",
+          "program_count": 4,
+          "component_count": 4,
+          "costs_sum_four_classes": {
+            "safe": 112,
+            "oracle": 104,
+            "ordinary_fork": 128,
+            "ordinary_full": 128,
+            "ordinary_online": 116,
+            "ordinary_best": 116
+          },
+          "oracle_vs_safe_gain": 0.07142857142857142,
+          "oracle_vs_ordinary_best_gain": 0.10344827586206896,
+          "ordinary_best_vs_safe_gain": -0.03571428571428571
+        },
+        {
+          "portfolio_id": "selection_n12",
+          "split": "selection",
+          "program_count": 12,
+          "component_count": 12,
+          "costs_sum_four_classes": {
+            "safe": 336,
+            "oracle": 312,
+            "ordinary_fork": 352,
+            "ordinary_full": 336,
+            "ordinary_online": 324,
+            "ordinary_best": 324
+          },
+          "oracle_vs_safe_gain": 0.07142857142857142,
+          "oracle_vs_ordinary_best_gain": 0.037037037037037035,
+          "ordinary_best_vs_safe_gain": 0.03571428571428571
+        },
+        {
+          "portfolio_id": "transfer_n1",
+          "split": "transfer",
+          "program_count": 1,
+          "component_count": 1,
+          "costs_sum_four_classes": {
+            "safe": 36,
+            "oracle": 34,
+            "ordinary_fork": 52,
+            "ordinary_full": 58,
+            "ordinary_online": 46,
+            "ordinary_best": 36
+          },
+          "oracle_vs_safe_gain": 0.05555555555555555,
+          "oracle_vs_ordinary_best_gain": 0.05555555555555555,
+          "ordinary_best_vs_safe_gain": 0.0
+        },
+        {
+          "portfolio_id": "transfer_n4",
+          "split": "transfer",
+          "program_count": 4,
+          "component_count": 6,
+          "costs_sum_four_classes": {
+            "safe": 184,
+            "oracle": 172,
+            "ordinary_fork": 200,
+            "ordinary_full": 196,
+            "ordinary_online": 184,
+            "ordinary_best": 184
+          },
+          "oracle_vs_safe_gain": 0.06521739130434782,
+          "oracle_vs_ordinary_best_gain": 0.06521739130434782,
+          "ordinary_best_vs_safe_gain": 0.0
+        },
+        {
+          "portfolio_id": "transfer_n12",
+          "split": "transfer",
+          "program_count": 12,
+          "component_count": 18,
+          "costs_sum_four_classes": {
+            "safe": 552,
+            "oracle": 516,
+            "ordinary_fork": 568,
+            "ordinary_full": 540,
+            "ordinary_online": 528,
+            "ordinary_best": 528
+          },
+          "oracle_vs_safe_gain": 0.06521739130434782,
+          "oracle_vs_ordinary_best_gain": 0.022727272727272728,
+          "ordinary_best_vs_safe_gain": 0.043478260869565216
+        }
+      ]
+    },
+    {
+      "price_model": "write_heavy",
+      "prices": {
+        "activate": 2,
+        "create": 5,
+        "fork": 1,
+        "read": 1,
+        "snapshot": 3,
+        "validate": 3,
+        "write": 10
+      },
+      "fixed_original_plans": true,
+      "policy_reoptimized": false,
+      "strata": [
+        {
+          "portfolio_id": "selection_n1",
+          "split": "selection",
+          "program_count": 1,
+          "component_count": 1,
+          "costs_sum_four_classes": {
+            "safe": 144,
+            "oracle": 132,
+            "ordinary_fork": 204,
+            "ordinary_full": 220,
+            "ordinary_online": 152,
+            "ordinary_best": 144
+          },
+          "oracle_vs_safe_gain": 0.08333333333333333,
+          "oracle_vs_ordinary_best_gain": 0.08333333333333333,
+          "ordinary_best_vs_safe_gain": 0.0
+        },
+        {
+          "portfolio_id": "selection_n4",
+          "split": "selection",
+          "program_count": 4,
+          "component_count": 4,
+          "costs_sum_four_classes": {
+            "safe": 576,
+            "oracle": 528,
+            "ordinary_fork": 612,
+            "ordinary_full": 616,
+            "ordinary_online": 548,
+            "ordinary_best": 548
+          },
+          "oracle_vs_safe_gain": 0.08333333333333333,
+          "oracle_vs_ordinary_best_gain": 0.0364963503649635,
+          "ordinary_best_vs_safe_gain": 0.04861111111111111
+        },
+        {
+          "portfolio_id": "selection_n12",
+          "split": "selection",
+          "program_count": 12,
+          "component_count": 12,
+          "costs_sum_four_classes": {
+            "safe": 1728,
+            "oracle": 1584,
+            "ordinary_fork": 1700,
+            "ordinary_full": 1672,
+            "ordinary_online": 1604,
+            "ordinary_best": 1604
+          },
+          "oracle_vs_safe_gain": 0.08333333333333333,
+          "oracle_vs_ordinary_best_gain": 0.012468827930174564,
+          "ordinary_best_vs_safe_gain": 0.07175925925925926
+        },
+        {
+          "portfolio_id": "transfer_n1",
+          "split": "transfer",
+          "program_count": 1,
+          "component_count": 1,
+          "costs_sum_four_classes": {
+            "safe": 164,
+            "oracle": 152,
+            "ordinary_fork": 224,
+            "ordinary_full": 240,
+            "ordinary_online": 172,
+            "ordinary_best": 164
+          },
+          "oracle_vs_safe_gain": 0.07317073170731707,
+          "oracle_vs_ordinary_best_gain": 0.07317073170731707,
+          "ordinary_best_vs_safe_gain": 0.0
+        },
+        {
+          "portfolio_id": "transfer_n4",
+          "split": "transfer",
+          "program_count": 4,
+          "component_count": 6,
+          "costs_sum_four_classes": {
+            "safe": 904,
+            "oracle": 832,
+            "ordinary_fork": 924,
+            "ordinary_full": 920,
+            "ordinary_online": 852,
+            "ordinary_best": 852
+          },
+          "oracle_vs_safe_gain": 0.07964601769911504,
+          "oracle_vs_ordinary_best_gain": 0.023474178403755867,
+          "ordinary_best_vs_safe_gain": 0.05752212389380531
+        },
+        {
+          "portfolio_id": "transfer_n12",
+          "split": "transfer",
+          "program_count": 12,
+          "component_count": 18,
+          "costs_sum_four_classes": {
+            "safe": 2712,
+            "oracle": 2496,
+            "ordinary_fork": 2636,
+            "ordinary_full": 2584,
+            "ordinary_online": 2516,
+            "ordinary_best": 2516
+          },
+          "oracle_vs_safe_gain": 0.07964601769911504,
+          "oracle_vs_ordinary_best_gain": 0.00794912559618442,
+          "ordinary_best_vs_safe_gain": 0.07227138643067847
+        }
+      ]
+    }
+  ]
+}
